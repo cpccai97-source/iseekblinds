@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bi-Fold & Stacking Door Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for bi-fold and stacking doors in Melbourne. Motorised roller blinds, panel glides and honeycomb solutions for wide openings. Free measure & quote.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Bi-Fold Door Blinds — Glassmorphism Style ── */
+    :root {
+      --bf-deep: #0F1923;
+      --bf-navy: #162A3E;
+      --bf-sky: #4DA8DA;
+      --bf-sky-light: #7EC8E3;
+      --bf-teal: #38B2AC;
+      --bf-glass: rgba(255, 255, 255, 0.08);
+      --bf-glass-border: rgba(255, 255, 255, 0.15);
+      --bf-glass-strong: rgba(255, 255, 255, 0.12);
+      --bf-white: #ffffff;
+      --bf-text: #E2E8F0;
+      --bf-text-muted: #94A3B8;
+      --bf-warm: #F0E6D3;
+    }
+
+    .bf-page { background: var(--bf-deep); color: var(--bf-text); overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    .bf-page .top-bar { background: rgba(15, 25, 35, 0.8); backdrop-filter: blur(10px); }
+    .bf-page .top-bar a { color: var(--bf-text); }
+
+    /* Ambient orbs */
+    .bf-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bf-orb-1 { width: 500px; height: 500px; background: rgba(77, 168, 218, 0.15); top: -100px; right: -100px; }
+    .bf-orb-2 { width: 400px; height: 400px; background: rgba(56, 178, 172, 0.1); bottom: -80px; left: -80px; }
+    .bf-orb-3 { width: 300px; height: 300px; background: rgba(240, 230, 211, 0.06); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+    /* ── Hero ── */
+    .bf-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 2rem;
+      background: linear-gradient(170deg, #0F1923 0%, #162A3E 40%, #1A3A52 70%, #0F1923 100%);
+    }
+    .bf-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(77, 168, 218, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77, 168, 218, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.6;
+    }
+    .bf-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+    .bf-hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--bf-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--bf-glass-border);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bf-sky-light);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .bf-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--bf-white);
+      margin-bottom: 1.5rem;
+    }
+    .bf-hero h1 span {
+      background: linear-gradient(135deg, var(--bf-sky), var(--bf-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bf-hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--bf-text-muted);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+    .bf-hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .bf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .bf-btn-primary {
+      background: linear-gradient(135deg, var(--bf-sky), var(--bf-teal));
+      color: var(--bf-white);
+      border: none;
+      box-shadow: 0 4px 20px rgba(77, 168, 218, 0.3);
+    }
+    .bf-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(77, 168, 218, 0.4);
+    }
+    .bf-btn-glass {
+      background: var(--bf-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--bf-glass-border);
+      color: var(--bf-white);
+    }
+    .bf-btn-glass:hover {
+      background: var(--bf-glass-strong);
+      border-color: var(--bf-sky);
+    }
+
+    /* ── Glass cards section ── */
+    .bf-solutions {
+      position: relative;
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, var(--bf-deep) 0%, #111D2B 100%);
+    }
+    .bf-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-section-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--bf-white);
+      margin-bottom: 0.75rem;
+    }
+    .bf-section-header p {
+      color: var(--bf-text-muted);
+      font-size: 1.05rem;
+    }
+
+    .bf-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-card {
+      background: var(--bf-glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--bf-glass-border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bf-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--bf-sky), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .bf-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(77, 168, 218, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    .bf-card:hover::before {
+      opacity: 1;
+    }
+    .bf-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, rgba(77, 168, 218, 0.15), rgba(56, 178, 172, 0.1));
+      border: 1px solid rgba(77, 168, 218, 0.2);
+    }
+    .bf-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--bf-white);
+      margin-bottom: 0.75rem;
+    }
+    .bf-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--bf-text-muted);
+    }
+    .bf-card-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(56, 178, 172, 0.1);
+      border: 1px solid rgba(56, 178, 172, 0.2);
+      color: var(--bf-teal);
+      font-weight: 500;
+    }
+
+    /* ── Features — glass panels ── */
+    .bf-features {
+      position: relative;
+      padding: 6rem 2rem;
+      background: var(--bf-navy);
+      overflow: hidden;
+    }
+    .bf-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-feature {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.75rem;
+      background: var(--bf-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--bf-glass-border);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .bf-feature:hover {
+      border-color: rgba(77, 168, 218, 0.25);
+      background: var(--bf-glass-strong);
+    }
+    .bf-feature-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .bf-feature h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bf-white);
+      margin-bottom: 0.4rem;
+    }
+    .bf-feature p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--bf-text-muted);
+    }
+
+    /* ── How It Works ── */
+    .bf-process {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #111D2B 0%, var(--bf-deep) 100%);
+      position: relative;
+    }
+    .bf-steps {
+      display: flex;
+      gap: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-step {
+      flex: 1;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+    .bf-step::after {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      width: 1px;
+      height: 40px;
+      background: var(--bf-glass-border);
+    }
+    .bf-step:last-child::after { display: none; }
+    .bf-step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--bf-sky), var(--bf-teal));
+      color: var(--bf-white);
+      box-shadow: 0 4px 20px rgba(77, 168, 218, 0.25);
+    }
+    .bf-step h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bf-white);
+      margin-bottom: 0.4rem;
+    }
+    .bf-step p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--bf-text-muted);
+    }
+
+    /* ── FAQ ── */
+    .bf-faq {
+      padding: 6rem 2rem;
+      background: var(--bf-deep);
+      position: relative;
+    }
+    .bf-faq-list {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-faq-item {
+      border-bottom: 1px solid var(--bf-glass-border);
+      padding: 1.5rem 0;
+    }
+    .bf-faq-q {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--bf-white);
+      margin-bottom: 0.6rem;
+      cursor: default;
+    }
+    .bf-faq-a {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--bf-text-muted);
+    }
+
+    /* ── CTA ── */
+    .bf-cta {
+      position: relative;
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(170deg, var(--bf-navy) 0%, var(--bf-deep) 100%);
+      overflow: hidden;
+    }
+    .bf-cta-glass {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3.5rem 3rem;
+      background: var(--bf-glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--bf-glass-border);
+      border-radius: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .bf-cta h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--bf-white);
+      margin-bottom: 0.75rem;
+    }
+    .bf-cta p {
+      color: var(--bf-text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Crosslinks ── */
+    .bf-crosslinks { padding: 4rem 1.5rem; background: var(--bf-deep); border-top: 1px solid var(--bf-glass-border); }
+    .bf-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .bf-crosslinks h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--bf-white); }
+    .bf-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .bf-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--bf-glass-border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--bf-text-muted);
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .bf-crosslink-item:hover { border-color: var(--bf-sky); color: var(--bf-sky); background: rgba(77, 168, 218, 0.08); }
+
+    /* ── Footer dark override ── */
+    .bf-page .footer { background: #0A1219; }
+    .bf-page .footer-bottom { background: #070E14; }
+
+    /* ── Animations ── */
+    .bf-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .bf-visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes bf-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .bf-float { animation: bf-float 6s ease-in-out infinite; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .bf-cards { grid-template-columns: 1fr 1fr; }
+      .bf-features-grid { grid-template-columns: 1fr; }
+      .bf-steps { flex-direction: column; gap: 1rem; }
+      .bf-step::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .bf-cards { grid-template-columns: 1fr; }
+      .bf-hero h1 { font-size: 2.2rem; }
+      .bf-hero-btns { flex-direction: column; align-items: center; }
+      .bf-cta-glass { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body class="bf-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bf-hero">
+    <div class="bf-hero-grid"></div>
+    <div class="bf-orb bf-orb-1 bf-float"></div>
+    <div class="bf-orb bf-orb-2"></div>
+    <div class="bf-hero-content bf-animate">
+      <div class="bf-hero-badge">Bi-Fold & Stacking Doors</div>
+      <h1>Blinds for <span>Wide Openings</span></h1>
+      <p class="bf-hero-sub">Custom-engineered solutions for bi-fold, stacking, and sliding doors. Seamless coverage up to 8 metres wide with motorised precision and stunning aesthetics.</p>
+      <div class="bf-hero-btns">
+        <a href="../free-quote.html" class="bf-btn bf-btn-primary">Get a Free Quote →</a>
+        <a href="#solutions" class="bf-btn bf-btn-glass">View Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Cards -->
+  <section class="bf-solutions" id="solutions">
+    <div class="bf-orb bf-orb-3"></div>
+    <div class="bf-section-header bf-animate">
+      <h2>The Right Blind for Every Door</h2>
+      <p>Three proven solutions for wide bi-fold and stacking openings</p>
+    </div>
+
+    <div class="bf-cards">
+      <div class="bf-card bf-animate">
+        <div class="bf-card-icon">🎚️</div>
+        <h3>Motorised Roller Blinds</h3>
+        <p>Single or linked rollers spanning up to 6m wide per blind. Battery or hard-wired motors with app, remote, or voice control. The most popular choice for modern homes.</p>
+        <span class="bf-card-tag">Most Popular</span>
+      </div>
+      <div class="bf-card bf-animate">
+        <div class="bf-card-icon">📐</div>
+        <h3>Panel Glide Systems</h3>
+        <p>Sleek fabric panels that glide on overhead tracks. Each panel can be independently positioned, making them ideal for doors that open partially. Modern, minimal aesthetic.</p>
+        <span class="bf-card-tag">Best for Partial Opening</span>
+      </div>
+      <div class="bf-card bf-animate">
+        <div class="bf-card-icon">🔷</div>
+        <h3>Honeycomb Blinds</h3>
+        <p>Double-cell construction traps air for superior insulation. Available in blockout and light-filtering. Motorised options stack neatly to just 80mm when fully raised.</p>
+        <span class="bf-card-tag">Best Insulation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="bf-features">
+    <div class="bf-orb bf-orb-1" style="top:auto; bottom:-80px; right:-80px;"></div>
+    <div class="bf-section-header bf-animate">
+      <h2>Why iSeekBlinds for Wide Openings</h2>
+      <p>Purpose-built for Australian homes</p>
+    </div>
+    <div class="bf-features-grid">
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">📏</span>
+        <div>
+          <h4>Up to 8m Coverage</h4>
+          <p>Our linked roller systems and XL panel glides handle the widest residential openings. Custom brackets and channels for a flush finish.</p>
+        </div>
+      </div>
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">⚡</span>
+        <div>
+          <h4>Motorised as Standard</h4>
+          <p>Wide blinds are heavy — motorisation isn't a luxury, it's essential. Battery rechargeable or hard-wired to match your setup.</p>
+        </div>
+      </div>
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">📱</span>
+        <div>
+          <h4>Smart Home Ready</h4>
+          <p>Native integration with Apple HomeKit, Google Home, Amazon Alexa, and IFTTT. Set schedules or control from anywhere.</p>
+        </div>
+      </div>
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">🌡️</span>
+        <div>
+          <h4>Thermal Performance</h4>
+          <p>Large glass areas are energy weak points. Our honeycomb and dual-layer options reduce heat transfer by up to 60%.</p>
+        </div>
+      </div>
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">🔇</span>
+        <div>
+          <h4>Whisper-Quiet Motors</h4>
+          <p>Premium Somfy and Coulisse motors operate at under 35dB — quieter than a whisper. Perfect for open-plan living.</p>
+        </div>
+      </div>
+      <div class="bf-feature bf-animate">
+        <span class="bf-feature-icon">🔧</span>
+        <div>
+          <h4>Professional Install</h4>
+          <p>Wide openings demand precision. Our installers handle structural mounting, wiring, and alignment for a flawless result.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bf-process">
+    <div class="bf-section-header bf-animate">
+      <h2>How It Works</h2>
+      <p>From measurement to motorised — four simple steps</p>
+    </div>
+    <div class="bf-steps">
+      <div class="bf-step bf-animate">
+        <div class="bf-step-num">1</div>
+        <h4>Free Measure</h4>
+        <p>Our consultant visits to assess your doors, measure precisely, and recommend the best system.</p>
+      </div>
+      <div class="bf-step bf-animate">
+        <div class="bf-step-num">2</div>
+        <h4>Design & Quote</h4>
+        <p>Choose fabrics, motors, and controls. We provide a detailed quote with no hidden costs.</p>
+      </div>
+      <div class="bf-step bf-animate">
+        <div class="bf-step-num">3</div>
+        <h4>Custom Made</h4>
+        <p>Your blinds are manufactured to the millimetre in our Melbourne workshop. 2–3 week turnaround.</p>
+      </div>
+      <div class="bf-step bf-animate">
+        <div class="bf-step-num">4</div>
+        <h4>Install & Setup</h4>
+        <p>Professional installation with full motor programming, app setup, and user walkthrough.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bf-faq">
+    <div class="bf-section-header bf-animate">
+      <h2>Common Questions</h2>
+      <p>Everything you need to know about bi-fold door blinds</p>
+    </div>
+    <div class="bf-faq-list">
+      <div class="bf-faq-item bf-animate">
+        <div class="bf-faq-q">Can I still open my bi-fold doors with the blinds installed?</div>
+        <div class="bf-faq-a">Absolutely. Roller blinds mount above the doors and roll up completely clear. Panel glides stack to one side. Both options allow full, unobstructed door operation.</div>
+      </div>
+      <div class="bf-faq-item bf-animate">
+        <div class="bf-faq-q">What's the maximum width you can cover?</div>
+        <div class="bf-faq-a">Single motorised rollers cover up to 4.5m. For wider openings, we use linked systems — two or more blinds sharing a single control — covering openings up to 8m+ seamlessly.</div>
+      </div>
+      <div class="bf-faq-item bf-animate">
+        <div class="bf-faq-q">Do I need an electrician for motorised blinds?</div>
+        <div class="bf-faq-a">Not necessarily. Our rechargeable battery motors (charge lasts 6–12 months) require zero wiring. Hard-wired options are available if you prefer permanent power — we coordinate with your electrician.</div>
+      </div>
+      <div class="bf-faq-item bf-animate">
+        <div class="bf-faq-q">What about insulation for large glass areas?</div>
+        <div class="bf-faq-a">Honeycomb blinds are our top recommendation for thermal performance. The cellular construction creates air pockets that insulate against both heat and cold — crucial for Melbourne's variable climate.</div>
+      </div>
+      <div class="bf-faq-item bf-animate">
+        <div class="bf-faq-q">How long does installation take?</div>
+        <div class="bf-faq-a">Most bi-fold door installations are completed in 1–2 hours per opening. Hardwired motorised systems may take slightly longer for cable routing and setup.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bf-cta">
+    <div class="bf-orb bf-orb-2" style="left:auto; right:-60px; bottom:auto; top:-60px;"></div>
+    <div class="bf-cta-glass bf-animate">
+      <h2>Ready to Cover Your Wide Openings?</h2>
+      <p>Free on-site measure and quote. Custom-made in Melbourne.</p>
+      <div class="bf-hero-btns">
+        <a href="../free-quote.html" class="bf-btn bf-btn-primary">Book Free Measure →</a>
+        <a href="tel:0400000000" class="bf-btn bf-btn-glass">📞 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="bf-crosslinks">
+    <div class="bf-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="bf-crosslinks-grid">
+        <a href="commercial-blinds.html" class="bf-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="bf-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="bf-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="bf-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="bf-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="bf-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="bf-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="bf-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="bf-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="bf-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="bf-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="bf-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="privacy-blinds.html" class="bf-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="conservatory-sunroom.html" class="bf-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="acoustic-solutions.html" class="bf-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="bf-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="bf-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="bf-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="bf-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="bf-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="bf-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="bf-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="bf-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="bf-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="bf-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="bf-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="bf-crosslink-item"><span>→</span> Media Room</a>
+        <a href="skylight-blinds.html" class="bf-crosslink-item"><span>→</span> Skylight &amp; Specialty</a>
+        <a href="heritage-homes.html" class="bf-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="day-night-blinds.html" class="bf-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="rental-property.html" class="bf-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="diy-measuring-guide.html" class="bf-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="scandinavian-style.html" class="bf-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="coastal-home-blinds.html" class="bf-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="diy-installation-guide.html" class="bf-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="high-rise-glare.html" class="bf-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="minimalist-styling.html" class="bf-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="pet-friendly.html" class="bf-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="fabric-encyclopedia.html" class="bf-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations
+    const bfObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('bf-visible'), index * 80);
+          bfObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.bf-animate').forEach(el => bfObserver.observe(el));
+  </script>
+
+</body>
+</html>

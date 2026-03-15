@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blind & Curtain Fabric Encyclopedia | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Complete guide to blinds and curtain fabrics — from sheer voile to blockout polyester, linen blends, and sunscreen mesh. Learn texture, light filtering, and care for every fabric type.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Fabric Encyclopedia — Magazine Editorial Style ── */
+    :root {
+      --fe-ink: #1a1a1a;
+      --fe-cream: #FAF7F2;
+      --fe-parchment: #F0EBE1;
+      --fe-accent: #C4553A;
+      --fe-accent-light: #E8836D;
+      --fe-sage: #7A8B6F;
+      --fe-sage-light: #D4DFD0;
+      --fe-taupe: #8B7E74;
+      --fe-gold: #C9A96E;
+      --fe-rule: #D4CFC6;
+      --fe-text: #2d2d2d;
+      --fe-text-muted: #6b6b6b;
+    }
+
+    .fe-page { background: var(--fe-cream); color: var(--fe-text); overflow-x: hidden; font-family: 'Source Sans 3', sans-serif; }
+    .fe-page .top-bar { background: var(--fe-ink); }
+    .fe-page .top-bar a { color: var(--fe-cream); }
+
+    /* Editorial typography */
+    .fe-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .fe-sans { font-family: 'Source Sans 3', sans-serif; }
+
+    .fe-dropcap::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      float: left;
+      font-size: 4.5rem;
+      line-height: 0.75;
+      margin: 0.1em 0.15em 0 0;
+      color: var(--fe-accent);
+      font-weight: 700;
+    }
+
+    /* ── Hero — Full-bleed magazine cover ── */
+    .fe-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(160deg, var(--fe-parchment) 0%, var(--fe-cream) 40%, #E8E0D4 100%);
+      overflow: hidden;
+      padding: 0;
+    }
+    .fe-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80') center/cover;
+      opacity: 0.3;
+    }
+    .fe-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to right, var(--fe-cream) 35%, transparent 70%);
+    }
+    .fe-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+      width: 100%;
+    }
+    .fe-hero-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--fe-accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .fe-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--fe-ink);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    .fe-hero h1 em {
+      font-style: italic;
+      color: var(--fe-accent);
+    }
+    .fe-hero-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--fe-taupe);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+    .fe-hero-rule {
+      width: 60px;
+      height: 3px;
+      background: var(--fe-accent);
+      border: none;
+      margin: 0 0 2rem;
+    }
+
+    /* ── Intro section ── */
+    .fe-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .fe-intro-cols {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      gap: 2.5rem;
+      text-align: left;
+      margin-top: 3rem;
+    }
+    .fe-intro-divider {
+      background: var(--fe-rule);
+      width: 1px;
+      margin: 0 auto;
+    }
+    .fe-intro p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--fe-text-muted);
+    }
+
+    /* ── Fabric Cards — magazine grid ── */
+    .fe-fabrics {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+    .fe-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .fe-section-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--fe-ink);
+      margin-bottom: 0.5rem;
+    }
+    .fe-section-header .fe-rule-center {
+      width: 40px;
+      height: 2px;
+      background: var(--fe-accent);
+      margin: 1rem auto;
+      border: none;
+    }
+    .fe-section-header p {
+      font-style: italic;
+      color: var(--fe-taupe);
+      font-size: 1.1rem;
+    }
+
+    .fe-fabric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--fe-rule);
+    }
+    .fe-fabric-card {
+      padding: 2.5rem;
+      border: 1px solid var(--fe-rule);
+      position: relative;
+      transition: background 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
+    }
+    .fe-fabric-card::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--fe-rule);
+      line-height: 1;
+      opacity: 0.4;
+      transition: color 0.3s ease;
+    }
+    .fe-fabric-card:hover {
+      background: #fff;
+    }
+    .fe-fabric-card:hover::before {
+      color: var(--fe-accent-light);
+      opacity: 0.3;
+    }
+    .fe-fabric-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .fe-fabric-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--fe-ink);
+      margin-bottom: 0.75rem;
+    }
+    .fe-fabric-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--fe-text-muted);
+      margin-bottom: 1rem;
+    }
+    .fe-fabric-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+    .fe-fabric-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--fe-rule);
+      color: var(--fe-taupe);
+      font-weight: 500;
+    }
+
+    /* ── Comparison Table — editorial ── */
+    .fe-comparison {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+    .fe-table-wrap {
+      overflow-x: auto;
+      margin-top: 3rem;
+    }
+    .fe-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .fe-table thead th {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border-bottom: 2px solid var(--fe-ink);
+      text-align: left;
+      color: var(--fe-ink);
+      font-weight: 600;
+    }
+    .fe-table tbody td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--fe-rule);
+      color: var(--fe-text-muted);
+      vertical-align: top;
+    }
+    .fe-table tbody tr:hover {
+      background: var(--fe-parchment);
+    }
+    .fe-table .fe-fabric-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      color: var(--fe-ink);
+      font-size: 1rem;
+    }
+    .fe-rating {
+      display: flex;
+      gap: 2px;
+    }
+    .fe-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--fe-rule);
+    }
+    .fe-dot.filled {
+      background: var(--fe-accent);
+    }
+
+    /* ── Tips Banner ── */
+    .fe-tips {
+      background: var(--fe-ink);
+      color: var(--fe-cream);
+      padding: 5rem 2rem;
+    }
+    .fe-tips-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .fe-tips h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: var(--fe-cream);
+    }
+    .fe-tip-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .fe-tip-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--fe-accent);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .fe-tip-text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--fe-cream);
+    }
+    .fe-tip-text p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #a0a0a0;
+    }
+
+    /* ── CTA ── */
+    .fe-cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: var(--fe-parchment);
+    }
+    .fe-cta h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      color: var(--fe-ink);
+      margin-bottom: 1rem;
+    }
+    .fe-cta p {
+      color: var(--fe-taupe);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    .fe-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .fe-btn-primary {
+      background: var(--fe-accent);
+      color: #fff;
+      border: 2px solid var(--fe-accent);
+    }
+    .fe-btn-primary:hover {
+      background: transparent;
+      color: var(--fe-accent);
+    }
+    .fe-btn-outline {
+      background: transparent;
+      color: var(--fe-ink);
+      border: 2px solid var(--fe-ink);
+      margin-left: 1rem;
+    }
+    .fe-btn-outline:hover {
+      background: var(--fe-ink);
+      color: var(--fe-cream);
+    }
+
+    /* ── Crosslinks ── */
+    .fe-crosslinks { padding: 4rem 1.5rem; background: #fff; border-top: 2px solid var(--fe-rule); }
+    .fe-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .fe-crosslinks h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--fe-ink); }
+    .fe-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .fe-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--fe-rule);
+      text-decoration: none;
+      color: var(--fe-text-muted);
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .fe-crosslink-item:hover { border-color: var(--fe-accent); color: var(--fe-accent); background: #FFF5F2; }
+
+    /* ── Animations ── */
+    .fe-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fe-visible { opacity: 1; transform: translateY(0); }
+    .fe-animate-delay-1 { transition-delay: 0.1s; }
+    .fe-animate-delay-2 { transition-delay: 0.2s; }
+    .fe-animate-delay-3 { transition-delay: 0.3s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .fe-fabric-grid { grid-template-columns: repeat(2, 1fr); }
+      .fe-tips-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .fe-intro-cols { grid-template-columns: 1fr; }
+      .fe-intro-divider { display: none; }
+    }
+    @media (max-width: 600px) {
+      .fe-fabric-grid { grid-template-columns: 1fr; }
+      .fe-hero h1 { font-size: 2.5rem; }
+      .fe-hero-content { padding: 4rem 1.5rem 3rem; }
+      .fe-hero::before { width: 100%; opacity: 0.15; }
+      .fe-btn-outline { margin-left: 0; margin-top: 0.75rem; }
+    }
+  </style>
+</head>
+<body class="fe-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fe-hero">
+    <div class="fe-hero-content">
+      <div class="fe-animate">
+        <p class="fe-hero-label">The iSeekBlinds Material Guide</p>
+        <h1>The Fabric <em>Encyclopedia</em></h1>
+        <hr class="fe-hero-rule">
+        <p class="fe-hero-subtitle">Everything you need to know about blinds and curtain fabrics — textures, light control, durability, and style for every room in your home.</p>
+        <a href="../free-quote.html" class="fe-btn fe-btn-primary">Request Free Samples</a>
+        <a href="#fabrics" class="fe-btn fe-btn-outline">Explore Fabrics</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="fe-intro">
+    <div class="fe-animate">
+      <h2 class="fe-serif" style="font-size:1.8rem; margin-bottom:1rem; color:var(--fe-ink);">Why Fabric Matters</h2>
+      <hr class="fe-rule-center" style="width:40px; height:2px; background:var(--fe-accent); border:none; margin:0 auto 2rem;">
+    </div>
+    <div class="fe-intro-cols">
+      <div class="fe-animate fe-animate-delay-1">
+        <p class="fe-dropcap">Choosing the right fabric is the single most important decision when selecting window furnishings. It determines how much light enters your room, your level of privacy, energy efficiency, and of course — the overall aesthetic that ties your interior design together.</p>
+      </div>
+      <div class="fe-intro-divider"></div>
+      <div class="fe-animate fe-animate-delay-2">
+        <p>From the softest sheer voile that gently diffuses sunlight, to heavy blockout fabrics that create pitch-dark sleeping environments — each material serves a specific purpose. Understanding the properties of different fabrics empowers you to make the perfect choice for every room.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fabric Cards -->
+  <section class="fe-fabrics" id="fabrics">
+    <div class="fe-section-header fe-animate">
+      <h2>Fabric Types</h2>
+      <hr class="fe-rule-center">
+      <p>A comprehensive guide to every fabric in our collection</p>
+    </div>
+
+    <div class="fe-fabric-grid">
+      <div class="fe-fabric-card fe-animate" data-number="01">
+        <div class="fe-fabric-icon" style="background:var(--fe-sage-light); color:var(--fe-sage);">🌿</div>
+        <h3>Sheer &amp; Voile</h3>
+        <p>Ultra-light, translucent fabrics that softly filter sunlight while maintaining daytime privacy. Perfect for living areas where you want natural light without direct glare.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">Light Filtering</span>
+          <span class="fe-fabric-tag">Daytime Privacy</span>
+          <span class="fe-fabric-tag">Elegant</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="02">
+        <div class="fe-fabric-icon" style="background:#1a1a1a; color:#fff;">🌙</div>
+        <h3>Blockout</h3>
+        <p>Multi-layered fabrics with a foam or acrylic backing that blocks 100% of light. The gold standard for bedrooms, nurseries, and home theatres where total darkness is essential.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">100% Blockout</span>
+          <span class="fe-fabric-tag">Thermal</span>
+          <span class="fe-fabric-tag">Energy Saving</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="03">
+        <div class="fe-fabric-icon" style="background:#FFF0D6; color:var(--fe-gold);">☀️</div>
+        <h3>Sunscreen Mesh</h3>
+        <p>Open-weave technical fabrics with 1–14% openness factors. Reduces glare and UV by up to 99% while preserving outward views. Ideal for offices and living spaces.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">UV Protection</span>
+          <span class="fe-fabric-tag">View-Through</span>
+          <span class="fe-fabric-tag">Anti-Glare</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="04">
+        <div class="fe-fabric-icon" style="background:var(--fe-parchment); color:var(--fe-taupe);">🧵</div>
+        <h3>Linen &amp; Linen Blends</h3>
+        <p>Natural texture with a relaxed, organic feel. Linen blends offer the aesthetic of pure linen with improved durability and less wrinkling. Suits coastal and Scandi interiors.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">Natural Fibre</span>
+          <span class="fe-fabric-tag">Textured</span>
+          <span class="fe-fabric-tag">Breathable</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="05">
+        <div class="fe-fabric-icon" style="background:#E8F4FD; color:#3B82C4;">💧</div>
+        <h3>PVC &amp; Moisture-Proof</h3>
+        <p>Waterproof and mould-resistant fabrics designed for wet areas. PVC and synthetic blends maintain their shape and colour in bathrooms, kitchens, and laundries.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">Waterproof</span>
+          <span class="fe-fabric-tag">Mould Resistant</span>
+          <span class="fe-fabric-tag">Easy Clean</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="06">
+        <div class="fe-fabric-icon" style="background:#F5E6F0; color:#9B59B6;">🎭</div>
+        <h3>Velvet &amp; Heavyweight</h3>
+        <p>Luxurious, dense fabrics that drape beautifully and provide excellent insulation. The ultimate choice for formal dining rooms, master bedrooms, and heritage homes.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">Luxury</span>
+          <span class="fe-fabric-tag">Insulating</span>
+          <span class="fe-fabric-tag">Sound Absorbing</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="07">
+        <div class="fe-fabric-icon" style="background:#E8F8F5; color:#1ABC9C;">🔄</div>
+        <h3>Recycled &amp; Eco</h3>
+        <p>Sustainable fabrics made from recycled PET bottles or organic cotton. Achieve the same performance as conventional fabrics with a lighter environmental footprint.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">Sustainable</span>
+          <span class="fe-fabric-tag">GreenTag</span>
+          <span class="fe-fabric-tag">Low VOC</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="08">
+        <div class="fe-fabric-icon" style="background:#FEF3E2; color:#E67E22;">🔥</div>
+        <h3>Dimout</h3>
+        <p>The middle ground between sheer and blockout — filters 85–95% of light while maintaining a softer look. Ideal for bedrooms where you want reduced light without total darkness.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">85-95% Block</span>
+          <span class="fe-fabric-tag">Versatile</span>
+          <span class="fe-fabric-tag">Bedroom</span>
+        </div>
+      </div>
+
+      <div class="fe-fabric-card fe-animate" data-number="09">
+        <div class="fe-fabric-icon" style="background:#FDEEF0; color:#E74C3C;">🏗️</div>
+        <h3>Outdoor &amp; Mesh</h3>
+        <p>Heavy-duty, UV-stabilised fabrics designed for exterior use. Resistant to fading, tearing, and mildew, these fabrics withstand Australian conditions on patios, pergolas, and balconies.</p>
+        <div class="fe-fabric-tags">
+          <span class="fe-fabric-tag">UV Stabilised</span>
+          <span class="fe-fabric-tag">Weatherproof</span>
+          <span class="fe-fabric-tag">Durable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="fe-comparison">
+    <div class="fe-section-header fe-animate">
+      <h2>At a Glance</h2>
+      <hr class="fe-rule-center">
+      <p>Compare key properties across fabric types</p>
+    </div>
+
+    <div class="fe-table-wrap fe-animate">
+      <table class="fe-table">
+        <thead>
+          <tr>
+            <th>Fabric</th>
+            <th>Light Block</th>
+            <th>Privacy</th>
+            <th>Insulation</th>
+            <th>Durability</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fe-fabric-name">Sheer / Voile</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>Living rooms, dining areas</td>
+          </tr>
+          <tr>
+            <td class="fe-fabric-name">Blockout</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>Bedrooms, nurseries, theatres</td>
+          </tr>
+          <tr>
+            <td class="fe-fabric-name">Sunscreen</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>Offices, living spaces</td>
+          </tr>
+          <tr>
+            <td class="fe-fabric-name">Linen Blend</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>Coastal, Scandi, relaxed rooms</td>
+          </tr>
+          <tr>
+            <td class="fe-fabric-name">PVC / Moisture</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>Bathrooms, kitchens, laundries</td>
+          </tr>
+          <tr>
+            <td class="fe-fabric-name">Velvet</td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span></div>
+            </td>
+            <td>
+              <div class="fe-rating"><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot filled"></span><span class="fe-dot"></span><span class="fe-dot"></span></div>
+            </td>
+            <td>Heritage homes, formal rooms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="fe-tips">
+    <div class="fe-tips-inner">
+      <div class="fe-animate">
+        <h2>Choosing the Right Fabric</h2>
+        <p style="color:#a0a0a0; font-style:italic; margin-bottom:2rem;">Expert tips from our Melbourne consultants</p>
+      </div>
+      <div>
+        <div class="fe-tip-item fe-animate">
+          <span class="fe-tip-num">1</span>
+          <div class="fe-tip-text">
+            <h4>Start with Function</h4>
+            <p>Decide what matters most: light control, privacy, insulation, or aesthetics. This narrows your fabric options immediately.</p>
+          </div>
+        </div>
+        <div class="fe-tip-item fe-animate">
+          <span class="fe-tip-num">2</span>
+          <div class="fe-tip-text">
+            <h4>Consider the Room's Orientation</h4>
+            <p>North and west-facing windows get harsh afternoon sun — sunscreen or blockout fabrics work best. South-facing rooms can use lighter sheers.</p>
+          </div>
+        </div>
+        <div class="fe-tip-item fe-animate">
+          <span class="fe-tip-num">3</span>
+          <div class="fe-tip-text">
+            <h4>Always Order Samples</h4>
+            <p>Fabrics look different in your space than on a screen. We offer free samples so you can see colours and textures in your actual lighting.</p>
+          </div>
+        </div>
+        <div class="fe-tip-item fe-animate">
+          <span class="fe-tip-num">4</span>
+          <div class="fe-tip-text">
+            <h4>Layer for Versatility</h4>
+            <p>Combining a sheer with a blockout roller gives you full control — diffused light during the day, total privacy at night.</p>
+          </div>
+        </div>
+        <div class="fe-tip-item fe-animate">
+          <span class="fe-tip-num">5</span>
+          <div class="fe-tip-text">
+            <h4>Think Long-Term</h4>
+            <p>Premium fabrics with UV stabilisation will maintain their colour for 7–10+ years. Cheaper options may fade in Melbourne's harsh summers within 2–3 years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fe-cta">
+    <div class="fe-animate">
+      <h2>Feel the Difference</h2>
+      <p>Order free fabric samples delivered to your door — no obligation</p>
+      <a href="free-samples.html" class="fe-btn fe-btn-primary">Order Free Samples</a>
+      <a href="../free-quote.html" class="fe-btn fe-btn-outline">Book a Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="fe-crosslinks">
+    <div class="fe-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="fe-crosslinks-grid">
+        <a href="commercial-blinds.html" class="fe-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="fe-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="fe-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="fe-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="fe-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="fe-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="fe-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="fe-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="fe-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="fe-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="fe-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="fe-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="privacy-blinds.html" class="fe-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="conservatory-sunroom.html" class="fe-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="acoustic-solutions.html" class="fe-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="fe-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="fe-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="fe-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="fe-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="fe-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="fe-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="fe-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="fe-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="fe-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="fe-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="fe-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="fe-crosslink-item"><span>→</span> Media Room</a>
+        <a href="skylight-blinds.html" class="fe-crosslink-item"><span>→</span> Skylight &amp; Specialty</a>
+        <a href="heritage-homes.html" class="fe-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="day-night-blinds.html" class="fe-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="rental-property.html" class="fe-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="diy-measuring-guide.html" class="fe-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="scandinavian-style.html" class="fe-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="coastal-home-blinds.html" class="fe-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="diy-installation-guide.html" class="fe-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="high-rise-glare.html" class="fe-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="minimalist-styling.html" class="fe-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="pet-friendly.html" class="fe-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="bifold-door-blinds.html" class="fe-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations
+    const feObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('fe-visible'), index * 80);
+          feObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fe-animate').forEach(el => feObserver.observe(el));
+  </script>
+
+</body>
+</html>
