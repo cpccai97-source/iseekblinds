@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arched & Specialty Window Blinds | Custom Shaped Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds and shutters for arched, circular, triangular, and specialty shaped windows in Melbourne. Expert measuring and fitting for any window shape. Free consultation.">
+  <meta name="keywords" content="arched window blinds Melbourne, specialty window coverings, shaped window shutters, circular window blinds, triangular window treatments">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GEOMETRIC ARCHITECTURAL STYLE === */
+    :root {
+      --arch-charcoal: #1C1C1E;
+      --arch-slate: #2C2C2E;
+      --arch-concrete: #E8E4DF;
+      --arch-warm: #C4A882;
+      --arch-warm-light: #D4BFA0;
+      --arch-copper: #B87333;
+      --arch-white: #FAFAF8;
+      --arch-cream: #F5F2ED;
+      --arch-line: #D0C9BF;
+      --arch-text: #1C1C1E;
+      --arch-text-muted: #6B6B6B;
+    }
+
+    .lp-arch {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--arch-text);
+      overflow-x: hidden;
+      background: var(--arch-white);
+    }
+
+    .lp-arch .header { background: rgba(28,28,30,0.97); backdrop-filter: blur(12px); }
+    .lp-arch .footer { background: var(--arch-charcoal); }
+
+    /* Hero */
+    .arch-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--arch-charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arch-hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .arch-hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Decorative arch shape */
+    .arch-hero-shape {
+      width: 340px;
+      height: 500px;
+      border: 2px solid var(--arch-warm);
+      border-radius: 170px 170px 0 0;
+      position: relative;
+      animation: archFadeIn 1.2s ease-out 0.5s both;
+    }
+
+    .arch-hero-shape::before {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(196,168,130,0.4);
+      border-radius: 150px 150px 0 0;
+    }
+
+    .arch-hero-shape::after {
+      content: '';
+      position: absolute;
+      inset: 45px;
+      border: 1px solid rgba(196,168,130,0.2);
+      border-radius: 125px 125px 0 0;
+      background: linear-gradient(180deg, rgba(196,168,130,0.08), transparent);
+    }
+
+    /* Geometric grid lines */
+    .arch-hero-grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(196,168,130,0.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(196,168,130,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    @keyframes archFadeIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes lineGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .arch-hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--arch-warm);
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease-out 0.2s both;
+    }
+
+    .arch-hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease-out 0.4s both;
+    }
+
+    .arch-hero h1 em {
+      font-style: italic;
+      color: var(--arch-warm);
+    }
+
+    .arch-hero-line {
+      width: 80px;
+      height: 2px;
+      background: var(--arch-warm);
+      margin-bottom: 24px;
+      transform-origin: left;
+      animation: lineGrow 0.8s ease-out 0.6s both;
+    }
+
+    .arch-hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 36px;
+      animation: fadeUp 0.8s ease-out 0.7s both;
+    }
+
+    .arch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--arch-warm);
+      color: var(--arch-warm);
+      background: transparent;
+      transition: all 0.4s ease;
+      animation: fadeUp 0.8s ease-out 0.9s both;
+    }
+
+    .arch-btn:hover {
+      background: var(--arch-warm);
+      color: var(--arch-charcoal);
+    }
+
+    .arch-btn-filled {
+      background: var(--arch-warm);
+      color: var(--arch-charcoal);
+      border-color: var(--arch-warm);
+    }
+
+    .arch-btn-filled:hover {
+      background: var(--arch-warm-light);
+      border-color: var(--arch-warm-light);
+    }
+
+    /* Section Titles */
+    .arch-section-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 0.85rem;
+      color: var(--arch-warm);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .arch-section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .arch-section-line {
+      width: 60px;
+      height: 1.5px;
+      background: var(--arch-warm);
+      margin-bottom: 24px;
+    }
+
+    /* Window Types */
+    .arch-types {
+      padding: 120px 0;
+      background: var(--arch-white);
+      position: relative;
+    }
+
+    .arch-types::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 80px;
+      background: var(--arch-line);
+    }
+
+    .arch-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      background: var(--arch-line);
+    }
+
+    .arch-type-card {
+      background: var(--arch-white);
+      padding: 50px 40px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .arch-type-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .arch-type-card:hover {
+      background: var(--arch-cream);
+    }
+
+    .arch-type-shape {
+      width: 80px;
+      height: 100px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+
+    /* Pure CSS window shapes */
+    .shape-arch {
+      width: 70px;
+      height: 100px;
+      border: 2px solid var(--arch-copper);
+      border-radius: 35px 35px 0 0;
+      margin: 0 auto;
+    }
+
+    .shape-circle {
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--arch-copper);
+      border-radius: 50%;
+      margin: 10px auto 0;
+    }
+
+    .shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid transparent;
+      margin: 15px auto 0;
+      position: relative;
+    }
+
+    .shape-triangle::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -36px;
+      width: 0;
+      height: 0;
+      border-left: 36px solid transparent;
+      border-right: 36px solid transparent;
+      border-bottom: 63px solid var(--arch-white);
+    }
+
+    .shape-triangle, .shape-triangle::after {
+      border-bottom-color: var(--arch-copper);
+    }
+    .shape-triangle::after {
+      border-bottom-color: var(--arch-white);
+    }
+
+    .shape-trapezoid {
+      width: 80px;
+      height: 60px;
+      border: 2px solid var(--arch-copper);
+      margin: 20px auto 0;
+      clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+      background: transparent;
+      position: relative;
+    }
+
+    .shape-half {
+      width: 80px;
+      height: 40px;
+      border: 2px solid var(--arch-copper);
+      border-radius: 40px 40px 0 0;
+      border-bottom: none;
+      margin: 30px auto 0;
+    }
+
+    .shape-cathedral {
+      width: 60px;
+      height: 90px;
+      border: 2px solid var(--arch-copper);
+      border-radius: 30px 30px 0 0;
+      margin: 5px auto 0;
+      position: relative;
+    }
+
+    .shape-cathedral::before {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: -1px;
+      right: -1px;
+      height: 2px;
+      background: var(--arch-copper);
+    }
+
+    .arch-type-card h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .arch-type-card p {
+      color: var(--arch-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Process Section */
+    .arch-process {
+      padding: 120px 0;
+      background: var(--arch-charcoal);
+      color: #fff;
+      position: relative;
+    }
+
+    .arch-process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .arch-process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: rgba(196,168,130,0.3);
+    }
+
+    .arch-step {
+      text-align: center;
+      padding: 0 30px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .arch-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .arch-step-num {
+      width: 80px;
+      height: 80px;
+      border: 1.5px solid var(--arch-warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem;
+      color: var(--arch-warm);
+      background: var(--arch-charcoal);
+      position: relative;
+      z-index: 2;
+    }
+
+    .arch-step h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .arch-step p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Products */
+    .arch-products {
+      padding: 120px 0;
+      background: var(--arch-cream);
+    }
+
+    .arch-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      background: var(--arch-line);
+    }
+
+    .arch-product-item {
+      background: var(--arch-white);
+      padding: 50px 40px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s ease;
+    }
+
+    .arch-product-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .arch-product-item:hover {
+      background: #fff;
+    }
+
+    .arch-product-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.5rem;
+      color: var(--arch-warm);
+      line-height: 1;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    .arch-product-item h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .arch-product-item p {
+      color: var(--arch-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .arch-product-link {
+      color: var(--arch-copper);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+
+    .arch-product-link:hover { gap: 12px; }
+
+    /* FAQ */
+    .arch-faq {
+      padding: 120px 0;
+      background: var(--arch-white);
+    }
+
+    .arch-faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .arch-faq-item {
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--arch-line);
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.5s ease;
+    }
+
+    .arch-faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .arch-faq-item h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: var(--arch-text);
+    }
+
+    .arch-faq-item p {
+      color: var(--arch-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .arch-cta {
+      padding: 120px 0;
+      background: var(--arch-charcoal);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arch-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 600px;
+      border: 1px solid rgba(196,168,130,0.1);
+      border-radius: 200px 200px 0 0;
+    }
+
+    .arch-cta::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 480px;
+      border: 1px solid rgba(196,168,130,0.06);
+      border-radius: 150px 150px 0 0;
+    }
+
+    .arch-cta > * { position: relative; z-index: 2; }
+
+    .arch-cta h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .arch-cta h2 em { color: var(--arch-warm); }
+
+    .arch-cta p {
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      margin-bottom: 40px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Cross-links */
+    .arch-crosslinks {
+      padding: 80px 0;
+      background: var(--arch-cream);
+    }
+
+    .arch-crosslinks h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .arch-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+
+    .arch-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: var(--arch-text);
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--arch-line);
+      transition: all 0.3s ease;
+    }
+
+    .arch-crosslink-item:hover {
+      color: var(--arch-copper);
+      padding-left: 24px;
+      border-color: var(--arch-copper);
+    }
+
+    .arch-crosslink-item span {
+      color: var(--arch-warm);
+      font-size: 0.75rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .arch-hero { grid-template-columns: 1fr; }
+      .arch-hero-right { display: none; }
+      .arch-hero-left { padding: 120px 24px 80px; }
+      .arch-process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .arch-process-steps::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .arch-types-grid { grid-template-columns: repeat(2, 1fr); }
+      .arch-products-grid { grid-template-columns: 1fr; }
+      .arch-faq-grid { grid-template-columns: 1fr; }
+      .arch-process-steps { grid-template-columns: 1fr; gap: 40px; }
+      .arch-crosslinks-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    }
+  </style>
+</head>
+<body class="lp-arch">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="arch-hero">
+    <div class="arch-hero-left">
+      <div class="arch-hero-eyebrow">Specialty Window Solutions</div>
+      <h1>Every Shape,<br><em>Perfectly</em> Covered.</h1>
+      <div class="arch-hero-line"></div>
+      <p class="arch-hero-desc">Arched, circular, triangular, cathedral — no window is too unusual. We specialise in custom-fitted blinds and shutters for Melbourne's most unique architectural features.</p>
+      <a href="../free-quote.html" class="arch-btn">Book Free Consultation →</a>
+    </div>
+    <div class="arch-hero-right">
+      <div class="arch-hero-grid"></div>
+      <div class="arch-hero-shape"></div>
+    </div>
+  </section>
+
+  <!-- Window Types -->
+  <section class="arch-types">
+    <div class="container">
+      <span class="arch-section-num">01</span>
+      <h2 class="arch-section-title">Window Shapes We Cover</h2>
+      <div class="arch-section-line"></div>
+      <div class="arch-types-grid">
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-arch"></div></div>
+          <h3>Arched Windows</h3>
+          <p>Full arch and half-arch windows with custom-curved shutters or shaped blinds that follow the exact curve.</p>
+        </div>
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-circle"></div></div>
+          <h3>Circular & Oval</h3>
+          <p>Round porthole and oval windows fitted with precision-cut shutters or custom fabric inserts.</p>
+        </div>
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-triangle"></div></div>
+          <h3>Triangular</h3>
+          <p>Gable-end triangular windows with angled blinds that follow the roofline perfectly.</p>
+        </div>
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-trapezoid"></div></div>
+          <h3>Trapezoid & Angled</h3>
+          <p>Raked and angled windows common in modern architecture, fitted with tilting shutters or shaped rollers.</p>
+        </div>
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-half"></div></div>
+          <h3>Half-Moon & Fan</h3>
+          <p>Decorative fan-light and lunette windows above doors, with fixed or operable covering options.</p>
+        </div>
+        <div class="arch-type-card">
+          <div class="arch-type-shape"><div class="shape-cathedral"></div></div>
+          <h3>Cathedral & Gothic</h3>
+          <p>Tall pointed-arch and cathedral windows with custom-fabricated treatments that honour the architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="arch-process">
+    <div class="container">
+      <span class="arch-section-num">02</span>
+      <h2 class="arch-section-title" style="color:#fff">Our Precision Process</h2>
+      <div class="arch-section-line"></div>
+      <div class="arch-process-steps">
+        <div class="arch-step">
+          <div class="arch-step-num">I</div>
+          <h3>Template & Measure</h3>
+          <p>We create precise cardboard or digital templates of your unique window shapes — no guesswork, zero margin for error.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step-num">II</div>
+          <h3>Design Consultation</h3>
+          <p>Choose from shutters, blinds, or fabric options. We'll recommend the best solution for your window's shape and function.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step-num">III</div>
+          <h3>Custom Fabrication</h3>
+          <p>Each piece is manufactured to your exact template specifications by our specialist workshop — no off-the-shelf shortcuts.</p>
+        </div>
+        <div class="arch-step">
+          <div class="arch-step-num">IV</div>
+          <h3>Expert Installation</h3>
+          <p>Our experienced fitters install with care, ensuring a flawless finish that enhances your window's architectural beauty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="arch-products">
+    <div class="container">
+      <span class="arch-section-num">03</span>
+      <h2 class="arch-section-title">Recommended Solutions</h2>
+      <div class="arch-section-line"></div>
+      <div class="arch-products-grid">
+        <div class="arch-product-item">
+          <div class="arch-product-num">01</div>
+          <div>
+            <h3>Shaped Plantation Shutters</h3>
+            <p>Our most popular choice for arched and specialty windows. Custom-milled frames follow any curve or angle with adjustable louvres for light control.</p>
+            <a href="../products/plantation-shutters.html" class="arch-product-link">View Shutters →</a>
+          </div>
+        </div>
+        <div class="arch-product-item">
+          <div class="arch-product-num">02</div>
+          <div>
+            <h3>Custom Shaped Roller Blinds</h3>
+            <p>Modern roller blinds cut to match triangular, trapezoid, and angled window shapes. Available in sunscreen, blockout, and translucent fabrics.</p>
+            <a href="../products/roller-blinds.html" class="arch-product-link">View Rollers →</a>
+          </div>
+        </div>
+        <div class="arch-product-item">
+          <div class="arch-product-num">03</div>
+          <div>
+            <h3>Honeycomb Cellular Blinds</h3>
+            <p>Flexible enough to cover nearly any shape. Honeycomb blinds fan out to fill arched tops while providing excellent insulation.</p>
+            <a href="../products/honeycomb-blinds.html" class="arch-product-link">View Honeycomb →</a>
+          </div>
+        </div>
+        <div class="arch-product-item">
+          <div class="arch-product-num">04</div>
+          <div>
+            <h3>Fixed Fabric Inserts</h3>
+            <p>For purely decorative or fixed-position applications — fabric stretched over a custom frame that matches your window shape exactly.</p>
+            <a href="../products/curtains.html" class="arch-product-link">View Options →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="arch-faq">
+    <div class="container">
+      <span class="arch-section-num">04</span>
+      <h2 class="arch-section-title">Common Questions</h2>
+      <div class="arch-section-line"></div>
+      <div class="arch-faq-grid">
+        <div class="arch-faq-item">
+          <h3>Can arched windows have operable blinds?</h3>
+          <p>Yes — plantation shutters with hinged panels and honeycomb blinds with fan-top options allow you to open and close the covering on arched windows.</p>
+        </div>
+        <div class="arch-faq-item">
+          <h3>How accurate does the measurement need to be?</h3>
+          <p>Extremely. That's why we create physical templates for every specialty window. We never rely on standard measurements for unusual shapes.</p>
+        </div>
+        <div class="arch-faq-item">
+          <h3>Are specialty shapes more expensive?</h3>
+          <p>Custom shapes do cost more than standard rectangles due to the templating and fabrication involved, but we keep pricing competitive. We'll quote upfront with no surprises.</p>
+        </div>
+        <div class="arch-faq-item">
+          <h3>How long does it take?</h3>
+          <p>Typically 4-6 weeks from template to installation, depending on the complexity and product chosen. We'll give you exact timelines at consultation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="arch-cta">
+    <div class="container">
+      <h2>Got an <em>Unusual</em> Window?<br>We've Seen Them All.</h2>
+      <p>Send us a photo of your specialty windows and we'll get back to you with options and a free estimate within 24 hours.</p>
+      <a href="../free-quote.html" class="arch-btn arch-btn-filled">Get Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="arch-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="arch-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="arch-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="arch-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="bathroom-kitchen.html" class="arch-crosslink-item"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="arch-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="arch-crosslink-item"><span>→</span> Bifold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="arch-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="arch-crosslink-item"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="arch-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="arch-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-trends-2026.html" class="arch-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="arch-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="arch-crosslink-item"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="arch-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="arch-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="arch-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="arch-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="arch-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="energy-efficient.html" class="arch-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="arch-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="arch-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="arch-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="arch-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="arch-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="arch-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="arch-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="arch-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="arch-crosslink-item"><span>→</span> Media Room</a>
+        <a href="melbourne-service-areas.html" class="arch-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="arch-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="arch-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="arch-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="arch-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="arch-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="arch-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="arch-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="arch-crosslink-item"><span>→</span> Restaurant & Cafe Blinds</a>
+        <a href="scandinavian-style.html" class="arch-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="seasonal-sale.html" class="arch-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="arch-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="arch-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="arch-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="arch-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="winter-insulation.html" class="arch-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.arch-type-card, .arch-step, .arch-product-item, .arch-faq-item').forEach(el => observer.observe(el));
+
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

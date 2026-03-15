@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer UV Protection Blinds | Block 99% UV Rays | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Protect your Melbourne home from harsh summer UV rays. Our UV-blocking blinds and curtains reduce heat, prevent furniture fading, and keep your family safe. Free measure & quote.">
+  <meta name="keywords" content="UV protection blinds Melbourne, sun blocking blinds, summer blinds, UV filtering curtains, heat reduction window treatments">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === BOLD CONTRAST SUN THEME === */
+    :root {
+      --sun-yellow: #FFD23F;
+      --sun-orange: #FF6B35;
+      --sun-red: #E8333C;
+      --cool-blue: #0B3D91;
+      --cool-teal: #0FA3B1;
+      --deep-navy: #0A1628;
+      --warm-cream: #FFF8E7;
+      --warm-sand: #F5E6C8;
+      --text-dark: #0A1628;
+      --text-light: #FFFFFF;
+    }
+
+    .lp-uv {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    .lp-uv .header { background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(12px); }
+    .lp-uv .footer { background: var(--deep-navy); }
+
+    /* Hero */
+    .uv-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, var(--sun-yellow) 0%, var(--sun-orange) 40%, var(--sun-red) 70%, var(--cool-blue) 100%);
+      overflow: hidden;
+    }
+
+    .uv-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,210,63,0.6) 0%, transparent 70%);
+      animation: sunPulse 4s ease-in-out infinite;
+    }
+
+    .uv-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11,61,145,0.4) 0%, transparent 70%);
+      animation: sunPulse 5s ease-in-out infinite reverse;
+    }
+
+    @keyframes sunPulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .uv-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 120px 0;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .uv-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .uv-hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .uv-hero h1 .highlight {
+      display: block;
+      color: var(--sun-yellow);
+      text-shadow: 2px 2px 20px rgba(255,210,63,0.4);
+    }
+
+    .uv-hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .uv-hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .uv-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: var(--deep-navy);
+      color: var(--sun-yellow);
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .uv-btn-primary:hover {
+      background: var(--sun-yellow);
+      color: var(--deep-navy);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    .uv-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 60px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all 0.3s ease;
+    }
+
+    .uv-btn-outline:hover {
+      background: #fff;
+      color: var(--deep-navy);
+      border-color: #fff;
+    }
+
+    /* Stats Bar */
+    .uv-stats {
+      background: var(--deep-navy);
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .uv-stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--sun-yellow), var(--sun-orange), var(--sun-red), var(--cool-teal));
+    }
+
+    .uv-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .uv-stat {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .uv-stat.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .uv-stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--sun-yellow), var(--sun-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .uv-stat-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Problem Section */
+    .uv-problem {
+      padding: 100px 0;
+      background: var(--warm-cream);
+      position: relative;
+    }
+
+    .uv-problem::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255,107,53,0.05), rgba(255,210,63,0.08));
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .uv-section-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sun-orange);
+      margin-bottom: 16px;
+    }
+
+    .uv-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .uv-problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .uv-problem-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      border-top: 4px solid;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .uv-problem-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .uv-problem-card:nth-child(1) { border-color: var(--sun-yellow); transition-delay: 0s; }
+    .uv-problem-card:nth-child(2) { border-color: var(--sun-orange); transition-delay: 0.15s; }
+    .uv-problem-card:nth-child(3) { border-color: var(--sun-red); transition-delay: 0.3s; }
+
+    .uv-problem-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .uv-problem-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .uv-problem-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .uv-problem-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Products Section */
+    .uv-products {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .uv-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .uv-product-card {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease;
+    }
+
+    .uv-product-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .uv-product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .uv-product-card:nth-child(1) { background: linear-gradient(135deg, #0B3D91, #0FA3B1); }
+    .uv-product-card:nth-child(2) { background: linear-gradient(135deg, var(--sun-orange), var(--sun-red)); }
+    .uv-product-card:nth-child(3) { background: linear-gradient(135deg, #2D1B69, #0FA3B1); }
+    .uv-product-card:nth-child(4) { background: linear-gradient(135deg, var(--sun-yellow), var(--sun-orange)); }
+
+    .uv-product-card > * { position: relative; z-index: 2; }
+
+    .uv-product-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      backdrop-filter: blur(5px);
+    }
+
+    .uv-product-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .uv-product-card p {
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .uv-product-link {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s ease;
+    }
+
+    .uv-product-link:hover { gap: 14px; }
+
+    /* UV Scale */
+    .uv-scale {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--deep-navy) 0%, #152238 100%);
+      color: #fff;
+    }
+
+    .uv-scale-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 50px;
+      max-width: 700px;
+    }
+
+    .uv-bar-item {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.6s ease;
+    }
+
+    .uv-bar-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .uv-bar-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .uv-bar-track {
+      height: 14px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .uv-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      width: 0;
+      transition: width 1.5s ease;
+    }
+
+    .uv-bar-item.visible .uv-bar-fill { width: var(--fill); }
+
+    .uv-bar-fill.yellow { background: linear-gradient(90deg, var(--sun-yellow), var(--sun-orange)); }
+    .uv-bar-fill.teal { background: linear-gradient(90deg, var(--cool-teal), #0B3D91); }
+    .uv-bar-fill.red { background: linear-gradient(90deg, var(--sun-orange), var(--sun-red)); }
+
+    /* Benefits */
+    .uv-benefits {
+      padding: 100px 0;
+      background: var(--warm-cream);
+    }
+
+    .uv-benefits-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .uv-benefit-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .uv-benefit-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .uv-benefit-icon-wrap {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, var(--sun-yellow), var(--sun-orange));
+    }
+
+    .uv-benefit-item h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .uv-benefit-item p {
+      color: #555;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .uv-cta {
+      padding: 120px 0;
+      background: linear-gradient(135deg, var(--sun-orange) 0%, var(--sun-red) 50%, var(--cool-blue) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .uv-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,210,63,0.3), transparent 70%);
+      animation: sunPulse 3s ease-in-out infinite;
+    }
+
+    .uv-cta > * { position: relative; z-index: 2; }
+
+    .uv-cta h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .uv-cta p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.15rem;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Cross-links */
+    .uv-crosslinks {
+      padding: 80px 0;
+      background: #f5f5f5;
+    }
+
+    .uv-crosslinks h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .uv-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .uv-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .uv-crosslink-item:hover {
+      background: var(--sun-orange);
+      color: #fff;
+      transform: translateX(4px);
+      border-color: var(--sun-orange);
+    }
+
+    .uv-crosslink-item span {
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .uv-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .uv-problem-grid { grid-template-columns: 1fr; }
+      .uv-products-grid { grid-template-columns: 1fr; }
+      .uv-benefits-list { grid-template-columns: 1fr; }
+      .uv-hero-content { padding: 100px 0 60px; }
+      .uv-crosslinks-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    }
+  </style>
+</head>
+<body class="lp-uv">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="uv-hero">
+    <div class="container uv-hero-content">
+      <div class="uv-hero-badge">☀️ Summer 2026 Protection</div>
+      <h1>
+        Block the Burn,
+        <span class="highlight">Keep the Light.</span>
+      </h1>
+      <p>Melbourne summers hit hard — up to 14 UV index. Our specialist UV-blocking blinds filter out 99% of harmful rays while letting natural light flow through your home.</p>
+      <div class="uv-hero-ctas">
+        <a href="../free-quote.html" class="uv-btn-primary">Get Free UV Assessment →</a>
+        <a href="free-samples.html" class="uv-btn-outline">Order Free Samples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="uv-stats">
+    <div class="container">
+      <div class="uv-stats-grid">
+        <div class="uv-stat">
+          <div class="uv-stat-number">99%</div>
+          <div class="uv-stat-label">UV Rays Blocked</div>
+        </div>
+        <div class="uv-stat">
+          <div class="uv-stat-number">40%</div>
+          <div class="uv-stat-label">Cooling Cost Reduction</div>
+        </div>
+        <div class="uv-stat">
+          <div class="uv-stat-number">10x</div>
+          <div class="uv-stat-label">Longer Furniture Life</div>
+        </div>
+        <div class="uv-stat">
+          <div class="uv-stat-number">5★</div>
+          <div class="uv-stat-label">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="uv-problem">
+    <div class="container">
+      <div class="uv-section-label">The Problem</div>
+      <h2 class="uv-section-title">Melbourne's UV Is No Joke</h2>
+      <p style="max-width:600px;color:#555;line-height:1.6;">Australia has some of the highest UV levels in the world. Without proper window protection, your home suffers in ways you might not see — until it's too late.</p>
+      <div class="uv-problem-grid">
+        <div class="uv-problem-card">
+          <div class="uv-problem-icon">🪑</div>
+          <h3>Furniture Fading</h3>
+          <p>UV rays cause sofas, carpets, timber floors and artwork to fade and deteriorate within months of unprotected sun exposure.</p>
+        </div>
+        <div class="uv-problem-card">
+          <div class="uv-problem-icon">🌡️</div>
+          <h3>Extreme Heat Gain</h3>
+          <p>North and west-facing windows can push room temperatures 8-12°C higher than ambient, overworking your air conditioning.</p>
+        </div>
+        <div class="uv-problem-card">
+          <div class="uv-problem-icon">👁️</div>
+          <h3>Glare & Discomfort</h3>
+          <p>Harsh afternoon glare makes rooms unusable — screens unreadable, eyes strained, and spaces uncomfortable for hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="uv-products">
+    <div class="container">
+      <div class="uv-section-label">Solutions</div>
+      <h2 class="uv-section-title">UV Protection for Every Window</h2>
+      <div class="uv-products-grid">
+        <div class="uv-product-card">
+          <div class="uv-product-tag">Most Popular</div>
+          <h3>Sunscreen Roller Blinds</h3>
+          <p>Our signature UV-blocking roller blinds with 1-14% openness. See outside while blocking up to 99% of UV rays. Perfect for living areas.</p>
+          <a href="../products/roller-blinds.html" class="uv-product-link">Explore Rollers →</a>
+        </div>
+        <div class="uv-product-card">
+          <div class="uv-product-tag">Maximum Protection</div>
+          <h3>Honeycomb Blinds</h3>
+          <p>Dual-cell technology creates an insulating air pocket that blocks UV and heat transfer. Reduce cooling costs by up to 40%.</p>
+          <a href="../products/honeycomb-blinds.html" class="uv-product-link">Explore Honeycomb →</a>
+        </div>
+        <div class="uv-product-card">
+          <div class="uv-product-tag">Premium Choice</div>
+          <h3>Plantation Shutters</h3>
+          <p>Adjustable louvres give you precise control over light and airflow. Block direct sun while maintaining ventilation.</p>
+          <a href="../products/plantation-shutters.html" class="uv-product-link">Explore Shutters →</a>
+        </div>
+        <div class="uv-product-card">
+          <div class="uv-product-tag">Outdoor Shield</div>
+          <h3>Outdoor Blinds & Awnings</h3>
+          <p>Stop UV before it hits the glass. Exterior solutions reduce heat gain by up to 90% — the most effective first line of defence.</p>
+          <a href="outdoor-blinds.html" class="uv-product-link">Explore Outdoor →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UV Scale -->
+  <section class="uv-scale">
+    <div class="container">
+      <div class="uv-section-label" style="color:var(--sun-yellow);">UV Blocking Performance</div>
+      <h2 class="uv-section-title" style="color:#fff;">How Our Products Compare</h2>
+      <div class="uv-scale-bars">
+        <div class="uv-bar-item">
+          <div class="uv-bar-label">
+            <span>Sunscreen Roller (3% openness)</span>
+            <span style="color:var(--sun-yellow)">97% UV Block</span>
+          </div>
+          <div class="uv-bar-track"><div class="uv-bar-fill yellow" style="--fill:97%"></div></div>
+        </div>
+        <div class="uv-bar-item">
+          <div class="uv-bar-label">
+            <span>Blockout Roller</span>
+            <span style="color:var(--cool-teal)">99.9% UV Block</span>
+          </div>
+          <div class="uv-bar-track"><div class="uv-bar-fill teal" style="--fill:99.9%"></div></div>
+        </div>
+        <div class="uv-bar-item">
+          <div class="uv-bar-label">
+            <span>Honeycomb Cellular</span>
+            <span style="color:var(--sun-orange)">99% UV Block</span>
+          </div>
+          <div class="uv-bar-track"><div class="uv-bar-fill red" style="--fill:99%"></div></div>
+        </div>
+        <div class="uv-bar-item">
+          <div class="uv-bar-label">
+            <span>Plantation Shutters</span>
+            <span style="color:var(--sun-yellow)">95% UV Block (closed)</span>
+          </div>
+          <div class="uv-bar-track"><div class="uv-bar-fill yellow" style="--fill:95%"></div></div>
+        </div>
+        <div class="uv-bar-item">
+          <div class="uv-bar-label">
+            <span>Outdoor Awnings + Blinds</span>
+            <span style="color:var(--cool-teal)">99% UV Block</span>
+          </div>
+          <div class="uv-bar-track"><div class="uv-bar-fill teal" style="--fill:99%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="uv-benefits">
+    <div class="container">
+      <div class="uv-section-label">Why Choose iSeekBlinds</div>
+      <h2 class="uv-section-title">More Than Just Sun Protection</h2>
+      <div class="uv-benefits-list">
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">🏠</div>
+          <div>
+            <h3>Free In-Home UV Assessment</h3>
+            <p>We measure your windows and assess UV exposure angles to recommend the ideal solution for each room.</p>
+          </div>
+        </div>
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">🎨</div>
+          <div>
+            <h3>200+ Fabric Choices</h3>
+            <p>UV protection doesn't mean compromising on style. Choose from a huge range of colours, textures, and openness factors.</p>
+          </div>
+        </div>
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">📐</div>
+          <div>
+            <h3>Custom Made to Fit</h3>
+            <p>Every blind is precision-measured and custom-manufactured for your windows — no gaps, no light leakage.</p>
+          </div>
+        </div>
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">🛡️</div>
+          <div>
+            <h3>5-Year Warranty</h3>
+            <p>All our UV protection products come with a comprehensive 5-year warranty for complete peace of mind.</p>
+          </div>
+        </div>
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">⚡</div>
+          <div>
+            <h3>Motorised Options</h3>
+            <p>Automate your UV protection with smart motorised blinds — schedule them to close during peak UV hours.</p>
+          </div>
+        </div>
+        <div class="uv-benefit-item">
+          <div class="uv-benefit-icon-wrap">🌿</div>
+          <div>
+            <h3>Eco-Friendly Materials</h3>
+            <p>Many of our UV fabrics are made from recycled materials and are fully recyclable at end of life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="uv-cta">
+    <div class="container">
+      <h2>Don't Let the Sun<br>Damage Your Home</h2>
+      <p>Book a free UV assessment today. We'll visit your home, measure your windows, and provide a no-obligation quote.</p>
+      <a href="../free-quote.html" class="uv-btn-primary" style="background:#fff;color:var(--sun-orange);">Book Free Assessment →</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="uv-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="uv-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="uv-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="uv-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="uv-crosslink-item"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="uv-crosslink-item"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="uv-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="uv-crosslink-item"><span>→</span> Bifold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="uv-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="uv-crosslink-item"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="uv-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="uv-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-trends-2026.html" class="uv-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="uv-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="uv-crosslink-item"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="uv-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="uv-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="uv-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="uv-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="uv-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="energy-efficient.html" class="uv-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="uv-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="uv-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="uv-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="uv-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="uv-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="uv-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="uv-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="uv-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="uv-crosslink-item"><span>→</span> Media Room</a>
+        <a href="melbourne-service-areas.html" class="uv-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="uv-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="uv-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="uv-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="uv-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="uv-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="uv-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="uv-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="uv-crosslink-item"><span>→</span> Restaurant & Cafe Blinds</a>
+        <a href="scandinavian-style.html" class="uv-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="seasonal-sale.html" class="uv-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="uv-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="uv-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="testimonials.html" class="uv-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="winter-insulation.html" class="uv-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.uv-stat, .uv-problem-card, .uv-product-card, .uv-bar-item, .uv-benefit-item').forEach(el => observer.observe(el));
+
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
