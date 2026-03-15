@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Blinds & Office Window Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Premium commercial blinds and office window furnishing solutions in Melbourne. Roller blinds, venetians, motorised systems for offices, retail, hospitality.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === DARK LUXURY THEME === */
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --dark: #0a0a0a;
+      --dark-card: #141414;
+      --dark-surface: #1a1a1a;
+      --text-muted: #8a8a8a;
+    }
+
+    .lp-commercial {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    /* Hero */
+    .cm-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    }
+
+    .cm-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(201,168,76,0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 60%, rgba(201,168,76,0.05) 0%, transparent 40%);
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-2%, -2%); }
+    }
+
+    .cm-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    .cm-hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.2s;
+    }
+
+    .cm-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.4s;
+    }
+
+    .cm-hero h1 .gold {
+      color: var(--gold);
+      display: block;
+    }
+
+    .cm-hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.6s;
+    }
+
+    .cm-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #0a0a0a;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Stats Bar */
+    .cm-stats {
+      background: var(--dark-card);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 3rem 2rem;
+    }
+
+    .cm-stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .cm-stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+    }
+
+    .cm-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* Sectors */
+    .cm-sectors {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cm-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .cm-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cm-section-header h2 .gold { color: var(--gold); }
+
+    .cm-section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cm-sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cm-sector-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cm-sector-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cm-sector-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .cm-sector-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+
+    .cm-sector-card:hover::before {
+      opacity: 1;
+    }
+
+    .cm-sector-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cm-sector-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cm-sector-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Features */
+    .cm-features {
+      background: var(--dark-surface);
+      padding: 6rem 2rem;
+    }
+
+    .cm-features-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cm-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .cm-feature-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--dark-card);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .cm-feature-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .cm-feature-item:hover {
+      border-color: rgba(201,168,76,0.2);
+    }
+
+    .cm-feature-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 50px;
+    }
+
+    .cm-feature-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cm-feature-item p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Process */
+    .cm-process {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cm-process-steps {
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .cm-process-steps::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+    }
+
+    .cm-step {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .cm-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cm-step-dot {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      background: var(--dark-card);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cm-step h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cm-step p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cm-cta {
+      background: linear-gradient(135deg, #1a1a2e, var(--dark));
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cm-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cm-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cm-cta p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Cross Links */
+    .cm-crosslinks {
+      background: var(--dark-card);
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .cm-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cm-crosslinks h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+
+    .cm-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .cm-crosslink-item {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .cm-crosslink-item:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+
+    .cm-crosslink-item span {
+      color: var(--gold);
+      margin-right: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .cm-sectors-grid { grid-template-columns: 1fr; }
+      .cm-features-grid { grid-template-columns: 1fr; }
+      .cm-hero h1 { font-size: 2.2rem; }
+    }
+
+    /* Override shared header for dark page */
+    .lp-commercial .header { background: var(--dark-card); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .lp-commercial .top-bar { background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .lp-commercial .footer { background: var(--dark-card); }
+  </style>
+</head>
+<body class="lp-commercial">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="cm-hero">
+    <div class="cm-hero-content">
+      <div class="cm-hero-badge">Commercial Solutions</div>
+      <h1>Elevate Your <span class="gold">Workspace</span></h1>
+      <p class="cm-hero-sub">Premium commercial blinds and window furnishings designed for offices, retail spaces, and hospitality venues across Melbourne.</p>
+      <div class="cm-hero-actions">
+        <a href="../free-quote.html" class="btn-gold">Request Commercial Quote</a>
+        <a href="#sectors" class="btn-ghost">Explore Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="cm-stats">
+    <div class="cm-stats-grid">
+      <div>
+        <span class="cm-stat-number">500+</span>
+        <span class="cm-stat-label">Commercial Projects</span>
+      </div>
+      <div>
+        <span class="cm-stat-number">50+</span>
+        <span class="cm-stat-label">Office Fitouts</span>
+      </div>
+      <div>
+        <span class="cm-stat-number">10yr</span>
+        <span class="cm-stat-label">Warranty</span>
+      </div>
+      <div>
+        <span class="cm-stat-number">24h</span>
+        <span class="cm-stat-label">Quote Turnaround</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sectors -->
+  <section id="sectors" class="cm-sectors">
+    <div class="cm-section-header">
+      <h2>Industries We <span class="gold">Serve</span></h2>
+      <p>Tailored window solutions for every commercial environment</p>
+    </div>
+    <div class="cm-sectors-grid">
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🏢</div>
+        <h3>Corporate Offices</h3>
+        <p>Motorised roller blinds with glare control for productive workspaces. Integrated building automation compatible.</p>
+      </div>
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🏪</div>
+        <h3>Retail & Showrooms</h3>
+        <p>UV-blocking solutions that protect merchandise while maintaining natural light and street visibility.</p>
+      </div>
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🏨</div>
+        <h3>Hotels & Hospitality</h3>
+        <p>Blackout curtains and motorised blinds for guest comfort. Bulk pricing for multi-room installations.</p>
+      </div>
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🏥</div>
+        <h3>Healthcare</h3>
+        <p>Antibacterial, easy-clean blinds meeting hygiene standards for clinics, dental practices, and aged care.</p>
+      </div>
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🎓</div>
+        <h3>Education</h3>
+        <p>Durable, child-safe blinds for schools and universities. Motorised options for lecture halls and auditoriums.</p>
+      </div>
+      <div class="cm-sector-card">
+        <div class="cm-sector-icon">🍽️</div>
+        <h3>Restaurants & Cafés</h3>
+        <p>Outdoor blinds, café screens, and indoor solutions that create ambiance while managing temperature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="cm-features">
+    <div class="cm-features-inner">
+      <div class="cm-section-header">
+        <h2>Why Choose <span class="gold">iSeekBlinds</span> Commercial</h2>
+        <p>Enterprise-grade solutions with boutique service</p>
+      </div>
+      <div class="cm-features-grid">
+        <div class="cm-feature-item">
+          <div class="cm-feature-num">01</div>
+          <div>
+            <h3>Project Management</h3>
+            <p>Dedicated project coordinator for multi-site rollouts. We handle scheduling around your business hours.</p>
+          </div>
+        </div>
+        <div class="cm-feature-item">
+          <div class="cm-feature-num">02</div>
+          <div>
+            <h3>Volume Pricing</h3>
+            <p>Competitive commercial rates with transparent quoting. No hidden fees, no surprises.</p>
+          </div>
+        </div>
+        <div class="cm-feature-item">
+          <div class="cm-feature-num">03</div>
+          <div>
+            <h3>Building Compliance</h3>
+            <p>All products meet Australian fire safety standards. BCA compliant for commercial installations.</p>
+          </div>
+        </div>
+        <div class="cm-feature-item">
+          <div class="cm-feature-num">04</div>
+          <div>
+            <h3>Motorisation & Smart Control</h3>
+            <p>Integration with building management systems. Scene control, timers, and sun sensors available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="cm-process">
+    <div class="cm-section-header">
+      <h2>Our <span class="gold">Process</span></h2>
+      <p>From consultation to installation, seamlessly handled</p>
+    </div>
+    <div class="cm-process-steps">
+      <div class="cm-step">
+        <div class="cm-step-dot">1</div>
+        <div>
+          <h3>Site Assessment</h3>
+          <p>Our commercial team visits your site to assess window types, light conditions, and specific requirements.</p>
+        </div>
+      </div>
+      <div class="cm-step">
+        <div class="cm-step-dot">2</div>
+        <div>
+          <h3>Tailored Proposal</h3>
+          <p>Receive a detailed proposal with product recommendations, fabric samples, and transparent pricing within 24 hours.</p>
+        </div>
+      </div>
+      <div class="cm-step">
+        <div class="cm-step-dot">3</div>
+        <div>
+          <h3>Manufacturing</h3>
+          <p>Custom manufactured in Australia to your exact specifications. Quality checked before dispatch.</p>
+        </div>
+      </div>
+      <div class="cm-step">
+        <div class="cm-step-dot">4</div>
+        <div>
+          <h3>Professional Installation</h3>
+          <p>Expert installation scheduled around your operations. Minimal disruption, maximum impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cm-cta">
+    <h2>Ready to <span class="gold">Upgrade</span> Your Space?</h2>
+    <p>Get a free commercial consultation and quote. We'll visit your site within 48 hours.</p>
+    <a href="../free-quote.html" class="btn-gold">Book Free Consultation</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="cm-crosslinks">
+    <div class="cm-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="cm-crosslinks-grid">
+        <a href="new-home-packages.html" class="cm-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="cm-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="cm-crosslink-item"><span>→</span> Free Samples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.cm-sector-card, .cm-feature-item, .cm-step').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

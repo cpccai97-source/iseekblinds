@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fabric Samples – Blinds, Curtains & Shutters | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Order free fabric samples from iSeekBlinds. Touch and feel our premium blinds, curtains and shutter materials before you buy. Melbourne delivery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GLASSMORPHISM THEME === */
+    :root {
+      --glass-bg: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.18);
+      --glass-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      --purple: #7C3AED;
+      --purple-light: #A78BFA;
+      --pink: #EC4899;
+      --blue: #3B82F6;
+      --sky: #38BDF8;
+      --bg-gradient: linear-gradient(135deg, #0F172A 0%, #1E1B4B 35%, #312E81 60%, #1E1B4B 85%, #0F172A 100%);
+    }
+
+    .lp-samples { background: var(--bg-gradient); color: #fff; font-family: 'Outfit', sans-serif; min-height: 100vh; }
+
+    /* Floating orbs */
+    .orb {
+      position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+    }
+    .orb-1 { width: 500px; height: 500px; background: rgba(124,58,237,0.2); top: -10%; left: -5%; animation: orbFloat 12s ease-in-out infinite alternate; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(236,72,153,0.15); bottom: 10%; right: -5%; animation: orbFloat 15s ease-in-out infinite alternate-reverse; }
+    .orb-3 { width: 350px; height: 350px; background: rgba(59,130,246,0.12); top: 50%; left: 40%; animation: orbFloat 10s ease-in-out infinite alternate; }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -20px) scale(1.1); }
+    }
+
+    /* ── Hero ── */
+    .fs-hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .fs-hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem; align-items: center;
+    }
+
+    .fs-hero-text { opacity: 0; animation: gFadeUp 0.8s ease forwards 0.3s; }
+
+    .fs-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1.2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--purple-light);
+      margin-bottom: 1.5rem;
+    }
+    .fs-label .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); animation: pulseDot 2s infinite; }
+    @keyframes pulseDot { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+    .fs-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .fs-hero h1 .grad { background: linear-gradient(135deg, var(--purple-light), var(--pink), var(--sky)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .fs-hero p { color: rgba(255,255,255,0.7); font-size: 1.15rem; line-height: 1.7; margin-bottom: 2rem; }
+
+    .fs-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-glass {
+      display: inline-block; padding: 1rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      color: #fff; font-weight: 700; font-size: 1rem;
+      border-radius: 12px; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124,58,237,0.3); }
+    .btn-glass.primary { background: linear-gradient(135deg, var(--purple), var(--pink)); border: none; }
+    .btn-glass.primary:hover { box-shadow: 0 12px 40px rgba(236,72,153,0.4); }
+
+    /* Glass card on hero */
+    .fs-hero-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: var(--glass-shadow);
+      opacity: 0;
+      animation: gFadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .fs-hero-card h3 {
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff, var(--purple-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .sample-step {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .sample-step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      min-width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      border-radius: 10px;
+      font-weight: 800; font-size: 0.9rem;
+    }
+
+    .step-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .step-text p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.5; }
+
+    @keyframes gFadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── Sample Categories ── */
+    .fs-categories {
+      padding: 6rem 2rem;
+      position: relative; z-index: 1;
+    }
+
+    .fs-categories-inner { max-width: 1100px; margin: 0 auto; }
+
+    .fs-categories h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem; font-weight: 800;
+      text-align: center; margin-bottom: 1rem;
+    }
+    .fs-categories h2 .grad { background: linear-gradient(135deg, var(--sky), var(--purple-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .fs-categories .subtitle {
+      text-align: center; color: rgba(255,255,255,0.6);
+      font-size: 1.05rem; margin-bottom: 3rem;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cat-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      opacity: 0; transform: translateY(30px);
+      cursor: default;
+    }
+    .cat-card.visible { opacity: 1; transform: translateY(0); }
+    .cat-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+
+    .cat-card-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+    .cat-card-icon.purple { background: rgba(124,58,237,0.2); }
+    .cat-card-icon.pink { background: rgba(236,72,153,0.2); }
+    .cat-card-icon.blue { background: rgba(59,130,246,0.2); }
+    .cat-card-icon.sky { background: rgba(56,189,248,0.2); }
+    .cat-card-icon.amber { background: rgba(245,158,11,0.2); }
+    .cat-card-icon.green { background: rgba(16,185,129,0.2); }
+
+    .cat-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cat-card p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+
+    .cat-card .samples-count {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.85rem; color: var(--purple-light); font-weight: 600;
+    }
+
+    /* ── Testimonials ── */
+    .fs-testimonials {
+      padding: 5rem 2rem;
+      position: relative; z-index: 1;
+    }
+
+    .fs-testimonials-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+    .fs-testimonials h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: left;
+      opacity: 0; transform: translateY(30px);
+    }
+    .testimonial-card.visible { opacity: 1; transform: translateY(0); transition: all 0.6s ease; }
+
+    .testimonial-card .stars { font-size: 1rem; margin-bottom: 1rem; }
+    .testimonial-card blockquote { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+    .testimonial-card .author { font-size: 0.85rem; color: var(--purple-light); font-weight: 600; }
+
+    /* ── CTA Section ── */
+    .fs-cta {
+      padding: 5rem 2rem;
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+
+    .fs-cta-card {
+      max-width: 700px; margin: 0 auto;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(236,72,153,0.2));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 4rem 3rem;
+    }
+
+    .fs-cta h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem; font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .fs-cta p { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 2rem; }
+
+    .fs-cta .perks {
+      display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .fs-cta .perk {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.95rem; color: rgba(255,255,255,0.8);
+    }
+    .fs-cta .perk .check { color: var(--sky); font-weight: 700; }
+
+    /* ── Cross Links ── */
+    .fs-crosslinks {
+      padding: 4rem 2rem;
+      position: relative; z-index: 1;
+    }
+    .fs-crosslinks-inner {
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .fs-crosslinks-inner h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .fs-crosslinks-grid {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    }
+    .fs-crosslink-item {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .fs-crosslink-item:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .fs-hero-inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .fs-hero-actions { justify-content: center; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .testimonial-cards { grid-template-columns: 1fr; }
+      .fs-cta-card { padding: 3rem 1.5rem; }
+      .fs-cta .perks { flex-direction: column; align-items: center; gap: 0.75rem; }
+      .orb { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="lp-samples">
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Hero -->
+    <section class="fs-hero">
+      <div class="fs-hero-inner">
+        <div class="fs-hero-text">
+          <div class="fs-label"><span class="dot"></span> 100% Free, No Obligation</div>
+          <h1>Touch & Feel<br>Before You <span class="grad">Decide</span></h1>
+          <p>Order up to 10 free fabric samples delivered to your door. See the quality, feel the texture, and match colours in your own home before committing.</p>
+          <div class="fs-hero-actions">
+            <a href="../free-quote.html" class="btn-glass primary">Order Free Samples →</a>
+            <a href="#categories" class="btn-glass">Browse Fabrics</a>
+          </div>
+        </div>
+
+        <div class="fs-hero-card">
+          <h3>How It Works</h3>
+          <div class="sample-step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h4>Choose Your Favourites</h4>
+              <p>Browse our range and select up to 10 fabric swatches from any product category.</p>
+            </div>
+          </div>
+          <div class="sample-step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h4>Delivered to Your Door</h4>
+              <p>Free Melbourne delivery within 3-5 business days. Interstate available too.</p>
+            </div>
+          </div>
+          <div class="sample-step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h4>Match at Home</h4>
+              <p>Test colours against your walls, furniture and lighting. No guesswork.</p>
+            </div>
+          </div>
+          <div class="sample-step">
+            <div class="step-num">4</div>
+            <div class="step-text">
+              <h4>Book Your Free Quote</h4>
+              <p>Love what you see? We'll measure and quote at no cost.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample Categories -->
+    <section class="fs-categories" id="categories">
+      <div class="fs-categories-inner">
+        <h2>Sample <span class="grad">Collections</span></h2>
+        <p class="subtitle">Premium Australian and imported fabrics across every window furnishing style</p>
+
+        <div class="cat-grid">
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon purple">🪟</div>
+            <h3>Roller Blind Fabrics</h3>
+            <p>Blockout, sunscreen (1%-10% openness), and light-filtering fabrics in 60+ colours. Textured, plain, and patterned options.</p>
+            <div class="samples-count">✦ 120+ fabric options</div>
+          </div>
+
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon pink">🏠</div>
+            <h3>Curtain Fabrics</h3>
+            <p>Sheer, blockout, and lined curtain fabrics. Linen blends, velvets, and modern plains. S-Fold and pinch pleat compatible.</p>
+            <div class="samples-count">✦ 200+ fabric options</div>
+          </div>
+
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon blue">🏡</div>
+            <h3>Shutter Finishes</h3>
+            <p>Basswood stains and PVC colours. From classic white to bold charcoal. See our timber grain and painted finish samples.</p>
+            <div class="samples-count">✦ 30+ finishes</div>
+          </div>
+
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon sky">🎨</div>
+            <h3>Venetian Slat Colours</h3>
+            <p>Timber and aluminium venetian blind slat samples. Wide range of natural timber stains and modern metallic finishes.</p>
+            <div class="samples-count">✦ 50+ colours</div>
+          </div>
+
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon amber">🐝</div>
+            <h3>Honeycomb Fabrics</h3>
+            <p>Single and double cell honeycomb blind fabrics. Translucent and blockout. Energy-rated options for maximum insulation.</p>
+            <div class="samples-count">✦ 40+ options</div>
+          </div>
+
+          <div class="cat-card" data-anim>
+            <div class="cat-card-icon green">⚡</div>
+            <h3>Motorised Compatible</h3>
+            <p>All fabrics marked with ⚡ are compatible with our motorised systems. Smart home ready with Google, Alexa & Apple HomeKit.</p>
+            <div class="samples-count">✦ 80+ motorised options</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="fs-testimonials">
+      <div class="fs-testimonials-inner">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-cards">
+          <div class="testimonial-card" data-anim>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <blockquote>"The samples were a game changer. I was torn between two colours but seeing them against my wall made the decision easy. And the quality is amazing!"</blockquote>
+            <div class="author">— Sarah M., Toorak</div>
+          </div>
+          <div class="testimonial-card" data-anim>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <blockquote>"I ordered 8 samples on Monday and they arrived Wednesday. The sunscreen fabric is exactly what I needed — you can't judge these things from a photo."</blockquote>
+            <div class="author">— James L., Brighton</div>
+          </div>
+          <div class="testimonial-card" data-anim>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <blockquote>"As an interior designer, I appreciate being able to get physical samples. My clients love seeing and feeling the fabrics before committing."</blockquote>
+            <div class="author">— Nina K., South Yarra</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="fs-cta">
+      <div class="fs-cta-card">
+        <h2>Ready to See the Difference?</h2>
+        <p>Order your free samples today. No cost, no commitment, no catches.</p>
+        <div class="perks">
+          <div class="perk"><span class="check">✓</span> Up to 10 free samples</div>
+          <div class="perk"><span class="check">✓</span> Free delivery</div>
+          <div class="perk"><span class="check">✓</span> No obligation</div>
+        </div>
+        <a href="../free-quote.html" class="btn-glass primary">Order Free Samples →</a>
+      </div>
+    </section>
+
+    <!-- Cross Links -->
+    <section class="fs-crosslinks">
+      <div class="fs-crosslinks-inner">
+        <h3>Explore More Solutions</h3>
+        <div class="fs-crosslinks-grid">
+          <a href="commercial-blinds.html" class="fs-crosslink-item"><span>→</span> Commercial Blinds</a>
+          <a href="new-home-packages.html" class="fs-crosslink-item"><span>→</span> New Home Packages</a>
+          <a href="seasonal-sale.html" class="fs-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Intersection Observer for scroll animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 120);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

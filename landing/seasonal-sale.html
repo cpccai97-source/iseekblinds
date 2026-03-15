@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autumn/Winter Sale 2026 – Up to 40% Off Blinds & Curtains | iSeekBlinds Melbourne</title>
+  <meta name="description" content="iSeekBlinds Autumn/Winter 2026 Sale. Up to 40% off roller blinds, curtains, shutters and honeycomb blinds. Free measure & quote Melbourne-wide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === BOLD CONTRASTING COLOURS THEME === */
+    :root {
+      --flame: #FF5733;
+      --flame-dark: #C0392B;
+      --teal: #00BFA6;
+      --teal-dark: #009688;
+      --navy: #1B2A4A;
+      --navy-light: #263B5E;
+      --cream: #FFF8F0;
+      --gold-accent: #FFB347;
+    }
+
+    .lp-sale { background: var(--cream); color: var(--navy); font-family: 'Inter', sans-serif; }
+
+    /* ── Hero ── */
+    .sale-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6B 40%, var(--navy-light) 100%);
+    }
+
+    .sale-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,87,51,0.25), transparent 70%);
+      top: -150px; right: -100px;
+      animation: pulseBlob 6s ease-in-out infinite alternate;
+    }
+
+    .sale-hero::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,191,166,0.2), transparent 70%);
+      bottom: -100px; left: -80px;
+      animation: pulseBlob 8s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes pulseBlob {
+      0% { transform: scale(1) translate(0,0); }
+      100% { transform: scale(1.15) translate(20px, -10px); }
+    }
+
+    .sale-hero-content {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 900px; padding: 2rem;
+    }
+
+    .sale-badge {
+      display: inline-block;
+      background: var(--flame);
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: saleSlideDown 0.8s ease forwards 0.2s;
+    }
+
+    .sale-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: saleSlideUp 0.8s ease forwards 0.4s;
+    }
+
+    .sale-hero h1 .highlight-flame { color: var(--flame); }
+    .sale-hero h1 .highlight-teal { color: var(--teal); }
+
+    .sale-hero .discount-tag {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 900;
+      color: var(--gold-accent);
+      line-height: 1;
+      margin: 1rem 0;
+      opacity: 0;
+      animation: saleScaleIn 0.6s ease forwards 0.6s;
+    }
+
+    .sale-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: saleSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .sale-hero-actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      opacity: 0;
+      animation: saleSlideUp 0.8s ease forwards 1s;
+    }
+
+    .btn-flame {
+      display: inline-block; padding: 1rem 2.5rem;
+      background: var(--flame); color: #fff;
+      font-weight: 700; font-size: 1.1rem;
+      border-radius: 8px; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-flame:hover { background: var(--flame-dark); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,87,51,0.4); }
+
+    .btn-teal-outline {
+      display: inline-block; padding: 1rem 2.5rem;
+      background: transparent; color: var(--teal);
+      border: 2px solid var(--teal);
+      font-weight: 700; font-size: 1.1rem;
+      border-radius: 8px; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-teal-outline:hover { background: var(--teal); color: #fff; transform: translateY(-3px); }
+
+    .sale-countdown {
+      margin-top: 2rem;
+      display: flex; gap: 1.5rem; justify-content: center;
+      opacity: 0;
+      animation: saleSlideUp 0.8s ease forwards 1.2s;
+    }
+
+    .countdown-item {
+      text-align: center;
+    }
+    .countdown-item .num {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--gold-accent);
+      line-height: 1;
+    }
+    .countdown-item .label {
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    @keyframes saleSlideDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes saleSlideUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes saleScaleIn { from { opacity:0; transform:scale(0.5); } to { opacity:1; transform:scale(1); } }
+
+    /* ── Deals Grid ── */
+    .sale-deals {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sale-deals h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem; font-weight: 800;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .sale-deals h2 .accent { color: var(--flame); }
+
+    .sale-deals .subtitle {
+      text-align: center; color: #666;
+      font-size: 1.1rem; margin-bottom: 3rem;
+    }
+
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .deal-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .deal-card.visible { opacity: 1; transform: translateY(0); }
+    .deal-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+
+    .deal-card-header {
+      padding: 2rem 2rem 1.5rem;
+      position: relative;
+    }
+
+    .deal-discount {
+      position: absolute; top: -1px; right: 1.5rem;
+      background: var(--flame);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .deal-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .deal-icon.teal { background: rgba(0,191,166,0.12); }
+    .deal-icon.flame { background: rgba(255,87,51,0.12); }
+    .deal-icon.navy { background: rgba(27,42,74,0.12); }
+
+    .deal-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .deal-card p {
+      color: #666; font-size: 0.95rem; line-height: 1.6;
+    }
+
+    .deal-card-footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #f0f0f0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .deal-price {
+      display: flex; align-items: baseline; gap: 0.5rem;
+    }
+    .deal-price .from { font-size: 0.85rem; color: #999; }
+    .deal-price .amount { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--navy); }
+    .deal-price .was { font-size: 0.85rem; color: #bbb; text-decoration: line-through; }
+
+    .deal-cta {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--teal);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .deal-cta:hover { background: var(--teal-dark); }
+
+    /* ── Why Buy Now ── */
+    .sale-reasons {
+      background: var(--navy);
+      padding: 5rem 2rem;
+    }
+
+    .sale-reasons-inner {
+      max-width: 1000px; margin: 0 auto; text-align: center;
+    }
+
+    .sale-reasons h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem; font-weight: 800;
+      color: #fff; margin-bottom: 3rem;
+    }
+    .sale-reasons h2 .accent { color: var(--teal); }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .reason-item {
+      text-align: center;
+      opacity: 0; transform: translateY(30px);
+    }
+    .reason-item.visible { opacity: 1; transform: translateY(0); transition: all 0.6s ease; }
+
+    .reason-icon {
+      width: 70px; height: 70px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+    }
+    .reason-icon.bg-flame { background: rgba(255,87,51,0.15); }
+    .reason-icon.bg-teal { background: rgba(0,191,166,0.15); }
+    .reason-icon.bg-gold { background: rgba(255,179,71,0.15); }
+    .reason-icon.bg-white { background: rgba(255,255,255,0.1); }
+
+    .reason-item h4 { color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .reason-item p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.5; }
+
+    /* ── Urgent Banner ── */
+    .sale-urgent {
+      background: linear-gradient(90deg, var(--flame), var(--gold-accent));
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .sale-urgent h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      color: #fff; margin-bottom: 0.5rem;
+    }
+    .sale-urgent p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+    .btn-navy {
+      display: inline-block; padding: 1rem 2.5rem;
+      background: var(--navy); color: #fff;
+      font-weight: 700; font-size: 1.1rem;
+      border-radius: 8px; text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-navy:hover { background: var(--navy-light); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+    /* ── Cross Links ── */
+    .sale-crosslinks {
+      padding: 4rem 2rem;
+      background: #f7f5f2;
+    }
+    .sale-crosslinks-inner {
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .sale-crosslinks-inner h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      margin-bottom: 1.5rem; color: var(--navy);
+    }
+    .sale-crosslinks-grid {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    }
+    .sale-crosslink-item {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+    .sale-crosslink-item:hover { border-color: var(--flame); color: var(--flame); transform: translateY(-2px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .sale-hero h1 { font-size: 2rem; }
+      .sale-hero .discount-tag { font-size: 3.5rem; }
+      .sale-countdown { gap: 1rem; }
+      .countdown-item .num { font-size: 1.8rem; }
+      .deals-grid { grid-template-columns: 1fr; }
+      .reasons-grid { grid-template-columns: 1fr 1fr; }
+      .deal-card-footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .reasons-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="lp-sale">
+
+    <!-- Hero -->
+    <section class="sale-hero">
+      <div class="sale-hero-content">
+        <div class="sale-badge">🔥 Limited Time Offer</div>
+        <h1><span class="highlight-flame">Autumn/Winter</span><br>Sale <span class="highlight-teal">2026</span></h1>
+        <div class="discount-tag">UP TO 40% OFF</div>
+        <p>Melbourne's biggest window furnishing sale. Premium blinds, curtains & shutters at unbeatable prices.</p>
+        <div class="sale-hero-actions">
+          <a href="../free-quote.html" class="btn-flame">Claim Your Deal →</a>
+          <a href="#deals" class="btn-teal-outline">See All Deals</a>
+        </div>
+        <div class="sale-countdown" id="countdown">
+          <div class="countdown-item"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
+          <div class="countdown-item"><span class="num" id="cd-hours">--</span><span class="label">Hours</span></div>
+          <div class="countdown-item"><span class="num" id="cd-mins">--</span><span class="label">Minutes</span></div>
+          <div class="countdown-item"><span class="num" id="cd-secs">--</span><span class="label">Seconds</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deals Grid -->
+    <section class="sale-deals" id="deals">
+      <h2>Hot <span class="accent">Deals</span> This Season</h2>
+      <p class="subtitle">Premium quality, unbeatable prices. Sale ends June 30, 2026.</p>
+
+      <div class="deals-grid">
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">40% OFF</div>
+            <div class="deal-icon teal">🪟</div>
+            <h3>Roller Blinds</h3>
+            <p>Blockout, sunscreen & light-filtering options. Perfect for bedrooms, living rooms and offices.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$89</span>
+              <span class="was">$149</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">35% OFF</div>
+            <div class="deal-icon flame">🏠</div>
+            <h3>Curtains</h3>
+            <p>S-Fold, pinch pleat & sheer curtains in premium Australian fabrics. Custom-made to fit.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$199</span>
+              <span class="was">$309</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">30% OFF</div>
+            <div class="deal-icon navy">🏡</div>
+            <h3>Plantation Shutters</h3>
+            <p>Basswood & PVC shutters. Timeless elegance with superior light control and insulation.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$299</span>
+              <span class="was">$429</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">40% OFF</div>
+            <div class="deal-icon teal">🐝</div>
+            <h3>Honeycomb Blinds</h3>
+            <p>Energy-efficient cellular design. Keep warm in winter, cool in summer. Save on energy bills.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$119</span>
+              <span class="was">$199</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">25% OFF</div>
+            <div class="deal-icon flame">⚡</div>
+            <h3>Motorised Blinds</h3>
+            <p>Smart-home ready motorised systems. Control blinds with your phone, voice or remote.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$349</span>
+              <span class="was">$469</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-anim>
+          <div class="deal-card-header">
+            <div class="deal-discount">30% OFF</div>
+            <div class="deal-icon navy">🎨</div>
+            <h3>Venetian Blinds</h3>
+            <p>Timber & aluminium venetians. Classic style with adjustable light and privacy control.</p>
+          </div>
+          <div class="deal-card-footer">
+            <div class="deal-price">
+              <span class="from">from</span>
+              <span class="amount">$129</span>
+              <span class="was">$185</span>
+            </div>
+            <a href="../free-quote.html" class="deal-cta">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Buy Now -->
+    <section class="sale-reasons">
+      <div class="sale-reasons-inner">
+        <h2>Why Buy <span class="accent">Now</span>?</h2>
+        <div class="reasons-grid">
+          <div class="reason-item" data-anim>
+            <div class="reason-icon bg-flame">💰</div>
+            <h4>Biggest Savings</h4>
+            <p>Our lowest prices of the year. These discounts won't be repeated until next season.</p>
+          </div>
+          <div class="reason-item" data-anim>
+            <div class="reason-icon bg-teal">🏠</div>
+            <h4>Winter Ready</h4>
+            <p>Install now before the cold hits. Honeycomb & blockout blinds reduce heat loss by up to 50%.</p>
+          </div>
+          <div class="reason-item" data-anim>
+            <div class="reason-icon bg-gold">📏</div>
+            <h4>Free Measure & Quote</h4>
+            <p>Our experts visit your home at no cost. No obligation, just honest advice and pricing.</p>
+          </div>
+          <div class="reason-item" data-anim>
+            <div class="reason-icon bg-white">⚡</div>
+            <h4>Fast Installation</h4>
+            <p>2-3 week turnaround from order to install. Professional fitting by our experienced team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Urgent CTA -->
+    <section class="sale-urgent">
+      <h2>⏰ Don't Miss Out — Sale Ends June 30</h2>
+      <p>Book your free measure & quote before stock runs out. Limited availability on selected products.</p>
+      <a href="../free-quote.html" class="btn-navy">Book Free Quote Now</a>
+    </section>
+
+    <!-- Cross Links -->
+    <section class="sale-crosslinks">
+      <div class="sale-crosslinks-inner">
+        <h3>Explore More Solutions</h3>
+        <div class="sale-crosslinks-grid">
+          <a href="commercial-blinds.html" class="sale-crosslink-item"><span>→</span> Commercial Blinds</a>
+          <a href="new-home-packages.html" class="sale-crosslink-item"><span>→</span> New Home Packages</a>
+          <a href="free-samples.html" class="sale-crosslink-item"><span>→</span> Free Samples</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Countdown to June 30, 2026
+    (function() {
+      const end = new Date('2026-06-30T23:59:59+10:00').getTime();
+      function update() {
+        const now = Date.now();
+        const diff = Math.max(0, end - now);
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cd-days').textContent = d;
+        document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+        document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+      }
+      update();
+      setInterval(update, 1000);
+    })();
+
+    // Intersection Observer for scroll animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 100);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-anim]').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

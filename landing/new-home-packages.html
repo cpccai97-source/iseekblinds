@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Home Blinds & Curtains Packages | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Complete window furnishing packages for new homes in Melbourne. Builder & homeowner packages with free measure, quote and professional installation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === MINIMALIST WHITE THEME === */
+    :root {
+      --accent: #1a1a1a;
+      --accent-soft: #f5f5f0;
+      --line: #e0e0dc;
+      --muted: #777;
+      --warm: #c5956b;
+      --warm-light: #f8f0e8;
+    }
+
+    .lp-newhome {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .nh-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--accent-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nh-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .nh-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .nh-hero-text {
+      opacity: 0;
+      animation: nhFadeIn 1s ease forwards 0.3s;
+    }
+
+    .nh-hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .nh-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .nh-hero h1 em {
+      font-style: italic;
+      color: var(--warm);
+    }
+
+    .nh-hero-desc {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .nh-hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: nhFadeIn 1s ease forwards 0.6s;
+    }
+
+    .nh-hero-card {
+      background: #fff;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+    }
+
+    .nh-hero-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--warm);
+    }
+
+    .nh-hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nh-hero-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+    }
+
+    .nh-hero-card li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nh-hero-card li:last-child { border-bottom: none; }
+
+    .nh-price-tag {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--warm);
+    }
+
+    .btn-dark {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    .btn-warm {
+      display: inline-block;
+      border: 1.5px solid var(--warm);
+      color: var(--warm);
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-warm:hover {
+      background: var(--warm);
+      color: #fff;
+    }
+
+    /* Packages */
+    .nh-packages {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nh-section-label {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--warm);
+      text-align: center;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .nh-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .nh-section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin: 0 auto 4rem;
+    }
+
+    .nh-packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .nh-package-card {
+      border: 1px solid var(--line);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .nh-package-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nh-package-card.featured {
+      border-color: var(--warm);
+      box-shadow: 0 10px 40px rgba(197,149,107,0.1);
+    }
+
+    .nh-package-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--warm);
+      color: #fff;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nh-package-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    }
+
+    .nh-package-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .nh-package-ideal {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nh-package-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .nh-package-price-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .nh-package-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      text-align: left;
+    }
+
+    .nh-package-features li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .nh-package-features li::before {
+      content: '✓ ';
+      color: var(--warm);
+      font-weight: 700;
+    }
+
+    /* Why Section */
+    .nh-why {
+      background: var(--accent-soft);
+      padding: 6rem 2rem;
+    }
+
+    .nh-why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nh-why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .nh-why-item {
+      padding: 2rem;
+      background: #fff;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .nh-why-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nh-why-item:hover {
+      border-bottom-color: var(--warm);
+    }
+
+    .nh-why-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .nh-why-item p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Testimonial */
+    .nh-testimonial {
+      padding: 6rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nh-testimonial blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0 0 2rem;
+      color: #333;
+    }
+
+    .nh-testimonial cite {
+      font-style: normal;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .nh-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .nh-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .nh-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nh-cta .btn-warm {
+      border-color: var(--warm);
+      color: var(--warm);
+    }
+
+    .nh-cta .btn-warm:hover {
+      background: var(--warm);
+      color: #fff;
+    }
+
+    /* Cross Links */
+    .nh-crosslinks {
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .nh-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nh-crosslinks h3 {
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .nh-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .nh-crosslink-item {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .nh-crosslink-item:hover {
+      border-color: var(--warm);
+      background: var(--warm-light);
+    }
+
+    .nh-crosslink-item span {
+      color: var(--warm);
+      margin-right: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes nhFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nh-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .nh-packages-grid { grid-template-columns: 1fr; }
+      .nh-why-grid { grid-template-columns: 1fr; }
+      .nh-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body class="lp-newhome">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="nh-hero">
+    <div class="nh-hero-inner">
+      <div class="nh-hero-text">
+        <span class="nh-hero-label">New Home Owners</span>
+        <h1>Furnish Every Window, <em>Beautifully</em></h1>
+        <p class="nh-hero-desc">Complete blinds and curtains packages for new builds. One quote, one installation, every room sorted. Melbourne wide.</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="../free-quote.html" class="btn-dark">Get Package Quote</a>
+          <a href="#packages" class="btn-warm">View Packages</a>
+        </div>
+      </div>
+      <div class="nh-hero-visual">
+        <div class="nh-hero-card">
+          <h3>Quick Estimate</h3>
+          <ul>
+            <li><span>3 Bedroom Home</span><span>from $2,400</span></li>
+            <li><span>4 Bedroom Home</span><span>from $3,200</span></li>
+            <li><span>5+ Bedroom Home</span><span>Custom Quote</span></li>
+          </ul>
+          <div class="nh-price-tag">Save up to 20%</div>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:0.5rem;">vs. individual window pricing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages" class="nh-packages">
+    <span class="nh-section-label">Our Packages</span>
+    <h2 class="nh-section-title">Choose Your Package</h2>
+    <p class="nh-section-sub">Every package includes free measure, quote, and professional installation</p>
+
+    <div class="nh-packages-grid">
+      <div class="nh-package-card">
+        <div class="nh-package-name">Essentials</div>
+        <div class="nh-package-ideal">Perfect for rentals & budgets</div>
+        <div class="nh-package-price">$199<span style="font-size:1rem;font-weight:400">/window</span></div>
+        <div class="nh-package-price-note">Average 3-bed home from $2,400</div>
+        <ul class="nh-package-features">
+          <li>Roller blinds — blockout or sunscreen</li>
+          <li>Quality aluminium headrail</li>
+          <li>Standard fabric range</li>
+          <li>Free measure & install</li>
+          <li>3 year warranty</li>
+        </ul>
+        <a href="../free-quote.html" class="btn-warm" style="width:100%; text-align:center;">Get Quote</a>
+      </div>
+
+      <div class="nh-package-card featured">
+        <div class="nh-package-name">Premium</div>
+        <div class="nh-package-ideal">Best value for home owners</div>
+        <div class="nh-package-price">$299<span style="font-size:1rem;font-weight:400">/window</span></div>
+        <div class="nh-package-price-note">Average 3-bed home from $3,600</div>
+        <ul class="nh-package-features">
+          <li>Mix roller blinds & curtains</li>
+          <li>Premium fabric collection</li>
+          <li>Motorised option for 2 windows</li>
+          <li>Sheers for living areas</li>
+          <li>Free measure & install</li>
+          <li>5 year warranty</li>
+        </ul>
+        <a href="../free-quote.html" class="btn-dark" style="width:100%; text-align:center;">Get Quote</a>
+      </div>
+
+      <div class="nh-package-card">
+        <div class="nh-package-name">Luxury</div>
+        <div class="nh-package-ideal">For the dream home</div>
+        <div class="nh-package-price">Custom</div>
+        <div class="nh-package-price-note">Tailored to your vision</div>
+        <ul class="nh-package-features">
+          <li>S-Fold curtains & plantation shutters</li>
+          <li>Designer fabric range</li>
+          <li>Full motorisation available</li>
+          <li>Layered treatments</li>
+          <li>Interior design consultation</li>
+          <li>10 year warranty</li>
+        </ul>
+        <a href="../free-quote.html" class="btn-warm" style="width:100%; text-align:center;">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="nh-why">
+    <div class="nh-why-inner">
+      <span class="nh-section-label">Why iSeekBlinds</span>
+      <h2 class="nh-section-title">New Home Specialists</h2>
+      <p class="nh-section-sub">We've fitted out hundreds of new homes across Melbourne</p>
+
+      <div class="nh-why-grid">
+        <div class="nh-why-item">
+          <h3>Builder Coordination</h3>
+          <p>We work directly with your builder on timing. Blinds ready when you get your keys — no waiting weeks.</p>
+        </div>
+        <div class="nh-why-item">
+          <h3>One Appointment</h3>
+          <p>Every window measured in one visit. No multiple trips or scheduling headaches.</p>
+        </div>
+        <div class="nh-why-item">
+          <h3>Package Savings</h3>
+          <p>Whole-home pricing saves up to 20% compared to ordering windows individually.</p>
+        </div>
+        <div class="nh-why-item">
+          <h3>Style Guidance</h3>
+          <p>Not sure what suits your new home? Our consultants bring samples and help you choose the perfect look.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="nh-testimonial">
+    <span class="nh-section-label">Happy Homeowners</span>
+    <blockquote>"We moved into our new build and iSeekBlinds had every window fitted within the week. The whole house looks incredible — and we saved a fortune with the package deal."</blockquote>
+    <cite>— Sarah & James, Point Cook</cite>
+  </section>
+
+  <!-- CTA -->
+  <section class="nh-cta">
+    <h2>Moving Into Your New Home?</h2>
+    <p>Let us handle every window. Free measure, expert advice, professional installation.</p>
+    <a href="../free-quote.html" class="btn-warm">Get Your Package Quote</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="nh-crosslinks">
+    <div class="nh-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="nh-crosslinks-grid">
+        <a href="commercial-blinds.html" class="nh-crosslink-item"><span>→</span> Commercial Blinds & Office Solutions</a>
+        <a href="seasonal-sale.html" class="nh-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="nh-crosslink-item"><span>→</span> Free Samples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.nh-package-card, .nh-why-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
