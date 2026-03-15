@@ -638,7 +638,7 @@
   <div class="ob-grid-bg"></div>
 
   <!-- Hero -->
-  <section class="ob-hero">
+  <section class="ob-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1764798722941-947e314a8448?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="ob-hero-grid"></div>
     <div class="ob-hero-content">
       <div>
@@ -657,6 +657,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1759866614095-d867221143f7?w=600&auto=format&fit=crop&q=80" alt="Outdoor patio with alfresco blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1650338031185-1e97add7a389?w=600&auto=format&fit=crop&q=80" alt="Alfresco entertainment area with outdoor blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1770235300447-ea57b4af8231?w=600&auto=format&fit=crop&q=80" alt="Outdoor dining with shade blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Stats -->
   <section class="ob-stats">
@@ -895,5 +902,13 @@
     }, { threshold: 0.15 });
     obRevealEls.forEach(el => obObserver.observe(el));
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1759866614095-d867221143f7?w=600&auto=format&fit=crop&q=80" alt="Outdoor patio with alfresco blinds" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1650338031185-1e97add7a389?w=600&auto=format&fit=crop&q=80" alt="Alfresco entertainment area with outdoor blinds" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1770235300447-ea57b4af8231?w=600&auto=format&fit=crop&q=80" alt="Outdoor dining with shade blinds" loading="lazy">
+</div>
 </body>
 </html>

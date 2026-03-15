@@ -617,7 +617,7 @@
   <div class="ap-dot-pattern"></div>
 
   <!-- Hero -->
-  <section class="ap-hero">
+  <section class="ap-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1605306866017-e57fef2e248f?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="ap-hero-deco ap-hero-deco-1"></div>
     <div class="ap-hero-deco ap-hero-deco-2"></div>
     <div class="ap-hero-deco ap-hero-deco-3"></div>
@@ -631,6 +631,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1577614739132-81b2b774038c?w=600&auto=format&fit=crop&q=80" alt="Modern apartment with stylish window blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1561111283-8eff0e921cf6?w=600&auto=format&fit=crop&q=80" alt="Small apartment interior with natural light" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=600&auto=format&fit=crop&q=80" alt="Apartment living room with roller blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Marquee -->
   <div class="ap-marquee">
@@ -925,5 +932,13 @@
     }, { threshold: 0.15 });
     apRevealEls.forEach(el => apObserver.observe(el));
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1577614739132-81b2b774038c?w=600&auto=format&fit=crop&q=80" alt="Modern apartment with stylish window blinds" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1561111283-8eff0e921cf6?w=600&auto=format&fit=crop&q=80" alt="Small apartment interior with natural light" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=600&auto=format&fit=crop&q=80" alt="Apartment living room with roller blinds" loading="lazy">
+</div>
 </body>
 </html>

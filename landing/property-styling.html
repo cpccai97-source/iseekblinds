@@ -490,7 +490,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="ps-hero">
+  <section class="ps-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1609280069591-0c767e25e7a1?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="ps-hero-inner">
       <div class="ps-hero-text">
         <span class="ps-hero-tag">🏠 Property Styling</span>
@@ -517,6 +517,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1612031736710-4c6a0ff216af?w=600&auto=format&fit=crop&q=80" alt="Staged home for sale with stylish window treatments" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1772563156886-9fcfb121e500?w=600&auto=format&fit=crop&q=80" alt="Real estate property styling interior" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1736194024151-b35dc55a9070?w=600&auto=format&fit=crop&q=80" alt="Home staging with premium blinds for property sale" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Why Style -->
   <section class="ps-section ps-why">
@@ -713,5 +720,13 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.ps-animate').forEach(el => psObserver.observe(el));
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1612031736710-4c6a0ff216af?w=600&auto=format&fit=crop&q=80" alt="Staged home for sale with stylish window treatments" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1772563156886-9fcfb121e500?w=600&auto=format&fit=crop&q=80" alt="Real estate property styling interior" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1736194024151-b35dc55a9070?w=600&auto=format&fit=crop&q=80" alt="Home staging with premium blinds for property sale" loading="lazy">
+</div>
 </body>
 </html>

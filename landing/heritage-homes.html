@@ -524,7 +524,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-heritage">
+  <section class="hero-heritage" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1712869965218-3128c2eef88c?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="container">
       <div class="hero-split">
         <div class="hero-text">
@@ -545,6 +545,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1668380814113-f0618f1c4616?w=600&auto=format&fit=crop&q=80" alt="Victorian heritage home exterior" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1668380813953-11a7e719c2d9?w=600&auto=format&fit=crop&q=80" alt="Heritage home interior with period window treatments" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1661315431756-f9870d5ff5a0?w=600&auto=format&fit=crop&q=80" alt="Classic Victorian home with traditional blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Eras Section -->
   <section id="eras" class="section">
@@ -752,5 +759,13 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.era-card, .approach-row, .product-editorial-card').forEach(el => observer.observe(el));
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1668380814113-f0618f1c4616?w=600&auto=format&fit=crop&q=80" alt="Victorian heritage home exterior" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1668380813953-11a7e719c2d9?w=600&auto=format&fit=crop&q=80" alt="Heritage home interior with period window treatments" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1661315431756-f9870d5ff5a0?w=600&auto=format&fit=crop&q=80" alt="Classic Victorian home with traditional blinds" loading="lazy">
+</div>
 </body>
 </html>

@@ -800,7 +800,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="ac-hero">
+  <section class="ac-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1758233275906-db59e4d457ee?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="ac-blob-1"></div>
     <div class="ac-blob-2"></div>
     <div class="ac-hero-content">
@@ -813,6 +813,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1614533947294-785a4aa2a194?w=600&auto=format&fit=crop&q=80" alt="Thick soundproof curtains on large window" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1634657870093-8fdd8260381d?w=600&auto=format&fit=crop&q=80" alt="Interior window with acoustic curtains" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1593027795006-ba68f4a374ad?w=600&auto=format&fit=crop&q=80" alt="Cosy room with heavy window treatments" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Wave -->
   <div class="ac-wave">
@@ -1095,5 +1102,13 @@
       observer.observe(el);
     });
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1614533947294-785a4aa2a194?w=600&auto=format&fit=crop&q=80" alt="Thick soundproof curtains on large window" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1634657870093-8fdd8260381d?w=600&auto=format&fit=crop&q=80" alt="Interior window with acoustic curtains" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1593027795006-ba68f4a374ad?w=600&auto=format&fit=crop&q=80" alt="Cosy room with heavy window treatments" loading="lazy">
+</div>
 </body>
 </html>

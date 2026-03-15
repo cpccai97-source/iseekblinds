@@ -551,7 +551,7 @@
 </header>
 
 <!-- Hero -->
-<section class="mg-hero">
+<section class="mg-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1669387448840-610c588f003d?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
   <div class="mg-hero-content">
     <span class="mg-hero-label mg-animate mg-fade">The iSeekBlinds Lookbook — 2026 Edition</span>
     <h1 class="mg-animate mg-fade">Design <em>Inspiration</em><br>for Every Room</h1>
@@ -559,6 +559,13 @@
     <div class="mg-hero-divider mg-animate mg-scale"></div>
   </div>
 </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1703867110051-a0eb1e77b967?w=600&auto=format&fit=crop&q=80" alt="Beautiful interior design with window treatments" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1654506012740-09321c969dc2?w=600&auto=format&fit=crop&q=80" alt="Inspiring living room design with blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1673014201217-14442b17ab56?w=600&auto=format&fit=crop&q=80" alt="Designer home interior inspiration" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
 <!-- Room by Room Inspiration -->
 <section class="mg-section mg-section-light">
@@ -894,5 +901,13 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.mg-animate').forEach(el => mgObserver.observe(el));
 </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1703867110051-a0eb1e77b967?w=600&auto=format&fit=crop&q=80" alt="Beautiful interior design with window treatments" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1654506012740-09321c969dc2?w=600&auto=format&fit=crop&q=80" alt="Inspiring living room design with blinds" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1673014201217-14442b17ab56?w=600&auto=format&fit=crop&q=80" alt="Designer home interior inspiration" loading="lazy">
+</div>
 </body>
 </html>

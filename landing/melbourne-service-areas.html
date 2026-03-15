@@ -686,7 +686,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="msa-hero">
+  <section class="msa-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1577022188909-f91a48923f4f?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="msa-hero-content">
       <div class="msa-hero-badge">All Melbourne Suburbs</div>
       <h1>We Come <span class="msa-highlight">To You</span></h1>
@@ -694,6 +694,13 @@
       <a href="../free-quote.html" class="msa-hero-cta">Find Your Area →</a>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1665063964791-424095e3da03?w=600&auto=format&fit=crop&q=80" alt="Melbourne CBD skyline" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1602559227639-3bba8ce496df?w=600&auto=format&fit=crop&q=80" alt="Melbourne suburbs residential area" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1733267056391-9ffc65715269?w=600&auto=format&fit=crop&q=80" alt="Melbourne cityscape with Yarra River" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Stats -->
   <section class="msa-stats">
@@ -1066,5 +1073,13 @@
       msaObserver.observe(el);
     });
   </script>
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1665063964791-424095e3da03?w=600&auto=format&fit=crop&q=80" alt="Melbourne CBD skyline" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1602559227639-3bba8ce496df?w=600&auto=format&fit=crop&q=80" alt="Melbourne suburbs residential area" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1733267056391-9ffc65715269?w=600&auto=format&fit=crop&q=80" alt="Melbourne cityscape with Yarra River" loading="lazy">
+</div>
 </body>
 </html>

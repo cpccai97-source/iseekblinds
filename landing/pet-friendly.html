@@ -403,7 +403,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="pf-hero">
+  <section class="pf-hero" style="background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1653542843235-2dc7e6a39f08?w=1600&auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
     <div class="pf-hero-inner">
       <div class="pf-hero-content">
         <span class="pf-hero-badge">🐾 Pet-Friendly Solutions</span>
@@ -419,6 +419,13 @@
       </div>
     </div>
   </section>
+<!-- Photo gallery section injected -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+  <img src="https://images.unsplash.com/photo-1610078570726-b9e5dbf5528a?w=600&auto=format&fit=crop&q=80" alt="Cat sitting on window sill with blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://images.unsplash.com/photo-1705134770413-a0d76c25d895?w=600&auto=format&fit=crop&q=80" alt="Dog near window with pet-safe cordless blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+  <img src="https://plus.unsplash.com/premium_photo-1736857722902-158ae3d8ac70?w=600&auto=format&fit=crop&q=80" alt="Pet-friendly home with durable window blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+</div>
+
 
   <!-- Common Pet Problems -->
   <section class="pf-section pf-section-white">
@@ -749,5 +756,13 @@
     document.querySelectorAll('.pf-animate').forEach(el => pfObserver.observe(el));
   </script>
 
+
+
+<!-- Real photos added by image injection script -->
+<div class="injected-photos" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1610078570726-b9e5dbf5528a?w=600&auto=format&fit=crop&q=80" alt="Cat sitting on window sill with blinds" loading="lazy">
+  <img src="https://images.unsplash.com/photo-1705134770413-a0d76c25d895?w=600&auto=format&fit=crop&q=80" alt="Dog near window with pet-safe cordless blinds" loading="lazy">
+  <img src="https://plus.unsplash.com/premium_photo-1736857722902-158ae3d8ac70?w=600&auto=format&fit=crop&q=80" alt="Pet-friendly home with durable window blinds" loading="lazy">
+</div>
 </body>
 </html>
