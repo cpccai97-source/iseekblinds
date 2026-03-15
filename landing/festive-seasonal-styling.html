@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festive & Seasonal Window Styling | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Transform your windows for every season and celebration. Festive styling tips, seasonal colour palettes, and window treatment ideas for Christmas, Easter, and year-round occasions.">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* === RETRO-MODERN DESIGN === */
+    :root {
+      --fest-cream: #faf6f0;
+      --fest-warm: #f5ede3;
+      --fest-rust: #c45d3e;
+      --fest-forest: #2d5a47;
+      --fest-gold: #c8a96e;
+      --fest-navy: #1a2744;
+      --fest-berry: #8b3a62;
+      --fest-text: #2c2c2c;
+      --fest-text-light: #6b6b6b;
+      --fest-white: #ffffff;
+    }
+
+    .fest-page { background: var(--fest-cream); color: var(--fest-text); overflow-x: hidden; }
+    .fest-page .header { background: rgba(250, 246, 240, 0.95); backdrop-filter: blur(12px); }
+    .fest-page .footer { background: var(--fest-navy); }
+
+    /* Decorative elements */
+    .fest-ornament {
+      position: absolute; border-radius: 50%; pointer-events: none;
+    }
+
+    /* Hero */
+    .fest-hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      background: var(--fest-navy); overflow: hidden;
+    }
+    .fest-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(200, 169, 110, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(196, 93, 62, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(45, 90, 71, 0.08) 0%, transparent 70%);
+    }
+    /* Floating decorative circles */
+    .fest-hero .fest-ornament:nth-child(1) {
+      top: 10%; left: 5%; width: 200px; height: 200px;
+      border: 2px solid rgba(200, 169, 110, 0.2);
+      animation: fest-float 12s ease-in-out infinite;
+    }
+    .fest-hero .fest-ornament:nth-child(2) {
+      bottom: 15%; right: 8%; width: 150px; height: 150px;
+      border: 2px solid rgba(196, 93, 62, 0.15);
+      animation: fest-float 10s ease-in-out infinite 3s;
+    }
+    .fest-hero .fest-ornament:nth-child(3) {
+      top: 40%; right: 20%; width: 80px; height: 80px;
+      background: rgba(200, 169, 110, 0.06);
+      animation: fest-float 8s ease-in-out infinite 1s;
+    }
+    @keyframes fest-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    .fest-hero-content {
+      position: relative; z-index: 2; max-width: 800px;
+      padding: 120px 0;
+    }
+    .fest-hero-eyebrow {
+      font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--fest-gold);
+      margin-bottom: 24px;
+      animation: fest-fadeIn 0.8s ease both;
+    }
+    .fest-hero h1 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05;
+      color: var(--fest-white); margin-bottom: 24px;
+      animation: fest-slideUp 0.8s ease both 0.2s;
+    }
+    .fest-hero h1 em {
+      font-style: italic; color: var(--fest-gold);
+    }
+    .fest-hero-sub {
+      font-family: 'Outfit', sans-serif; font-size: 1.15rem;
+      color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 40px;
+      max-width: 560px;
+      animation: fest-slideUp 0.8s ease both 0.4s;
+    }
+    .fest-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: fest-slideUp 0.8s ease both 0.6s; }
+
+    @keyframes fest-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fest-slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fest-scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+    /* Buttons */
+    .fest-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px;
+      font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; border-radius: 50px; transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+    .fest-btn-primary {
+      background: var(--fest-gold); color: var(--fest-navy); border: none;
+    }
+    .fest-btn-primary:hover { background: #d4b87a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200, 169, 110, 0.3); }
+    .fest-btn-outline {
+      background: transparent; color: var(--fest-gold);
+      border: 1.5px solid rgba(200, 169, 110, 0.5);
+    }
+    .fest-btn-outline:hover { border-color: var(--fest-gold); background: rgba(200, 169, 110, 0.1); }
+    .fest-btn-dark {
+      background: var(--fest-navy); color: var(--fest-white); border: none;
+    }
+    .fest-btn-dark:hover { background: #243456; transform: translateY(-2px); }
+
+    /* Sections */
+    .fest-section { padding: 100px 0; position: relative; }
+    .fest-section-header { text-align: center; margin-bottom: 64px; }
+    .fest-section-eyebrow {
+      font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.8rem;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--fest-rust);
+      margin-bottom: 16px;
+    }
+    .fest-section-title {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3.2rem); color: var(--fest-navy); line-height: 1.15;
+    }
+
+    /* Seasonal cards */
+    .fest-seasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .fest-season {
+      border-radius: 20px; overflow: hidden; position: relative;
+      transition: all 0.4s ease; cursor: pointer;
+    }
+    .fest-season:hover { transform: translateY(-6px); }
+    .fest-season-img {
+      width: 100%; height: 320px; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .fest-season:hover .fest-season-img { transform: scale(1.05); }
+    .fest-season-overlay {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 32px;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,0.7) 100%);
+    }
+    .fest-season-tag {
+      display: inline-block; font-family: 'Outfit', sans-serif; font-size: 0.7rem;
+      letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px;
+      border-radius: 20px; margin-bottom: 12px; width: fit-content;
+    }
+    .fest-season-tag.spring { background: rgba(168, 207, 134, 0.9); color: #2d5a47; }
+    .fest-season-tag.summer { background: rgba(255, 196, 87, 0.9); color: #8b5e00; }
+    .fest-season-tag.autumn { background: rgba(196, 93, 62, 0.9); color: #fff; }
+    .fest-season-tag.winter { background: rgba(139, 58, 98, 0.9); color: #fff; }
+    .fest-season h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      color: var(--fest-white); margin-bottom: 8px;
+    }
+    .fest-season p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.5; }
+
+    /* Colour palette section */
+    .fest-palettes-bg { background: var(--fest-warm); }
+    .fest-palette-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .fest-palette {
+      background: var(--fest-white); border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.4s ease;
+    }
+    .fest-palette:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .fest-palette-swatches { display: flex; height: 80px; }
+    .fest-swatch { flex: 1; transition: flex 0.3s ease; }
+    .fest-palette:hover .fest-swatch:hover { flex: 2; }
+    .fest-palette-body { padding: 32px; }
+    .fest-palette-body h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--fest-navy); margin-bottom: 8px;
+    }
+    .fest-palette-body p { color: var(--fest-text-light); line-height: 1.6; margin-bottom: 16px; }
+    .fest-palette-fabrics { display: flex; gap: 8px; flex-wrap: wrap; }
+    .fest-fabric-tag {
+      font-family: 'Outfit', sans-serif; font-size: 0.75rem; padding: 5px 12px;
+      border-radius: 20px; border: 1px solid #e0d8cc; color: var(--fest-text-light);
+    }
+
+    /* Tips carousel */
+    .fest-tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .fest-tip {
+      background: var(--fest-white); border-radius: 20px; padding: 40px;
+      position: relative; overflow: hidden; transition: all 0.4s ease;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .fest-tip:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .fest-tip-num {
+      font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700;
+      color: rgba(200, 169, 110, 0.15); position: absolute; top: 16px; right: 24px;
+      line-height: 1;
+    }
+    .fest-tip-icon { font-size: 2rem; margin-bottom: 16px; }
+    .fest-tip h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      color: var(--fest-navy); margin-bottom: 12px;
+    }
+    .fest-tip p { color: var(--fest-text-light); line-height: 1.7; font-size: 0.95rem; }
+
+    /* Magazine-style split */
+    .fest-magazine {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 600px;
+    }
+    .fest-magazine-img {
+      background-size: cover; background-position: center;
+      position: relative;
+    }
+    .fest-magazine-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26, 39, 68, 0.3), transparent);
+    }
+    .fest-magazine-body {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 64px; background: var(--fest-navy); color: var(--fest-white);
+    }
+    .fest-magazine-body .fest-section-eyebrow { color: var(--fest-gold); }
+    .fest-magazine-body h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 2.4rem; line-height: 1.2; margin-bottom: 20px;
+    }
+    .fest-magazine-body p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 32px; }
+    .fest-magazine-list { list-style: none; padding: 0; margin: 0 0 32px; }
+    .fest-magazine-list li {
+      display: flex; align-items: center; gap: 12px; padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+    }
+    .fest-magazine-list li span { color: var(--fest-gold); }
+
+    /* CTA */
+    .fest-cta {
+      text-align: center; padding: 120px 0;
+      background: linear-gradient(135deg, var(--fest-forest), var(--fest-navy));
+      position: relative; overflow: hidden;
+    }
+    .fest-cta .fest-ornament:nth-child(1) {
+      top: -50px; left: -50px; width: 250px; height: 250px;
+      border: 2px solid rgba(200, 169, 110, 0.1);
+      animation: fest-float 15s ease-in-out infinite;
+    }
+    .fest-cta .fest-ornament:nth-child(2) {
+      bottom: -30px; right: -30px; width: 180px; height: 180px;
+      border: 2px solid rgba(196, 93, 62, 0.1);
+      animation: fest-float 12s ease-in-out infinite 2s;
+    }
+    .fest-cta h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem); color: var(--fest-white);
+      margin-bottom: 16px; position: relative; z-index: 2;
+    }
+    .fest-cta p {
+      color: rgba(255,255,255,0.65); font-size: 1.1rem; margin-bottom: 40px;
+      position: relative; z-index: 2;
+    }
+
+    /* Cross-links */
+    .fest-crosslinks { background: var(--fest-warm); padding: 80px 0; }
+    .fest-crosslinks h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--fest-navy); margin-bottom: 32px; text-align: center;
+    }
+    .fest-crosslinks-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px;
+    }
+    .fest-crosslink {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px; color: var(--fest-text-light); text-decoration: none;
+      font-size: 0.9rem; border-radius: 8px; transition: all 0.3s ease;
+    }
+    .fest-crosslink:hover {
+      color: var(--fest-rust); background: rgba(196, 93, 62, 0.06);
+    }
+    .fest-crosslink span { color: var(--fest-gold); }
+
+    /* Scroll reveal */
+    .fest-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fest-reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .fest-seasons { grid-template-columns: repeat(2, 1fr); }
+      .fest-magazine { grid-template-columns: 1fr; }
+      .fest-magazine-body { padding: 60px 40px; }
+    }
+    @media (max-width: 768px) {
+      .fest-seasons { grid-template-columns: 1fr; }
+      .fest-season-img { height: 240px; }
+      .fest-palette-grid { grid-template-columns: 1fr; }
+      .fest-tips { grid-template-columns: 1fr; }
+      .fest-hero-actions { flex-direction: column; }
+      .fest-btn { width: 100%; justify-content: center; }
+      .fest-magazine-body { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body class="fest-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fest-hero">
+    <div class="fest-hero-bg"></div>
+    <div class="fest-ornament"></div>
+    <div class="fest-ornament"></div>
+    <div class="fest-ornament"></div>
+    <div class="container fest-hero-content">
+      <p class="fest-hero-eyebrow">Seasonal Window Styling</p>
+      <h1>Dress Your<br>Windows for<br><em>Every Season</em></h1>
+      <p class="fest-hero-sub">From festive Christmas sparkle to autumnal warmth — discover how window treatments transform the mood of your home throughout the year.</p>
+      <div class="fest-hero-actions">
+        <a href="../free-quote.html" class="fest-btn fest-btn-primary">Get Seasonal Advice →</a>
+        <a href="free-samples.html" class="fest-btn fest-btn-outline">Order Free Swatches</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasons -->
+  <section class="fest-section">
+    <div class="container">
+      <div class="fest-section-header fest-reveal">
+        <p class="fest-section-eyebrow">Four Seasons of Style</p>
+        <h2 class="fest-section-title">A Window Treatment for Every Mood</h2>
+      </div>
+      <div class="fest-seasons">
+        <div class="fest-season fest-reveal">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80" alt="Spring styling" class="fest-season-img" loading="lazy">
+          <div class="fest-season-overlay">
+            <span class="fest-season-tag spring">Spring</span>
+            <h3>Fresh & Airy</h3>
+            <p>Light sheers, soft pastels, and layered treatments that welcome the new season.</p>
+          </div>
+        </div>
+        <div class="fest-season fest-reveal">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="Summer styling" class="fest-season-img" loading="lazy">
+          <div class="fest-season-overlay">
+            <span class="fest-season-tag summer">Summer</span>
+            <h3>Cool & Protected</h3>
+            <p>UV-blocking sunscreens, reflective fabrics, and outdoor blinds for alfresco living.</p>
+          </div>
+        </div>
+        <div class="fest-season fest-reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Autumn styling" class="fest-season-img" loading="lazy">
+          <div class="fest-season-overlay">
+            <span class="fest-season-tag autumn">Autumn</span>
+            <h3>Warm & Textured</h3>
+            <p>Rich fabrics, earthy tones, and layered curtains that add warmth and depth.</p>
+          </div>
+        </div>
+        <div class="fest-season fest-reveal">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&q=80" alt="Winter styling" class="fest-season-img" loading="lazy">
+          <div class="fest-season-overlay">
+            <span class="fest-season-tag winter">Winter</span>
+            <h3>Cosy & Insulated</h3>
+            <p>Honeycomb blinds, heavy drapes, and thermal treatments to keep the cold out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colour Palettes -->
+  <section class="fest-section fest-palettes-bg">
+    <div class="container">
+      <div class="fest-section-header fest-reveal">
+        <p class="fest-section-eyebrow">Seasonal Colour Palettes</p>
+        <h2 class="fest-section-title">Curated Colours for Every Occasion</h2>
+      </div>
+      <div class="fest-palette-grid">
+        <div class="fest-palette fest-reveal">
+          <div class="fest-palette-swatches">
+            <div class="fest-swatch" style="background:#c45d3e;"></div>
+            <div class="fest-swatch" style="background:#2d5a47;"></div>
+            <div class="fest-swatch" style="background:#c8a96e;"></div>
+            <div class="fest-swatch" style="background:#f5ede3;"></div>
+            <div class="fest-swatch" style="background:#8b3a62;"></div>
+          </div>
+          <div class="fest-palette-body">
+            <h3>🎄 Christmas Classic</h3>
+            <p>Deep greens, rich reds, and metallic golds. Perfect for s-fold curtains in living spaces.</p>
+            <div class="fest-palette-fabrics">
+              <span class="fest-fabric-tag">Velvet Drapes</span>
+              <span class="fest-fabric-tag">Metallic Sheers</span>
+              <span class="fest-fabric-tag">Jacquard</span>
+            </div>
+          </div>
+        </div>
+        <div class="fest-palette fest-reveal">
+          <div class="fest-palette-swatches">
+            <div class="fest-swatch" style="background:#d4a574;"></div>
+            <div class="fest-swatch" style="background:#8b6f47;"></div>
+            <div class="fest-swatch" style="background:#c45d3e;"></div>
+            <div class="fest-swatch" style="background:#f0e1c8;"></div>
+            <div class="fest-swatch" style="background:#5c4033;"></div>
+          </div>
+          <div class="fest-palette-body">
+            <h3>🍂 Autumn Harvest</h3>
+            <p>Warm terracotta, burnt sienna, and golden amber. Layer textures for maximum cosiness.</p>
+            <div class="fest-palette-fabrics">
+              <span class="fest-fabric-tag">Linen Blend</span>
+              <span class="fest-fabric-tag">Woven Texture</span>
+              <span class="fest-fabric-tag">Blockout</span>
+            </div>
+          </div>
+        </div>
+        <div class="fest-palette fest-reveal">
+          <div class="fest-palette-swatches">
+            <div class="fest-swatch" style="background:#a8cf86;"></div>
+            <div class="fest-swatch" style="background:#f8d7e8;"></div>
+            <div class="fest-swatch" style="background:#ffeaa7;"></div>
+            <div class="fest-swatch" style="background:#dfe6e9;"></div>
+            <div class="fest-swatch" style="background:#b8e6d0;"></div>
+          </div>
+          <div class="fest-palette-body">
+            <h3>🌸 Spring Blossom</h3>
+            <p>Soft pinks, fresh greens, and gentle yellows. Light-filtering fabrics that dance in the breeze.</p>
+            <div class="fest-palette-fabrics">
+              <span class="fest-fabric-tag">Sheer Voile</span>
+              <span class="fest-fabric-tag">Light Filtering</span>
+              <span class="fest-fabric-tag">Cotton</span>
+            </div>
+          </div>
+        </div>
+        <div class="fest-palette fest-reveal">
+          <div class="fest-palette-swatches">
+            <div class="fest-swatch" style="background:#1a2744;"></div>
+            <div class="fest-swatch" style="background:#c0c0c0;"></div>
+            <div class="fest-swatch" style="background:#ffffff;"></div>
+            <div class="fest-swatch" style="background:#e8e8e8;"></div>
+            <div class="fest-swatch" style="background:#4a6fa5;"></div>
+          </div>
+          <div class="fest-palette-body">
+            <h3>❄️ Winter Frost</h3>
+            <p>Cool silvers, navy depths, and crisp whites. Thermal fabrics that keep warmth in and cold out.</p>
+            <div class="fest-palette-fabrics">
+              <span class="fest-fabric-tag">Honeycomb</span>
+              <span class="fest-fabric-tag">Thermal Lining</span>
+              <span class="fest-fabric-tag">Heavy Drape</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazine split — Christmas focus -->
+  <section class="fest-magazine">
+    <div class="fest-magazine-img" style="background-image: url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&q=80');">
+    </div>
+    <div class="fest-magazine-body">
+      <p class="fest-section-eyebrow">Holiday Special</p>
+      <h2>Christmas Window<br>Styling Guide</h2>
+      <p>Your windows are the first thing guests — and neighbours — see during the festive season. Make them count.</p>
+      <ul class="fest-magazine-list">
+        <li><span>✦</span> Layer sheers under heavy drapes for a luxe holiday look</li>
+        <li><span>✦</span> Use warm-toned LED string lights behind sheer curtains</li>
+        <li><span>✦</span> Choose deep green or burgundy roller blinds as a seasonal swap</li>
+        <li><span>✦</span> Add metallic tie-backs for instant festive glamour</li>
+        <li><span>✦</span> Consider motorised timers to showcase evening window displays</li>
+      </ul>
+      <a href="../free-quote.html" class="fest-btn fest-btn-primary">Plan Your Festive Windows →</a>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="fest-section">
+    <div class="container">
+      <div class="fest-section-header fest-reveal">
+        <p class="fest-section-eyebrow">Expert Tips</p>
+        <h2 class="fest-section-title">Seasonal Styling Made Simple</h2>
+      </div>
+      <div class="fest-tips">
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">01</div>
+          <div class="fest-tip-icon">🎨</div>
+          <h3>The Two-Blind Strategy</h3>
+          <p>Invest in one neutral roller blind for everyday, and swap a decorative front curtain or roman blind each season. One change, total transformation.</p>
+        </div>
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">02</div>
+          <div class="fest-tip-icon">🌿</div>
+          <h3>Texture Over Colour</h3>
+          <p>Don't just change colours — change textures. Linen for summer, velvet for winter, cotton for spring. The feel of a fabric changes a room's entire mood.</p>
+        </div>
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">03</div>
+          <div class="fest-tip-icon">💡</div>
+          <h3>Light as Decoration</h3>
+          <p>Sheer curtains turn sunlight into decor. Position them to create beautiful shadows and light play — nature's own seasonal decoration, no batteries required.</p>
+        </div>
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">04</div>
+          <div class="fest-tip-icon">🏠</div>
+          <h3>Outside-In Coordination</h3>
+          <p>Match your window treatments to your garden view. Green sheers echo spring foliage; warm tones complement autumn leaves outside.</p>
+        </div>
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">05</div>
+          <div class="fest-tip-icon">🎁</div>
+          <h3>Window Sill Staging</h3>
+          <p>Pair short roman blinds with seasonal window sill displays. Candles in winter, fresh flowers in spring — the blind becomes the backdrop.</p>
+        </div>
+        <div class="fest-tip fest-reveal">
+          <div class="fest-tip-num">06</div>
+          <div class="fest-tip-icon">♻️</div>
+          <h3>Sustainable Swaps</h3>
+          <p>Choose natural, eco-friendly fabrics that can be recycled or repurposed. Build a small rotation of seasonal panels rather than buying new each year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fest-cta">
+    <div class="fest-ornament"></div>
+    <div class="fest-ornament"></div>
+    <div class="container">
+      <h2 class="fest-reveal">Ready to Style Your<br>Windows for the Season?</h2>
+      <p class="fest-reveal">Free consultation. Seasonal fabric swatches. Expert colour advice.</p>
+      <div class="fest-reveal">
+        <a href="../free-quote.html" class="fest-btn fest-btn-primary" style="margin-right: 12px;">Book Free Consultation →</a>
+        <a href="free-samples.html" class="fest-btn fest-btn-outline">Request Seasonal Swatches</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="fest-crosslinks">
+    <div class="container">
+      <h3>Explore More Guides & Solutions</h3>
+      <div class="fest-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="fest-crosslink"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="fest-crosslink"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="fest-crosslink"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="fest-crosslink"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="fest-crosslink"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="fest-crosslink"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="fest-crosslink"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="fest-crosslink"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="fest-crosslink"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="fest-crosslink"><span>→</span> Coastal Home</a>
+        <a href="colour-matching-guide.html" class="fest-crosslink"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="fest-crosslink"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="fest-crosslink"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="fest-crosslink"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="fest-crosslink"><span>→</span> Day-Night Blinds</a>
+        <a href="design-inspiration.html" class="fest-crosslink"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="fest-crosslink"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="fest-crosslink"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="fest-crosslink"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="fest-crosslink"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="fest-crosslink"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="fest-crosslink"><span>→</span> Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="fest-crosslink"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="fest-crosslink"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="fest-crosslink"><span>→</span> High-Rise Glare</a>
+        <a href="home-office.html" class="fest-crosslink"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="fest-crosslink"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="fest-crosslink"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="fest-crosslink"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="fest-crosslink"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="fest-crosslink"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="fest-crosslink"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="fest-crosslink"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="fest-crosslink"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="fest-crosslink"><span>→</span> Nursery Safe</a>
+        <a href="outdoor-blinds.html" class="fest-crosslink"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="fest-crosslink"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="fest-crosslink"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="fest-crosslink"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="fest-crosslink"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="fest-crosslink"><span>→</span> Restaurant & Cafe</a>
+        <a href="retail-shopfront.html" class="fest-crosslink"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="fest-crosslink"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="fest-crosslink"><span>→</span> School & Childcare</a>
+        <a href="seasonal-sale.html" class="fest-crosslink"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="fest-crosslink"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="fest-crosslink"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="fest-crosslink"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="fest-crosslink"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="fest-crosslink"><span>→</span> Warehouse & Industrial</a>
+        <a href="winter-insulation.html" class="fest-crosslink"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fest-reveal').forEach(el => observer.observe(el));
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

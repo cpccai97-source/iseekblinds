@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse & Industrial Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Heavy-duty blinds and window coverings for warehouses, factories, and industrial spaces in Melbourne. UV protection, temperature control, and safety compliance.">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* === TECH FUTURISTIC DESIGN === */
+    :root {
+      --ind-bg: #0a0e17;
+      --ind-surface: #111827;
+      --ind-border: #1e293b;
+      --ind-neon-cyan: #00f5d4;
+      --ind-neon-blue: #00bbf9;
+      --ind-neon-purple: #9b5de5;
+      --ind-text: #e2e8f0;
+      --ind-text-dim: #94a3b8;
+      --ind-white: #f8fafc;
+      --ind-grid: rgba(0, 245, 212, 0.04);
+    }
+
+    .ind-page { background: var(--ind-bg); color: var(--ind-text); overflow-x: hidden; }
+    .ind-page .header { background: rgba(10, 14, 23, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--ind-border); }
+    .ind-page .footer { background: var(--ind-surface); border-top: 1px solid var(--ind-border); }
+
+    /* Grid overlay */
+    .ind-grid-bg {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(var(--ind-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ind-grid) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Hero */
+    .ind-hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, #0a0e17 0%, #111827 40%, #0f172a 100%);
+      overflow: hidden;
+    }
+    .ind-hero::before {
+      content: ''; position: absolute; top: -50%; right: -30%; width: 80vw; height: 80vw;
+      background: radial-gradient(circle, rgba(0, 245, 212, 0.08) 0%, transparent 70%);
+      animation: ind-pulse 8s ease-in-out infinite;
+    }
+    .ind-hero::after {
+      content: ''; position: absolute; bottom: -40%; left: -20%; width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(0, 187, 249, 0.06) 0%, transparent 70%);
+      animation: ind-pulse 8s ease-in-out infinite 4s;
+    }
+    @keyframes ind-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    .ind-hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .ind-hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--ind-neon-cyan); margin-bottom: 24px;
+      border: 1px solid rgba(0, 245, 212, 0.3); padding: 8px 16px; border-radius: 4px;
+      background: rgba(0, 245, 212, 0.05);
+      animation: ind-fadeIn 1s ease both;
+    }
+    .ind-hero-tag::before { content: '//'; opacity: 0.5; }
+    .ind-hero h1 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05; color: var(--ind-white); margin-bottom: 24px;
+      animation: ind-slideUp 0.8s ease both 0.2s;
+    }
+    .ind-hero h1 .neon { color: var(--ind-neon-cyan); }
+    .ind-hero-sub {
+      font-size: 1.2rem; color: var(--ind-text-dim); line-height: 1.6; margin-bottom: 40px;
+      animation: ind-slideUp 0.8s ease both 0.4s;
+    }
+    .ind-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: ind-slideUp 0.8s ease both 0.6s; }
+
+    @keyframes ind-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes ind-slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
+    .ind-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; font-family: 'Space Mono', monospace; font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 2px; text-decoration: none;
+      border-radius: 4px; transition: all 0.3s ease; cursor: pointer;
+    }
+    .ind-btn-primary {
+      background: var(--ind-neon-cyan); color: var(--ind-bg); border: none;
+      box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+    }
+    .ind-btn-primary:hover {
+      box-shadow: 0 0 40px rgba(0, 245, 212, 0.5);
+      transform: translateY(-2px);
+    }
+    .ind-btn-outline {
+      background: transparent; color: var(--ind-neon-cyan);
+      border: 1px solid rgba(0, 245, 212, 0.4);
+    }
+    .ind-btn-outline:hover {
+      background: rgba(0, 245, 212, 0.1);
+      border-color: var(--ind-neon-cyan);
+    }
+
+    /* Stats bar */
+    .ind-stats {
+      position: relative; z-index: 2; padding: 60px 0;
+      border-top: 1px solid var(--ind-border); border-bottom: 1px solid var(--ind-border);
+      background: var(--ind-surface);
+    }
+    .ind-stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+    }
+    .ind-stat { text-align: center; }
+    .ind-stat-number {
+      font-family: 'Space Mono', monospace; font-size: 2.8rem; font-weight: 700;
+      color: var(--ind-neon-cyan);
+      text-shadow: 0 0 30px rgba(0, 245, 212, 0.3);
+    }
+    .ind-stat-label {
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+      color: var(--ind-text-dim); margin-top: 8px;
+    }
+
+    /* Sections */
+    .ind-section { position: relative; z-index: 2; padding: 100px 0; }
+    .ind-section-header {
+      text-align: center; margin-bottom: 64px;
+    }
+    .ind-section-tag {
+      font-family: 'Space Mono', monospace; font-size: 0.75rem;
+      letter-spacing: 4px; text-transform: uppercase; color: var(--ind-neon-blue);
+      margin-bottom: 16px;
+    }
+    .ind-section-title {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--ind-white); line-height: 1.15;
+    }
+
+    /* Feature cards */
+    .ind-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .ind-feature {
+      background: var(--ind-surface); border: 1px solid var(--ind-border);
+      border-radius: 8px; padding: 40px 32px; transition: all 0.4s ease;
+      position: relative; overflow: hidden;
+    }
+    .ind-feature::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--ind-neon-cyan), var(--ind-neon-blue));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+    }
+    .ind-feature:hover::before { transform: scaleX(1); }
+    .ind-feature:hover { border-color: rgba(0, 245, 212, 0.2); transform: translateY(-4px); }
+    .ind-feature-icon {
+      width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(0, 245, 212, 0.1), rgba(0, 187, 249, 0.1));
+      border: 1px solid rgba(0, 245, 212, 0.15);
+    }
+    .ind-feature h3 {
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.2rem;
+      color: var(--ind-white); margin-bottom: 12px;
+    }
+    .ind-feature p { color: var(--ind-text-dim); line-height: 1.7; font-size: 0.95rem; }
+
+    /* Products grid */
+    .ind-products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .ind-product {
+      background: var(--ind-surface); border: 1px solid var(--ind-border);
+      border-radius: 12px; overflow: hidden; transition: all 0.4s ease;
+    }
+    .ind-product:hover { border-color: rgba(0, 245, 212, 0.3); transform: translateY(-4px); }
+    .ind-product-img {
+      width: 100%; height: 240px; object-fit: cover;
+      filter: brightness(0.8) contrast(1.1);
+      transition: filter 0.4s ease;
+    }
+    .ind-product:hover .ind-product-img { filter: brightness(1) contrast(1); }
+    .ind-product-body { padding: 32px; }
+    .ind-product-body h3 {
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.3rem;
+      color: var(--ind-white); margin-bottom: 12px;
+    }
+    .ind-product-body p { color: var(--ind-text-dim); line-height: 1.7; margin-bottom: 20px; }
+    .ind-product-specs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ind-spec {
+      font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 1px;
+      text-transform: uppercase; padding: 6px 12px; border-radius: 4px;
+      background: rgba(0, 245, 212, 0.08); color: var(--ind-neon-cyan);
+      border: 1px solid rgba(0, 245, 212, 0.15);
+    }
+
+    /* Process section */
+    .ind-process { background: var(--ind-surface); border-top: 1px solid var(--ind-border); border-bottom: 1px solid var(--ind-border); }
+    .ind-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .ind-step { text-align: center; position: relative; }
+    .ind-step::after {
+      content: '→'; position: absolute; right: -20px; top: 40px;
+      color: var(--ind-neon-cyan); font-size: 1.5rem; opacity: 0.4;
+    }
+    .ind-step:last-child::after { display: none; }
+    .ind-step-num {
+      font-family: 'Space Mono', monospace; font-size: 2.5rem; font-weight: 700;
+      color: rgba(0, 245, 212, 0.15); margin-bottom: 16px;
+    }
+    .ind-step h3 {
+      font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--ind-white);
+      margin-bottom: 8px;
+    }
+    .ind-step p { color: var(--ind-text-dim); font-size: 0.9rem; line-height: 1.6; }
+
+    /* CTA */
+    .ind-cta {
+      text-align: center; padding: 120px 0;
+      background: linear-gradient(135deg, #0a0e17, #111827 50%, #0a0e17);
+      position: relative;
+    }
+    .ind-cta::before {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0, 245, 212, 0.06) 0%, transparent 70%);
+    }
+    .ind-cta h2 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--ind-white); margin-bottom: 16px; position: relative; z-index: 2;
+    }
+    .ind-cta p { color: var(--ind-text-dim); font-size: 1.1rem; margin-bottom: 40px; position: relative; z-index: 2; }
+
+    /* Cross-links */
+    .ind-crosslinks { background: var(--ind-surface); padding: 80px 0; border-top: 1px solid var(--ind-border); }
+    .ind-crosslinks h3 {
+      font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--ind-neon-blue); margin-bottom: 32px;
+      text-align: center;
+    }
+    .ind-crosslinks-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px;
+    }
+    .ind-crosslink {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px; color: var(--ind-text-dim); text-decoration: none;
+      font-size: 0.9rem; border-radius: 4px; transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .ind-crosslink:hover {
+      color: var(--ind-neon-cyan); background: rgba(0, 245, 212, 0.05);
+      border-color: rgba(0, 245, 212, 0.15);
+    }
+    .ind-crosslink span { color: var(--ind-neon-cyan); opacity: 0.5; }
+
+    /* Scroll reveal */
+    .ind-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .ind-reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .ind-features { grid-template-columns: repeat(2, 1fr); }
+      .ind-steps { grid-template-columns: repeat(2, 1fr); }
+      .ind-step::after { display: none; }
+    }
+    @media (max-width: 768px) {
+      .ind-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .ind-features { grid-template-columns: 1fr; }
+      .ind-products { grid-template-columns: 1fr; }
+      .ind-steps { grid-template-columns: 1fr; }
+      .ind-hero-actions { flex-direction: column; }
+      .ind-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="ind-page">
+
+  <div class="ind-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ind-hero">
+    <div class="container ind-hero-content">
+      <div class="ind-hero-tag">Industrial Solutions</div>
+      <h1>Built for<br><span class="neon">Heavy-Duty</span><br>Environments</h1>
+      <p class="ind-hero-sub">Commercial-grade blinds engineered for warehouses, factories, workshops, and industrial spaces. UV protection. Temperature control. Safety compliance.</p>
+      <div class="ind-hero-actions">
+        <a href="../free-quote.html" class="ind-btn ind-btn-primary">Request Site Assessment →</a>
+        <a href="tel:0400000000" class="ind-btn ind-btn-outline">Call: 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="ind-stats">
+    <div class="container">
+      <div class="ind-stats-grid">
+        <div class="ind-stat ind-reveal">
+          <div class="ind-stat-number">500+</div>
+          <div class="ind-stat-label">Industrial Installs</div>
+        </div>
+        <div class="ind-stat ind-reveal">
+          <div class="ind-stat-number">99%</div>
+          <div class="ind-stat-label">UV Blockage</div>
+        </div>
+        <div class="ind-stat ind-reveal">
+          <div class="ind-stat-number">15°C</div>
+          <div class="ind-stat-label">Temp Reduction</div>
+        </div>
+        <div class="ind-stat ind-reveal">
+          <div class="ind-stat-number">10yr</div>
+          <div class="ind-stat-label">Warranty</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="ind-section">
+    <div class="container">
+      <div class="ind-section-header ind-reveal">
+        <div class="ind-section-tag">// Why Industrial-Grade</div>
+        <h2 class="ind-section-title">Engineered for Performance</h2>
+      </div>
+      <div class="ind-features">
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🌡️</div>
+          <h3>Climate Control</h3>
+          <p>Reduce internal temperatures by up to 15°C. High-performance fabrics block solar heat gain while maintaining natural light flow on the factory floor.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">☀️</div>
+          <h3>UV Protection</h3>
+          <p>Block up to 99% of harmful UV rays. Protect workers, equipment, and stored goods from sun damage and fading in exposed warehouse spaces.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🔥</div>
+          <h3>Fire Rated</h3>
+          <p>AS1530 compliant fire-rated fabrics available. Meet building codes and insurance requirements for commercial and industrial premises.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">💨</div>
+          <h3>Wind Resistant</h3>
+          <p>Engineered track systems and heavy-duty components withstand high winds in open warehouse and loading dock environments. Built to last.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">⚡</div>
+          <h3>Motorised Control</h3>
+          <p>Automated systems for hard-to-reach installations. Group control, timers, and smart integration for multiple large-format blinds across your facility.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🛡️</div>
+          <h3>Dust & Moisture</h3>
+          <p>PVC and outdoor-grade fabrics resist dust accumulation, moisture, and chemical exposure. Minimal maintenance in demanding conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="ind-section" style="background: var(--ind-surface); border-top: 1px solid var(--ind-border); border-bottom: 1px solid var(--ind-border);">
+    <div class="container">
+      <div class="ind-section-header ind-reveal">
+        <div class="ind-section-tag">// Product Range</div>
+        <h2 class="ind-section-title">Industrial Solutions</h2>
+      </div>
+      <div class="ind-products">
+        <div class="ind-product ind-reveal">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Warehouse roller blinds" class="ind-product-img" loading="lazy">
+          <div class="ind-product-body">
+            <h3>Heavy-Duty Roller Blinds</h3>
+            <p>Large-format roller blinds with reinforced brackets and commercial-grade fabrics. Available up to 6m wide. Chain, crank, or motorised operation.</p>
+            <div class="ind-product-specs">
+              <span class="ind-spec">Up to 6m wide</span>
+              <span class="ind-spec">Fire rated</span>
+              <span class="ind-spec">Motorised</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-product ind-reveal">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80" alt="PVC strip blinds" class="ind-product-img" loading="lazy">
+          <div class="ind-product-body">
+            <h3>PVC Strip Curtains</h3>
+            <p>Flexible PVC strip curtains for warehouse doorways and loading docks. Control temperature, dust, and insects while allowing easy vehicle and foot traffic.</p>
+            <div class="ind-product-specs">
+              <span class="ind-spec">Anti-static</span>
+              <span class="ind-spec">Food-grade</span>
+              <span class="ind-spec">UV stable</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-product ind-reveal">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=80" alt="Outdoor industrial blinds" class="ind-product-img" loading="lazy">
+          <div class="ind-product-body">
+            <h3>Industrial Outdoor Blinds</h3>
+            <p>Channel-guided outdoor blinds for large openings. Withstand harsh conditions, reduce glare on work zones, and create weather-protected areas.</p>
+            <div class="ind-product-specs">
+              <span class="ind-spec">Wind rated</span>
+              <span class="ind-spec">Channel guided</span>
+              <span class="ind-spec">Custom widths</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-product ind-reveal">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Skylight industrial blinds" class="ind-product-img" loading="lazy">
+          <div class="ind-product-body">
+            <h3>Skylight & Roof Blinds</h3>
+            <p>Motorised skylight blinds for industrial roof windows and clerestory openings. Reduce heat and glare from overhead glass in warehouse roof structures.</p>
+            <div class="ind-product-specs">
+              <span class="ind-spec">Motorised only</span>
+              <span class="ind-spec">Heat reflective</span>
+              <span class="ind-spec">Remote control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="ind-section ind-process">
+    <div class="container">
+      <div class="ind-section-header ind-reveal">
+        <div class="ind-section-tag">// How It Works</div>
+        <h2 class="ind-section-title">From Assessment to Installation</h2>
+      </div>
+      <div class="ind-steps">
+        <div class="ind-step ind-reveal">
+          <div class="ind-step-num">01</div>
+          <h3>Site Assessment</h3>
+          <p>Free on-site survey of your facility. We measure, photograph, and assess environmental conditions.</p>
+        </div>
+        <div class="ind-step ind-reveal">
+          <div class="ind-step-num">02</div>
+          <h3>Custom Design</h3>
+          <p>Tailored solution with product specs, fabric samples, and compliance documentation for your approval.</p>
+        </div>
+        <div class="ind-step ind-reveal">
+          <div class="ind-step-num">03</div>
+          <h3>Manufacturing</h3>
+          <p>Australian-made to exact specifications. Heavy-duty components and commercial-grade hardware throughout.</p>
+        </div>
+        <div class="ind-step ind-reveal">
+          <div class="ind-step-num">04</div>
+          <h3>Installation</h3>
+          <p>Professional install team with industrial access equipment. Minimal disruption to your operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="ind-section">
+    <div class="container">
+      <div class="ind-section-header ind-reveal">
+        <div class="ind-section-tag">// Industries Served</div>
+        <h2 class="ind-section-title">Built for Your Sector</h2>
+      </div>
+      <div class="ind-features">
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>Temperature regulation and UV protection for production floors. Fire-rated options for compliance.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">📦</div>
+          <h3>Warehousing & Logistics</h3>
+          <p>Loading dock curtains, pallet area dividers, and climate zone separation for storage facilities.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🔧</div>
+          <h3>Workshops & Garages</h3>
+          <p>Glare reduction for workbenches. Dust control for spray booths. Privacy screening for auto shops.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🏗️</div>
+          <h3>Construction</h3>
+          <p>Temporary site screening. Dust barriers for renovation projects. Weatherproof enclosures.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🧪</div>
+          <h3>Laboratories</h3>
+          <p>Cleanroom-compatible blinds. Light control for sensitive equipment. Anti-static options available.</p>
+        </div>
+        <div class="ind-feature ind-reveal">
+          <div class="ind-feature-icon">🍞</div>
+          <h3>Food Processing</h3>
+          <p>HACCP-compliant PVC curtains. Hygienic, washable, food-grade materials for processing areas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ind-cta">
+    <div class="container">
+      <h2 class="ind-reveal">Ready to Upgrade<br>Your Facility?</h2>
+      <p class="ind-reveal">Free site assessment. Custom solutions. Professional installation.</p>
+      <div class="ind-reveal">
+        <a href="../free-quote.html" class="ind-btn ind-btn-primary">Book Free Site Assessment →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ind-crosslinks">
+    <div class="container">
+      <h3>// Explore More Solutions</h3>
+      <div class="ind-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="ind-crosslink"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="ind-crosslink"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="ind-crosslink"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="ind-crosslink"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="ind-crosslink"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="ind-crosslink"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="ind-crosslink"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="ind-crosslink"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="ind-crosslink"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="ind-crosslink"><span>→</span> Coastal Home</a>
+        <a href="colour-matching-guide.html" class="ind-crosslink"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="ind-crosslink"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="ind-crosslink"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="ind-crosslink"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="ind-crosslink"><span>→</span> Day-Night Blinds</a>
+        <a href="design-inspiration.html" class="ind-crosslink"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="ind-crosslink"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="ind-crosslink"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="ind-crosslink"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="ind-crosslink"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="ind-crosslink"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="ind-crosslink"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="ind-crosslink"><span>→</span> Festive & Seasonal Styling</a>
+        <a href="free-samples.html" class="ind-crosslink"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="ind-crosslink"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="ind-crosslink"><span>→</span> High-Rise Glare</a>
+        <a href="home-office.html" class="ind-crosslink"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="ind-crosslink"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="ind-crosslink"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="ind-crosslink"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="ind-crosslink"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="ind-crosslink"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="ind-crosslink"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="ind-crosslink"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="ind-crosslink"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="ind-crosslink"><span>→</span> Nursery Safe</a>
+        <a href="outdoor-blinds.html" class="ind-crosslink"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="ind-crosslink"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="ind-crosslink"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="ind-crosslink"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="ind-crosslink"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="ind-crosslink"><span>→</span> Restaurant & Cafe</a>
+        <a href="retail-shopfront.html" class="ind-crosslink"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="ind-crosslink"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="ind-crosslink"><span>→</span> School & Childcare</a>
+        <a href="seasonal-sale.html" class="ind-crosslink"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="ind-crosslink"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="ind-crosslink"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="ind-crosslink"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="ind-crosslink"><span>→</span> Testimonials</a>
+        <a href="winter-insulation.html" class="ind-crosslink"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ind-reveal').forEach(el => observer.observe(el));
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
