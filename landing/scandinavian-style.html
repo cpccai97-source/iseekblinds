@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scandinavian Style Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Create a serene Nordic-inspired home with our curated Scandinavian window treatments. Light-filtering blinds, sheer curtains and natural timber shutters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === WARM NATURAL DESIGN: Scandinavian Style === */
+    :root {
+      --sand: #f5f0e8;
+      --sand-deep: #e8dfd2;
+      --clay: #c4a882;
+      --clay-dark: #a68b6b;
+      --bark: #5c4a3a;
+      --forest: #4a6741;
+      --forest-light: #e8f0e4;
+      --charcoal: #2d2d2d;
+      --white: #ffffff;
+      --warm-white: #fdfaf5;
+    }
+
+    .lp-scandi {
+      background: var(--warm-white);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* Hero — full-screen organic */
+    .sc-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--sand);
+    }
+
+    .sc-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80') center/cover no-repeat;
+      clip-path: ellipse(80% 60% at 70% 50%);
+      opacity: 0;
+      animation: scReveal 1.2s ease forwards 0.3s;
+    }
+
+    @keyframes scReveal {
+      from { opacity: 0; clip-path: ellipse(60% 40% at 70% 50%); }
+      to { opacity: 1; clip-path: ellipse(80% 60% at 70% 50%); }
+    }
+
+    .sc-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .sc-hero-content {
+      max-width: 520px;
+    }
+
+    .sc-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--forest-light);
+      color: var(--forest);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: scFadeUp 0.6s ease forwards 0.2s;
+    }
+
+    .sc-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--bark);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: scFadeUp 0.6s ease forwards 0.4s;
+    }
+
+    .sc-hero h1 em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .sc-hero-desc {
+      font-size: 1.05rem;
+      color: var(--clay-dark);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: scFadeUp 0.6s ease forwards 0.6s;
+    }
+
+    .sc-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: scFadeUp 0.6s ease forwards 0.8s;
+    }
+
+    @keyframes scFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sc-btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.3s ease;
+    }
+
+    .sc-btn-primary {
+      background: var(--bark);
+      color: var(--white);
+    }
+
+    .sc-btn-primary:hover {
+      background: var(--charcoal);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(92,74,58,0.2);
+    }
+
+    .sc-btn-ghost {
+      border: 1.5px solid var(--clay);
+      color: var(--bark);
+    }
+
+    .sc-btn-ghost:hover {
+      background: var(--clay);
+      color: var(--white);
+    }
+
+    /* Principles bar */
+    .sc-principles {
+      background: var(--white);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--sand-deep);
+      border-bottom: 1px solid var(--sand-deep);
+    }
+
+    .sc-principles-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .sc-principle {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .sc-principle.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sc-principle-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.25rem;
+      background: var(--sand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+    }
+
+    .sc-principle h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--bark);
+    }
+
+    .sc-principle p {
+      font-size: 0.9rem;
+      color: var(--clay-dark);
+      line-height: 1.6;
+    }
+
+    /* Products showcase */
+    .sc-products {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sc-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--forest);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .sc-products h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--bark);
+      margin-bottom: 3rem;
+    }
+
+    .sc-product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .sc-product-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(92,74,58,0.06);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .sc-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sc-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(92,74,58,0.12);
+    }
+
+    .sc-product-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sc-product-body {
+      padding: 1.75rem;
+    }
+
+    .sc-product-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .sc-product-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--bark);
+      margin-bottom: 0.75rem;
+    }
+
+    .sc-product-body p {
+      font-size: 0.9rem;
+      color: var(--clay-dark);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .sc-product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sc-product-features li {
+      font-size: 0.8rem;
+      color: var(--bark);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sc-product-features li::before {
+      content: '●';
+      color: var(--forest);
+      font-size: 0.5rem;
+    }
+
+    /* Palette Section */
+    .sc-palette {
+      background: var(--sand);
+      padding: 5rem 2rem;
+    }
+
+    .sc-palette-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .sc-palette h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--bark);
+      margin-bottom: 1rem;
+    }
+
+    .sc-palette-desc {
+      color: var(--clay-dark);
+      max-width: 600px;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    .sc-palette-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sc-swatch {
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease;
+    }
+
+    .sc-swatch.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sc-swatch-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border: 3px solid var(--white);
+    }
+
+    .sc-swatch-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--bark);
+    }
+
+    .sc-swatch-code {
+      font-size: 0.7rem;
+      color: var(--clay-dark);
+      margin-top: 0.15rem;
+    }
+
+    /* Room ideas */
+    .sc-rooms {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sc-rooms h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--bark);
+      margin-bottom: 3rem;
+    }
+
+    .sc-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sc-room-card {
+      background: var(--sand);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    .sc-room-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sc-room-card:hover {
+      background: var(--sand-deep);
+    }
+
+    .sc-room-emoji {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sc-room-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--bark);
+      margin-bottom: 0.5rem;
+    }
+
+    .sc-room-card p {
+      font-size: 0.85rem;
+      color: var(--clay-dark);
+      line-height: 1.6;
+    }
+
+    .sc-room-rec {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(196,168,130,0.3);
+      font-size: 0.8rem;
+      color: var(--forest);
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .sc-cta {
+      background: var(--bark);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sc-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -25%;
+      width: 150%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(196,168,130,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .sc-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sc-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .sc-cta h2 em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .sc-cta p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .sc-cta .sc-btn-primary {
+      background: var(--clay);
+      color: var(--white);
+    }
+
+    .sc-cta .sc-btn-primary:hover {
+      background: var(--sand);
+      color: var(--bark);
+    }
+
+    /* Cross links */
+    .sc-crosslinks {
+      padding: 4rem 2rem;
+      background: var(--warm-white);
+      border-top: 1px solid var(--sand-deep);
+    }
+
+    .sc-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sc-crosslinks h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--bark);
+      margin-bottom: 1.5rem;
+    }
+
+    .sc-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .sc-crosslinks-grid a {
+      color: var(--clay-dark);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      transition: all 0.2s ease;
+    }
+
+    .sc-crosslinks-grid a:hover {
+      color: var(--forest);
+    }
+
+    .sc-crosslinks-grid a span {
+      color: var(--forest);
+      margin-right: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sc-hero::before {
+        width: 100%;
+        height: 40%;
+        top: auto;
+        bottom: 0;
+        clip-path: ellipse(80% 80% at 50% 80%);
+      }
+
+      .sc-hero-inner {
+        padding: 6rem 1.5rem 18rem;
+      }
+
+      .sc-hero-content {
+        max-width: 100%;
+      }
+
+      .sc-principles-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .sc-product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sc-palette-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .sc-rooms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sc-crosslinks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sc-palette-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="lp-scandi">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#solutions" class="nav-dropdown-toggle">Solutions ▾</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">🏢 Commercial</a>
+            <a href="new-home-packages.html">🏡 New Home</a>
+            <a href="energy-efficient.html">🌿 Energy Efficient</a>
+            <a href="smart-home.html">📱 Smart Home</a>
+            <a href="child-safety.html">👶 Child Safety</a>
+            <a href="outdoor-blinds.html">☀️ Outdoor</a>
+            <a href="apartment-solutions.html">🏙️ Apartments</a>
+            <a href="acoustic-solutions.html">🔇 Acoustic</a>
+            <a href="large-windows.html">🪟 Large Windows</a>
+            <a href="eco-friendly.html">♻️ Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#guides" class="nav-dropdown-toggle">Guides ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="sc-hero">
+    <div class="sc-hero-inner">
+      <div class="sc-hero-content">
+        <div class="sc-hero-tag">🌿 Nordic Living</div>
+        <h1>Scandinavian Style <em>Window Treatments</em></h1>
+        <p class="sc-hero-desc">Embrace the beauty of simplicity. Clean lines, natural materials and soft light — the Nordic way to dress your windows.</p>
+        <div class="sc-hero-actions">
+          <a href="../free-quote.html" class="sc-btn sc-btn-primary">Get Free Consultation</a>
+          <a href="free-samples.html" class="sc-btn sc-btn-ghost">Order Fabric Samples</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scandi Principles -->
+  <section class="sc-principles">
+    <div class="sc-principles-inner">
+      <div class="sc-principle">
+        <div class="sc-principle-icon">☀️</div>
+        <h3>Maximise Natural Light</h3>
+        <p>Nordic design celebrates daylight. Light-filtering fabrics and sheer curtains let sunshine flood your rooms while maintaining privacy.</p>
+      </div>
+      <div class="sc-principle">
+        <div class="sc-principle-icon">🪵</div>
+        <h3>Natural Materials</h3>
+        <p>Timber shutters, linen curtains and woven roller blinds bring organic texture and warmth to every space — the hallmark of Scandinavian style.</p>
+      </div>
+      <div class="sc-principle">
+        <div class="sc-principle-icon">✨</div>
+        <h3>Functional Beauty</h3>
+        <p>Every element serves a purpose. Clean hardware, hidden brackets and seamless operation — beautiful because it works perfectly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Products -->
+  <section class="sc-products">
+    <div class="sc-section-tag">🏠 Curated Collection</div>
+    <h2>Products for the Nordic Home</h2>
+    <div class="sc-product-grid">
+      <div class="sc-product-card">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=700&q=80" alt="Sheer linen curtains in Scandinavian living room" class="sc-product-img" loading="lazy">
+        <div class="sc-product-body">
+          <div class="sc-product-label">Curtains</div>
+          <h3>Linen Sheer Curtains</h3>
+          <p>Soft, flowing linen in white, oat or fog grey. The quintessential Scandinavian window treatment — effortless, breathable and full of texture.</p>
+          <ul class="sc-product-features">
+            <li>100% European linen</li>
+            <li>S-fold or pinch pleat heading</li>
+            <li>Light filtering with UV protection</li>
+            <li>Machine washable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sc-product-card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=700&q=80" alt="Timber venetian blinds in modern bedroom" class="sc-product-img" loading="lazy">
+        <div class="sc-product-body">
+          <div class="sc-product-label">Venetian Blinds</div>
+          <h3>Natural Timber Venetians</h3>
+          <p>Basswood or paulownia timber in white wash, birch or oak tones. Precise light control with a warm, tactile presence.</p>
+          <ul class="sc-product-features">
+            <li>50mm or 63mm slat widths</li>
+            <li>Sustainably sourced timber</li>
+            <li>Cord-free options available</li>
+            <li>Custom stain matching</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sc-product-card">
+        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=80" alt="Honeycomb blinds soft light" class="sc-product-img" loading="lazy">
+        <div class="sc-product-body">
+          <div class="sc-product-label">Honeycomb</div>
+          <h3>Cellular Honeycomb Blinds</h3>
+          <p>The Scandinavian obsession with warmth meets window coverings. Trapped air cells provide insulation while maintaining a clean, minimal profile.</p>
+          <ul class="sc-product-features">
+            <li>Superior thermal insulation</li>
+            <li>Top-down/bottom-up operation</li>
+            <li>Neutral matte colour range</li>
+            <li>Motorised or cordless</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sc-product-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80" alt="White plantation shutters clean design" class="sc-product-img" loading="lazy">
+        <div class="sc-product-body">
+          <div class="sc-product-label">Shutters</div>
+          <h3>White Plantation Shutters</h3>
+          <p>The ultimate Scandi window treatment. Crisp white shutters frame your windows like architecture — permanent, sculptural and timeless.</p>
+          <ul class="sc-product-features">
+            <li>PVC or timber construction</li>
+            <li>89mm or 114mm blades</li>
+            <li>Hidden tilt rod option</li>
+            <li>25-year warranty</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colour Palette -->
+  <section class="sc-palette">
+    <div class="sc-palette-inner">
+      <div class="sc-section-tag">🎨 Nordic Palette</div>
+      <h2>The Scandinavian Colour Story</h2>
+      <p class="sc-palette-desc">Muted, earthy tones that bring calm and cohesion. Every colour in this palette works with every other — that's the Nordic way.</p>
+      <div class="sc-palette-grid">
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #FFFFFF;"></div>
+          <div class="sc-swatch-name">Arctic White</div>
+          <div class="sc-swatch-code">Clean foundation</div>
+        </div>
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #F5F0E8;"></div>
+          <div class="sc-swatch-name">Oat</div>
+          <div class="sc-swatch-code">Warm neutral</div>
+        </div>
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #D4C5B2;"></div>
+          <div class="sc-swatch-name">Driftwood</div>
+          <div class="sc-swatch-code">Natural timber</div>
+        </div>
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #B8C4B8;"></div>
+          <div class="sc-swatch-name">Sage</div>
+          <div class="sc-swatch-code">Botanical green</div>
+        </div>
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #A8B4C0;"></div>
+          <div class="sc-swatch-name">Fjord</div>
+          <div class="sc-swatch-code">Nordic blue-grey</div>
+        </div>
+        <div class="sc-swatch">
+          <div class="sc-swatch-circle" style="background: #2D2D2D;"></div>
+          <div class="sc-swatch-name">Charcoal</div>
+          <div class="sc-swatch-code">Bold contrast</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Room by Room -->
+  <section class="sc-rooms">
+    <div class="sc-section-tag">🏡 Room by Room</div>
+    <h2>Scandinavian Styling Ideas</h2>
+    <div class="sc-rooms-grid">
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">🛋️</div>
+        <h3>Living Room</h3>
+        <p>Floor-to-ceiling sheer curtains in white linen. Let the space breathe. Add a single roller blind behind for evening privacy.</p>
+        <div class="sc-room-rec">↳ Recommended: Linen Sheers + Blockout Roller</div>
+      </div>
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">🛏️</div>
+        <h3>Bedroom</h3>
+        <p>Layer a sheer curtain over honeycomb blinds for the ultimate Nordic bedroom. Soft light by day, complete blackout by night.</p>
+        <div class="sc-room-rec">↳ Recommended: Honeycomb + Sheer Overlay</div>
+      </div>
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">🍳</div>
+        <h3>Kitchen</h3>
+        <p>Timber venetians in white wash or birch. Easy to clean, great light control while cooking, and they add warmth above the sink.</p>
+        <div class="sc-room-rec">↳ Recommended: 50mm Timber Venetians</div>
+      </div>
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">🛁</div>
+        <h3>Bathroom</h3>
+        <p>PVC shutters in arctic white. Waterproof, mould-resistant and architecturally stunning. The closest thing to a Scandinavian spa at home.</p>
+        <div class="sc-room-rec">↳ Recommended: PVC Plantation Shutters</div>
+      </div>
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">📚</div>
+        <h3>Study / Home Office</h3>
+        <p>Sunscreen roller in grey or white. Reduces glare on screens while keeping the view. Minimal, functional, distraction-free.</p>
+        <div class="sc-room-rec">↳ Recommended: 3% Sunscreen Roller</div>
+      </div>
+      <div class="sc-room-card">
+        <div class="sc-room-emoji">🚪</div>
+        <h3>Hallway & Entry</h3>
+        <p>Keep it clean. A single Roman blind or top-down honeycomb lets light in from above while shielding the front door from street view.</p>
+        <div class="sc-room-rec">↳ Recommended: Top-Down Honeycomb</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sc-cta">
+    <div class="sc-cta-inner">
+      <h2>Bring <em>Nordic Calm</em> to Your Home</h2>
+      <p>Book a free in-home consultation. We'll bring fabric samples and help you create a cohesive Scandinavian look across every room.</p>
+      <a href="../free-quote.html" class="sc-btn sc-btn-primary">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="sc-crosslinks">
+    <div class="sc-crosslinks-inner">
+      <h3>Explore More</h3>
+      <div class="sc-crosslinks-grid">
+        <a href="commercial-blinds.html"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html"><span>→</span> Smart Home Blinds</a>
+        <a href="outdoor-blinds.html"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html"><span>→</span> Customer Testimonials</a>
+        <a href="privacy-blinds.html"><span>→</span> Privacy Blinds</a>
+        <a href="conservatory-sunroom.html"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="acoustic-solutions.html"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="large-windows.html"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="eco-friendly.html"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="layered-treatments.html"><span>→</span> Layered Window Treatments</a>
+        <a href="bathroom-kitchen.html"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="home-office.html"><span>→</span> Home Office Blinds</a>
+        <a href="bedroom-blackout.html"><span>→</span> Bedroom Blackout Blinds</a>
+        <a href="property-styling.html"><span>→</span> Property Styling</a>
+        <a href="media-room.html"><span>→</span> Media Room Blinds</a>
+        <a href="pet-friendly.html"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="skylight-blinds.html"><span>→</span> Skylight &amp; Specialty Windows</a>
+        <a href="heritage-homes.html"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="day-night-blinds.html"><span>→</span> Day Night Zebra Blinds</a>
+        <a href="rental-property.html"><span>→</span> Rental Property Blinds</a>
+        <a href="diy-measuring-guide.html"><span>→</span> DIY Measuring Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.sc-principle, .sc-product-card, .sc-swatch, .sc-room-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
