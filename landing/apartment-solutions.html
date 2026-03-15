@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartment & Small Space Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Smart window furnishing solutions for apartments, studios and compact spaces in Melbourne. Space-saving blinds, sheer curtains and motorised options. Free measure & quote.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RETRO MODERN STYLE === */
+    :root {
+      --ap-cream: #FAF7F2;
+      --ap-terracotta: #C75B39;
+      --ap-terracotta-dark: #A84B2E;
+      --ap-navy: #1B2838;
+      --ap-sage: #7A8B6F;
+      --ap-sand: #E8DDD3;
+      --ap-charcoal: #2C2C2C;
+      --ap-muted: #8C8578;
+      --ap-highlight: #F0C75E;
+      --ap-white: #FFFFFF;
+    }
+
+    .ap-page {
+      font-family: 'DM Sans', 'Inter', sans-serif;
+      background: var(--ap-cream);
+      overflow-x: hidden;
+    }
+
+    /* Decorative elements */
+    .ap-dot-pattern {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(circle, rgba(199,91,57,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .ap-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--ap-navy);
+      overflow: hidden;
+    }
+
+    .ap-hero-deco {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .ap-hero-deco-1 {
+      width: 500px; height: 500px;
+      top: -150px; right: -100px;
+      background: var(--ap-terracotta);
+      opacity: 0.12;
+    }
+
+    .ap-hero-deco-2 {
+      width: 300px; height: 300px;
+      bottom: -80px; left: 10%;
+      background: var(--ap-highlight);
+      opacity: 0.08;
+    }
+
+    .ap-hero-deco-3 {
+      width: 200px; height: 200px;
+      top: 30%; right: 25%;
+      border: 2px solid rgba(255,255,255,0.08);
+      background: none;
+    }
+
+    .ap-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 140px 24px 100px;
+      text-align: center;
+    }
+
+    .ap-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ap-terracotta);
+      color: var(--ap-white);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: ap-fadeDown 0.8s ease forwards;
+    }
+
+    @keyframes ap-fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ap-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      color: var(--ap-white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: ap-fadeUp 0.8s ease 0.2s both;
+    }
+
+    .ap-hero h1 em {
+      color: var(--ap-terracotta);
+      font-style: italic;
+    }
+
+    .ap-hero-sub {
+      font-family: 'DM Sans', sans-serif;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      animation: ap-fadeUp 0.8s ease 0.4s both;
+    }
+
+    @keyframes ap-fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ap-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: ap-fadeUp 0.8s ease 0.6s both;
+    }
+
+    .ap-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .ap-btn-primary {
+      background: var(--ap-terracotta);
+      color: var(--ap-white);
+    }
+
+    .ap-btn-primary:hover {
+      background: var(--ap-terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(199,91,57,0.3);
+    }
+
+    .ap-btn-ghost {
+      background: transparent;
+      color: var(--ap-white);
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+
+    .ap-btn-ghost:hover {
+      border-color: var(--ap-terracotta);
+      color: var(--ap-terracotta);
+    }
+
+    /* Marquee */
+    .ap-marquee {
+      background: var(--ap-terracotta);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ap-marquee-track {
+      display: inline-flex;
+      animation: ap-scroll 20s linear infinite;
+    }
+
+    .ap-marquee-item {
+      color: var(--ap-white);
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.95rem;
+      padding: 0 40px;
+      opacity: 0.9;
+    }
+
+    @keyframes ap-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Section styling */
+    .ap-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 24px;
+    }
+
+    .ap-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ap-section-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ap-terracotta);
+      margin-bottom: 12px;
+    }
+
+    .ap-section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--ap-navy);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .ap-section-desc {
+      color: var(--ap-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 550px;
+    }
+
+    /* Challenges & Solutions — Retro split layout */
+    .ap-challenges { background: var(--ap-cream); }
+
+    .ap-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+      align-items: start;
+    }
+
+    .ap-challenge-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ap-challenge-item {
+      display: flex;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(28,40,56,0.08);
+    }
+
+    .ap-challenge-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--ap-sand);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .ap-challenge-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--ap-navy);
+      margin-bottom: 6px;
+    }
+
+    .ap-challenge-desc {
+      color: var(--ap-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .ap-solution-card {
+      background: var(--ap-navy);
+      border-radius: 24px;
+      padding: 48px 40px;
+      color: var(--ap-white);
+      position: sticky;
+      top: 120px;
+    }
+
+    .ap-solution-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .ap-solution-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .ap-solution-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+    }
+
+    .ap-solution-features li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ap-solution-features li::before {
+      content: '✓';
+      color: var(--ap-terracotta);
+      font-weight: 700;
+    }
+
+    /* Product cards — Retro magazine style */
+    .ap-products { background: var(--ap-sand); }
+
+    .ap-product-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .ap-product-card {
+      background: var(--ap-white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ap-product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(28,40,56,0.1);
+    }
+
+    .ap-product-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+
+    .ap-pv-1 { background: linear-gradient(135deg, #F0C75E22, #C75B3922); }
+    .ap-pv-2 { background: linear-gradient(135deg, #7A8B6F22, #1B283822); }
+    .ap-pv-3 { background: linear-gradient(135deg, #C75B3922, #F0C75E22); }
+    .ap-pv-4 { background: linear-gradient(135deg, #1B283822, #7A8B6F22); }
+    .ap-pv-5 { background: linear-gradient(135deg, #E8DDD322, #C75B3922); }
+    .ap-pv-6 { background: linear-gradient(135deg, #7A8B6F22, #F0C75E22); }
+
+    .ap-product-body {
+      padding: 28px 24px;
+    }
+
+    .ap-product-tag {
+      display: inline-block;
+      background: var(--ap-sand);
+      color: var(--ap-muted);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .ap-product-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--ap-navy);
+      margin-bottom: 10px;
+    }
+
+    .ap-product-desc {
+      color: var(--ap-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Testimonial section */
+    .ap-testimonials {
+      background: var(--ap-cream);
+    }
+
+    .ap-testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .ap-testimonial {
+      background: var(--ap-white);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .ap-testimonial::before {
+      content: '"';
+      font-family: 'DM Serif Display', serif;
+      font-size: 6rem;
+      color: var(--ap-terracotta);
+      opacity: 0.15;
+      position: absolute;
+      top: 10px; left: 24px;
+      line-height: 1;
+    }
+
+    .ap-testimonial-text {
+      color: var(--ap-charcoal);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+    }
+
+    .ap-testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ap-testimonial-avatar {
+      width: 44px; height: 44px;
+      background: var(--ap-sand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .ap-testimonial-name {
+      font-weight: 600;
+      color: var(--ap-navy);
+      font-size: 0.95rem;
+    }
+
+    .ap-testimonial-location {
+      color: var(--ap-muted);
+      font-size: 0.8rem;
+    }
+
+    /* CTA */
+    .ap-cta {
+      background: var(--ap-navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ap-cta-deco {
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: var(--ap-terracotta);
+      opacity: 0.06;
+      bottom: -200px; right: -100px;
+    }
+
+    .ap-cta .ap-section-title { color: var(--ap-white); }
+    .ap-cta .ap-section-eyebrow { color: var(--ap-highlight); }
+
+    .ap-cta-desc {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.15rem;
+      max-width: 550px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* Cross-links */
+    .ap-crosslinks {
+      background: var(--ap-sand);
+      padding: 80px 24px;
+    }
+
+    .ap-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ap-crosslinks-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--ap-navy);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid var(--ap-terracotta);
+      display: inline-block;
+    }
+
+    .ap-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 12px;
+    }
+
+    .ap-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--ap-white);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--ap-navy);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .ap-crosslink-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(28,40,56,0.08);
+      color: var(--ap-terracotta);
+    }
+
+    .ap-crosslink-item span {
+      color: var(--ap-terracotta);
+      font-weight: 700;
+    }
+
+    /* Scroll animations */
+    .ap-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ap-reveal.ap-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .ap-split { grid-template-columns: 1fr; }
+      .ap-solution-card { position: static; }
+      .ap-product-masonry { grid-template-columns: 1fr 1fr; }
+      .ap-testimonial-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .ap-product-masonry { grid-template-columns: 1fr; }
+      .ap-hero h1 { font-size: 2.4rem; }
+      .ap-hero-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body class="ap-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="ap-dot-pattern"></div>
+
+  <!-- Hero -->
+  <section class="ap-hero">
+    <div class="ap-hero-deco ap-hero-deco-1"></div>
+    <div class="ap-hero-deco ap-hero-deco-2"></div>
+    <div class="ap-hero-deco ap-hero-deco-3"></div>
+    <div class="ap-hero-inner">
+      <div class="ap-hero-badge">🏙️ APARTMENT LIVING</div>
+      <h1>Small Space,<br><em>Big Style</em></h1>
+      <p class="ap-hero-sub">Clever window furnishing solutions designed for Melbourne apartments, studios and compact homes. Maximise light, space and privacy without compromise.</p>
+      <div class="ap-hero-actions">
+        <a href="../free-quote.html" class="ap-btn ap-btn-primary">Get Free Quote →</a>
+        <a href="#solutions" class="ap-btn ap-btn-ghost">See Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="ap-marquee">
+    <div class="ap-marquee-track">
+      <span class="ap-marquee-item">✦ Free Measure & Quote</span>
+      <span class="ap-marquee-item">✦ Apartment Specialists</span>
+      <span class="ap-marquee-item">✦ Body Corp Approved</span>
+      <span class="ap-marquee-item">✦ Same-Day Quotes</span>
+      <span class="ap-marquee-item">✦ No Minimum Order</span>
+      <span class="ap-marquee-item">✦ Rental-Friendly Options</span>
+      <span class="ap-marquee-item">✦ Free Measure & Quote</span>
+      <span class="ap-marquee-item">✦ Apartment Specialists</span>
+      <span class="ap-marquee-item">✦ Body Corp Approved</span>
+      <span class="ap-marquee-item">✦ Same-Day Quotes</span>
+      <span class="ap-marquee-item">✦ No Minimum Order</span>
+      <span class="ap-marquee-item">✦ Rental-Friendly Options</span>
+    </div>
+  </div>
+
+  <!-- Challenges & Solutions -->
+  <section id="solutions" class="ap-section ap-challenges">
+    <div class="ap-container">
+      <div class="ap-reveal">
+        <div class="ap-section-eyebrow">We Understand</div>
+        <h2 class="ap-section-title">Apartment Living<br>Comes with Challenges</h2>
+        <p class="ap-section-desc">We've fitted thousands of Melbourne apartments. We know the common problems — and we have the solutions.</p>
+      </div>
+      <div class="ap-split">
+        <ul class="ap-challenge-list">
+          <li class="ap-challenge-item ap-reveal">
+            <div class="ap-challenge-icon">🌆</div>
+            <div>
+              <div class="ap-challenge-title">Overlooking Neighbours</div>
+              <p class="ap-challenge-desc">High-rise living means windows facing other buildings. Our dual roller blinds give you privacy without blocking natural light.</p>
+            </div>
+          </li>
+          <li class="ap-challenge-item ap-reveal">
+            <div class="ap-challenge-icon">☀️</div>
+            <div>
+              <div class="ap-challenge-title">Harsh Western Sun</div>
+              <p class="ap-challenge-desc">West-facing apartments cop intense afternoon heat. Sunscreen roller blinds reduce heat by up to 80% while maintaining your view.</p>
+            </div>
+          </li>
+          <li class="ap-challenge-item ap-reveal">
+            <div class="ap-challenge-icon">📏</div>
+            <div>
+              <div class="ap-challenge-title">Tight Window Reveals</div>
+              <p class="ap-challenge-desc">Shallow window reveals and limited mounting space? We specialise in face-fix and ceiling-mount solutions for tricky installs.</p>
+            </div>
+          </li>
+          <li class="ap-challenge-item ap-reveal">
+            <div class="ap-challenge-icon">🏗️</div>
+            <div>
+              <div class="ap-challenge-title">Body Corp Restrictions</div>
+              <p class="ap-challenge-desc">Many buildings require uniform external appearance. We supply body-corp-approved white-backed blinds that meet building regulations.</p>
+            </div>
+          </li>
+          <li class="ap-challenge-item ap-reveal">
+            <div class="ap-challenge-icon">🔑</div>
+            <div>
+              <div class="ap-challenge-title">Rental Properties</div>
+              <p class="ap-challenge-desc">Renters need non-damaging solutions. Our tension-fit and adhesive-mount blinds install without drilling — and come with you when you move.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="ap-solution-card ap-reveal">
+          <h3>Our Apartment Package</h3>
+          <p>Purpose-built packages for Melbourne apartments. Every window covered, every challenge solved.</p>
+          <ul class="ap-solution-features">
+            <li>Free apartment consultation</li>
+            <li>Body corp compliance check</li>
+            <li>All windows measured in one visit</li>
+            <li>Multi-room package discounts</li>
+            <li>Flexible payment plans</li>
+            <li>Quick 5-7 day turnaround</li>
+          </ul>
+          <a href="../free-quote.html" class="ap-btn ap-btn-primary">Book Consultation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products for apartments -->
+  <section class="ap-section ap-products">
+    <div class="ap-container ap-reveal">
+      <div class="ap-section-eyebrow">Perfect For Apartments</div>
+      <h2 class="ap-section-title">Curated for<br>Compact Spaces</h2>
+      <p class="ap-section-desc">Products specifically chosen for apartment living — space-saving, stylish and functional.</p>
+    </div>
+    <div class="ap-container">
+      <div class="ap-product-masonry">
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-1">🪟</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Most Popular</div>
+            <div class="ap-product-name">Dual Roller Blinds</div>
+            <p class="ap-product-desc">Combine blockout and sunscreen in one sleek bracket. Day and night control without taking up extra space.</p>
+          </div>
+        </div>
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-2">✨</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Light Control</div>
+            <div class="ap-product-name">Sheer Curtains</div>
+            <p class="ap-product-desc">S-fold sheers add softness and filter light beautifully. Ceiling-mounted tracks create the illusion of taller ceilings.</p>
+          </div>
+        </div>
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-3">🎯</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Space Saver</div>
+            <div class="ap-product-name">Honeycomb Blinds</div>
+            <p class="ap-product-desc">Ultra-slim profile folds flat into the headrail. Superior insulation reduces heating/cooling costs in apartments.</p>
+          </div>
+        </div>
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-4">🏠</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Premium</div>
+            <div class="ap-product-name">Panel Glides</div>
+            <p class="ap-product-desc">Perfect for floor-to-ceiling windows and sliding doors. Smooth-gliding panels in a variety of fabrics and textures.</p>
+          </div>
+        </div>
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-5">⚡</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Smart</div>
+            <div class="ap-product-name">Motorised Blinds</div>
+            <p class="ap-product-desc">Control all your blinds from one app. Perfect for hard-to-reach high windows common in apartment living.</p>
+          </div>
+        </div>
+        <div class="ap-product-card ap-reveal">
+          <div class="ap-product-visual ap-pv-6">🔒</div>
+          <div class="ap-product-body">
+            <div class="ap-product-tag">Renter Friendly</div>
+            <div class="ap-product-name">Tension Fit Blinds</div>
+            <p class="ap-product-desc">No drilling, no damage. Spring-loaded blinds that fit inside your window frame. Take them when you move out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="ap-section ap-testimonials">
+    <div class="ap-container ap-reveal">
+      <div class="ap-section-eyebrow">Happy Apartment Dwellers</div>
+      <h2 class="ap-section-title">What Our Customers Say</h2>
+    </div>
+    <div class="ap-container">
+      <div class="ap-testimonial-grid">
+        <div class="ap-testimonial ap-reveal">
+          <p class="ap-testimonial-text">Living in a Southbank high-rise, privacy was my biggest concern. The dual rollers iSeekBlinds installed are perfect — I get my city view during the day and total privacy at night.</p>
+          <div class="ap-testimonial-author">
+            <div class="ap-testimonial-avatar">👩</div>
+            <div>
+              <div class="ap-testimonial-name">Sarah M.</div>
+              <div class="ap-testimonial-location">Southbank, Melbourne</div>
+            </div>
+          </div>
+        </div>
+        <div class="ap-testimonial ap-reveal">
+          <p class="ap-testimonial-text">I was worried about body corp approval, but iSeekBlinds handled everything. They knew exactly what our building required and the white-backed blinds were approved instantly.</p>
+          <div class="ap-testimonial-author">
+            <div class="ap-testimonial-avatar">👨</div>
+            <div>
+              <div class="ap-testimonial-name">James L.</div>
+              <div class="ap-testimonial-location">Docklands, Melbourne</div>
+            </div>
+          </div>
+        </div>
+        <div class="ap-testimonial ap-reveal">
+          <p class="ap-testimonial-text">As a renter, I thought I was stuck with ugly old blinds. The tension-fit blinds were a game changer — no damage to the property and they look amazing!</p>
+          <div class="ap-testimonial-author">
+            <div class="ap-testimonial-avatar">👩</div>
+            <div>
+              <div class="ap-testimonial-name">Amy T.</div>
+              <div class="ap-testimonial-location">Richmond, Melbourne</div>
+            </div>
+          </div>
+        </div>
+        <div class="ap-testimonial ap-reveal">
+          <p class="ap-testimonial-text">Motorised blinds in our apartment were the best decision. One tap and all 8 windows close at sunset. The installer even set up the smart home integration for us.</p>
+          <div class="ap-testimonial-author">
+            <div class="ap-testimonial-avatar">👨</div>
+            <div>
+              <div class="ap-testimonial-name">David & Min K.</div>
+              <div class="ap-testimonial-location">South Yarra, Melbourne</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ap-section ap-cta">
+    <div class="ap-cta-deco"></div>
+    <div class="ap-container ap-reveal" style="position:relative;z-index:1;">
+      <div class="ap-section-eyebrow">Let's Get Started</div>
+      <h2 class="ap-section-title" style="color:var(--ap-white);">Your Apartment<br>Deserves Better Blinds</h2>
+      <p class="ap-cta-desc">Book a free apartment consultation. We'll measure every window, check body corp requirements and have a quote to you same-day.</p>
+      <a href="../free-quote.html" class="ap-btn ap-btn-primary">Book Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ap-crosslinks">
+    <div class="ap-crosslinks-inner">
+      <h3 class="ap-crosslinks-title">Explore More Solutions</h3>
+      <div class="ap-crosslinks-grid">
+        <a href="commercial-blinds.html" class="ap-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="ap-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="ap-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="ap-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="ap-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="ap-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="ap-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html" class="ap-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="outdoor-blinds.html" class="ap-crosslink-item"><span>→</span> Outdoor Blinds & Awnings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // IntersectionObserver for scroll animations
+    const apRevealEls = document.querySelectorAll('.ap-reveal');
+    const apObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ap-visible');
+          apObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    apRevealEls.forEach(el => apObserver.observe(el));
+  </script>
+</body>
+</html>

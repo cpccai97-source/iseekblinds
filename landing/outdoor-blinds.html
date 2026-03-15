@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdoor Blinds & Awnings | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Premium outdoor blinds, awnings and café blinds for Melbourne homes. Extend your living space outdoors with weather-resistant solutions. Free measure & quote.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === GEOMETRIC ARCHITECTURE STYLE === */
+    :root {
+      --ob-charcoal: #1C1C1E;
+      --ob-concrete: #8E8E93;
+      --ob-steel: #48484A;
+      --ob-accent: #FF6B35;
+      --ob-accent-dark: #E55A2B;
+      --ob-warm: #F5E6D3;
+      --ob-bg: #F2F2F7;
+      --ob-white: #FFFFFF;
+      --ob-grid-line: rgba(28, 28, 30, 0.06);
+    }
+
+    .ob-page { font-family: 'Space Grotesk', 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* Geometric grid background */
+    .ob-grid-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(var(--ob-grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ob-grid-line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .ob-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--ob-charcoal);
+      overflow: hidden;
+    }
+
+    .ob-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 70vw; height: 70vw;
+      background: var(--ob-accent);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 0.08;
+    }
+
+    .ob-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--ob-accent);
+    }
+
+    .ob-hero-grid {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .ob-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ob-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,53,0.15);
+      border: 1px solid var(--ob-accent);
+      color: var(--ob-accent);
+      padding: 8px 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .ob-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--ob-white);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .ob-hero h1 span {
+      color: var(--ob-accent);
+    }
+
+    .ob-hero-desc {
+      color: var(--ob-concrete);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .ob-hero-visual {
+      position: relative;
+      height: 500px;
+    }
+
+    .ob-arch-block {
+      position: absolute;
+      background: var(--ob-steel);
+      opacity: 0;
+      animation: ob-slideIn 0.8s ease forwards;
+    }
+
+    .ob-arch-block:nth-child(1) {
+      width: 280px; height: 350px;
+      top: 20px; right: 40px;
+      background: linear-gradient(135deg, var(--ob-steel), var(--ob-charcoal));
+      border: 2px solid rgba(255,255,255,0.08);
+      animation-delay: 0.2s;
+    }
+
+    .ob-arch-block:nth-child(2) {
+      width: 200px; height: 250px;
+      top: 100px; right: 180px;
+      background: var(--ob-accent);
+      opacity: 0;
+      animation-delay: 0.5s;
+    }
+
+    .ob-arch-block:nth-child(3) {
+      width: 160px; height: 180px;
+      bottom: 20px; right: 60px;
+      background: var(--ob-warm);
+      animation-delay: 0.8s;
+    }
+
+    .ob-arch-icon {
+      position: absolute;
+      font-size: 4rem;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes ob-slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CTAs */
+    .ob-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ob-accent);
+      color: var(--ob-white);
+      padding: 16px 36px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+
+    .ob-btn-primary:hover {
+      background: var(--ob-accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .ob-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--ob-white);
+      padding: 16px 36px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .ob-btn-outline:hover {
+      border-color: var(--ob-accent);
+      color: var(--ob-accent);
+    }
+
+    .ob-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Stats bar */
+    .ob-stats {
+      background: var(--ob-white);
+      border-bottom: 3px solid var(--ob-accent);
+      position: relative;
+      z-index: 2;
+    }
+
+    .ob-stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ob-stat {
+      padding: 40px 24px;
+      text-align: center;
+      border-right: 1px solid var(--ob-grid-line);
+      opacity: 0;
+      animation: ob-fadeUp 0.6s ease forwards;
+    }
+
+    .ob-stat:last-child { border-right: none; }
+    .ob-stat:nth-child(1) { animation-delay: 0.1s; }
+    .ob-stat:nth-child(2) { animation-delay: 0.2s; }
+    .ob-stat:nth-child(3) { animation-delay: 0.3s; }
+    .ob-stat:nth-child(4) { animation-delay: 0.4s; }
+
+    .ob-stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ob-charcoal);
+      line-height: 1;
+    }
+
+    .ob-stat-label {
+      color: var(--ob-concrete);
+      font-size: 0.85rem;
+      margin-top: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @keyframes ob-fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section styling */
+    .ob-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 24px;
+    }
+
+    .ob-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ob-section-label {
+      display: inline-block;
+      background: var(--ob-charcoal);
+      color: var(--ob-accent);
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .ob-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--ob-charcoal);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .ob-section-subtitle {
+      color: var(--ob-concrete);
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* Products grid */
+    .ob-products {
+      background: var(--ob-bg);
+    }
+
+    .ob-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 60px;
+    }
+
+    .ob-product-card {
+      background: var(--ob-white);
+      padding: 48px 36px;
+      border: 1px solid rgba(28,28,30,0.08);
+      position: relative;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ob-product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: var(--ob-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .ob-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .ob-product-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .ob-product-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .ob-product-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ob-charcoal);
+      margin-bottom: 12px;
+    }
+
+    .ob-product-desc {
+      color: var(--ob-concrete);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .ob-product-link {
+      color: var(--ob-accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Features section */
+    .ob-features {
+      background: var(--ob-charcoal);
+      overflow: hidden;
+    }
+
+    .ob-features .ob-section-title { color: var(--ob-white); }
+    .ob-features .ob-section-subtitle { color: var(--ob-concrete); }
+    .ob-features .ob-section-label { background: rgba(255,107,53,0.15); }
+
+    .ob-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+    }
+
+    .ob-feature {
+      background: rgba(255,255,255,0.03);
+      padding: 48px 40px;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .ob-feature::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 60px; height: 4px;
+      background: var(--ob-accent);
+      transition: width 0.4s ease;
+    }
+
+    .ob-feature:hover::after { width: 100%; }
+
+    .ob-feature:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .ob-feature-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(255,107,53,0.2);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .ob-feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ob-white);
+      margin-bottom: 12px;
+    }
+
+    .ob-feature-desc {
+      color: var(--ob-concrete);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Showcase */
+    .ob-showcase { background: var(--ob-white); }
+
+    .ob-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 60px;
+      border: 1px solid rgba(28,28,30,0.08);
+    }
+
+    .ob-showcase-item {
+      padding: 60px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(28,28,30,0.08);
+    }
+
+    .ob-showcase-item.ob-bg-warm { background: var(--ob-warm); }
+    .ob-showcase-item.ob-bg-accent { background: var(--ob-accent); color: var(--ob-white); }
+    .ob-showcase-item.ob-bg-accent .ob-showcase-label { color: rgba(255,255,255,0.7); }
+
+    .ob-showcase-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ob-concrete);
+      margin-bottom: 16px;
+    }
+
+    .ob-showcase-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .ob-showcase-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    .ob-showcase-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    /* CTA */
+    .ob-cta {
+      background: linear-gradient(135deg, var(--ob-charcoal) 0%, #2C2C2E 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ob-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 60vw; height: 60vw;
+      background: var(--ob-accent);
+      opacity: 0.05;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    .ob-cta .ob-section-title { color: var(--ob-white); }
+
+    .ob-cta-subtitle {
+      color: var(--ob-concrete);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* Cross-links */
+    .ob-crosslinks {
+      background: var(--ob-bg);
+      padding: 80px 24px;
+    }
+
+    .ob-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ob-crosslinks-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ob-charcoal);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid var(--ob-accent);
+      display: inline-block;
+    }
+
+    .ob-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 12px;
+    }
+
+    .ob-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--ob-white);
+      border: 1px solid rgba(28,28,30,0.08);
+      text-decoration: none;
+      color: var(--ob-charcoal);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .ob-crosslink-item:hover {
+      border-color: var(--ob-accent);
+      transform: translateX(4px);
+      color: var(--ob-accent);
+    }
+
+    .ob-crosslink-item span {
+      color: var(--ob-accent);
+      font-weight: 700;
+    }
+
+    /* Scroll animations */
+    .ob-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ob-reveal.ob-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .ob-hero-content { grid-template-columns: 1fr; }
+      .ob-hero-visual { display: none; }
+      .ob-product-grid { grid-template-columns: 1fr 1fr; }
+      .ob-features-grid { grid-template-columns: 1fr; }
+      .ob-showcase-grid { grid-template-columns: 1fr; }
+      .ob-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .ob-product-grid { grid-template-columns: 1fr; }
+      .ob-stats-grid { grid-template-columns: 1fr; }
+      .ob-hero-btns { flex-direction: column; }
+      .ob-hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body class="ob-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="ob-grid-bg"></div>
+
+  <!-- Hero -->
+  <section class="ob-hero">
+    <div class="ob-hero-grid"></div>
+    <div class="ob-hero-content">
+      <div>
+        <div class="ob-hero-tag">☀️ OUTDOOR LIVING</div>
+        <h1>Extend Your <span>Living Space</span> Outdoors</h1>
+        <p class="ob-hero-desc">Premium outdoor blinds, awnings and café blinds designed to withstand Melbourne's unpredictable weather. Transform your alfresco area into an all-season entertainment space.</p>
+        <div class="ob-hero-btns">
+          <a href="../free-quote.html" class="ob-btn-primary">Get Free Quote →</a>
+          <a href="#products" class="ob-btn-outline">Explore Range</a>
+        </div>
+      </div>
+      <div class="ob-hero-visual">
+        <div class="ob-arch-block"><div class="ob-arch-icon">🏡</div></div>
+        <div class="ob-arch-block"><div class="ob-arch-icon">☀️</div></div>
+        <div class="ob-arch-block"><div class="ob-arch-icon">🪟</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="ob-stats">
+    <div class="ob-stats-grid">
+      <div class="ob-stat">
+        <div class="ob-stat-number">500+</div>
+        <div class="ob-stat-label">Outdoor Installs</div>
+      </div>
+      <div class="ob-stat">
+        <div class="ob-stat-number">10yr</div>
+        <div class="ob-stat-label">Warranty</div>
+      </div>
+      <div class="ob-stat">
+        <div class="ob-stat-number">UV 95%</div>
+        <div class="ob-stat-label">Protection</div>
+      </div>
+      <div class="ob-stat">
+        <div class="ob-stat-number">Free</div>
+        <div class="ob-stat-label">Measure & Quote</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="ob-section ob-products">
+    <div class="ob-section-inner ob-reveal">
+      <div class="ob-section-label">Our Range</div>
+      <h2 class="ob-section-title">Outdoor Solutions<br>Built to Last</h2>
+      <p class="ob-section-subtitle">From café blinds to motorised awnings, we have the perfect solution for every outdoor space.</p>
+    </div>
+    <div class="ob-section-inner">
+      <div class="ob-product-grid">
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">🏖️</div>
+          <div class="ob-product-name">Café Blinds</div>
+          <p class="ob-product-desc">Clear or tinted PVC café blinds that provide wind and rain protection while maintaining your view. Perfect for restaurants, cafés and home entertaining areas.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">🌞</div>
+          <div class="ob-product-name">Outdoor Roller Blinds</div>
+          <p class="ob-product-desc">Channel-guided outdoor roller blinds in mesh or PVC. Motorised or manual operation with spring-loaded or crank systems.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">⛱️</div>
+          <div class="ob-product-name">Folding Arm Awnings</div>
+          <p class="ob-product-desc">European-engineered folding arm awnings with Somfy motorisation. Extend up to 4m with sensor-controlled automatic retraction.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">🏗️</div>
+          <div class="ob-product-name">Ziptrak® Blinds</div>
+          <p class="ob-product-desc">Australia's #1 track-guided blind system. No gaps, no zips, no buckles — just smooth, effortless operation in any weather.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">🌿</div>
+          <div class="ob-product-name">Shade Sails</div>
+          <p class="ob-product-desc">Custom-designed shade sails in UV-stabilised fabrics. Architectural designs that complement your outdoor space.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+        <div class="ob-product-card ob-reveal">
+          <div class="ob-product-icon">🔧</div>
+          <div class="ob-product-name">Motorised Systems</div>
+          <p class="ob-product-desc">Smart motorisation with app control, wind sensors and timer programming. Integrate with your home automation system.</p>
+          <div class="ob-product-link">Learn More →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="ob-section ob-features">
+    <div class="ob-section-inner ob-reveal">
+      <div class="ob-section-label">Why Choose Us</div>
+      <h2 class="ob-section-title">Engineered for<br>Melbourne Weather</h2>
+      <p class="ob-section-subtitle">Our outdoor solutions are designed to handle everything Melbourne throws at them — from scorching summers to wild winter storms.</p>
+    </div>
+    <div class="ob-section-inner">
+      <div class="ob-features-grid">
+        <div class="ob-feature ob-reveal">
+          <div class="ob-feature-number">01</div>
+          <div class="ob-feature-title">Wind Rated to 120km/h</div>
+          <p class="ob-feature-desc">Our track-guided systems are engineered and tested to withstand extreme wind conditions, keeping your outdoor area protected even in Melbourne's notorious gusts.</p>
+        </div>
+        <div class="ob-feature ob-reveal">
+          <div class="ob-feature-number">02</div>
+          <div class="ob-feature-title">UV Protection Up to 95%</div>
+          <p class="ob-feature-desc">Premium mesh and PVC fabrics block up to 95% of harmful UV rays, protecting your family and furniture from sun damage while reducing heat.</p>
+        </div>
+        <div class="ob-feature ob-reveal">
+          <div class="ob-feature-number">03</div>
+          <div class="ob-feature-title">All-Weather Materials</div>
+          <p class="ob-feature-desc">Marine-grade stainless steel hardware, UV-stabilised fabrics and powder-coated aluminium frames that won't rust, fade or deteriorate.</p>
+        </div>
+        <div class="ob-feature ob-reveal">
+          <div class="ob-feature-number">04</div>
+          <div class="ob-feature-title">Smart Automation</div>
+          <p class="ob-feature-desc">Somfy motorisation with wind and sun sensors. Blinds automatically retract in high winds and deploy in strong sun — even when you're not home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="ob-section ob-showcase">
+    <div class="ob-section-inner ob-reveal">
+      <div class="ob-section-label">Applications</div>
+      <h2 class="ob-section-title">Perfect For Every<br>Outdoor Space</h2>
+    </div>
+    <div class="ob-section-inner">
+      <div class="ob-showcase-grid">
+        <div class="ob-showcase-item ob-bg-warm ob-reveal">
+          <div class="ob-showcase-icon">🍽️</div>
+          <div class="ob-showcase-label">HOSPITALITY</div>
+          <div class="ob-showcase-title">Restaurants & Cafés</div>
+          <p class="ob-showcase-desc">Maximise outdoor seating capacity year-round. Our café blinds create comfortable dining spaces that comply with council regulations.</p>
+        </div>
+        <div class="ob-showcase-item ob-reveal">
+          <div class="ob-showcase-icon">🏠</div>
+          <div class="ob-showcase-label">RESIDENTIAL</div>
+          <div class="ob-showcase-title">Alfresco & Patios</div>
+          <p class="ob-showcase-desc">Transform your patio or pergola into an all-weather entertaining area. Add value to your home with a functional outdoor room.</p>
+        </div>
+        <div class="ob-showcase-item ob-bg-accent ob-reveal">
+          <div class="ob-showcase-icon">🏢</div>
+          <div class="ob-showcase-label">COMMERCIAL</div>
+          <div class="ob-showcase-title">Offices & Retail</div>
+          <p class="ob-showcase-desc">Professional outdoor shading for commercial buildings. Reduce energy costs and create comfortable outdoor break areas for staff.</p>
+        </div>
+        <div class="ob-showcase-item ob-reveal">
+          <div class="ob-showcase-icon">🏊</div>
+          <div class="ob-showcase-label">POOLSIDE</div>
+          <div class="ob-showcase-title">Pool & Spa Areas</div>
+          <p class="ob-showcase-desc">Shade and privacy for pool areas. Our outdoor blinds are resistant to chlorine, moisture and mildew for long-lasting performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ob-section ob-cta">
+    <div class="ob-section-inner ob-reveal" style="position:relative;z-index:1;">
+      <h2 class="ob-section-title">Ready to Enjoy Your<br>Outdoor Space Year-Round?</h2>
+      <p class="ob-cta-subtitle">Book a free measure and quote. Our outdoor specialist will visit your home to recommend the perfect solution for your space.</p>
+      <a href="../free-quote.html" class="ob-btn-primary">Book Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ob-crosslinks">
+    <div class="ob-crosslinks-inner">
+      <h3 class="ob-crosslinks-title">Explore More Solutions</h3>
+      <div class="ob-crosslinks-grid">
+        <a href="commercial-blinds.html" class="ob-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="ob-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="ob-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="ob-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="ob-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="ob-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="ob-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html" class="ob-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="apartment-solutions.html" class="ob-crosslink-item"><span>→</span> Apartment Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // IntersectionObserver for scroll animations
+    const obRevealEls = document.querySelectorAll('.ob-reveal');
+    const obObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ob-visible');
+          obObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    obRevealEls.forEach(el => obObserver.observe(el));
+  </script>
+</body>
+</html>
