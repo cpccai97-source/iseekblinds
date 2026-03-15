@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Inspiration Lookbook | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Explore stunning window furnishing design ideas room by room. Get inspired by trending styles, colour pairings, and expert styling tips for 2026.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ===== MAGAZINE EDITORIAL PALETTE ===== */
+    :root {
+      --mg-black: #1A1A1A;
+      --mg-white: #FFFFFF;
+      --mg-off-white: #F7F5F2;
+      --mg-accent: #D4583A;
+      --mg-gold: #B8965A;
+      --mg-charcoal: #3A3A3A;
+      --mg-light-gray: #E8E6E3;
+      --mg-muted: #8A8580;
+      --mg-sage: #7A8B6F;
+      --mg-navy: #2C3E50;
+    }
+
+    /* ===== EDITORIAL TYPOGRAPHY ===== */
+    .mg-display { font-family: 'Georgia', 'Times New Roman', serif; letter-spacing: -0.02em; }
+    .mg-body { font-family: 'Helvetica Neue', Arial, sans-serif; }
+    .mg-mono { font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes mgFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes mgSlideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mgScaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .mg-animate { opacity: 0; }
+    .mg-animate.mg-visible { animation-duration: 0.8s; animation-fill-mode: forwards; animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+    .mg-animate.mg-visible.mg-fade { animation-name: mgFadeIn; }
+    .mg-animate.mg-visible.mg-slide { animation-name: mgSlideUp; }
+    .mg-animate.mg-visible.mg-scale { animation-name: mgScaleIn; }
+
+    /* ===== HERO — FULL EDITORIAL SPREAD ===== */
+    .mg-hero {
+      background: var(--mg-black);
+      color: var(--mg-white);
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mg-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(145deg,
+        rgba(212,88,58,0.15) 0%,
+        rgba(26,26,26,0.95) 40%,
+        rgba(26,26,26,0.8) 100%
+      );
+    }
+    .mg-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 800px;
+    }
+    .mg-hero-label {
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--mg-gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .mg-hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+    }
+    .mg-hero h1 em {
+      font-style: italic;
+      color: var(--mg-accent);
+    }
+    .mg-hero-intro {
+      font-family: 'Georgia', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      opacity: 0.8;
+      max-width: 550px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .mg-hero-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--mg-gold);
+      margin: 0 auto;
+    }
+
+    /* ===== EDITORIAL SECTION STYLES ===== */
+    .mg-section { padding: 80px 24px; }
+    .mg-section-dark { background: var(--mg-black); color: var(--mg-white); }
+    .mg-section-light { background: var(--mg-off-white); }
+    .mg-section-white { background: var(--mg-white); }
+    .mg-section-accent { background: var(--mg-accent); color: var(--mg-white); }
+    .mg-container { max-width: 1200px; margin: 0 auto; }
+    .mg-narrow { max-width: 700px; margin: 0 auto; }
+
+    .mg-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .mg-section-header .mg-mono {
+      color: var(--mg-accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .mg-section-dark .mg-section-header .mg-mono { color: var(--mg-gold); }
+    .mg-section-header h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2.8rem;
+      color: var(--mg-black);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .mg-section-dark .mg-section-header h2 { color: var(--mg-white); }
+    .mg-section-header p {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      color: var(--mg-muted);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ===== ROOM-BY-ROOM — ASYMMETRIC GRID ===== */
+    .mg-room-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    @media (min-width: 768px) {
+      .mg-room-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .mg-room-grid .mg-room-card:nth-child(1) { grid-column: 1 / -1; }
+    }
+    @media (min-width: 1024px) {
+      .mg-room-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .mg-room-grid .mg-room-card:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
+    }
+    .mg-room-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .mg-room-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s;
+    }
+    .mg-room-card:hover .mg-room-card-bg { transform: scale(1.05); }
+    .mg-room-card.mg-living .mg-room-card-bg { background: linear-gradient(135deg, #D4A574 0%, #8B6F47 100%); }
+    .mg-room-card.mg-bedroom .mg-room-card-bg { background: linear-gradient(135deg, #9BB5CE 0%, #5A7A94 100%); }
+    .mg-room-card.mg-kitchen .mg-room-card-bg { background: linear-gradient(135deg, #C4D4A0 0%, #7A8B6F 100%); }
+    .mg-room-card.mg-bathroom .mg-room-card-bg { background: linear-gradient(135deg, #B8C9D4 0%, #6B8299 100%); }
+    .mg-room-card.mg-office .mg-room-card-bg { background: linear-gradient(135deg, #D4C4A8 0%, #8B7D6B 100%); }
+    .mg-room-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    }
+    .mg-room-content {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+      color: var(--mg-white);
+    }
+    .mg-room-content .mg-mono {
+      color: var(--mg-gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .mg-room-content h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .mg-room-content p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* ===== PULL QUOTE ===== */
+    .mg-pullquote {
+      padding: 60px 24px;
+      text-align: center;
+      border-top: 1px solid var(--mg-light-gray);
+      border-bottom: 1px solid var(--mg-light-gray);
+      background: var(--mg-white);
+    }
+    .mg-pullquote blockquote {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      font-style: italic;
+      color: var(--mg-charcoal);
+      max-width: 700px;
+      margin: 0 auto 16px;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .mg-pullquote cite {
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: var(--mg-accent);
+      font-style: normal;
+    }
+
+    /* ===== TRENDING STYLES 2026 ===== */
+    .mg-trends-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .mg-trends-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .mg-trends-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .mg-trend-card {
+      border: 1px solid var(--mg-light-gray);
+      padding: 0;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .mg-trend-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .mg-trend-visual {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mg-trend-visual .mg-trend-bg { position: absolute; inset: 0; transition: transform 0.5s; }
+    .mg-trend-card:hover .mg-trend-bg { transform: scale(1.08); }
+    .mg-trend-visual.mg-earth .mg-trend-bg { background: linear-gradient(135deg, #C4A882, #8B7355, #D4B896); }
+    .mg-trend-visual.mg-minimal .mg-trend-bg { background: linear-gradient(135deg, #F0EDE8, #D4D0CA, #E8E4DE); }
+    .mg-trend-visual.mg-bold .mg-trend-bg { background: linear-gradient(135deg, #2C3E50, #D4583A, #B8965A); }
+    .mg-trend-visual.mg-nature .mg-trend-bg { background: linear-gradient(135deg, #7A8B6F, #B5C99A, #5C6D4F); }
+    .mg-trend-visual.mg-luxe .mg-trend-bg { background: linear-gradient(135deg, #2C2420, #B8965A, #6B5B4A); }
+    .mg-trend-visual.mg-coastal .mg-trend-bg { background: linear-gradient(135deg, #87CEEB, #E0D5C1, #5B9BD5); }
+    .mg-trend-label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--mg-white);
+      color: var(--mg-black);
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.65rem;
+      padding: 4px 10px;
+    }
+    .mg-trend-body { padding: 24px; }
+    .mg-trend-body h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      color: var(--mg-black);
+      margin-bottom: 8px;
+    }
+    .mg-trend-body p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      color: var(--mg-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== EDITOR'S PICK ===== */
+    .mg-editor-pick {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border: 2px solid var(--mg-black);
+      overflow: hidden;
+    }
+    @media (min-width: 768px) { .mg-editor-pick { grid-template-columns: 1fr 1fr; } }
+    .mg-editor-visual {
+      min-height: 350px;
+      position: relative;
+    }
+    .mg-editor-visual-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, var(--mg-sage) 0%, var(--mg-navy) 100%);
+    }
+    .mg-editor-visual-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--mg-accent);
+      color: var(--mg-white);
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      padding: 6px 14px;
+    }
+    .mg-editor-text {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--mg-off-white);
+    }
+    .mg-editor-text .mg-mono { color: var(--mg-gold); margin-bottom: 12px; display: block; }
+    .mg-editor-text h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.8rem;
+      color: var(--mg-black);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .mg-editor-text p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--mg-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .mg-editor-link {
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+      color: var(--mg-accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--mg-accent);
+      padding-bottom: 2px;
+      display: inline-block;
+    }
+
+    /* ===== COLOUR PAIRING GUIDE ===== */
+    .mg-colour-pairs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 768px) { .mg-colour-pairs { grid-template-columns: 1fr 1fr; } }
+    .mg-colour-pair {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid var(--mg-light-gray);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .mg-colour-pair:hover { transform: translateY(-3px); }
+    .mg-colour-swatches {
+      display: flex;
+      flex-direction: column;
+      width: 80px;
+      flex-shrink: 0;
+    }
+    .mg-colour-swatches span {
+      flex: 1;
+      min-height: 40px;
+    }
+    .mg-colour-info {
+      padding: 20px;
+      flex: 1;
+    }
+    .mg-colour-info h4 {
+      font-family: 'Georgia', serif;
+      color: var(--mg-black);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .mg-colour-info p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--mg-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* ===== STYLING TIPS ===== */
+    .mg-tips-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    @media (min-width: 768px) { .mg-tips-grid { grid-template-columns: 1fr 1fr; } }
+    .mg-tip {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .mg-tip-num {
+      flex-shrink: 0;
+      font-family: 'Georgia', serif;
+      font-size: 3rem;
+      color: var(--mg-light-gray);
+      line-height: 1;
+    }
+    .mg-section-dark .mg-tip-num { color: var(--mg-charcoal); }
+    .mg-tip-content h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+    .mg-section-dark .mg-tip-content h3 { color: var(--mg-white); }
+    .mg-tip-content p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--mg-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ===== CTA EDITORIAL ===== */
+    .mg-cta {
+      background: var(--mg-accent);
+      color: var(--mg-white);
+      text-align: center;
+      padding: 70px 24px;
+    }
+    .mg-cta .mg-mono { color: rgba(255,255,255,0.7); margin-bottom: 14px; display: block; }
+    .mg-cta h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .mg-cta p {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+    .mg-cta-btn {
+      display: inline-block;
+      background: var(--mg-white);
+      color: var(--mg-accent);
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .mg-cta-btn:hover { background: var(--mg-black); color: var(--mg-white); transform: translateY(-2px); }
+
+    /* ===== CROSS LINKS ===== */
+    .mg-crosslinks {
+      background: var(--mg-off-white);
+      padding: 50px 24px;
+      border-top: 1px solid var(--mg-light-gray);
+    }
+    .mg-crosslinks-inner { max-width: 1200px; margin: 0 auto; }
+    .mg-crosslinks h3 {
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      color: var(--mg-muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .mg-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .mg-crosslink-item {
+      display: block;
+      padding: 14px 18px;
+      background: var(--mg-white);
+      border: 1px solid var(--mg-light-gray);
+      text-decoration: none;
+      color: var(--mg-charcoal);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .mg-crosslink-item:hover { border-color: var(--mg-accent); color: var(--mg-accent); }
+    .mg-crosslink-item span { color: var(--mg-accent); margin-right: 8px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .mg-hero h1 { font-size: 2.4rem; }
+      .mg-hero { min-height: 50vh; padding: 100px 20px 60px; }
+      .mg-section { padding: 50px 16px; }
+      .mg-section-header h2 { font-size: 2rem; }
+      .mg-pullquote blockquote { font-size: 1.4rem; }
+      .mg-editor-text { padding: 28px 24px; }
+      .mg-editor-text h3 { font-size: 1.4rem; }
+      .mg-cta h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+    <span>📍 Serving Melbourne & Surrounds</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-dropdown">
+        <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/roller-blinds.html">Roller Blinds</a>
+          <a href="../products/curtains.html">Curtains</a>
+          <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+          <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+          <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+          <a href="../products/motorised.html">Motorised Solutions</a>
+        </div>
+      </div>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../about.html">About Us</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="mg-hero">
+  <div class="mg-hero-content">
+    <span class="mg-hero-label mg-animate mg-fade">The iSeekBlinds Lookbook — 2026 Edition</span>
+    <h1 class="mg-animate mg-fade">Design <em>Inspiration</em><br>for Every Room</h1>
+    <p class="mg-hero-intro mg-animate mg-fade">Curated window styling ideas from Melbourne's leading designers. Discover trends, colour pairings, and transformative looks.</p>
+    <div class="mg-hero-divider mg-animate mg-scale"></div>
+  </div>
+</section>
+
+<!-- Room by Room Inspiration -->
+<section class="mg-section mg-section-light">
+  <div class="mg-container">
+    <div class="mg-section-header mg-animate mg-slide">
+      <span class="mg-mono">Room by Room</span>
+      <h2>Find Your Space</h2>
+      <p>Every room tells a story. Let your windows set the scene.</p>
+    </div>
+    <div class="mg-room-grid">
+      <div class="mg-room-card mg-living mg-animate mg-scale">
+        <div class="mg-room-card-bg"></div>
+        <div class="mg-room-overlay"></div>
+        <div class="mg-room-content">
+          <span class="mg-mono">Featured Space</span>
+          <h3>Living Room</h3>
+          <p>Layer sheer curtains over roller blinds for depth. Earthy tones create warmth; whites amplify space. Consider motorised for large windows — convenience meets elegance.</p>
+        </div>
+      </div>
+      <div class="mg-room-card mg-bedroom mg-animate mg-slide">
+        <div class="mg-room-card-bg"></div>
+        <div class="mg-room-overlay"></div>
+        <div class="mg-room-content">
+          <span class="mg-mono">Retreat</span>
+          <h3>Bedroom</h3>
+          <p>Blockout roller blinds paired with flowing curtains. Honeycomb for insulation. Soft blues and neutrals for serenity.</p>
+        </div>
+      </div>
+      <div class="mg-room-card mg-kitchen mg-animate mg-slide">
+        <div class="mg-room-card-bg"></div>
+        <div class="mg-room-overlay"></div>
+        <div class="mg-room-content">
+          <span class="mg-mono">Heart of Home</span>
+          <h3>Kitchen</h3>
+          <p>Moisture-resistant venetians or easy-clean rollers. Splash-proof fabrics in sage, terracotta, or crisp white.</p>
+        </div>
+      </div>
+      <div class="mg-room-card mg-bathroom mg-animate mg-slide">
+        <div class="mg-room-card-bg"></div>
+        <div class="mg-room-overlay"></div>
+        <div class="mg-room-content">
+          <span class="mg-mono">Sanctuary</span>
+          <h3>Bathroom</h3>
+          <p>PVC shutters resist humidity beautifully. Frosted rollers offer privacy with natural light. Think spa-inspired tones.</p>
+        </div>
+      </div>
+      <div class="mg-room-card mg-office mg-animate mg-slide">
+        <div class="mg-room-card-bg"></div>
+        <div class="mg-room-overlay"></div>
+        <div class="mg-room-content">
+          <span class="mg-mono">Productivity</span>
+          <h3>Home Office</h3>
+          <p>Light-filtering blinds reduce screen glare without dimming the room. Dual rollers let you switch between focus and openness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pull Quote -->
+<div class="mg-pullquote mg-animate mg-fade">
+  <blockquote>"The right window treatment doesn't just dress a room — it transforms how you <em>feel</em> in it."</blockquote>
+  <cite>— iSeekBlinds Design Team</cite>
+</div>
+
+<!-- Trending Styles 2026 -->
+<section class="mg-section mg-section-white">
+  <div class="mg-container">
+    <div class="mg-section-header mg-animate mg-slide">
+      <span class="mg-mono">Trending Now</span>
+      <h2>2026 Style Forecast</h2>
+      <p>The looks defining Australian interiors this year.</p>
+    </div>
+    <div class="mg-trends-grid">
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-earth"><div class="mg-trend-bg"></div><span class="mg-trend-label">Trending</span></div>
+        <div class="mg-trend-body">
+          <h3>Warm Earth Tones</h3>
+          <p>Terracotta, clay, and sandstone hues bring organic warmth. Pair with natural timber shutters for an grounded, inviting feel.</p>
+        </div>
+      </div>
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-minimal"><div class="mg-trend-bg"></div><span class="mg-trend-label">Classic</span></div>
+        <div class="mg-trend-body">
+          <h3>Quiet Minimalism</h3>
+          <p>Clean lines, tonal whites, and barely-there sheers. Let architecture speak while blinds provide subtle functionality.</p>
+        </div>
+      </div>
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-bold"><div class="mg-trend-bg"></div><span class="mg-trend-label">Bold</span></div>
+        <div class="mg-trend-body">
+          <h3>Statement Contrast</h3>
+          <p>Dark frames with light fabrics, or vice versa. High-contrast pairings create visual drama and architectural depth.</p>
+        </div>
+      </div>
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-nature"><div class="mg-trend-bg"></div><span class="mg-trend-label">Sustainable</span></div>
+        <div class="mg-trend-body">
+          <h3>Biophilic Design</h3>
+          <p>Nature-inspired textures, green tones, and sustainable materials. Bamboo blinds and linen curtains lead this movement.</p>
+        </div>
+      </div>
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-luxe"><div class="mg-trend-bg"></div><span class="mg-trend-label">Premium</span></div>
+        <div class="mg-trend-body">
+          <h3>Modern Luxe</h3>
+          <p>Rich velvets, brass hardware, and layered treatments. Motorised operation adds the finishing touch of sophistication.</p>
+        </div>
+      </div>
+      <div class="mg-trend-card mg-animate mg-slide">
+        <div class="mg-trend-visual mg-coastal"><div class="mg-trend-bg"></div><span class="mg-trend-label">Lifestyle</span></div>
+        <div class="mg-trend-body">
+          <h3>Coastal Contemporary</h3>
+          <p>Soft blues, weathered whites, and natural weaves. Perfect for Melbourne's bayside suburbs and holiday homes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Editor's Pick -->
+<section class="mg-section mg-section-light">
+  <div class="mg-container">
+    <div class="mg-section-header mg-animate mg-slide">
+      <span class="mg-mono">Editor's Pick</span>
+      <h2>The Look We Love</h2>
+    </div>
+    <div class="mg-editor-pick mg-animate mg-scale">
+      <div class="mg-editor-visual">
+        <div class="mg-editor-visual-bg"></div>
+        <span class="mg-editor-visual-badge">✦ Editor's Choice</span>
+      </div>
+      <div class="mg-editor-text">
+        <span class="mg-mono">2026 Signature Look</span>
+        <h3>The Layered Neutral</h3>
+        <p>Combine sheer curtains in warm ivory with blockout roller blinds in stone. Add plantation shutters in a complementary timber tone for the ultimate trifecta of style, privacy, and light control. This layered approach works in every room and adapts to every season.</p>
+        <p>Our designers recommend this combination for open-plan living areas where versatility is key.</p>
+        <a href="../free-quote.html" class="mg-editor-link">Request This Look →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Colour Pairing Guide -->
+<section class="mg-section mg-section-white">
+  <div class="mg-container">
+    <div class="mg-section-header mg-animate mg-slide">
+      <span class="mg-mono">Colour Lab</span>
+      <h2>Pairing Guide</h2>
+      <p>Harmonious colour combinations for blinds and interiors.</p>
+    </div>
+    <div class="mg-colour-pairs">
+      <div class="mg-colour-pair mg-animate mg-slide">
+        <div class="mg-colour-swatches">
+          <span style="background:#F5F0E8"></span>
+          <span style="background:#C4A882"></span>
+          <span style="background:#5C4A32"></span>
+        </div>
+        <div class="mg-colour-info">
+          <h4>Warm Neutrals</h4>
+          <p>Cream walls + caramel roller blinds + dark timber shutters. Timeless and grounding.</p>
+        </div>
+      </div>
+      <div class="mg-colour-pair mg-animate mg-slide">
+        <div class="mg-colour-swatches">
+          <span style="background:#E8F0E8"></span>
+          <span style="background:#7A8B6F"></span>
+          <span style="background:#2C3E2C"></span>
+        </div>
+        <div class="mg-colour-info">
+          <h4>Forest Calm</h4>
+          <p>Sage walls + olive linen curtains + charcoal accents. Brings the outdoors in.</p>
+        </div>
+      </div>
+      <div class="mg-colour-pair mg-animate mg-slide">
+        <div class="mg-colour-swatches">
+          <span style="background:#F0F4F8"></span>
+          <span style="background:#5B9BD5"></span>
+          <span style="background:#1A3A5C"></span>
+        </div>
+        <div class="mg-colour-info">
+          <h4>Coastal Blues</h4>
+          <p>White sheers + sky blue rollers + navy feature wall. Fresh and serene.</p>
+        </div>
+      </div>
+      <div class="mg-colour-pair mg-animate mg-slide">
+        <div class="mg-colour-swatches">
+          <span style="background:#FFF5F0"></span>
+          <span style="background:#D4583A"></span>
+          <span style="background:#2C2420"></span>
+        </div>
+        <div class="mg-colour-info">
+          <h4>Warm Contrast</h4>
+          <p>Blush base + terracotta blinds + dark chocolate frame. Bold and contemporary.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Designer Tips -->
+<section class="mg-section mg-section-dark">
+  <div class="mg-container">
+    <div class="mg-section-header mg-animate mg-slide">
+      <span class="mg-mono">From the Experts</span>
+      <h2>Styling Tips</h2>
+      <p>Professional advice to elevate your window treatments.</p>
+    </div>
+    <div class="mg-tips-grid">
+      <div class="mg-tip mg-animate mg-slide">
+        <span class="mg-tip-num">01</span>
+        <div class="mg-tip-content">
+          <h3>Mount Ceiling-High</h3>
+          <p>Install curtain tracks or blinds as close to the ceiling as possible. It draws the eye upward and makes rooms feel taller and more luxurious.</p>
+        </div>
+      </div>
+      <div class="mg-tip mg-animate mg-slide">
+        <span class="mg-tip-num">02</span>
+        <div class="mg-tip-content">
+          <h3>Layer for Depth</h3>
+          <p>Combine two treatments — sheers with rollers, curtains with shutters. Layering adds richness and gives you flexible light control options.</p>
+        </div>
+      </div>
+      <div class="mg-tip mg-animate mg-slide">
+        <span class="mg-tip-num">03</span>
+        <div class="mg-tip-content">
+          <h3>Match the Architecture</h3>
+          <p>Modern homes suit clean roller blinds; heritage homes shine with plantation shutters. Let the building's character guide your choices.</p>
+        </div>
+      </div>
+      <div class="mg-tip mg-animate mg-slide">
+        <span class="mg-tip-num">04</span>
+        <div class="mg-tip-content">
+          <h3>Consider the Light</h3>
+          <p>North-facing rooms need UV protection; south-facing rooms benefit from light-maximising sheers. Always design with your orientation in mind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="mg-cta">
+  <span class="mg-mono mg-animate mg-fade">Ready to Transform?</span>
+  <h2 class="mg-animate mg-scale">Bring These Ideas to Life ✨</h2>
+  <p class="mg-animate mg-fade">Book a free in-home consultation and let our designers create your perfect look.</p>
+  <a href="../free-quote.html" class="mg-cta-btn mg-animate mg-scale">Get a Free Quote</a>
+</section>
+
+<!-- Cross Links -->
+<section class="mg-crosslinks">
+  <div class="mg-crosslinks-inner">
+    <h3>More from iSeekBlinds</h3>
+    <div class="mg-crosslinks-grid">
+      <a href="commercial-blinds.html" class="mg-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="mg-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="mg-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="mg-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="colour-trends-2026.html" class="mg-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="energy-efficient.html" class="mg-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      <a href="child-safety.html" class="mg-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+      <a href="outdoor-blinds.html" class="mg-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+      <a href="apartment-solutions.html" class="mg-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="smart-home.html" class="mg-crosslink-item"><span>→</span> Smart Home Blinds</a>
+      <a href="care-maintenance.html" class="mg-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <p>Melbourne's trusted window furnishing experts.</p>
+      <div class="footer-contact-info">
+        <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+        <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/curtains.html">Curtains</a>
+      <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+      <a href="../products/motorised.html">Motorised Solutions</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../free-quote.html">Free Quote</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // IntersectionObserver for animations
+  const mgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('mg-visible');
+        mgObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.mg-animate').forEach(el => mgObserver.observe(el));
+</script>
+</body>
+</html>

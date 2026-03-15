@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinds Care & Maintenance Guide | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Expert tips on cleaning, maintaining, and caring for your blinds, shutters, and curtains. Keep your window furnishings looking beautiful for years.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ===== RETRO MODERN PALETTE ===== */
+    :root {
+      --rm-cream: #FAF3E0;
+      --rm-burgundy: #7B2D3B;
+      --rm-olive: #5C6B4F;
+      --rm-brass: #C5973E;
+      --rm-dark: #2C2420;
+      --rm-warm-gray: #8C7E72;
+      --rm-light-olive: #E8EDDF;
+      --rm-soft-pink: #F2E0D6;
+    }
+
+    /* ===== RETRO MODERN TYPOGRAPHY ===== */
+    .rm-serif { font-family: 'Georgia', 'Times New Roman', serif; }
+    .rm-sans { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes rmFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes rmSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes rmScaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .rm-animate { opacity: 0; }
+    .rm-animate.rm-visible { animation-duration: 0.7s; animation-fill-mode: forwards; }
+    .rm-animate.rm-visible.rm-fade { animation-name: rmFadeIn; }
+    .rm-animate.rm-visible.rm-slide { animation-name: rmSlideUp; }
+    .rm-animate.rm-visible.rm-scale { animation-name: rmScaleIn; }
+
+    /* ===== HERO ===== */
+    .rm-hero {
+      background: linear-gradient(135deg, var(--rm-burgundy) 0%, var(--rm-dark) 100%);
+      color: var(--rm-cream);
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .rm-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5973E' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+    .rm-hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3rem;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .rm-hero h1 .rm-accent { color: var(--rm-brass); }
+    .rm-hero p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+      position: relative;
+    }
+    .rm-hero-badge {
+      display: inline-block;
+      background: var(--rm-brass);
+      color: var(--rm-dark);
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      padding: 8px 24px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    /* ===== SECTIONS ===== */
+    .rm-section {
+      padding: 70px 20px;
+    }
+    .rm-section-cream { background: var(--rm-cream); }
+    .rm-section-white { background: #fff; }
+    .rm-section-olive { background: var(--rm-light-olive); }
+    .rm-section-pink { background: var(--rm-soft-pink); }
+    .rm-section-title {
+      font-family: 'Georgia', serif;
+      font-size: 2.2rem;
+      color: var(--rm-dark);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .rm-section-subtitle {
+      font-family: 'Helvetica Neue', sans-serif;
+      text-align: center;
+      color: var(--rm-warm-gray);
+      font-size: 1.05rem;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rm-container { max-width: 1100px; margin: 0 auto; }
+
+    /* ===== CLEANING GUIDE CARDS ===== */
+    .rm-guide-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) { .rm-guide-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .rm-guide-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .rm-guide-card {
+      background: #fff;
+      border: 2px solid var(--rm-cream);
+      border-radius: 12px;
+      padding: 32px 24px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .rm-guide-card:hover {
+      border-color: var(--rm-brass);
+      box-shadow: 0 8px 30px rgba(124,45,59,0.1);
+    }
+    .rm-guide-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+    .rm-guide-card h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.3rem;
+      color: var(--rm-burgundy);
+      margin-bottom: 10px;
+    }
+    .rm-guide-card p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--rm-warm-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .rm-guide-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+    .rm-guide-card ul li {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      color: var(--rm-dark);
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--rm-cream);
+    }
+    .rm-guide-card ul li::before {
+      content: '✦ ';
+      color: var(--rm-brass);
+    }
+
+    /* ===== STEP-BY-STEP ===== */
+    .rm-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .rm-steps::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--rm-brass), var(--rm-olive));
+    }
+    .rm-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 24px 0;
+    }
+    .rm-step-num {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--rm-burgundy);
+      color: var(--rm-cream);
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      border: 3px solid var(--rm-brass);
+    }
+    .rm-step-content h3 {
+      font-family: 'Georgia', serif;
+      color: var(--rm-dark);
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+    .rm-step-content p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--rm-warm-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ===== SEASONAL TIPS ===== */
+    .rm-seasons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 768px) { .rm-seasons-grid { grid-template-columns: 1fr 1fr; } }
+    .rm-season-card {
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .rm-season-card.rm-spring { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+    .rm-season-card.rm-summer { background: linear-gradient(135deg, #FFF8E1, #FFECB3); }
+    .rm-season-card.rm-autumn { background: linear-gradient(135deg, #FBE9E7, #FFCCBC); }
+    .rm-season-card.rm-winter { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); }
+    .rm-season-card h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      color: var(--rm-dark);
+      margin-bottom: 10px;
+    }
+    .rm-season-card p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      color: var(--rm-dark);
+      line-height: 1.6;
+    }
+
+    /* ===== MISTAKES TO AVOID ===== */
+    .rm-mistakes-list {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .rm-mistake {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .rm-mistake-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--rm-burgundy);
+      color: var(--rm-cream);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rm-mistake h4 {
+      font-family: 'Georgia', serif;
+      color: var(--rm-dark);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .rm-mistake p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--rm-warm-gray);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* ===== FAQ ACCORDION ===== */
+    .rm-faq { max-width: 750px; margin: 0 auto; }
+    .rm-faq-item {
+      border: 2px solid var(--rm-cream);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .rm-faq-item:hover { border-color: var(--rm-brass); }
+    .rm-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      font-family: 'Georgia', serif;
+      font-size: 1.05rem;
+      color: var(--rm-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .rm-faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--rm-brass);
+      font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .rm-faq-item.active .rm-faq-q::after {
+      transform: rotate(45deg);
+    }
+    .rm-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .rm-faq-item.active .rm-faq-a {
+      max-height: 300px;
+      padding: 0 24px 18px;
+    }
+    .rm-faq-a p {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--rm-warm-gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .rm-cta {
+      background: linear-gradient(135deg, var(--rm-olive) 0%, var(--rm-dark) 100%);
+      color: var(--rm-cream);
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .rm-cta h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .rm-cta p {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1.05rem;
+      opacity: 0.9;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rm-cta-btn {
+      display: inline-block;
+      background: var(--rm-brass);
+      color: var(--rm-dark);
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .rm-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197,151,62,0.4);
+    }
+
+    /* ===== CROSS LINKS ===== */
+    .rm-crosslinks {
+      background: var(--rm-cream);
+      padding: 50px 20px;
+    }
+    .rm-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .rm-crosslinks h3 {
+      font-family: 'Georgia', serif;
+      text-align: center;
+      color: var(--rm-dark);
+      font-size: 1.4rem;
+      margin-bottom: 28px;
+    }
+    .rm-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .rm-crosslink-item {
+      display: block;
+      padding: 12px 18px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--rm-dark);
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .rm-crosslink-item:hover {
+      border-color: var(--rm-brass);
+      transform: translateY(-2px);
+    }
+    .rm-crosslink-item span { color: var(--rm-brass); margin-right: 8px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .rm-hero h1 { font-size: 2rem; }
+      .rm-section-title { font-size: 1.6rem; }
+      .rm-hero { padding: 80px 16px 60px; }
+      .rm-section { padding: 50px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+    <span>📍 Serving Melbourne & Surrounds</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-dropdown">
+        <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../products/roller-blinds.html">Roller Blinds</a>
+          <a href="../products/curtains.html">Curtains</a>
+          <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+          <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+          <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+          <a href="../products/motorised.html">Motorised Solutions</a>
+        </div>
+      </div>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../about.html">About Us</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="rm-hero">
+  <h1 class="rm-animate rm-fade">🧹 Blinds <span class="rm-accent">Care & Maintenance</span> Guide</h1>
+  <p class="rm-animate rm-fade">Keep your window furnishings looking beautiful for years with our expert cleaning and maintenance tips.</p>
+  <span class="rm-hero-badge rm-animate rm-scale">✨ Expert Tips Inside</span>
+</section>
+
+<!-- Cleaning Guide by Blind Type -->
+<section class="rm-section rm-section-white">
+  <div class="rm-container">
+    <h2 class="rm-section-title rm-animate rm-slide">How to Clean Every Blind Type</h2>
+    <p class="rm-section-subtitle rm-animate rm-fade">Each window furnishing requires different care. Here's your definitive guide.</p>
+    <div class="rm-guide-grid">
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">🌀</div>
+        <h3>Roller Blinds</h3>
+        <p>Low-maintenance and easy to care for with regular attention.</p>
+        <ul>
+          <li>Dust weekly with a soft cloth or vacuum brush</li>
+          <li>Spot-clean with mild soap and warm water</li>
+          <li>Avoid soaking — wipe and air dry</li>
+          <li>Roll fully open periodically to prevent creasing</li>
+        </ul>
+      </div>
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">🪟</div>
+        <h3>Venetian Blinds</h3>
+        <p>Slat-by-slat care keeps these classics looking sharp.</p>
+        <ul>
+          <li>Close slats and wipe with a microfibre cloth</li>
+          <li>Use a venetian blind duster for speed</li>
+          <li>Deep clean annually — remove and soak in bathtub</li>
+          <li>Dry thoroughly before re-hanging</li>
+        </ul>
+      </div>
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">🐝</div>
+        <h3>Honeycomb Blinds</h3>
+        <p>Delicate cells need gentle care to maintain insulation.</p>
+        <ul>
+          <li>Use vacuum with low suction and brush attachment</li>
+          <li>Blow out dust with a hairdryer on cool setting</li>
+          <li>Spot-clean only — never immerse in water</li>
+          <li>Handle pleats gently to avoid creasing</li>
+        </ul>
+      </div>
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">🚪</div>
+        <h3>Plantation Shutters</h3>
+        <p>Durable and easy to maintain when done right.</p>
+        <ul>
+          <li>Wipe louvres with damp cloth monthly</li>
+          <li>Use a mild wood cleaner for timber shutters</li>
+          <li>Check hinge screws every 6 months</li>
+          <li>Avoid excessive moisture on timber panels</li>
+        </ul>
+      </div>
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">🎭</div>
+        <h3>Curtains & Drapes</h3>
+        <p>Fabric care varies — always check the label first.</p>
+        <ul>
+          <li>Vacuum on low suction with upholstery attachment</li>
+          <li>Machine wash on gentle (if label allows)</li>
+          <li>Professional dry-clean for delicate fabrics</li>
+          <li>Steam to remove wrinkles instead of ironing</li>
+        </ul>
+      </div>
+      <div class="rm-guide-card rm-animate rm-slide">
+        <div class="rm-guide-icon">☀️</div>
+        <h3>Outdoor Blinds</h3>
+        <p>Weather-exposed blinds need extra attention.</p>
+        <ul>
+          <li>Hose down monthly to remove dirt and pollen</li>
+          <li>Treat mould with diluted vinegar solution</li>
+          <li>Lubricate tracks and zippers seasonally</li>
+          <li>Retract during severe storms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Step-by-Step Deep Clean -->
+<section class="rm-section rm-section-cream">
+  <div class="rm-container">
+    <h2 class="rm-section-title rm-animate rm-slide">🛠️ Step-by-Step Deep Clean</h2>
+    <p class="rm-section-subtitle rm-animate rm-fade">Follow this routine every 3–6 months for blinds that look brand new.</p>
+    <div class="rm-steps">
+      <div class="rm-step rm-animate rm-slide">
+        <div class="rm-step-num">1</div>
+        <div class="rm-step-content">
+          <h3>Remove Loose Dust</h3>
+          <p>Start with a feather duster or vacuum with brush attachment. Work top to bottom to avoid redistributing dust.</p>
+        </div>
+      </div>
+      <div class="rm-step rm-animate rm-slide">
+        <div class="rm-step-num">2</div>
+        <div class="rm-step-content">
+          <h3>Prepare Cleaning Solution</h3>
+          <p>Mix a few drops of mild dish soap in warm water. Avoid harsh chemicals, bleach, or abrasive cleaners.</p>
+        </div>
+      </div>
+      <div class="rm-step rm-animate rm-slide">
+        <div class="rm-step-num">3</div>
+        <div class="rm-step-content">
+          <h3>Spot Clean or Wipe Down</h3>
+          <p>Dip a microfibre cloth in the solution, wring well, and wipe each slat or surface. For fabrics, blot — don't rub.</p>
+        </div>
+      </div>
+      <div class="rm-step rm-animate rm-slide">
+        <div class="rm-step-num">4</div>
+        <div class="rm-step-content">
+          <h3>Rinse & Dry</h3>
+          <p>Wipe again with a clean damp cloth to remove soap residue. Open windows or use a fan to dry thoroughly.</p>
+        </div>
+      </div>
+      <div class="rm-step rm-animate rm-slide">
+        <div class="rm-step-num">5</div>
+        <div class="rm-step-content">
+          <h3>Inspect & Maintain</h3>
+          <p>Check for damaged cords, loose brackets, or stiff mechanisms. Address small issues before they become big repairs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seasonal Tips -->
+<section class="rm-section rm-section-white">
+  <div class="rm-container">
+    <h2 class="rm-section-title rm-animate rm-slide">🌤️ Seasonal Maintenance Calendar</h2>
+    <p class="rm-section-subtitle rm-animate rm-fade">Timing your care routine with the seasons keeps blinds in peak condition.</p>
+    <div class="rm-seasons-grid">
+      <div class="rm-season-card rm-spring rm-animate rm-scale">
+        <h3>🌸 Spring</h3>
+        <p>Deep clean after winter dust buildup. Check for condensation damage on timber. Open windows to air out fabrics. Perfect time for a professional service.</p>
+      </div>
+      <div class="rm-season-card rm-summer rm-animate rm-scale">
+        <h3>☀️ Summer</h3>
+        <p>Check UV damage on sun-facing blinds. Clean outdoor blinds and lubricate tracks. Adjust motorised timer schedules for longer days.</p>
+      </div>
+      <div class="rm-season-card rm-autumn rm-animate rm-scale">
+        <h3>🍂 Autumn</h3>
+        <p>Remove fallen leaves from outdoor blinds. Test insulation on honeycomb blinds before winter. Clean curtain tracks and ensure smooth operation.</p>
+      </div>
+      <div class="rm-season-card rm-winter rm-animate rm-scale">
+        <h3>❄️ Winter</h3>
+        <p>Monitor for condensation near windows. Use blinds strategically for insulation — close at night, open during sunny days. Dust regularly as heaters circulate particles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Common Mistakes -->
+<section class="rm-section rm-section-olive">
+  <div class="rm-container">
+    <h2 class="rm-section-title rm-animate rm-slide">⚠️ Common Mistakes to Avoid</h2>
+    <p class="rm-section-subtitle rm-animate rm-fade">Well-meaning care can cause damage if you're not careful.</p>
+    <div class="rm-mistakes-list">
+      <div class="rm-mistake rm-animate rm-slide">
+        <div class="rm-mistake-icon">💧</div>
+        <div>
+          <h4>Over-Wetting Fabric Blinds</h4>
+          <p>Excess moisture can cause mould, staining, and stretching. Always wring cloths thoroughly and blot rather than soak.</p>
+        </div>
+      </div>
+      <div class="rm-mistake rm-animate rm-slide">
+        <div class="rm-mistake-icon">🧴</div>
+        <div>
+          <h4>Using Harsh Chemicals</h4>
+          <p>Bleach, ammonia, and abrasive cleaners can discolour and damage finishes. Stick to mild soap or specialist blind cleaners.</p>
+        </div>
+      </div>
+      <div class="rm-mistake rm-animate rm-slide">
+        <div class="rm-mistake-icon">💨</div>
+        <div>
+          <h4>Ignoring Dust Buildup</h4>
+          <p>Letting dust accumulate makes cleaning harder and can trigger allergies. A quick weekly dust prevents major buildup.</p>
+        </div>
+      </div>
+      <div class="rm-mistake rm-animate rm-slide">
+        <div class="rm-mistake-icon">🔧</div>
+        <div>
+          <h4>Forcing Stuck Mechanisms</h4>
+          <p>Yanking jammed chains or cords causes breakage. Apply silicone lubricant or call a professional for stuck components.</p>
+        </div>
+      </div>
+      <div class="rm-mistake rm-animate rm-slide">
+        <div class="rm-mistake-icon">🌡️</div>
+        <div>
+          <h4>Machine Washing Non-Washable Fabrics</h4>
+          <p>Always check care labels. Many blind fabrics are spot-clean only and will shrink or distort in a washing machine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="rm-section rm-section-white">
+  <div class="rm-container">
+    <h2 class="rm-section-title rm-animate rm-slide">❓ Frequently Asked Questions</h2>
+    <p class="rm-section-subtitle rm-animate rm-fade">Quick answers to common care queries.</p>
+    <div class="rm-faq">
+      <div class="rm-faq-item rm-animate rm-slide">
+        <button class="rm-faq-q">How often should I clean my blinds?</button>
+        <div class="rm-faq-a"><p>A light dusting once a week is ideal. Do a deeper clean every 3–6 months depending on the environment. Kitchens and bathrooms may need more frequent attention due to grease and moisture.</p></div>
+      </div>
+      <div class="rm-faq-item rm-animate rm-slide">
+        <button class="rm-faq-q">Can I use a steam cleaner on blinds?</button>
+        <div class="rm-faq-a"><p>Steam cleaning works well on curtains and some fabric roller blinds, but avoid it on timber shutters, aluminium venetians, and honeycomb blinds where moisture can cause warping or damage to the cell structure.</p></div>
+      </div>
+      <div class="rm-faq-item rm-animate rm-slide">
+        <button class="rm-faq-q">When should I call a professional?</button>
+        <div class="rm-faq-a"><p>If you notice broken cords, stuck mechanisms, motor issues, significant staining, or mould growth, it's best to call a professional. We offer maintenance services — contact us for a quote.</p></div>
+      </div>
+      <div class="rm-faq-item rm-animate rm-slide">
+        <button class="rm-faq-q">How do I remove mould from blinds?</button>
+        <div class="rm-faq-a"><p>Mix equal parts white vinegar and water, apply to the affected area, let sit for 10 minutes, then wipe clean. For severe cases, use a specialist mould remover or consult a professional cleaner.</p></div>
+      </div>
+      <div class="rm-faq-item rm-animate rm-slide">
+        <button class="rm-faq-q">Do motorised blinds need maintenance?</button>
+        <div class="rm-faq-a"><p>Yes — check battery levels (for battery motors) every 6 months, ensure remote controls work, and keep the motor housing dust-free. Recalibrate limits if blinds stop at incorrect positions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="rm-cta">
+  <h2 class="rm-animate rm-scale">Need Professional Blind Maintenance? 🔧</h2>
+  <p class="rm-animate rm-fade">Our expert team can service, repair, and deep-clean all types of window furnishings across Melbourne.</p>
+  <a href="../free-quote.html" class="rm-cta-btn rm-animate rm-scale">Get a Free Quote →</a>
+</section>
+
+<!-- Cross Links -->
+<section class="rm-crosslinks">
+  <div class="rm-crosslinks-inner">
+    <h3>Explore More from iSeekBlinds</h3>
+    <div class="rm-crosslinks-grid">
+      <a href="commercial-blinds.html" class="rm-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="rm-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="rm-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="rm-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="colour-trends-2026.html" class="rm-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="energy-efficient.html" class="rm-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      <a href="child-safety.html" class="rm-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+      <a href="outdoor-blinds.html" class="rm-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+      <a href="apartment-solutions.html" class="rm-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="smart-home.html" class="rm-crosslink-item"><span>→</span> Smart Home Blinds</a>
+      <a href="design-inspiration.html" class="rm-crosslink-item"><span>→</span> Design Inspiration</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <p>Melbourne's trusted window furnishing experts.</p>
+      <div class="footer-contact-info">
+        <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+        <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/curtains.html">Curtains</a>
+      <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+      <a href="../products/motorised.html">Motorised Solutions</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../free-quote.html">Free Quote</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // IntersectionObserver for animations
+  const rmObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('rm-visible');
+        rmObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rm-animate').forEach(el => rmObserver.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.rm-faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.rm-faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
