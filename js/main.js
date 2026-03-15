@@ -11,7 +11,7 @@ if (menuBtn) {
       nav.style.top = '72px';
       nav.style.right = '20px';
       nav.style.left = '20px';
-      nav.style.background = '#F5F0EB';
+      nav.style.background = '#EDE7DF';
       nav.style.padding = '24px';
       nav.style.borderRadius = '4px';
       nav.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)';
@@ -29,22 +29,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// === Scroll Reveal (IntersectionObserver) ===
+// === Scroll Reveal (IntersectionObserver with fallback) ===
 const revealElements = document.querySelectorAll('.reveal');
 if (revealElements.length > 0) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
-      }
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.05,
+      rootMargin: '0px 0px -30px 0px'
     });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -60px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
+    // Fallback: if after 2s some are still not revealed (e.g. already in viewport), reveal them
+    setTimeout(() => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && !el.classList.contains('revealed')) {
+          el.classList.add('revealed');
+        }
+      });
+    }, 2000);
+  } else {
+    // No IO support — show everything
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
 }
 
 // === Simple form handler ===
@@ -87,9 +100,9 @@ if (header) {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     if (scrollY > 80) {
-      header.style.background = 'rgba(245,240,235,0.95)';
+      header.style.background = 'rgba(237,231,223,0.95)';
     } else {
-      header.style.background = '#F5F0EB';
+      header.style.background = '#EDE7DF';
     }
     lastScroll = scrollY;
   }, { passive: true });
