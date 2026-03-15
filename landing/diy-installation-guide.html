@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIY Blinds Installation Guide | Step-by-Step Tutorials | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Complete DIY blinds installation guide. Step-by-step tutorials for roller blinds, venetian blinds, curtain tracks and plantation shutters. Tools, tips and when to call a pro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === TECH FUTURISTIC THEME === */
+    :root {
+      --neon-cyan: #00d4ff;
+      --neon-green: #00ff88;
+      --dark-bg: #0d1117;
+      --dark-card: #161b22;
+      --dark-surface: #21262d;
+      --dark-border: #30363d;
+      --text-dim: #8b949e;
+      --text-bright: #e6edf3;
+      --grid-color: rgba(0, 212, 255, 0.04);
+    }
+
+    .lp-diy-install {
+      background: var(--dark-bg);
+      color: var(--text-bright);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-diy-install .header { background: rgba(13,17,23,0.95); border-bottom: 1px solid var(--dark-border); backdrop-filter: blur(12px); }
+    .lp-diy-install .top-bar { background: #010409; border-bottom: 1px solid var(--dark-border); }
+    .lp-diy-install .footer { background: var(--dark-card); }
+
+    /* Grid background */
+    .diy-wrapper {
+      position: relative;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Scanline overlay */
+    .diy-wrapper::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 212, 255, 0.008) 2px,
+        rgba(0, 212, 255, 0.008) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .diy-wrapper > * { position: relative; z-index: 2; }
+
+    /* Hero */
+    .diy-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 30%, rgba(0,212,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(0,255,136,0.05) 0%, transparent 40%),
+                  var(--dark-bg);
+    }
+
+    .diy-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(transparent, var(--dark-bg));
+    }
+
+    .diy-hero-content {
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    .diy-hero-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--neon-green);
+      border: 1px solid rgba(0,255,136,0.3);
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 2rem;
+      background: rgba(0,255,136,0.05);
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.2s;
+    }
+
+    .diy-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.4s;
+    }
+
+    .diy-hero h1 .cyan { color: var(--neon-cyan); }
+    .diy-hero h1 .green { color: var(--neon-green); }
+
+    .diy-hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.6s;
+    }
+
+    .diy-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.6s ease forwards 0.8s;
+    }
+
+    .btn-neon {
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-green));
+      color: #0d1117;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-neon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0,212,255,0.3), 0 0 60px rgba(0,255,136,0.15);
+    }
+
+    .btn-outline-neon {
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-neon:hover {
+      background: rgba(0,212,255,0.1);
+      box-shadow: 0 0 20px rgba(0,212,255,0.15);
+    }
+
+    /* Tools Section */
+    .diy-tools {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .diy-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .diy-section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .diy-section-header h2 .cyan { color: var(--neon-cyan); }
+    .diy-section-header h2 .green { color: var(--neon-green); }
+
+    .diy-section-header p {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .diy-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .diy-tool-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.4s ease;
+    }
+
+    .diy-tool-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .diy-tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .diy-tool-card:hover {
+      border-color: rgba(0,212,255,0.3);
+      box-shadow: 0 0 20px rgba(0,212,255,0.08);
+    }
+
+    .diy-tool-card:hover::before { opacity: 1; }
+
+    .diy-tool-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .diy-tool-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--neon-cyan);
+    }
+
+    .diy-tool-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .diy-tool-list li {
+      padding: 0.4rem 0;
+      color: var(--text-dim);
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+    }
+
+    .diy-tool-list li::before {
+      content: '▸ ';
+      color: var(--neon-green);
+    }
+
+    .diy-tool-list li:last-child { border-bottom: none; }
+
+    /* Step by Step Sections */
+    .diy-install-section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .diy-install-section:nth-child(even) {
+      background: rgba(22,27,34,0.5);
+    }
+
+    .diy-product-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .diy-product-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      line-height: 1;
+      opacity: 0.7;
+    }
+
+    .diy-product-header h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .diy-product-header h2 .green { color: var(--neon-green); }
+
+    .diy-product-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--dark-border);
+    }
+
+    .diy-steps {
+      counter-reset: step;
+    }
+
+    .diy-step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      counter-increment: step;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    .diy-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .diy-step:hover {
+      border-color: rgba(0,212,255,0.2);
+    }
+
+    .diy-step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--neon-green);
+      min-width: 50px;
+      text-align: center;
+      line-height: 1;
+      padding-top: 0.3rem;
+    }
+
+    .diy-step-num::before {
+      content: '0' counter(step);
+    }
+
+    .diy-step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .diy-step p {
+      color: var(--text-dim);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .diy-step-tip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--neon-cyan);
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(0,212,255,0.06);
+      border-left: 2px solid var(--neon-cyan);
+      display: inline-block;
+    }
+
+    /* Mistakes Section */
+    .diy-mistakes {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, rgba(255,0,0,0.02), rgba(13,17,23,1));
+    }
+
+    .diy-mistakes-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .diy-mistake-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .diy-mistake-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      padding: 2rem;
+      border-left: 3px solid #f85149;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .diy-mistake-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .diy-mistake-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #f85149;
+    }
+
+    .diy-mistake-card p {
+      color: var(--text-dim);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    /* Call a Pro Section */
+    .diy-pro {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .diy-pro-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .diy-pro-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(0,255,136,0.2);
+      padding: 2rem;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .diy-pro-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .diy-pro-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--neon-green);
+    }
+
+    .diy-pro-card p {
+      color: var(--text-dim);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    /* CTA */
+    .diy-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 50%, rgba(0,212,255,0.06) 0%, transparent 60%);
+    }
+
+    .diy-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-green), transparent);
+    }
+
+    .diy-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .diy-cta p {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Cross Links */
+    .diy-crosslinks {
+      background: var(--dark-card);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .diy-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .diy-crosslinks h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-dim);
+    }
+
+    .diy-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .diy-crosslink-item {
+      display: block;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--dark-border);
+      color: var(--text-bright);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: all 0.3s ease;
+    }
+
+    .diy-crosslink-item:hover {
+      border-color: var(--neon-cyan);
+      background: rgba(0,212,255,0.05);
+    }
+
+    .diy-crosslink-item span {
+      color: var(--neon-cyan);
+      margin-right: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Animations */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .diy-tools-grid { grid-template-columns: 1fr; }
+      .diy-mistake-grid { grid-template-columns: 1fr; }
+      .diy-pro-grid { grid-template-columns: 1fr; }
+      .diy-hero h1 { font-size: 2.2rem; }
+      .diy-product-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .diy-step { flex-direction: column; gap: 0.75rem; }
+      .diy-step-num { text-align: left; }
+    }
+  </style>
+</head>
+<body class="lp-diy-install">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="diy-wrapper">
+
+    <!-- Hero -->
+    <section class="diy-hero">
+      <div class="diy-hero-content">
+        <div class="diy-hero-tag">// installation_guide.exe</div>
+        <h1>DIY Blinds <span class="cyan">Installation</span> <span class="green">Guide</span></h1>
+        <p class="diy-hero-sub">Step-by-step tutorials for roller blinds, venetian blinds, curtain tracks and plantation shutters. Everything you need to install like a pro.</p>
+        <div class="diy-hero-actions">
+          <a href="#tools" class="btn-neon">View Tools Checklist</a>
+          <a href="../free-quote.html" class="btn-outline-neon">Get Professional Install Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="diy-tools">
+      <div class="diy-section-header">
+        <h2>Tools <span class="cyan">You'll Need</span></h2>
+        <p>Gather these before you start. Most are available at Bunnings or your local hardware store.</p>
+      </div>
+      <div class="diy-tools-grid">
+        <div class="diy-tool-card">
+          <div class="diy-tool-icon">🔧</div>
+          <h3>Essential Tools</h3>
+          <ul class="diy-tool-list">
+            <li>Power drill / driver</li>
+            <li>Drill bits (3mm, 5mm)</li>
+            <li>Phillips head screwdriver</li>
+            <li>Tape measure (5m+)</li>
+            <li>Pencil for marking</li>
+            <li>Spirit level</li>
+          </ul>
+        </div>
+        <div class="diy-tool-card">
+          <div class="diy-tool-icon">🪜</div>
+          <h3>Safety & Access</h3>
+          <ul class="diy-tool-list">
+            <li>Step ladder (sturdy)</li>
+            <li>Safety glasses</li>
+            <li>Dust mask (for drilling)</li>
+            <li>Vacuum (for brick dust)</li>
+            <li>Drop cloth</li>
+            <li>Helper (for large blinds)</li>
+          </ul>
+        </div>
+        <div class="diy-tool-card">
+          <div class="diy-tool-icon">📦</div>
+          <h3>Optional / Specialist</h3>
+          <ul class="diy-tool-list">
+            <li>Stud finder</li>
+            <li>Wall anchors (plaster walls)</li>
+            <li>Masonry drill bit (brick)</li>
+            <li>Hacksaw (curtain track trim)</li>
+            <li>Silicone sealant</li>
+            <li>Cable ties (cord management)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLLER BLINDS -->
+    <section class="diy-install-section">
+      <div style="max-width:1000px;margin:0 auto;">
+        <div class="diy-product-header">
+          <div class="diy-product-num">01</div>
+          <h2>Roller <span class="green">Blinds</span></h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&q=80" alt="Roller blind installation" class="diy-product-img" loading="lazy">
+        <div class="diy-steps">
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Mark Bracket Positions</h3>
+              <p>Hold the brackets against the window frame or wall. For face-fix (outside recess), position brackets at least 50mm above the window frame. For recess-fit, position brackets at the top inside corners of the recess. Use a spirit level to ensure both sides are perfectly aligned.</p>
+              <div class="diy-step-tip">TIP: Always measure twice. A 2mm misalignment at the bracket means a visible tilt across the blind.</div>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Drill Pilot Holes</h3>
+              <p>Using a 3mm drill bit, drill pilot holes at your marked positions. For timber frames, drill directly. For plaster walls, use a stud finder first — if no stud, use wall anchors. For brick, switch to a masonry bit and insert plastic plugs.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Secure Brackets</h3>
+              <p>Screw the brackets firmly into position using the supplied screws. Check they're level once more. Give them a firm tug to confirm they're secure — the blind and chain will add pulling force over time.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Click in the Roller Tube</h3>
+              <p>Insert the pin end of the roller into the pin bracket first, then compress the spring end and click it into the spring bracket. The blind should sit snugly and roll smoothly. Test the chain mechanism — it should operate without catching.</p>
+              <div class="diy-step-tip">TIP: If the blind doesn't roll straight, check the brackets are level and the tube isn't bent.</div>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Install Chain Safety Device</h3>
+              <p>Australian child safety laws require a chain tensioner or anchor. Fix the supplied safety device to the wall at the end of the chain loop. The chain should be taut when the device is secured.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENETIAN BLINDS -->
+    <section class="diy-install-section">
+      <div style="max-width:1000px;margin:0 auto;">
+        <div class="diy-product-header">
+          <div class="diy-product-num">02</div>
+          <h2>Venetian <span class="green">Blinds</span></h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1000&q=80" alt="Venetian blind installation" class="diy-product-img" loading="lazy">
+        <div class="diy-steps">
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Position the Head Rail Brackets</h3>
+              <p>For recess-fit, mark bracket positions at the top of the recess, 50-75mm from each end. For face-fix, mark above the window frame. Venetian blinds are heavier than rollers — ensure you're fixing into solid material or using appropriate anchors.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Drill & Fix Brackets</h3>
+              <p>Drill pilot holes and screw in the brackets. For wider blinds (over 1200mm), install the centre support bracket too — this prevents the head rail from sagging and keeps slats operating smoothly.</p>
+              <div class="diy-step-tip">TIP: Centre bracket is crucial for aluminium venetians over 1.2m. Without it, slats won't tilt evenly.</div>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Clip in the Head Rail</h3>
+              <p>Push the head rail up into the brackets until you hear a firm click on each side. The bracket tabs should engage fully. Gently pull down to confirm it's locked in place.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Test & Adjust</h3>
+              <p>Test the tilt wand — all slats should rotate uniformly. Test the lift cord — the blind should raise and lower smoothly. If slats are uneven, check the ladder strings aren't tangled. Attach the cord safety cleat to the wall.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURTAIN TRACKS -->
+    <section class="diy-install-section">
+      <div style="max-width:1000px;margin:0 auto;">
+        <div class="diy-product-header">
+          <div class="diy-product-num">03</div>
+          <h2>Curtain <span class="green">Tracks</span></h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1000&q=80" alt="Curtain track installation" class="diy-product-img" loading="lazy">
+        <div class="diy-steps">
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Plan the Track Position</h3>
+              <p>Mark the track position at least 100mm above the window frame for best visual proportions. Extend the track 150–200mm past each side of the window to allow curtains to stack off the glass, maximising natural light.</p>
+              <div class="diy-step-tip">TIP: Higher and wider tracks make windows appear larger. It's a designer trick that costs nothing extra.</div>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Mark & Drill Bracket Holes</h3>
+              <p>Space brackets every 300–400mm along the track length, plus one at each end. Use a spirit level to draw a guideline. Drill pilot holes — use a stud finder and aim for studs where possible for maximum hold.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Fix Brackets to Wall/Ceiling</h3>
+              <p>Screw brackets securely. For ceiling mount, ensure you're going into a joist or use toggle bolts for plasterboard. Curtains are heavy — especially lined or blockout fabrics — so every bracket must be rock-solid.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Trim Track if Needed</h3>
+              <p>If the track needs trimming to fit, use a hacksaw and file the cut edge smooth. Remove any burrs that could snag gliders.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Load Gliders & Mount Track</h3>
+              <p>Thread the curtain gliders into the track before mounting (they often can't be added once the end stops are in place). Click the track into the brackets, add end stops, and test that gliders slide freely along the entire length.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANTATION SHUTTERS -->
+    <section class="diy-install-section">
+      <div style="max-width:1000px;margin:0 auto;">
+        <div class="diy-product-header">
+          <div class="diy-product-num">04</div>
+          <h2>Plantation <span class="green">Shutters</span></h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&q=80" alt="Plantation shutter installation" class="diy-product-img" loading="lazy">
+        <div class="diy-steps">
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Check the Frame Fit</h3>
+              <p>Place the frame into the window recess (dry fit — no screws yet). Check for square using a tape measure across diagonals. If the recess is out of square, note where shims will be needed. The frame must sit flush and level.</p>
+              <div class="diy-step-tip">TIP: Older Melbourne homes often have windows out of square by 5-10mm. Shims are your best friend here.</div>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Secure the Frame</h3>
+              <p>Hold the frame in position (get a helper for larger shutters). Drill through the pre-drilled frame holes into the window reveal. Insert screws and tighten progressively — don't fully tighten one side first as it can twist the frame. Use shims where needed to maintain square.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Hang the Shutter Panels</h3>
+              <p>Align the panel hinges with the frame hinges. Drop the hinge pins in from the top — they should slide smoothly. If they resist, check the frame is truly level. Repeat for each panel.</p>
+            </div>
+          </div>
+          <div class="diy-step">
+            <div class="diy-step-num"></div>
+            <div>
+              <h3>Adjust & Finish</h3>
+              <p>Open and close each panel to check smooth operation. Adjust hinges if panels drag or don't close flush. Test the tilt bar — all louvres should rotate together. Finally, cover screw holes with the supplied caps and apply silicone around the frame edge if desired.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section class="diy-mistakes">
+      <div class="diy-mistakes-inner">
+        <div class="diy-section-header">
+          <h2>Common <span style="color:#f85149;">Mistakes</span> to Avoid</h2>
+          <p>Learn from others so you don't have to learn the hard way</p>
+        </div>
+        <div class="diy-mistake-grid">
+          <div class="diy-mistake-card">
+            <h3>❌ Not Checking for Level</h3>
+            <p>Even 2mm off at the brackets translates to a visible tilt across the blind. Always use a spirit level, never eyeball it.</p>
+          </div>
+          <div class="diy-mistake-card">
+            <h3>❌ Skipping Pilot Holes</h3>
+            <p>Drilling directly with screws splits timber frames and cracks plaster. Pilot holes take 30 seconds and prevent costly damage.</p>
+          </div>
+          <div class="diy-mistake-card">
+            <h3>❌ Wrong Anchors for Wall Type</h3>
+            <p>Plasterboard needs toggle bolts or wall anchors. Brick needs masonry plugs. Standard screws into plaster will pull out under the weight.</p>
+          </div>
+          <div class="diy-mistake-card">
+            <h3>❌ Forgetting Child Safety Devices</h3>
+            <p>It's not optional — it's Australian law. All corded blinds must have a child safety device installed. It comes in the box, use it.</p>
+          </div>
+          <div class="diy-mistake-card">
+            <h3>❌ Measuring Inside vs Outside Mount</h3>
+            <p>Inside mount (recess fit) and outside mount (face fix) need different measurements. Double-check which one your blind was made for before drilling.</p>
+          </div>
+          <div class="diy-mistake-card">
+            <h3>❌ Over-Tightening Screws</h3>
+            <p>Over-tightening strips threads in timber and cracks wall anchors. Snug is enough — you'll know it's tight when the bracket doesn't move.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- When to Call a Pro -->
+    <section class="diy-pro">
+      <div class="diy-section-header">
+        <h2>When to <span class="green">Call a Pro</span></h2>
+        <p>Some jobs are best left to professionals. No shame in it — it's about getting the best result.</p>
+      </div>
+      <div class="diy-pro-grid">
+        <div class="diy-pro-card">
+          <h3>🏗️ Structural Concerns</h3>
+          <p>If your walls are crumbling, the window frame is rotten, or you're unsure what's behind the plaster — get a pro assessment before drilling.</p>
+        </div>
+        <div class="diy-pro-card">
+          <h3>📐 Out-of-Square Windows</h3>
+          <p>Windows more than 10mm out of square need expert shimming and custom fitting, especially for plantation shutters. A poor fit looks terrible.</p>
+        </div>
+        <div class="diy-pro-card">
+          <h3>⚡ Motorised Systems</h3>
+          <p>Hardwired motorised blinds require electrical work by a licensed electrician. Even battery systems benefit from professional calibration and programming.</p>
+        </div>
+        <div class="diy-pro-card">
+          <h3>🪟 Very Large or Heavy Blinds</h3>
+          <p>Blinds over 3 metres wide or heavy timber shutters are unwieldy and risky to install solo. Professional installers have the gear and the experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="diy-cta">
+      <h2>Need a <span class="cyan">Professional</span> Hand?</h2>
+      <p>Our expert installers handle everything — measuring, manufacturing and installation. Free quotes, no obligation, Melbourne-wide service.</p>
+      <a href="../free-quote.html" class="btn-neon">Get Your Free Quote</a>
+    </section>
+
+    <!-- Cross Links -->
+    <section class="diy-crosslinks">
+      <div class="diy-crosslinks-inner">
+        <h3>Explore More Guides & Solutions</h3>
+        <div class="diy-crosslinks-grid">
+          <a href="acoustic-solutions.html" class="diy-crosslink-item"><span>→</span> Acoustic Solutions</a>
+          <a href="apartment-solutions.html" class="diy-crosslink-item"><span>→</span> Apartment Solutions</a>
+          <a href="bathroom-kitchen.html" class="diy-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+          <a href="bedroom-blackout.html" class="diy-crosslink-item"><span>→</span> Bedroom Blackout</a>
+          <a href="blinds-vs-curtains.html" class="diy-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+          <a href="care-maintenance.html" class="diy-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+          <a href="child-safety.html" class="diy-crosslink-item"><span>→</span> Child Safety</a>
+          <a href="coastal-home-blinds.html" class="diy-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+          <a href="colour-trends-2026.html" class="diy-crosslink-item"><span>→</span> Colour Trends 2026</a>
+          <a href="commercial-blinds.html" class="diy-crosslink-item"><span>→</span> Commercial Blinds</a>
+          <a href="conservatory-sunroom.html" class="diy-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+          <a href="day-night-blinds.html" class="diy-crosslink-item"><span>→</span> Day Night Blinds</a>
+          <a href="design-inspiration.html" class="diy-crosslink-item"><span>→</span> Design Inspiration</a>
+          <a href="diy-measuring-guide.html" class="diy-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+          <a href="eco-friendly.html" class="diy-crosslink-item"><span>→</span> Eco-Friendly</a>
+          <a href="energy-efficient.html" class="diy-crosslink-item"><span>→</span> Energy Efficient</a>
+          <a href="free-samples.html" class="diy-crosslink-item"><span>→</span> Free Samples</a>
+          <a href="heritage-homes.html" class="diy-crosslink-item"><span>→</span> Heritage Homes</a>
+          <a href="home-office.html" class="diy-crosslink-item"><span>→</span> Home Office</a>
+          <a href="hospitality-blinds.html" class="diy-crosslink-item"><span>→</span> Hospitality</a>
+          <a href="large-windows.html" class="diy-crosslink-item"><span>→</span> Large Windows</a>
+          <a href="layered-treatments.html" class="diy-crosslink-item"><span>→</span> Layered Treatments</a>
+          <a href="media-room.html" class="diy-crosslink-item"><span>→</span> Media Room</a>
+          <a href="melbourne-service-areas.html" class="diy-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+          <a href="new-home-packages.html" class="diy-crosslink-item"><span>→</span> New Home Packages</a>
+          <a href="outdoor-blinds.html" class="diy-crosslink-item"><span>→</span> Outdoor Blinds</a>
+          <a href="pet-friendly.html" class="diy-crosslink-item"><span>→</span> Pet-Friendly</a>
+          <a href="privacy-blinds.html" class="diy-crosslink-item"><span>→</span> Privacy Blinds</a>
+          <a href="property-styling.html" class="diy-crosslink-item"><span>→</span> Property Styling</a>
+          <a href="rental-property.html" class="diy-crosslink-item"><span>→</span> Rental Property</a>
+          <a href="scandinavian-style.html" class="diy-crosslink-item"><span>→</span> Scandinavian Style</a>
+          <a href="seasonal-sale.html" class="diy-crosslink-item"><span>→</span> Seasonal Sale</a>
+          <a href="skylight-blinds.html" class="diy-crosslink-item"><span>→</span> Skylight Blinds</a>
+          <a href="smart-home.html" class="diy-crosslink-item"><span>→</span> Smart Home</a>
+          <a href="testimonials.html" class="diy-crosslink-item"><span>→</span> Testimonials</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /diy-wrapper -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.diy-tool-card, .diy-step, .diy-mistake-card, .diy-pro-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

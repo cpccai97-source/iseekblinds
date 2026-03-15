@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Home Blinds & Window Treatments | Salt-Resistant & UV Proof | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Window treatments designed for coastal and beachside homes in Melbourne. Salt spray resistant, moisture proof, UV protection blinds and shutters. Brighton, St Kilda, Mornington Peninsula.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === WARM NATURAL / COASTAL THEME === */
+    :root {
+      --sand: #f5f0e8;
+      --sand-dark: #e8e0d0;
+      --ocean: #2e86ab;
+      --ocean-deep: #1a5f7a;
+      --ocean-light: #5ba4c4;
+      --gold-sand: #d4a574;
+      --driftwood: #8b7355;
+      --driftwood-light: #a89070;
+      --shell-white: #faf8f4;
+      --text-dark: #3a3226;
+      --text-muted: #7a6f60;
+    }
+
+    .lp-coastal {
+      background: var(--sand);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-coastal .header { background: rgba(245,240,232,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--sand-dark); }
+    .lp-coastal .top-bar { background: var(--ocean-deep); }
+    .lp-coastal .top-bar a { color: #fff; }
+    .lp-coastal .footer { background: var(--text-dark); }
+
+    /* Wave Divider SVG */
+    .wave-divider {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .wave-divider svg {
+      width: 100%;
+      height: 80px;
+      display: block;
+    }
+
+    .wave-divider.flip svg {
+      transform: rotate(180deg);
+    }
+
+    /* Organic blob decorations */
+    .blob-deco {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    /* Hero */
+    .coast-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(46,134,171,0.15) 0%, rgba(212,165,116,0.1) 50%, rgba(245,240,232,0.9) 100%),
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .coast-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(245,240,232,0.3) 0%, rgba(245,240,232,0.85) 70%, var(--sand) 100%);
+    }
+
+    .coast-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+      padding: 2rem;
+    }
+
+    .coast-hero-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ocean);
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 1.5rem;
+      background: rgba(46,134,171,0.1);
+      border-radius: 30px;
+      opacity: 0;
+      animation: coastFadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .coast-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      opacity: 0;
+      animation: coastFadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .coast-hero h1 .ocean { color: var(--ocean); }
+    .coast-hero h1 .sand-accent { color: var(--gold-sand); }
+
+    .coast-hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: coastFadeUp 0.7s ease forwards 0.6s;
+    }
+
+    .coast-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: coastFadeUp 0.7s ease forwards 0.8s;
+    }
+
+    .btn-ocean {
+      background: var(--ocean);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46,134,171,0.3);
+    }
+
+    .btn-ocean:hover {
+      background: var(--ocean-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(46,134,171,0.35);
+    }
+
+    .btn-sand {
+      border: 2px solid var(--driftwood);
+      color: var(--driftwood);
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-sand:hover {
+      background: var(--driftwood);
+      color: #fff;
+    }
+
+    /* Challenges Section */
+    .coast-challenges {
+      padding: 6rem 2rem;
+      background: var(--shell-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coast-challenges .blob-deco:nth-child(1) {
+      width: 400px; height: 400px;
+      background: var(--ocean);
+      top: -100px; right: -100px;
+    }
+
+    .coast-challenges .blob-deco:nth-child(2) {
+      width: 300px; height: 300px;
+      background: var(--gold-sand);
+      bottom: -80px; left: -80px;
+    }
+
+    .coast-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .coast-section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .coast-section-header h2 .ocean { color: var(--ocean); }
+    .coast-section-header h2 .sand-accent { color: var(--gold-sand); }
+
+    .coast-section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .coast-challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .coast-challenge-card {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(139,115,85,0.08);
+      text-align: center;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .coast-challenge-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .coast-challenge-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(139,115,85,0.12);
+    }
+
+    .coast-challenge-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .coast-challenge-card:nth-child(1) .coast-challenge-icon { background: rgba(46,134,171,0.1); }
+    .coast-challenge-card:nth-child(2) .coast-challenge-icon { background: rgba(212,165,116,0.15); }
+    .coast-challenge-card:nth-child(3) .coast-challenge-icon { background: rgba(139,115,85,0.1); }
+
+    .coast-challenge-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .coast-challenge-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Products Section */
+    .coast-products {
+      padding: 6rem 2rem;
+      background: var(--sand);
+    }
+
+    .coast-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .coast-product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(139,115,85,0.08);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .coast-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .coast-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(139,115,85,0.14);
+    }
+
+    .coast-product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .coast-product-body {
+      padding: 2rem;
+    }
+
+    .coast-product-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ocean);
+      background: rgba(46,134,171,0.08);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .coast-product-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .coast-product-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .coast-product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .coast-product-features li {
+      padding: 0.3rem 0;
+      font-size: 0.88rem;
+      color: var(--driftwood);
+    }
+
+    .coast-product-features li::before {
+      content: '✓ ';
+      color: var(--ocean);
+      font-weight: 700;
+    }
+
+    /* Comparison Table */
+    .coast-comparison {
+      padding: 6rem 2rem;
+      background: var(--shell-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coast-comparison .blob-deco {
+      width: 350px; height: 350px;
+      background: var(--ocean);
+      top: 50%; right: -150px;
+      transform: translateY(-50%);
+    }
+
+    .coast-table-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .coast-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(139,115,85,0.08);
+    }
+
+    .coast-table thead {
+      background: var(--ocean);
+      color: #fff;
+    }
+
+    .coast-table th {
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .coast-table td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--sand-dark);
+      font-size: 0.92rem;
+      color: var(--text-dark);
+    }
+
+    .coast-table tbody tr:last-child td { border-bottom: none; }
+
+    .coast-table tbody tr:hover { background: rgba(46,134,171,0.03); }
+
+    .coast-rating {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .coast-rating.excellent { background: rgba(46,134,171,0.12); color: var(--ocean); }
+    .coast-rating.good { background: rgba(212,165,116,0.2); color: var(--driftwood); }
+    .coast-rating.moderate { background: rgba(139,115,85,0.12); color: var(--driftwood-light); }
+
+    /* Styling Tips */
+    .coast-styling {
+      padding: 6rem 2rem;
+      background: var(--sand);
+    }
+
+    .coast-styling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .coast-styling-card {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .coast-styling-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .coast-styling-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(139,115,85,0.1);
+    }
+
+    .coast-styling-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .coast-styling-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* Melbourne Suburbs */
+    .coast-suburbs {
+      padding: 6rem 2rem;
+      background: var(--ocean-deep);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coast-suburbs .blob-deco {
+      width: 500px; height: 500px;
+      background: var(--ocean-light);
+      bottom: -200px; left: -150px;
+      opacity: 0.08;
+    }
+
+    .coast-suburbs .coast-section-header h2 { color: #fff; }
+    .coast-suburbs .coast-section-header h2 .sand-accent { color: var(--gold-sand); }
+    .coast-suburbs .coast-section-header p { color: rgba(255,255,255,0.7); }
+
+    .coast-suburbs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .coast-suburb-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    .coast-suburb-tag.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .coast-suburb-tag:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: var(--gold-sand);
+    }
+
+    /* CTA */
+    .coast-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: var(--shell-white);
+      position: relative;
+    }
+
+    .coast-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .coast-cta h2 .ocean { color: var(--ocean); }
+
+    .coast-cta p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* Cross Links */
+    .coast-crosslinks {
+      background: var(--sand-dark);
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(139,115,85,0.15);
+    }
+
+    .coast-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .coast-crosslinks h3 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+
+    .coast-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .coast-crosslink-item {
+      display: block;
+      padding: 1rem 1.25rem;
+      background: #fff;
+      border: 1px solid rgba(139,115,85,0.12);
+      border-radius: 8px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: all 0.3s ease;
+    }
+
+    .coast-crosslink-item:hover {
+      border-color: var(--ocean);
+      box-shadow: 0 4px 12px rgba(46,134,171,0.1);
+    }
+
+    .coast-crosslink-item span {
+      color: var(--ocean);
+      margin-right: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes coastFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .coast-challenges-grid { grid-template-columns: 1fr; }
+      .coast-products-grid { grid-template-columns: 1fr; }
+      .coast-styling-grid { grid-template-columns: 1fr; }
+      .coast-suburbs-grid { grid-template-columns: repeat(2, 1fr); }
+      .coast-hero h1 { font-size: 2.2rem; }
+      .coast-table { font-size: 0.85rem; }
+      .coast-table th, .coast-table td { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body class="lp-coastal">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="coast-hero">
+    <div class="coast-hero-content">
+      <div class="coast-hero-tag">🌊 Coastal Living</div>
+      <h1>Window Treatments for <span class="ocean">Coastal</span> <span class="sand-accent">Homes</span></h1>
+      <p class="coast-hero-sub">Salt-resistant, moisture-proof and UV-protective blinds and shutters designed for life by the sea. Beautiful and built to last.</p>
+      <div class="coast-hero-actions">
+        <a href="../free-quote.html" class="btn-ocean">Get a Free Coastal Home Quote</a>
+        <a href="#challenges" class="btn-sand">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" fill="#faf8f4"/>
+    </svg>
+  </div>
+
+  <!-- Coastal Challenges -->
+  <section id="challenges" class="coast-challenges">
+    <div class="blob-deco"></div>
+    <div class="blob-deco"></div>
+    <div class="coast-section-header">
+      <h2>The <span class="ocean">Coastal</span> Challenge</h2>
+      <p>Living near the ocean is beautiful — but your window treatments face harsh conditions that standard products can't handle.</p>
+    </div>
+    <div class="coast-challenges-grid">
+      <div class="coast-challenge-card">
+        <div class="coast-challenge-icon">🧂</div>
+        <h3>Salt Spray Corrosion</h3>
+        <p>Airborne salt attacks metal components, causing rust and deterioration. Standard steel brackets and aluminium can corrode within months in exposed coastal positions.</p>
+      </div>
+      <div class="coast-challenge-card">
+        <div class="coast-challenge-icon">☀️</div>
+        <h3>Intense UV Exposure</h3>
+        <p>Coastal homes cop full sun reflected off water and sand. UV degrades fabrics faster, fades colours and brittles plastics. You need materials rated for extreme UV.</p>
+      </div>
+      <div class="coast-challenge-card">
+        <div class="coast-challenge-icon">💧</div>
+        <h3>Humidity & Moisture</h3>
+        <p>Sea breezes carry constant moisture. Timber warps, fabrics grow mould, and mechanisms seize up. Coastal window treatments must be inherently moisture-resistant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider flip" style="background:var(--shell-white);">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" fill="#f5f0e8"/>
+    </svg>
+  </div>
+
+  <!-- Recommended Products -->
+  <section class="coast-products">
+    <div class="coast-section-header">
+      <h2>Recommended <span class="ocean">Products</span></h2>
+      <p>These products are specifically chosen for their performance in coastal environments</p>
+    </div>
+    <div class="coast-products-grid">
+      <div class="coast-product-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Aluminium venetian blinds" class="coast-product-img" loading="lazy">
+        <div class="coast-product-body">
+          <div class="coast-product-tag">Salt Resistant</div>
+          <h3>Aluminium Venetian Blinds</h3>
+          <p>Marine-grade aluminium slats resist salt corrosion and wipe clean easily. Excellent light control with a clean, contemporary look.</p>
+          <ul class="coast-product-features">
+            <li>Marine-grade aluminium won't rust</li>
+            <li>Easy wipe-clean maintenance</li>
+            <li>50mm or 25mm slat options</li>
+            <li>Powder-coated finish for extra protection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="coast-product-card">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="PVC plantation shutters" class="coast-product-img" loading="lazy">
+        <div class="coast-product-body">
+          <div class="coast-product-tag">Moisture Proof</div>
+          <h3>PVC Plantation Shutters</h3>
+          <p>Unlike timber, PVC shutters won't warp, swell or crack from moisture. They look identical to wood but are impervious to coastal conditions.</p>
+          <ul class="coast-product-features">
+            <li>100% waterproof — perfect for bathrooms too</li>
+            <li>UV-stabilised PVC won't yellow</li>
+            <li>Stainless steel hinges included</li>
+            <li>Classic Hamptons aesthetic</li>
+          </ul>
+        </div>
+      </div>
+      <div class="coast-product-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Outdoor blinds for coastal homes" class="coast-product-img" loading="lazy">
+        <div class="coast-product-body">
+          <div class="coast-product-tag">Wind & UV Rated</div>
+          <h3>Outdoor Blinds & Screens</h3>
+          <p>Extend your living space year-round with outdoor blinds engineered for wind, rain and salt. Mesh or PVC options available.</p>
+          <ul class="coast-product-features">
+            <li>Wind-rated to 100km/h (channel guides)</li>
+            <li>UV-stabilised mesh blocks 90%+ UV</li>
+            <li>Clear PVC for rain protection with views</li>
+            <li>Motorised options for ease of use</li>
+          </ul>
+        </div>
+      </div>
+      <div class="coast-product-card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Moisture resistant roller blinds" class="coast-product-img" loading="lazy">
+        <div class="coast-product-body">
+          <div class="coast-product-tag">Mould Resistant</div>
+          <h3>Moisture-Resistant Roller Blinds</h3>
+          <p>Polyester or PVC-coated roller fabrics that resist mould and moisture. Available in sunscreen, translucent or blockout.</p>
+          <ul class="coast-product-features">
+            <li>Anti-mould treated fabrics</li>
+            <li>Stainless steel chain mechanisms</li>
+            <li>Sunscreen options for ocean views</li>
+            <li>Simple operation, low maintenance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" fill="#faf8f4"/>
+    </svg>
+  </div>
+
+  <!-- Material Comparison -->
+  <section class="coast-comparison">
+    <div class="blob-deco"></div>
+    <div class="coast-section-header">
+      <h2>Material <span class="ocean">Comparison</span></h2>
+      <p>How different materials perform in coastal environments</p>
+    </div>
+    <div class="coast-table-wrap">
+      <table class="coast-table">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Salt Resistance</th>
+            <th>UV Resistance</th>
+            <th>Moisture</th>
+            <th>Maintenance</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Marine Aluminium</strong></td>
+            <td><span class="coast-rating excellent">Excellent</span></td>
+            <td><span class="coast-rating excellent">Excellent</span></td>
+            <td><span class="coast-rating excellent">Excellent</span></td>
+            <td>Wipe down monthly</td>
+            <td>Venetians, outdoor</td>
+          </tr>
+          <tr>
+            <td><strong>PVC / Poly</strong></td>
+            <td><span class="coast-rating excellent">Excellent</span></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td><span class="coast-rating excellent">Excellent</span></td>
+            <td>Hose off as needed</td>
+            <td>Shutters, outdoor</td>
+          </tr>
+          <tr>
+            <td><strong>Polyester Fabric</strong></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td>Spot clean, anti-mould spray</td>
+            <td>Rollers, curtains</td>
+          </tr>
+          <tr>
+            <td><strong>Basswood Timber</strong></td>
+            <td><span class="coast-rating moderate">Moderate</span></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td><span class="coast-rating moderate">Moderate</span></td>
+            <td>Regular sealing needed</td>
+            <td>Protected interiors only</td>
+          </tr>
+          <tr>
+            <td><strong>Standard Steel</strong></td>
+            <td><span class="coast-rating moderate">Poor</span></td>
+            <td><span class="coast-rating good">Good</span></td>
+            <td><span class="coast-rating moderate">Poor</span></td>
+            <td>Frequent rust checks</td>
+            <td>Not recommended coastal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider flip" style="background:var(--shell-white);">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" fill="#f5f0e8"/>
+    </svg>
+  </div>
+
+  <!-- Styling Tips -->
+  <section class="coast-styling">
+    <div class="coast-section-header">
+      <h2>Coastal <span class="sand-accent">Styling</span> Tips</h2>
+      <p>Create that relaxed beachside feel with the right window treatments</p>
+    </div>
+    <div class="coast-styling-grid">
+      <div class="coast-styling-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="Hamptons style coastal blinds" class="coast-styling-img" loading="lazy">
+        <h3>Hamptons White</h3>
+        <p>Crisp white PVC shutters with wide louvres are the quintessential coastal look. Pair with natural timber floors and linen furnishings for that breezy Hamptons feel.</p>
+      </div>
+      <div class="coast-styling-card">
+        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=500&q=80" alt="Natural coastal window treatments" class="coast-styling-img" loading="lazy">
+        <h3>Natural Textures</h3>
+        <p>Layer sheer curtains over roller blinds in sandy or oatmeal tones. The sheers soften the light while the roller provides UV protection — functional and beautiful.</p>
+      </div>
+      <div class="coast-styling-card">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80" alt="Modern coastal window style" class="coast-styling-img" loading="lazy">
+        <h3>Modern Coastal</h3>
+        <p>Charcoal or navy sunscreen rollers frame ocean views without the glare. Pair with matte black hardware for a contemporary coastal aesthetic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Melbourne Coastal Suburbs -->
+  <section class="coast-suburbs">
+    <div class="blob-deco"></div>
+    <div class="coast-section-header">
+      <h2>Melbourne <span class="sand-accent">Coastal Suburbs</span> We Serve</h2>
+      <p>Free measure and quote across all of Melbourne's bayside and coastal suburbs</p>
+    </div>
+    <div class="coast-suburbs-grid">
+      <div class="coast-suburb-tag">Brighton</div>
+      <div class="coast-suburb-tag">St Kilda</div>
+      <div class="coast-suburb-tag">Sandringham</div>
+      <div class="coast-suburb-tag">Hampton</div>
+      <div class="coast-suburb-tag">Beaumaris</div>
+      <div class="coast-suburb-tag">Black Rock</div>
+      <div class="coast-suburb-tag">Mentone</div>
+      <div class="coast-suburb-tag">Mordialloc</div>
+      <div class="coast-suburb-tag">Chelsea</div>
+      <div class="coast-suburb-tag">Frankston</div>
+      <div class="coast-suburb-tag">Mornington</div>
+      <div class="coast-suburb-tag">Sorrento</div>
+      <div class="coast-suburb-tag">Portsea</div>
+      <div class="coast-suburb-tag">Williamstown</div>
+      <div class="coast-suburb-tag">Altona</div>
+      <div class="coast-suburb-tag">Port Melbourne</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="coast-cta">
+    <h2>Ready for <span class="ocean">Coastal-Tough</span> Blinds?</h2>
+    <p>Get a free measure and quote tailored to your coastal home. We'll recommend the right materials for your specific exposure level.</p>
+    <a href="../free-quote.html" class="btn-ocean">Book Your Free Coastal Consultation</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="coast-crosslinks">
+    <div class="coast-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="coast-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="coast-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="coast-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="bathroom-kitchen.html" class="coast-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="coast-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="blinds-vs-curtains.html" class="coast-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="coast-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="coast-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="colour-trends-2026.html" class="coast-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="coast-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="coast-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="coast-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="coast-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="coast-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="coast-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="coast-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="energy-efficient.html" class="coast-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="free-samples.html" class="coast-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="coast-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="home-office.html" class="coast-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="coast-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="coast-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="coast-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="coast-crosslink-item"><span>→</span> Media Room</a>
+        <a href="melbourne-service-areas.html" class="coast-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="new-home-packages.html" class="coast-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="coast-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="coast-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="coast-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="coast-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="coast-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="scandinavian-style.html" class="coast-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="seasonal-sale.html" class="coast-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="coast-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="coast-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="testimonials.html" class="coast-crosslink-item"><span>→</span> Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.coast-challenge-card, .coast-product-card, .coast-styling-card, .coast-suburb-tag').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
