@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Efficient Blinds & Curtains | Save on Heating & Cooling | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Cut your energy bills with energy-efficient honeycomb blinds, thermal curtains and insulating shutters. Free measure & quote in Melbourne. iSeekBlinds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === WARM NATURAL / ECO THEME === */
+    .ee-page {
+      font-family: 'Sora', sans-serif;
+      color: #2D3B2D;
+      background: #F7F5F0;
+    }
+
+    /* Hero — warm gradient with organic shapes */
+    .ee-hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #2D3B2D 0%, #3A5A40 30%, #4A7C59 60%, #6B8F71 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      padding: 40px 24px;
+    }
+    .ee-hero::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(218,195,142,0.15) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+    }
+    .ee-hero::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(107,143,113,0.2) 0%, transparent 70%);
+      bottom: -150px;
+      left: -150px;
+    }
+    .ee-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .ee-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: ee-fadeUp 0.6s ease 0.2s forwards;
+    }
+    .ee-hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: ee-fadeUp 0.6s ease 0.4s forwards;
+    }
+    .ee-hero h1 span {
+      color: #DAC38E;
+    }
+    .ee-hero-sub {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      opacity: 0;
+      animation: ee-fadeUp 0.6s ease 0.6s forwards;
+    }
+    .ee-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: ee-fadeUp 0.6s ease 0.8s forwards;
+    }
+    .ee-btn-primary {
+      display: inline-block;
+      background: #DAC38E;
+      color: #2D3B2D;
+      padding: 16px 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .ee-btn-primary:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .ee-btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .ee-btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Stats bar */
+    .ee-stats {
+      background: #2D3B2D;
+      padding: 0;
+    }
+    .ee-stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .ee-stat {
+      text-align: center;
+      padding: 40px 20px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .ee-stat:last-child { border-right: none; }
+    .ee-stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #DAC38E;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .ee-stat-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.7;
+    }
+
+    /* How it works */
+    .ee-how {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ee-section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #2D3B2D;
+    }
+    .ee-section-sub {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
+    .ee-how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .ee-how-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .ee-how-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ee-how-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .ee-how-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #E8F0E4 0%, #D4E4D0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+    .ee-how-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #2D3B2D;
+    }
+    .ee-how-card p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Products section */
+    .ee-products {
+      background: linear-gradient(180deg, #F7F5F0 0%, #EDE9E0 100%);
+      padding: 100px 40px;
+    }
+    .ee-products-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .ee-product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .ee-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .ee-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .ee-product-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      min-height: 180px;
+    }
+    .ee-product-info {
+      padding: 30px 30px 30px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ee-product-info h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2D3B2D;
+    }
+    .ee-product-info p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .ee-product-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ee-stars { color: #DAC38E; font-size: 0.9rem; }
+    .ee-rating-label {
+      font-size: 0.75rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .ee-bg-honeycomb { background: linear-gradient(135deg, #FFF8E7 0%, #F5E6CC 100%); }
+    .ee-bg-curtain { background: linear-gradient(135deg, #E8F0E4 0%, #D4E4D0 100%); }
+    .ee-bg-shutter { background: linear-gradient(135deg, #F0E6D8 0%, #E0D0B8 100%); }
+    .ee-bg-roller { background: linear-gradient(135deg, #E4ECF0 0%, #D0DCE4 100%); }
+
+    /* Savings calculator callout */
+    .ee-savings {
+      background: #2D3B2D;
+      color: #fff;
+      padding: 80px 40px;
+    }
+    .ee-savings-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .ee-savings-text h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .ee-savings-text h2 span { color: #DAC38E; }
+    .ee-savings-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+    .ee-savings-list {
+      list-style: none;
+      padding: 0;
+    }
+    .ee-savings-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+    .ee-savings-list li span {
+      color: #DAC38E;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .ee-savings-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .ee-savings-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .ee-savings-card-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #DAC38E;
+      display: block;
+    }
+    .ee-savings-card-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.6;
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* Testimonial */
+    .ee-testimonial {
+      padding: 80px 40px;
+      background: #F7F5F0;
+    }
+    .ee-testimonial-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .ee-testimonial-quote {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      line-height: 1.7;
+      color: #2D3B2D;
+      margin-bottom: 24px;
+    }
+    .ee-testimonial-author {
+      font-size: 0.9rem;
+      color: #888;
+      font-weight: 600;
+    }
+    .ee-testimonial-stars {
+      color: #DAC38E;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    /* CTA */
+    .ee-cta {
+      background: linear-gradient(135deg, #4A7C59 0%, #3A5A40 50%, #2D3B2D 100%);
+      text-align: center;
+      padding: 100px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .ee-cta::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(218,195,142,0.1) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .ee-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      position: relative;
+      color: #fff;
+    }
+    .ee-cta p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    /* Cross Links */
+    .ee-crosslinks {
+      background: #EDE9E0;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .ee-crosslinks h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #2D3B2D;
+    }
+    .ee-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .ee-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #fff;
+      border: 1px solid #d5cfbf;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #2D3B2D;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .ee-crosslink-item:hover {
+      background: #2D3B2D;
+      color: #fff;
+      border-color: #2D3B2D;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ee-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .ee-stat { padding: 24px 16px; }
+      .ee-stat-number { font-size: 1.8rem; }
+      .ee-how-grid { grid-template-columns: 1fr; }
+      .ee-products-grid { grid-template-columns: 1fr; }
+      .ee-product-card { grid-template-columns: 100px 1fr; }
+      .ee-savings-inner { grid-template-columns: 1fr; gap: 40px; }
+      .ee-savings-visual { flex-direction: row; }
+      .ee-savings-card { flex: 1; }
+    }
+
+    @keyframes ee-fadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="ee-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ee-hero">
+    <div class="ee-hero-content">
+      <div class="ee-hero-badge">🌿 Eco Smart Living</div>
+      <h1>Cut Your Energy Bills<br>With <span>Smarter</span> Blinds</h1>
+      <p class="ee-hero-sub">The right window furnishings can reduce heat loss by up to 60% in winter and block 80% of heat gain in summer. Save money while living more comfortably.</p>
+      <div class="ee-hero-actions">
+        <a href="../free-quote.html" class="ee-btn-primary">Get Free Energy Assessment</a>
+        <a href="#products" class="ee-btn-outline">See Products ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="ee-stats">
+    <div class="ee-stats-inner">
+      <div class="ee-stat">
+        <span class="ee-stat-number">60%</span>
+        <span class="ee-stat-label">Less Heat Loss</span>
+      </div>
+      <div class="ee-stat">
+        <span class="ee-stat-number">$800+</span>
+        <span class="ee-stat-label">Annual Savings</span>
+      </div>
+      <div class="ee-stat">
+        <span class="ee-stat-number">80%</span>
+        <span class="ee-stat-label">Heat Blocked</span>
+      </div>
+      <div class="ee-stat">
+        <span class="ee-stat-number">7★</span>
+        <span class="ee-stat-label">Energy Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="ee-how">
+    <h2 class="ee-section-title">How Window Furnishings Save Energy</h2>
+    <p class="ee-section-sub">Your windows are responsible for up to 40% of your home's energy loss. Here's how the right blinds fight back.</p>
+    <div class="ee-how-grid">
+      <div class="ee-how-card">
+        <div class="ee-how-icon">❄️</div>
+        <h4>Winter Insulation</h4>
+        <p>Honeycomb blinds trap air in their cells, creating an insulating barrier that keeps warm air inside and cold air out.</p>
+      </div>
+      <div class="ee-how-card">
+        <div class="ee-how-icon">☀️</div>
+        <h4>Summer Heat Rejection</h4>
+        <p>Reflective-backed roller blinds and external awnings block solar heat before it enters your room, reducing AC costs.</p>
+      </div>
+      <div class="ee-how-card">
+        <div class="ee-how-icon">🔇</div>
+        <h4>Draught Sealing</h4>
+        <p>Fitted shutters and side-channel roller blinds seal the window frame, stopping cold draughts from creeping in.</p>
+      </div>
+      <div class="ee-how-card">
+        <div class="ee-how-icon">🌙</div>
+        <h4>Light Control</h4>
+        <p>Blockout blinds prevent heat loss through glass at night while keeping bedrooms dark for better sleep.</p>
+      </div>
+      <div class="ee-how-card">
+        <div class="ee-how-icon">🤖</div>
+        <h4>Smart Automation</h4>
+        <p>Motorised blinds with sun sensors adjust automatically throughout the day — maximum efficiency with zero effort.</p>
+      </div>
+      <div class="ee-how-card">
+        <div class="ee-how-icon">🏡</div>
+        <h4>Layered Systems</h4>
+        <p>Combine sheers + blockout for all-day efficiency: filter light during the day, insulate at night.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="ee-products">
+    <h2 class="ee-section-title">Our Energy-Efficient Range</h2>
+    <p class="ee-section-sub">Products specifically chosen for their thermal performance — without sacrificing style.</p>
+    <div class="ee-products-grid">
+      <a href="../products/honeycomb-blinds.html" class="ee-product-card">
+        <div class="ee-product-visual ee-bg-honeycomb">🐝</div>
+        <div class="ee-product-info">
+          <h4>Honeycomb / Cellular Blinds</h4>
+          <p>Our #1 energy saver. Double-cell honeycomb blinds provide the highest R-value of any blind type. Available in light-filtering and blockout.</p>
+          <div class="ee-product-rating">
+            <span class="ee-stars">★★★★★</span>
+            <span class="ee-rating-label">Best Insulation</span>
+          </div>
+        </div>
+      </a>
+      <a href="../products/curtains.html" class="ee-product-card">
+        <div class="ee-product-visual ee-bg-curtain">🏠</div>
+        <div class="ee-product-info">
+          <h4>Thermal Lined Curtains</h4>
+          <p>Heavy-weight curtains with thermal backing trap air between the fabric and glass. S-fold or pinch pleat, floor-to-ceiling for best results.</p>
+          <div class="ee-product-rating">
+            <span class="ee-stars">★★★★★</span>
+            <span class="ee-rating-label">Best Coverage</span>
+          </div>
+        </div>
+      </a>
+      <a href="../products/plantation-shutters.html" class="ee-product-card">
+        <div class="ee-product-visual ee-bg-shutter">🚪</div>
+        <div class="ee-product-info">
+          <h4>Plantation Shutters</h4>
+          <p>Solid shutters provide excellent insulation when closed. Adjustable louvres let you balance light and airflow throughout the day.</p>
+          <div class="ee-product-rating">
+            <span class="ee-stars">★★★★☆</span>
+            <span class="ee-rating-label">Great Versatility</span>
+          </div>
+        </div>
+      </a>
+      <a href="../products/roller-blinds.html" class="ee-product-card">
+        <div class="ee-product-visual ee-bg-roller">🪟</div>
+        <div class="ee-product-info">
+          <h4>Reflective Roller Blinds</h4>
+          <p>Silver-backed blockout rollers reflect heat away in summer and retain warmth in winter. Side channels available for draught sealing.</p>
+          <div class="ee-product-rating">
+            <span class="ee-stars">★★★★☆</span>
+            <span class="ee-rating-label">Best Value</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Savings -->
+  <section class="ee-savings">
+    <div class="ee-savings-inner">
+      <div class="ee-savings-text">
+        <h2>Real Savings,<br><span>Real Comfort</span></h2>
+        <p>Melbourne homes with properly fitted energy-efficient window furnishings typically see significant reductions in heating and cooling costs.</p>
+        <ul class="ee-savings-list">
+          <li><span>✓</span> Reduce heating costs by up to 40% in winter</li>
+          <li><span>✓</span> Cut cooling costs by up to 30% in summer</li>
+          <li><span>✓</span> Eliminate cold spots near windows</li>
+          <li><span>✓</span> Reduce reliance on ducted heating/cooling</li>
+          <li><span>✓</span> Improve your home's NatHERS energy rating</li>
+        </ul>
+      </div>
+      <div class="ee-savings-visual">
+        <div class="ee-savings-card">
+          <span class="ee-savings-card-value">$800+</span>
+          <span class="ee-savings-card-label">Avg. Annual Savings</span>
+        </div>
+        <div class="ee-savings-card">
+          <span class="ee-savings-card-value">2-3yr</span>
+          <span class="ee-savings-card-label">Payback Period</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="ee-testimonial">
+    <div class="ee-testimonial-inner">
+      <div class="ee-testimonial-stars">★★★★★</div>
+      <p class="ee-testimonial-quote">"We fitted honeycomb blinds throughout our Doncaster home and noticed the difference immediately. Our gas bill dropped by almost 35% the first winter. Should have done it years ago."</p>
+      <p class="ee-testimonial-author">— Sarah M., Doncaster VIC</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ee-cta">
+    <h2>Start Saving Today</h2>
+    <p>Book a free in-home energy assessment. We'll measure your windows, recommend the best energy-efficient solution, and provide a no-obligation quote.</p>
+    <a href="../free-quote.html" class="ee-btn-primary" style="position:relative;">Book Free Assessment →</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="ee-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="ee-crosslinks-grid">
+      <a href="commercial-blinds.html" class="ee-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="ee-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="ee-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="ee-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="colour-trends-2026.html" class="ee-crosslink-item"><span>→</span> Colour Trends 2026</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.ee-how-card, .ee-product-card').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

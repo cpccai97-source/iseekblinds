@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colour Trends 2026 - Window Furnishing Colours | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Discover the hottest window furnishing colour trends for 2026. From earthy terracotta to serene sage green — find your perfect palette with iSeekBlinds Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === MAGAZINE EDITORIAL THEME === */
+    .ct-page { font-family: 'DM Sans', sans-serif; color: #1a1a1a; background: #FAFAF7; }
+    .ct-page h1, .ct-page h2, .ct-page h3 { font-family: 'Playfair Display', serif; }
+
+    /* Hero — full-bleed editorial */
+    .ct-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .ct-hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 80px;
+      background: #FAFAF7;
+      z-index: 2;
+    }
+    .ct-hero-tag {
+      font-family: 'DM Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.75rem;
+      color: #B8860B;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .ct-hero-text h1 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .ct-hero-text h1 em {
+      font-style: italic;
+      color: #C17C3E;
+    }
+    .ct-hero-desc {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #555;
+      max-width: 440px;
+      margin-bottom: 32px;
+    }
+    .ct-hero-visual {
+      position: relative;
+      background: linear-gradient(135deg, #E8D5B7 0%, #C17C3E 40%, #8B6F47 70%, #556B2F 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ct-hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.03) 40px,
+        rgba(255,255,255,0.03) 80px
+      );
+    }
+    .ct-palette-preview {
+      display: flex;
+      gap: 12px;
+      z-index: 2;
+    }
+    .ct-swatch-tall {
+      width: 60px;
+      border-radius: 40px;
+      transition: transform 0.4s ease;
+    }
+    .ct-swatch-tall:nth-child(odd) { height: 200px; }
+    .ct-swatch-tall:nth-child(even) { height: 260px; margin-top: -30px; }
+    .ct-swatch-tall:hover { transform: scaleY(1.08); }
+
+    /* Intro statement */
+    .ct-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 40px 60px;
+      text-align: center;
+    }
+    .ct-intro h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .ct-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* Magazine grid — alternating layout */
+    .ct-trends { padding: 40px 0 80px; }
+    .ct-trend-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 500px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .ct-trend-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ct-trend-row:nth-child(even) .ct-trend-visual { order: -1; }
+    .ct-trend-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ct-trend-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 80px;
+    }
+    .ct-trend-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      font-weight: 800;
+      color: rgba(0,0,0,0.06);
+      line-height: 1;
+      margin-bottom: -20px;
+    }
+    .ct-trend-content h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .ct-trend-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .ct-trend-colors {
+      display: flex;
+      gap: 10px;
+    }
+    .ct-color-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+    .ct-color-dot:hover { transform: scale(1.2); }
+    .ct-trend-tag {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    /* Color backgrounds per trend */
+    .ct-bg-terracotta { background: linear-gradient(135deg, #E07A5F 0%, #C1694F 50%, #A0522D 100%); }
+    .ct-bg-sage { background: linear-gradient(135deg, #9CAF88 0%, #6B8F71 50%, #556B2F 100%); }
+    .ct-bg-ocean { background: linear-gradient(135deg, #5B8FA8 0%, #36648B 50%, #264653 100%); }
+    .ct-bg-clay { background: linear-gradient(135deg, #D4A574 0%, #C49A6C 50%, #8B7355 100%); }
+    .ct-bg-plum { background: linear-gradient(135deg, #9B6B8E 0%, #7B506F 50%, #5C3A54 100%); }
+
+    /* Decorative shapes inside visual */
+    .ct-shape-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 12px;
+      z-index: 2;
+    }
+    .ct-shape {
+      height: 80px;
+      border-radius: 8px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .ct-shape:hover { opacity: 1; transform: scale(1.05); }
+    .ct-shape-lg { grid-column: span 2; height: 80px; }
+
+    /* Full-width quote banner */
+    .ct-quote-banner {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px;
+    }
+    .ct-quote-banner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .ct-quote-banner cite {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* How to choose section */
+    .ct-choose {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ct-choose h2 {
+      text-align: center;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      margin-bottom: 60px;
+    }
+    .ct-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .ct-choose-card {
+      padding: 40px 30px;
+      border: 1px solid #e5e5e0;
+      border-radius: 2px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      background: #fff;
+    }
+    .ct-choose-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+    .ct-choose-card .ct-card-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .ct-choose-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .ct-choose-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .ct-cta {
+      background: linear-gradient(135deg, #C17C3E 0%, #8B6F47 50%, #556B2F 100%);
+      text-align: center;
+      padding: 100px 40px;
+      color: #fff;
+    }
+    .ct-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .ct-cta p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .ct-btn {
+      display: inline-block;
+      background: #fff;
+      color: #1a1a1a;
+      padding: 16px 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .ct-btn:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+    .ct-btn-dark {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .ct-btn-dark:hover { background: #C17C3E; }
+
+    /* Cross Links */
+    .ct-crosslinks {
+      background: #f0ede6;
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .ct-crosslinks h3 {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+    }
+    .ct-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .ct-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #fff;
+      border: 1px solid #ddd;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .ct-crosslink-item:hover {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ct-hero { grid-template-columns: 1fr; min-height: auto; }
+      .ct-hero-text { padding: 60px 24px 40px; }
+      .ct-hero-visual { min-height: 300px; }
+      .ct-trend-row { grid-template-columns: 1fr; }
+      .ct-trend-row:nth-child(even) .ct-trend-visual { order: 0; }
+      .ct-trend-content { padding: 40px 24px; }
+      .ct-trend-visual { min-height: 280px; }
+      .ct-trend-number { font-size: 4rem; }
+      .ct-choose-grid { grid-template-columns: 1fr; }
+      .ct-palette-preview { gap: 8px; }
+      .ct-swatch-tall { width: 40px; }
+      .ct-swatch-tall:nth-child(odd) { height: 140px; }
+      .ct-swatch-tall:nth-child(even) { height: 180px; }
+    }
+
+    /* Animations */
+    @keyframes ct-fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ct-animate { animation: ct-fadeInUp 0.8s ease forwards; }
+    .ct-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .ct-delay-2 { animation-delay: 0.3s; opacity: 0; }
+    .ct-delay-3 { animation-delay: 0.5s; opacity: 0; }
+  </style>
+</head>
+<body class="ct-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ct-hero">
+    <div class="ct-hero-text">
+      <span class="ct-hero-tag ct-animate ct-delay-1">Colour Report 2026</span>
+      <h1 class="ct-animate ct-delay-2">The Colours<br>Shaping <em>Beautiful</em><br>Homes in 2026</h1>
+      <p class="ct-hero-desc ct-animate ct-delay-3">From sun-baked terracottas to misty sage greens — discover the five colour palettes defining window furnishing design this year.</p>
+      <a href="../free-quote.html" class="ct-btn-dark ct-animate ct-delay-3">Shop the Trends →</a>
+    </div>
+    <div class="ct-hero-visual">
+      <div class="ct-palette-preview">
+        <div class="ct-swatch-tall" style="background:#E07A5F; border-radius:40px;"></div>
+        <div class="ct-swatch-tall" style="background:#9CAF88; border-radius:40px;"></div>
+        <div class="ct-swatch-tall" style="background:#5B8FA8; border-radius:40px;"></div>
+        <div class="ct-swatch-tall" style="background:#D4A574; border-radius:40px;"></div>
+        <div class="ct-swatch-tall" style="background:#9B6B8E; border-radius:40px;"></div>
+        <div class="ct-swatch-tall" style="background:#264653; border-radius:40px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="ct-intro">
+    <h2>Colour Sets the Mood.<br>We Help You Get It Right.</h2>
+    <p>Whether you're starting fresh or refreshing a single room, the right window colour transforms a space. We've curated five palettes that are defining Australian interiors in 2026 — and every one is available across our full blinds, curtains, and shutters range.</p>
+  </section>
+
+  <!-- Trend Rows -->
+  <section class="ct-trends">
+
+    <!-- Trend 1: Terracotta -->
+    <div class="ct-trend-row">
+      <div class="ct-trend-visual ct-bg-terracotta">
+        <div class="ct-shape-grid">
+          <div class="ct-shape" style="background:#E07A5F;"></div>
+          <div class="ct-shape" style="background:#C1694F;"></div>
+          <div class="ct-shape" style="background:#F2CC8F;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#A0522D;"></div>
+          <div class="ct-shape" style="background:#D4A574;"></div>
+          <div class="ct-shape" style="background:#E8D5B7;"></div>
+          <div class="ct-shape" style="background:#C17C3E;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#E07A5F; opacity:0.5;"></div>
+        </div>
+      </div>
+      <div class="ct-trend-content">
+        <span class="ct-trend-number">01</span>
+        <span class="ct-trend-tag">Trending</span>
+        <h3>Sunbaked Terracotta</h3>
+        <p>Warm, earthy, and inviting. Terracotta tones bring an organic richness to living rooms and bedrooms. Pair with cream sheers or natural timber venetians for a layered, sophisticated look.</p>
+        <div class="ct-trend-colors">
+          <div class="ct-color-dot" style="background:#E07A5F;" title="Burnt Sienna"></div>
+          <div class="ct-color-dot" style="background:#C1694F;" title="Deep Terracotta"></div>
+          <div class="ct-color-dot" style="background:#F2CC8F;" title="Sand"></div>
+          <div class="ct-color-dot" style="background:#A0522D;" title="Clay"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend 2: Sage Green -->
+    <div class="ct-trend-row">
+      <div class="ct-trend-visual ct-bg-sage">
+        <div class="ct-shape-grid">
+          <div class="ct-shape ct-shape-lg" style="background:#9CAF88;"></div>
+          <div class="ct-shape" style="background:#6B8F71;"></div>
+          <div class="ct-shape" style="background:#556B2F;"></div>
+          <div class="ct-shape" style="background:#A8C09A;"></div>
+          <div class="ct-shape" style="background:#3A5A40;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#9CAF88; opacity:0.5;"></div>
+          <div class="ct-shape" style="background:#D4E4D0;"></div>
+        </div>
+      </div>
+      <div class="ct-trend-content">
+        <span class="ct-trend-number">02</span>
+        <span class="ct-trend-tag">Most Popular</span>
+        <h3>Serene Sage</h3>
+        <p>The undeniable colour of 2026. Sage green delivers calm and balance — perfect for bedrooms, studies, and nurseries. Our roller blinds and honeycomb range offer multiple sage tones from soft mint to deep eucalyptus.</p>
+        <div class="ct-trend-colors">
+          <div class="ct-color-dot" style="background:#9CAF88;" title="Soft Sage"></div>
+          <div class="ct-color-dot" style="background:#6B8F71;" title="Eucalyptus"></div>
+          <div class="ct-color-dot" style="background:#556B2F;" title="Forest"></div>
+          <div class="ct-color-dot" style="background:#D4E4D0;" title="Mint Mist"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend 3: Coastal Blue -->
+    <div class="ct-trend-row">
+      <div class="ct-trend-visual ct-bg-ocean">
+        <div class="ct-shape-grid">
+          <div class="ct-shape" style="background:#5B8FA8;"></div>
+          <div class="ct-shape" style="background:#36648B;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#264653;"></div>
+          <div class="ct-shape" style="background:#A8D0DB;"></div>
+          <div class="ct-shape" style="background:#457B9D;"></div>
+          <div class="ct-shape" style="background:#1D3557;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#5B8FA8; opacity:0.5;"></div>
+        </div>
+      </div>
+      <div class="ct-trend-content">
+        <span class="ct-trend-number">03</span>
+        <span class="ct-trend-tag">Timeless</span>
+        <h3>Deep Coastal Blue</h3>
+        <p>Moving beyond beachy pastels — 2026's blues are deeper and more dramatic. Think navy shutters, ocean-toned S-fold curtains, and midnight roller blinds. Stunning in bathrooms and open-plan living.</p>
+        <div class="ct-trend-colors">
+          <div class="ct-color-dot" style="background:#264653;" title="Deep Ocean"></div>
+          <div class="ct-color-dot" style="background:#457B9D;" title="Coastal"></div>
+          <div class="ct-color-dot" style="background:#A8D0DB;" title="Sky"></div>
+          <div class="ct-color-dot" style="background:#1D3557;" title="Navy"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend 4: Warm Clay -->
+    <div class="ct-trend-row">
+      <div class="ct-trend-visual ct-bg-clay">
+        <div class="ct-shape-grid">
+          <div class="ct-shape ct-shape-lg" style="background:#D4A574;"></div>
+          <div class="ct-shape" style="background:#C49A6C;"></div>
+          <div class="ct-shape" style="background:#8B7355;"></div>
+          <div class="ct-shape" style="background:#E8D5B7;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#B8860B;"></div>
+          <div class="ct-shape" style="background:#F5E6CC;"></div>
+          <div class="ct-shape" style="background:#D4A574; opacity:0.5;"></div>
+        </div>
+      </div>
+      <div class="ct-trend-content">
+        <span class="ct-trend-number">04</span>
+        <span class="ct-trend-tag">Warm & Versatile</span>
+        <h3>Golden Sandstone</h3>
+        <p>Neutral but never boring. Golden sandstone tones add warmth without overwhelming a room. The go-to for open-plan homes where multiple windows need cohesion. Available in our full venetian and curtain ranges.</p>
+        <div class="ct-trend-colors">
+          <div class="ct-color-dot" style="background:#D4A574;" title="Camel"></div>
+          <div class="ct-color-dot" style="background:#B8860B;" title="Dark Goldenrod"></div>
+          <div class="ct-color-dot" style="background:#E8D5B7;" title="Wheat"></div>
+          <div class="ct-color-dot" style="background:#8B7355;" title="Driftwood"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend 5: Plum -->
+    <div class="ct-trend-row">
+      <div class="ct-trend-visual ct-bg-plum">
+        <div class="ct-shape-grid">
+          <div class="ct-shape" style="background:#9B6B8E;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#7B506F;"></div>
+          <div class="ct-shape" style="background:#5C3A54;"></div>
+          <div class="ct-shape" style="background:#D4A0C0;"></div>
+          <div class="ct-shape" style="background:#8B668B;"></div>
+          <div class="ct-shape ct-shape-lg" style="background:#9B6B8E; opacity:0.5;"></div>
+          <div class="ct-shape" style="background:#C9A0DC;"></div>
+        </div>
+      </div>
+      <div class="ct-trend-content">
+        <span class="ct-trend-number">05</span>
+        <span class="ct-trend-tag">Bold Choice</span>
+        <h3>Dusty Plum</h3>
+        <p>For those who want something unexpected. Muted plum and mauve tones add a touch of luxury without going full drama. Stunning in bedrooms with blockout roller blinds or velvet pinch-pleat curtains.</p>
+        <div class="ct-trend-colors">
+          <div class="ct-color-dot" style="background:#9B6B8E;" title="Mauve"></div>
+          <div class="ct-color-dot" style="background:#7B506F;" title="Plum"></div>
+          <div class="ct-color-dot" style="background:#D4A0C0;" title="Blush"></div>
+          <div class="ct-color-dot" style="background:#5C3A54;" title="Deep Berry"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Quote Banner -->
+  <section class="ct-quote-banner">
+    <blockquote>"Colour is the first thing people feel when they walk into a room — even before they notice the furniture."</blockquote>
+    <cite>— iSeekBlinds Design Team</cite>
+  </section>
+
+  <!-- How to Choose -->
+  <section class="ct-choose">
+    <h2>How to Choose Your Perfect Colour</h2>
+    <div class="ct-choose-grid">
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">🎨</div>
+        <h4>Start With Your Walls</h4>
+        <p>Your wall colour is your anchor. Choose blinds that complement — not match — for depth and visual interest.</p>
+      </div>
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">☀️</div>
+        <h4>Consider the Light</h4>
+        <p>North-facing rooms can handle deeper tones. South-facing rooms benefit from warmer, lighter shades to prevent feeling cold.</p>
+      </div>
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">📐</div>
+        <h4>Think in Layers</h4>
+        <p>Combine a sheer curtain with a blockout roller for both colour play and function. Two tones beat one.</p>
+      </div>
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">🏠</div>
+        <h4>Match Your Style</h4>
+        <p>Modern minimalist? Stick to one palette. Eclectic? Mix two trending palettes for a bold, curated look.</p>
+      </div>
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">🧪</div>
+        <h4>Test Before You Commit</h4>
+        <p>Order free fabric samples — colours look different under your home's lighting vs. a screen.</p>
+      </div>
+      <div class="ct-choose-card">
+        <div class="ct-card-icon">💬</div>
+        <h4>Get Expert Advice</h4>
+        <p>Our in-home consultants bring fabric swatches and help you find the perfect shade. It's free, no pressure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ct-cta">
+    <h2>Find Your 2026 Colour</h2>
+    <p>Book a free in-home colour consultation. We'll bring samples in every trending shade — and help you pick the one that's perfect for your home.</p>
+    <a href="../free-quote.html" class="ct-btn">Book Free Consultation</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="ct-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="ct-crosslinks-grid">
+      <a href="commercial-blinds.html" class="ct-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="ct-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="ct-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="ct-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="energy-efficient.html" class="ct-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.ct-trend-row').forEach(row => observer.observe(row));
+
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
