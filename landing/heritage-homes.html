@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage & Period Home Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Sympathetic window treatments for heritage, Victorian, Edwardian and Art Deco homes in Melbourne. Preserve character while adding modern comfort. Free consultation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RETRO MODERN / EDITORIAL DESIGN STYLE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --warm-white: #f5f0e8;
+      --charcoal: #2c2c2c;
+      --deep-brown: #3d2b1f;
+      --burgundy: #7a2e3e;
+      --gold: #c5a45e;
+      --sage: #8a9a7b;
+      --terracotta: #c47b5a;
+      --text: #3a3a3a;
+      --text-light: #6b6b6b;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Shared Header */
+    .top-bar {
+      background: var(--deep-brown);
+      padding: 8px 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+    }
+    .top-bar .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .top-bar a { color: var(--gold); text-decoration: none; }
+
+    .header {
+      background: var(--cream);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { text-decoration: none; font-size: 24px; font-weight: 700; font-family: var(--sans); }
+    .logo-i { color: var(--burgundy); }
+    .logo-seek { color: var(--charcoal); }
+    .logo-blinds { color: var(--gold); }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a, .nav-dropdown-toggle { color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; background: none; border: none; cursor: pointer; font-family: inherit; }
+    .nav a:hover, .nav-dropdown-toggle:hover { color: var(--burgundy); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.08); border-radius: 8px;
+      padding: 8px 0; min-width: 200px; z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 10px 20px; font-size: 13px; }
+
+    .btn { display: inline-block; padding: 10px 24px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s; border: none; cursor: pointer; }
+    .btn-primary { background: var(--burgundy); color: var(--cream); }
+    .btn-primary:hover { background: #5e1f2d; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(122,46,62,0.3); }
+    .btn-outline-dark { border: 2px solid var(--charcoal); color: var(--charcoal); background: transparent; }
+    .btn-outline-dark:hover { background: var(--charcoal); color: var(--cream); }
+    .btn-lg { padding: 16px 40px; font-size: 16px; letter-spacing: 0.5px; }
+    .header-cta { padding: 8px 20px; font-size: 13px; }
+
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--charcoal); font-size: 28px; cursor: pointer; }
+
+    /* Decorative divider */
+    .ornament {
+      text-align: center;
+      font-size: 24px;
+      color: var(--gold);
+      margin: 0 auto;
+      letter-spacing: 12px;
+    }
+
+    /* Hero - Full editorial spread */
+    .hero-heritage {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-heritage::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 49.5%,
+        rgba(0,0,0,0.03) 49.5%,
+        rgba(0,0,0,0.03) 50.5%,
+        transparent 50.5%
+      );
+      pointer-events: none;
+    }
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      min-height: 90vh;
+      padding: 120px 0 80px;
+    }
+    .hero-text { animation: heroFadeIn 1s ease-out; }
+    .hero-era-tag {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      margin-bottom: 24px;
+    }
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: var(--deep-brown);
+    }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero-visual {
+      position: relative;
+      animation: heroSlideIn 1s ease-out 0.3s both;
+    }
+    .hero-image-frame {
+      background: var(--charcoal);
+      border-radius: 2px;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid var(--gold);
+      z-index: 2;
+    }
+    .hero-image-placeholder {
+      font-size: 100px;
+      opacity: 0.3;
+    }
+    .hero-era-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--burgundy);
+      color: var(--cream);
+      padding: 20px 28px;
+      font-family: var(--serif);
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes heroSlideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section styles */
+    .section { padding: 100px 0; }
+    .section-dark { background: var(--deep-brown); color: var(--cream); }
+    .section-warm { background: var(--warm-white); }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .section-dark .section-header p { color: rgba(255,255,255,0.6); }
+
+    /* Era Cards - Magazine grid */
+    .era-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .era-card {
+      border-right: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 48px 36px;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      position: relative;
+      overflow: hidden;
+    }
+    .era-card.visible { opacity: 1; transform: translateY(0); }
+    .era-card:hover { background: var(--warm-white); }
+    .era-card:nth-child(3n) { border-right: none; }
+    .era-card-era {
+      font-family: var(--serif);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .era-card h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--deep-brown);
+    }
+    .era-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-light);
+    }
+    .era-card-icon {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 32px;
+      opacity: 0.15;
+    }
+
+    /* Approach - Alternating editorial layout */
+    .approach-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+    .approach-row.visible { opacity: 1; transform: translateY(0); }
+    .approach-row:nth-child(even) .approach-visual { order: -1; }
+    .approach-number {
+      font-family: var(--serif);
+      font-size: 6rem;
+      font-weight: 800;
+      color: rgba(197,164,94,0.15);
+      line-height: 1;
+      margin-bottom: -20px;
+    }
+    .approach-content h3 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: var(--cream);
+    }
+    .approach-content p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+    }
+    .approach-visual {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      opacity: 0.2;
+    }
+
+    /* Products suited */
+    .product-editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .product-editorial-card {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.5s ease;
+    }
+    .product-editorial-card.visible { opacity: 1; transform: translateY(0); }
+    .product-editorial-img {
+      background: var(--charcoal);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      opacity: 0.3;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .product-editorial-img::after {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid var(--gold);
+    }
+    .product-editorial-tag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+    .product-editorial-card h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--deep-brown);
+    }
+    .product-editorial-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .heritage-cta {
+      text-align: center;
+      padding: 100px 24px;
+      background: var(--deep-brown);
+      position: relative;
+    }
+    .heritage-cta::before {
+      content: '✦  ✦  ✦';
+      display: block;
+      font-size: 18px;
+      color: var(--gold);
+      letter-spacing: 8px;
+      margin-bottom: 32px;
+    }
+    .heritage-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+    .heritage-cta h2 em { font-style: italic; color: var(--gold); }
+    .heritage-cta p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep-brown);
+      padding: 16px 40px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn-gold:hover { background: #d4b76d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(197,164,94,0.3); }
+
+    /* Cross Links */
+    .crosslinks {
+      padding: 80px 0;
+      background: var(--warm-white);
+    }
+    .crosslinks h3 {
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      color: var(--deep-brown);
+    }
+    .crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .crosslink-item {
+      display: block;
+      padding: 14px 20px;
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.06);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .crosslink-item:hover {
+      border-color: var(--burgundy);
+      color: var(--burgundy);
+      padding-left: 28px;
+    }
+    .crosslink-item span { margin-right: 8px; color: var(--gold); }
+
+    /* Footer */
+    .footer {
+      background: var(--deep-brown);
+      color: var(--cream);
+      padding: 60px 0 0;
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand p { color: rgba(255,255,255,0.5); margin-top: 12px; font-size: 0.9rem; }
+    .footer-contact-info { margin-top: 16px; }
+    .footer-contact-info p { font-size: 0.9rem; margin-bottom: 4px; color: rgba(255,255,255,0.7); }
+    .footer-contact-info a { color: var(--gold); text-decoration: none; }
+    .footer-links h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; }
+    .footer-links a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .header-cta { display: none; }
+      .mobile-menu-btn { display: block; }
+      .hero-split { grid-template-columns: 1fr; gap: 40px; min-height: auto; padding: 100px 0 60px; }
+      .hero-visual { max-width: 400px; }
+      .era-grid { grid-template-columns: 1fr; }
+      .era-card { border-right: none; }
+      .approach-row { grid-template-columns: 1fr; gap: 32px; }
+      .approach-row:nth-child(even) .approach-visual { order: 0; }
+      .approach-visual { max-height: 200px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .crosslinks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-heritage">
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-text">
+          <span class="hero-era-tag">Est. Heritage</span>
+          <h1>Window Treatments for <em>Heritage</em> &amp; Period Homes</h1>
+          <p>Melbourne's character homes deserve window furnishings that honour their history while delivering modern comfort. We specialise in sympathetic solutions for every architectural era.</p>
+          <div class="hero-actions">
+            <a href="../free-quote.html" class="btn btn-primary btn-lg">Free Consultation</a>
+            <a href="#eras" class="btn btn-outline-dark btn-lg">Explore Eras</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <span class="hero-image-placeholder">🏛️</span>
+          </div>
+          <div class="hero-era-badge">Since 2006</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eras Section -->
+  <section id="eras" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="ornament">✦ ✦ ✦</div>
+        <br>
+        <h2>Solutions for Every Architectural Era</h2>
+        <p>Each period has its own window styles, proportions and character. We tailor our approach to match.</p>
+      </div>
+      <div class="era-grid">
+        <div class="era-card">
+          <span class="era-card-icon">🏰</span>
+          <div class="era-card-era">1850–1901</div>
+          <h3>Victorian</h3>
+          <p>Tall sash windows, bay windows and decorative arches. We use full-length curtains with traditional pelmets, or plantation shutters that complement ornate cornices.</p>
+        </div>
+        <div class="era-card">
+          <span class="era-card-icon">🌿</span>
+          <div class="era-card-era">1901–1915</div>
+          <h3>Edwardian</h3>
+          <p>Wider windows, leadlight panels and simpler lines. Sheer curtains paired with roller blinds preserve the light-filled character while adding privacy.</p>
+        </div>
+        <div class="era-card">
+          <span class="era-card-icon">🏡</span>
+          <div class="era-card-era">1915–1940</div>
+          <h3>Californian Bungalow</h3>
+          <p>Grouped casement windows and craftsman details. Timber venetian blinds and warm-toned curtains complement the earthy, handcrafted aesthetic.</p>
+        </div>
+        <div class="era-card">
+          <span class="era-card-icon">💎</span>
+          <div class="era-card-era">1920–1940</div>
+          <h3>Art Deco</h3>
+          <p>Geometric shapes, curved corners and steel-framed windows. Bold roller blinds with metallic accents echo the glamour of the Jazz Age.</p>
+        </div>
+        <div class="era-card">
+          <span class="era-card-icon">🏢</span>
+          <div class="era-card-era">1945–1965</div>
+          <h3>Post-War & Mid-Century</h3>
+          <p>Large picture windows and sliding doors. Minimalist roller blinds and vertical blinds suit the clean lines and open-plan spirit of the era.</p>
+        </div>
+        <div class="era-card">
+          <span class="era-card-icon">🔑</span>
+          <div class="era-card-era">Heritage Overlay</div>
+          <h3>Heritage-Listed</h3>
+          <p>Strict council requirements? We work within Heritage Victoria guidelines to ensure your window treatments meet approval. Experienced with HO applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Heritage Approach</h2>
+        <p>We don't just sell blinds — we study your home's architectural language and create solutions that feel like they've always been there.</p>
+      </div>
+      <div class="approach-row">
+        <div class="approach-content">
+          <div class="approach-number">01</div>
+          <h3>Architectural Assessment</h3>
+          <p>We start by understanding your home's era, original window hardware, moulding profiles and any heritage overlays. This informs every recommendation we make.</p>
+        </div>
+        <div class="approach-visual">🔍</div>
+      </div>
+      <div class="approach-row">
+        <div class="approach-content">
+          <div class="approach-number">02</div>
+          <h3>Non-Invasive Installation</h3>
+          <p>We avoid drilling into heritage timber frames wherever possible. Our face-fix, top-fix and tension-mount options preserve original joinery and plasterwork.</p>
+        </div>
+        <div class="approach-visual">🔧</div>
+      </div>
+      <div class="approach-row">
+        <div class="approach-content">
+          <div class="approach-number">03</div>
+          <h3>Period-Appropriate Fabrics</h3>
+          <p>From raw linen and heavy velvet to heritage-patterned jacquards. We source fabrics that look authentic while offering UV protection, blockout and thermal performance.</p>
+        </div>
+        <div class="approach-visual">🎨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="section section-warm">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recommended for Heritage Homes</h2>
+        <p>Products our clients choose most often for character properties.</p>
+      </div>
+      <div class="product-editorial-grid">
+        <div class="product-editorial-card">
+          <div class="product-editorial-img">🪟</div>
+          <div class="product-editorial-tag">Most Popular</div>
+          <h3>Plantation Shutters</h3>
+          <p>The gold standard for heritage homes. Timber shutters add value, insulate beautifully and suit every period from Victorian to Mid-Century.</p>
+        </div>
+        <div class="product-editorial-card">
+          <div class="product-editorial-img">🏠</div>
+          <div class="product-editorial-tag">Classic Elegance</div>
+          <h3>S-Fold & Pinch Pleat Curtains</h3>
+          <p>Full-length curtains with traditional heading styles. We help you choose stacking, track type and pelmet options that respect the architecture.</p>
+        </div>
+        <div class="product-editorial-card">
+          <div class="product-editorial-img">🎚️</div>
+          <div class="product-editorial-tag">Craftsman Favourite</div>
+          <h3>Timber Venetians</h3>
+          <p>Real basswood venetians in heritage colours. Perfect for bungalows and Edwardians where warmth and adjustable light control matter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="heritage-cta">
+    <h2>Your Home's Story <em>Deserves</em> the Right Chapter</h2>
+    <p>Free heritage window consultation. We'll visit, assess your home's character and recommend treatments that honour its history.</p>
+    <a href="../free-quote.html" class="btn-gold">Book Free Consultation</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="crosslinks">
+    <div class="container">
+      <h3>Explore More Solutions</h3>
+      <div class="crosslinks-grid">
+        <a href="commercial-blinds.html" class="crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="melbourne-service-areas.html" class="crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="blinds-vs-curtains.html" class="crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="smart-home.html" class="crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="acoustic-solutions.html" class="crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="hospitality-blinds.html" class="crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="large-windows.html" class="crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="eco-friendly.html" class="crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="layered-treatments.html" class="crosslink-item"><span>→</span> Layered Window Treatments</a>
+        <a href="bathroom-kitchen.html" class="crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="home-office.html" class="crosslink-item"><span>→</span> Home Office Blinds</a>
+        <a href="bedroom-blackout.html" class="crosslink-item"><span>→</span> Bedroom Blackout Blinds</a>
+        <a href="property-styling.html" class="crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="pet-friendly.html" class="crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="skylight-blinds.html" class="crosslink-item"><span>→</span> Skylight &amp; Specialty Windows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.era-card, .approach-row, .product-editorial-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

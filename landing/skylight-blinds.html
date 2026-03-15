@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skylight & Specialty Window Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom skylight blinds, arched window treatments & specialty shaped window solutions in Melbourne. Expert fitting for hard-to-reach windows. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* === GLASSMORPHISM DESIGN STYLE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --glass-bg: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.25);
+      --glass-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      --sky-start: #0f0c29;
+      --sky-mid: #302b63;
+      --sky-end: #24243e;
+      --accent-blue: #60a5fa;
+      --accent-cyan: #22d3ee;
+      --accent-purple: #a78bfa;
+      --white: #ffffff;
+      --text-light: rgba(255,255,255,0.85);
+      --text-muted: rgba(255,255,255,0.6);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--sky-start) 0%, var(--sky-mid) 50%, var(--sky-end) 100%);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Shared Header */
+    .top-bar {
+      background: rgba(0,0,0,0.3);
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      backdrop-filter: blur(10px);
+    }
+    .top-bar .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .top-bar a { color: var(--accent-cyan); text-decoration: none; }
+
+    .header {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { text-decoration: none; font-size: 24px; font-weight: 700; }
+    .logo-i { color: var(--accent-cyan); }
+    .logo-seek { color: var(--white); }
+    .logo-blinds { color: var(--accent-blue); }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a, .nav-dropdown-toggle { color: var(--text-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; background: none; border: none; cursor: pointer; font-family: inherit; }
+    .nav a:hover, .nav-dropdown-toggle:hover { color: var(--accent-cyan); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: rgba(15,12,41,0.95); backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border); border-radius: 12px;
+      padding: 8px 0; min-width: 200px; z-index: 200;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 10px 20px; font-size: 13px; }
+
+    .btn { display: inline-block; padding: 10px 24px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); color: var(--sky-start); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,211,238,0.3); }
+    .btn-outline { border: 2px solid var(--accent-cyan); color: var(--accent-cyan); background: transparent; }
+    .btn-outline:hover { background: rgba(34,211,238,0.1); }
+    .btn-lg { padding: 14px 36px; font-size: 16px; }
+    .header-cta { padding: 8px 20px; font-size: 13px; }
+
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--white); font-size: 28px; cursor: pointer; }
+
+    /* Floating orbs background */
+    .orb {
+      position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.15; pointer-events: none; z-index: 0;
+    }
+    .orb-1 { width: 400px; height: 400px; background: var(--accent-cyan); top: -100px; right: -100px; animation: float1 20s ease-in-out infinite; }
+    .orb-2 { width: 500px; height: 500px; background: var(--accent-purple); bottom: -150px; left: -150px; animation: float2 25s ease-in-out infinite; }
+    .orb-3 { width: 300px; height: 300px; background: var(--accent-blue); top: 50%; left: 50%; animation: float3 18s ease-in-out infinite; }
+
+    @keyframes float1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-60px, 60px); } }
+    @keyframes float2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(80px, -40px); } }
+    @keyframes float3 { 0%,100% { transform: translate(-50%,-50%); } 50% { transform: translate(-40%, -60%); } }
+
+    /* Hero */
+    .sky-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      z-index: 1;
+    }
+    .sky-hero-content { max-width: 800px; }
+    .sky-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--white), var(--accent-cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .sky-hero p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto; margin-right: auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    .sky-hero-actions {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    .sky-hero-badge {
+      display: inline-block;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 13px;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Glass Card Sections */
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .section { padding: 100px 0; position: relative; z-index: 1; }
+
+    /* Window Types */
+    .window-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .glass-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 16px 48px rgba(34,211,238,0.15);
+    }
+    .glass-card-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .glass-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .glass-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Features Row */
+    .features-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+    }
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+    .feature-pill.visible { opacity: 1; transform: translateY(0); }
+    .feature-pill-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; flex-shrink: 0;
+    }
+    .feature-pill h4 { font-size: 1rem; margin-bottom: 4px; }
+    .feature-pill p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* How It Works - Timeline */
+    .timeline { max-width: 700px; margin: 0 auto; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    }
+    .timeline-step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.5s ease;
+    }
+    .timeline-step.visible { opacity: 1; transform: translateX(0); }
+    .timeline-dot {
+      width: 56px; height: 56px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 2px solid var(--accent-cyan);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.2rem; color: var(--accent-cyan);
+      flex-shrink: 0; z-index: 2;
+    }
+    .timeline-content h3 { margin-bottom: 8px; font-size: 1.1rem; }
+    .timeline-content p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* CTA Section */
+    .sky-cta {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative; z-index: 1;
+    }
+    .sky-cta-glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(30px);
+      border: 1px solid var(--glass-border);
+      border-radius: 32px;
+      padding: 80px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .sky-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .sky-cta h2 span { color: var(--accent-cyan); }
+    .sky-cta p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+
+    /* Cross Links */
+    .crosslinks {
+      padding: 80px 0;
+      position: relative; z-index: 1;
+    }
+    .crosslinks h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      color: var(--text-light);
+    }
+    .crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .crosslink-item {
+      display: block;
+      padding: 14px 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .crosslink-item:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateX(4px);
+    }
+    .crosslink-item span { margin-right: 8px; }
+
+    /* Footer */
+    .footer {
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--glass-border);
+      padding: 60px 0 0;
+      position: relative; z-index: 1;
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-brand p { color: var(--text-muted); margin-top: 12px; font-size: 0.9rem; }
+    .footer-contact-info { margin-top: 16px; }
+    .footer-contact-info p { font-size: 0.9rem; margin-bottom: 4px; }
+    .footer-contact-info a { color: var(--accent-cyan); text-decoration: none; }
+    .footer-links h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; color: var(--white); }
+    .footer-links a { display: block; color: var(--text-muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent-cyan); }
+    .footer-bottom {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .header-cta { display: none; }
+      .mobile-menu-btn { display: block; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .sky-hero { min-height: 70vh; padding: 100px 24px 60px; }
+      .crosslinks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="sky-hero">
+    <div class="sky-hero-content">
+      <span class="sky-hero-badge">✦ Specialty Window Experts</span>
+      <h1>Skylight & Specialty<br>Window Blinds</h1>
+      <p>Custom solutions for skylights, arched windows, triangular panes and every hard-to-fit opening. Expertly measured, perfectly installed.</p>
+      <div class="sky-hero-actions">
+        <a href="../free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+        <a href="#window-types" class="btn btn-outline btn-lg">See Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Window Types -->
+  <section id="window-types" class="section">
+    <div class="container">
+      <h2 class="section-title">Every Shape. Every Angle. Covered.</h2>
+      <p class="section-subtitle">From overhead skylights to dramatic arched windows, we craft blinds that fit perfectly — no matter the shape.</p>
+      <div class="window-grid">
+        <div class="glass-card">
+          <span class="glass-card-icon">🔲</span>
+          <h3>Skylight Blinds</h3>
+          <p>Motorised and manual options for roof-mounted skylights. Control heat, glare and UV from above with precision-engineered tracks that hold at any angle.</p>
+        </div>
+        <div class="glass-card">
+          <span class="glass-card-icon">🌗</span>
+          <h3>Arched Window Blinds</h3>
+          <p>Custom-shaped blinds that follow the curve of your arch perfectly. Fan-style, half-moon and full arch options in blockout or sheer fabrics.</p>
+        </div>
+        <div class="glass-card">
+          <span class="glass-card-icon">📐</span>
+          <h3>Triangular & Angled</h3>
+          <p>Purpose-built for raked ceilings, A-frame homes and geometric windows. Our tension-wire system keeps blinds taut at any pitch.</p>
+        </div>
+        <div class="glass-card">
+          <span class="glass-card-icon">⭕</span>
+          <h3>Circular & Porthole</h3>
+          <p>Round window solutions using custom-moulded tracks. Perfect for feature windows, bathrooms and nautical-themed spaces.</p>
+        </div>
+        <div class="glass-card">
+          <span class="glass-card-icon">↔️</span>
+          <h3>Extra-Wide Spans</h3>
+          <p>Continuous blinds for panoramic windows and glass walls. Heavy-duty mechanisms rated for widths up to 6 metres.</p>
+        </div>
+        <div class="glass-card">
+          <span class="glass-card-icon">🔺</span>
+          <h3>Trapezoid & Custom</h3>
+          <p>Literally any shape. Send us your measurements and we'll engineer a solution. If it has glass, we can cover it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Specialty Matters -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why Specialty Windows Need Specialists</h2>
+      <p class="section-subtitle">Off-the-shelf doesn't work for unique windows. Here's what sets our approach apart.</p>
+      <div class="features-row">
+        <div class="feature-pill">
+          <div class="feature-pill-icon">📏</div>
+          <div>
+            <h4>Laser-Precise Measurement</h4>
+            <p>Digital templating ensures sub-millimetre accuracy on complex shapes</p>
+          </div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">🔧</div>
+          <div>
+            <h4>Custom Engineering</h4>
+            <p>Each bracket, track and tensioner is designed for your specific window</p>
+          </div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">🤖</div>
+          <div>
+            <h4>Motorisation Available</h4>
+            <p>Remote-controlled operation for hard-to-reach skylights and high windows</p>
+          </div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">☀️</div>
+          <div>
+            <h4>Heat & UV Control</h4>
+            <p>Skylights let in 3x more heat — our blinds cut it by up to 80%</p>
+          </div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">🎨</div>
+          <div>
+            <h4>200+ Fabric Options</h4>
+            <p>Full range of blockout, sunscreen and translucent fabrics in any colour</p>
+          </div>
+        </div>
+        <div class="feature-pill">
+          <div class="feature-pill-icon">🛡️</div>
+          <div>
+            <h4>5-Year Warranty</h4>
+            <p>All specialty installations backed by our comprehensive warranty</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">From enquiry to installation, we handle every detail.</p>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <h3>Free In-Home Consultation</h3>
+            <p>Our specialty window expert visits your home, assesses the windows, discusses options and takes digital measurements. No obligation.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <h3>Custom Design & Quote</h3>
+            <p>We design the perfect solution for each window, select appropriate fabrics and mechanisms, and provide transparent pricing within 48 hours.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <h3>Precision Manufacturing</h3>
+            <p>Your blinds are custom-made in Australia using CNC-cut components. Every piece is quality-checked before dispatch.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <h3>Expert Installation</h3>
+            <p>Our installers specialise in tricky, high and hard-to-reach windows. We bring the right equipment and leave your home spotless.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sky-cta">
+    <div class="sky-cta-glass">
+      <h2>Got a <span>Tricky Window</span>?</h2>
+      <p>Send us a photo and dimensions. We'll tell you exactly what's possible — free, no obligation.</p>
+      <a href="../free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="crosslinks">
+    <div class="container">
+      <h3>Explore More Solutions</h3>
+      <div class="crosslinks-grid">
+        <a href="commercial-blinds.html" class="crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="melbourne-service-areas.html" class="crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="blinds-vs-curtains.html" class="crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="smart-home.html" class="crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="acoustic-solutions.html" class="crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="hospitality-blinds.html" class="crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="large-windows.html" class="crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="eco-friendly.html" class="crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="layered-treatments.html" class="crosslink-item"><span>→</span> Layered Window Treatments</a>
+        <a href="bathroom-kitchen.html" class="crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="home-office.html" class="crosslink-item"><span>→</span> Home Office Blinds</a>
+        <a href="bedroom-blackout.html" class="crosslink-item"><span>→</span> Bedroom Blackout Blinds</a>
+        <a href="property-styling.html" class="crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="pet-friendly.html" class="crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="heritage-homes.html" class="crosslink-item"><span>→</span> Heritage &amp; Period Homes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.glass-card, .feature-pill, .timeline-step').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
