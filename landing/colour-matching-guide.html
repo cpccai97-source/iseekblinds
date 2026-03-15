@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colour Matching Guide for Interiors | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Find the perfect blind and curtain colours for every room. Expert colour matching guide with 2026 trending palettes, room-by-room recommendations, and free sample ordering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <style>
+    /* ──────────────────────────────────────────
+       COLOUR MATCHING GUIDE — Gradient Fluid
+    ────────────────────────────────────────── */
+    :root {
+      --peach:      #ffd6c0;
+      --lavender:   #d8c4f0;
+      --mint:       #c2f0db;
+      --sky:        #b8e0f7;
+      --blush:      #f7c4d4;
+      --cream:      #fff9f4;
+      --coral:      #f2836b;
+      --purple:     #9b7fc4;
+      --deep:       #2d2a3e;
+      --body:       #4a4560;
+      --muted:      #7a7590;
+      --radius-lg:  24px;
+      --radius-md:  16px;
+      --radius-sm:  10px;
+    }
+
+    .cm * { box-sizing: border-box; }
+
+    .cm {
+      background: var(--cream);
+      color: var(--deep);
+      overflow-x: hidden;
+    }
+
+    /* Header overrides */
+    .cm .header {
+      background: rgba(255,249,244,.92);
+      backdrop-filter: blur(14px);
+    }
+
+    /* Shared layout */
+    .cm-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cm-section { position: relative; }
+
+    .pad { padding: 96px 0; }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(8px);
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+
+    .sec-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 10px;
+    }
+
+    .sec-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--deep);
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .sec-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      color: var(--body);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .pill-divider {
+      display: block;
+      width: 48px;
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--peach), var(--lavender));
+      margin-top: 20px;
+    }
+
+    /* Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      animation: blobFloat 18s ease-in-out infinite;
+    }
+    @keyframes blobFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(24px,-18px) scale(1.04); }
+      66%      { transform: translate(-12px,12px) scale(.97); }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Hero animate */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:none; }
+    }
+    .ha { animation: fadeUp .75s ease both; }
+    .ha:nth-child(2){animation-delay:.15s}
+    .ha:nth-child(3){animation-delay:.28s}
+    .ha:nth-child(4){animation-delay:.4s}
+
+
+    /* ── HERO ─────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: linear-gradient(130deg, var(--peach) 0%, var(--lavender) 48%, var(--sky) 100%);
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.08;
+      margin: 0 0 22px;
+      color: var(--deep);
+    }
+
+    .hero .sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      color: var(--body);
+      max-width: 540px;
+      margin: 0 auto 38px;
+      line-height: 1.7;
+    }
+
+    .hero-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+    .btn-coral {
+      font-family:'Outfit',sans-serif; font-weight:600; font-size:.95rem;
+      padding:15px 34px; border-radius:50px; text-decoration:none;
+      background:var(--coral); color:#fff;
+      box-shadow:0 8px 24px rgba(242,131,107,.32);
+      transition:all .3s;
+    }
+    .btn-coral:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(242,131,107,.42); }
+
+    .btn-ghost {
+      font-family:'Outfit',sans-serif; font-weight:600; font-size:.95rem;
+      padding:15px 34px; border-radius:50px; text-decoration:none;
+      background:rgba(255,255,255,.5); color:var(--deep);
+      border:2px solid rgba(155,127,196,.3);
+      backdrop-filter:blur(10px);
+      transition:all .3s;
+    }
+    .btn-ghost:hover { background:rgba(255,255,255,.75); border-color:var(--purple); transform:translateY(-2px); }
+
+
+    /* ── COLOUR THEORY ───────────────────── */
+    .theory-bg {
+      background: linear-gradient(175deg, var(--cream) 0%, #f5edf8 100%);
+    }
+
+    .theory-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    /* CSS colour wheel */
+    .wheel-wrap { display:flex; align-items:center; justify-content:center; }
+
+    .wheel {
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #ff6b6b 0deg,
+        #ff9f43 30deg,
+        #ffd93d 60deg,
+        #6bcb77 120deg,
+        #4d96ff 200deg,
+        #9b59b6 270deg,
+        #ff6b6b 360deg
+      );
+      box-shadow: 0 20px 60px rgba(0,0,0,.1);
+      animation: wheelSpin 80s linear infinite;
+      position: relative;
+    }
+    .wheel::after {
+      content:''; position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:90px; height:90px; border-radius:50%;
+      background:var(--cream);
+    }
+    @keyframes wheelSpin { to { transform:rotate(360deg); } }
+
+    .theory-cards { display:flex; flex-direction:column; gap:20px; }
+
+    .tc {
+      background:rgba(255,255,255,.7);
+      backdrop-filter:blur(10px);
+      border-radius:var(--radius-md);
+      padding:22px 26px;
+      border:1px solid rgba(216,196,240,.25);
+      transition:.3s;
+    }
+    .tc:hover { transform:translateX(6px); box-shadow:0 8px 24px rgba(0,0,0,.06); }
+    .tc h3 { font-family:'DM Serif Display',serif; font-size:1.1rem; margin:0 0 6px; color:var(--deep); }
+    .tc p  { font-family:'Outfit',sans-serif; font-size:.9rem; color:var(--body); margin:0 0 10px; line-height:1.6; }
+
+    .swatches { display:flex; gap:6px; }
+    .sw { width:22px; height:22px; border-radius:6px; border:2px solid rgba(255,255,255,.8); box-shadow:0 2px 5px rgba(0,0,0,.1); }
+
+
+    /* ── ROOM BY ROOM ─────────────────────── */
+    .room-bg { background:#fff; }
+
+    .room-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:24px;
+      margin-top:52px;
+    }
+
+    .room-card {
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.05);
+      transition:all .35s;
+    }
+    .room-card:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(0,0,0,.08); }
+
+    .room-header {
+      height:170px;
+      display:flex; align-items:flex-end; padding:18px 22px;
+    }
+    .room-card:nth-child(1) .room-header { background:linear-gradient(135deg,#d4a574,#c9956b,#8b6f47); }
+    .room-card:nth-child(2) .room-header { background:linear-gradient(135deg,#7eb8c9,#6ba3b8,#4a8a9e); }
+    .room-card:nth-child(3) .room-header { background:linear-gradient(135deg,#f2c94c,#f2994a,#eb5757); }
+    .room-card:nth-child(4) .room-header { background:linear-gradient(135deg,#c4b5a0,#b8a990,#a89880); }
+    .room-card:nth-child(5) .room-header { background:linear-gradient(135deg,#6c8ebd,#5a7ba8,#4a6a96); }
+
+    .room-emoji { font-size:2rem; filter:drop-shadow(0 2px 4px rgba(0,0,0,.2)); }
+
+    .room-body { padding:22px; background:#fff; }
+    .room-mood { font-family:'Outfit',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--coral); margin-bottom:6px; }
+    .room-body h3 { font-family:'DM Serif Display',serif; font-size:1.15rem; margin:0 0 8px; color:var(--deep); }
+    .room-body p  { font-family:'Outfit',sans-serif; font-size:.88rem; color:var(--body); line-height:1.6; margin:0 0 14px; }
+
+    .chip-row { display:flex; gap:7px; }
+    .chip { width:26px; height:26px; border-radius:8px; border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.1); }
+
+
+    /* ── 2026 PALETTES ───────────────────── */
+    .palettes-bg {
+      background:linear-gradient(130deg,#f5edf8 0%,var(--cream) 50%,#eef5f0 100%);
+    }
+
+    .palette-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(290px,1fr));
+      gap:24px;
+      margin-top:52px;
+    }
+
+    .palette-card {
+      background:#fff;
+      border-radius:var(--radius-lg);
+      padding:26px;
+      box-shadow:0 4px 18px rgba(0,0,0,.04);
+      border:1px solid rgba(0,0,0,.04);
+      transition:.3s;
+    }
+    .palette-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(0,0,0,.08); }
+
+    .palette-name { font-family:'DM Serif Display',serif; font-size:1.15rem; margin:0 0 5px; color:var(--deep); }
+    .palette-sub  { font-family:'Outfit',sans-serif; font-size:.84rem; color:var(--muted); margin:0 0 18px; line-height:1.5; }
+
+    .strip {
+      display:flex; border-radius:14px; overflow:hidden; height:56px; margin-bottom:14px;
+    }
+    .strip-c { flex:1; transition:flex .3s; cursor:default; }
+    .strip-c:hover { flex:1.6; }
+
+    .hex-row { display:flex; flex-wrap:wrap; gap:5px; }
+    .hex { font-family:'Outfit',sans-serif; font-size:.68rem; font-weight:500; color:var(--muted); background:#f5f2f8; padding:3px 8px; border-radius:6px; }
+
+    .palette-prod { font-family:'Outfit',sans-serif; font-size:.84rem; color:var(--coral); font-weight:500; margin-top:12px; }
+
+
+    /* ── MATCH YOUR WALLS ────────────────── */
+    .match-bg { background:#fff; }
+
+    .match-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:22px;
+      margin-top:52px;
+    }
+
+    .match-card {
+      background:linear-gradient(135deg,#faf7ff,#fff);
+      border-radius:var(--radius-lg);
+      padding:28px 26px;
+      border:1px solid rgba(0,0,0,.05);
+      transition:.3s;
+    }
+    .match-card:hover { box-shadow:0 12px 32px rgba(0,0,0,.06); transform:translateY(-3px); }
+
+    .match-vis { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+    .wall-swatch { width:52px; height:52px; border-radius:var(--radius-sm); box-shadow:0 4px 12px rgba(0,0,0,.1); }
+    .arrow { font-size:1.4rem; color:var(--muted); }
+    .blind-chips { display:flex; gap:7px; }
+    .blind-chip { width:38px; height:38px; border-radius:9px; box-shadow:0 2px 8px rgba(0,0,0,.1); border:2px solid #fff; }
+
+    .match-card h3 { font-family:'DM Serif Display',serif; font-size:1.08rem; margin:0 0 7px; color:var(--deep); }
+    .match-card p  { font-family:'Outfit',sans-serif; font-size:.88rem; color:var(--body); line-height:1.6; margin:0; }
+
+
+    /* ── TIPS ────────────────────────────── */
+    .tips-bg {
+      background:linear-gradient(170deg,var(--cream) 0%,#ede7f5 100%);
+    }
+
+    .tips-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(290px,1fr));
+      gap:22px;
+      margin-top:52px;
+    }
+
+    .tip {
+      background:rgba(255,255,255,.65);
+      backdrop-filter:blur(10px);
+      border-radius:var(--radius-lg);
+      padding:28px 26px;
+      border:1px solid rgba(216,196,240,.2);
+      transition:.3s;
+    }
+    .tip:hover { background:rgba(255,255,255,.88); transform:translateY(-3px); }
+    .tip-icon { font-size:1.9rem; display:block; margin-bottom:13px; }
+    .tip h3 { font-family:'DM Serif Display',serif; font-size:1.08rem; margin:0 0 9px; color:var(--deep); }
+    .tip p  { font-family:'Outfit',sans-serif; font-size:.88rem; color:var(--body); line-height:1.6; margin:0; }
+
+
+    /* ── CTA ─────────────────────────────── */
+    .cta-section {
+      text-align:center;
+      padding:96px 24px;
+      background:linear-gradient(130deg, var(--peach) 0%, var(--lavender) 50%, var(--mint) 100%);
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-inner {
+      max-width:580px;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+    .cta-inner h2 {
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(1.9rem,4vw,2.8rem);
+      margin:0 0 14px;
+      color:var(--deep);
+    }
+    .cta-inner p {
+      font-family:'Outfit',sans-serif;
+      font-size:1.05rem; color:var(--body);
+      line-height:1.7; margin:0 0 34px;
+    }
+
+
+    /* ── CROSS LINKS ─────────────────────── */
+    .cross-section {
+      background:#fff;
+      padding:76px 0;
+      border-top:1px solid rgba(0,0,0,.05);
+    }
+    .cross-title {
+      font-family:'DM Serif Display',serif;
+      font-size:1.6rem; text-align:center;
+      margin:0 0 36px; color:var(--deep);
+    }
+    .cross-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(210px,1fr));
+      gap:8px;
+    }
+    .cross-link {
+      font-family:'Outfit',sans-serif; font-size:.9rem;
+      color:var(--body); text-decoration:none;
+      padding:9px 16px; border-radius:var(--radius-sm);
+      transition:.25s;
+    }
+    .cross-link:hover { color:var(--coral); background:rgba(242,131,107,.07); }
+
+
+    /* ── RESPONSIVE ──────────────────────── */
+    @media (max-width:800px) {
+      .theory-layout { grid-template-columns:1fr; gap:36px; }
+      .wheel { width:190px; height:190px; }
+      .wheel::after { width:68px; height:68px; }
+    }
+    @media (max-width:600px) {
+      .pad { padding:60px 0; }
+      .hero { min-height:90vh; padding:100px 20px 60px; }
+      .hero-btns { flex-direction:column; align-items:center; }
+      .cross-grid { grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); }
+    }
+
+    /* ── MOBILE NAV ──────────────────────── */
+    .mob-overlay {
+      display:none; position:fixed; inset:0;
+      background:rgba(255,249,244,.97);
+      z-index:9999;
+      flex-direction:column; align-items:center; justify-content:center; gap:22px;
+    }
+    .mob-overlay.open { display:flex; }
+    .mob-overlay a { font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--deep); text-decoration:none; }
+    .mob-close {
+      position:absolute; top:20px; right:22px;
+      font-size:2rem; background:none; border:none;
+      color:var(--deep); cursor:pointer;
+    }
+  </style>
+</head>
+<body class="cm">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+
+  <!-- ① HERO -->
+  <section class="hero cm-section">
+    <div class="blob" style="width:480px;height:480px;background:var(--mint);top:-120px;right:-100px;opacity:.38;animation-delay:-6s;"></div>
+    <div class="blob" style="width:380px;height:380px;background:var(--blush);bottom:-80px;left:-80px;opacity:.34;animation-delay:-12s;"></div>
+    <div class="blob" style="width:280px;height:280px;background:var(--lavender);top:35%;left:8%;opacity:.28;animation-delay:-3s;"></div>
+    <div class="cm-wrap" style="position:relative;z-index:1;">
+      <div class="tag ha">Interior Design Guide</div>
+      <h1 class="ha">Colour Matching<br>Guide</h1>
+      <p class="sub ha">The right colour transforms a room. Discover how to choose blind and curtain colours that harmonise with your interiors and express your personal style.</p>
+      <div class="hero-btns ha">
+        <a href="../free-quote.html" class="btn-coral">Order Free Samples</a>
+        <a href="tel:0400000000" class="btn-ghost">Speak to a Stylist</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ② COLOUR THEORY -->
+  <section class="cm-section pad theory-bg">
+    <div class="cm-wrap">
+      <div class="reveal" style="text-align:center;">
+        <div class="sec-label">Fundamentals</div>
+        <h2 class="sec-title">Understanding Colour Theory</h2>
+        <p class="sec-desc" style="margin:0 auto;">A little knowledge goes a long way. These three principles guide every great colour decision.</p>
+        <span class="pill-divider" style="margin:18px auto 0;"></span>
+      </div>
+      <div class="theory-layout">
+        <div class="wheel-wrap reveal">
+          <div class="wheel"></div>
+        </div>
+        <div class="theory-cards">
+          <div class="tc reveal">
+            <h3>Warm vs Cool</h3>
+            <p>Warm tones (reds, oranges, yellows) create cosy, intimate rooms. Cool tones (blues, greens, purples) feel calm and spacious. Choose based on the atmosphere you want.</p>
+            <div class="swatches">
+              <div class="sw" style="background:#e07c5a;"></div>
+              <div class="sw" style="background:#d4a35a;"></div>
+              <div class="sw" style="background:#c8c8c8;border-color:#ddd;"></div>
+              <div class="sw" style="background:#5a8fb4;"></div>
+              <div class="sw" style="background:#5a7c6e;"></div>
+            </div>
+          </div>
+          <div class="tc reveal">
+            <h3>Complementary Contrast</h3>
+            <p>Colours opposite on the wheel (e.g. navy + amber) create vibrant, high-impact pairings. Use for bold, confident spaces where you want drama and energy.</p>
+            <div class="swatches">
+              <div class="sw" style="background:#2c3e6b;"></div>
+              <div class="sw" style="background:#d4a35a;"></div>
+              <div class="sw" style="background:#6b4c2c;"></div>
+              <div class="sw" style="background:#c9e0f5;"></div>
+            </div>
+          </div>
+          <div class="tc reveal">
+            <h3>Analogous Harmony</h3>
+            <p>Neighbours on the wheel create soothing, effortless cohesion — sage walls with olive or eucalyptus blinds. The safest choice for a polished, harmonious look.</p>
+            <div class="swatches">
+              <div class="sw" style="background:#7a9e7e;"></div>
+              <div class="sw" style="background:#8aad7a;"></div>
+              <div class="sw" style="background:#b5c99a;"></div>
+              <div class="sw" style="background:#d4dfc4;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ③ ROOM BY ROOM -->
+  <section class="cm-section pad room-bg">
+    <div class="blob" style="width:360px;height:360px;background:var(--mint);top:10%;right:-130px;opacity:.22;animation-delay:-4s;"></div>
+    <div class="cm-wrap">
+      <div class="reveal" style="text-align:center;">
+        <div class="sec-label">Room by Room</div>
+        <h2 class="sec-title">A Colour Guide for Every Space</h2>
+        <p class="sec-desc" style="margin:0 auto;">Each room has a purpose — your colours should support it.</p>
+        <span class="pill-divider" style="margin:18px auto 0;"></span>
+      </div>
+      <div class="room-grid">
+
+        <div class="room-card reveal">
+          <div class="room-header"><span class="room-emoji">🛋️</span></div>
+          <div class="room-body">
+            <div class="room-mood">Earthy &amp; Warm</div>
+            <h3>Living Room</h3>
+            <p>Ground your living space with terracotta, caramel, and warm taupe. Natural linen and jute-toned curtains add texture without overpowering.</p>
+            <div class="chip-row">
+              <div class="chip" style="background:#c9956b;"></div>
+              <div class="chip" style="background:#8b6f47;"></div>
+              <div class="chip" style="background:#d4b896;"></div>
+              <div class="chip" style="background:#e8ddd0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card reveal">
+          <div class="room-header"><span class="room-emoji">🛏️</span></div>
+          <div class="room-body">
+            <div class="room-mood">Calming &amp; Serene</div>
+            <h3>Bedroom</h3>
+            <p>Create your retreat with dusty blue, sage green, or soft lavender. Blockout roller blinds in these tones promote deep, restful sleep.</p>
+            <div class="chip-row">
+              <div class="chip" style="background:#7eb8c9;"></div>
+              <div class="chip" style="background:#8aad7a;"></div>
+              <div class="chip" style="background:#b4a7c7;"></div>
+              <div class="chip" style="background:#d8e8e0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card reveal">
+          <div class="room-header"><span class="room-emoji">🍳</span></div>
+          <div class="room-body">
+            <div class="room-mood">Bright &amp; Energetic</div>
+            <h3>Kitchen</h3>
+            <p>Sunshine yellow, warm coral, or crisp white energise morning routines. Moisture-resistant roller blinds in bold hues add personality to splashback zones.</p>
+            <div class="chip-row">
+              <div class="chip" style="background:#f2c94c;"></div>
+              <div class="chip" style="background:#f2994a;"></div>
+              <div class="chip" style="background:#eb5757;"></div>
+              <div class="chip" style="background:#fff5e0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card reveal">
+          <div class="room-header"><span class="room-emoji">🛁</span></div>
+          <div class="room-body">
+            <div class="room-mood">Spa-Like Neutrals</div>
+            <h3>Bathroom</h3>
+            <p>Soft stone, warm grey, and natural linen create a spa atmosphere. Choose moisture-resistant fabrics in soothing neutral palettes that stand the test of steam.</p>
+            <div class="chip-row">
+              <div class="chip" style="background:#c4b5a0;"></div>
+              <div class="chip" style="background:#a89880;"></div>
+              <div class="chip" style="background:#d9d0c4;"></div>
+              <div class="chip" style="background:#eee8e0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="room-card reveal">
+          <div class="room-header"><span class="room-emoji">💻</span></div>
+          <div class="room-body">
+            <div class="room-mood">Focus-Enhancing</div>
+            <h3>Home Office</h3>
+            <p>Deep navy, forest green, or charcoal create a focused atmosphere. Pair with light-filtering blinds to reduce screen glare without sacrificing natural light.</p>
+            <div class="chip-row">
+              <div class="chip" style="background:#3d5a80;"></div>
+              <div class="chip" style="background:#4a6a56;"></div>
+              <div class="chip" style="background:#4a4a5a;"></div>
+              <div class="chip" style="background:#c8d6e0;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ④ 2026 TRENDING PALETTES -->
+  <section class="cm-section pad palettes-bg">
+    <div class="blob" style="width:320px;height:320px;background:var(--peach);bottom:-80px;left:-60px;opacity:.28;animation-delay:-8s;"></div>
+    <div class="cm-wrap">
+      <div class="reveal" style="text-align:center;">
+        <div class="sec-label">What's Hot</div>
+        <h2 class="sec-title">2026 Trending Palettes</h2>
+        <p class="sec-desc" style="margin:0 auto;">Curated colour combinations defining Melbourne interiors this year.</p>
+        <span class="pill-divider" style="margin:18px auto 0;"></span>
+      </div>
+      <div class="palette-grid">
+
+        <div class="palette-card reveal">
+          <h3 class="palette-name">Desert Rose</h3>
+          <p class="palette-sub">Sun-baked warmth meets modern softness. Ideal for living rooms and master bedrooms.</p>
+          <div class="strip">
+            <div class="strip-c" style="background:#d4856a;"></div>
+            <div class="strip-c" style="background:#e8b89d;"></div>
+            <div class="strip-c" style="background:#f5dcc8;"></div>
+            <div class="strip-c" style="background:#c9956b;"></div>
+            <div class="strip-c" style="background:#8b5e3c;"></div>
+          </div>
+          <div class="hex-row">
+            <span class="hex">#D4856A</span><span class="hex">#E8B89D</span>
+            <span class="hex">#F5DCC8</span><span class="hex">#C9956B</span><span class="hex">#8B5E3C</span>
+          </div>
+          <div class="palette-prod">→ Roller Blinds in Sandstone · Linen Curtains</div>
+        </div>
+
+        <div class="palette-card reveal">
+          <h3 class="palette-name">Ocean Calm</h3>
+          <p class="palette-sub">Coastal blues and soft greys for timeless tranquility. Works anywhere in the home.</p>
+          <div class="strip">
+            <div class="strip-c" style="background:#2c5f7c;"></div>
+            <div class="strip-c" style="background:#5a9ab5;"></div>
+            <div class="strip-c" style="background:#a3c9d9;"></div>
+            <div class="strip-c" style="background:#d8e8f0;"></div>
+            <div class="strip-c" style="background:#f0f5f8;"></div>
+          </div>
+          <div class="hex-row">
+            <span class="hex">#2C5F7C</span><span class="hex">#5A9AB5</span>
+            <span class="hex">#A3C9D9</span><span class="hex">#D8E8F0</span><span class="hex">#F0F5F8</span>
+          </div>
+          <div class="palette-prod">→ Honeycomb Blinds in Steel Blue · Sheer Curtains</div>
+        </div>
+
+        <div class="palette-card reveal">
+          <h3 class="palette-name">Eucalyptus Grove</h3>
+          <p class="palette-sub">Australia's natural landscape brought indoors. Muted, grounded, and deeply calming.</p>
+          <div class="strip">
+            <div class="strip-c" style="background:#4a6b52;"></div>
+            <div class="strip-c" style="background:#7a9e7e;"></div>
+            <div class="strip-c" style="background:#b5c99a;"></div>
+            <div class="strip-c" style="background:#d4dfc4;"></div>
+            <div class="strip-c" style="background:#8b7d6b;"></div>
+          </div>
+          <div class="hex-row">
+            <span class="hex">#4A6B52</span><span class="hex">#7A9E7E</span>
+            <span class="hex">#B5C99A</span><span class="hex">#D4DFC4</span><span class="hex">#8B7D6B</span>
+          </div>
+          <div class="palette-prod">→ Plantation Shutters White · Timber Venetians</div>
+        </div>
+
+        <div class="palette-card reveal">
+          <h3 class="palette-name">Midnight Plum</h3>
+          <p class="palette-sub">Rich, dramatic depth for bedrooms and media rooms. Bold but liveable.</p>
+          <div class="strip">
+            <div class="strip-c" style="background:#2d1b3d;"></div>
+            <div class="strip-c" style="background:#5a3d6b;"></div>
+            <div class="strip-c" style="background:#8a6b9e;"></div>
+            <div class="strip-c" style="background:#c4a8d4;"></div>
+            <div class="strip-c" style="background:#e8daf0;"></div>
+          </div>
+          <div class="hex-row">
+            <span class="hex">#2D1B3D</span><span class="hex">#5A3D6B</span>
+            <span class="hex">#8A6B9E</span><span class="hex">#C4A8D4</span><span class="hex">#E8DAF0</span>
+          </div>
+          <div class="palette-prod">→ Blockout Roller Charcoal · Velvet Curtains</div>
+        </div>
+
+        <div class="palette-card reveal">
+          <h3 class="palette-name">Warm Minimalist</h3>
+          <p class="palette-sub">The new neutral — soft whites, warm beige, and a whisper of blush. Universally adaptable.</p>
+          <div class="strip">
+            <div class="strip-c" style="background:#f5efe6;"></div>
+            <div class="strip-c" style="background:#e8ddd0;"></div>
+            <div class="strip-c" style="background:#d4c4b0;"></div>
+            <div class="strip-c" style="background:#c9b8a8;"></div>
+            <div class="strip-c" style="background:#e8c4c0;"></div>
+          </div>
+          <div class="hex-row">
+            <span class="hex">#F5EFE6</span><span class="hex">#E8DDD0</span>
+            <span class="hex">#D4C4B0</span><span class="hex">#C9B8A8</span><span class="hex">#E8C4C0</span>
+          </div>
+          <div class="palette-prod">→ Sheer Curtains Ivory · Day-Night Blinds</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑤ MATCH YOUR WALLS -->
+  <section class="cm-section pad match-bg">
+    <div class="blob" style="width:380px;height:380px;background:var(--sky);top:-100px;left:-100px;opacity:.18;animation-delay:-2s;"></div>
+    <div class="cm-wrap">
+      <div class="reveal" style="text-align:center;">
+        <div class="sec-label">Pairing Guide</div>
+        <h2 class="sec-title">Match Your Walls</h2>
+        <p class="sec-desc" style="margin:0 auto;">Already painted? Here's what blind and curtain colours work best with popular wall tones.</p>
+        <span class="pill-divider" style="margin:18px auto 0;"></span>
+      </div>
+      <div class="match-grid">
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#f5f5f0;border:1px solid #e0e0da;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#c9b8a8;"></div>
+              <div class="blind-chip" style="background:#8aad7a;"></div>
+              <div class="blind-chip" style="background:#5a9ab5;"></div>
+            </div>
+          </div>
+          <h3>White / Off-White Walls</h3>
+          <p>The blank canvas. Try warm taupes for cosy, sage greens for fresh, or blues for a coastal touch. You set the mood.</p>
+        </div>
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#d4dfc4;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#f5efe6;"></div>
+              <div class="blind-chip" style="background:#c9956b;"></div>
+              <div class="blind-chip" style="background:#8b6f47;"></div>
+            </div>
+          </div>
+          <h3>Sage / Green Walls</h3>
+          <p>Pair with natural textures — cream linen, warm timber venetians, or honeyed roller blinds. Avoid cool greys, which can clash.</p>
+        </div>
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#2c3e6b;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#d4a35a;"></div>
+              <div class="blind-chip" style="background:#f5efe6;"></div>
+              <div class="blind-chip" style="background:#c4b5a0;"></div>
+            </div>
+          </div>
+          <h3>Navy / Dark Blue Walls</h3>
+          <p>Go for contrast — warm metallics, cream, or natural stone prevent the room from feeling too cold or cave-like.</p>
+        </div>
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#e8ddd0;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#4a6a56;"></div>
+              <div class="blind-chip" style="background:#3d5a80;"></div>
+              <div class="blind-chip" style="background:#d4856a;"></div>
+            </div>
+          </div>
+          <h3>Warm Beige Walls</h3>
+          <p>Add depth with forest green, navy, or terracotta accents. These prevent a washed-out, overly neutral look.</p>
+        </div>
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#d4856a;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#f5efe6;"></div>
+              <div class="blind-chip" style="background:#2d1b3d;"></div>
+              <div class="blind-chip" style="background:#8b7d6b;"></div>
+            </div>
+          </div>
+          <h3>Terracotta / Coral Walls</h3>
+          <p>Balance with creamy whites, deep plums, or earthy neutrals. These ground the warmth without competing.</p>
+        </div>
+
+        <div class="match-card reveal">
+          <div class="match-vis">
+            <div class="wall-swatch" style="background:#4a4a5a;"></div>
+            <span class="arrow">→</span>
+            <div class="blind-chips">
+              <div class="blind-chip" style="background:#e8c4c0;"></div>
+              <div class="blind-chip" style="background:#d4a35a;"></div>
+              <div class="blind-chip" style="background:#f5f5f0;"></div>
+            </div>
+          </div>
+          <h3>Charcoal / Dark Grey Walls</h3>
+          <p>Lighten with blush pink, warm gold, or bright white blinds. High contrast keeps the room dramatic but liveable.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑥ TIPS -->
+  <section class="cm-section pad tips-bg">
+    <div class="cm-wrap">
+      <div class="reveal" style="text-align:center;">
+        <div class="sec-label">Pro Tips</div>
+        <h2 class="sec-title">Getting It Right</h2>
+        <p class="sec-desc" style="margin:0 auto;">Advice from our Melbourne design consultants to help you choose confidently.</p>
+        <span class="pill-divider" style="margin:18px auto 0;"></span>
+      </div>
+      <div class="tips-grid">
+
+        <div class="tip reveal">
+          <span class="tip-icon">💡</span>
+          <h3>Test in Your Light</h3>
+          <p>Colours look completely different under warm vs cool lighting, and in north-facing vs south-facing rooms. Always view samples in situ at different times of day.</p>
+        </div>
+
+        <div class="tip reveal">
+          <span class="tip-icon">🎨</span>
+          <h3>Order Samples First</h3>
+          <p>Never choose from a screen alone — digital colour is unreliable. We offer free fabric samples so you can hold the material against your walls, floors, and furniture.</p>
+        </div>
+
+        <div class="tip reveal">
+          <span class="tip-icon">🪑</span>
+          <h3>Coordinate, Don't Match</h3>
+          <p>Your blinds don't need to match your sofa exactly. Aim for the same colour family — a shade lighter or darker creates depth without looking "matchy-matchy."</p>
+        </div>
+
+        <div class="tip reveal">
+          <span class="tip-icon">📐</span>
+          <h3>The 60-30-10 Rule</h3>
+          <p>60% dominant colour (walls), 30% secondary (furniture, blinds), 10% accent (cushions, art). This ratio creates balanced, visually satisfying interiors.</p>
+        </div>
+
+        <div class="tip reveal">
+          <span class="tip-icon">🌿</span>
+          <h3>When in Doubt, Go Neutral</h3>
+          <p>Neutral blinds (white, cream, grey, natural linen) work in every room and with every style. Add pops of colour through easily-changeable accessories instead.</p>
+        </div>
+
+        <div class="tip reveal">
+          <span class="tip-icon">📏</span>
+          <h3>Floor-to-Ceiling = Taller Rooms</h3>
+          <p>Hanging curtains as high as possible and choosing vertical patterns makes ceilings appear higher — a simple trick that transforms the perceived proportions of any space.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑦ CTA -->
+  <section class="cm-section cta-section">
+    <div class="blob" style="width:450px;height:450px;background:rgba(255,255,255,.35);top:-160px;right:-80px;opacity:1;animation-delay:-5s;"></div>
+    <div class="cta-inner reveal">
+      <div class="sec-label" style="justify-content:center;display:flex;">Ready to Choose?</div>
+      <h2>Order Free Colour Samples</h2>
+      <p>See the colours in your own home before you commit. We'll send a curated selection of fabric samples based on your room and style — completely free, with no obligation.</p>
+      <div class="hero-btns">
+        <a href="../free-quote.html" class="btn-coral">Get Free Samples</a>
+        <a href="tel:0400000000" class="btn-ghost">0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⑧ CROSS LINKS (current page excluded) -->
+  <section class="cross-section cm-section">
+    <div class="cm-wrap">
+      <h2 class="cross-title">Explore More Guides</h2>
+      <div class="cross-grid">
+        <a href="acoustic-solutions.html"      class="cross-link">Acoustic Solutions</a>
+        <a href="apartment-solutions.html"     class="cross-link">Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="cross-link">Arched &amp; Specialty Windows</a>
+        <a href="bathroom-kitchen.html"        class="cross-link">Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html"        class="cross-link">Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html"      class="cross-link">Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html"      class="cross-link">Blinds vs Curtains</a>
+        <a href="care-maintenance.html"        class="cross-link">Care &amp; Maintenance</a>
+        <a href="child-safety.html"            class="cross-link">Child Safety</a>
+        <a href="coastal-home-blinds.html"     class="cross-link">Coastal Home Blinds</a>
+        <!-- colour-matching-guide.html excluded (current page) -->
+        <a href="colour-trends-2026.html"      class="cross-link">Colour Trends 2026</a>
+        <a href="commercial-blinds.html"       class="cross-link">Commercial Blinds</a>
+        <a href="conservatory-sunroom.html"    class="cross-link">Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html"        class="cross-link">Day Night Blinds</a>
+        <a href="design-inspiration.html"      class="cross-link">Design Inspiration</a>
+        <a href="diy-installation-guide.html"  class="cross-link">DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html"     class="cross-link">DIY Measuring Guide</a>
+        <a href="eco-friendly.html"            class="cross-link">Eco-Friendly</a>
+        <a href="elderly-accessible.html"      class="cross-link">Elderly Accessible</a>
+        <a href="energy-efficient.html"        class="cross-link">Energy Efficient</a>
+        <a href="fabric-encyclopedia.html"     class="cross-link">Fabric Encyclopedia</a>
+        <a href="free-samples.html"            class="cross-link">Free Samples</a>
+        <a href="heritage-homes.html"          class="cross-link">Heritage Homes</a>
+        <a href="high-rise-glare.html"         class="cross-link">High-Rise Glare Reduction</a>
+        <a href="home-office.html"             class="cross-link">Home Office</a>
+        <a href="hospitality-blinds.html"      class="cross-link">Hospitality</a>
+        <a href="large-windows.html"           class="cross-link">Large Windows</a>
+        <a href="layered-treatments.html"      class="cross-link">Layered Treatments</a>
+        <a href="media-room.html"              class="cross-link">Media Room</a>
+        <a href="medical-clinic.html"          class="cross-link">Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="cross-link">Melbourne Service Areas</a>
+        <a href="minimalist-styling.html"      class="cross-link">Minimalist Home Styling</a>
+        <a href="new-home-packages.html"       class="cross-link">New Home Packages</a>
+        <a href="nursery-safe.html"            class="cross-link">Nursery Safe</a>
+        <a href="outdoor-blinds.html"          class="cross-link">Outdoor Blinds</a>
+        <a href="pet-friendly.html"            class="cross-link">Pet-Friendly</a>
+        <a href="privacy-blinds.html"          class="cross-link">Privacy Blinds</a>
+        <a href="property-styling.html"        class="cross-link">Property Styling</a>
+        <a href="rental-property.html"         class="cross-link">Rental Property</a>
+        <a href="restaurant-cafe.html"         class="cross-link">Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html"        class="cross-link">Retail Shopfront</a>
+        <a href="scandinavian-style.html"      class="cross-link">Scandinavian Style</a>
+        <a href="school-childcare.html"        class="cross-link">School &amp; Childcare</a>
+        <a href="seasonal-sale.html"           class="cross-link">Seasonal Sale</a>
+        <a href="skylight-blinds.html"         class="cross-link">Skylight Blinds</a>
+        <a href="smart-home.html"              class="cross-link">Smart Home</a>
+        <a href="summer-uv-protection.html"    class="cross-link">Summer UV Protection</a>
+        <a href="testimonials.html"            class="cross-link">Testimonials</a>
+        <a href="winter-insulation.html"       class="cross-link">Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+        </a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Mobile nav overlay -->
+  <div class="mob-overlay" id="mobNav">
+    <button class="mob-close" id="mobClose">&times;</button>
+    <a href="../index.html">Home</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="../about.html">About</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../free-quote.html">Free Quote</a>
+  </div>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobNav').classList.add('open');
+    });
+    document.getElementById('mobClose').addEventListener('click', () => {
+      document.getElementById('mobNav').classList.remove('open');
+    });
+
+    // IntersectionObserver scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

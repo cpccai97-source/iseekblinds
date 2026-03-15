@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retail Shopfront Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Transform your retail space with custom shopfront blinds. UV protection for merchandise, branding opportunities, and motorised convenience. Free commercial consultation in Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <style>
+    :root {
+      --neon-cyan: #00d4ff;
+      --neon-magenta: #ff3e9d;
+      --dark-bg: #0d1117;
+      --dark-surface: #161b22;
+      --dark-border: #21262d;
+      --grid-color: rgba(0, 212, 255, 0.06);
+      --text-primary: #e6edf3;
+      --text-secondary: #8b949e;
+    }
+
+    .landing-retail * { box-sizing: border-box; }
+
+    .landing-retail {
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    .landing-retail .header {
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    /* Grid background overlay */
+    .landing-retail::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Scanline effect */
+    .landing-retail::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 212, 255, 0.015) 2px,
+        rgba(0, 212, 255, 0.015) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .retail-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HERO ── */
+    .retail-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .retail-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .retail-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 62, 157, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      padding: 8px 20px;
+      margin-bottom: 32px;
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .retail-hero h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-magenta) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.3));
+    }
+
+    .retail-hero .subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-neon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-neon-primary {
+      background: var(--neon-cyan);
+      color: var(--dark-bg);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    }
+    .btn-neon-primary:hover {
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-neon-outline {
+      background: transparent;
+      color: var(--neon-magenta);
+      border: 1px solid var(--neon-magenta);
+    }
+    .btn-neon-outline:hover {
+      background: rgba(255, 62, 157, 0.1);
+      box-shadow: 0 0 20px rgba(255, 62, 157, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ── SECTIONS COMMON ── */
+    .retail-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--neon-magenta);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 20px;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .glow-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+      margin: 24px 0 0;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+    }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--neon-cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .why-card:hover::before { opacity: 1; }
+    .why-card:hover {
+      border-color: rgba(0, 212, 255, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--neon-cyan);
+      margin: 0 0 12px;
+    }
+
+    .why-card p {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── PRODUCTS GRID ── */
+    .products-section {
+      background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-surface) 50%, var(--dark-bg) 100%);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      background: var(--dark-bg);
+      transition: all 0.4s ease;
+    }
+
+    .product-card:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7) saturate(0.8);
+      transition: all 0.5s;
+    }
+
+    .product-card:hover .product-img {
+      filter: brightness(0.85) saturate(1);
+      transform: scale(1.05);
+    }
+
+    .product-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, var(--dark-bg));
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-info h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin: 0 0 10px;
+    }
+
+    .product-info p {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+
+    .product-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--neon-cyan);
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .product-link:hover { color: var(--neon-magenta); }
+    .product-link::after { content: ' →'; }
+
+    /* ── INDUSTRY SHOWCASE ── */
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .industry-card {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      display: flex;
+      align-items: flex-end;
+      transition: all 0.4s;
+    }
+
+    .industry-card:hover {
+      border-color: var(--neon-magenta);
+    }
+
+    .industry-bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.35);
+      transition: all 0.5s;
+    }
+
+    .industry-card:hover .industry-bg {
+      filter: brightness(0.45);
+      transform: scale(1.06);
+    }
+
+    .industry-content {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+      width: 100%;
+      background: linear-gradient(transparent, rgba(13, 17, 23, 0.9));
+    }
+
+    .industry-content h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      color: var(--neon-cyan);
+      margin: 0 0 6px;
+    }
+
+    .industry-content p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* ── FEATURES ── */
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-marker {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--neon-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--neon-cyan);
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .feature-text h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+
+    .feature-text p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── CTA ── */
+    .retail-cta {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+    }
+
+    .retail-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    }
+
+    .cta-box {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid var(--dark-border);
+      padding: 60px 40px;
+      background: var(--dark-surface);
+      position: relative;
+    }
+
+    .cta-box::before,
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--neon-cyan);
+    }
+    .cta-box::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .cta-box::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+    .cta-box h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--text-primary);
+      margin: 0 0 16px;
+    }
+
+    .cta-box p {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+
+    /* ── CROSS LINKS ── */
+    .cross-links-section {
+      background: var(--dark-surface);
+      padding: 80px 0;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .cross-links-section .section-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cross-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .cross-link-item {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      transition: all 0.3s;
+    }
+    .cross-link-item:hover {
+      color: var(--neon-cyan);
+      border-color: var(--dark-border);
+      background: rgba(0, 212, 255, 0.03);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.5); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .hero-animate:nth-child(2) { animation-delay: 0.15s; }
+    .hero-animate:nth-child(3) { animation-delay: 0.3s; }
+    .hero-animate:nth-child(4) { animation-delay: 0.45s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .retail-hero { min-height: 90vh; padding: 100px 20px 60px; }
+      .section-padding { padding: 60px 0; }
+      .cta-box { padding: 40px 24px; }
+      .why-grid, .products-grid, .industry-grid { gap: 16px; }
+      .cross-links-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    }
+
+    /* Mobile nav */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 17, 23, 0.97);
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .mobile-nav-overlay.active { display: flex; }
+    .mobile-nav-overlay a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .mobile-nav-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="landing-retail">
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="retail-hero retail-section">
+    <div class="retail-container">
+      <div class="hero-badge hero-animate">Commercial Window Solutions</div>
+      <h1 class="hero-animate">Retail Shopfront<br>Blinds</h1>
+      <p class="subtitle hero-animate">Transform your retail space with precision-engineered window treatments that protect merchandise, enhance your brand, and create the perfect in-store atmosphere.</p>
+      <div class="hero-cta-row hero-animate">
+        <a href="../free-quote.html" class="btn-neon btn-neon-primary">Free Consultation</a>
+        <a href="tel:0400000000" class="btn-neon btn-neon-outline">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SHOPFRONT BLINDS MATTER -->
+  <section class="retail-section section-padding">
+    <div class="retail-container">
+      <div class="reveal">
+        <div class="section-label">// Why It Matters</div>
+        <h2 class="section-title">Why Shopfront Blinds<br>Are Essential</h2>
+        <p class="section-subtitle">Your shopfront is your first impression. The right blinds do more than cover windows — they become part of your brand experience.</p>
+        <div class="glow-divider"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <span class="why-icon">👁️</span>
+          <h3>Brand Visibility</h3>
+          <p>Custom printed blinds and precise light control let you curate exactly how passers-by see your store. Draw attention, create intrigue, or showcase your best displays.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon">🛡️</span>
+          <h3>UV Protection</h3>
+          <p>Block up to 99% of harmful UV rays that fade merchandise, damage stock, and degrade interior finishes. Protect your investment from Melbourne's harsh summer sun.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon">⚡</span>
+          <h3>Energy Savings</h3>
+          <p>Reduce heating and cooling costs by up to 30%. Insulating blinds keep your store comfortable year-round without overworking your HVAC system.</p>
+        </div>
+        <div class="why-card reveal">
+          <span class="why-icon">🔒</span>
+          <h3>After-Hours Security</h3>
+          <p>Heavy-duty roller blinds and shutters provide an additional security layer, hiding valuable stock from view and deterring break-ins after closing time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SOLUTIONS -->
+  <section class="retail-section section-padding products-section">
+    <div class="retail-container">
+      <div class="reveal">
+        <div class="section-label">// Solutions</div>
+        <h2 class="section-title">Product Solutions</h2>
+        <p class="section-subtitle">Purpose-built window treatments engineered for commercial retail environments.</p>
+        <div class="glow-divider"></div>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=600&q=80" alt="Roller blinds on shopfront" class="product-img" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Roller Blinds</h3>
+            <p>Clean lines and reliable operation. Available in blockout, sunscreen, and translucent fabrics for full light control.</p>
+            <a href="../products/roller-blinds.html" class="product-link">Explore</a>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80" alt="Venetian blinds in office" class="product-img" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Venetian Blinds</h3>
+            <p>Precise angle adjustment for display lighting control. Aluminium or timber options suit any retail aesthetic.</p>
+            <a href="../products/venetian-blinds.html" class="product-link">Explore</a>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Motorised blinds" class="product-img" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Motorised Blinds</h3>
+            <p>One-touch or automated scheduling. Perfect for hard-to-reach shopfront windows and multi-store operations.</p>
+            <a href="../products/motorised.html" class="product-link">Explore</a>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Custom branded blinds" class="product-img" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Custom Printed Blinds</h3>
+            <p>Turn your blinds into branding. Print your logo, promotions, or artwork directly onto commercial-grade fabric.</p>
+            <a href="../free-quote.html" class="product-link">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY SHOWCASE -->
+  <section class="retail-section section-padding">
+    <div class="retail-container">
+      <div class="reveal">
+        <div class="section-label">// Industries</div>
+        <h2 class="section-title">Industry Showcase</h2>
+        <p class="section-subtitle">Trusted by Melbourne businesses across every sector.</p>
+        <div class="glow-divider"></div>
+      </div>
+      <div class="industry-grid">
+        <div class="industry-card reveal">
+          <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&q=80" alt="Fashion boutique" class="industry-bg" loading="lazy">
+          <div class="industry-content">
+            <h3>Fashion Boutiques</h3>
+            <p>Protect fabrics from UV fading while creating mood lighting for displays</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Cafe interior" class="industry-bg" loading="lazy">
+          <div class="industry-content">
+            <h3>Cafés & Restaurants</h3>
+            <p>Control glare and heat while maintaining street appeal and ambience</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Professional office" class="industry-bg" loading="lazy">
+          <div class="industry-content">
+            <h3>Professional Offices</h3>
+            <p>Reduce screen glare and create a professional, comfortable workspace</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Medical clinic" class="industry-bg" loading="lazy">
+          <div class="industry-content">
+            <h3>Medical Clinics</h3>
+            <p>Privacy-focused solutions with antibacterial fabric options</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="retail-section section-padding" style="background: var(--dark-surface);">
+    <div class="retail-container">
+      <div class="reveal">
+        <div class="section-label">// Specifications</div>
+        <h2 class="section-title">Commercial-Grade Features</h2>
+        <div class="glow-divider"></div>
+      </div>
+      <div class="features-list">
+        <div class="feature-item reveal">
+          <div class="feature-marker">01</div>
+          <div class="feature-text">
+            <h4>Custom Sizing</h4>
+            <p>Made to measure for any shopfront — from narrow boutique windows to full glass facades up to 6 metres wide.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-marker">02</div>
+          <div class="feature-text">
+            <h4>Branding Options</h4>
+            <p>Full-colour digital printing on roller blinds. Your logo, patterns, or promotional graphics on commercial fabric.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-marker">03</div>
+          <div class="feature-text">
+            <h4>Motorisation</h4>
+            <p>Somfy and Automate motors with timer scheduling, remote control, and smart home integration.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-marker">04</div>
+          <div class="feature-text">
+            <h4>Commercial Durability</h4>
+            <p>Heavy-duty mechanisms, fire-retardant fabrics, and UV-stable materials rated for high-traffic commercial use.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-marker">05</div>
+          <div class="feature-text">
+            <h4>Professional Install</h4>
+            <p>Our team handles everything — site measure, manufacture, and installation with minimal disruption to your business.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal">
+          <div class="feature-marker">06</div>
+          <div class="feature-text">
+            <h4>Warranty & Support</h4>
+            <p>5-year warranty on all commercial installations. Ongoing maintenance and support for multi-site rollouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="retail-cta retail-section">
+    <div class="cta-box reveal">
+      <div class="section-label">// Get Started</div>
+      <h2>Free Commercial Consultation</h2>
+      <p>Tell us about your retail space and we'll design a tailored window treatment solution — including on-site measurement, product recommendations, and a no-obligation quote.</p>
+      <div class="hero-cta-row">
+        <a href="../free-quote.html" class="btn-neon btn-neon-primary">Book Consultation</a>
+        <a href="tel:0400000000" class="btn-neon btn-neon-outline">0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS LINKS -->
+  <section class="cross-links-section retail-section">
+    <div class="retail-container">
+      <h2 class="section-title">Explore More Guides</h2>
+      <div class="cross-links-grid">
+        <a href="acoustic-solutions.html" class="cross-link-item">Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="cross-link-item">Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="cross-link-item">Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="cross-link-item">Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="cross-link-item">Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="cross-link-item">Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="cross-link-item">Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="cross-link-item">Care & Maintenance</a>
+        <a href="child-safety.html" class="cross-link-item">Child Safety</a>
+        <a href="coastal-home-blinds.html" class="cross-link-item">Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="cross-link-item">Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="cross-link-item">Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="cross-link-item">Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="cross-link-item">Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="cross-link-item">Day Night Blinds</a>
+        <a href="design-inspiration.html" class="cross-link-item">Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="cross-link-item">DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="cross-link-item">DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="cross-link-item">Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="cross-link-item">Elderly Accessible</a>
+        <a href="energy-efficient.html" class="cross-link-item">Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="cross-link-item">Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="cross-link-item">Free Samples</a>
+        <a href="heritage-homes.html" class="cross-link-item">Heritage Homes</a>
+        <a href="high-rise-glare.html" class="cross-link-item">High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="cross-link-item">Home Office</a>
+        <a href="hospitality-blinds.html" class="cross-link-item">Hospitality</a>
+        <a href="large-windows.html" class="cross-link-item">Large Windows</a>
+        <a href="layered-treatments.html" class="cross-link-item">Layered Treatments</a>
+        <a href="media-room.html" class="cross-link-item">Media Room</a>
+        <a href="medical-clinic.html" class="cross-link-item">Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="cross-link-item">Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="cross-link-item">Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="cross-link-item">New Home Packages</a>
+        <a href="nursery-safe.html" class="cross-link-item">Nursery Safe</a>
+        <a href="outdoor-blinds.html" class="cross-link-item">Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="cross-link-item">Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="cross-link-item">Privacy Blinds</a>
+        <a href="property-styling.html" class="cross-link-item">Property Styling</a>
+        <a href="rental-property.html" class="cross-link-item">Rental Property</a>
+        <a href="restaurant-cafe.html" class="cross-link-item">Restaurant & Cafe</a>
+        <a href="scandinavian-style.html" class="cross-link-item">Scandinavian Style</a>
+        <a href="school-childcare.html" class="cross-link-item">School & Childcare</a>
+        <a href="seasonal-sale.html" class="cross-link-item">Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="cross-link-item">Skylight Blinds</a>
+        <a href="smart-home.html" class="cross-link-item">Smart Home</a>
+        <a href="summer-uv-protection.html" class="cross-link-item">Summer UV Protection</a>
+        <a href="testimonials.html" class="cross-link-item">Testimonials</a>
+        <a href="winter-insulation.html" class="cross-link-item">Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="../index.html">Home</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="../about.html">About</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../free-quote.html">Free Quote</a>
+  </div>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.add('active');
+    });
+    document.getElementById('mobileNavClose').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.remove('active');
+    });
+
+    // IntersectionObserver for scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
