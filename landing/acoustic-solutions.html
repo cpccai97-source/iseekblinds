@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acoustic Blinds & Soundproof Window Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Reduce noise by up to 70% with acoustic blinds and soundproof curtains. NRC-rated window treatments for bedrooms, home offices, media rooms. Free consultation Melbourne.">
+  <meta name="keywords" content="acoustic blinds Melbourne, soundproof curtains, noise reduction blinds, acoustic window treatments, NRC rated blinds, soundproof blinds home office">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GRADIENT FLUID THEME === */
+    :root {
+      --ac-purple: #667eea;
+      --ac-violet: #764ba2;
+      --ac-teal: #2dd4bf;
+      --ac-pink: #f472b6;
+      --ac-pink-soft: #fce7f3;
+      --ac-dark: #1e1b4b;
+      --ac-text: #1e1b4b;
+      --ac-text-light: #fff;
+      --ac-text-muted: #6b7280;
+      --ac-card: #ffffff;
+      --ac-radius: 24px;
+    }
+
+    .lp-acoustic {
+      background: #faf9ff;
+      color: var(--ac-text);
+      overflow-x: hidden;
+    }
+
+    /* Blob backgrounds */
+    .ac-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .ac-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f472b6 100%);
+    }
+
+    .ac-hero .ac-blob-1 {
+      width: 700px;
+      height: 700px;
+      background: rgba(45, 212, 191, 0.3);
+      top: -20%;
+      right: -15%;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: acBlobFloat 12s ease-in-out infinite alternate;
+    }
+
+    .ac-hero .ac-blob-2 {
+      width: 500px;
+      height: 500px;
+      background: rgba(244, 114, 182, 0.25);
+      bottom: -15%;
+      left: -10%;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: acBlobFloat 15s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes acBlobFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, -30px) scale(1.15); }
+    }
+
+    .ac-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+      padding: 2rem;
+      color: #fff;
+    }
+
+    .ac-hero-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: 0.6rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: acFadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .ac-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: acFadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .ac-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #fce7f3, #2dd4bf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ac-hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: acFadeUp 0.7s ease forwards 0.6s;
+    }
+
+    .ac-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: acFadeUp 0.7s ease forwards 0.8s;
+    }
+
+    .btn-ac-primary {
+      background: #fff;
+      color: var(--ac-purple);
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-ac-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+
+    .btn-ac-ghost {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 50px;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-ac-ghost:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    @keyframes acFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Wave divider */
+    .ac-wave {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin-top: -2px;
+    }
+
+    .ac-wave svg {
+      display: block;
+      width: 100%;
+      height: 80px;
+    }
+
+    .ac-wave-flip {
+      transform: rotate(180deg);
+      margin-bottom: -2px;
+      margin-top: 0;
+    }
+
+    /* Noise Comparison */
+    .ac-noise {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .ac-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .ac-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .ac-section-header h2 .gradient-text {
+      background: linear-gradient(135deg, var(--ac-purple), var(--ac-violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ac-section-header p {
+      color: var(--ac-text-muted);
+      font-size: 1.1rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .ac-noise-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .ac-noise-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    .ac-noise-row.visible {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.6s ease;
+    }
+
+    .ac-noise-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .ac-noise-bar-wrap {
+      background: #f0ecff;
+      border-radius: 50px;
+      height: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ac-noise-bar {
+      height: 100%;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #fff;
+      transition: width 1s ease;
+    }
+
+    .ac-bar-without {
+      background: linear-gradient(90deg, #ef4444, #f97316);
+    }
+
+    .ac-bar-with {
+      background: linear-gradient(90deg, var(--ac-purple), var(--ac-teal));
+    }
+
+    .ac-noise-legend {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .ac-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .ac-legend-red { background: linear-gradient(135deg, #ef4444, #f97316); }
+    .ac-legend-blue { background: linear-gradient(135deg, var(--ac-purple), var(--ac-teal)); }
+
+    /* How It Works */
+    .ac-how {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #f0ecff, #faf9ff);
+      position: relative;
+    }
+
+    .ac-how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ac-how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .ac-how-card {
+      background: var(--ac-card);
+      border-radius: var(--ac-radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ac-how-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ac-how-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+    }
+
+    .ac-how-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .ac-icon-1 { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+    .ac-icon-2 { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+    .ac-icon-3 { background: linear-gradient(135deg, #ccfbf1, #a7f3d0); }
+
+    .ac-how-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .ac-how-card p {
+      color: var(--ac-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* NRC Ratings */
+    .ac-ratings {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ac-rating-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .ac-rating-card {
+      background: var(--ac-card);
+      border-radius: var(--ac-radius);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .ac-rating-card.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .ac-rating-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.12);
+    }
+
+    .ac-rating-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--ac-purple), var(--ac-violet), var(--ac-pink));
+      border-radius: var(--ac-radius) var(--ac-radius) 0 0;
+    }
+
+    .ac-rating-score {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--ac-purple), var(--ac-violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ac-rating-type {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ac-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .ac-rating-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0.8rem 0;
+    }
+
+    .ac-rating-card p {
+      color: var(--ac-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Room Recommendations */
+    .ac-rooms {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ac-rooms .ac-blob {
+      width: 500px;
+      height: 500px;
+      background: rgba(45, 212, 191, 0.15);
+      top: -20%;
+      left: -10%;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .ac-rooms-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ac-rooms .ac-section-header h2 { color: #fff; }
+    .ac-rooms .ac-section-header h2 .gradient-text {
+      background: linear-gradient(135deg, #ccfbf1, #fce7f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ac-rooms .ac-section-header p { color: rgba(255,255,255,0.7); }
+
+    .ac-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .ac-room-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--ac-radius);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ac-room-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ac-room-card:hover {
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .ac-room-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .ac-room-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .ac-room-card p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .ac-room-rec {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Products */
+    .ac-products {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ac-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .ac-product-card {
+      background: var(--ac-card);
+      border-radius: var(--ac-radius);
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ac-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ac-product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 45px rgba(102, 126, 234, 0.15);
+    }
+
+    .ac-product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--ac-purple), var(--ac-violet));
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .ac-product-visual {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ede9fe, #f3e8ff);
+    }
+
+    .ac-product-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .ac-product-card p {
+      color: var(--ac-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .ac-product-nrc {
+      font-weight: 700;
+      color: var(--ac-purple);
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .ac-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e1b4b, #667eea);
+      color: #fff;
+    }
+
+    .ac-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(244,114,182,0.15) 0%, transparent 70%);
+      top: -40%;
+      right: -10%;
+      border-radius: 50%;
+    }
+
+    .ac-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ac-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-ac-cta {
+      background: #fff;
+      color: var(--ac-purple);
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-ac-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    }
+
+    /* Cross Links */
+    .ac-crosslinks {
+      background: #fff;
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .ac-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ac-crosslinks h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--ac-text-muted);
+    }
+
+    .ac-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .ac-crosslink-item {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      color: var(--ac-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .ac-crosslink-item:hover {
+      border-color: var(--ac-purple);
+      background: rgba(102, 126, 234, 0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+    }
+
+    .ac-crosslink-item span {
+      color: var(--ac-purple);
+      margin-right: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ac-how-grid { grid-template-columns: 1fr; }
+      .ac-rating-cards { grid-template-columns: 1fr; }
+      .ac-rooms-grid { grid-template-columns: 1fr; }
+      .ac-products-grid { grid-template-columns: 1fr; }
+      .ac-noise-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .ac-hero h1 { font-size: 2.2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .ac-how-card { padding: 1.5rem; }
+      .ac-room-card { padding: 1.5rem; }
+      .ac-rating-card { padding: 1.5rem; }
+    }
+
+    /* Override shared header for gradient page */
+    .lp-acoustic .header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .lp-acoustic .top-bar { background: var(--ac-dark); }
+    .lp-acoustic .footer { background: var(--ac-dark); color: #fff; }
+  </style>
+</head>
+<body class="lp-acoustic">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ac-hero">
+    <div class="ac-blob-1"></div>
+    <div class="ac-blob-2"></div>
+    <div class="ac-hero-content">
+      <div class="ac-hero-pill">🔇 Acoustic Solutions</div>
+      <h1>Silence the Outside. <em>Love the Inside.</em></h1>
+      <p class="ac-hero-sub">Reduce unwanted noise by up to 70% with our premium acoustic blinds and soundproof curtains. Engineered for peaceful living.</p>
+      <div class="ac-hero-actions">
+        <a href="../free-quote.html" class="btn-ac-primary">Get Acoustic Assessment</a>
+        <a href="#noise-chart" class="btn-ac-ghost">See the Difference</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="ac-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z" fill="#faf9ff"/>
+    </svg>
+  </div>
+
+  <!-- Noise Comparison -->
+  <section id="noise-chart" class="ac-noise">
+    <div class="ac-section-header">
+      <h2>The <span class="gradient-text">Noise Difference</span></h2>
+      <p>See how acoustic window treatments dramatically reduce noise levels in common scenarios</p>
+    </div>
+    <div class="ac-noise-chart">
+      <div class="ac-noise-row">
+        <div class="ac-noise-label">🏙️ Street Traffic</div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-without" style="width: 85%">75 dB</div></div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-with" style="width: 40%">35 dB</div></div>
+      </div>
+      <div class="ac-noise-row">
+        <div class="ac-noise-label">✈️ Aircraft</div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-without" style="width: 75%">65 dB</div></div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-with" style="width: 35%">30 dB</div></div>
+      </div>
+      <div class="ac-noise-row">
+        <div class="ac-noise-label">🐕 Neighbours</div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-without" style="width: 70%">60 dB</div></div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-with" style="width: 30%">25 dB</div></div>
+      </div>
+      <div class="ac-noise-row">
+        <div class="ac-noise-label">🚧 Construction</div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-without" style="width: 95%">85 dB</div></div>
+        <div class="ac-noise-bar-wrap"><div class="ac-noise-bar ac-bar-with" style="width: 50%">45 dB</div></div>
+      </div>
+    </div>
+    <div class="ac-noise-legend">
+      <div><span class="ac-legend-dot ac-legend-red"></span> Without Treatment</div>
+      <div><span class="ac-legend-dot ac-legend-blue"></span> With Acoustic Blinds</div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="ac-how">
+    <div class="ac-how-inner">
+      <div class="ac-section-header">
+        <h2>How Acoustic Blinds <span class="gradient-text">Work</span></h2>
+        <p>Multi-layer technology that absorbs, blocks, and dampens sound waves</p>
+      </div>
+      <div class="ac-how-grid">
+        <div class="ac-how-card">
+          <div class="ac-how-icon ac-icon-1">🔊</div>
+          <h3>Sound Absorption</h3>
+          <p>Dense, multi-layered fabrics absorb sound energy as it passes through, converting it to negligible heat rather than letting it bounce into your room.</p>
+        </div>
+        <div class="ac-how-card">
+          <div class="ac-how-icon ac-icon-2">🛡️</div>
+          <h3>Mass Barrier</h3>
+          <p>Heavier fabric weights create a mass-loaded barrier at the window, blocking airborne noise from passing through — similar to how a solid wall works.</p>
+        </div>
+        <div class="ac-how-card">
+          <div class="ac-how-icon ac-icon-3">🫧</div>
+          <h3>Air Gap Dampening</h3>
+          <p>The air gap between the blind and glass acts as an additional dampening layer, further reducing sound transmission with proper seal installation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NRC Ratings -->
+  <section class="ac-ratings">
+    <div class="ac-section-header">
+      <h2>Acoustic <span class="gradient-text">Performance</span></h2>
+      <p>Industry-standard noise reduction ratings for our product range</p>
+    </div>
+    <div class="ac-rating-cards">
+      <div class="ac-rating-card">
+        <div class="ac-rating-type">NRC Rating</div>
+        <div class="ac-rating-score">0.65</div>
+        <h3>Honeycomb Cellular Blinds</h3>
+        <p>Dual-cell honeycomb construction traps air in multiple pockets, providing excellent sound absorption alongside superior insulation.</p>
+      </div>
+      <div class="ac-rating-card">
+        <div class="ac-rating-type">NRC Rating</div>
+        <div class="ac-rating-score">0.85</div>
+        <h3>Acoustic Curtains (Triple Layer)</h3>
+        <p>Our premium triple-layer acoustic curtains combine mass-loaded vinyl core with decorative outer fabrics for maximum noise reduction.</p>
+      </div>
+      <div class="ac-rating-card">
+        <div class="ac-rating-type">STC Rating</div>
+        <div class="ac-rating-score">28</div>
+        <h3>Roller Blinds + Side Channels</h3>
+        <p>Heavy-duty blockout rollers paired with aluminium side channels create a sealed barrier, reducing flanking noise significantly.</p>
+      </div>
+      <div class="ac-rating-card">
+        <div class="ac-rating-type">STC Rating</div>
+        <div class="ac-rating-score">35</div>
+        <h3>Combined System</h3>
+        <p>Layer acoustic curtains over honeycomb blinds for our highest-performing setup. Ideal for bedrooms on busy roads or near airports.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="ac-wave ac-wave-flip">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z" fill="#667eea"/>
+    </svg>
+  </div>
+
+  <!-- Room Recommendations -->
+  <section class="ac-rooms">
+    <div class="ac-blob"></div>
+    <div class="ac-rooms-inner">
+      <div class="ac-section-header">
+        <h2>Room-by-Room <span class="gradient-text">Solutions</span></h2>
+        <p>Every room has different acoustic needs — here's what we recommend</p>
+      </div>
+      <div class="ac-rooms-grid">
+        <div class="ac-room-card">
+          <div class="ac-room-icon">🛏️</div>
+          <h3>Bedroom</h3>
+          <p>Sleep without disruption. Triple-layer acoustic curtains with blockout lining provide maximum noise reduction and total darkness.</p>
+          <span class="ac-room-rec">Recommended: Acoustic Curtains + Honeycomb</span>
+        </div>
+        <div class="ac-room-card">
+          <div class="ac-room-icon">💻</div>
+          <h3>Home Office</h3>
+          <p>Eliminate distractions for focused work. Roller blinds with side channels block street noise while maintaining a clean, professional look.</p>
+          <span class="ac-room-rec">Recommended: Sealed Roller Blinds</span>
+        </div>
+        <div class="ac-room-card">
+          <div class="ac-room-icon">🎬</div>
+          <h3>Media Room</h3>
+          <p>Keep sound in and noise out. Heavy acoustic curtains prevent sound leakage while creating a cinema-like atmosphere for movie nights.</p>
+          <span class="ac-room-rec">Recommended: Triple-Layer Acoustic Curtains</span>
+        </div>
+        <div class="ac-room-card">
+          <div class="ac-room-icon">👶</div>
+          <h3>Nursery</h3>
+          <p>Create the perfect sleep environment. Child-safe cordless honeycomb blinds provide excellent sound dampening plus thermal insulation for nap time.</p>
+          <span class="ac-room-rec">Recommended: Cordless Honeycomb Blinds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="ac-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z" fill="#faf9ff"/>
+    </svg>
+  </div>
+
+  <!-- Products -->
+  <section class="ac-products">
+    <div class="ac-section-header">
+      <h2>Our Acoustic <span class="gradient-text">Range</span></h2>
+      <p>Premium products specifically designed for noise reduction</p>
+    </div>
+    <div class="ac-products-grid">
+      <div class="ac-product-card">
+        <span class="ac-product-badge">Most Popular</span>
+        <div class="ac-product-visual">🎯</div>
+        <h3>Acoustic Honeycomb Blinds</h3>
+        <p>Dual-cell construction with up to NRC 0.65. Available in 40+ colours. Cordless or motorised operation.</p>
+        <div class="ac-product-nrc">NRC: 0.55–0.65</div>
+      </div>
+      <div class="ac-product-card">
+        <span class="ac-product-badge">Best Performance</span>
+        <div class="ac-product-visual">🎭</div>
+        <h3>Triple-Layer Curtains</h3>
+        <p>Mass-loaded vinyl core sandwiched between decorative fabrics. Maximum noise reduction for bedrooms and media rooms.</p>
+        <div class="ac-product-nrc">NRC: 0.75–0.85</div>
+      </div>
+      <div class="ac-product-card">
+        <div class="ac-product-visual">🔒</div>
+        <h3>Sealed Roller System</h3>
+        <p>Heavy-duty blockout fabric with aluminium side channels and pelmet. Creates a sealed acoustic barrier at the window.</p>
+        <div class="ac-product-nrc">STC: 24–28</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ac-cta">
+    <h2>Hear the Difference</h2>
+    <p>Book a free acoustic assessment. We'll measure your noise levels and recommend the perfect solution.</p>
+    <a href="../free-quote.html" class="btn-ac-cta">Book Free Assessment</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="ac-crosslinks">
+    <div class="ac-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="ac-crosslinks-grid">
+        <a href="commercial-blinds.html" class="ac-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="ac-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="ac-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="ac-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="ac-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="ac-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="ac-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html" class="ac-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="outdoor-blinds.html" class="ac-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="ac-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="ac-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="ac-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="ac-crosslink-item"><span>→</span> Customer Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.ac-noise-row, .ac-how-card, .ac-rating-card, .ac-room-card, .ac-product-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

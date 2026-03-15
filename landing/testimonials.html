@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Testimonials & Case Studies | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Read what 500+ happy customers say about iSeekBlinds. Real testimonials, case studies, and before/after transformations from Melbourne homes and businesses.">
+  <meta name="keywords" content="blinds reviews Melbourne, iSeekBlinds testimonials, window furnishing reviews, blinds customer feedback, curtain installation reviews">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 3D DEPTH / LAYERED CARDS THEME === */
+    :root {
+      --tm-blue: #4361EE;
+      --tm-blue-light: #6B83F2;
+      --tm-blue-glow: rgba(67, 97, 238, 0.25);
+      --tm-bg: #f0f2f5;
+      --tm-card: #ffffff;
+      --tm-dark: #1a1d2e;
+      --tm-text: #2d3142;
+      --tm-text-muted: #6b7280;
+      --tm-shadow-1: 0 4px 6px rgba(0,0,0,0.07);
+      --tm-shadow-2: 0 10px 30px rgba(0,0,0,0.12);
+      --tm-shadow-3: 0 20px 60px rgba(0,0,0,0.18);
+    }
+
+    .lp-testimonials {
+      background: var(--tm-bg);
+      color: var(--tm-text);
+      perspective: 1200px;
+    }
+
+    /* Hero */
+    .tm-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #1a1d2e 0%, #2d3142 40%, #4361EE 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tm-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(67,97,238,0.3) 0%, transparent 70%);
+      top: -15%;
+      right: -10%;
+      border-radius: 50%;
+      animation: tmFloat 10s ease-in-out infinite alternate;
+    }
+
+    .tm-hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(107,131,242,0.2) 0%, transparent 70%);
+      bottom: -10%;
+      left: -5%;
+      border-radius: 50%;
+      animation: tmFloat 12s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes tmFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -20px) scale(1.1); }
+    }
+
+    .tm-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
+      color: #fff;
+    }
+
+    .tm-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 0.5rem 1.8rem;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: tmSlideUp 0.7s ease forwards 0.2s;
+    }
+
+    .tm-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: tmSlideUp 0.7s ease forwards 0.4s;
+    }
+
+    .tm-hero h1 .highlight {
+      background: linear-gradient(135deg, #7dd3fc, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tm-hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: tmSlideUp 0.7s ease forwards 0.6s;
+    }
+
+    .tm-hero-stars {
+      font-size: 2rem;
+      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: tmSlideUp 0.7s ease forwards 0.8s;
+    }
+
+    @keyframes tmSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stats Section */
+    .tm-stats {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: -60px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .tm-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .tm-stat-card {
+      background: var(--tm-card);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--tm-shadow-2);
+      transform: translateY(0);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      opacity: 0;
+      position: relative;
+    }
+
+    .tm-stat-card.visible {
+      opacity: 1;
+    }
+
+    .tm-stat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--tm-shadow-3);
+    }
+
+    .tm-stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--tm-blue);
+      display: block;
+    }
+
+    .tm-stat-label {
+      font-size: 0.85rem;
+      color: var(--tm-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* Testimonials Section */
+    .tm-reviews {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tm-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .tm-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--tm-dark);
+    }
+
+    .tm-section-header h2 .blue { color: var(--tm-blue); }
+
+    .tm-section-header p {
+      color: var(--tm-text-muted);
+      font-size: 1.1rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .tm-reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      perspective: 1000px;
+    }
+
+    .tm-review-card {
+      background: var(--tm-card);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--tm-shadow-1);
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      opacity: 0;
+      transform: translateY(40px) rotateX(5deg);
+    }
+
+    .tm-review-card.visible {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    .tm-review-card:hover {
+      transform: translateY(-12px) rotateX(-2deg) rotateY(2deg);
+      box-shadow: 0 25px 50px rgba(67, 97, 238, 0.15);
+    }
+
+    .tm-review-card::before {
+      content: '"';
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-size: 5rem;
+      color: rgba(67, 97, 238, 0.08);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .tm-review-card:nth-child(2) {
+      transform: translateY(60px) rotateX(5deg);
+    }
+
+    .tm-review-card:nth-child(2).visible {
+      transform: translateY(20px) rotateX(0);
+    }
+
+    .tm-review-card:nth-child(2):hover {
+      transform: translateY(8px) rotateX(-2deg) rotateY(2deg);
+    }
+
+    .tm-review-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tm-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .tm-avatar-1 { background: linear-gradient(135deg, #4361EE, #7c3aed); }
+    .tm-avatar-2 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+    .tm-avatar-3 { background: linear-gradient(135deg, #10b981, #0ea5e9); }
+    .tm-avatar-4 { background: linear-gradient(135deg, #ec4899, #8b5cf6); }
+    .tm-avatar-5 { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
+    .tm-avatar-6 { background: linear-gradient(135deg, #f97316, #eab308); }
+
+    .tm-review-name {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .tm-review-location {
+      font-size: 0.8rem;
+      color: var(--tm-text-muted);
+    }
+
+    .tm-review-stars {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .tm-review-text {
+      color: var(--tm-text);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    .tm-review-product {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: rgba(67, 97, 238, 0.08);
+      color: var(--tm-blue);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Case Studies */
+    .tm-cases {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, var(--tm-bg), #e8ebf0);
+    }
+
+    .tm-cases-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tm-case-card {
+      background: var(--tm-card);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--tm-shadow-2);
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    .tm-case-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tm-case-card:hover {
+      box-shadow: var(--tm-shadow-3);
+      transform: translateY(-6px);
+    }
+
+    .tm-case-visual {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .tm-case-before-after {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .tm-ba-box {
+      flex: 1;
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .tm-ba-before {
+      background: linear-gradient(135deg, #fecaca, #fed7aa);
+    }
+
+    .tm-ba-after {
+      background: linear-gradient(135deg, #bbf7d0, #a7f3d0);
+    }
+
+    .tm-ba-label {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(0,0,0,0.4);
+    }
+
+    .tm-ba-icon {
+      font-size: 2.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tm-ba-text {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: var(--tm-text);
+    }
+
+    .tm-case-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tm-case-label {
+      display: inline-block;
+      background: var(--tm-blue);
+      color: #fff;
+      padding: 0.3rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .tm-case-content h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--tm-dark);
+    }
+
+    .tm-case-content p {
+      color: var(--tm-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .tm-case-result {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .tm-case-result-item strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--tm-blue);
+    }
+
+    .tm-case-result-item span {
+      font-size: 0.8rem;
+      color: var(--tm-text-muted);
+    }
+
+    /* Stacked Cards Section */
+    .tm-stacked {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .tm-stacked-cards {
+      position: relative;
+      min-height: 350px;
+      perspective: 800px;
+    }
+
+    .tm-stacked-card {
+      background: var(--tm-card);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--tm-shadow-2);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .tm-stacked-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tm-stacked-card + .tm-stacked-card {
+      margin-top: -20px;
+      position: relative;
+    }
+
+    .tm-stacked-card:nth-child(1) { z-index: 3; }
+    .tm-stacked-card:nth-child(2) { z-index: 2; margin-left: 20px; margin-right: -20px; }
+    .tm-stacked-card:nth-child(3) { z-index: 1; margin-left: 40px; margin-right: -40px; }
+
+    .tm-stacked-card:hover {
+      z-index: 10;
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--tm-shadow-3);
+      transition: all 0.4s ease;
+    }
+
+    .tm-stacked-quote {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--tm-text);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .tm-stacked-author {
+      font-weight: 700;
+      color: var(--tm-dark);
+    }
+
+    .tm-stacked-detail {
+      font-size: 0.85rem;
+      color: var(--tm-text-muted);
+    }
+
+    /* CTA */
+    .tm-cta {
+      background: linear-gradient(160deg, #1a1d2e 0%, #4361EE 100%);
+      padding: 6rem 2rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tm-cta::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      top: -30%;
+      left: -10%;
+      border-radius: 50%;
+    }
+
+    .tm-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tm-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-tm {
+      background: #fff;
+      color: var(--tm-blue);
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-tm:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Cross Links */
+    .tm-crosslinks {
+      background: #fff;
+      padding: 4rem 2rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .tm-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tm-crosslinks h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--tm-text-muted);
+    }
+
+    .tm-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .tm-crosslink-item {
+      display: block;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      color: var(--tm-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tm-crosslink-item:hover {
+      border-color: var(--tm-blue);
+      background: rgba(67, 97, 238, 0.04);
+      transform: translateY(-2px);
+      box-shadow: var(--tm-shadow-1);
+    }
+
+    .tm-crosslink-item span {
+      color: var(--tm-blue);
+      margin-right: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .tm-reviews-grid { grid-template-columns: 1fr; }
+      .tm-case-card { grid-template-columns: 1fr; }
+      .tm-hero h1 { font-size: 2.2rem; }
+      .tm-review-card:nth-child(2),
+      .tm-review-card:nth-child(2).visible { transform: translateY(0) rotateX(0); }
+      .tm-review-card:nth-child(2):hover { transform: translateY(-12px) rotateX(-2deg) rotateY(2deg); }
+      .tm-stacked-card + .tm-stacked-card { margin-left: 0; margin-right: 0; }
+      .tm-case-result { flex-direction: column; gap: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .tm-stats-grid { grid-template-columns: 1fr; }
+      .tm-stacked-card { padding: 1.5rem; }
+      .tm-case-visual { padding: 1.5rem; }
+      .tm-case-content { padding: 1.5rem; }
+    }
+
+    /* Override shared header/footer for light page */
+    .lp-testimonials .header { background: #fff; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .lp-testimonials .top-bar { background: var(--tm-dark); }
+    .lp-testimonials .footer { background: var(--tm-dark); color: #fff; }
+  </style>
+</head>
+<body class="lp-testimonials">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tm-hero">
+    <div class="tm-hero-content">
+      <div class="tm-hero-badge">Customer Stories</div>
+      <div class="tm-hero-stars">⭐⭐⭐⭐⭐</div>
+      <h1>Real Homes. <span class="highlight">Real Results.</span></h1>
+      <p class="tm-hero-sub">Over 500 Melbourne families trust iSeekBlinds to transform their spaces. Here's what they have to say.</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="tm-stats">
+    <div class="tm-stats-grid">
+      <div class="tm-stat-card">
+        <span class="tm-stat-number">500+</span>
+        <span class="tm-stat-label">Happy Customers</span>
+      </div>
+      <div class="tm-stat-card">
+        <span class="tm-stat-number">4.9★</span>
+        <span class="tm-stat-label">Average Rating</span>
+      </div>
+      <div class="tm-stat-card">
+        <span class="tm-stat-number">15+</span>
+        <span class="tm-stat-label">Years Experience</span>
+      </div>
+      <div class="tm-stat-card">
+        <span class="tm-stat-number">98%</span>
+        <span class="tm-stat-label">Would Recommend</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Grid -->
+  <section class="tm-reviews">
+    <div class="tm-section-header">
+      <h2>What Our Customers <span class="blue">Say</span></h2>
+      <p>Genuine feedback from verified Melbourne customers</p>
+    </div>
+    <div class="tm-reviews-grid">
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-1">SL</div>
+          <div>
+            <div class="tm-review-name">Sarah L.</div>
+            <div class="tm-review-location">South Yarra</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">Absolutely thrilled with our new plantation shutters. The team was professional from measure to install. Our living room looks like it belongs in a magazine now!</p>
+        <span class="tm-review-product">Plantation Shutters</span>
+      </div>
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-2">MK</div>
+          <div>
+            <div class="tm-review-name">Michael K.</div>
+            <div class="tm-review-location">Richmond</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">Had motorised roller blinds installed throughout our apartment. The smart home integration with Google Home is seamless — the kids love controlling them by voice!</p>
+        <span class="tm-review-product">Motorised Rollers</span>
+      </div>
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-3">JW</div>
+          <div>
+            <div class="tm-review-name">Jenny W.</div>
+            <div class="tm-review-location">Toorak</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">Third time using iSeekBlinds and they never disappoint. Got sheer curtains for the bedroom — the quality is outstanding and the price was very fair.</p>
+        <span class="tm-review-product">Sheer Curtains</span>
+      </div>
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-4">AT</div>
+          <div>
+            <div class="tm-review-name">Amy T.</div>
+            <div class="tm-review-location">Brighton</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">We needed child-safe blinds for the nursery and iSeekBlinds offered fantastic options. The cordless honeycomb blinds are beautiful and I have total peace of mind.</p>
+        <span class="tm-review-product">Honeycomb Blinds</span>
+      </div>
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-5">DM</div>
+          <div>
+            <div class="tm-review-name">David M.</div>
+            <div class="tm-review-location">Hawthorn</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">Had the whole office fitted with commercial blinds. iSeekBlinds handled the project across 3 floors seamlessly. Great communication throughout — highly recommend for business!</p>
+        <span class="tm-review-product">Commercial Rollers</span>
+      </div>
+      <div class="tm-review-card">
+        <div class="tm-review-top">
+          <div class="tm-avatar tm-avatar-6">LC</div>
+          <div>
+            <div class="tm-review-name">Lisa C.</div>
+            <div class="tm-review-location">Carlton</div>
+          </div>
+        </div>
+        <div class="tm-review-stars">★★★★★</div>
+        <p class="tm-review-text">The outdoor blinds on our deck have completely changed how we use the space. Even in winter we can sit out with the blinds down. Installation was quick and tidy.</p>
+        <span class="tm-review-product">Outdoor Blinds</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="tm-cases">
+    <div class="tm-cases-inner">
+      <div class="tm-section-header">
+        <h2>Case <span class="blue">Studies</span></h2>
+        <p>Real transformations from real Melbourne projects</p>
+      </div>
+
+      <div class="tm-case-card">
+        <div class="tm-case-visual">
+          <div class="tm-case-before-after">
+            <div class="tm-ba-box tm-ba-before">
+              <div class="tm-ba-label">Before</div>
+              <div class="tm-ba-icon">🌡️</div>
+              <div class="tm-ba-text">38°C heat gain, glare on screens</div>
+            </div>
+            <div class="tm-ba-box tm-ba-after">
+              <div class="tm-ba-label">After</div>
+              <div class="tm-ba-icon">❄️</div>
+              <div class="tm-ba-text">60% less heat, perfect light control</div>
+            </div>
+          </div>
+        </div>
+        <div class="tm-case-content">
+          <div class="tm-case-label">Office Fitout</div>
+          <h3>Tech Startup — Cremorne</h3>
+          <p>A 200sqm open-plan office was overheating in summer and plagued by screen glare. We installed solar-mesh roller blinds with motorised control, cutting heat gain by 60% and eliminating glare.</p>
+          <div class="tm-case-result">
+            <div class="tm-case-result-item">
+              <strong>60%</strong>
+              <span>Heat Reduction</span>
+            </div>
+            <div class="tm-case-result-item">
+              <strong>$2,400</strong>
+              <span>Annual Energy Savings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tm-case-card">
+        <div class="tm-case-visual">
+          <div class="tm-case-before-after">
+            <div class="tm-ba-box tm-ba-before">
+              <div class="tm-ba-label">Before</div>
+              <div class="tm-ba-icon">🪟</div>
+              <div class="tm-ba-text">Outdated vertical blinds</div>
+            </div>
+            <div class="tm-ba-box tm-ba-after">
+              <div class="tm-ba-label">After</div>
+              <div class="tm-ba-icon">✨</div>
+              <div class="tm-ba-text">Elegant shutters, added $30K value</div>
+            </div>
+          </div>
+        </div>
+        <div class="tm-case-content">
+          <div class="tm-case-label">Home Renovation</div>
+          <h3>Heritage Terrace — Fitzroy</h3>
+          <p>A couple renovating a heritage terrace wanted window treatments that honoured the period character. Custom plantation shutters in matte white transformed every room and added significant resale value.</p>
+          <div class="tm-case-result">
+            <div class="tm-case-result-item">
+              <strong>$30K</strong>
+              <span>Added Home Value</span>
+            </div>
+            <div class="tm-case-result-item">
+              <strong>12</strong>
+              <span>Windows Fitted in 1 Day</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stacked Testimonials -->
+  <section class="tm-stacked">
+    <div class="tm-section-header">
+      <h2>More <span class="blue">Kind Words</span></h2>
+      <p>Our favourite snippets from recent customers</p>
+    </div>
+    <div class="tm-stacked-cards">
+      <div class="tm-stacked-card">
+        <p class="tm-stacked-quote">"From the first phone call to final installation, everything was seamless. The team even cleaned up after themselves — refreshing!"</p>
+        <div class="tm-stacked-author">Rachel & Ben P.</div>
+        <div class="tm-stacked-detail">Malvern · Roller Blinds + Curtains · Nov 2025</div>
+      </div>
+      <div class="tm-stacked-card">
+        <p class="tm-stacked-quote">"We run a boutique hotel and needed 40 rooms fitted out. iSeekBlinds delivered on time, on budget. The blackout blinds are perfect for guest rooms."</p>
+        <div class="tm-stacked-author">George D.</div>
+        <div class="tm-stacked-detail">St Kilda · Commercial Blackout Blinds · Sep 2025</div>
+      </div>
+      <div class="tm-stacked-card">
+        <p class="tm-stacked-quote">"Best investment we've made in the house. The honeycomb blinds keep the heat in during winter — our energy bill dropped noticeably in the first month."</p>
+        <div class="tm-stacked-author">Priya S.</div>
+        <div class="tm-stacked-detail">Glen Waverley · Honeycomb Blinds · Jan 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tm-cta">
+    <h2>Ready to Join Our Happy Customers?</h2>
+    <p>Get a free measure and quote — see why 500+ Melbourne families choose iSeekBlinds.</p>
+    <a href="../free-quote.html" class="btn-tm">Get Your Free Quote</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="tm-crosslinks">
+    <div class="tm-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="tm-crosslinks-grid">
+        <a href="commercial-blinds.html" class="tm-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="tm-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="tm-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="tm-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="tm-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="tm-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="tm-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html" class="tm-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="outdoor-blinds.html" class="tm-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="tm-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="tm-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="tm-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="acoustic-solutions.html" class="tm-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.tm-stat-card, .tm-review-card, .tm-case-card, .tm-stacked-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
