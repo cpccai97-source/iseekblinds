@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel & Airbnb Blinds | Hospitality Window Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Premium blinds for hotels, Airbnb, and short-stay accommodation. Blackout blinds, durable solutions, bulk pricing. Serving Melbourne hospitality industry.">
+  <meta name="keywords" content="hotel blinds Melbourne, Airbnb blinds, hospitality window furnishings, short stay accommodation blinds, blackout blinds hotels, bulk blinds order Melbourne">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === SPLIT-SCREEN EDITORIAL LUXURY THEME === */
+    :root {
+      --hb-charcoal: #1C1C1C;
+      --hb-charcoal-light: #2A2A2A;
+      --hb-cream: #F5F0E8;
+      --hb-cream-dark: #E8E0D2;
+      --hb-gold: #C9A96E;
+      --hb-gold-light: #D4BA85;
+      --hb-white: #ffffff;
+      --hb-text-dark: #1C1C1C;
+      --hb-text-muted: #6B6560;
+      --hb-text-light: #A09890;
+      --hb-serif: 'Playfair Display', Georgia, serif;
+      --hb-sans: 'Inter', sans-serif;
+    }
+
+    .lp-hospitality {
+      background: var(--hb-cream);
+      color: var(--hb-text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hb-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .hb-hero-image {
+      background: var(--hb-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hb-hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1C1C1C 0%, #2A2A2A 50%, #1C1C1C 100%);
+    }
+
+    .hb-hero-image-placeholder {
+      position: relative;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--hb-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .hb-hero-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      background: var(--hb-cream);
+    }
+
+    .hb-hero-content {
+      max-width: 500px;
+    }
+
+    .hb-hero-eyebrow {
+      display: inline-block;
+      font-family: var(--hb-sans);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--hb-gold);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--hb-gold);
+      opacity: 0;
+      animation: hbFadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hb-hero h1 {
+      font-family: var(--hb-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--hb-text-dark);
+      opacity: 0;
+      animation: hbFadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .hb-hero h1 em {
+      font-style: italic;
+      color: var(--hb-gold);
+    }
+
+    .hb-hero p {
+      font-family: var(--hb-sans);
+      font-size: 1.05rem;
+      color: var(--hb-text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: hbFadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .hb-btn-primary {
+      display: inline-block;
+      background: var(--hb-charcoal);
+      color: var(--hb-cream);
+      padding: 1rem 2.5rem;
+      font-family: var(--hb-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: hbFadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .hb-btn-primary:hover {
+      background: var(--hb-gold);
+      color: var(--hb-charcoal);
+    }
+
+    @keyframes hbFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Split Section Pattern */
+    .hb-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .hb-split.reverse .hb-split-image {
+      order: 2;
+    }
+
+    .hb-split.reverse .hb-split-text {
+      order: 1;
+    }
+
+    .hb-split-image {
+      background: var(--hb-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hb-split-image-inner {
+      width: 80px;
+      height: 80px;
+      border: 1px solid var(--hb-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      opacity: 0.6;
+    }
+
+    .hb-split-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .hb-split-content {
+      max-width: 480px;
+    }
+
+    .hb-split-number {
+      font-family: var(--hb-serif);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--hb-cream-dark);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .hb-split-content h2 {
+      font-family: var(--hb-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      color: var(--hb-text-dark);
+    }
+
+    .hb-split-content p {
+      font-family: var(--hb-sans);
+      font-size: 1rem;
+      color: var(--hb-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .hb-split-dark {
+      background: var(--hb-charcoal);
+    }
+
+    .hb-split-dark .hb-split-text {
+      background: var(--hb-charcoal);
+    }
+
+    .hb-split-dark h2,
+    .hb-split-dark p {
+      color: var(--hb-cream) !important;
+    }
+
+    .hb-split-dark .hb-split-number {
+      color: var(--hb-charcoal-light);
+    }
+
+    .hb-split-dark .hb-split-image {
+      background: var(--hb-cream);
+    }
+
+    .hb-split-dark .hb-split-image-inner {
+      border-color: var(--hb-charcoal);
+    }
+
+    /* Benefits Grid */
+    .hb-benefits {
+      padding: 6rem 2rem;
+      background: var(--hb-cream);
+    }
+
+    .hb-benefits-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hb-section-eyebrow {
+      font-family: var(--hb-sans);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--hb-gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .hb-section-title {
+      font-family: var(--hb-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: var(--hb-text-dark);
+    }
+
+    .hb-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .hb-benefit {
+      padding: 2rem;
+      border: 1px solid var(--hb-cream-dark);
+      background: var(--hb-white);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hb-benefit.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hb-benefit:hover {
+      border-color: var(--hb-gold);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      transform: translateY(-5px);
+    }
+
+    .hb-benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .hb-benefit h3 {
+      font-family: var(--hb-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--hb-text-dark);
+    }
+
+    .hb-benefit p {
+      font-family: var(--hb-sans);
+      font-size: 0.9rem;
+      color: var(--hb-text-muted);
+      line-height: 1.7;
+    }
+
+    /* Property Types */
+    .hb-property-types {
+      padding: 6rem 2rem;
+      background: var(--hb-charcoal);
+      color: var(--hb-cream);
+    }
+
+    .hb-property-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hb-property-types .hb-section-title {
+      color: var(--hb-cream);
+    }
+
+    .hb-property-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .hb-property-card {
+      background: var(--hb-charcoal-light);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hb-property-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hb-property-card:hover {
+      border-color: var(--hb-gold);
+      transform: translateY(-5px);
+    }
+
+    .hb-property-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hb-property-card h3 {
+      font-family: var(--hb-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--hb-cream);
+    }
+
+    .hb-property-card p {
+      font-family: var(--hb-sans);
+      font-size: 0.95rem;
+      color: var(--hb-text-light);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .hb-property-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hb-property-card ul li {
+      font-family: var(--hb-sans);
+      font-size: 0.85rem;
+      color: var(--hb-text-light);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .hb-property-card ul li::before {
+      content: '— ';
+      color: var(--hb-gold);
+    }
+
+    /* Case Study */
+    .hb-case-study {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 60vh;
+    }
+
+    .hb-case-image {
+      background: linear-gradient(135deg, var(--hb-charcoal) 0%, #2A2A2A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hb-case-badge {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      font-family: var(--hb-sans);
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--hb-gold);
+      border: 1px solid var(--hb-gold);
+      padding: 0.4rem 1rem;
+    }
+
+    .hb-case-image-inner {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    .hb-case-text {
+      background: var(--hb-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+    }
+
+    .hb-case-content {
+      max-width: 480px;
+    }
+
+    .hb-case-content blockquote {
+      font-family: var(--hb-serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--hb-text-dark);
+      margin: 0 0 1.5rem;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--hb-gold);
+    }
+
+    .hb-case-content cite {
+      font-family: var(--hb-sans);
+      font-size: 0.85rem;
+      color: var(--hb-text-muted);
+      font-style: normal;
+      display: block;
+    }
+
+    .hb-case-content cite strong {
+      color: var(--hb-text-dark);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Bulk CTA */
+    .hb-cta {
+      padding: 6rem 2rem;
+      background: var(--hb-charcoal);
+      text-align: center;
+      position: relative;
+    }
+
+    .hb-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+    }
+
+    .hb-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .hb-cta h2 {
+      font-family: var(--hb-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--hb-cream);
+      margin-bottom: 1rem;
+    }
+
+    .hb-cta h2 em {
+      font-style: italic;
+      color: var(--hb-gold);
+    }
+
+    .hb-cta p {
+      font-family: var(--hb-sans);
+      font-size: 1.05rem;
+      color: var(--hb-text-light);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hb-btn-gold {
+      display: inline-block;
+      background: var(--hb-gold);
+      color: var(--hb-charcoal);
+      padding: 1rem 2.5rem;
+      font-family: var(--hb-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hb-btn-gold:hover {
+      background: var(--hb-gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 169, 110, 0.2);
+    }
+
+    /* Cross Links */
+    .hb-crosslinks {
+      background: var(--hb-cream);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--hb-cream-dark);
+    }
+
+    .hb-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hb-crosslinks-inner h3 {
+      text-align: center;
+      font-family: var(--hb-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--hb-text-muted);
+    }
+
+    .hb-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .hb-crosslink-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--hb-text-muted);
+      text-decoration: none;
+      font-family: var(--hb-sans);
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .hb-crosslink-item:hover {
+      color: var(--hb-gold);
+      background: var(--hb-white);
+      border-color: var(--hb-cream-dark);
+    }
+
+    .hb-crosslink-item span {
+      margin-right: 0.5rem;
+      color: var(--hb-gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hb-hero,
+      .hb-split,
+      .hb-case-study {
+        grid-template-columns: 1fr;
+      }
+
+      .hb-hero-image {
+        min-height: 40vh;
+      }
+
+      .hb-hero-text,
+      .hb-split-text,
+      .hb-case-text {
+        padding: 3rem 2rem;
+      }
+
+      .hb-split.reverse .hb-split-image {
+        order: 0;
+      }
+
+      .hb-split.reverse .hb-split-text {
+        order: 0;
+      }
+
+      .hb-split-image {
+        min-height: 30vh;
+      }
+
+      .hb-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hb-property-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hb-case-image {
+        min-height: 30vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hb-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="lp-hospitality">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne &amp; Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hb-hero">
+    <div class="hb-hero-image">
+      <div class="hb-hero-image-placeholder">🏨</div>
+    </div>
+    <div class="hb-hero-text">
+      <div class="hb-hero-content">
+        <span class="hb-hero-eyebrow">Hospitality Solutions</span>
+        <h1>Elevate Your Guest <em>Experience</em></h1>
+        <p>Premium window furnishings designed for hotels, Airbnb properties, and short-stay accommodation. Built to impress guests and built to last.</p>
+        <a href="../free-quote.html" class="hb-btn-primary">Request Bulk Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="hb-benefits">
+    <div class="hb-benefits-inner">
+      <span class="hb-section-eyebrow">Why Hospitality Clients Choose Us</span>
+      <h2 class="hb-section-title">The Guest-Ready Difference</h2>
+      <div class="hb-benefits-grid">
+        <div class="hb-benefit">
+          <span class="hb-benefit-icon">🌙</span>
+          <h3>Total Blackout</h3>
+          <p>100% light blocking for guest rooms. Better sleep means better reviews — it's that simple.</p>
+        </div>
+        <div class="hb-benefit">
+          <span class="hb-benefit-icon">🔒</span>
+          <h3>Guest Privacy</h3>
+          <p>One-way vision and privacy solutions that make every guest feel secure and comfortable.</p>
+        </div>
+        <div class="hb-benefit">
+          <span class="hb-benefit-icon">💪</span>
+          <h3>Commercial Durability</h3>
+          <p>Heavy-duty mechanisms and fabrics rated for thousands of operations. Built for high turnover.</p>
+        </div>
+        <div class="hb-benefit">
+          <span class="hb-benefit-icon">🧹</span>
+          <h3>Easy Maintenance</h3>
+          <p>Wipe-clean fabrics and simple mechanisms that housekeeping teams can maintain between guests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Split Section 1: Blackout -->
+  <section class="hb-split">
+    <div class="hb-split-image">
+      <div class="hb-split-image-inner">🌑</div>
+    </div>
+    <div class="hb-split-text">
+      <div class="hb-split-content">
+        <div class="hb-split-number">01</div>
+        <h2>Blackout That Actually Works</h2>
+        <p>Our hospitality-grade blackout blinds eliminate 100% of light ingress. Channel-guided systems with side seals ensure no light leaks — crucial for shift workers, international travellers, and anyone chasing a five-star sleep.</p>
+        <p>Available in roller, honeycomb, and curtain formats to match your property's aesthetic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Split Section 2: Durability (reversed, dark) -->
+  <section class="hb-split reverse hb-split-dark">
+    <div class="hb-split-image">
+      <div class="hb-split-image-inner">⚙️</div>
+    </div>
+    <div class="hb-split-text">
+      <div class="hb-split-content">
+        <div class="hb-split-number">02</div>
+        <h2>Built for High Turnover</h2>
+        <p>Hospitality properties demand more from window furnishings. Our commercial-rated systems feature reinforced brackets, heavy-duty chains, and stain-resistant fabrics that maintain their look through thousands of guest stays.</p>
+        <p>Backed by our extended commercial warranty for complete peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Split Section 3: Smart Integration -->
+  <section class="hb-split">
+    <div class="hb-split-image">
+      <div class="hb-split-image-inner">📱</div>
+    </div>
+    <div class="hb-split-text">
+      <div class="hb-split-content">
+        <div class="hb-split-number">03</div>
+        <h2>Smart Room Integration</h2>
+        <p>Motorised blinds that integrate with room management systems. Guests control blinds from a bedside panel or their phone. Blinds auto-reset to welcome position at checkout.</p>
+        <p>The kind of detail that turns a good stay into a memorable one.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Types -->
+  <section class="hb-property-types">
+    <div class="hb-property-inner">
+      <span class="hb-section-eyebrow">Solutions by Property</span>
+      <h2 class="hb-section-title">Tailored for Your Property Type</h2>
+      <div class="hb-property-grid">
+        <div class="hb-property-card">
+          <span class="hb-property-card-icon">🏨</span>
+          <h3>Hotels & Motels</h3>
+          <p>Full-floor rollouts with consistent styling. Motorised options for premium rooms.</p>
+          <ul>
+            <li>Bulk pricing from 10+ rooms</li>
+            <li>Uniform styling across floors</li>
+            <li>Fire-rated fabric options</li>
+            <li>Integration with BMS systems</li>
+          </ul>
+        </div>
+        <div class="hb-property-card">
+          <span class="hb-property-card-icon">🏡</span>
+          <h3>Airbnb & Holiday Rentals</h3>
+          <p>Stylish, durable solutions that photograph beautifully and survive guest wear.</p>
+          <ul>
+            <li>Instagram-worthy aesthetics</li>
+            <li>Tamper-resistant mounting</li>
+            <li>Easy clean between guests</li>
+            <li>Quick replacement if damaged</li>
+          </ul>
+        </div>
+        <div class="hb-property-card">
+          <span class="hb-property-card-icon">🏢</span>
+          <h3>Serviced Apartments</h3>
+          <p>Residential feel with commercial durability. Perfect for extended-stay properties.</p>
+          <ul>
+            <li>Home-like curtain options</li>
+            <li>Blackout + sheer combos</li>
+            <li>Consistent spec across units</li>
+            <li>Multi-property discounts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="hb-case-study">
+    <div class="hb-case-image">
+      <span class="hb-case-badge">Case Study</span>
+      <div class="hb-case-image-inner">★</div>
+    </div>
+    <div class="hb-case-text">
+      <div class="hb-case-content">
+        <blockquote>"Since upgrading to iSeekBlinds' blackout rollers across all 24 rooms, our sleep quality reviews went from 3.8 to 4.7 stars. The install was done in three days with zero disruption to guests."</blockquote>
+        <cite>
+          <strong>Property Manager</strong>
+          Boutique Hotel, South Yarra
+        </cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bulk CTA -->
+  <section class="hb-cta">
+    <div class="hb-cta-content">
+      <h2>Bulk Pricing for <em>Every Scale</em></h2>
+      <p>Whether you're fitting out a single Airbnb or a 200-room hotel, we offer tiered pricing that rewards volume. Get a custom quote with site visit included — no obligation.</p>
+      <a href="../free-quote.html" class="hb-btn-gold">Get Bulk Quote</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="hb-crosslinks">
+    <div class="hb-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="hb-crosslinks-grid">
+        <a href="commercial-blinds.html" class="hb-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="hb-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="hb-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="hb-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="hb-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="hb-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="hb-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="hb-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="hb-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="hb-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="hb-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="hb-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="smart-home.html" class="hb-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="acoustic-solutions.html" class="hb-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="hb-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // IntersectionObserver for scroll animations
+    const hbObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 120);
+          hbObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hb-benefit, .hb-property-card').forEach(el => {
+      hbObserver.observe(el);
+    });
+  </script>
+</body>
+</html>

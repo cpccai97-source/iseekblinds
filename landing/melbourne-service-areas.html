@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melbourne Service Areas | Free Measure & Quote | iSeekBlinds</title>
+  <meta name="description" content="iSeekBlinds services all Melbourne suburbs — North, South, East, West & CBD. Free measure and quote anywhere in Melbourne. Find your area today.">
+  <meta name="keywords" content="blinds Melbourne suburbs, window furnishings Melbourne, blinds near me, blinds South Melbourne, blinds North Melbourne, blinds Eastern suburbs, blinds Western suburbs">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === FULL-SCREEN IMMERSIVE THEME === */
+    :root {
+      --msa-navy: #0B1D51;
+      --msa-navy-dark: #071338;
+      --msa-blue: #3B82F6;
+      --msa-blue-light: #60A5FA;
+      --msa-blue-glow: rgba(59, 130, 246, 0.3);
+      --msa-white: #ffffff;
+      --msa-text-muted: #94A3B8;
+      --msa-card-bg: rgba(11, 29, 81, 0.6);
+      --msa-border: rgba(59, 130, 246, 0.2);
+    }
+
+    .lp-msa {
+      background: var(--msa-navy-dark);
+      color: var(--msa-white);
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .msa-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #071338 0%, #0B1D51 40%, #132B6B 70%, #0B1D51 100%);
+    }
+
+    .msa-hero::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--msa-blue-glow) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: msaPulse 6s ease-in-out infinite;
+    }
+
+    .msa-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233B82F6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    @keyframes msaPulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+    }
+
+    .msa-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+      padding: 2rem;
+    }
+
+    .msa-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--msa-blue);
+      color: var(--msa-blue-light);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: msaFadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .msa-hero-badge::before {
+      content: '📍';
+    }
+
+    .msa-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: msaFadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .msa-hero h1 .msa-highlight {
+      background: linear-gradient(135deg, var(--msa-blue) 0%, var(--msa-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .msa-hero p {
+      font-size: 1.25rem;
+      color: var(--msa-text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: msaFadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .msa-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--msa-blue);
+      color: var(--msa-white);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: msaFadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .msa-hero-cta:hover {
+      background: var(--msa-blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px var(--msa-blue-glow);
+    }
+
+    @keyframes msaFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stats Bar */
+    .msa-stats {
+      background: var(--msa-navy);
+      border-top: 1px solid var(--msa-border);
+      border-bottom: 1px solid var(--msa-border);
+      padding: 3rem 2rem;
+    }
+
+    .msa-stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .msa-stat {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .msa-stat.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .msa-stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--msa-blue);
+      display: block;
+    }
+
+    .msa-stat-label {
+      font-size: 0.85rem;
+      color: var(--msa-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+    }
+
+    /* Region Sections */
+    .msa-regions {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .msa-regions-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .msa-regions-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .msa-regions-header h2 .msa-highlight {
+      background: linear-gradient(135deg, var(--msa-blue) 0%, var(--msa-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .msa-regions-header p {
+      color: var(--msa-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Region Tabs */
+    .msa-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .msa-tab {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--msa-border);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--msa-text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .msa-tab:hover, .msa-tab.active {
+      background: var(--msa-blue);
+      border-color: var(--msa-blue);
+      color: var(--msa-white);
+    }
+
+    /* Suburb Grid */
+    .msa-region-panel {
+      display: none;
+    }
+
+    .msa-region-panel.active {
+      display: block;
+      animation: msaFadeIn 0.5s ease;
+    }
+
+    @keyframes msaFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .msa-region-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--msa-blue);
+      display: inline-block;
+    }
+
+    .msa-suburb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .msa-suburb {
+      padding: 0.75rem 1rem;
+      background: var(--msa-card-bg);
+      border: 1px solid var(--msa-border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--msa-white);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .msa-suburb:hover {
+      border-color: var(--msa-blue);
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .msa-suburb::before {
+      content: '✓ ';
+      color: var(--msa-blue);
+      font-weight: 700;
+    }
+
+    /* Service Promise */
+    .msa-promise {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, var(--msa-navy-dark) 0%, var(--msa-navy) 100%);
+      position: relative;
+      padding: 6rem 2rem;
+    }
+
+    .msa-promise-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .msa-promise h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
+
+    .msa-promise-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .msa-promise-card {
+      background: var(--msa-card-bg);
+      border: 1px solid var(--msa-border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .msa-promise-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .msa-promise-card:hover {
+      border-color: var(--msa-blue);
+      transform: translateY(-5px);
+    }
+
+    .msa-promise-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .msa-promise-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .msa-promise-card p {
+      color: var(--msa-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Coverage Map Concept */
+    .msa-coverage {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .msa-coverage-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .msa-coverage-visual {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .msa-map-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--msa-border);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .msa-map-circle.visible {
+      opacity: 1;
+    }
+
+    .msa-map-circle:nth-child(1) {
+      width: 100%;
+      height: 100%;
+      border-color: rgba(59, 130, 246, 0.1);
+    }
+
+    .msa-map-circle:nth-child(2) {
+      width: 75%;
+      height: 75%;
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+
+    .msa-map-circle:nth-child(3) {
+      width: 50%;
+      height: 50%;
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .msa-map-circle:nth-child(4) {
+      width: 25%;
+      height: 25%;
+      background: var(--msa-blue-glow);
+      border-color: var(--msa-blue);
+    }
+
+    .msa-map-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background: var(--msa-blue);
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 0 20px var(--msa-blue-glow), 0 0 60px var(--msa-blue-glow);
+    }
+
+    .msa-map-label {
+      position: absolute;
+      font-size: 0.7rem;
+      color: var(--msa-text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .msa-map-label.north { top: 5%; left: 50%; transform: translateX(-50%); }
+    .msa-map-label.south { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .msa-map-label.east { right: 5%; top: 50%; transform: translateY(-50%); }
+    .msa-map-label.west { left: 5%; top: 50%; transform: translateY(-50%); }
+
+    .msa-coverage-text h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .msa-coverage-text p {
+      color: var(--msa-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .msa-coverage-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+    }
+
+    .msa-coverage-list li {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      color: var(--msa-white);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .msa-coverage-list li::before {
+      content: '→';
+      color: var(--msa-blue);
+      font-weight: 700;
+    }
+
+    /* CTA */
+    .msa-cta {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--msa-navy) 0%, #132B6B 50%, var(--msa-navy) 100%);
+      position: relative;
+    }
+
+    .msa-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, var(--msa-blue-glow) 0%, transparent 60%);
+      opacity: 0.3;
+    }
+
+    .msa-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .msa-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+
+    .msa-cta p {
+      color: var(--msa-text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .msa-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--msa-blue);
+      color: var(--msa-white);
+      padding: 1.15rem 3rem;
+      border-radius: 50px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .msa-cta-btn:hover {
+      background: var(--msa-blue-light);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px var(--msa-blue-glow);
+    }
+
+    /* Cross Links */
+    .msa-crosslinks {
+      background: var(--msa-navy-dark);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--msa-border);
+    }
+
+    .msa-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .msa-crosslinks-inner h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--msa-text-muted);
+    }
+
+    .msa-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .msa-crosslink-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--msa-text-muted);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .msa-crosslink-item:hover {
+      color: var(--msa-blue-light);
+      background: rgba(59, 130, 246, 0.08);
+      border-color: var(--msa-border);
+    }
+
+    .msa-crosslink-item span {
+      margin-right: 0.5rem;
+      color: var(--msa-blue);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .msa-stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .msa-promise-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .msa-coverage-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .msa-coverage-visual {
+        max-width: 300px;
+      }
+
+      .msa-suburb-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .msa-tabs {
+        gap: 0.35rem;
+      }
+
+      .msa-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .msa-stats-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .msa-suburb-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="lp-msa">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne &amp; Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="msa-hero">
+    <div class="msa-hero-content">
+      <div class="msa-hero-badge">All Melbourne Suburbs</div>
+      <h1>We Come <span class="msa-highlight">To You</span></h1>
+      <p>Wherever you are in Melbourne, our expert team brings the showroom to your doorstep. Free measure, free quote, free installation consultation — at your place.</p>
+      <a href="../free-quote.html" class="msa-hero-cta">Find Your Area →</a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="msa-stats">
+    <div class="msa-stats-inner">
+      <div class="msa-stat">
+        <span class="msa-stat-number">200+</span>
+        <span class="msa-stat-label">Suburbs Covered</span>
+      </div>
+      <div class="msa-stat">
+        <span class="msa-stat-number">48hr</span>
+        <span class="msa-stat-label">Response Time</span>
+      </div>
+      <div class="msa-stat">
+        <span class="msa-stat-number">100%</span>
+        <span class="msa-stat-label">Free Quotes</span>
+      </div>
+      <div class="msa-stat">
+        <span class="msa-stat-number">15+</span>
+        <span class="msa-stat-label">Years Experience</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suburb Grid by Region -->
+  <section class="msa-regions">
+    <div class="msa-regions-header">
+      <h2>Find <span class="msa-highlight">Your Suburb</span></h2>
+      <p>We service every corner of Melbourne. Select your region to see covered suburbs.</p>
+    </div>
+
+    <div class="msa-tabs">
+      <button class="msa-tab active" data-region="cbd">CBD & Inner</button>
+      <button class="msa-tab" data-region="north">North</button>
+      <button class="msa-tab" data-region="south">South</button>
+      <button class="msa-tab" data-region="east">East</button>
+      <button class="msa-tab" data-region="west">West</button>
+    </div>
+
+    <!-- CBD -->
+    <div class="msa-region-panel active" id="region-cbd">
+      <h3 class="msa-region-title">CBD & Inner Melbourne</h3>
+      <div class="msa-suburb-grid">
+        <div class="msa-suburb">Melbourne CBD</div>
+        <div class="msa-suburb">Southbank</div>
+        <div class="msa-suburb">Docklands</div>
+        <div class="msa-suburb">South Yarra</div>
+        <div class="msa-suburb">Richmond</div>
+        <div class="msa-suburb">Fitzroy</div>
+        <div class="msa-suburb">Collingwood</div>
+        <div class="msa-suburb">Carlton</div>
+        <div class="msa-suburb">North Melbourne</div>
+        <div class="msa-suburb">West Melbourne</div>
+        <div class="msa-suburb">East Melbourne</div>
+        <div class="msa-suburb">Prahran</div>
+        <div class="msa-suburb">South Melbourne</div>
+        <div class="msa-suburb">Port Melbourne</div>
+        <div class="msa-suburb">Albert Park</div>
+        <div class="msa-suburb">St Kilda</div>
+        <div class="msa-suburb">Windsor</div>
+        <div class="msa-suburb">Cremorne</div>
+        <div class="msa-suburb">Abbotsford</div>
+        <div class="msa-suburb">Parkville</div>
+      </div>
+    </div>
+
+    <!-- North -->
+    <div class="msa-region-panel" id="region-north">
+      <h3 class="msa-region-title">Northern Suburbs</h3>
+      <div class="msa-suburb-grid">
+        <div class="msa-suburb">Brunswick</div>
+        <div class="msa-suburb">Coburg</div>
+        <div class="msa-suburb">Preston</div>
+        <div class="msa-suburb">Reservoir</div>
+        <div class="msa-suburb">Thornbury</div>
+        <div class="msa-suburb">Northcote</div>
+        <div class="msa-suburb">Ivanhoe</div>
+        <div class="msa-suburb">Heidelberg</div>
+        <div class="msa-suburb">Bundoora</div>
+        <div class="msa-suburb">Mill Park</div>
+        <div class="msa-suburb">South Morang</div>
+        <div class="msa-suburb">Epping</div>
+        <div class="msa-suburb">Craigieburn</div>
+        <div class="msa-suburb">Broadmeadows</div>
+        <div class="msa-suburb">Pascoe Vale</div>
+        <div class="msa-suburb">Fawkner</div>
+        <div class="msa-suburb">Glenroy</div>
+        <div class="msa-suburb">Thomastown</div>
+        <div class="msa-suburb">Lalor</div>
+        <div class="msa-suburb">Doreen</div>
+        <div class="msa-suburb">Mernda</div>
+        <div class="msa-suburb">Greensborough</div>
+        <div class="msa-suburb">Eltham</div>
+        <div class="msa-suburb">Diamond Creek</div>
+        <div class="msa-suburb">Hurstbridge</div>
+        <div class="msa-suburb">Watsonia</div>
+        <div class="msa-suburb">Macleod</div>
+        <div class="msa-suburb">Viewbank</div>
+      </div>
+    </div>
+
+    <!-- South -->
+    <div class="msa-region-panel" id="region-south">
+      <h3 class="msa-region-title">Southern Suburbs</h3>
+      <div class="msa-suburb-grid">
+        <div class="msa-suburb">Brighton</div>
+        <div class="msa-suburb">Bentleigh</div>
+        <div class="msa-suburb">Moorabbin</div>
+        <div class="msa-suburb">Cheltenham</div>
+        <div class="msa-suburb">Mentone</div>
+        <div class="msa-suburb">Mordialloc</div>
+        <div class="msa-suburb">Chelsea</div>
+        <div class="msa-suburb">Frankston</div>
+        <div class="msa-suburb">Caulfield</div>
+        <div class="msa-suburb">Carnegie</div>
+        <div class="msa-suburb">Oakleigh</div>
+        <div class="msa-suburb">Clayton</div>
+        <div class="msa-suburb">Springvale</div>
+        <div class="msa-suburb">Dandenong</div>
+        <div class="msa-suburb">Noble Park</div>
+        <div class="msa-suburb">Hampton</div>
+        <div class="msa-suburb">Sandringham</div>
+        <div class="msa-suburb">Beaumaris</div>
+        <div class="msa-suburb">Black Rock</div>
+        <div class="msa-suburb">Highett</div>
+        <div class="msa-suburb">Elsternwick</div>
+        <div class="msa-suburb">Glen Huntly</div>
+        <div class="msa-suburb">Murrumbeena</div>
+        <div class="msa-suburb">Ormond</div>
+        <div class="msa-suburb">McKinnon</div>
+        <div class="msa-suburb">Patterson Lakes</div>
+        <div class="msa-suburb">Carrum</div>
+        <div class="msa-suburb">Seaford</div>
+      </div>
+    </div>
+
+    <!-- East -->
+    <div class="msa-region-panel" id="region-east">
+      <h3 class="msa-region-title">Eastern Suburbs</h3>
+      <div class="msa-suburb-grid">
+        <div class="msa-suburb">Hawthorn</div>
+        <div class="msa-suburb">Kew</div>
+        <div class="msa-suburb">Camberwell</div>
+        <div class="msa-suburb">Balwyn</div>
+        <div class="msa-suburb">Box Hill</div>
+        <div class="msa-suburb">Doncaster</div>
+        <div class="msa-suburb">Templestowe</div>
+        <div class="msa-suburb">Bulleen</div>
+        <div class="msa-suburb">Glen Waverley</div>
+        <div class="msa-suburb">Mount Waverley</div>
+        <div class="msa-suburb">Burwood</div>
+        <div class="msa-suburb">Blackburn</div>
+        <div class="msa-suburb">Mitcham</div>
+        <div class="msa-suburb">Ringwood</div>
+        <div class="msa-suburb">Croydon</div>
+        <div class="msa-suburb">Lilydale</div>
+        <div class="msa-suburb">Mooroolbark</div>
+        <div class="msa-suburb">Nunawading</div>
+        <div class="msa-suburb">Forest Hill</div>
+        <div class="msa-suburb">Vermont</div>
+        <div class="msa-suburb">Wantirna</div>
+        <div class="msa-suburb">Knoxfield</div>
+        <div class="msa-suburb">Ferntree Gully</div>
+        <div class="msa-suburb">Boronia</div>
+        <div class="msa-suburb">Bayswater</div>
+        <div class="msa-suburb">Surrey Hills</div>
+        <div class="msa-suburb">Canterbury</div>
+        <div class="msa-suburb">Malvern</div>
+        <div class="msa-suburb">Toorak</div>
+        <div class="msa-suburb">Armadale</div>
+      </div>
+    </div>
+
+    <!-- West -->
+    <div class="msa-region-panel" id="region-west">
+      <h3 class="msa-region-title">Western Suburbs</h3>
+      <div class="msa-suburb-grid">
+        <div class="msa-suburb">Footscray</div>
+        <div class="msa-suburb">Yarraville</div>
+        <div class="msa-suburb">Seddon</div>
+        <div class="msa-suburb">Williamstown</div>
+        <div class="msa-suburb">Newport</div>
+        <div class="msa-suburb">Altona</div>
+        <div class="msa-suburb">Point Cook</div>
+        <div class="msa-suburb">Werribee</div>
+        <div class="msa-suburb">Hoppers Crossing</div>
+        <div class="msa-suburb">Tarneit</div>
+        <div class="msa-suburb">Truganina</div>
+        <div class="msa-suburb">Caroline Springs</div>
+        <div class="msa-suburb">Deer Park</div>
+        <div class="msa-suburb">St Albans</div>
+        <div class="msa-suburb">Sunshine</div>
+        <div class="msa-suburb">Maribyrnong</div>
+        <div class="msa-suburb">Moonee Ponds</div>
+        <div class="msa-suburb">Essendon</div>
+        <div class="msa-suburb">Keilor</div>
+        <div class="msa-suburb">Melton</div>
+        <div class="msa-suburb">Bacchus Marsh</div>
+        <div class="msa-suburb">Laverton</div>
+        <div class="msa-suburb">Wyndham Vale</div>
+        <div class="msa-suburb">Manor Lakes</div>
+        <div class="msa-suburb">Ascot Vale</div>
+        <div class="msa-suburb">Flemington</div>
+        <div class="msa-suburb">Kensington</div>
+        <div class="msa-suburb">Spotswood</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Promise -->
+  <section class="msa-promise">
+    <div class="msa-promise-inner">
+      <h2>Our <span class="msa-highlight">Service Promise</span></h2>
+      <div class="msa-promise-cards">
+        <div class="msa-promise-card">
+          <span class="msa-promise-icon">🏠</span>
+          <h3>Free Home Visit</h3>
+          <p>We come to you with fabric samples, colour swatches, and expert advice. No showroom trip needed — your home is the showroom.</p>
+        </div>
+        <div class="msa-promise-card">
+          <span class="msa-promise-icon">📐</span>
+          <h3>Free Measure & Quote</h3>
+          <p>Precise measurements by our experienced team. No obligation, no pressure — just honest pricing with no hidden costs.</p>
+        </div>
+        <div class="msa-promise-card">
+          <span class="msa-promise-icon">🔧</span>
+          <h3>Professional Installation</h3>
+          <p>Our skilled installers handle everything. We leave your home spotless with perfectly fitted window furnishings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage Map Concept -->
+  <section class="msa-coverage">
+    <div class="msa-coverage-inner">
+      <div class="msa-coverage-visual">
+        <div class="msa-map-circle"></div>
+        <div class="msa-map-circle"></div>
+        <div class="msa-map-circle"></div>
+        <div class="msa-map-circle"></div>
+        <div class="msa-map-center"></div>
+        <span class="msa-map-label north">North</span>
+        <span class="msa-map-label south">South</span>
+        <span class="msa-map-label east">East</span>
+        <span class="msa-map-label west">West</span>
+      </div>
+      <div class="msa-coverage-text">
+        <h2>Melbourne-Wide <span class="msa-highlight">Coverage</span></h2>
+        <p>From the CBD to the outer suburbs, we service the entire Melbourne metropolitan area. No suburb is too far — if you're in Melbourne, we'll be there.</p>
+        <ul class="msa-coverage-list">
+          <li>All inner-city suburbs and CBD apartments</li>
+          <li>Northern corridor to Craigieburn & beyond</li>
+          <li>Eastern suburbs to the Dandenong Ranges</li>
+          <li>Bayside and Mornington Peninsula</li>
+          <li>Western growth corridors including Wyndham</li>
+        </ul>
+        <a href="../free-quote.html" class="msa-hero-cta">Book Your Free Visit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="msa-cta">
+    <div class="msa-cta-content">
+      <h2>Ready for Your <span class="msa-highlight">Free Quote?</span></h2>
+      <p>Tell us your suburb and we'll have a consultant at your door within 48 hours. It's that simple.</p>
+      <a href="../free-quote.html" class="msa-cta-btn">Get Free Quote →</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="msa-crosslinks">
+    <div class="msa-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="msa-crosslinks-grid">
+        <a href="commercial-blinds.html" class="msa-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="msa-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="msa-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="msa-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="msa-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="msa-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="msa-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="msa-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="msa-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="msa-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="msa-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="msa-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="smart-home.html" class="msa-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="acoustic-solutions.html" class="msa-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="hospitality-blinds.html" class="msa-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Region Tab Switching
+    document.querySelectorAll('.msa-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.msa-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.msa-region-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('region-' + tab.dataset.region).classList.add('active');
+      });
+    });
+
+    // IntersectionObserver for scroll animations
+    const msaObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 150);
+          msaObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.msa-stat, .msa-promise-card, .msa-map-circle').forEach(el => {
+      msaObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
