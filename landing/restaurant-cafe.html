@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant & Cafe Blinds | Commercial Window Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Commercial blinds for Melbourne restaurants, cafes and bars. Outdoor dining solutions, ambiance control, branding integration. Free site assessment for hospitality venues.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === MAGAZINE LAYOUT / EDITORIAL THEME === */
+    :root {
+      --espresso: #2c1810;
+      --espresso-light: #4a3228;
+      --latte: #f5efe6;
+      --latte-dark: #e8dece;
+      --terracotta: #c4633a;
+      --terracotta-deep: #a34f2a;
+      --terracotta-light: #d98a64;
+      --olive: #5a6e3a;
+      --olive-light: #7a8e5a;
+      --cream: #faf6ef;
+      --gold: #c8a96e;
+      --gold-light: #dcc598;
+      --charcoal: #3a3530;
+      --text-dark: #2c1810;
+      --text-muted: #7a6e62;
+      --text-body: #5a4e42;
+      --rule: #c8b8a4;
+    }
+
+    .lp-restaurant {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-restaurant .header { background: rgba(250,246,239,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--latte-dark); }
+    .lp-restaurant .top-bar { background: var(--espresso); }
+    .lp-restaurant .top-bar a { color: #fff; }
+    .lp-restaurant .footer { background: var(--espresso); }
+
+    /* Editorial Typography */
+    .editorial-display {
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .editorial-rule {
+      width: 60px; height: 3px; background: var(--terracotta);
+      margin: 1.5rem auto; border: none;
+    }
+
+    .editorial-rule-left {
+      width: 60px; height: 3px; background: var(--terracotta);
+      margin: 1.5rem 0; border: none;
+    }
+
+    .editorial-dropcap::first-letter {
+      font-family: 'DM Serif Display', serif;
+      float: left; font-size: 4rem; line-height: 0.8;
+      padding-right: 0.75rem; color: var(--terracotta);
+      font-weight: 400;
+    }
+
+    .editorial-label {
+      display: inline-block; font-size: 0.7rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--terracotta);
+      font-weight: 700; margin-bottom: 0.75rem;
+    }
+
+    /* Hero — Full-bleed magazine cover */
+    .resto-hero {
+      min-height: 100vh; display: flex; align-items: flex-end;
+      position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(44,24,16,0.1) 0%, rgba(44,24,16,0.7) 60%, rgba(44,24,16,0.92) 100%),
+                  url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+
+    .resto-hero-content {
+      position: relative; z-index: 2; padding: 4rem 3rem;
+      max-width: 750px; color: #fff;
+    }
+
+    .resto-hero-label {
+      font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 1rem;
+      opacity: 0; animation: magFadeUp 0.6s ease forwards 0.2s;
+    }
+
+    .resto-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 400; line-height: 1.08;
+      margin-bottom: 1.5rem; color: #fff;
+      opacity: 0; animation: magFadeUp 0.6s ease forwards 0.4s;
+    }
+
+    .resto-hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.8);
+      max-width: 560px; line-height: 1.8; margin-bottom: 2rem;
+      border-left: 3px solid var(--terracotta); padding-left: 1.5rem;
+      opacity: 0; animation: magFadeUp 0.6s ease forwards 0.6s;
+    }
+
+    .resto-hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: magFadeUp 0.6s ease forwards 0.8s;
+    }
+
+    .btn-terracotta {
+      background: var(--terracotta); color: #fff;
+      padding: 1rem 2.5rem; font-weight: 700; font-size: 1rem;
+      border: none; border-radius: 4px; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: all 0.3s ease; letter-spacing: 0.5px;
+    }
+    .btn-terracotta:hover {
+      background: var(--terracotta-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(196,99,58,0.4);
+    }
+
+    .btn-outline-gold {
+      border: 2px solid var(--gold); color: var(--gold);
+      padding: 1rem 2.5rem; font-weight: 600; font-size: 1rem;
+      background: transparent; border-radius: 4px; cursor: pointer;
+      text-decoration: none; display: inline-block; transition: all 0.3s ease;
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold); color: var(--espresso);
+    }
+
+    /* Magazine Intro — 2 column editorial */
+    .resto-intro {
+      padding: 5rem 3rem; max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 2px 1fr; gap: 3rem;
+      align-items: start;
+    }
+    .resto-intro-divider {
+      background: var(--rule); width: 2px; height: 100%; min-height: 200px;
+    }
+    .resto-intro-col p {
+      color: var(--text-body); line-height: 1.9; font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .resto-intro-col .editorial-pullquote {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem; line-height: 1.4;
+      color: var(--terracotta); margin: 2rem 0;
+      padding: 1.5rem 0; border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+    }
+
+    /* Solutions Section — Magazine grid */
+    .resto-solutions {
+      padding: 5rem 2rem; background: var(--latte);
+    }
+
+    .resto-section-header {
+      text-align: center; margin-bottom: 4rem;
+    }
+    .resto-section-header h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.5rem;
+      font-weight: 400; margin-bottom: 0.5rem; color: var(--text-dark);
+    }
+    .resto-section-header p {
+      color: var(--text-muted); font-size: 1.05rem;
+      max-width: 560px; margin: 0 auto; line-height: 1.7;
+    }
+
+    .resto-solutions-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+
+    .resto-solution-card {
+      background: #fff; overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0; transform: translateY(30px);
+      border: 1px solid rgba(200,184,164,0.3);
+    }
+    .resto-solution-card.visible { opacity: 1; transform: translateY(0); }
+    .resto-solution-card:hover { box-shadow: 0 12px 40px rgba(44,24,16,0.1); }
+
+    .resto-solution-card.feature {
+      grid-column: 1 / 3; grid-row: 1 / 3;
+    }
+    .resto-solution-card.feature .resto-solution-img { height: 350px; }
+
+    .resto-solution-img {
+      width: 100%; height: 200px; object-fit: cover;
+    }
+    .resto-solution-body { padding: 1.5rem 2rem 2rem; }
+    .resto-solution-card h3 {
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem;
+      font-weight: 400; margin-bottom: 0.75rem; color: var(--text-dark);
+    }
+    .resto-solution-card.feature h3 { font-size: 1.8rem; }
+    .resto-solution-card p {
+      color: var(--text-body); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;
+    }
+    .resto-solution-features { list-style: none; padding: 0; margin: 0; }
+    .resto-solution-features li {
+      padding: 0.3rem 0; font-size: 0.88rem; color: var(--text-muted);
+    }
+    .resto-solution-features li::before { content: '● '; color: var(--terracotta); font-size: 0.6rem; vertical-align: middle; }
+
+    /* Ambiance Section */
+    .resto-ambiance {
+      padding: 5rem 3rem; max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .resto-ambiance-img {
+      width: 100%; height: 500px; object-fit: cover;
+      opacity: 0; transform: translateX(-30px);
+    }
+    .resto-ambiance-img.visible { opacity: 1; transform: translateX(0); }
+    .resto-ambiance-text h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+      font-weight: 400; margin-bottom: 1rem; color: var(--text-dark);
+    }
+    .resto-ambiance-text p {
+      color: var(--text-body); line-height: 1.9; font-size: 1rem; margin-bottom: 1rem;
+    }
+    .resto-ambiance-checklist { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .resto-ambiance-checklist li {
+      padding: 0.5rem 0; font-size: 0.95rem; color: var(--text-dark);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .resto-ambiance-checklist li::before {
+      content: '✓'; display: inline-flex; width: 24px; height: 24px;
+      background: rgba(196,99,58,0.1); color: var(--terracotta);
+      border-radius: 50%; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+    }
+
+    /* Melbourne Food Scene */
+    .resto-melbourne {
+      padding: 5rem 2rem; background: var(--espresso); color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .resto-melbourne::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--olive));
+    }
+    .resto-melbourne .resto-section-header h2 { color: #fff; }
+    .resto-melbourne .resto-section-header p { color: rgba(255,255,255,0.6); }
+
+    .resto-melbourne-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; max-width: 1100px; margin: 0 auto;
+    }
+    .resto-melbourne-card {
+      border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      opacity: 0; transform: translateY(20px);
+    }
+    .resto-melbourne-card.visible { opacity: 1; transform: translateY(0); }
+    .resto-melbourne-card:hover { border-color: var(--terracotta); }
+    .resto-melbourne-card h3 {
+      font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+      font-weight: 400; margin-bottom: 0.75rem; color: var(--gold);
+    }
+    .resto-melbourne-card p {
+      color: rgba(255,255,255,0.7); line-height: 1.7; font-size: 0.95rem;
+    }
+
+    /* Branding */
+    .resto-branding {
+      padding: 5rem 3rem; max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .resto-branding-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .resto-branding-swatch {
+      height: 180px; border-radius: 4px;
+      opacity: 0; transform: scale(0.9);
+      display: flex; align-items: flex-end; padding: 1rem;
+      font-size: 0.75rem; color: #fff; font-weight: 600; letter-spacing: 1px;
+    }
+    .resto-branding-swatch.visible { opacity: 1; transform: scale(1); }
+    .resto-branding-swatch:nth-child(1) { background: #2c3e50; }
+    .resto-branding-swatch:nth-child(2) { background: #c0392b; }
+    .resto-branding-swatch:nth-child(3) { background: #f39c12; }
+    .resto-branding-swatch:nth-child(4) { background: #27ae60; }
+
+    .resto-branding-text h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+      font-weight: 400; margin-bottom: 1rem; color: var(--text-dark);
+    }
+    .resto-branding-text p {
+      color: var(--text-body); line-height: 1.9; font-size: 1rem; margin-bottom: 1rem;
+    }
+
+    /* Products Showcase — editorial layout */
+    .resto-products {
+      padding: 5rem 2rem; background: var(--latte);
+    }
+    .resto-products-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; max-width: 1100px; margin: 0 auto;
+    }
+    .resto-product-card {
+      background: #fff; overflow: hidden;
+      border: 1px solid rgba(200,184,164,0.3);
+      transition: all 0.4s ease;
+      opacity: 0; transform: translateY(30px);
+    }
+    .resto-product-card.visible { opacity: 1; transform: translateY(0); }
+    .resto-product-card:hover { box-shadow: 0 8px 30px rgba(44,24,16,0.1); }
+    .resto-product-img { width: 100%; height: 220px; object-fit: cover; }
+    .resto-product-body { padding: 2rem; }
+    .resto-product-card h3 {
+      font-family: 'DM Serif Display', serif; font-size: 1.35rem;
+      font-weight: 400; margin-bottom: 0.75rem; color: var(--text-dark);
+    }
+    .resto-product-card p {
+      color: var(--text-body); line-height: 1.7; font-size: 0.92rem; margin-bottom: 1rem;
+    }
+    .resto-product-features { list-style: none; padding: 0; margin: 0; }
+    .resto-product-features li { padding: 0.3rem 0; font-size: 0.88rem; color: var(--text-muted); }
+    .resto-product-features li::before { content: '— '; color: var(--terracotta); font-weight: 700; }
+
+    /* CTA */
+    .resto-cta {
+      padding: 6rem 2rem; text-align: center;
+      background: var(--cream); position: relative;
+    }
+    .resto-cta::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 3px; background: var(--terracotta);
+    }
+    .resto-cta h2 {
+      font-family: 'DM Serif Display', serif; font-size: 2.5rem;
+      font-weight: 400; margin-bottom: 1rem; color: var(--text-dark);
+      margin-top: 1rem;
+    }
+    .resto-cta p {
+      color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;
+      max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7;
+    }
+
+    /* Cross Links */
+    .resto-crosslinks {
+      background: var(--latte-dark); padding: 4rem 2rem;
+      border-top: 1px solid rgba(200,184,164,0.3);
+    }
+    .resto-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .resto-crosslinks h3 {
+      text-align: center; font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; font-weight: 400; margin-bottom: 2rem; color: var(--text-muted);
+    }
+    .resto-crosslinks-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;
+    }
+    .resto-crosslink-item {
+      display: block; padding: 1rem 1.25rem;
+      background: #fff; border: 1px solid rgba(200,184,164,0.2);
+      color: var(--text-dark); text-decoration: none;
+      font-weight: 500; font-size: 0.92rem; transition: all 0.3s ease;
+    }
+    .resto-crosslink-item:hover {
+      border-color: var(--terracotta); box-shadow: 0 4px 12px rgba(196,99,58,0.08);
+    }
+    .resto-crosslink-item span { color: var(--terracotta); margin-right: 0.5rem; }
+
+    /* Animations */
+    @keyframes magFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .resto-intro { grid-template-columns: 1fr; padding: 3rem 2rem; }
+      .resto-intro-divider { display: none; }
+      .resto-solutions-grid { grid-template-columns: 1fr; }
+      .resto-solution-card.feature { grid-column: auto; grid-row: auto; }
+      .resto-ambiance { grid-template-columns: 1fr; padding: 3rem 2rem; }
+      .resto-ambiance-img { height: 300px; }
+      .resto-melbourne-grid { grid-template-columns: 1fr; }
+      .resto-branding { grid-template-columns: 1fr; padding: 3rem 2rem; }
+      .resto-products-grid { grid-template-columns: 1fr; }
+      .resto-hero h1 { font-size: 2.5rem; }
+      .resto-hero-content { padding: 2rem; }
+    }
+  </style>
+</head>
+<body class="lp-restaurant">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne &amp; Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="resto-hero">
+    <div class="resto-hero-content">
+      <div class="resto-hero-label">Commercial &amp; Hospitality</div>
+      <h1>Blinds for Melbourne's Finest Restaurants &amp; Cafes</h1>
+      <p class="resto-hero-sub">Create the perfect dining atmosphere with commercial-grade blinds that control light, temperature and privacy — while reinforcing your venue's brand identity.</p>
+      <div class="resto-hero-actions">
+        <a href="../free-quote.html" class="btn-terracotta">Book a Free Site Assessment</a>
+        <a href="#solutions" class="btn-outline-gold">View Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Intro -->
+  <section class="resto-intro">
+    <div class="resto-intro-col">
+      <div class="editorial-label">The Challenge</div>
+      <hr class="editorial-rule-left">
+      <p class="editorial-dropcap">Melbourne's hospitality scene is one of the most competitive in Australia. From laneway cafes in the CBD to waterfront restaurants in St Kilda, every detail of the dining experience matters — including your windows.</p>
+      <p>Glare ruining the mood at brunch? Outdoor diners baking in the afternoon sun? A street-facing window that offers no privacy for intimate dinners? The right blinds solve all of these problems while adding to your venue's character.</p>
+    </div>
+    <div class="resto-intro-divider"></div>
+    <div class="resto-intro-col">
+      <div class="editorial-label">Our Approach</div>
+      <hr class="editorial-rule-left">
+      <p>We've fitted out dozens of Melbourne restaurants and cafes with window solutions tailored to the hospitality industry. We understand that your needs are different from residential — you need durability, easy cleaning, fire safety compliance, and fast turnaround to minimise trading downtime.</p>
+      <div class="editorial-pullquote">"The right window treatment turns a dining space from functional to unforgettable."</div>
+      <p>Our commercial team provides free site assessments, works around your trading hours, and guarantees our installations for 5 years.</p>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="resto-solutions">
+    <div class="resto-section-header">
+      <div class="editorial-label">Solutions</div>
+      <h2>What We Offer</h2>
+      <hr class="editorial-rule">
+      <p>Comprehensive window treatments designed for the demands of commercial hospitality</p>
+    </div>
+    <div class="resto-solutions-grid">
+      <div class="resto-solution-card feature">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Cafe outdoor blinds Melbourne" class="resto-solution-img" loading="lazy">
+        <div class="resto-solution-body">
+          <div class="editorial-label">Most Popular</div>
+          <h3>Outdoor Cafe Blinds</h3>
+          <p>Extend your seating area year-round with commercial-grade outdoor blinds. Clear PVC for rainy days, mesh for sun protection, or a combination. Wind-rated and council compliant.</p>
+          <ul class="resto-solution-features">
+            <li>Clear PVC, tinted, or mesh options</li>
+            <li>Wind-rated channel guide systems</li>
+            <li>Motorised or manual operation</li>
+            <li>Custom printed with your branding</li>
+            <li>Compliant with Melbourne council regulations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resto-solution-card">
+        <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="Restaurant interior blinds" class="resto-solution-img" loading="lazy">
+        <div class="resto-solution-body">
+          <div class="editorial-label">Interior</div>
+          <h3>Glare Control Rollers</h3>
+          <p>Sunscreen roller blinds that cut glare without blocking views. Keep diners comfortable during the harsh afternoon sun.</p>
+          <ul class="resto-solution-features">
+            <li>3–10% openness factor options</li>
+            <li>Anti-glare while maintaining views</li>
+            <li>Fire-retardant fabrics available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resto-solution-card">
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Privacy blinds for restaurants" class="resto-solution-img" loading="lazy">
+        <div class="resto-solution-body">
+          <div class="editorial-label">Ambiance</div>
+          <h3>Privacy &amp; Mood Blinds</h3>
+          <p>Create intimate dining zones with blackout or translucent blinds. Perfect for fine dining, private function areas, and evening service.</p>
+          <ul class="resto-solution-features">
+            <li>Dimmable light control</li>
+            <li>Motorised scene presets</li>
+            <li>Fire-rated materials standard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambiance Control -->
+  <section class="resto-ambiance">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Fine dining restaurant ambiance" class="resto-ambiance-img" loading="lazy">
+    <div class="resto-ambiance-text">
+      <div class="editorial-label">Atmosphere</div>
+      <h2>Master Your Venue's Ambiance</h2>
+      <hr class="editorial-rule-left">
+      <p>Light is the single most important factor in dining ambiance after food and service. Too bright feels like a canteen. Too dark and guests can't read the menu. Window treatments give you precise control.</p>
+      <p>Our motorised systems can be programmed to shift throughout the day — open and airy for morning coffee, filtered for lunch service, dimmed for evening dining — all automatically.</p>
+      <ul class="resto-ambiance-checklist">
+        <li>Morning: sheers for soft, welcoming light</li>
+        <li>Midday: sunscreen blinds to cut western glare</li>
+        <li>Evening: translucent or blockout for intimacy</li>
+        <li>Events: one-touch presets for functions</li>
+        <li>Seasons: adjust for Melbourne's changing light</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Melbourne Food Scene -->
+  <section class="resto-melbourne">
+    <div class="resto-section-header">
+      <div class="editorial-label" style="color:var(--gold);">Melbourne</div>
+      <h2>Built for Melbourne's Food Scene</h2>
+      <hr class="editorial-rule">
+      <p>We understand the unique challenges of Melbourne hospitality venues</p>
+    </div>
+    <div class="resto-melbourne-grid">
+      <div class="resto-melbourne-card">
+        <h3>Laneway Cafes</h3>
+        <p>Small frontages, heritage buildings, narrow spaces. We specialise in custom solutions for Melbourne's iconic laneways — from Degraves Street to Hardware Lane. Our blinds work within heritage overlays and council requirements.</p>
+      </div>
+      <div class="resto-melbourne-card">
+        <h3>Outdoor Dining</h3>
+        <p>Melbourne's alfresco culture demands all-weather solutions. Our outdoor blinds let you trade through winter rain and summer heat. Wind-rated for the notorious Melbourne gusts, with clear PVC options to maintain those views.</p>
+      </div>
+      <div class="resto-melbourne-card">
+        <h3>Waterfront Venues</h3>
+        <p>Docklands, St Kilda, Williamstown — waterfront venues cop salt, wind and harsh reflection off the water. We use marine-grade components and UV-stabilised fabrics built to handle the conditions without compromising on style.</p>
+      </div>
+      <div class="resto-melbourne-card">
+        <h3>Rooftop Bars</h3>
+        <p>Retractable blinds and screens for rooftop bars that need to work in sun, wind and rain. Our motorised systems let staff adapt to Melbourne's "four seasons in one day" weather quickly and easily.</p>
+      </div>
+      <div class="resto-melbourne-card">
+        <h3>Fine Dining</h3>
+        <p>For Melbourne's fine dining establishments, we offer premium fabrics, silent motorised operation, and custom colour-matching to complement your interior design. Discreet hardware that won't compete with your aesthetic.</p>
+      </div>
+      <div class="resto-melbourne-card">
+        <h3>Multi-Site Chains</h3>
+        <p>Consistent branding across multiple locations? We offer volume pricing, standardised specifications, and project management for chain rollouts. Same quality, same look, every venue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branding -->
+  <section class="resto-branding">
+    <div class="resto-branding-text">
+      <div class="editorial-label">Branding</div>
+      <h2>Your Brand, Your Blinds</h2>
+      <hr class="editorial-rule-left">
+      <p>Your blinds are part of your brand identity. We offer custom colour matching, branded printing on outdoor PVC blinds, and fabric selections that complement your interior design palette.</p>
+      <p>Whether you're going for industrial chic, Scandinavian minimal, heritage pub or modern Asian — we'll recommend materials, colours and styles that reinforce your brand, not fight it.</p>
+      <p>Our design team can work from your brand guidelines, mood boards or interior designer's specs to deliver a perfect match.</p>
+    </div>
+    <div class="resto-branding-visual">
+      <div class="resto-branding-swatch">NAVY</div>
+      <div class="resto-branding-swatch">BURGUNDY</div>
+      <div class="resto-branding-swatch">SAFFRON</div>
+      <div class="resto-branding-swatch">FOREST</div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="resto-products">
+    <div class="resto-section-header">
+      <div class="editorial-label">Products</div>
+      <h2>Recommended for Hospitality</h2>
+      <hr class="editorial-rule">
+      <p>Commercial-grade products built for the demands of daily hospitality service</p>
+    </div>
+    <div class="resto-products-grid">
+      <div class="resto-product-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Commercial outdoor blinds" class="resto-product-img" loading="lazy">
+        <div class="resto-product-body">
+          <div class="editorial-label">Outdoor</div>
+          <h3>Ziptrak® Channel Blinds</h3>
+          <p>The gold standard for Melbourne outdoor dining. Track-guided for smooth operation and wind resistance. Available in clear PVC, mesh, or fabric.</p>
+          <ul class="resto-product-features">
+            <li>Wind-rated to 100km/h with guides</li>
+            <li>No zips, no buckles — spring balanced</li>
+            <li>Lock at any height</li>
+            <li>5-year commercial warranty</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resto-product-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Commercial roller blinds" class="resto-product-img" loading="lazy">
+        <div class="resto-product-body">
+          <div class="editorial-label">Interior</div>
+          <h3>Commercial Roller Blinds</h3>
+          <p>Heavy-duty roller mechanisms with fire-retardant fabrics. Motorised options with scene control for different service periods throughout the day.</p>
+          <ul class="resto-product-features">
+            <li>Group A fire-rated fabrics</li>
+            <li>Heavy-duty 45mm tube mechanism</li>
+            <li>Motorised with scene presets</li>
+            <li>Easy-wipe antibacterial coatings</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resto-product-card">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="Plantation shutters cafe" class="resto-product-img" loading="lazy">
+        <div class="resto-product-body">
+          <div class="editorial-label">Premium</div>
+          <h3>Plantation Shutters</h3>
+          <p>A classic look for heritage pubs, wine bars and upmarket cafes. PVC shutters for easy cleaning, or basswood for a premium natural finish in protected locations.</p>
+          <ul class="resto-product-features">
+            <li>Heritage-appropriate aesthetics</li>
+            <li>PVC — easy wipe, moisture-proof</li>
+            <li>Adjustable louvres for light control</li>
+            <li>Custom colours to match fitout</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resto-product-card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Cafe curtains" class="resto-product-img" loading="lazy">
+        <div class="resto-product-body">
+          <div class="editorial-label">Feature</div>
+          <h3>Sheer &amp; Drape Curtains</h3>
+          <p>Soft furnishing for venues going for warmth and texture. Motorised curtain tracks on timers create effortless transitions from day to night service.</p>
+          <ul class="resto-product-features">
+            <li>Fire-retardant sheer fabrics</li>
+            <li>Motorised tracks — silent operation</li>
+            <li>Custom prints and patterns available</li>
+            <li>Softens acoustics in open spaces</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="resto-cta">
+    <h2>Let's Transform Your Venue</h2>
+    <p>Book a free site assessment with our commercial team. We'll visit your venue, understand your needs, and provide a no-obligation quote — all working around your trading hours.</p>
+    <a href="../free-quote.html" class="btn-terracotta">Book Your Free Site Assessment</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="resto-crosslinks">
+    <div class="resto-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="resto-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="resto-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="resto-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="bathroom-kitchen.html" class="resto-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="resto-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="resto-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="resto-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="resto-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="resto-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="resto-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-trends-2026.html" class="resto-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="resto-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="resto-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="resto-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="resto-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="resto-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="resto-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="resto-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="energy-efficient.html" class="resto-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="resto-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="resto-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="resto-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="resto-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="resto-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="resto-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="resto-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="resto-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="resto-crosslink-item"><span>→</span> Media Room</a>
+        <a href="melbourne-service-areas.html" class="resto-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="resto-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="resto-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="resto-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="resto-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="resto-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="resto-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="resto-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="scandinavian-style.html" class="resto-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="seasonal-sale.html" class="resto-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="resto-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="resto-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="testimonials.html" class="resto-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="winter-insulation.html" class="resto-crosslink-item"><span>→</span> Winter Insulation Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.resto-solution-card, .resto-ambiance-img, .resto-melbourne-card, .resto-branding-swatch, .resto-product-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

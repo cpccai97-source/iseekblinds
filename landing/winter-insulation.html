@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winter Insulation Blinds | Honeycomb & Cellular Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Keep your Melbourne home warm this winter with insulating honeycomb and cellular blinds. Reduce heat loss by up to 50%, lower energy bills, and stay cosy. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GLASSMORPHISM WINTER THEME === */
+    :root {
+      --frost: #e8f0fe;
+      --frost-dark: #c5d5ed;
+      --ice-blue: #4a90d9;
+      --ice-deep: #2c5f9e;
+      --ice-light: #7bb3eb;
+      --snow: #f0f5ff;
+      --glacier: #3b7dd8;
+      --crystal: #d6e5f8;
+      --glass-bg: rgba(255, 255, 255, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --glass-shadow: rgba(74, 144, 217, 0.12);
+      --warm-amber: #e8a849;
+      --warm-amber-deep: #c88a2e;
+      --text-dark: #1a2a4a;
+      --text-muted: #5a6a8a;
+    }
+
+    .lp-winter {
+      background: var(--frost);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-winter .header { background: rgba(232,240,254,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+    .lp-winter .top-bar { background: var(--ice-deep); }
+    .lp-winter .top-bar a { color: #fff; }
+    .lp-winter .footer { background: #1a2a4a; }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px var(--glass-shadow);
+    }
+
+    .glass-card-solid {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px var(--glass-shadow);
+    }
+
+    /* Floating orbs */
+    .frost-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    /* Hero */
+    .winter-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1a2a4a 0%, #2c5f9e 35%, #4a90d9 60%, #7bb3eb 80%, #c5d5ed 100%);
+    }
+
+    .winter-hero .frost-orb:nth-child(1) {
+      width: 500px; height: 500px; background: rgba(123,179,235,0.3);
+      top: -100px; right: -100px; animation: orbFloat 8s ease-in-out infinite;
+    }
+    .winter-hero .frost-orb:nth-child(2) {
+      width: 350px; height: 350px; background: rgba(232,168,73,0.15);
+      bottom: -50px; left: -80px; animation: orbFloat 10s ease-in-out infinite reverse;
+    }
+    .winter-hero .frost-orb:nth-child(3) {
+      width: 200px; height: 200px; background: rgba(255,255,255,0.2);
+      top: 40%; left: 20%; animation: orbFloat 6s ease-in-out infinite 2s;
+    }
+
+    /* Snowflake particles */
+    .snowflakes {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .snowflake {
+      position: absolute; color: rgba(255,255,255,0.4); font-size: 1rem;
+      animation: snowfall linear infinite;
+    }
+    .snowflake:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; font-size: 0.8rem; }
+    .snowflake:nth-child(2) { left: 15%; animation-duration: 16s; animation-delay: 2s; font-size: 1.2rem; }
+    .snowflake:nth-child(3) { left: 30%; animation-duration: 10s; animation-delay: 4s; }
+    .snowflake:nth-child(4) { left: 50%; animation-duration: 14s; animation-delay: 1s; font-size: 0.7rem; }
+    .snowflake:nth-child(5) { left: 65%; animation-duration: 11s; animation-delay: 3s; font-size: 1.1rem; }
+    .snowflake:nth-child(6) { left: 80%; animation-duration: 15s; animation-delay: 5s; font-size: 0.9rem; }
+    .snowflake:nth-child(7) { left: 92%; animation-duration: 13s; animation-delay: 2.5s; }
+
+    @keyframes snowfall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.2; }
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.05); }
+    }
+
+    .winter-hero-content {
+      position: relative; z-index: 2; text-align: center;
+      max-width: 880px; padding: 2rem;
+    }
+
+    .winter-hero-tag {
+      display: inline-block; font-size: 0.8rem; letter-spacing: 3px;
+      text-transform: uppercase; color: #fff; padding: 0.6rem 1.8rem;
+      margin-bottom: 1.5rem; border-radius: 30px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      opacity: 0; animation: winterFadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .winter-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 1.5rem; color: #fff;
+      opacity: 0; animation: winterFadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .winter-hero h1 .ice { color: var(--ice-light); }
+    .winter-hero h1 .warm { color: var(--warm-amber); }
+
+    .winter-hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.8);
+      max-width: 600px; margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      opacity: 0; animation: winterFadeUp 0.7s ease forwards 0.6s;
+    }
+
+    .winter-hero-actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      opacity: 0; animation: winterFadeUp 0.7s ease forwards 0.8s;
+    }
+
+    .btn-warm {
+      background: var(--warm-amber); color: #fff;
+      padding: 1rem 2.5rem; font-weight: 700; font-size: 1rem;
+      border: none; border-radius: 8px; cursor: pointer;
+      text-decoration: none; display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(232,168,73,0.4);
+    }
+    .btn-warm:hover {
+      background: var(--warm-amber-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(232,168,73,0.5);
+    }
+
+    .btn-frost {
+      border: 2px solid rgba(255,255,255,0.5); color: #fff;
+      padding: 1rem 2.5rem; font-weight: 600; font-size: 1rem;
+      background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+      border-radius: 8px; cursor: pointer; text-decoration: none;
+      display: inline-block; transition: all 0.3s ease;
+    }
+    .btn-frost:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    /* Stats Bar */
+    .winter-stats {
+      padding: 0 2rem; margin-top: -3rem; position: relative; z-index: 3;
+    }
+    .winter-stats-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .winter-stat-card {
+      padding: 2rem 1.5rem; text-align: center;
+      opacity: 0; transform: translateY(20px);
+    }
+    .winter-stat-card.visible { opacity: 1; transform: translateY(0); }
+    .winter-stat-number {
+      font-size: 2.2rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--ice-blue), var(--warm-amber));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 0.3rem;
+    }
+    .winter-stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+    /* How It Works */
+    .winter-how {
+      padding: 6rem 2rem; background: var(--snow); position: relative; overflow: hidden;
+    }
+    .winter-how .frost-orb {
+      width: 400px; height: 400px; background: rgba(74,144,217,0.08);
+      top: -100px; right: -100px;
+    }
+
+    .winter-section-header {
+      text-align: center; margin-bottom: 4rem; position: relative;
+    }
+    .winter-section-header h2 {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem;
+      font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);
+    }
+    .winter-section-header h2 .ice { color: var(--ice-blue); }
+    .winter-section-header h2 .warm { color: var(--warm-amber); }
+    .winter-section-header p {
+      color: var(--text-muted); font-size: 1.05rem;
+      max-width: 560px; margin: 0 auto; line-height: 1.7;
+    }
+
+    .winter-how-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative;
+    }
+    .winter-how-card {
+      padding: 2.5rem 2rem; text-align: center;
+      transition: all 0.4s ease;
+      opacity: 0; transform: translateY(30px);
+    }
+    .winter-how-card.visible { opacity: 1; transform: translateY(0); }
+    .winter-how-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(74,144,217,0.15); }
+
+    .winter-how-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; margin: 0 auto 1.5rem;
+      background: rgba(74,144,217,0.08);
+      border: 2px solid rgba(74,144,217,0.15);
+    }
+    .winter-how-step {
+      display: inline-block; font-size: 0.7rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--ice-blue);
+      margin-bottom: 0.75rem; font-weight: 700;
+    }
+    .winter-how-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      font-weight: 600; margin-bottom: 0.75rem; color: var(--text-dark);
+    }
+    .winter-how-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
+
+    /* Products */
+    .winter-products {
+      padding: 6rem 2rem; background: var(--frost);
+    }
+    .winter-products-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; max-width: 1100px; margin: 0 auto;
+    }
+    .winter-product-card {
+      overflow: hidden; transition: all 0.4s ease;
+      opacity: 0; transform: translateY(30px);
+    }
+    .winter-product-card.visible { opacity: 1; transform: translateY(0); }
+    .winter-product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(74,144,217,0.18); }
+
+    .winter-product-img {
+      width: 100%; height: 220px; object-fit: cover; border-radius: 16px 16px 0 0;
+    }
+    .winter-product-body { padding: 2rem; }
+    .winter-product-tag {
+      display: inline-block; font-size: 0.72rem; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--ice-blue);
+      background: rgba(74,144,217,0.1); padding: 0.35rem 1rem;
+      border-radius: 20px; margin-bottom: 1rem;
+    }
+    .winter-product-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.35rem;
+      font-weight: 600; margin-bottom: 0.75rem; color: var(--text-dark);
+    }
+    .winter-product-card p {
+      color: var(--text-muted); line-height: 1.7; font-size: 0.92rem; margin-bottom: 1rem;
+    }
+    .winter-product-features { list-style: none; padding: 0; margin: 0; }
+    .winter-product-features li { padding: 0.3rem 0; font-size: 0.88rem; color: var(--text-muted); }
+    .winter-product-features li::before { content: '❄ '; color: var(--ice-blue); }
+
+    /* Energy Savings */
+    .winter-savings {
+      padding: 6rem 2rem; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #1a2a4a 0%, #2c5f9e 100%); color: #fff;
+    }
+    .winter-savings .frost-orb {
+      width: 400px; height: 400px; background: rgba(123,179,235,0.15);
+      top: -100px; left: -100px;
+    }
+    .winter-savings .winter-section-header h2 { color: #fff; }
+    .winter-savings .winter-section-header p { color: rgba(255,255,255,0.7); }
+
+    .winter-savings-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; max-width: 1000px; margin: 0 auto; position: relative;
+    }
+    .winter-saving-card {
+      background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 20px;
+      padding: 2.5rem 2rem; opacity: 0; transform: translateY(20px);
+    }
+    .winter-saving-card.visible { opacity: 1; transform: translateY(0); }
+    .winter-saving-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      margin-bottom: 0.75rem; color: var(--warm-amber);
+    }
+    .winter-saving-card p { color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 0.95rem; }
+
+    /* Melbourne Winter */
+    .winter-melbourne {
+      padding: 6rem 2rem; background: var(--snow); position: relative; overflow: hidden;
+    }
+    .winter-melbourne .frost-orb {
+      width: 300px; height: 300px; background: rgba(232,168,73,0.1);
+      bottom: -80px; right: -80px;
+    }
+    .winter-melbourne-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; max-width: 1100px; margin: 0 auto;
+      align-items: center; position: relative;
+    }
+    .winter-melbourne-text h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.8rem;
+      font-weight: 700; margin-bottom: 1.2rem; color: var(--text-dark);
+    }
+    .winter-melbourne-text h3 .ice { color: var(--ice-blue); }
+    .winter-melbourne-text p {
+      color: var(--text-muted); line-height: 1.8; font-size: 1rem; margin-bottom: 1rem;
+    }
+    .winter-melbourne-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .winter-temp-card {
+      padding: 1.5rem; text-align: center;
+      opacity: 0; transform: translateY(20px);
+    }
+    .winter-temp-card.visible { opacity: 1; transform: translateY(0); }
+    .winter-temp-month { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .winter-temp-val { font-size: 1.8rem; font-weight: 800; color: var(--ice-blue); }
+    .winter-temp-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+    /* Comparison Table */
+    .winter-compare {
+      padding: 6rem 2rem; background: var(--frost);
+    }
+    .winter-table-wrap {
+      max-width: 1000px; margin: 0 auto; overflow-x: auto; position: relative;
+    }
+    .winter-table {
+      width: 100%; border-collapse: collapse;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 32px var(--glass-shadow);
+    }
+    .winter-table thead { background: linear-gradient(135deg, var(--ice-deep), var(--ice-blue)); color: #fff; }
+    .winter-table th {
+      padding: 1.2rem 1.5rem; text-align: left; font-weight: 600; font-size: 0.9rem;
+    }
+    .winter-table td {
+      padding: 1rem 1.5rem; font-size: 0.92rem; color: var(--text-dark);
+      background: rgba(255,255,255,0.6);
+      border-bottom: 1px solid var(--frost-dark);
+    }
+    .winter-table tbody tr:last-child td { border-bottom: none; }
+    .winter-table tbody tr:hover td { background: rgba(74,144,217,0.06); }
+
+    .winter-rating {
+      display: inline-block; padding: 0.2rem 0.6rem;
+      border-radius: 4px; font-size: 0.8rem; font-weight: 600;
+    }
+    .winter-rating.excellent { background: rgba(74,144,217,0.12); color: var(--ice-blue); }
+    .winter-rating.good { background: rgba(232,168,73,0.15); color: var(--warm-amber-deep); }
+    .winter-rating.moderate { background: rgba(90,106,138,0.12); color: var(--text-muted); }
+
+    /* CTA */
+    .winter-cta {
+      padding: 6rem 2rem; text-align: center;
+      background: var(--snow); position: relative;
+    }
+    .winter-cta h2 {
+      font-family: 'Playfair Display', serif; font-size: 2.5rem;
+      font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);
+    }
+    .winter-cta h2 .warm { color: var(--warm-amber); }
+    .winter-cta p {
+      color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem;
+      max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7;
+    }
+
+    /* Cross Links */
+    .winter-crosslinks {
+      background: var(--frost-dark); padding: 4rem 2rem;
+      border-top: 1px solid rgba(74,144,217,0.1);
+    }
+    .winter-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .winter-crosslinks h3 {
+      text-align: center; font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 600; margin-bottom: 2rem; color: var(--text-muted);
+    }
+    .winter-crosslinks-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.75rem;
+    }
+    .winter-crosslink-item {
+      display: block; padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.6); backdrop-filter: blur(8px);
+      border: 1px solid rgba(74,144,217,0.1); border-radius: 8px;
+      color: var(--text-dark); text-decoration: none;
+      font-weight: 500; font-size: 0.92rem; transition: all 0.3s ease;
+    }
+    .winter-crosslink-item:hover {
+      border-color: var(--ice-blue); box-shadow: 0 4px 12px rgba(74,144,217,0.12);
+    }
+    .winter-crosslink-item span { color: var(--ice-blue); margin-right: 0.5rem; }
+
+    /* Animations */
+    @keyframes winterFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .winter-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .winter-how-grid { grid-template-columns: 1fr; }
+      .winter-products-grid { grid-template-columns: 1fr; }
+      .winter-savings-grid { grid-template-columns: 1fr; }
+      .winter-melbourne-grid { grid-template-columns: 1fr; }
+      .winter-melbourne-visual { grid-template-columns: repeat(2, 1fr); }
+      .winter-hero h1 { font-size: 2.2rem; }
+      .winter-table { font-size: 0.85rem; }
+      .winter-table th, .winter-table td { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body class="lp-winter">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne &amp; Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="winter-hero">
+    <div class="frost-orb"></div>
+    <div class="frost-orb"></div>
+    <div class="frost-orb"></div>
+    <div class="snowflakes">
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+    </div>
+    <div class="winter-hero-content">
+      <div class="winter-hero-tag">🧊 Winter Ready</div>
+      <h1>Keep the <span class="warm">Warmth</span> In, Keep the <span class="ice">Cold</span> Out</h1>
+      <p class="winter-hero-sub">Honeycomb and cellular blinds trap insulating air pockets at your windows — reducing heat loss by up to 50% and slashing your energy bills this Melbourne winter.</p>
+      <div class="winter-hero-actions">
+        <a href="../free-quote.html" class="btn-warm">Get a Free Winter Insulation Quote</a>
+        <a href="#how-it-works" class="btn-frost">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="winter-stats">
+    <div class="winter-stats-inner">
+      <div class="winter-stat-card glass-card-solid">
+        <div class="winter-stat-number">50%</div>
+        <div class="winter-stat-label">Heat Loss Reduction</div>
+      </div>
+      <div class="winter-stat-card glass-card-solid">
+        <div class="winter-stat-number">$400+</div>
+        <div class="winter-stat-label">Annual Energy Savings</div>
+      </div>
+      <div class="winter-stat-card glass-card-solid">
+        <div class="winter-stat-number">R2.7</div>
+        <div class="winter-stat-label">Insulation R-Value</div>
+      </div>
+      <div class="winter-stat-card glass-card-solid">
+        <div class="winter-stat-number">10yr</div>
+        <div class="winter-stat-label">Product Warranty</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="winter-how">
+    <div class="frost-orb"></div>
+    <div class="winter-section-header">
+      <h2>How <span class="ice">Cellular Blinds</span> Insulate</h2>
+      <p>The unique honeycomb structure creates trapped air pockets that act as a thermal barrier between your room and the cold glass.</p>
+    </div>
+    <div class="winter-how-grid">
+      <div class="winter-how-card glass-card-solid">
+        <div class="winter-how-icon">🔬</div>
+        <div class="winter-how-step">Step 1</div>
+        <h3>Honeycomb Cells</h3>
+        <p>Each blind contains rows of hexagonal cells — like a honeycomb. These cells trap still air, which is one of nature's best insulators. Single, double or triple cell options available.</p>
+      </div>
+      <div class="winter-how-card glass-card-solid">
+        <div class="winter-how-icon">🛡️</div>
+        <div class="winter-how-step">Step 2</div>
+        <h3>Thermal Barrier</h3>
+        <p>The trapped air creates a buffer zone between the cold window glass and your warm room. This dramatically reduces heat transfer through conduction and convection.</p>
+      </div>
+      <div class="winter-how-card glass-card-solid">
+        <div class="winter-how-icon">♨️</div>
+        <div class="winter-how-step">Step 3</div>
+        <h3>Heat Retention</h3>
+        <p>Your heating system works less because warmth stays inside. The result: a cosier home, lower gas and electricity bills, and reduced carbon footprint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="winter-products">
+    <div class="winter-section-header">
+      <h2>Our <span class="ice">Insulation</span> <span class="warm">Champions</span></h2>
+      <p>Products specifically engineered for maximum thermal performance in Melbourne winters</p>
+    </div>
+    <div class="winter-products-grid">
+      <div class="winter-product-card glass-card-solid">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Double cell honeycomb blinds" class="winter-product-img" loading="lazy">
+        <div class="winter-product-body">
+          <div class="winter-product-tag">Best Insulation</div>
+          <h3>Double Cell Honeycomb Blinds</h3>
+          <p>Our top-performing insulator. Two layers of honeycomb cells create a superior thermal barrier that outperforms single cell by 30%. Available in blockout and translucent fabrics.</p>
+          <ul class="winter-product-features">
+            <li>Double cell = double the insulation</li>
+            <li>R-value up to 2.7 (single glazing equivalent boost)</li>
+            <li>Blockout option for bedrooms</li>
+            <li>Whisper-quiet cordless operation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="winter-product-card glass-card-solid">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Single cell honeycomb blinds" class="winter-product-img" loading="lazy">
+        <div class="winter-product-body">
+          <div class="winter-product-tag">Great Value</div>
+          <h3>Single Cell Honeycomb Blinds</h3>
+          <p>Excellent insulation at a more accessible price point. Single cell honeycombs still reduce heat loss by up to 40% compared to bare windows. A popular choice across Melbourne.</p>
+          <ul class="winter-product-features">
+            <li>40% heat loss reduction</li>
+            <li>Lighter profile suits most windows</li>
+            <li>Wide colour range — 60+ options</li>
+            <li>Top-down/bottom-up available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="winter-product-card glass-card-solid">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Duette honeycomb blinds" class="winter-product-img" loading="lazy">
+        <div class="winter-product-body">
+          <div class="winter-product-tag">Day & Night</div>
+          <h3>Day-Night Honeycomb Blinds</h3>
+          <p>Two fabrics in one blind: sheer for daytime light and blockout for nighttime warmth. Slide between the two for total control over privacy, light and insulation.</p>
+          <ul class="winter-product-features">
+            <li>Sheer + blockout in one system</li>
+            <li>Insulates day and night</li>
+            <li>Perfect for living rooms</li>
+            <li>Motorised option available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="winter-product-card glass-card-solid">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="Motorised honeycomb blinds" class="winter-product-img" loading="lazy">
+        <div class="winter-product-body">
+          <div class="winter-product-tag">Smart Insulation</div>
+          <h3>Motorised Honeycomb Blinds</h3>
+          <p>Set schedules to close at dusk and open at dawn automatically. Maximise solar gain during the day, seal in warmth at night — all without lifting a finger.</p>
+          <ul class="winter-product-features">
+            <li>Timer and app-controlled</li>
+            <li>Auto-close at sunset for max insulation</li>
+            <li>Works with Google Home & Alexa</li>
+            <li>Rechargeable battery or hardwired</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Energy Savings -->
+  <section class="winter-savings">
+    <div class="frost-orb"></div>
+    <div class="winter-section-header">
+      <h2>Real <span class="warm">Energy Savings</span></h2>
+      <p>See how insulating blinds impact your heating bills and comfort</p>
+    </div>
+    <div class="winter-savings-grid">
+      <div class="winter-saving-card">
+        <h3>💰 Lower Energy Bills</h3>
+        <p>Melbourne households spend an average of $1,200–$1,800 on heating annually. Honeycomb blinds can cut window heat loss by up to 50%, translating to savings of $400–$600 per year on gas and electricity.</p>
+      </div>
+      <div class="winter-saving-card">
+        <h3>🌡️ Consistent Room Temperature</h3>
+        <p>Cold windows create drafts and cold spots near glass. Cellular blinds eliminate this by creating an insulating pocket of still air, keeping the room temperature even from wall to wall.</p>
+      </div>
+      <div class="winter-saving-card">
+        <h3>🌿 Reduced Carbon Footprint</h3>
+        <p>Less energy used means fewer emissions. Installing honeycomb blinds across a typical 3-bedroom Melbourne home can reduce CO₂ output by 0.5–1 tonne per year — equivalent to planting 25 trees.</p>
+      </div>
+      <div class="winter-saving-card">
+        <h3>🏠 Increased Property Value</h3>
+        <p>Energy-efficient homes sell faster. Window insulation improves your home's energy rating, which is increasingly important for Melbourne buyers and renters looking at running costs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Melbourne Winter Section -->
+  <section class="winter-melbourne">
+    <div class="frost-orb"></div>
+    <div class="winter-section-header">
+      <h2>Melbourne's <span class="ice">Winter</span> Challenge</h2>
+      <p>Our city's cold, damp winters make window insulation a must — not a luxury</p>
+    </div>
+    <div class="winter-melbourne-grid">
+      <div class="winter-melbourne-text">
+        <h3>Why Melbourne Homes <span class="ice">Need</span> Insulating Blinds</h3>
+        <p>Melbourne winters average 6–14°C with frequent rain, wind and overnight lows near freezing. Most Melbourne homes have single-glazed windows — the biggest weak point for heat loss.</p>
+        <p>Up to 40% of your home's heat escapes through windows. That's your heater working overtime just to keep up. Honeycomb blinds are the fastest, most cost-effective way to add insulation without replacing your windows.</p>
+        <p>Unlike retrofit double glazing (which can cost $800–$1,200 per window), cellular blinds achieve significant thermal improvement at a fraction of the price — typically $150–$350 per window installed.</p>
+      </div>
+      <div class="winter-melbourne-visual">
+        <div class="winter-temp-card glass-card-solid">
+          <div class="winter-temp-month">June</div>
+          <div class="winter-temp-val">7°C</div>
+          <div class="winter-temp-note">Avg. minimum</div>
+        </div>
+        <div class="winter-temp-card glass-card-solid">
+          <div class="winter-temp-month">July</div>
+          <div class="winter-temp-val">6°C</div>
+          <div class="winter-temp-note">Coldest month</div>
+        </div>
+        <div class="winter-temp-card glass-card-solid">
+          <div class="winter-temp-month">August</div>
+          <div class="winter-temp-val">7°C</div>
+          <div class="winter-temp-note">Still chilly</div>
+        </div>
+        <div class="winter-temp-card glass-card-solid">
+          <div class="winter-temp-month">Heat Loss</div>
+          <div class="winter-temp-val">40%</div>
+          <div class="winter-temp-note">Through windows</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="winter-compare">
+    <div class="winter-section-header">
+      <h2>Insulation <span class="ice">Comparison</span></h2>
+      <p>How honeycomb blinds stack up against other window insulation methods</p>
+    </div>
+    <div class="winter-table-wrap">
+      <table class="winter-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Insulation</th>
+            <th>Cost per Window</th>
+            <th>Installation</th>
+            <th>Light Control</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Double Cell Honeycomb</strong></td>
+            <td><span class="winter-rating excellent">Excellent</span></td>
+            <td>$200–$350</td>
+            <td>30 min, no mess</td>
+            <td><span class="winter-rating excellent">Excellent</span></td>
+            <td>Whole home</td>
+          </tr>
+          <tr>
+            <td><strong>Single Cell Honeycomb</strong></td>
+            <td><span class="winter-rating good">Very Good</span></td>
+            <td>$150–$250</td>
+            <td>30 min, no mess</td>
+            <td><span class="winter-rating excellent">Excellent</span></td>
+            <td>Budget-friendly</td>
+          </tr>
+          <tr>
+            <td><strong>Retrofit Double Glazing</strong></td>
+            <td><span class="winter-rating excellent">Excellent</span></td>
+            <td>$800–$1,200</td>
+            <td>Half day, tradesman</td>
+            <td><span class="winter-rating moderate">None</span></td>
+            <td>Permanent upgrade</td>
+          </tr>
+          <tr>
+            <td><strong>Heavy Curtains</strong></td>
+            <td><span class="winter-rating good">Good</span></td>
+            <td>$300–$600</td>
+            <td>1 hour</td>
+            <td><span class="winter-rating good">Good</span></td>
+            <td>Traditional style</td>
+          </tr>
+          <tr>
+            <td><strong>Window Film</strong></td>
+            <td><span class="winter-rating moderate">Moderate</span></td>
+            <td>$50–$100</td>
+            <td>DIY, 20 min</td>
+            <td><span class="winter-rating moderate">None</span></td>
+            <td>Temporary fix</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="winter-cta">
+    <h2>Ready for a <span class="warm">Warmer</span> Winter?</h2>
+    <p>Get a free measure and quote for insulating honeycomb blinds. We'll assess your windows and recommend the best thermal solution for your home.</p>
+    <a href="../free-quote.html" class="btn-warm">Book Your Free Winter Consultation</a>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="winter-crosslinks">
+    <div class="winter-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="winter-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="winter-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="winter-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="bathroom-kitchen.html" class="winter-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="winter-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="winter-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="winter-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="winter-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="winter-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="winter-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-trends-2026.html" class="winter-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="winter-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="winter-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="winter-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="winter-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="winter-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="winter-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="winter-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="energy-efficient.html" class="winter-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="winter-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="free-samples.html" class="winter-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="winter-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="winter-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="winter-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="winter-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="winter-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="winter-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="winter-crosslink-item"><span>→</span> Media Room</a>
+        <a href="melbourne-service-areas.html" class="winter-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="winter-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="winter-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="winter-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="winter-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="winter-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="winter-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="winter-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="winter-crosslink-item"><span>→</span> Restaurant &amp; Cafe Blinds</a>
+        <a href="scandinavian-style.html" class="winter-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="seasonal-sale.html" class="winter-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="winter-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="winter-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="testimonials.html" class="winter-crosslink-item"><span>→</span> Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.winter-stat-card, .winter-how-card, .winter-product-card, .winter-saving-card, .winter-temp-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
