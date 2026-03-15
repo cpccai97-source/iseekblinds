@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High-Rise Glare Reduction Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Glare reduction blinds for high-rise apartments in Melbourne. UV protection, heat control, and city view preservation with motorised and smart window solutions.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── High-Rise Glare Theme — Tech/Futuristic ── */
+    :root {
+      --hr-dark: #0a0a1a;
+      --hr-dark-card: #111128;
+      --hr-dark-surface: #161633;
+      --hr-cyan: #00e5ff;
+      --hr-cyan-dim: rgba(0,229,255,0.15);
+      --hr-blue: #3d5afe;
+      --hr-blue-glow: rgba(61,90,254,0.3);
+      --hr-white: #e8eaed;
+      --hr-text: #b0b3c0;
+      --hr-text-muted: #6b6f82;
+      --hr-grid: rgba(0,229,255,0.04);
+      --hr-border: rgba(0,229,255,0.12);
+      --hr-card-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    }
+
+    .hr-page {
+      background: var(--hr-dark);
+      color: var(--hr-text);
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background-image:
+        linear-gradient(var(--hr-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hr-grid) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hr-page .top-bar { background: var(--hr-dark-card); border-bottom: 1px solid var(--hr-border); }
+    .hr-page .top-bar a { color: var(--hr-cyan); }
+    .hr-page .top-bar span { color: var(--hr-text); }
+    .hr-page .header { background: rgba(10,10,26,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hr-border); }
+    .hr-page .nav a, .hr-page .nav-dropdown-toggle { color: var(--hr-text) !important; }
+    .hr-page .nav a:hover, .hr-page .nav-dropdown-toggle:hover { color: var(--hr-cyan) !important; }
+    .hr-page .logo-i { color: var(--hr-cyan); }
+    .hr-page .logo-seek { color: var(--hr-white); }
+    .hr-page .logo-blinds { color: var(--hr-text); }
+    .hr-page .footer { background: var(--hr-dark-card); border-top: 1px solid var(--hr-border); }
+    .hr-page .footer, .hr-page .footer a, .hr-page .footer p, .hr-page .footer h4 { color: var(--hr-text); }
+    .hr-page .footer a:hover { color: var(--hr-cyan); }
+    .hr-page .footer-bottom { background: var(--hr-dark); border-top: 1px solid var(--hr-border); }
+
+    /* ── Hero ── */
+    .hr-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 2rem;
+      background: linear-gradient(180deg, var(--hr-dark) 0%, #0d0d2b 100%);
+    }
+    .hr-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .hr-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(transparent, var(--hr-dark));
+    }
+    .hr-hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .hr-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--hr-cyan-dim);
+      border: 1px solid var(--hr-border);
+      color: var(--hr-cyan);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hr-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--hr-white);
+      margin-bottom: 1.5rem;
+    }
+    .hr-hero h1 span {
+      background: linear-gradient(90deg, var(--hr-cyan), var(--hr-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: hrGlowPulse 3s ease-in-out infinite;
+    }
+    .hr-hero p {
+      font-size: 1.15rem;
+      color: var(--hr-text);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hr-hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--hr-cyan), var(--hr-blue));
+      color: var(--hr-dark);
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 30px var(--hr-blue-glow);
+    }
+    .hr-hero-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 0 50px var(--hr-blue-glow); }
+    .hr-hero-scan-line {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--hr-cyan), transparent);
+      opacity: 0.4;
+      animation: hrScanLine 4s linear infinite;
+    }
+    @keyframes hrScanLine {
+      0% { top: 0; }
+      100% { top: 100%; }
+    }
+
+    /* ── Sections ── */
+    .hr-section { padding: 6rem 1.5rem; position: relative; }
+    .hr-section-alt { background: var(--hr-dark-surface); }
+    .hr-inner { max-width: 1100px; margin: 0 auto; }
+    .hr-section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--hr-cyan);
+      margin-bottom: 0.75rem;
+    }
+    .hr-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--hr-white);
+      margin-bottom: 1rem;
+    }
+    .hr-section-subtitle {
+      color: var(--hr-text);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 650px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Problem Grid ── */
+    .hr-problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .hr-problem-card {
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .hr-problem-card:hover { transform: translateY(-4px); border-color: var(--hr-cyan); box-shadow: 0 0 20px var(--hr-cyan-dim); }
+    .hr-problem-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .hr-problem-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--hr-white); }
+    .hr-problem-card p { color: var(--hr-text-muted); line-height: 1.65; font-size: 0.92rem; }
+
+    /* ── Solutions Grid ── */
+    .hr-solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .hr-solution-card {
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .hr-solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--hr-cyan), var(--hr-blue));
+    }
+    .hr-solution-card:hover { transform: translateY(-4px); border-color: var(--hr-cyan); }
+    .hr-solution-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
+    .hr-solution-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--hr-white); }
+    .hr-solution-card p { color: var(--hr-text); line-height: 1.65; margin-bottom: 1.25rem; font-size: 0.92rem; }
+    .hr-solution-features { list-style: none; padding: 0; }
+    .hr-solution-features li { padding: 0.4rem 0; color: var(--hr-text-muted); font-size: 0.88rem; display: flex; align-items: center; gap: 0.5rem; }
+    .hr-solution-features li::before { content: '▸'; color: var(--hr-cyan); font-weight: bold; }
+
+    /* ── Benefits Stats ── */
+    .hr-benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; text-align: center; }
+    .hr-benefit-card {
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hr-benefit-card:hover { transform: translateY(-4px); box-shadow: 0 0 25px var(--hr-cyan-dim); }
+    .hr-benefit-stat {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--hr-cyan), var(--hr-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .hr-benefit-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; color: var(--hr-white); margin-bottom: 0.5rem; }
+    .hr-benefit-card p { color: var(--hr-text-muted); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── Smart Features ── */
+    .hr-smart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hr-smart-list { list-style: none; padding: 0; }
+    .hr-smart-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem;
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .hr-smart-list li:hover { transform: translateX(5px); border-color: var(--hr-cyan); }
+    .hr-smart-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .hr-smart-text h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; margin-bottom: 0.3rem; color: var(--hr-white); }
+    .hr-smart-text p { color: var(--hr-text-muted); font-size: 0.88rem; line-height: 1.6; }
+    .hr-smart-visual {
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hr-smart-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .hr-smart-visual-icon { font-size: 4rem; position: relative; z-index: 1; margin-bottom: 1rem; }
+    .hr-smart-visual p { color: var(--hr-text); font-style: italic; position: relative; z-index: 1; font-size: 0.95rem; }
+
+    /* ── Testimonial ── */
+    .hr-testimonial {
+      background: var(--hr-dark-card);
+      border: 1px solid var(--hr-border);
+      border-radius: 12px;
+      padding: 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .hr-testimonial::before {
+      content: '"';
+      position: absolute;
+      top: -10px; left: 30px;
+      font-size: 4rem;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--hr-cyan);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    .hr-testimonial p { color: var(--hr-text); line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem; font-style: italic; }
+    .hr-testimonial-author { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--hr-white); font-size: 0.9rem; }
+    .hr-testimonial-detail { font-size: 0.8rem; color: var(--hr-text-muted); margin-top: 0.25rem; }
+    .hr-testimonial-stars { color: var(--hr-cyan); font-size: 0.9rem; margin-bottom: 1rem; }
+
+    /* ── CTA ── */
+    .hr-cta {
+      text-align: center;
+      padding: 6rem 1.5rem;
+      background: linear-gradient(180deg, var(--hr-dark-surface), var(--hr-dark));
+      position: relative;
+      overflow: hidden;
+    }
+    .hr-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--hr-cyan-dim) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hr-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--hr-white);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .hr-cta p { color: var(--hr-text); margin-bottom: 2.5rem; font-size: 1.1rem; position: relative; }
+    .hr-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--hr-cyan), var(--hr-blue));
+      color: var(--hr-dark);
+      padding: 1rem 3rem;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 30px var(--hr-blue-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .hr-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 0 50px var(--hr-blue-glow); }
+    .hr-cta-sub { display: block; margin-top: 1rem; color: var(--hr-text-muted); font-size: 0.9rem; position: relative; }
+
+    /* ── Crosslinks ── */
+    .hr-crosslinks { padding: 4rem 1.5rem; background: var(--hr-dark-card); border-top: 1px solid var(--hr-border); }
+    .hr-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .hr-crosslinks h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--hr-white); }
+    .hr-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .hr-crosslink-item {
+      background: var(--hr-dark-surface);
+      border: 1px solid var(--hr-border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: var(--hr-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: border-color 0.3s, color 0.3s, background 0.3s, box-shadow 0.3s;
+    }
+    .hr-crosslink-item:hover { border-color: var(--hr-cyan); color: var(--hr-cyan); box-shadow: 0 0 10px var(--hr-cyan-dim); }
+
+    /* ── Animations ── */
+    @keyframes hrGlowPulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.3); }
+    }
+    @keyframes hrFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hr-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .hr-animate.hr-visible { opacity: 1; transform: translateY(0); }
+    .hr-hero-content { animation: hrFadeUp 0.9s ease forwards; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hr-hero { min-height: auto; padding: 8rem 1.5rem 4rem; }
+      .hr-smart-grid { grid-template-columns: 1fr; }
+      .hr-section { padding: 4rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .hr-hero h1 { font-size: 1.8rem; }
+      .hr-solutions-grid { grid-template-columns: 1fr; }
+      .hr-benefits-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="hr-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hr-hero">
+    <div class="hr-hero-scan-line"></div>
+    <div class="hr-hero-content">
+      <span class="hr-hero-badge">🏙️ High-Rise Solutions</span>
+      <h1>Conquer <span>the Glare</span></h1>
+      <p>Living high above Melbourne's skyline shouldn't mean battling blinding sun. Smart blinds that tame the glare, block 99% of UV, and keep your city views crystal clear.</p>
+      <a href="../free-quote.html" class="hr-hero-cta">Get Glare-Free Living →</a>
+    </div>
+  </section>
+
+  <!-- Photo gallery -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;padding:24px 40px;max-width:1200px;margin:0 auto;">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&auto=format&fit=crop&q=80" alt="High-rise apartment city view through window" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:8px;box-shadow:0 4px 16px rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.12);">
+    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&auto=format&fit=crop&q=80" alt="Modern apartment with floor to ceiling windows" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:8px;box-shadow:0 4px 16px rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.12);">
+    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop&q=80" alt="Bright sunlit apartment interior with blinds" loading="lazy" style="width:calc(33.33% - 12px);min-width:200px;flex:1;height:220px;object-fit:cover;border-radius:8px;box-shadow:0 4px 16px rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.12);">
+  </div>
+
+  <!-- The Problem -->
+  <section class="hr-section">
+    <div class="hr-inner">
+      <div class="hr-animate">
+        <div class="hr-section-label">The Problem</div>
+        <h2 class="hr-section-title">Life Above the 10th Floor 🌇</h2>
+        <p class="hr-section-subtitle">High-rise living comes with unique window challenges that ground-level homes never face.</p>
+      </div>
+      <div class="hr-problems-grid">
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">☀️</div>
+          <h3>Intense Direct Glare</h3>
+          <p>No trees, no neighbouring buildings to filter light. Above floor 10, you're catching unobstructed sun from dawn to dusk — screens become unreadable, eyes strain constantly.</p>
+        </div>
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">🌡️</div>
+          <h3>Solar Heat Gain</h3>
+          <p>Floor-to-ceiling glass acts like a greenhouse. North and west-facing apartments can spike 8–12°C above comfortable temperatures, pushing aircon bills through the roof.</p>
+        </div>
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">🪟</div>
+          <h3>Oversized Windows</h3>
+          <p>Standard blinds don't fit 2.7m+ floor-to-ceiling panels. You need custom solutions designed for the scale and weight demands of high-rise glazing.</p>
+        </div>
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">🔆</div>
+          <h3>UV Damage</h3>
+          <p>At elevation, UV intensity increases. Furniture, artwork, and flooring fade 40% faster without proper UV-blocking window treatments.</p>
+        </div>
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">🏗️</div>
+          <h3>Body Corp Restrictions</h3>
+          <p>Many buildings mandate uniform external appearance. Your blinds must comply with body corporate colour and style requirements.</p>
+        </div>
+        <div class="hr-problem-card hr-animate">
+          <div class="hr-problem-icon">🔊</div>
+          <h3>Wind &amp; Noise</h3>
+          <p>Higher floors mean more wind noise. The right blinds add an insulation layer that dampens external noise by up to 30%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="hr-section hr-section-alt">
+    <div class="hr-inner">
+      <div class="hr-animate">
+        <div class="hr-section-label">Our Solutions</div>
+        <h2 class="hr-section-title">Engineered for Elevation</h2>
+        <p class="hr-section-subtitle">Purpose-built window treatments that solve high-rise problems without sacrificing your million-dollar view.</p>
+      </div>
+      <div class="hr-solutions-grid">
+        <div class="hr-solution-card hr-animate">
+          <div class="hr-solution-icon">🎯</div>
+          <h3>Sunscreen Roller Blinds</h3>
+          <p>The #1 choice for high-rise glare. Openness factors from 1% to 10% let you fine-tune visibility vs. light control.</p>
+          <ul class="hr-solution-features">
+            <li>Block up to 95% of glare</li>
+            <li>Maintain outward visibility</li>
+            <li>UV-stabilised fabrics won't degrade</li>
+            <li>Custom widths up to 3.6m</li>
+            <li>Body-corp-compliant colours</li>
+          </ul>
+        </div>
+        <div class="hr-solution-card hr-animate">
+          <div class="hr-solution-icon">🔄</div>
+          <h3>Dual Roller Systems</h3>
+          <p>Two blinds in one bracket — sunscreen for day, blockout for night. The ultimate flexibility for apartments.</p>
+          <ul class="hr-solution-features">
+            <li>Day/night control from one unit</li>
+            <li>Independent operation</li>
+            <li>Slimline cassette headbox</li>
+            <li>Motorised or manual</li>
+            <li>Perfect for bedrooms with views</li>
+          </ul>
+        </div>
+        <div class="hr-solution-card hr-animate">
+          <div class="hr-solution-icon">⚡</div>
+          <h3>Motorised Solutions</h3>
+          <p>Essential for hard-to-reach high-rise windows. Schedule, automate, or voice-control your light environment.</p>
+          <ul class="hr-solution-features">
+            <li>App control from anywhere</li>
+            <li>Sun-tracking automation</li>
+            <li>Quiet motors (under 35dB)</li>
+            <li>Battery or hardwired options</li>
+            <li>Group control for open-plan living</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="hr-section">
+    <div class="hr-inner">
+      <div class="hr-animate">
+        <div class="hr-section-label">The Numbers</div>
+        <h2 class="hr-section-title">Performance That Speaks</h2>
+        <p class="hr-section-subtitle">Measurable improvements for your high-rise living environment.</p>
+      </div>
+      <div class="hr-benefits-grid">
+        <div class="hr-benefit-card hr-animate">
+          <div class="hr-benefit-stat">99%</div>
+          <h3>UV Blocked</h3>
+          <p>Protect furniture, flooring, and artwork from damaging ultraviolet radiation.</p>
+        </div>
+        <div class="hr-benefit-card hr-animate">
+          <div class="hr-benefit-stat">78%</div>
+          <h3>Glare Reduced</h3>
+          <p>Comfortable screen work and TV viewing without closing off your views.</p>
+        </div>
+        <div class="hr-benefit-card hr-animate">
+          <div class="hr-benefit-stat">35%</div>
+          <h3>Energy Saved</h3>
+          <p>Reduced aircon load in summer, retained warmth in winter. Lower energy bills year-round.</p>
+        </div>
+        <div class="hr-benefit-card hr-animate">
+          <div class="hr-benefit-stat">100%</div>
+          <h3>View Preserved</h3>
+          <p>Sunscreen fabrics maintain your cityscape panorama while managing light.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Features -->
+  <section class="hr-section hr-section-alt">
+    <div class="hr-inner">
+      <div class="hr-animate">
+        <div class="hr-section-label">Smart Living</div>
+        <h2 class="hr-section-title">Intelligence Built In</h2>
+        <p class="hr-section-subtitle">Your blinds should be as smart as your apartment.</p>
+      </div>
+      <div class="hr-smart-grid hr-animate">
+        <div>
+          <ul class="hr-smart-list">
+            <li>
+              <span class="hr-smart-icon">📱</span>
+              <div class="hr-smart-text">
+                <h4>App Control</h4>
+                <p>Adjust blinds from your phone — at home, at work, or on holiday. Real-time status and scheduling.</p>
+              </div>
+            </li>
+            <li>
+              <span class="hr-smart-icon">☀️</span>
+              <div class="hr-smart-text">
+                <h4>Sun Sensors</h4>
+                <p>Automatic adjustment based on light intensity. Blinds react to the sun's position throughout the day.</p>
+              </div>
+            </li>
+            <li>
+              <span class="hr-smart-icon">🗣️</span>
+              <div class="hr-smart-text">
+                <h4>Voice Control</h4>
+                <p>Works with Google Home, Alexa, and Apple HomeKit. "Hey Google, close the living room blinds."</p>
+              </div>
+            </li>
+            <li>
+              <span class="hr-smart-icon">⏰</span>
+              <div class="hr-smart-text">
+                <h4>Smart Scheduling</h4>
+                <p>Set sunrise/sunset routines. Blinds open gently in the morning and close when the western sun hits.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="hr-smart-visual">
+          <div class="hr-smart-visual-icon">🏙️</div>
+          <p>"Control every window from one app — perfect for open-plan high-rise living."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="hr-section">
+    <div class="hr-inner">
+      <div class="hr-animate">
+        <div class="hr-section-label">Client Story</div>
+        <h2 class="hr-section-title">From Melbourne's Skyline</h2>
+      </div>
+      <div class="hr-testimonial hr-animate">
+        <div class="hr-testimonial-stars">★★★★★</div>
+        <p>"We're on the 32nd floor in Southbank. The afternoon glare made the living room unusable after 2pm. iSeekBlinds fitted motorised sunscreen rollers with sun sensors — now the blinds adjust automatically. The apartment is comfortable all day, and we haven't lost an inch of our city view. Energy bill dropped noticeably too."</p>
+        <div class="hr-testimonial-author">David &amp; Wei L.</div>
+        <div class="hr-testimonial-detail">Level 32, Southbank · Motorised Sunscreen Rollers</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hr-cta">
+    <div class="hr-animate">
+      <h2>Ready to Tame Your High-Rise Glare? 🏙️</h2>
+      <p>Free consultation for Melbourne high-rise apartments. We understand body corp requirements, oversized windows, and the unique demands of elevated living.</p>
+      <a href="../free-quote.html" class="hr-cta-btn">Book Free High-Rise Consult</a>
+      <span class="hr-cta-sub">No obligation · Body corp compliant · All Melbourne high-rises</span>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="hr-crosslinks">
+    <div class="hr-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="hr-crosslinks-grid">
+        <a href="commercial-blinds.html" class="hr-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="hr-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="hr-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="hr-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="hr-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="hr-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="hr-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="hr-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="hr-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="hr-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="hr-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="hr-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="pet-friendly.html" class="hr-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="privacy-blinds.html" class="hr-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="conservatory-sunroom.html" class="hr-crosslink-item"><span>→</span> Conservatory &amp; Sunroom Blinds</a>
+        <a href="acoustic-solutions.html" class="hr-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="hr-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="hr-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="hr-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="hr-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="hr-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="hr-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="hr-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="hr-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="hr-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="hr-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="hr-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="hr-crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="skylight-blinds.html" class="hr-crosslink-item"><span>→</span> Skylight &amp; Specialty Windows</a>
+        <a href="heritage-homes.html" class="hr-crosslink-item"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="day-night-blinds.html" class="hr-crosslink-item"><span>→</span> Day Night Zebra Blinds</a>
+        <a href="rental-property.html" class="hr-crosslink-item"><span>→</span> Rental Property Blinds</a>
+        <a href="diy-measuring-guide.html" class="hr-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="scandinavian-style.html" class="hr-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="coastal-home-blinds.html" class="hr-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="diy-installation-guide.html" class="hr-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="minimalist-styling.html" class="hr-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations with IntersectionObserver
+    const hrObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('hr-visible');
+          }, index * 80);
+          hrObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.hr-animate').forEach(el => hrObserver.observe(el));
+  </script>
+
+</body>
+</html>

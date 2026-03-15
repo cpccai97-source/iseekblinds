@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Window Blinds & Curtains | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Minimalist window blinds and curtains for modern Melbourne homes. Clean lines, premium fabrics, and understated elegance for contemporary interiors.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Minimalist Theme — Extreme White ── */
+    :root {
+      --mn-white: #ffffff;
+      --mn-offwhite: #fafaf8;
+      --mn-warm-grey: #e8e5e0;
+      --mn-mid-grey: #9a9590;
+      --mn-text: #3d3a36;
+      --mn-text-light: #7a7570;
+      --mn-accent: #c67a4a;
+      --mn-accent-light: rgba(198,122,74,0.08);
+      --mn-border: #e8e5e0;
+      --mn-border-fine: #f0ede8;
+    }
+
+    .mn-page {
+      background: var(--mn-white);
+      color: var(--mn-text);
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+    .mn-page .top-bar { background: var(--mn-offwhite); border-bottom: 1px solid var(--mn-border); }
+    .mn-page .top-bar span { color: var(--mn-text-light); font-weight: 400; }
+    .mn-page .top-bar a { color: var(--mn-text); }
+
+    /* ── Hero ── */
+    .mn-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      background: var(--mn-offwhite);
+      overflow: hidden;
+    }
+    .mn-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: var(--mn-border);
+    }
+    .mn-hero-content { max-width: 700px; position: relative; z-index: 1; }
+    .mn-hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--mn-accent);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+    .mn-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--mn-text);
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .mn-hero h1 em {
+      font-style: italic;
+      color: var(--mn-accent);
+    }
+    .mn-hero p {
+      font-size: 1.05rem;
+      color: var(--mn-text-light);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mn-hero-cta {
+      display: inline-block;
+      color: var(--mn-text);
+      padding: 0.85rem 2.5rem;
+      border: 1px solid var(--mn-text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: background 0.4s, color 0.4s;
+    }
+    .mn-hero-cta:hover { background: var(--mn-text); color: var(--mn-white); }
+    .mn-hero-line {
+      position: absolute;
+      width: 1px; height: 80px;
+      background: var(--mn-border);
+      bottom: -40px; left: 50%;
+      z-index: 2;
+    }
+
+    /* ── Sections ── */
+    .mn-section { padding: 7rem 2rem; position: relative; }
+    .mn-section-alt { background: var(--mn-offwhite); }
+    .mn-inner { max-width: 1000px; margin: 0 auto; }
+    .mn-section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--mn-accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .mn-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--mn-text);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .mn-section-subtitle {
+      color: var(--mn-text-light);
+      font-size: 1rem;
+      line-height: 1.9;
+      max-width: 550px;
+      margin-bottom: 4rem;
+      font-weight: 300;
+    }
+    .mn-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--mn-accent);
+      margin: 3rem 0;
+    }
+
+    /* ── Philosophy ── */
+    .mn-philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .mn-philosophy-text p { color: var(--mn-text-light); line-height: 2; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .mn-philosophy-visual {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .mn-philosophy-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(0.95);
+    }
+    .mn-philosophy-visual::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid var(--mn-border);
+      pointer-events: none;
+    }
+
+    /* ── Products ── */
+    .mn-products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .mn-product-card {
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--mn-border);
+      transition: border-color 0.4s;
+      position: relative;
+    }
+    .mn-product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--mn-accent);
+      transition: width 0.6s ease;
+    }
+    .mn-product-card:hover { border-color: var(--mn-mid-grey); }
+    .mn-product-card:hover::before { width: 100%; }
+    .mn-product-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--mn-border);
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+    .mn-product-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: var(--mn-text);
+    }
+    .mn-product-card p { color: var(--mn-text-light); line-height: 1.8; font-size: 0.88rem; margin-bottom: 1rem; }
+    .mn-product-features { list-style: none; padding: 0; }
+    .mn-product-features li {
+      padding: 0.35rem 0;
+      color: var(--mn-text-light);
+      font-size: 0.82rem;
+      border-bottom: 1px solid var(--mn-border-fine);
+    }
+    .mn-product-features li:last-child { border-bottom: none; }
+
+    /* ── Art of Simplicity ── */
+    .mn-principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+    .mn-principle {
+      padding: 2rem 0;
+      border-top: 1px solid var(--mn-border);
+    }
+    .mn-principle h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--mn-text);
+      margin-bottom: 0.75rem;
+    }
+    .mn-principle p { color: var(--mn-text-light); line-height: 1.9; font-size: 0.9rem; }
+
+    /* ── Material Palette ── */
+    .mn-palette-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .mn-palette-item { text-align: center; }
+    .mn-palette-swatch {
+      aspect-ratio: 1;
+      border-radius: 0;
+      margin-bottom: 1rem;
+      border: 1px solid var(--mn-border);
+    }
+    .mn-palette-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--mn-text);
+      margin-bottom: 0.25rem;
+    }
+    .mn-palette-item p { font-size: 0.78rem; color: var(--mn-text-light); }
+
+    /* ── Before/After ── */
+    .mn-compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .mn-compare-card { position: relative; }
+    .mn-compare-card img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: grayscale(20%);
+    }
+    .mn-compare-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--mn-text-light);
+      margin-top: 1.25rem;
+      display: block;
+    }
+    .mn-compare-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--mn-text);
+      margin-top: 0.5rem;
+    }
+
+    /* ── CTA ── */
+    .mn-cta {
+      text-align: center;
+      padding: 8rem 2rem;
+      background: var(--mn-offwhite);
+      position: relative;
+    }
+    .mn-cta::before, .mn-cta::after {
+      content: '';
+      position: absolute;
+      left: 10%; right: 10%;
+      height: 1px;
+      background: var(--mn-border);
+    }
+    .mn-cta::before { top: 0; }
+    .mn-cta::after { bottom: 0; }
+    .mn-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 400;
+      color: var(--mn-text);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .mn-cta p { color: var(--mn-text-light); margin-bottom: 3rem; font-size: 1rem; line-height: 1.8; font-weight: 300; }
+    .mn-cta-btn {
+      display: inline-block;
+      color: var(--mn-text);
+      padding: 0.85rem 3rem;
+      border: 1px solid var(--mn-text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: background 0.4s, color 0.4s;
+    }
+    .mn-cta-btn:hover { background: var(--mn-text); color: var(--mn-white); }
+    .mn-cta-sub { display: block; margin-top: 1.5rem; color: var(--mn-mid-grey); font-size: 0.8rem; letter-spacing: 1px; }
+
+    /* ── Crosslinks ── */
+    .mn-crosslinks { padding: 4rem 2rem; background: var(--mn-white); border-top: 1px solid var(--mn-border); }
+    .mn-crosslinks-inner { max-width: 1000px; margin: 0 auto; }
+    .mn-crosslinks h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--mn-text);
+    }
+    .mn-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .mn-crosslink-item {
+      background: transparent;
+      border: 1px solid var(--mn-border);
+      padding: 0.45rem 1rem;
+      color: var(--mn-text-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .mn-crosslink-item:hover { border-color: var(--mn-accent); color: var(--mn-accent); }
+
+    /* ── Animations ── */
+    @keyframes mnFadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes mnLineReveal { from { width: 0; } to { width: 40px; } }
+    .mn-animate { opacity: 0; transform: translateY(25px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .mn-animate.mn-visible { opacity: 1; transform: translateY(0); }
+    .mn-hero-content { animation: mnFadeUp 1s ease 0.2s forwards; opacity: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .mn-hero { min-height: auto; padding: 7rem 1.5rem 4rem; }
+      .mn-philosophy-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .mn-products-grid { grid-template-columns: 1fr; }
+      .mn-principles-grid { grid-template-columns: 1fr; }
+      .mn-palette-grid { grid-template-columns: repeat(2, 1fr); }
+      .mn-compare-grid { grid-template-columns: 1fr; }
+      .mn-section { padding: 5rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .mn-hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body class="mn-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mn-hero">
+    <div class="mn-hero-content">
+      <span class="mn-hero-label">Window Styling</span>
+      <h1>The Beauty of<br><em>Less</em></h1>
+      <p>Window treatments that whisper, not shout. Clean lines, natural textures, and considered simplicity for the modern Melbourne home.</p>
+      <a href="../free-quote.html" class="mn-hero-cta">Begin Your Consultation</a>
+    </div>
+    <div class="mn-hero-line"></div>
+  </section>
+
+  <!-- Photo gallery -->
+  <div style="display:flex;gap:2px;padding:0;max-width:100%;margin:0;">
+    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&auto=format&fit=crop&q=80" alt="Minimalist interior with sheer white curtains" loading="lazy" style="width:33.33%;height:280px;object-fit:cover;">
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&auto=format&fit=crop&q=80" alt="Clean modern living room with simple window blinds" loading="lazy" style="width:33.33%;height:280px;object-fit:cover;">
+    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=80" alt="Light airy room with minimalist roller blinds" loading="lazy" style="width:33.34%;height:280px;object-fit:cover;">
+  </div>
+
+  <!-- Philosophy -->
+  <section class="mn-section">
+    <div class="mn-inner">
+      <div class="mn-philosophy-grid">
+        <div class="mn-animate">
+          <span class="mn-section-label">Philosophy</span>
+          <h2 class="mn-section-title">Less, but better</h2>
+          <div class="mn-divider"></div>
+          <div class="mn-philosophy-text">
+            <p>Minimalist window styling isn't about having nothing — it's about having exactly the right thing. Every fold, every texture, every line serves a purpose.</p>
+            <p>We curate window treatments that integrate seamlessly into your architecture. No visual clutter. No unnecessary hardware. Just clean, intentional design that enhances the light and space you already have.</p>
+            <p>The best window treatment is one you feel rather than see — it shapes the room's atmosphere without drawing attention to itself.</p>
+          </div>
+        </div>
+        <div class="mn-philosophy-visual mn-animate">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&auto=format&fit=crop&q=80" alt="Minimalist window with sheer curtain">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Products -->
+  <section class="mn-section mn-section-alt">
+    <div class="mn-inner">
+      <div class="mn-animate">
+        <span class="mn-section-label">Curated Selection</span>
+        <h2 class="mn-section-title">Three Essentials</h2>
+        <p class="mn-section-subtitle">Every minimalist home needs at most three types of window treatment. We help you choose the right ones.</p>
+      </div>
+      <div class="mn-products-grid">
+        <div class="mn-product-card mn-animate">
+          <div class="mn-product-num">01</div>
+          <h3>Roller Blinds</h3>
+          <p>The purest expression of functional window covering. A single plane of fabric, disappearing completely when not needed.</p>
+          <ul class="mn-product-features">
+            <li>Cassette headbox for invisible mounting</li>
+            <li>Slim 40mm roll diameter</li>
+            <li>Edge-to-edge fabric coverage</li>
+            <li>Matte, linen-look textures</li>
+            <li>Silent spring or motorised</li>
+          </ul>
+        </div>
+        <div class="mn-product-card mn-animate">
+          <div class="mn-product-num">02</div>
+          <h3>Sheer Curtains</h3>
+          <p>Diffused light, gentle movement, architectural softness. Sheers add warmth without weight to any space.</p>
+          <ul class="mn-product-features">
+            <li>S-fold or ripplefold tracks</li>
+            <li>Recessed ceiling track option</li>
+            <li>Natural linen and cotton blends</li>
+            <li>Floor-to-ceiling draping</li>
+            <li>Weighted hems for clean lines</li>
+          </ul>
+        </div>
+        <div class="mn-product-card mn-animate">
+          <div class="mn-product-num">03</div>
+          <h3>Panel Glides</h3>
+          <p>For wide openings and sliding doors. Flat panels that stack neatly and move with architectural precision.</p>
+          <ul class="mn-product-features">
+            <li>Clean vertical lines</li>
+            <li>Variable panel widths</li>
+            <li>Flush ceiling-mount track</li>
+            <li>Coordinate with roller fabrics</li>
+            <li>Stackable to one side</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Art of Simplicity -->
+  <section class="mn-section">
+    <div class="mn-inner">
+      <div class="mn-animate">
+        <span class="mn-section-label">Design Principles</span>
+        <h2 class="mn-section-title">The Art of Simplicity</h2>
+        <p class="mn-section-subtitle">Four principles that guide every minimalist window treatment we design.</p>
+      </div>
+      <div class="mn-principles-grid">
+        <div class="mn-principle mn-animate">
+          <h3>Hide the Hardware</h3>
+          <p>Recessed tracks, cassette headboxes, and concealed brackets. The mechanism should be invisible — only the fabric remains.</p>
+        </div>
+        <div class="mn-principle mn-animate">
+          <h3>Respect the Architecture</h3>
+          <p>Window treatments should follow the room's geometry. Floor-to-ceiling installations extend the vertical line. Wall-to-wall coverage emphasises width.</p>
+        </div>
+        <div class="mn-principle mn-animate">
+          <h3>Limit the Palette</h3>
+          <p>One or two neutral tones across the entire home. Consistency creates calm. Variety creates visual noise.</p>
+        </div>
+        <div class="mn-principle mn-animate">
+          <h3>Embrace Natural Light</h3>
+          <p>Don't fight the light — shape it. Sheers diffuse, sunscreens filter, blockouts frame. Layer for control without complexity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Palette -->
+  <section class="mn-section mn-section-alt">
+    <div class="mn-inner">
+      <div class="mn-animate">
+        <span class="mn-section-label">Material Palette</span>
+        <h2 class="mn-section-title">Textures & Tones</h2>
+        <p class="mn-section-subtitle">Our curated material selection for minimalist interiors — every swatch chosen for its subtlety.</p>
+      </div>
+      <div class="mn-palette-grid">
+        <div class="mn-palette-item mn-animate">
+          <div class="mn-palette-swatch" style="background: #f5f0e8;"></div>
+          <h4>Warm White</h4>
+          <p>Linen roller fabric</p>
+        </div>
+        <div class="mn-palette-item mn-animate">
+          <div class="mn-palette-swatch" style="background: #e8e3d8;"></div>
+          <h4>Natural Oat</h4>
+          <p>Cotton-blend sheer</p>
+        </div>
+        <div class="mn-palette-item mn-animate">
+          <div class="mn-palette-swatch" style="background: #c4beb5;"></div>
+          <h4>Warm Stone</h4>
+          <p>Woven sunscreen</p>
+        </div>
+        <div class="mn-palette-item mn-animate">
+          <div class="mn-palette-swatch" style="background: #c67a4a;"></div>
+          <h4>Terracotta</h4>
+          <p>Accent panel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After -->
+  <section class="mn-section">
+    <div class="mn-inner">
+      <div class="mn-animate">
+        <span class="mn-section-label">Transformation</span>
+        <h2 class="mn-section-title">Before &amp; After</h2>
+        <p class="mn-section-subtitle">The difference considered window styling makes to a space.</p>
+      </div>
+      <div class="mn-compare-grid">
+        <div class="mn-compare-card mn-animate">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&auto=format&fit=crop&q=80" alt="Room before minimalist window treatment">
+          <span class="mn-compare-label">Before</span>
+          <p>Busy patterns, visible hardware, mismatched treatments competing for attention.</p>
+        </div>
+        <div class="mn-compare-card mn-animate">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&auto=format&fit=crop&q=80" alt="Room after minimalist window treatment">
+          <span class="mn-compare-label">After</span>
+          <p>Clean S-fold sheers, recessed track, single tone. The room breathes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mn-cta">
+    <div class="mn-animate">
+      <h2>Ready for Considered Simplicity?</h2>
+      <p>A free design consultation to find the perfect minimal window treatment for your home.</p>
+      <a href="../free-quote.html" class="mn-cta-btn">Book Consultation</a>
+      <span class="mn-cta-sub">Complimentary · In-home · Melbourne-wide</span>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="mn-crosslinks">
+    <div class="mn-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="mn-crosslinks-grid">
+        <a href="commercial-blinds.html" class="mn-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="mn-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="mn-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="mn-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="mn-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="mn-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="mn-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="mn-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="mn-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="mn-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="mn-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="mn-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="pet-friendly.html" class="mn-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="privacy-blinds.html" class="mn-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="conservatory-sunroom.html" class="mn-crosslink-item"><span>→</span> Conservatory &amp; Sunroom Blinds</a>
+        <a href="acoustic-solutions.html" class="mn-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="mn-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="mn-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="mn-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="mn-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="mn-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="mn-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="mn-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="mn-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="mn-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="mn-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="mn-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="mn-crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="skylight-blinds.html" class="mn-crosslink-item"><span>→</span> Skylight &amp; Specialty Windows</a>
+        <a href="heritage-homes.html" class="mn-crosslink-item"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="day-night-blinds.html" class="mn-crosslink-item"><span>→</span> Day Night Zebra Blinds</a>
+        <a href="rental-property.html" class="mn-crosslink-item"><span>→</span> Rental Property Blinds</a>
+        <a href="diy-measuring-guide.html" class="mn-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="scandinavian-style.html" class="mn-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="coastal-home-blinds.html" class="mn-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="diy-installation-guide.html" class="mn-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="high-rise-glare.html" class="mn-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations with IntersectionObserver
+    const mnObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('mn-visible');
+          }, index * 100);
+          mnObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.mn-animate').forEach(el => mnObserver.observe(el));
+  </script>
+
+</body>
+</html>
