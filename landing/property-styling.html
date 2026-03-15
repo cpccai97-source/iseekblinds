@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Styling Blinds Melbourne | Sell Your Home Faster | iSeekBlinds</title>
+  <meta name="description" content="Boost your property value with professionally styled window furnishings. Fast turnaround for auctions and open homes. Vendor packages available. Melbourne.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === BOLD CONTRASTING COLOURS — Geometric, energetic, high-impact === */
+    .ps-page { font-family: 'Space Grotesk', 'Inter', sans-serif; overflow-x: hidden; }
+    .ps-page * { box-sizing: border-box; }
+
+    :root {
+      --ps-coral: #ff6b6b;
+      --ps-navy: #0f172a;
+      --ps-teal: #0d9488;
+      --ps-yellow: #fbbf24;
+      --ps-white: #fafafa;
+      --ps-offwhite: #f1f5f9;
+      --ps-dark: #1e293b;
+      --ps-mint: #5eead4;
+      --ps-hot: #f43f5e;
+    }
+
+    /* Hero — Split diagonal */
+    .ps-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--ps-navy);
+      overflow: hidden;
+    }
+    .ps-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70%;
+      height: 140%;
+      background: linear-gradient(135deg, var(--ps-coral) 0%, var(--ps-hot) 100%);
+      transform: skewX(-12deg);
+      z-index: 1;
+    }
+    .ps-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--ps-yellow), var(--ps-teal), var(--ps-coral));
+      z-index: 3;
+    }
+    .ps-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+    .ps-hero-text { color: var(--ps-white); }
+    .ps-hero-tag {
+      display: inline-block;
+      background: var(--ps-yellow);
+      color: var(--ps-navy);
+      padding: 6px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .ps-hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0 0 20px;
+      color: #fff;
+    }
+    .ps-hero h1 em {
+      font-style: normal;
+      color: var(--ps-yellow);
+    }
+    .ps-hero-desc {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .ps-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .ps-btn {
+      display: inline-block;
+      padding: 16px 36px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .ps-btn-coral {
+      background: var(--ps-coral);
+      color: #fff;
+    }
+    .ps-btn-coral:hover {
+      background: var(--ps-hot);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(244,63,94,0.35);
+    }
+    .ps-btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+    }
+    .ps-btn-ghost:hover {
+      border-color: var(--ps-yellow);
+      color: var(--ps-yellow);
+    }
+
+    /* Hero right: floating stat cards */
+    .ps-hero-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .ps-float-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 28px 32px;
+      color: #fff;
+      transform: translateX(30px);
+      opacity: 0;
+      animation: ps-slideIn 0.6s ease forwards;
+    }
+    .ps-float-card:nth-child(2) { animation-delay: 0.2s; }
+    .ps-float-card:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes ps-slideIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .ps-float-card h4 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ps-yellow);
+      margin: 0 0 4px;
+    }
+    .ps-float-card p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* Section base */
+    .ps-section {
+      padding: 100px 24px;
+    }
+    .ps-section .container { max-width: 1200px; margin: 0 auto; }
+    .ps-section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .ps-section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    /* Why Style section — White bg, teal accents */
+    .ps-why {
+      background: var(--ps-white);
+      color: var(--ps-navy);
+    }
+    .ps-why .ps-section-label { color: var(--ps-teal); }
+    .ps-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .ps-why-card {
+      padding: 36px 28px;
+      border-radius: 16px;
+      border: 2px solid transparent;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .ps-why-card.visible { opacity: 1; transform: translateY(0); }
+    .ps-why-card:nth-child(1) { background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: var(--ps-yellow); }
+    .ps-why-card:nth-child(2) { background: linear-gradient(135deg, #ccfbf1, #99f6e4); border-color: var(--ps-teal); }
+    .ps-why-card:nth-child(3) { background: linear-gradient(135deg, #ffe4e6, #fecdd3); border-color: var(--ps-coral); }
+    .ps-why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .ps-why-icon { font-size: 2.8rem; margin-bottom: 16px; display: block; }
+    .ps-why-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; color: var(--ps-navy); }
+    .ps-why-card p { font-size: 0.95rem; line-height: 1.7; color: var(--ps-dark); opacity: 0.8; }
+
+    /* Packages section — Dark bg */
+    .ps-packages {
+      background: var(--ps-navy);
+      color: var(--ps-white);
+    }
+    .ps-packages .ps-section-label { color: var(--ps-coral); }
+    .ps-packages .ps-section-title { color: #fff; }
+    .ps-pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .ps-pkg-card {
+      border-radius: 16px;
+      padding: 40px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    .ps-pkg-card.visible { opacity: 1; transform: scale(1); }
+    .ps-pkg-card:nth-child(1) {
+      background: linear-gradient(160deg, #1e293b, #334155);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .ps-pkg-card:nth-child(2) {
+      background: linear-gradient(160deg, var(--ps-coral), var(--ps-hot));
+      border: none;
+      transform: scale(0.95);
+    }
+    .ps-pkg-card:nth-child(2).visible { transform: scale(1.03); }
+    .ps-pkg-card:nth-child(3) {
+      background: linear-gradient(160deg, #1e293b, #334155);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .ps-pkg-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .ps-pkg-card:nth-child(2):hover { transform: scale(1.05); }
+    .ps-pkg-badge {
+      position: absolute;
+      top: 16px;
+      right: -30px;
+      background: var(--ps-yellow);
+      color: var(--ps-navy);
+      padding: 4px 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transform: rotate(45deg);
+    }
+    .ps-pkg-name {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .ps-pkg-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .ps-pkg-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      text-align: left;
+    }
+    .ps-pkg-list li {
+      padding: 8px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ps-pkg-list li::before { content: '✓'; color: var(--ps-mint); font-weight: 700; }
+    .ps-pkg-card:nth-child(2) .ps-pkg-list li::before { color: var(--ps-yellow); }
+    .ps-pkg-cta {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .ps-pkg-card:nth-child(1) .ps-pkg-cta,
+    .ps-pkg-card:nth-child(3) .ps-pkg-cta {
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #fff;
+    }
+    .ps-pkg-card:nth-child(2) .ps-pkg-cta {
+      background: var(--ps-yellow);
+      color: var(--ps-navy);
+    }
+    .ps-pkg-cta:hover { transform: translateY(-2px); }
+
+    /* Process section — striped */
+    .ps-process {
+      background: var(--ps-offwhite);
+      color: var(--ps-navy);
+    }
+    .ps-process .ps-section-label { color: var(--ps-coral); }
+    .ps-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 48px;
+      counter-reset: step;
+    }
+    .ps-step {
+      padding: 40px 24px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .ps-step.visible { opacity: 1; transform: translateY(0); }
+    .ps-step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+      color: #fff;
+    }
+    .ps-step:nth-child(1)::before { background: var(--ps-coral); }
+    .ps-step:nth-child(2)::before { background: var(--ps-teal); }
+    .ps-step:nth-child(3)::before { background: var(--ps-yellow); color: var(--ps-navy); }
+    .ps-step:nth-child(4)::before { background: var(--ps-navy); }
+    .ps-step h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .ps-step p { font-size: 0.85rem; color: var(--ps-dark); opacity: 0.7; line-height: 1.6; }
+    .ps-step + .ps-step::after {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 20%;
+      height: 60%;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, #cbd5e1, transparent);
+    }
+
+    /* CTA Banner */
+    .ps-cta-banner {
+      background: linear-gradient(135deg, var(--ps-teal), #0f766e);
+      padding: 80px 24px;
+      text-align: center;
+      color: #fff;
+    }
+    .ps-cta-banner h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .ps-cta-banner p {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .ps-cta-btn {
+      display: inline-block;
+      padding: 18px 48px;
+      border-radius: 6px;
+      background: var(--ps-yellow);
+      color: var(--ps-navy);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .ps-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(251,191,36,0.35);
+    }
+
+    /* Cross-links */
+    .ps-crosslinks {
+      background: var(--ps-navy);
+      color: var(--ps-white);
+      padding: 80px 24px;
+    }
+    .ps-crosslinks .container { max-width: 1200px; margin: 0 auto; }
+    .ps-crosslinks h3 {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      color: var(--ps-coral);
+    }
+    .ps-crosslink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .ps-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .ps-crosslink-item:hover {
+      background: rgba(255,107,107,0.12);
+      color: var(--ps-coral);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .ps-hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .ps-hero::before { width: 100%; right: 0; transform: skewX(-6deg); opacity: 0.3; }
+      .ps-hero-btns { justify-content: center; }
+      .ps-hero-cards { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .ps-float-card { max-width: 250px; }
+      .ps-why-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+      .ps-pkg-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .ps-pkg-card:nth-child(2).visible { transform: scale(1); }
+      .ps-steps { grid-template-columns: repeat(2, 1fr); }
+      .ps-step + .ps-step::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .ps-hero-cards { flex-direction: column; align-items: center; }
+      .ps-steps { grid-template-columns: 1fr; }
+      .ps-crosslink-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="ps-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ps-hero">
+    <div class="ps-hero-inner">
+      <div class="ps-hero-text">
+        <span class="ps-hero-tag">🏠 Property Styling</span>
+        <h1>Sell Faster.<br>Sell for <em>More.</em></h1>
+        <p class="ps-hero-desc">Professional window styling that transforms listings. First impressions sell homes — let our blinds and curtains do the talking at your next open home.</p>
+        <div class="ps-hero-btns">
+          <a href="../free-quote.html" class="ps-btn ps-btn-coral">Get Vendor Quote</a>
+          <a href="#packages" class="ps-btn ps-btn-ghost">View Packages</a>
+        </div>
+      </div>
+      <div class="ps-hero-cards">
+        <div class="ps-float-card">
+          <h4>+12%</h4>
+          <p>Average sale price increase with professional styling</p>
+        </div>
+        <div class="ps-float-card">
+          <h4>3 Days</h4>
+          <p>Average turnaround from measure to install</p>
+        </div>
+        <div class="ps-float-card">
+          <h4>500+</h4>
+          <p>Melbourne properties styled &amp; sold</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Style -->
+  <section class="ps-section ps-why">
+    <div class="container">
+      <span class="ps-section-label">Why It Works</span>
+      <h2 class="ps-section-title">Window Styling Sells Homes</h2>
+      <div class="ps-why-grid">
+        <div class="ps-why-card ps-animate">
+          <span class="ps-why-icon">💰</span>
+          <h3>Higher Sale Price</h3>
+          <p>Styled homes sell for 7–12% more than un-styled equivalents. Window furnishings are the most cost-effective styling investment — instant impact for minimal spend.</p>
+        </div>
+        <div class="ps-why-card ps-animate">
+          <span class="ps-why-icon">⚡</span>
+          <h3>Faster Sale</h3>
+          <p>Properties with professional styling sell 30% faster on average. Well-dressed windows create an emotional connection with buyers from the first photo.</p>
+        </div>
+        <div class="ps-why-card ps-animate">
+          <span class="ps-why-icon">📸</span>
+          <h3>Photo-Ready</h3>
+          <p>Real estate photography is everything. Our sheer curtains and light-filtering blinds create that soft, aspirational glow that stops the scroll on Domain and REA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages" class="ps-section ps-packages">
+    <div class="container">
+      <span class="ps-section-label">Vendor Packages</span>
+      <h2 class="ps-section-title">Choose Your Package</h2>
+      <div class="ps-pkg-grid">
+        <div class="ps-pkg-card ps-animate">
+          <div class="ps-pkg-name">Essential</div>
+          <h3 class="ps-pkg-title">Quick Refresh</h3>
+          <ul class="ps-pkg-list">
+            <li>Roller blinds — all bedrooms</li>
+            <li>Standard white/neutral tones</li>
+            <li>5-day turnaround</li>
+            <li>Free measure &amp; install</li>
+            <li>Post-sale removal available</li>
+          </ul>
+          <a href="../free-quote.html" class="ps-pkg-cta">Get Quote →</a>
+        </div>
+        <div class="ps-pkg-card ps-animate">
+          <span class="ps-pkg-badge">Popular</span>
+          <div class="ps-pkg-name">Professional</div>
+          <h3 class="ps-pkg-title">Full Styling</h3>
+          <ul class="ps-pkg-list">
+            <li>Sheer curtains — living areas</li>
+            <li>Blockout rollers — all bedrooms</li>
+            <li>Premium fabric selection</li>
+            <li>3-day express turnaround</li>
+            <li>Free measure &amp; install</li>
+            <li>Colour consultation included</li>
+          </ul>
+          <a href="../free-quote.html" class="ps-pkg-cta">Get Quote →</a>
+        </div>
+        <div class="ps-pkg-card ps-animate">
+          <div class="ps-pkg-name">Premium</div>
+          <h3 class="ps-pkg-title">Luxury Finish</h3>
+          <ul class="ps-pkg-list">
+            <li>S-Fold curtains throughout</li>
+            <li>Plantation shutters — front</li>
+            <li>Motorised options available</li>
+            <li>Priority 48hr install</li>
+            <li>Styling consultation on-site</li>
+            <li>Vendor payment terms</li>
+          </ul>
+          <a href="../free-quote.html" class="ps-pkg-cta">Get Quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="ps-section ps-process">
+    <div class="container">
+      <span class="ps-section-label">How It Works</span>
+      <h2 class="ps-section-title">From Listing to Sold — In 4 Steps</h2>
+      <div class="ps-steps">
+        <div class="ps-step ps-animate">
+          <h4>Consult</h4>
+          <p>We visit the property, assess every window and recommend the best styling approach for your target market.</p>
+        </div>
+        <div class="ps-step ps-animate">
+          <h4>Select</h4>
+          <p>Choose from our curated property styling range — all designed for maximum buyer appeal and photo impact.</p>
+        </div>
+        <div class="ps-step ps-animate">
+          <h4>Install</h4>
+          <p>Our team installs everything in a single visit. Express turnaround means you're ready for photos within days.</p>
+        </div>
+        <div class="ps-step ps-animate">
+          <h4>Sell</h4>
+          <p>Your property looks stunning at every open home. After settlement, we can remove or the buyer can keep them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ps-cta-banner">
+    <div class="container">
+      <h2>Selling Soon? Let's Talk.</h2>
+      <p>Get a free property styling consultation for your listing. We work with vendors, agents and property stylists across Melbourne.</p>
+      <a href="../free-quote.html" class="ps-cta-btn">Book Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ps-crosslinks">
+    <div class="container">
+      <h3>Explore More Solutions</h3>
+      <div class="ps-crosslink-grid">
+        <a href="child-safety.html" class="ps-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="commercial-blinds.html" class="ps-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="ps-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="ps-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="ps-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="ps-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="ps-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="outdoor-blinds.html" class="ps-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="ps-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="ps-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="ps-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="ps-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="acoustic-solutions.html" class="ps-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="ps-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="ps-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="ps-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="large-windows.html" class="ps-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="eco-friendly.html" class="ps-crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="layered-treatments.html" class="ps-crosslink-item"><span>→</span> Layered Window Treatments</a>
+        <a href="smart-home.html" class="ps-crosslink-item"><span>→</span> Smart Home Automation</a>
+        <a href="bathroom-kitchen.html" class="ps-crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="home-office.html" class="ps-crosslink-item"><span>→</span> Home Office Blinds</a>
+        <a href="bedroom-blackout.html" class="ps-crosslink-item"><span>→</span> Bedroom Blackout Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const psObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 150);
+          psObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.ps-animate').forEach(el => psObserver.observe(el));
+  </script>
+</body>
+</html>
