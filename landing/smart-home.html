@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Blinds & Motorised Window Automation | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Smart home blinds with Google Home, Alexa & Apple HomeKit integration. Motorised curtains, automated schedules, voice control. Free smart home consultation in Melbourne.">
+  <meta name="keywords" content="smart home blinds, motorised blinds Melbourne, Google Home blinds, Alexa blinds, Apple HomeKit blinds, automated curtains, voice control blinds, smart window coverings">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === FUTURISTIC SMART HOME THEME === */
+    :root {
+      --sh-dark: #0a0f1a;
+      --sh-dark-card: #111827;
+      --sh-dark-surface: #1a2332;
+      --sh-neon: #00ff88;
+      --sh-neon-dim: rgba(0, 255, 136, 0.15);
+      --sh-cyan: #00d4ff;
+      --sh-cyan-dim: rgba(0, 212, 255, 0.15);
+      --sh-purple: #8b5cf6;
+      --sh-text: #e2e8f0;
+      --sh-text-muted: #94a3b8;
+      --sh-border: rgba(0, 255, 136, 0.1);
+    }
+
+    .lp-smart-home {
+      background: var(--sh-dark);
+      color: var(--sh-text);
+      min-height: 100vh;
+    }
+
+    /* Animated grid background */
+    .sh-grid-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Glowing orbs */
+    .sh-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .sh-glow-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 255, 136, 0.08);
+      top: 5%;
+      right: -10%;
+      animation: glowPulse 8s ease-in-out infinite alternate;
+    }
+
+    .sh-glow-2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 212, 255, 0.06);
+      bottom: 20%;
+      left: -8%;
+      animation: glowPulse 10s ease-in-out infinite alternate-reverse;
+    }
+
+    .sh-glow-3 {
+      width: 350px;
+      height: 350px;
+      background: rgba(139, 92, 246, 0.06);
+      top: 50%;
+      right: 30%;
+      animation: glowPulse 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* Hero */
+    .sh-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .sh-hero-content {
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .sh-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--sh-neon);
+      color: var(--sh-neon);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.2s;
+      position: relative;
+    }
+
+    .sh-hero-badge::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(90deg, var(--sh-neon), transparent, var(--sh-neon));
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .sh-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.4s;
+    }
+
+    .sh-hero h1 .neon {
+      color: var(--sh-neon);
+      text-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    }
+
+    .sh-hero h1 .cyan {
+      color: var(--sh-cyan);
+      text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .sh-hero-sub {
+      font-size: 1.2rem;
+      color: var(--sh-text-muted);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.6s;
+    }
+
+    .sh-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .btn-neon {
+      background: var(--sh-neon);
+      color: var(--sh-dark);
+      padding: 1rem 2.5rem;
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+    }
+
+    .btn-neon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
+    }
+
+    .btn-wire {
+      border: 1px solid var(--sh-border);
+      color: var(--sh-text);
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-wire:hover {
+      border-color: var(--sh-neon);
+      color: var(--sh-neon);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+
+    /* Compatibility Logos */
+    .sh-compat {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+    }
+
+    .sh-compat-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .sh-compat h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--sh-neon);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .sh-compat-logos {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .sh-compat-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--sh-text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .sh-compat-logo:hover {
+      color: var(--sh-text);
+    }
+
+    .sh-compat-logo-icon {
+      font-size: 2.5rem;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--sh-dark-surface);
+      transition: all 0.3s ease;
+    }
+
+    .sh-compat-logo:hover .sh-compat-logo-icon {
+      border-color: var(--sh-neon);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+
+    .sh-compat-logo-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Section */
+    .sh-section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sh-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .sh-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .sh-section-header h2 .neon { color: var(--sh-neon); }
+    .sh-section-header h2 .cyan { color: var(--sh-cyan); }
+
+    .sh-section-header p {
+      color: var(--sh-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Feature Cards */
+    .sh-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sh-feature-card {
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .sh-feature-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--sh-neon), var(--sh-cyan));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .sh-feature-card:hover {
+      border-color: rgba(0, 255, 136, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0, 255, 136, 0.08);
+    }
+
+    .sh-feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .sh-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .sh-feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--sh-text);
+    }
+
+    .sh-feature-card p {
+      color: var(--sh-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Integration Deep Dive */
+    .sh-integrations-bg {
+      position: relative;
+      z-index: 1;
+      background: var(--sh-dark-surface);
+      border-top: 1px solid var(--sh-border);
+      border-bottom: 1px solid var(--sh-border);
+      padding: 6rem 0;
+    }
+
+    .sh-integrations-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .sh-integration-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 5rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .sh-integration-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-integration-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sh-integration-row.reverse {
+      direction: rtl;
+    }
+
+    .sh-integration-row.reverse > * {
+      direction: ltr;
+    }
+
+    .sh-integration-visual {
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      padding: 3rem;
+      text-align: center;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sh-integration-visual::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--sh-neon), transparent);
+    }
+
+    .sh-integration-emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .sh-integration-visual-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--sh-neon);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .sh-integration-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .sh-integration-text p {
+      color: var(--sh-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .sh-check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .sh-check-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--sh-text-muted);
+      line-height: 1.6;
+    }
+
+    .sh-check-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--sh-neon);
+      font-weight: 700;
+    }
+
+    /* How It Works */
+    .sh-process {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .sh-process-steps {
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .sh-process-steps::before {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--sh-neon), var(--sh-cyan), transparent);
+    }
+
+    .sh-step {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .sh-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-step-dot {
+      width: 70px;
+      height: 70px;
+      min-width: 70px;
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-neon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--sh-neon);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+
+    .sh-step h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .sh-step p {
+      color: var(--sh-text-muted);
+      line-height: 1.7;
+    }
+
+    /* Energy Savings */
+    .sh-savings {
+      position: relative;
+      z-index: 1;
+      background: var(--sh-dark-card);
+      border-top: 1px solid var(--sh-border);
+      border-bottom: 1px solid var(--sh-border);
+      padding: 5rem 2rem;
+    }
+
+    .sh-savings-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .sh-savings-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .sh-saving-item {
+      padding: 2rem;
+      border: 1px solid var(--sh-border);
+      background: var(--sh-dark-surface);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .sh-saving-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-saving-item:hover {
+      border-color: var(--sh-neon);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.08);
+    }
+
+    .sh-saving-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sh-saving-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--sh-neon);
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .sh-saving-label {
+      font-size: 0.85rem;
+      color: var(--sh-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    /* Products */
+    .sh-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sh-product-card {
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .sh-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-product-card:hover {
+      border-color: var(--sh-neon);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(0, 255, 136, 0.08);
+    }
+
+    .sh-product-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, var(--sh-dark-surface), var(--sh-dark));
+      border-bottom: 1px solid var(--sh-border);
+    }
+
+    .sh-product-info {
+      padding: 1.5rem;
+    }
+
+    .sh-product-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .sh-product-info p {
+      font-size: 0.9rem;
+      color: var(--sh-text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .sh-product-tag {
+      display: inline-block;
+      background: var(--sh-neon);
+      color: var(--sh-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Testimonials */
+    .sh-testimonials {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sh-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sh-testimonial {
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .sh-testimonial.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sh-testimonial-stars {
+      color: var(--sh-neon);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .sh-testimonial p {
+      color: var(--sh-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .sh-testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .sh-testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--sh-dark);
+      font-size: 0.85rem;
+      background: var(--sh-neon);
+    }
+
+    .sh-testimonial-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .sh-testimonial-loc {
+      font-size: 0.8rem;
+      color: var(--sh-text-muted);
+    }
+
+    /* CTA */
+    .sh-cta {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .sh-cta-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--sh-dark-card);
+      border: 1px solid var(--sh-border);
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sh-cta-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--sh-neon), var(--sh-cyan), transparent);
+    }
+
+    .sh-cta-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--sh-cyan), var(--sh-neon), transparent);
+    }
+
+    .sh-cta-card h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .sh-cta-card p {
+      color: var(--sh-text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .sh-cta-features {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .sh-cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--sh-text);
+      font-weight: 500;
+    }
+
+    .sh-cta-feature span {
+      color: var(--sh-neon);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Cross Links */
+    .sh-crosslinks {
+      position: relative;
+      z-index: 1;
+      background: var(--sh-dark-card);
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--sh-border);
+    }
+
+    .sh-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .sh-crosslinks h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--sh-text-muted);
+    }
+
+    .sh-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .sh-crosslink-item {
+      display: block;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--sh-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .sh-crosslink-item:hover {
+      border-color: var(--sh-neon);
+      background: var(--sh-neon-dim);
+    }
+
+    .sh-crosslink-item span {
+      color: var(--sh-neon);
+      margin-right: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sh-features-grid { grid-template-columns: 1fr; }
+      .sh-integration-row { grid-template-columns: 1fr; }
+      .sh-integration-row.reverse { direction: ltr; }
+      .sh-savings-grid { grid-template-columns: repeat(2, 1fr); }
+      .sh-products-grid { grid-template-columns: 1fr; }
+      .sh-testimonials-grid { grid-template-columns: 1fr; }
+      .sh-hero h1 { font-size: 2.2rem; }
+      .sh-cta-card { padding: 2.5rem 1.5rem; }
+      .sh-cta-card h2 { font-size: 1.8rem; }
+      .sh-cta-features { flex-direction: column; align-items: center; gap: 0.8rem; }
+    }
+
+    /* Override shared header for dark page */
+    .lp-smart-home .header { background: var(--sh-dark-card); border-bottom: 1px solid var(--sh-border); }
+    .lp-smart-home .top-bar { background: var(--sh-dark); border-bottom: 1px solid var(--sh-border); color: var(--sh-text-muted); }
+    .lp-smart-home .footer { background: var(--sh-dark-card); }
+  </style>
+</head>
+<body class="lp-smart-home">
+
+  <!-- Background Effects -->
+  <div class="sh-grid-bg"></div>
+  <div class="sh-glow sh-glow-1"></div>
+  <div class="sh-glow sh-glow-2"></div>
+  <div class="sh-glow sh-glow-3"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="sh-hero">
+    <div class="sh-hero-content">
+      <div class="sh-hero-badge">⚡ Smart Home Integration</div>
+      <h1>Your Blinds, <span class="neon">Automated</span></h1>
+      <p class="sh-hero-sub">Voice-controlled, app-managed, schedule-automated motorised blinds that integrate seamlessly with Google Home, Amazon Alexa, and Apple HomeKit.</p>
+      <div class="sh-hero-actions">
+        <a href="../free-quote.html" class="btn-neon">Free Smart Home Consultation</a>
+        <a href="#integrations" class="btn-wire">See Integrations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compatibility -->
+  <div class="sh-compat">
+    <div class="sh-compat-inner">
+      <h3>Works With Your Ecosystem</h3>
+      <div class="sh-compat-logos">
+        <div class="sh-compat-logo">
+          <div class="sh-compat-logo-icon">🟢</div>
+          <span class="sh-compat-logo-name">Google Home</span>
+        </div>
+        <div class="sh-compat-logo">
+          <div class="sh-compat-logo-icon">🔵</div>
+          <span class="sh-compat-logo-name">Amazon Alexa</span>
+        </div>
+        <div class="sh-compat-logo">
+          <div class="sh-compat-logo-icon">⚪</div>
+          <span class="sh-compat-logo-name">Apple HomeKit</span>
+        </div>
+        <div class="sh-compat-logo">
+          <div class="sh-compat-logo-icon">🟡</div>
+          <span class="sh-compat-logo-name">SmartThings</span>
+        </div>
+        <div class="sh-compat-logo">
+          <div class="sh-compat-logo-icon">🔴</div>
+          <span class="sh-compat-logo-name">Home Assistant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Features -->
+  <section class="sh-section">
+    <div class="sh-section-header">
+      <h2>Why Go <span class="neon">Smart</span>?</h2>
+      <p>Transform your windows from static coverings into intelligent, responsive systems</p>
+    </div>
+    <div class="sh-features-grid">
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">🎙️</span>
+        <h3>Voice Control</h3>
+        <p>"Hey Google, close the living room blinds." Hands-free control through any voice assistant. Set up rooms, groups, and scenes for multi-blind control with a single command.</p>
+      </div>
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">📱</span>
+        <h3>App Control</h3>
+        <p>Control every blind from anywhere in the world through your smartphone. Set precise positions, create schedules, and monitor status — even when you're on holiday.</p>
+      </div>
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">⏰</span>
+        <h3>Smart Scheduling</h3>
+        <p>Set blinds to open with sunrise and close at sunset — automatically adjusted by season. Create wake-up routines, movie-time scenes, and bedtime schedules.</p>
+      </div>
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">🌡️</span>
+        <h3>Climate Response</h3>
+        <p>Pair with temperature sensors to automatically close blinds when rooms get too hot. Save on cooling costs while maintaining comfort throughout the day.</p>
+      </div>
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">🔒</span>
+        <h3>Security Simulation</h3>
+        <p>When you're away, smart blinds can simulate occupancy by opening and closing at random intervals. Integrates with security systems for a comprehensive smart home setup.</p>
+      </div>
+      <div class="sh-feature-card">
+        <span class="sh-feature-icon">👶</span>
+        <h3>Child Safe by Design</h3>
+        <p>Motorised blinds are inherently child-safe — no cords, no chains, no hazards. The safest option for families with young children, meeting all Australian standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Deep Dive -->
+  <section id="integrations" class="sh-integrations-bg">
+    <div class="sh-integrations-inner">
+      <div class="sh-section-header">
+        <h2>Deep <span class="cyan">Integration</span></h2>
+        <p>Not just basic control — full ecosystem integration with your favourite smart home platforms</p>
+      </div>
+
+      <!-- Google Home -->
+      <div class="sh-integration-row">
+        <div class="sh-integration-visual">
+          <div class="sh-integration-emoji">🟢</div>
+          <div class="sh-integration-visual-label">Google Home</div>
+        </div>
+        <div class="sh-integration-text">
+          <h3>Google Home & <span class="neon">Nest</span></h3>
+          <p>Full integration with Google Home ecosystem. Use voice commands through any Google Nest speaker, Hub, or your Android phone. Create routines that combine blinds with lights, heating, and more.</p>
+          <ul class="sh-check-list">
+            <li>Voice commands: "Hey Google, set bedroom blinds to 50%"</li>
+            <li>Google Home routines — blinds as part of Good Morning/Goodnight</li>
+            <li>Room assignment for grouped control</li>
+            <li>Works with Nest thermostats for climate-responsive automation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Alexa -->
+      <div class="sh-integration-row reverse">
+        <div class="sh-integration-visual">
+          <div class="sh-integration-emoji">🔵</div>
+          <div class="sh-integration-visual-label">Amazon Alexa</div>
+        </div>
+        <div class="sh-integration-text">
+          <h3>Amazon <span class="cyan">Alexa</span></h3>
+          <p>Seamless Alexa integration through Echo devices and the Alexa app. Create custom skills, group blinds by room, and build complex automations with Alexa Routines.</p>
+          <ul class="sh-check-list">
+            <li>Natural language: "Alexa, open all the blinds"</li>
+            <li>Alexa Routines with time, motion, and sensor triggers</li>
+            <li>Multi-room audio + blinds scenes for movie nights</li>
+            <li>Compatible with Ring, Blink, and other Amazon smart home devices</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Apple HomeKit -->
+      <div class="sh-integration-row">
+        <div class="sh-integration-visual">
+          <div class="sh-integration-emoji">⚪</div>
+          <div class="sh-integration-visual-label">Apple HomeKit</div>
+        </div>
+        <div class="sh-integration-text">
+          <h3>Apple <span class="neon">HomeKit</span></h3>
+          <p>Native HomeKit support means your blinds appear in the Apple Home app alongside all your other devices. Use Siri voice control, create automations, and include blinds in HomeKit scenes.</p>
+          <ul class="sh-check-list">
+            <li>Siri control: "Hey Siri, close the curtains"</li>
+            <li>Apple Home automations with time-of-day and sensor triggers</li>
+            <li>HomeKit Secure — encrypted, privacy-first control</li>
+            <li>Control from iPhone, iPad, Apple Watch, Mac, and HomePod</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Process -->
+  <section class="sh-process">
+    <div class="sh-section-header">
+      <h2>Installation <span class="neon">Process</span></h2>
+      <p>From consultation to fully automated blinds in 5 simple steps</p>
+    </div>
+    <div class="sh-process-steps">
+      <div class="sh-step">
+        <div class="sh-step-dot">01</div>
+        <div>
+          <h3>Smart Home Assessment</h3>
+          <p>We assess your existing smart home setup, Wi-Fi coverage, and window types. We'll recommend the best motor and control system for your ecosystem.</p>
+        </div>
+      </div>
+      <div class="sh-step">
+        <div class="sh-step-dot">02</div>
+        <div>
+          <h3>Product Selection</h3>
+          <p>Choose from our range of smart-compatible blinds, curtains, and shutters. Browse fabrics, colours, and motor options. We'll provide samples to take home.</p>
+        </div>
+      </div>
+      <div class="sh-step">
+        <div class="sh-step-dot">03</div>
+        <div>
+          <h3>Precision Measurement</h3>
+          <p>Our technicians measure every window with laser precision. We also map power outlets and Wi-Fi signal strength for optimal motor placement.</p>
+        </div>
+      </div>
+      <div class="sh-step">
+        <div class="sh-step-dot">04</div>
+        <div>
+          <h3>Professional Installation</h3>
+          <p>Expert fitting with clean cable management. Battery motors need no electrician. Hardwired options available for new builds.</p>
+        </div>
+      </div>
+      <div class="sh-step">
+        <div class="sh-step-dot">05</div>
+        <div>
+          <h3>Smart Setup & Training</h3>
+          <p>We pair every blind with your smart home platform, set up rooms, create initial schedules, and walk you through voice commands and app control. You'll be a pro before we leave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Energy Savings -->
+  <section class="sh-savings">
+    <div class="sh-savings-inner">
+      <div class="sh-section-header">
+        <h2>Smart Blinds, <span class="neon">Smart Savings</span></h2>
+        <p>Automated blinds don't just add convenience — they actively reduce your energy bills</p>
+      </div>
+      <div class="sh-savings-grid">
+        <div class="sh-saving-item">
+          <div class="sh-saving-icon">❄️</div>
+          <span class="sh-saving-number">30%</span>
+          <span class="sh-saving-label">Cooling Cost Reduction</span>
+        </div>
+        <div class="sh-saving-item">
+          <div class="sh-saving-icon">🔥</div>
+          <span class="sh-saving-number">25%</span>
+          <span class="sh-saving-label">Heating Cost Reduction</span>
+        </div>
+        <div class="sh-saving-item">
+          <div class="sh-saving-icon">☀️</div>
+          <span class="sh-saving-number">99%</span>
+          <span class="sh-saving-label">UV Protection</span>
+        </div>
+        <div class="sh-saving-item">
+          <div class="sh-saving-icon">🔋</div>
+          <span class="sh-saving-number">12mo</span>
+          <span class="sh-saving-label">Battery Life</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Products -->
+  <section class="sh-section">
+    <div class="sh-section-header">
+      <h2>Smart-Ready <span class="neon">Products</span></h2>
+      <p>Our most popular motorised and smart-compatible window coverings</p>
+    </div>
+    <div class="sh-products-grid">
+      <div class="sh-product-card">
+        <div class="sh-product-visual">🪟</div>
+        <div class="sh-product-info">
+          <h3>Smart Roller Blinds</h3>
+          <p>Motorised rollers with Wi-Fi connectivity. Available in blockout, sunscreen, and light-filtering. Battery or hardwired motors.</p>
+          <span class="sh-product-tag">Best Seller</span>
+        </div>
+      </div>
+      <div class="sh-product-card">
+        <div class="sh-product-visual">🏠</div>
+        <div class="sh-product-info">
+          <h3>Motorised Curtains</h3>
+          <p>Smart curtain tracks with whisper-quiet motors. S-fold and pinch pleat compatible. Open and close with voice or schedule.</p>
+          <span class="sh-product-tag">Premium</span>
+        </div>
+      </div>
+      <div class="sh-product-card">
+        <div class="sh-product-visual">🐝</div>
+        <div class="sh-product-info">
+          <h3>Smart Honeycomb</h3>
+          <p>Energy-efficient honeycomb blinds with motorised operation. Top-down/bottom-up control via app. Maximum insulation.</p>
+          <span class="sh-product-tag">Eco Choice</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="sh-testimonials">
+    <div class="sh-section-header">
+      <h2>What Smart <span class="neon">Homeowners</span> Say</h2>
+      <p>Real feedback from Melbourne homes running iSeekBlinds smart solutions</p>
+    </div>
+    <div class="sh-testimonials-grid">
+      <div class="sh-testimonial">
+        <div class="sh-testimonial-stars">★ ★ ★ ★ ★</div>
+        <p>"Setting up the blinds with Google Home was incredibly easy. Now I just say 'Hey Google, movie time' and every blind in the living room closes while the lights dim. Game changer."</p>
+        <div class="sh-testimonial-author">
+          <div class="sh-testimonial-avatar">DT</div>
+          <div>
+            <div class="sh-testimonial-name">David T.</div>
+            <div class="sh-testimonial-loc">South Yarra, Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="sh-testimonial">
+        <div class="sh-testimonial-stars">★ ★ ★ ★ ★</div>
+        <p>"We have 14 motorised blinds across our home, all controlled through Apple HomeKit. The sunrise automation is my favourite — blinds gently open each morning with natural light. No more alarms."</p>
+        <div class="sh-testimonial-author">
+          <div class="sh-testimonial-avatar">RP</div>
+          <div>
+            <div class="sh-testimonial-name">Rachel P.</div>
+            <div class="sh-testimonial-loc">Malvern, Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="sh-testimonial">
+        <div class="sh-testimonial-stars">★ ★ ★ ★ ★</div>
+        <p>"The energy savings alone have been worth it. Our smart honeycomb blinds auto-close during the hottest part of the day and our summer electricity bill dropped noticeably. Plus the kids love controlling them with Alexa."</p>
+        <div class="sh-testimonial-author">
+          <div class="sh-testimonial-avatar">AK</div>
+          <div>
+            <div class="sh-testimonial-name">Andrew K.</div>
+            <div class="sh-testimonial-loc">Richmond, Melbourne</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sh-cta">
+    <div class="sh-cta-card">
+      <h2>Ready to <span class="neon">Automate</span>?</h2>
+      <p>Book a free smart home consultation. We'll assess your setup and design the perfect automated window solution.</p>
+      <div class="sh-cta-features">
+        <div class="sh-cta-feature"><span>▸</span> Free Consultation</div>
+        <div class="sh-cta-feature"><span>▸</span> Wi-Fi Assessment</div>
+        <div class="sh-cta-feature"><span>▸</span> Setup Included</div>
+      </div>
+      <a href="../free-quote.html" class="btn-neon">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="sh-crosslinks">
+    <div class="sh-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="sh-crosslinks-grid">
+        <a href="child-safety.html" class="sh-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="commercial-blinds.html" class="sh-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="sh-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="sh-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="sh-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="sh-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="sh-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.sh-feature-card, .sh-integration-row, .sh-step, .sh-saving-item, .sh-product-card, .sh-testimonial').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

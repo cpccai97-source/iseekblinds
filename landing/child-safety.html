@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child-Safe Blinds & Cordless Window Coverings | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Child-safe blinds and cordless window coverings in Melbourne. Motorised, spring-loaded and cordless options meeting Australian safety standards. Free child-safety consultation.">
+  <meta name="keywords" content="child safe blinds, cordless blinds, child safety window coverings, motorised blinds kids room, Australian safety standards blinds, Melbourne child safe blinds">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GLASSMORPHISM CHILD SAFETY THEME === */
+    :root {
+      --cs-pink: #f8a4c8;
+      --cs-blue: #a4c8f8;
+      --cs-purple: #c4a4f8;
+      --cs-mint: #a4f8d8;
+      --cs-bg-start: #e8f0fe;
+      --cs-bg-mid: #f0e8fe;
+      --cs-bg-end: #e8fef0;
+      --cs-text: #2d3748;
+      --cs-text-muted: #64748b;
+      --cs-glass: rgba(255, 255, 255, 0.45);
+      --cs-glass-border: rgba(255, 255, 255, 0.6);
+      --cs-glass-shadow: rgba(100, 120, 200, 0.1);
+      --cs-accent: #6366f1;
+      --cs-accent-soft: #818cf8;
+    }
+
+    .lp-child-safety {
+      background: linear-gradient(135deg, var(--cs-bg-start) 0%, var(--cs-bg-mid) 50%, var(--cs-bg-end) 100%);
+      color: var(--cs-text);
+      min-height: 100vh;
+    }
+
+    /* Floating decorative orbs */
+    .cs-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .cs-orb-1 {
+      width: 400px;
+      height: 400px;
+      background: rgba(164, 200, 248, 0.4);
+      top: 10%;
+      left: -5%;
+      animation: orbFloat 12s ease-in-out infinite alternate;
+    }
+
+    .cs-orb-2 {
+      width: 350px;
+      height: 350px;
+      background: rgba(248, 164, 200, 0.3);
+      top: 40%;
+      right: -8%;
+      animation: orbFloat 15s ease-in-out infinite alternate-reverse;
+    }
+
+    .cs-orb-3 {
+      width: 300px;
+      height: 300px;
+      background: rgba(196, 164, 248, 0.3);
+      bottom: 10%;
+      left: 20%;
+      animation: orbFloat 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.05); }
+      100% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    /* Hero */
+    .cs-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .cs-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+    }
+
+    .cs-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cs-accent);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.2s;
+    }
+
+    .cs-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--cs-text);
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.4s;
+    }
+
+    .cs-hero h1 .accent {
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cs-hero-sub {
+      font-size: 1.2rem;
+      color: var(--cs-text-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.6s;
+    }
+
+    .cs-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .btn-cs {
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-soft));
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-cs:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-cs-ghost {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      color: var(--cs-text);
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cs-ghost:hover {
+      background: rgba(255, 255, 255, 0.65);
+      transform: translateY(-2px);
+    }
+
+    /* Trust Banner */
+    .cs-trust {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2rem;
+    }
+
+    .cs-trust-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px var(--cs-glass-shadow);
+    }
+
+    .cs-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .cs-trust-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cs-trust-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--cs-accent);
+      display: block;
+    }
+
+    .cs-trust-label {
+      font-size: 0.8rem;
+      color: var(--cs-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* Glass Card Section */
+    .cs-section {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cs-section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .cs-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--cs-text);
+    }
+
+    .cs-section-header h2 .accent {
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cs-section-header p {
+      color: var(--cs-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Why Child Safety Matters */
+    .cs-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cs-glass-card {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 8px 32px var(--cs-glass-shadow);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cs-glass-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(100, 120, 200, 0.15);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .cs-card-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-soft));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cs-glass-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--cs-text);
+    }
+
+    .cs-glass-card p {
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Solutions Section */
+    .cs-solutions-bg {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 0;
+    }
+
+    .cs-solutions-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      z-index: -1;
+    }
+
+    .cs-solutions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .cs-solution-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cs-solution-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-solution-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .cs-solution-row.reverse {
+      direction: rtl;
+    }
+
+    .cs-solution-row.reverse > * {
+      direction: ltr;
+    }
+
+    .cs-solution-visual {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px var(--cs-glass-shadow);
+    }
+
+    .cs-solution-emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .cs-solution-visual-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cs-accent);
+    }
+
+    .cs-solution-text h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--cs-text);
+    }
+
+    .cs-solution-text p {
+      color: var(--cs-text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .cs-solution-features {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .cs-solution-features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--cs-text-muted);
+      line-height: 1.6;
+    }
+
+    .cs-solution-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--cs-accent);
+      font-weight: 700;
+    }
+
+    /* Standards Section */
+    .cs-standards {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cs-standards-card {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 8px 40px var(--cs-glass-shadow);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cs-standards-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-standards-card h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--cs-text);
+    }
+
+    .cs-standards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cs-standard-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.2rem;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .cs-standard-item:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .cs-standard-icon {
+      font-size: 1.5rem;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    .cs-standard-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--cs-text);
+    }
+
+    .cs-standard-item p {
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Products Grid */
+    .cs-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cs-product-card {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cs-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(100, 120, 200, 0.15);
+    }
+
+    .cs-product-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(248, 164, 200, 0.08));
+    }
+
+    .cs-product-info {
+      padding: 1.5rem;
+    }
+
+    .cs-product-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cs-product-info p {
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .cs-product-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-accent-soft));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Testimonials */
+    .cs-testimonials {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cs-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cs-testimonial {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px var(--cs-glass-shadow);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .cs-testimonial.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .cs-testimonial p {
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .cs-testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .cs-testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cs-blue), var(--cs-pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .cs-testimonial-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--cs-text);
+    }
+
+    .cs-testimonial-loc {
+      font-size: 0.8rem;
+      color: var(--cs-text-muted);
+    }
+
+    /* FAQ */
+    .cs-faq {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cs-faq-item {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .cs-faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-faq-q {
+      padding: 1.2rem 1.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      color: var(--cs-text);
+    }
+
+    .cs-faq-q::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--cs-accent);
+      transition: transform 0.3s ease;
+    }
+
+    .cs-faq-item.active .cs-faq-q::after {
+      transform: rotate(45deg);
+    }
+
+    .cs-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .cs-faq-item.active .cs-faq-a {
+      max-height: 300px;
+    }
+
+    .cs-faq-a-inner {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cs-cta {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cs-cta-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 28px;
+      padding: 4rem 3rem;
+      box-shadow: 0 16px 64px rgba(99, 102, 241, 0.15);
+    }
+
+    .cs-cta-card h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: var(--cs-text);
+    }
+
+    .cs-cta-card h2 .accent {
+      background: linear-gradient(135deg, var(--cs-accent), var(--cs-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cs-cta-card p {
+      color: var(--cs-text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .cs-cta-benefits {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .cs-cta-benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--cs-text);
+      font-weight: 500;
+    }
+
+    .cs-cta-benefit span {
+      color: var(--cs-accent);
+    }
+
+    /* Cross Links */
+    .cs-crosslinks {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+    }
+
+    .cs-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px var(--cs-glass-shadow);
+    }
+
+    .cs-crosslinks-inner h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--cs-text-muted);
+    }
+
+    .cs-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .cs-crosslink-item {
+      display: block;
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--cs-glass-border);
+      border-radius: 12px;
+      color: var(--cs-text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .cs-crosslink-item:hover {
+      border-color: var(--cs-accent);
+      background: rgba(99, 102, 241, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .cs-crosslink-item span {
+      color: var(--cs-accent);
+      margin-right: 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cs-trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .cs-why-grid { grid-template-columns: 1fr; }
+      .cs-solution-row { grid-template-columns: 1fr; }
+      .cs-solution-row.reverse { direction: ltr; }
+      .cs-standards-grid { grid-template-columns: 1fr; }
+      .cs-products-grid { grid-template-columns: 1fr; }
+      .cs-testimonials-grid { grid-template-columns: 1fr; }
+      .cs-hero h1 { font-size: 2.2rem; }
+      .cs-cta-card { padding: 2.5rem 1.5rem; }
+      .cs-cta-card h2 { font-size: 1.8rem; }
+      .cs-cta-benefits { flex-direction: column; align-items: center; gap: 0.8rem; }
+    }
+
+    /* Override shared header/footer for light glassmorphism page */
+    .lp-child-safety .header {
+      background: var(--cs-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--cs-glass-border);
+    }
+
+    .lp-child-safety .top-bar {
+      background: rgba(255,255,255,0.5);
+      border-bottom: 1px solid var(--cs-glass-border);
+    }
+
+    .lp-child-safety .footer {
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+<body class="lp-child-safety">
+
+  <!-- Decorative Orbs -->
+  <div class="cs-orb cs-orb-1"></div>
+  <div class="cs-orb cs-orb-2"></div>
+  <div class="cs-orb cs-orb-3"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-content">
+      <div class="cs-hero-badge">🛡️ Child Safety Certified</div>
+      <h1>Keep Your Little Ones <span class="accent">Safe at Home</span></h1>
+      <p class="cs-hero-sub">Award-winning child-safe blinds and cordless window coverings designed to protect your family. Fully compliant with Australian safety standards.</p>
+      <div class="cs-hero-actions">
+        <a href="../free-quote.html" class="btn-cs">Free Child-Safe Consultation</a>
+        <a href="#solutions" class="btn-cs-ghost">Explore Safe Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats -->
+  <div class="cs-trust">
+    <div class="cs-trust-inner">
+      <div class="cs-trust-grid">
+        <div>
+          <div class="cs-trust-icon">🛡️</div>
+          <span class="cs-trust-number">100%</span>
+          <span class="cs-trust-label">Cordless Options</span>
+        </div>
+        <div>
+          <div class="cs-trust-icon">✅</div>
+          <span class="cs-trust-number">AS/NZS</span>
+          <span class="cs-trust-label">Standards Compliant</span>
+        </div>
+        <div>
+          <div class="cs-trust-icon">👨‍👩‍👧‍👦</div>
+          <span class="cs-trust-number">2000+</span>
+          <span class="cs-trust-label">Families Protected</span>
+        </div>
+        <div>
+          <div class="cs-trust-icon">⭐</div>
+          <span class="cs-trust-number">4.9★</span>
+          <span class="cs-trust-label">Parent Rating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Child Safety Matters -->
+  <section class="cs-section">
+    <div class="cs-section-header">
+      <h2>Why Child Safety <span class="accent">Matters</span></h2>
+      <p>Corded blinds remain one of the top hidden hazards in Australian homes. Every parent deserves peace of mind.</p>
+    </div>
+    <div class="cs-why-grid">
+      <div class="cs-glass-card">
+        <div class="cs-card-icon">⚠️</div>
+        <h3>The Hidden Danger</h3>
+        <p>Blind cords are among the top five hidden hazards for young children in Australian homes. The ACCC has identified corded window coverings as a significant strangulation risk for children under six years of age.</p>
+      </div>
+      <div class="cs-glass-card">
+        <div class="cs-card-icon">📋</div>
+        <h3>Regulatory Changes</h3>
+        <p>Australia has implemented mandatory safety standards (AS/NZS 13120) requiring all new blinds to be child-safe. Since 2010, strict regulations govern the maximum accessible cord length and require safety devices on all corded products.</p>
+      </div>
+      <div class="cs-glass-card">
+        <div class="cs-card-icon">💡</div>
+        <h3>Prevention is Simple</h3>
+        <p>The most effective solution is to eliminate cords entirely. Cordless spring-operated blinds, wand-controlled verticals, and motorised systems provide effortless operation while removing the hazard completely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="cs-solutions-bg">
+    <div class="cs-solutions-inner">
+      <div class="cs-section-header">
+        <h2>Our Child-Safe <span class="accent">Solutions</span></h2>
+        <p>Multiple approaches to keep your children safe while maintaining style and functionality</p>
+      </div>
+
+      <!-- Solution 1: Cordless -->
+      <div class="cs-solution-row">
+        <div class="cs-solution-visual">
+          <div class="cs-solution-emoji">🪟</div>
+          <div class="cs-solution-visual-label">Cordless Spring System</div>
+        </div>
+        <div class="cs-solution-text">
+          <h3>Cordless Spring-Operated Blinds</h3>
+          <p>Our most popular child-safe option. These blinds operate with a simple push-up, pull-down mechanism — no cords, no chains, no wands. Perfect for bedrooms, playrooms, and nurseries.</p>
+          <ul class="cs-solution-features">
+            <li>Smooth, effortless operation — even children can use them safely</li>
+            <li>Available in roller, honeycomb, and pleated styles</li>
+            <li>Blockout, sunscreen, and light-filtering fabrics</li>
+            <li>Stays at any position without locking mechanisms</li>
+            <li>No dangling parts at any height</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Solution 2: Motorised -->
+      <div class="cs-solution-row reverse">
+        <div class="cs-solution-visual">
+          <div class="cs-solution-emoji">📱</div>
+          <div class="cs-solution-visual-label">Smart Motorised Control</div>
+        </div>
+        <div class="cs-solution-text">
+          <h3>Motorised & Smart Blinds</h3>
+          <p>The ultimate in child safety and convenience. Motorised blinds eliminate all accessible cords and chains while adding the luxury of remote control, voice control, and automation.</p>
+          <ul class="cs-solution-features">
+            <li>Control via remote, smartphone app, or voice assistant</li>
+            <li>Set schedules — blinds open with sunrise, close at bedtime</li>
+            <li>Compatible with Google Home, Amazon Alexa, and Apple HomeKit</li>
+            <li>Battery-powered options — no electrician needed</li>
+            <li>Whisper-quiet motors won't disturb sleeping children</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Solution 3: Plantation Shutters -->
+      <div class="cs-solution-row">
+        <div class="cs-solution-visual">
+          <div class="cs-solution-emoji">🚪</div>
+          <div class="cs-solution-visual-label">Plantation Shutters</div>
+        </div>
+        <div class="cs-solution-text">
+          <h3>Plantation Shutters</h3>
+          <p>Inherently child-safe with zero cords, chains, or small parts. Plantation shutters are the gold standard for child safety in window coverings — sturdy, durable, and timeless.</p>
+          <ul class="cs-solution-features">
+            <li>Zero cords or moving parts that pose a hazard</li>
+            <li>Robust construction withstands curious little hands</li>
+            <li>Easy to clean — no fabric to collect dust or allergens</li>
+            <li>Full light control with adjustable louvres</li>
+            <li>Adds value to your home with classic, premium look</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Australian Standards -->
+  <section class="cs-standards">
+    <div class="cs-section-header">
+      <h2>Australian Safety <span class="accent">Standards</span></h2>
+      <p>All our products meet or exceed current Australian safety requirements</p>
+    </div>
+    <div class="cs-standards-card">
+      <h3>🇦🇺 Our Compliance Promise</h3>
+      <div class="cs-standards-grid">
+        <div class="cs-standard-item">
+          <div class="cs-standard-icon">📜</div>
+          <div>
+            <h4>AS/NZS 13120:2017</h4>
+            <p>Full compliance with the Australian & New Zealand standard for internal blinds and window coverings safety.</p>
+          </div>
+        </div>
+        <div class="cs-standard-item">
+          <div class="cs-standard-icon">🔒</div>
+          <div>
+            <h4>ACCC Guidelines</h4>
+            <p>Products tested and approved per Australian Competition and Consumer Commission child safety guidelines.</p>
+          </div>
+        </div>
+        <div class="cs-standard-item">
+          <div class="cs-standard-icon">🏷️</div>
+          <div>
+            <h4>Safety Labelling</h4>
+            <p>All products carry mandatory safety labels and are supplied with child-safety warning tags and installation guides.</p>
+          </div>
+        </div>
+        <div class="cs-standard-item">
+          <div class="cs-standard-icon">🔧</div>
+          <div>
+            <h4>Professional Installation</h4>
+            <p>Our certified installers ensure all safety devices are correctly fitted, with cord cleats, tensioners, and anchors where required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="cs-section">
+    <div class="cs-section-header">
+      <h2>Top Child-Safe <span class="accent">Products</span></h2>
+      <p>Our most recommended products for families with young children</p>
+    </div>
+    <div class="cs-products-grid">
+      <div class="cs-product-card">
+        <div class="cs-product-visual">🪟</div>
+        <div class="cs-product-info">
+          <h3>Cordless Roller Blinds</h3>
+          <p>Spring-operated roller blinds in blockout or sunscreen. No cords, no chains. Simply push up or pull down to adjust.</p>
+          <span class="cs-product-tag">Most Popular</span>
+        </div>
+      </div>
+      <div class="cs-product-card">
+        <div class="cs-product-visual">🐝</div>
+        <div class="cs-product-info">
+          <h3>Cordless Honeycomb</h3>
+          <p>Energy-efficient honeycomb blinds with cordless operation. Insulates rooms and blocks UV while keeping kids safe.</p>
+          <span class="cs-product-tag">Energy Saver</span>
+        </div>
+      </div>
+      <div class="cs-product-card">
+        <div class="cs-product-visual">⚡</div>
+        <div class="cs-product-info">
+          <h3>Motorised Blockout</h3>
+          <p>Rechargeable battery-powered motors with remote control. Perfect for nurseries — quiet operation won't wake little ones.</p>
+          <span class="cs-product-tag">Premium Choice</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="cs-testimonials">
+    <div class="cs-section-header">
+      <h2>What <span class="accent">Parents</span> Say</h2>
+      <p>Real feedback from Melbourne families who chose iSeekBlinds child-safe solutions</p>
+    </div>
+    <div class="cs-testimonials-grid">
+      <div class="cs-testimonial">
+        <div class="cs-testimonial-stars">★★★★★</div>
+        <p>"We replaced all our corded blinds when our first baby arrived. The cordless rollers from iSeekBlinds are so easy to use and I never have to worry about safety. Best investment we made for the nursery."</p>
+        <div class="cs-testimonial-author">
+          <div class="cs-testimonial-avatar">SL</div>
+          <div>
+            <div class="cs-testimonial-name">Sarah L.</div>
+            <div class="cs-testimonial-loc">Toorak, Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-testimonial">
+        <div class="cs-testimonial-stars">★★★★★</div>
+        <p>"The motorised blinds in the kids' rooms are brilliant. We set them to close at 7pm for bedtime and open at 7am. No more battles getting the kids to sleep — the darkened room does it! Plus zero cords to worry about."</p>
+        <div class="cs-testimonial-author">
+          <div class="cs-testimonial-avatar">MK</div>
+          <div>
+            <div class="cs-testimonial-name">Michael K.</div>
+            <div class="cs-testimonial-loc">Brighton, Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="cs-testimonial">
+        <div class="cs-testimonial-stars">★★★★★</div>
+        <p>"As a childcare operator, safety is non-negotiable. iSeekBlinds fitted out our entire centre with compliant cordless blinds. Professional, fast, and the blinds look fantastic. Highly recommend for any childcare or school."</p>
+        <div class="cs-testimonial-author">
+          <div class="cs-testimonial-avatar">JW</div>
+          <div>
+            <div class="cs-testimonial-name">Jenny W.</div>
+            <div class="cs-testimonial-loc">Hawthorn, Melbourne</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="cs-faq">
+    <div class="cs-section-header">
+      <h2>Frequently Asked <span class="accent">Questions</span></h2>
+    </div>
+
+    <div class="cs-faq-item">
+      <div class="cs-faq-q">Are cordless blinds really safe for children?</div>
+      <div class="cs-faq-a">
+        <div class="cs-faq-a-inner">Yes, cordless blinds are the safest option for homes with young children. By completely eliminating cords and chains, there are no strangulation or entanglement hazards. Our cordless blinds meet all Australian safety standards and are recommended by child safety organisations.</div>
+      </div>
+    </div>
+
+    <div class="cs-faq-item">
+      <div class="cs-faq-q">Can I retrofit my existing blinds to be child-safe?</div>
+      <div class="cs-faq-a">
+        <div class="cs-faq-a-inner">In some cases, safety devices like cord cleats, cord tidies, or tensioners can be added to existing blinds. However, the safest option is always to replace corded blinds with cordless or motorised alternatives. We offer free assessments to evaluate your current blinds and recommend the best approach.</div>
+      </div>
+    </div>
+
+    <div class="cs-faq-item">
+      <div class="cs-faq-q">How much do child-safe blinds cost compared to regular blinds?</div>
+      <div class="cs-faq-a">
+        <div class="cs-faq-a-inner">Cordless spring-operated blinds are typically only 10-15% more than standard corded options. Motorised blinds are a premium option but battery-powered motors have become very affordable. We believe child safety shouldn't come at a premium — contact us for competitive family-friendly pricing.</div>
+      </div>
+    </div>
+
+    <div class="cs-faq-item">
+      <div class="cs-faq-q">What about my rental property — can I install child-safe blinds?</div>
+      <div class="cs-faq-a">
+        <div class="cs-faq-a-inner">Yes! As of recent Australian tenancy law updates, landlords are required to ensure window coverings meet child safety standards. If your rental has non-compliant blinds, speak with your landlord or property manager. We work with many landlords and property managers to upgrade rental properties.</div>
+      </div>
+    </div>
+
+    <div class="cs-faq-item">
+      <div class="cs-faq-q">Do motorised blinds need to be hardwired?</div>
+      <div class="cs-faq-a">
+        <div class="cs-faq-a-inner">Not necessarily. We offer rechargeable battery-powered motors that require no wiring at all — they simply replace the existing blind mechanism. A single charge can last 6-12 months depending on usage. Hardwired options are also available for new builds or renovations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cs-cta">
+    <div class="cs-cta-card">
+      <h2>Protect Your Family <span class="accent">Today</span></h2>
+      <p>Book a free child-safety consultation. We'll assess your home and recommend the safest solutions for your family.</p>
+      <div class="cs-cta-benefits">
+        <div class="cs-cta-benefit"><span>✓</span> Free Home Assessment</div>
+        <div class="cs-cta-benefit"><span>✓</span> No Obligation Quote</div>
+        <div class="cs-cta-benefit"><span>✓</span> Same-Week Installation</div>
+      </div>
+      <a href="../free-quote.html" class="btn-cs">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="cs-crosslinks">
+    <div class="cs-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="cs-crosslinks-grid">
+        <a href="smart-home.html" class="cs-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="commercial-blinds.html" class="cs-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="cs-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="cs-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="cs-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="cs-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="cs-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.cs-glass-card, .cs-solution-row, .cs-standards-card, .cs-product-card, .cs-testimonial, .cs-faq-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.cs-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.cs-faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
