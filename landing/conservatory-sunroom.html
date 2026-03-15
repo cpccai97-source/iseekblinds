@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conservatory & Sunroom Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialist blinds for conservatories and sunrooms. UV protection, heat management, glare reduction and skylight integration. Free measure & quote Melbourne.">
+  <meta name="keywords" content="conservatory blinds Melbourne, sunroom blinds, UV protection blinds, heat reducing blinds, skylight blinds conservatory, sunroom window treatments">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 大胆撞色 WARM BOLD THEME === */
+    :root {
+      --cs-amber: #D97706;
+      --cs-amber-light: #FDE68A;
+      --cs-terracotta: #C2553A;
+      --cs-terracotta-light: #FECACA;
+      --cs-teal: #0D9488;
+      --cs-teal-light: #CCFBF1;
+      --cs-cream: #FFF8ED;
+      --cs-charcoal: #1C1917;
+      --cs-text: #1C1917;
+      --cs-text-muted: #78716c;
+      --cs-white: #ffffff;
+      --cs-radius: 16px;
+    }
+
+    .lp-conservatory {
+      background: var(--cs-cream);
+      color: var(--cs-text);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .lp-conservatory * {
+      box-sizing: border-box;
+    }
+
+    /* Animations */
+    @keyframes csScaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes csFadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes csRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .cs-animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cs-animate.cs-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cs-animate-delay-1 { transition-delay: 0.1s; }
+    .cs-animate-delay-2 { transition-delay: 0.2s; }
+    .cs-animate-delay-3 { transition-delay: 0.3s; }
+    .cs-animate-delay-4 { transition-delay: 0.4s; }
+    .cs-animate-delay-5 { transition-delay: 0.5s; }
+
+    /* Geometric decorative elements */
+    .cs-geo {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cs-geo-diamond {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--cs-amber);
+      transform: rotate(45deg);
+      opacity: 0.15;
+    }
+
+    .cs-geo-circle {
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--cs-teal);
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+
+    .cs-geo-triangle {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid var(--cs-terracotta);
+      opacity: 0.08;
+    }
+
+    /* Hero */
+    .cs-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--cs-amber) 0%, var(--cs-terracotta) 50%, #7C2D12 100%);
+      padding: 120px 24px 80px;
+    }
+
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(13, 148, 136, 0.2);
+      filter: blur(100px);
+    }
+
+    .cs-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      border: 3px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .cs-hero-inner {
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cs-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      color: var(--cs-cream);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .cs-hero-badge span {
+      font-size: 1.1rem;
+    }
+
+    .cs-hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      color: var(--cs-white);
+      margin: 0 0 24px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .cs-hero h1 em {
+      font-style: normal;
+      color: var(--cs-amber-light);
+    }
+
+    .cs-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 540px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .cs-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--cs-white);
+      color: var(--cs-charcoal);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border-radius: var(--cs-radius);
+      transition: all 0.3s ease;
+      border: 2px solid var(--cs-white);
+    }
+
+    .cs-btn:hover {
+      background: transparent;
+      color: var(--cs-white);
+    }
+
+    .cs-btn-dark {
+      background: var(--cs-charcoal);
+      color: var(--cs-white);
+      border-color: var(--cs-charcoal);
+    }
+
+    .cs-btn-dark:hover {
+      background: var(--cs-amber);
+      border-color: var(--cs-amber);
+      color: var(--cs-white);
+    }
+
+    .cs-btn-outline {
+      background: transparent;
+      color: var(--cs-charcoal);
+      border: 2px solid var(--cs-charcoal);
+    }
+
+    .cs-btn-outline:hover {
+      background: var(--cs-charcoal);
+      color: var(--cs-white);
+    }
+
+    /* Section base */
+    .cs-section {
+      padding: 100px 24px;
+      position: relative;
+    }
+
+    .cs-section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Bold divider */
+    .cs-divider {
+      height: 6px;
+      background: linear-gradient(90deg, var(--cs-amber), var(--cs-terracotta), var(--cs-teal));
+      margin: 0;
+    }
+
+    /* Section headers */
+    .cs-section-header {
+      margin-bottom: 64px;
+    }
+
+    .cs-section-header .cs-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--cs-amber);
+      color: var(--cs-white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .cs-section-header h2 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--cs-charcoal);
+      margin: 0 0 16px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .cs-section-header p {
+      font-size: 1.05rem;
+      color: var(--cs-text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* UV Protection Section */
+    .cs-uv {
+      background: var(--cs-white);
+    }
+
+    .cs-uv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cs-uv-card {
+      background: var(--cs-cream);
+      border-radius: var(--cs-radius);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cs-uv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(28, 25, 23, 0.08);
+    }
+
+    .cs-uv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .cs-uv-card:nth-child(1)::before { background: var(--cs-amber); }
+    .cs-uv-card:nth-child(2)::before { background: var(--cs-terracotta); }
+    .cs-uv-card:nth-child(3)::before { background: var(--cs-teal); }
+
+    .cs-uv-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+
+    .cs-uv-card:nth-child(1) .cs-uv-icon { background: rgba(217, 119, 6, 0.1); }
+    .cs-uv-card:nth-child(2) .cs-uv-icon { background: rgba(194, 85, 58, 0.1); }
+    .cs-uv-card:nth-child(3) .cs-uv-icon { background: rgba(13, 148, 136, 0.1); }
+
+    .cs-uv-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-uv-card p {
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .cs-uv-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(28, 25, 23, 0.06);
+    }
+
+    .cs-uv-stat-num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .cs-uv-card:nth-child(1) .cs-uv-stat-num { color: var(--cs-amber); }
+    .cs-uv-card:nth-child(2) .cs-uv-stat-num { color: var(--cs-terracotta); }
+    .cs-uv-card:nth-child(3) .cs-uv-stat-num { color: var(--cs-teal); }
+
+    .cs-uv-stat-label {
+      font-size: 0.8rem;
+      color: var(--cs-text-muted);
+      font-weight: 400;
+    }
+
+    /* Heat Management Section */
+    .cs-heat {
+      background: var(--cs-charcoal);
+      color: var(--cs-white);
+      overflow: hidden;
+    }
+
+    .cs-heat .cs-section-header h2 { color: var(--cs-white); }
+    .cs-heat .cs-section-header p { color: rgba(255,255,255,0.5); }
+    .cs-heat .cs-tag { background: var(--cs-terracotta); }
+
+    .cs-heat-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .cs-heat-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--cs-white);
+      margin: 0 0 16px;
+    }
+
+    .cs-heat-content p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      margin: 0 0 32px;
+    }
+
+    .cs-heat-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cs-heat-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    .cs-heat-features li span {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cs-heat-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .cs-heat-stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--cs-radius);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .cs-heat-stat-card .num {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .cs-heat-stat-card:nth-child(1) .num { color: var(--cs-amber); }
+    .cs-heat-stat-card:nth-child(2) .num { color: var(--cs-teal); }
+    .cs-heat-stat-card:nth-child(3) .num { color: var(--cs-terracotta); }
+    .cs-heat-stat-card:nth-child(4) .num { color: var(--cs-amber-light); }
+
+    .cs-heat-stat-card .label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Glare Reduction Section */
+    .cs-glare {
+      background: var(--cs-cream);
+    }
+
+    .cs-glare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .cs-glare-card {
+      background: var(--cs-white);
+      border-radius: var(--cs-radius);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(28, 25, 23, 0.06);
+    }
+
+    .cs-glare-card-accent {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+
+    .cs-glare-card:nth-child(1) .cs-glare-card-accent { background: var(--cs-amber); }
+    .cs-glare-card:nth-child(2) .cs-glare-card-accent { background: var(--cs-teal); }
+    .cs-glare-card:nth-child(3) .cs-glare-card-accent { background: var(--cs-terracotta); }
+    .cs-glare-card:nth-child(4) .cs-glare-card-accent { background: var(--cs-amber); }
+
+    .cs-glare-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-glare-card p {
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .cs-glare-rec {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cs-glare-card:nth-child(1) .cs-glare-rec { background: rgba(217,119,6,0.1); color: var(--cs-amber); }
+    .cs-glare-card:nth-child(2) .cs-glare-rec { background: rgba(13,148,136,0.1); color: var(--cs-teal); }
+    .cs-glare-card:nth-child(3) .cs-glare-rec { background: rgba(194,85,58,0.1); color: var(--cs-terracotta); }
+    .cs-glare-card:nth-child(4) .cs-glare-rec { background: rgba(217,119,6,0.1); color: var(--cs-amber); }
+
+    /* Skylight Section */
+    .cs-skylight {
+      background: var(--cs-white);
+      position: relative;
+    }
+
+    .cs-skylight-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .cs-skylight-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-skylight-content p {
+      font-size: 0.95rem;
+      color: var(--cs-text-muted);
+      line-height: 1.8;
+      margin: 0 0 28px;
+    }
+
+    .cs-skylight-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+    }
+
+    .cs-skylight-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(28,25,23,0.06);
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cs-skylight-list li .check {
+      width: 22px;
+      height: 22px;
+      background: var(--cs-teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cs-white);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .cs-skylight-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .cs-skylight-box {
+      border-radius: var(--cs-radius);
+      padding: 40px 24px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .cs-skylight-box:hover {
+      transform: scale(1.03);
+    }
+
+    .cs-skylight-box:nth-child(1) {
+      background: linear-gradient(135deg, var(--cs-amber), #F59E0B);
+      color: var(--cs-white);
+      grid-column: span 2;
+    }
+
+    .cs-skylight-box:nth-child(2) {
+      background: var(--cs-teal-light);
+      color: var(--cs-teal);
+    }
+
+    .cs-skylight-box:nth-child(3) {
+      background: var(--cs-terracotta-light);
+      color: var(--cs-terracotta);
+    }
+
+    .cs-skylight-box .box-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .cs-skylight-box .box-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cs-skylight-box .box-desc {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Plant-Friendly Section */
+    .cs-plants {
+      background: linear-gradient(180deg, var(--cs-cream) 0%, #ECFDF5 100%);
+    }
+
+    .cs-plants .cs-tag { background: var(--cs-teal); }
+
+    .cs-plants-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cs-plant-card {
+      background: var(--cs-white);
+      border-radius: var(--cs-radius);
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid rgba(13, 148, 136, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .cs-plant-card:hover {
+      border-color: var(--cs-teal);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(13, 148, 136, 0.08);
+    }
+
+    .cs-plant-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .cs-plant-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-plant-card p {
+      font-size: 0.85rem;
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Styling Section */
+    .cs-styling {
+      background: var(--cs-white);
+    }
+
+    .cs-styling .cs-tag { background: var(--cs-amber); }
+
+    .cs-styling-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .cs-style-card {
+      border-radius: var(--cs-radius);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cs-style-card:nth-child(1) {
+      background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .cs-style-card:nth-child(2) {
+      background: var(--cs-cream);
+      border: 1px solid rgba(28,25,23,0.06);
+    }
+
+    .cs-style-card:nth-child(3) {
+      background: linear-gradient(135deg, var(--cs-teal-light) 0%, #A7F3D0 100%);
+    }
+
+    .cs-style-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-style-card p {
+      font-size: 0.9rem;
+      color: var(--cs-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .cs-style-card-tips {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .cs-style-card-tips li {
+      padding: 8px 0;
+      font-size: 0.85rem;
+      color: var(--cs-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cs-style-card-tips li span {
+      color: var(--cs-amber);
+      font-weight: 700;
+    }
+
+    /* CTA Section */
+    .cs-cta {
+      background: linear-gradient(135deg, var(--cs-amber) 0%, var(--cs-terracotta) 100%);
+      color: var(--cs-white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cs-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+
+    .cs-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      border: 3px solid rgba(255,255,255,0.08);
+      transform: rotate(45deg);
+    }
+
+    .cs-cta h2 {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: var(--cs-white);
+    }
+
+    .cs-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .cs-cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Cross-links */
+    .cs-crosslinks {
+      background: var(--cs-cream);
+      padding: 80px 24px;
+    }
+
+    .cs-crosslinks-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .cs-crosslinks h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--cs-charcoal);
+    }
+
+    .cs-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .cs-crosslink-item {
+      display: block;
+      padding: 14px 18px;
+      background: var(--cs-white);
+      text-decoration: none;
+      color: var(--cs-text-muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .cs-crosslink-item:hover {
+      border-color: var(--cs-amber);
+      color: var(--cs-charcoal);
+      background: var(--cs-white);
+      transform: translateX(4px);
+    }
+
+    .cs-crosslink-item span {
+      margin-right: 8px;
+      color: var(--cs-amber);
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cs-uv-grid {
+        grid-template-columns: 1fr;
+      }
+      .cs-heat-layout {
+        grid-template-columns: 1fr;
+      }
+      .cs-heat-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cs-glare-grid {
+        grid-template-columns: 1fr;
+      }
+      .cs-skylight-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .cs-plants-grid {
+        grid-template-columns: 1fr;
+      }
+      .cs-styling-grid {
+        grid-template-columns: 1fr;
+      }
+      .cs-style-card:nth-child(1) {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cs-section {
+        padding: 72px 20px;
+      }
+      .cs-hero {
+        padding: 120px 20px 60px;
+      }
+      .cs-heat-stats {
+        grid-template-columns: 1fr;
+      }
+      .cs-skylight-visual {
+        grid-template-columns: 1fr;
+      }
+      .cs-skylight-box:nth-child(1) {
+        grid-column: span 1;
+      }
+      .cs-cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,248,237,0.98);
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: var(--cs-charcoal);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 2rem;
+      background: none; border: none;
+      cursor: pointer;
+      color: var(--cs-charcoal);
+    }
+  </style>
+</head>
+<body class="lp-conservatory">
+
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <a href="../index.html">Home</a>
+    <a href="../index.html#products">Products</a>
+    <a href="../gallery.html">Gallery</a>
+    <a href="../about.html">About Us</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../free-quote.html">Free Quote</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-inner cs-animate">
+      <div class="cs-hero-badge"><span>☀️</span> Specialist Conservatory Solutions</div>
+      <h1>Sun-Drenched Spaces,<br><em>Perfectly Controlled</em></h1>
+      <p>Expert blinds for conservatories and sunrooms — managing heat, UV, and glare while preserving the light-filled atmosphere you love.</p>
+      <a href="../free-quote.html" class="cs-btn">Get Free Consultation</a>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 1: UV Protection -->
+  <section class="cs-section cs-uv">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">UV Protection</div>
+        <h2>Shield Your Space From<br>Harmful UV Rays</h2>
+        <p>Conservatories and sunrooms are exposed to intense UV radiation. Our specialist fabrics block up to 99% of damaging rays.</p>
+      </div>
+
+      <div class="cs-uv-grid">
+        <div class="cs-uv-card cs-animate cs-animate-delay-1">
+          <div class="cs-uv-icon">🛡️</div>
+          <h3>Fabric Protection</h3>
+          <p>Specialist UV-blocking fabrics that filter harmful wavelengths while transmitting visible light. Protect your furniture, flooring, and plants from sun damage and fading.</p>
+          <div class="cs-uv-stat">
+            <span class="cs-uv-stat-num">99%</span>
+            <span class="cs-uv-stat-label">UV blocked</span>
+          </div>
+        </div>
+        <div class="cs-uv-card cs-animate cs-animate-delay-2">
+          <div class="cs-uv-icon">🎨</div>
+          <h3>Fade Prevention</h3>
+          <p>Without protection, conservatory furnishings can fade within months. Our treatments dramatically extend the life of upholstery, timber, and artwork exposed to direct sunlight.</p>
+          <div class="cs-uv-stat">
+            <span class="cs-uv-stat-num">10×</span>
+            <span class="cs-uv-stat-label">longer fabric life</span>
+          </div>
+        </div>
+        <div class="cs-uv-card cs-animate cs-animate-delay-3">
+          <div class="cs-uv-icon">👁️</div>
+          <h3>Skin Safety</h3>
+          <p>Extended time in unprotected glass rooms can cause sun damage equivalent to outdoor exposure. Our blinds let you enjoy your sunroom safely for hours, every day.</p>
+          <div class="cs-uv-stat">
+            <span class="cs-uv-stat-num">SPF</span>
+            <span class="cs-uv-stat-label">50+ equivalent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 2: Heat Management -->
+  <section class="cs-section cs-heat">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">Heat Control</div>
+        <h2>Master the Temperature</h2>
+        <p>Melbourne conservatories can reach 50°C+ in summer without proper treatment. Our solutions keep them comfortable year-round.</p>
+      </div>
+
+      <div class="cs-heat-layout">
+        <div class="cs-heat-content cs-animate cs-animate-delay-1">
+          <h3>Intelligent Heat Management</h3>
+          <p>The greenhouse effect in conservatories traps solar energy, creating unbearable temperatures in summer and heat loss in winter. Our specialist blinds address both extremes.</p>
+          <ul class="cs-heat-features">
+            <li><span>🔥</span> Reflective-backed fabrics bounce solar heat outward before it enters the room, reducing internal temperature by up to 15°C</li>
+            <li><span>❄️</span> Honeycomb cells trap insulating air pockets, reducing winter heat loss through glass by up to 50%</li>
+            <li><span>⚡</span> Motorised systems respond to temperature sensors, adjusting automatically throughout the day for optimal comfort</li>
+            <li><span>🌿</span> Natural timber venetians and bamboo weaves regulate airflow while filtering intense direct sunlight</li>
+            <li><span>💰</span> Reduce air conditioning costs by up to 40% with properly fitted conservatory blinds — they pay for themselves</li>
+          </ul>
+        </div>
+        <div class="cs-heat-stats cs-animate cs-animate-delay-2">
+          <div class="cs-heat-stat-card">
+            <div class="num">15°C</div>
+            <div class="label">Temperature Reduction</div>
+          </div>
+          <div class="cs-heat-stat-card">
+            <div class="num">50%</div>
+            <div class="label">Winter Heat Retained</div>
+          </div>
+          <div class="cs-heat-stat-card">
+            <div class="num">40%</div>
+            <div class="label">Energy Cost Savings</div>
+          </div>
+          <div class="cs-heat-stat-card">
+            <div class="num">365</div>
+            <div class="label">Days of Comfort</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 3: Glare Reduction -->
+  <section class="cs-section cs-glare">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">Glare Control</div>
+        <h2>Enjoy the Light,<br>Lose the Glare</h2>
+        <p>The right blind diffuses harsh direct sunlight into soft, comfortable ambient light — making your conservatory genuinely liveable.</p>
+      </div>
+
+      <div class="cs-glare-grid">
+        <div class="cs-glare-card cs-animate cs-animate-delay-1">
+          <div class="cs-glare-card-accent"></div>
+          <h3>Screen Glare for Devices</h3>
+          <p>Use your laptop, tablet, or TV in the sunroom without washed-out screens. Sunscreen fabrics with 3–5% openness reduce glare while maintaining views.</p>
+          <div class="cs-glare-rec">Sunscreen Roller</div>
+        </div>
+        <div class="cs-glare-card cs-animate cs-animate-delay-2">
+          <div class="cs-glare-card-accent"></div>
+          <h3>Reading & Relaxation</h3>
+          <p>Eliminate eye strain from direct sunlight while reading. Light-filtering fabrics create even, diffused illumination perfect for extended reading sessions.</p>
+          <div class="cs-glare-rec">Light-Filtering Cellular</div>
+        </div>
+        <div class="cs-glare-card cs-animate cs-animate-delay-3">
+          <div class="cs-glare-card-accent"></div>
+          <h3>Dining Comfort</h3>
+          <p>Nothing ruins a meal like blinding sun in your eyes. Venetian blinds let you angle slats precisely to redirect light above seated eye level.</p>
+          <div class="cs-glare-rec">Venetian Blinds</div>
+        </div>
+        <div class="cs-glare-card cs-animate cs-animate-delay-4">
+          <div class="cs-glare-card-accent"></div>
+          <h3>Morning & Afternoon Sun</h3>
+          <p>East and west-facing glass gets the worst low-angle sun. Dual roller systems let you switch between sheer daytime mode and blockout when the sun strikes directly.</p>
+          <div class="cs-glare-rec">Dual Roller System</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 4: Skylight Integration -->
+  <section class="cs-section cs-skylight">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">Skylight Solutions</div>
+        <h2>Don't Forget the Roof</h2>
+        <p>Conservatory roofs account for up to 70% of heat gain. Specialist skylight blinds are essential for a comfortable space.</p>
+      </div>
+
+      <div class="cs-skylight-layout">
+        <div class="cs-skylight-content cs-animate cs-animate-delay-1">
+          <h3>Engineered for Overhead Glass</h3>
+          <p>Standard blinds can't handle the unique demands of roof-mounted installation — heat, angle, and operation all require specialist solutions.</p>
+          <ul class="cs-skylight-list">
+            <li><div class="check">✓</div> Tensioned wire-guided systems for angled installations</li>
+            <li><div class="check">✓</div> Motorised operation (essential for hard-to-reach roofs)</li>
+            <li><div class="check">✓</div> Heat-reflective aluminium-backed fabrics</li>
+            <li><div class="check">✓</div> Custom-shaped panels for curved or triangular roofs</li>
+            <li><div class="check">✓</div> Rain sensor integration for automated closing</li>
+            <li><div class="check">✓</div> Compatible with VELUX, Roto, and custom skylights</li>
+          </ul>
+          <a href="skylight-blinds.html" class="cs-btn cs-btn-dark">View Skylight Range</a>
+        </div>
+        <div class="cs-skylight-visual cs-animate cs-animate-delay-2">
+          <div class="cs-skylight-box">
+            <div class="box-icon">☀️</div>
+            <div class="box-title">Roof Heat Reduction</div>
+            <div class="box-desc">Up to 78% of conservatory heat enters through the roof glass</div>
+          </div>
+          <div class="cs-skylight-box">
+            <div class="box-icon">🌡️</div>
+            <div class="box-title">Temperature Drop</div>
+            <div class="box-desc">12–18°C cooler</div>
+          </div>
+          <div class="cs-skylight-box">
+            <div class="box-icon">🔋</div>
+            <div class="box-title">Energy Saved</div>
+            <div class="box-desc">35% less cooling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 5: Plant-Friendly Options -->
+  <section class="cs-section cs-plants">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">Plant Friendly</div>
+        <h2>Blinds That Love<br>Your Plants Too</h2>
+        <p>Many conservatories double as indoor gardens. Our plant-friendly options filter harsh UV while transmitting the light spectrum plants need to thrive.</p>
+      </div>
+
+      <div class="cs-plants-grid">
+        <div class="cs-plant-card cs-animate cs-animate-delay-1">
+          <div class="cs-plant-emoji">🌱</div>
+          <h3>Growth-Spectrum Filtering</h3>
+          <p>Specialist fabrics that block UV-B (harmful) while transmitting PAR light (400–700nm) that drives photosynthesis. Your plants get fed, not burned.</p>
+        </div>
+        <div class="cs-plant-card cs-animate cs-animate-delay-2">
+          <div class="cs-plant-emoji">💧</div>
+          <h3>Humidity Resistant</h3>
+          <p>Conservatory environments with plants create higher humidity. Our moisture-resistant fabrics and aluminium components won't warp, stain, or harbour mould.</p>
+        </div>
+        <div class="cs-plant-card cs-animate cs-animate-delay-3">
+          <div class="cs-plant-emoji">🌡️</div>
+          <h3>Temperature Buffering</h3>
+          <p>Prevent extreme temperature swings that stress plants. Honeycomb blinds create an insulating layer that moderates overnight cold and afternoon heat spikes.</p>
+        </div>
+        <div class="cs-plant-card cs-animate cs-animate-delay-4">
+          <div class="cs-plant-emoji">🌿</div>
+          <h3>Partial Shade Zones</h3>
+          <p>Create different light zones within one space — full sun for succulents, dappled shade for ferns. Venetian blinds offer precise per-window control.</p>
+        </div>
+        <div class="cs-plant-card cs-animate cs-animate-delay-5">
+          <div class="cs-plant-emoji">🤖</div>
+          <h3>Automated Light Cycles</h3>
+          <p>Motorised blinds on timers can replicate natural light patterns — gradually increasing morning light and reducing harsh afternoon sun for optimal plant health.</p>
+        </div>
+        <div class="cs-plant-card cs-animate cs-animate-delay-5">
+          <div class="cs-plant-emoji">🪴</div>
+          <h3>Easy Maintenance</h3>
+          <p>Wipe-clean surfaces that handle the occasional splash from watering. No fabric degradation from fertiliser mist or soil particulates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- Section 6: Sunroom Styling -->
+  <section class="cs-section cs-styling">
+    <div class="cs-section-inner">
+      <div class="cs-section-header cs-animate">
+        <div class="cs-tag">Design</div>
+        <h2>Style Your Sunroom</h2>
+        <p>Function is essential — but your conservatory should also look stunning. Here's how to balance performance with aesthetics.</p>
+      </div>
+
+      <div class="cs-styling-grid">
+        <div class="cs-style-card cs-animate cs-animate-delay-1">
+          <div>
+            <h3>Colour Coordination</h3>
+            <p>Choose blinds that complement your conservatory's architectural style. White and cream tones keep spaces feeling open and airy, while earth tones add warmth to modern glass structures.</p>
+          </div>
+          <div>
+            <ul class="cs-style-card-tips">
+              <li><span>→</span> Victorian conservatory: timber venetians or Roman blinds</li>
+              <li><span>→</span> Modern lean-to: minimal roller in neutral tones</li>
+              <li><span>→</span> Orangery style: plantation shutters for elegance</li>
+              <li><span>→</span> Contemporary glass box: motorised sheers, no visible hardware</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-style-card cs-animate cs-animate-delay-2">
+          <h3>Material Selection</h3>
+          <p>Natural materials like bamboo and timber add organic warmth to glass-heavy spaces. Technical fabrics offer superior performance with minimal visual weight. Mix materials for depth.</p>
+        </div>
+        <div class="cs-style-card cs-animate cs-animate-delay-3">
+          <h3>Layered Approach</h3>
+          <p>Combine roof blinds with side wall treatments for complete control. Use sheer layers for daytime beauty and add blockout for summer heat or privacy when entertaining in the evening.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-divider"></div>
+
+  <!-- CTA Section -->
+  <section class="cs-section cs-cta">
+    <div class="cs-section-inner cs-animate">
+      <h2>Transform Your<br>Conservatory Today</h2>
+      <p>Book a free specialist consultation. We'll assess your conservatory's orientation, glass type, and usage to recommend the perfect solution for year-round comfort.</p>
+      <div class="cs-cta-actions">
+        <a href="../free-quote.html" class="cs-btn">Book Free Consultation</a>
+        <a href="free-samples.html" class="cs-btn cs-btn-outline" style="border-color: var(--cs-white); color: var(--cs-white);">Order Free Samples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="cs-crosslinks">
+    <div class="cs-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="cs-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="cs-crosslink-item"><span>→</span> Acoustic &amp; Soundproof Blinds</a>
+        <a href="apartment-solutions.html" class="cs-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="bathroom-kitchen.html" class="cs-crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="bedroom-blackout.html" class="cs-crosslink-item"><span>→</span> Bedroom Blackout Blinds</a>
+        <a href="blinds-vs-curtains.html" class="cs-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="care-maintenance.html" class="cs-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="child-safety.html" class="cs-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="colour-trends-2026.html" class="cs-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="cs-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="day-night-blinds.html" class="cs-crosslink-item"><span>→</span> Day Night Zebra Blinds</a>
+        <a href="design-inspiration.html" class="cs-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="eco-friendly.html" class="cs-crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="energy-efficient.html" class="cs-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="free-samples.html" class="cs-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="cs-crosslink-item"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="home-office.html" class="cs-crosslink-item"><span>→</span> Home Office Blinds</a>
+        <a href="hospitality-blinds.html" class="cs-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="large-windows.html" class="cs-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="layered-treatments.html" class="cs-crosslink-item"><span>→</span> Layered Window Treatments</a>
+        <a href="media-room.html" class="cs-crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="melbourne-service-areas.html" class="cs-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="new-home-packages.html" class="cs-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="outdoor-blinds.html" class="cs-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="pet-friendly.html" class="cs-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="privacy-blinds.html" class="cs-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="cs-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="cs-crosslink-item"><span>→</span> Rental Property Blinds</a>
+        <a href="seasonal-sale.html" class="cs-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="skylight-blinds.html" class="cs-crosslink-item"><span>→</span> Skylight &amp; Specialty Windows</a>
+        <a href="smart-home.html" class="cs-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="testimonials.html" class="cs-crosslink-item"><span>→</span> Customer Testimonials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+      closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    }
+
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('cs-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.cs-animate').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
