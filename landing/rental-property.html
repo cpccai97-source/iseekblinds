@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Property Blinds Melbourne | Landlord & Tenant Solutions | iSeekBlinds</title>
+  <meta name="description" content="Affordable blinds for rental properties in Melbourne. Durable, budget-friendly solutions for landlords and tenants. Bulk discounts for property managers. Free measure & quote.">
+  <meta name="keywords" content="rental property blinds Melbourne, landlord blinds, tenant blinds, investment property blinds, cheap blinds Melbourne, property manager blinds, bulk blinds order">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 3D DEPTH / FLOATING CARD DESIGN: Rental Property === */
+    :root {
+      --rp-bg: #F0F4F8;
+      --rp-bg-alt: #E8EDF2;
+      --rp-surface: #FFFFFF;
+      --rp-primary: #2563EB;
+      --rp-primary-dark: #1D4ED8;
+      --rp-primary-light: #3B82F6;
+      --rp-secondary: #10B981;
+      --rp-secondary-dark: #059669;
+      --rp-accent: #F59E0B;
+      --rp-dark: #0F172A;
+      --rp-dark-mid: #1E293B;
+      --rp-text: #334155;
+      --rp-text-light: #64748B;
+      --rp-border: rgba(0,0,0,0.06);
+      --rp-shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --rp-shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+      --rp-shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+      --rp-shadow-xl: 0 30px 80px rgba(0,0,0,0.15);
+      --rp-float: 0 12px 40px rgba(37,99,235,0.15);
+    }
+
+    .lp-rental {
+      background: var(--rp-bg);
+      color: var(--rp-text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .rp-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--rp-dark) 0%, var(--rp-dark-mid) 40%, #253552 60%, #2D4A7A 100%);
+      overflow: hidden;
+    }
+
+    .rp-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(16,185,129,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Floating shapes */
+    .rp-float-shape {
+      position: absolute;
+      border-radius: 20px;
+      pointer-events: none;
+      animation: rpFloat 6s ease-in-out infinite;
+    }
+
+    .rp-float-1 {
+      width: 300px; height: 300px;
+      top: 10%; right: 5%;
+      background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(16,185,129,0.05));
+      transform: rotate(15deg);
+      animation-delay: 0s;
+    }
+
+    .rp-float-2 {
+      width: 200px; height: 200px;
+      bottom: 15%; right: 15%;
+      background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(37,99,235,0.04));
+      transform: rotate(-10deg);
+      animation-delay: 2s;
+    }
+
+    .rp-float-3 {
+      width: 150px; height: 150px;
+      top: 30%; right: 30%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      transform: rotate(25deg);
+      animation-delay: 4s;
+    }
+
+    @keyframes rpFloat {
+      0%, 100% { transform: translateY(0) rotate(var(--r, 15deg)); }
+      50% { transform: translateY(-20px) rotate(var(--r, 15deg)); }
+    }
+
+    .rp-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      padding: 0 2rem;
+    }
+
+    .rp-hero-chips {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rpUp 0.7s ease forwards 0.2s;
+    }
+
+    .rp-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .rp-chip-blue {
+      background: rgba(37,99,235,0.15);
+      color: #93C5FD;
+      border: 1px solid rgba(37,99,235,0.2);
+    }
+
+    .rp-chip-green {
+      background: rgba(16,185,129,0.15);
+      color: #6EE7B7;
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+
+    .rp-hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: rpUp 0.7s ease forwards 0.4s;
+    }
+
+    .rp-hero h1 .rp-highlight {
+      background: linear-gradient(135deg, var(--rp-primary-light), var(--rp-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .rp-hero-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rpUp 0.7s ease forwards 0.6s;
+    }
+
+    .rp-hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rpUp 0.7s ease forwards 0.8s;
+    }
+
+    .rp-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: var(--rp-primary);
+      color: #fff;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(37,99,235,0.3);
+    }
+
+    .rp-btn-primary:hover {
+      background: var(--rp-primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(37,99,235,0.4);
+    }
+
+    .rp-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .rp-btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Floating stats in hero */
+    .rp-hero-stats {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 2;
+      opacity: 0;
+      animation: rpFadeIn 1s ease forwards 1s;
+    }
+
+    .rp-stat-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      min-width: 220px;
+      transition: transform 0.3s ease;
+    }
+
+    .rp-stat-card:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .rp-stat-card:nth-child(2) { transform: translateX(40px); }
+    .rp-stat-card:nth-child(2):hover { transform: translateX(40px) translateY(-4px) scale(1.02); }
+    .rp-stat-card:nth-child(3) { transform: translateX(20px); }
+    .rp-stat-card:nth-child(3):hover { transform: translateX(20px) translateY(-4px) scale(1.02); }
+
+    .rp-stat-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #93C5FD, #6EE7B7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .rp-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* Sections */
+    .rp-section {
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .rp-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .rp-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .rp-section-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--rp-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .rp-section-header h2 .rp-text-blue { color: var(--rp-primary); }
+    .rp-section-header h2 .rp-text-green { color: var(--rp-secondary); }
+
+    .rp-section-header p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--rp-text-light);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Who section — floating 3D cards */
+    .rp-who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      perspective: 1000px;
+    }
+
+    .rp-who-card {
+      background: var(--rp-surface);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      box-shadow: var(--rp-shadow-md);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(40px);
+      border: 1px solid var(--rp-border);
+    }
+
+    .rp-who-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rp-who-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--rp-shadow-xl);
+    }
+
+    .rp-who-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .rp-who-icon-blue { background: rgba(37,99,235,0.1); }
+    .rp-who-icon-green { background: rgba(16,185,129,0.1); }
+    .rp-who-icon-amber { background: rgba(245,158,11,0.1); }
+
+    .rp-who-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--rp-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .rp-who-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--rp-text-light);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .rp-who-features {
+      list-style: none;
+      padding: 0;
+    }
+
+    .rp-who-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--rp-text);
+    }
+
+    .rp-who-features li::before {
+      content: '✓';
+      color: var(--rp-secondary);
+      font-weight: 700;
+    }
+
+    /* Pricing tiers — elevated cards */
+    .rp-pricing-section {
+      background: var(--rp-bg-alt);
+    }
+
+    .rp-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .rp-pricing-card {
+      background: var(--rp-surface);
+      border-radius: 20px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--rp-shadow-md);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      border: 1px solid var(--rp-border);
+    }
+
+    .rp-pricing-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rp-pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--rp-shadow-lg);
+    }
+
+    .rp-pricing-card.rp-popular {
+      border: 2px solid var(--rp-primary);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: var(--rp-float);
+    }
+
+    .rp-pricing-card.rp-popular.visible {
+      transform: translateY(-10px) scale(1.03);
+    }
+
+    .rp-pricing-card.rp-popular:hover {
+      transform: translateY(-18px) scale(1.05);
+      box-shadow: 0 20px 60px rgba(37,99,235,0.25);
+    }
+
+    .rp-pricing-badge {
+      background: var(--rp-primary);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .rp-pricing-body {
+      padding: 2.5rem 2rem;
+    }
+
+    .rp-pricing-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--rp-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .rp-pricing-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--rp-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .rp-pricing-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--rp-text-light);
+    }
+
+    .rp-pricing-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--rp-text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .rp-pricing-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+
+    .rp-pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--rp-text);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .rp-pricing-features li:last-child { border-bottom: none; }
+
+    .rp-pricing-features li .rp-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(16,185,129,0.1);
+      color: var(--rp-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .rp-pricing-btn {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .rp-pricing-btn-outline {
+      background: transparent;
+      color: var(--rp-primary);
+      border: 2px solid var(--rp-primary);
+    }
+
+    .rp-pricing-btn-outline:hover {
+      background: var(--rp-primary);
+      color: #fff;
+    }
+
+    .rp-pricing-btn-fill {
+      background: var(--rp-primary);
+      color: #fff;
+      border: 2px solid var(--rp-primary);
+      box-shadow: 0 4px 15px rgba(37,99,235,0.25);
+    }
+
+    .rp-pricing-btn-fill:hover {
+      background: var(--rp-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37,99,235,0.35);
+    }
+
+    /* Benefits banner */
+    .rp-benefits-strip {
+      background: linear-gradient(135deg, var(--rp-primary) 0%, #1E40AF 50%, var(--rp-primary-dark) 100%);
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rp-benefits-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08), transparent 50%);
+      pointer-events: none;
+    }
+
+    .rp-benefits-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .rp-benefit-item {
+      text-align: center;
+      color: #fff;
+    }
+
+    .rp-benefit-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    .rp-benefit-item h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .rp-benefit-item p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* FAQ section */
+    .rp-faq-list {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .rp-faq-item {
+      background: var(--rp-surface);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: var(--rp-shadow-sm);
+      border: 1px solid var(--rp-border);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    .rp-faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rp-faq-q {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--rp-dark);
+      user-select: none;
+    }
+
+    .rp-faq-q span {
+      font-size: 1.3rem;
+      color: var(--rp-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .rp-faq-item.active .rp-faq-q span {
+      transform: rotate(45deg);
+    }
+
+    .rp-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .rp-faq-item.active .rp-faq-a {
+      max-height: 300px;
+    }
+
+    .rp-faq-a-inner {
+      padding: 0 2rem 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--rp-text-light);
+      line-height: 1.7;
+    }
+
+    /* CTA Section */
+    .rp-cta {
+      background: var(--rp-dark);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rp-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(37,99,235,0.1), transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(16,185,129,0.08), transparent 50%);
+      pointer-events: none;
+    }
+
+    .rp-cta h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .rp-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .rp-cta .rp-btn-primary { position: relative; }
+
+    /* Cross-links */
+    .rp-crosslinks {
+      padding: 60px 0;
+      background: var(--rp-bg);
+    }
+
+    .rp-crosslinks h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--rp-dark);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .rp-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .rp-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--rp-surface);
+      border: 1px solid var(--rp-border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--rp-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      transition: all 0.3s ease;
+    }
+
+    .rp-crosslink-item:hover {
+      border-color: var(--rp-primary);
+      color: var(--rp-primary);
+      transform: translateX(4px);
+      box-shadow: var(--rp-shadow-sm);
+    }
+
+    .rp-crosslink-item span {
+      color: var(--rp-primary);
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes rpUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rpFadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .rp-hero-stats { display: none; }
+      .rp-who-grid { grid-template-columns: 1fr; }
+      .rp-pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .rp-pricing-card.rp-popular { transform: none; }
+      .rp-pricing-card.rp-popular.visible { transform: none; }
+      .rp-pricing-card.rp-popular:hover { transform: translateY(-8px); }
+      .rp-benefits-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .rp-section { padding: 60px 0; }
+      .rp-hero-btns { flex-direction: column; }
+      .rp-btn-primary, .rp-btn-ghost { width: 100%; justify-content: center; }
+      .rp-benefits-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="lp-rental">
+
+    <!-- Hero -->
+    <section class="rp-hero">
+      <div class="rp-hero-grid"></div>
+      <div class="rp-float-shape rp-float-1"></div>
+      <div class="rp-float-shape rp-float-2"></div>
+      <div class="rp-float-shape rp-float-3"></div>
+      <div class="rp-container rp-hero-content">
+        <div class="rp-hero-chips">
+          <span class="rp-chip rp-chip-blue">🏠 Landlords</span>
+          <span class="rp-chip rp-chip-green">🔑 Tenants</span>
+        </div>
+        <h1>Rental Property<br><span class="rp-highlight">Blinds Solutions</span></h1>
+        <p class="rp-hero-desc">Durable, budget-friendly blinds built for rental properties. Bulk pricing for landlords and property managers. Quick turnaround, professional installation.</p>
+        <div class="rp-hero-btns">
+          <a href="../free-quote.html" class="rp-btn-primary">Get Bulk Quote →</a>
+          <a href="#packages" class="rp-btn-ghost">View Packages</a>
+        </div>
+      </div>
+      <div class="rp-hero-stats">
+        <div class="rp-stat-card">
+          <div class="rp-stat-value">500+</div>
+          <div class="rp-stat-label">Rental Properties Fitted</div>
+        </div>
+        <div class="rp-stat-card">
+          <div class="rp-stat-value">5 Day</div>
+          <div class="rp-stat-label">Average Turnaround</div>
+        </div>
+        <div class="rp-stat-card">
+          <div class="rp-stat-value">20%</div>
+          <div class="rp-stat-label">Bulk Order Discount</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who is it for -->
+    <section class="rp-section">
+      <div class="rp-container">
+        <div class="rp-section-header">
+          <h2>Built for <span class="rp-text-blue">Landlords</span>, <span class="rp-text-green">Tenants</span> &amp; Property Managers</h2>
+          <p>Whether you own one investment property or manage a portfolio, we have a solution that fits.</p>
+        </div>
+        <div class="rp-who-grid">
+          <div class="rp-who-card">
+            <div class="rp-who-icon rp-who-icon-blue">🏢</div>
+            <h3>Landlords</h3>
+            <p>Protect your investment with durable blinds that last between tenants and boost property appeal.</p>
+            <ul class="rp-who-features">
+              <li>Hardwearing fabrics that resist damage</li>
+              <li>Neutral colours for broad tenant appeal</li>
+              <li>5-year warranty on all components</li>
+              <li>Bulk pricing for multi-property owners</li>
+            </ul>
+          </div>
+          <div class="rp-who-card">
+            <div class="rp-who-icon rp-who-icon-green">🔑</div>
+            <h3>Tenants</h3>
+            <p>Upgrade your rental without structural changes. Easy-install options your landlord will approve.</p>
+            <ul class="rp-who-features">
+              <li>Non-invasive mounting options</li>
+              <li>Take them when you move out</li>
+              <li>Affordable pricing for renters</li>
+              <li>Fast installation, minimal disruption</li>
+            </ul>
+          </div>
+          <div class="rp-who-card">
+            <div class="rp-who-icon rp-who-icon-amber">📋</div>
+            <h3>Property Managers</h3>
+            <p>Streamline blinds across your portfolio. One supplier, consistent quality, priority scheduling.</p>
+            <ul class="rp-who-features">
+              <li>Dedicated account manager</li>
+              <li>Priority scheduling &amp; fast turnaround</li>
+              <li>Consolidated invoicing</li>
+              <li>Consistent product across properties</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits strip -->
+    <section class="rp-benefits-strip">
+      <div class="rp-container">
+        <div class="rp-benefits-row">
+          <div class="rp-benefit-item">
+            <div class="rp-benefit-icon-wrap">💰</div>
+            <h4>Budget Friendly</h4>
+            <p>Quality blinds from $89/window</p>
+          </div>
+          <div class="rp-benefit-item">
+            <div class="rp-benefit-icon-wrap">⚡</div>
+            <h4>Fast Turnaround</h4>
+            <p>Measure to install in 5 business days</p>
+          </div>
+          <div class="rp-benefit-item">
+            <div class="rp-benefit-icon-wrap">🛡️</div>
+            <h4>5-Year Warranty</h4>
+            <p>Components guaranteed to last</p>
+          </div>
+          <div class="rp-benefit-item">
+            <div class="rp-benefit-icon-wrap">📦</div>
+            <h4>Bulk Discounts</h4>
+            <p>Up to 20% off for 5+ properties</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section id="packages" class="rp-section rp-pricing-section">
+      <div class="rp-container">
+        <div class="rp-section-header">
+          <h2>Rental <span class="rp-text-blue">Packages</span></h2>
+          <p>Simple, transparent pricing. No hidden fees. All packages include free measure, supply, and professional installation.</p>
+        </div>
+        <div class="rp-pricing-grid">
+          <div class="rp-pricing-card">
+            <div class="rp-pricing-body">
+              <div class="rp-pricing-name">Essential</div>
+              <div class="rp-pricing-price">$89 <span>/ window</span></div>
+              <p class="rp-pricing-desc">Basic roller blinds for cost-conscious landlords. Clean look, reliable performance.</p>
+              <ul class="rp-pricing-features">
+                <li><span class="rp-check">✓</span> Standard roller blinds</li>
+                <li><span class="rp-check">✓</span> Light filtering fabric</li>
+                <li><span class="rp-check">✓</span> White or cream colours</li>
+                <li><span class="rp-check">✓</span> Chain operation</li>
+                <li><span class="rp-check">✓</span> 3-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="rp-pricing-btn rp-pricing-btn-outline">Get Quote</a>
+            </div>
+          </div>
+          <div class="rp-pricing-card rp-popular">
+            <div class="rp-pricing-badge">⭐ Most Popular</div>
+            <div class="rp-pricing-body">
+              <div class="rp-pricing-name">Premium</div>
+              <div class="rp-pricing-price">$139 <span>/ window</span></div>
+              <p class="rp-pricing-desc">Our recommended rental package. Blockout option included. Perfect balance of cost and quality.</p>
+              <ul class="rp-pricing-features">
+                <li><span class="rp-check">✓</span> Premium roller blinds</li>
+                <li><span class="rp-check">✓</span> Blockout OR sunscreen fabric</li>
+                <li><span class="rp-check">✓</span> 12 colour options</li>
+                <li><span class="rp-check">✓</span> Child-safe chain or wand</li>
+                <li><span class="rp-check">✓</span> 5-year warranty</li>
+                <li><span class="rp-check">✓</span> Pelmet included</li>
+              </ul>
+              <a href="../free-quote.html" class="rp-pricing-btn rp-pricing-btn-fill">Get Quote</a>
+            </div>
+          </div>
+          <div class="rp-pricing-card">
+            <div class="rp-pricing-body">
+              <div class="rp-pricing-name">Executive</div>
+              <div class="rp-pricing-price">$199 <span>/ window</span></div>
+              <p class="rp-pricing-desc">For premium rentals that demand a high-end finish. Impress tenants, justify higher rent.</p>
+              <ul class="rp-pricing-features">
+                <li><span class="rp-check">✓</span> Roller, venetian or honeycomb</li>
+                <li><span class="rp-check">✓</span> Full colour range</li>
+                <li><span class="rp-check">✓</span> Motorised upgrade available</li>
+                <li><span class="rp-check">✓</span> Designer fabric options</li>
+                <li><span class="rp-check">✓</span> 7-year warranty</li>
+                <li><span class="rp-check">✓</span> Pelmet &amp; fascia included</li>
+              </ul>
+              <a href="../free-quote.html" class="rp-pricing-btn rp-pricing-btn-outline">Get Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="rp-section">
+      <div class="rp-container">
+        <div class="rp-section-header">
+          <h2>Frequently <span class="rp-text-blue">Asked</span></h2>
+          <p>Common questions from landlords and tenants</p>
+        </div>
+        <div class="rp-faq-list">
+          <div class="rp-faq-item">
+            <div class="rp-faq-q">Can tenants install blinds without landlord permission?<span>+</span></div>
+            <div class="rp-faq-a"><div class="rp-faq-a-inner">We offer non-invasive mounting options (tension fit, adhesive brackets) that don't require drilling. For standard installations, we recommend getting written approval from your landlord or property manager. We can provide documentation explaining the installation process to help with approval.</div></div>
+          </div>
+          <div class="rp-faq-item">
+            <div class="rp-faq-q">Do you offer bulk discounts for multiple properties?<span>+</span></div>
+            <div class="rp-faq-a"><div class="rp-faq-a-inner">Yes! We offer tiered bulk pricing: 10% off for 3-4 properties, 15% off for 5-9 properties, and 20% off for 10+ properties. Property managers with ongoing needs can negotiate custom rates with a dedicated account manager.</div></div>
+          </div>
+          <div class="rp-faq-item">
+            <div class="rp-faq-q">How quickly can you fit out a property between tenants?<span>+</span></div>
+            <div class="rp-faq-a"><div class="rp-faq-a-inner">We understand vacancy costs money. Our average turnaround from measure to install is 5 business days. For urgent jobs, we offer an express service (2-3 days) for a small surcharge. We can coordinate with property managers and real estate agents directly.</div></div>
+          </div>
+          <div class="rp-faq-item">
+            <div class="rp-faq-q">What if a tenant damages the blinds?<span>+</span></div>
+            <div class="rp-faq-a"><div class="rp-faq-a-inner">Our rental-grade blinds use reinforced components designed to handle higher wear. Our warranty covers manufacturing defects. For accidental damage, we offer replacement components at cost price for our landlord clients. We also provide condition reports for bond purposes.</div></div>
+          </div>
+          <div class="rp-faq-item">
+            <div class="rp-faq-q">Are your blinds compliant with rental standards?<span>+</span></div>
+            <div class="rp-faq-a"><div class="rp-faq-a-inner">All our blinds meet Australian safety standards. Child-safe options (cordless, wand-operated) are available and recommended for family rentals. We ensure all installations comply with Victorian rental property standards and can provide compliance certificates.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="rp-cta">
+      <div class="rp-container">
+        <h2>Ready to Fit Out Your Rental?</h2>
+        <p>Get a free, no-obligation quote. Bulk pricing available for landlords and property managers.</p>
+        <a href="../free-quote.html" class="rp-btn-primary">Get Free Quote →</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="rp-section rp-crosslinks">
+      <div class="rp-container">
+        <h3>Explore More Solutions</h3>
+        <div class="rp-crosslinks-grid">
+          <a href="bedroom-blackout.html" class="rp-crosslink-item"><span>→</span> Bedroom Blackout Blinds</a>
+          <a href="smart-home.html" class="rp-crosslink-item"><span>→</span> Smart Home Blinds</a>
+          <a href="energy-efficient.html" class="rp-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+          <a href="child-safety.html" class="rp-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+          <a href="apartment-solutions.html" class="rp-crosslink-item"><span>→</span> Apartment Solutions</a>
+          <a href="home-office.html" class="rp-crosslink-item"><span>→</span> Home Office Blinds</a>
+          <a href="commercial-blinds.html" class="rp-crosslink-item"><span>→</span> Commercial Blinds</a>
+          <a href="new-home-packages.html" class="rp-crosslink-item"><span>→</span> New Home Packages</a>
+          <a href="seasonal-sale.html" class="rp-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+          <a href="free-samples.html" class="rp-crosslink-item"><span>→</span> Free Samples</a>
+          <a href="colour-trends-2026.html" class="rp-crosslink-item"><span>→</span> Colour Trends 2026</a>
+          <a href="outdoor-blinds.html" class="rp-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+          <a href="care-maintenance.html" class="rp-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+          <a href="design-inspiration.html" class="rp-crosslink-item"><span>→</span> Design Inspiration</a>
+          <a href="testimonials.html" class="rp-crosslink-item"><span>→</span> Customer Testimonials</a>
+          <a href="acoustic-solutions.html" class="rp-crosslink-item"><span>→</span> Acoustic Solutions</a>
+          <a href="melbourne-service-areas.html" class="rp-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+          <a href="hospitality-blinds.html" class="rp-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+          <a href="blinds-vs-curtains.html" class="rp-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+          <a href="large-windows.html" class="rp-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+          <a href="eco-friendly.html" class="rp-crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+          <a href="layered-treatments.html" class="rp-crosslink-item"><span>→</span> Layered Treatments</a>
+          <a href="bathroom-kitchen.html" class="rp-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+          <a href="pet-friendly.html" class="rp-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+          <a href="property-styling.html" class="rp-crosslink-item"><span>→</span> Property Styling</a>
+          <a href="media-room.html" class="rp-crosslink-item"><span>→</span> Media Room Blinds</a>
+          <a href="skylight-blinds.html" class="rp-crosslink-item"><span>→</span> Skylight Blinds</a>
+          <a href="heritage-homes.html" class="rp-crosslink-item"><span>→</span> Heritage Homes</a>
+          <a href="day-night-blinds.html" class="rp-crosslink-item"><span>→</span> Day Night Zebra Blinds</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.rp-who-card, .rp-pricing-card, .rp-faq-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.rp-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.rp-faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
