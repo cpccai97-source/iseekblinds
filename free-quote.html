@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Measure & Quote - iSeekBlinds | Melbourne</title>
+  <meta name="description" content="Book your free measure and quote with iSeekBlinds. No obligation, no hidden costs. Serving all Melbourne suburbs.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="products/roller-blinds.html">Roller Blinds</a>
+            <a href="products/curtains.html">Curtains</a>
+            <a href="products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Free Measure & Quote</h1>
+      <p>No obligation, no hidden costs — just honest pricing</p>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="section">
+    <div class="container quote-layout">
+      <div class="quote-form-wrap">
+        <h2>Request Your Free Quote</h2>
+        <p style="color:#666; margin-bottom:24px;">Fill in the form below and we'll get back to you within 24 hours to arrange your free measure & quote.</p>
+        <form id="quoteForm" class="quote-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qName">Full Name *</label>
+              <input type="text" id="qName" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="qPhone">Phone Number *</label>
+              <input type="tel" id="qPhone" name="phone" placeholder="0400 000 000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="qEmail">Email Address *</label>
+            <input type="email" id="qEmail" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qAddress">Street Address</label>
+              <input type="text" id="qAddress" name="address" placeholder="123 Example Street">
+            </div>
+            <div class="form-group">
+              <label for="qSuburb">Suburb *</label>
+              <input type="text" id="qSuburb" name="suburb" placeholder="e.g. Richmond" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="qProduct">Product Interest *</label>
+              <select id="qProduct" name="product" required>
+                <option value="" disabled selected>Select a product</option>
+                <option value="roller-blinds">Roller Blinds</option>
+                <option value="curtains">Curtains</option>
+                <option value="plantation-shutters">Plantation Shutters</option>
+                <option value="venetian-blinds">Venetian Blinds</option>
+                <option value="honeycomb-blinds">Honeycomb Blinds</option>
+                <option value="motorised">Motorised Solutions</option>
+                <option value="multiple">Multiple Products</option>
+                <option value="not-sure">Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qWindows">Number of Windows *</label>
+              <select id="qWindows" name="windows" required>
+                <option value="" disabled selected>How many windows?</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11-15">11–15</option>
+                <option value="16-20">16–20</option>
+                <option value="20+">20+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="qDate">Preferred Date for Measure</label>
+            <input type="date" id="qDate" name="preferred_date">
+          </div>
+          <div class="form-group">
+            <label for="qMessage">Additional Message</label>
+            <textarea id="qMessage" name="message" rows="4" placeholder="Tell us more about your project, room types, colour preferences, budget..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Submit Free Quote Request</button>
+        </form>
+      </div>
+
+      <div class="quote-sidebar">
+        <!-- What to Expect -->
+        <div class="quote-info-card">
+          <h3>What to Expect</h3>
+          <div class="expect-steps">
+            <div class="expect-step">
+              <span class="expect-num">1</span>
+              <div>
+                <strong>We Contact You</strong>
+                <p>Within 24 hours to confirm your appointment.</p>
+              </div>
+            </div>
+            <div class="expect-step">
+              <span class="expect-num">2</span>
+              <div>
+                <strong>Free In-Home Visit</strong>
+                <p>Our consultant visits at your convenience to measure and advise.</p>
+              </div>
+            </div>
+            <div class="expect-step">
+              <span class="expect-num">3</span>
+              <div>
+                <strong>Detailed Quote</strong>
+                <p>You'll receive a clear, itemised quote — no hidden fees.</p>
+              </div>
+            </div>
+            <div class="expect-step">
+              <span class="expect-num">4</span>
+              <div>
+                <strong>No Pressure</strong>
+                <p>Take your time to decide. No obligation whatsoever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="quote-info-card">
+          <h3>Why Choose iSeekBlinds?</h3>
+          <ul class="benefits-list">
+            <li>✅ 100% free measure & quote</li>
+            <li>✅ Australian made products</li>
+            <li>✅ Competitive factory-direct pricing</li>
+            <li>✅ 5-year warranty on all products</li>
+            <li>✅ Professional installation included</li>
+            <li>✅ 10+ years experience</li>
+          </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="quote-info-card">
+          <h3>Service Areas</h3>
+          <p style="color:#666; margin-bottom:12px;">We service all Melbourne metropolitan suburbs including:</p>
+          <div class="service-area-tags">
+            <span>CBD</span><span>South Yarra</span><span>Richmond</span>
+            <span>Toorak</span><span>Brighton</span><span>Hawthorn</span>
+            <span>Camberwell</span><span>Glen Waverley</span><span>Box Hill</span>
+            <span>Doncaster</span><span>Templestowe</span><span>Balwyn</span>
+            <span>Kew</span><span>Carlton</span><span>Fitzroy</span>
+            <span>Footscray</span><span>Werribee</span><span>Point Cook</span>
+            <span>Cranbourne</span><span>Frankston</span>
+            <span>& all surrounding suburbs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="products/roller-blinds.html">Roller Blinds</a>
+        <a href="products/curtains.html">Curtains</a>
+        <a href="products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="free-quote.html">Free Quote</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

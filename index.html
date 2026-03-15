@@ -22,16 +22,27 @@
   <!-- Header -->
   <header class="header">
     <div class="container header-inner">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
       </a>
       <nav class="nav">
-        <a href="#products">Products</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="products/roller-blinds.html">Roller Blinds</a>
+            <a href="products/curtains.html">Curtains</a>
+            <a href="products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn-primary header-cta">Free Quote</a>
+      <a href="free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
       <button class="mobile-menu-btn" aria-label="Menu">☰</button>
     </div>
   </header>
@@ -43,7 +54,7 @@
       <h1>Premium Custom Blinds,<br>Curtains & Shutters</h1>
       <p class="hero-subtitle">Melbourne's trusted window furnishing experts. Free measure & quote.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary btn-lg">Get Free Quote</a>
+        <a href="free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
         <a href="#products" class="btn btn-outline btn-lg">View Products</a>
       </div>
     </div>
@@ -55,42 +66,42 @@
       <h2 class="section-title">Our Products</h2>
       <p class="section-subtitle">Quality window furnishings for every style and budget</p>
       <div class="product-grid">
-        <div class="product-card">
+        <a href="products/roller-blinds.html" class="product-card">
           <div class="product-icon">🪟</div>
           <h3>Roller Blinds</h3>
           <p>Sleek, modern roller blinds in blockout, sunscreen and light-filtering options. Perfect for any room.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
-        <div class="product-card">
+          <span class="product-link">Learn More →</span>
+        </a>
+        <a href="products/curtains.html" class="product-card">
           <div class="product-icon">🏠</div>
           <h3>Curtains</h3>
           <p>S-Fold, pinch pleat and sheer curtains. Custom made with premium Australian fabrics.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
-        <div class="product-card">
+          <span class="product-link">Learn More →</span>
+        </a>
+        <a href="products/plantation-shutters.html" class="product-card">
           <div class="product-icon">🚪</div>
           <h3>Plantation Shutters</h3>
           <p>Timeless elegance with our premium plantation shutters. Built to last a lifetime.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
-        <div class="product-card">
+          <span class="product-link">Learn More →</span>
+        </a>
+        <a href="products/venetian-blinds.html" class="product-card">
           <div class="product-icon">🎚️</div>
           <h3>Venetian Blinds</h3>
           <p>Classic venetian blinds in timber, aluminium and faux wood. Full light control.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
-        <div class="product-card">
+          <span class="product-link">Learn More →</span>
+        </a>
+        <a href="products/honeycomb-blinds.html" class="product-card">
           <div class="product-icon">🐝</div>
           <h3>Honeycomb Blinds</h3>
           <p>Energy-efficient honeycomb blinds that keep your home cool in summer and warm in winter.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
-        <div class="product-card">
+          <span class="product-link">Learn More →</span>
+        </a>
+        <a href="products/motorised.html" class="product-card">
           <div class="product-icon">⚡</div>
           <h3>Motorised Solutions</h3>
           <p>Smart motorised blinds and curtains. Control with your phone or voice assistant.</p>
-          <a href="#contact" class="product-link">Get a Quote →</a>
-        </div>
+          <span class="product-link">Learn More →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -171,7 +182,7 @@
         <h2>About iSeekBlinds</h2>
         <p>We are Melbourne's trusted window furnishing specialists, providing premium blinds, curtains and shutters at competitive prices.</p>
         <p>With years of experience in the industry, we pride ourselves on quality products, professional service and customer satisfaction. Whether you're renovating your home or fitting out a commercial space, we have the perfect solution for you.</p>
-        <a href="#contact" class="btn btn-primary">Talk to Us</a>
+        <a href="about.html" class="btn btn-primary">Learn More</a>
       </div>
       <div class="about-stats">
         <div class="stat">
@@ -190,50 +201,12 @@
     </div>
   </section>
 
-  <!-- Contact / CTA -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title">Get Your Free Quote Today</h2>
-      <p class="section-subtitle">Fill in the form and we'll get back to you within 24 hours</p>
-      <div class="contact-grid">
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <input type="text" placeholder="Your Name" required>
-            <input type="tel" placeholder="Phone Number" required>
-          </div>
-          <input type="email" placeholder="Email Address" required>
-          <select>
-            <option value="">What are you looking for?</option>
-            <option>Roller Blinds</option>
-            <option>Curtains</option>
-            <option>Plantation Shutters</option>
-            <option>Venetian Blinds</option>
-            <option>Honeycomb Blinds</option>
-            <option>Motorised Solutions</option>
-            <option>Other</option>
-          </select>
-          <textarea placeholder="Tell us about your project..." rows="4"></textarea>
-          <button type="submit" class="btn btn-primary btn-lg btn-full">Send Enquiry</button>
-        </form>
-        <div class="contact-info">
-          <div class="contact-item">
-            <strong>📞 Phone</strong>
-            <p><a href="tel:0400000000">0400 000 000</a></p>
-          </div>
-          <div class="contact-item">
-            <strong>📧 Email</strong>
-            <p><a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
-          </div>
-          <div class="contact-item">
-            <strong>📍 Service Area</strong>
-            <p>Melbourne & Greater Melbourne</p>
-          </div>
-          <div class="contact-item">
-            <strong>🕐 Hours</strong>
-            <p>Mon–Fri: 9am – 5pm<br>Sat: 10am – 3pm<br>Sun: By Appointment</p>
-          </div>
-        </div>
-      </div>
+  <!-- CTA Banner -->
+  <section class="section cta-banner">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title" style="color:#fff;">Ready to Transform Your Home?</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Book your free measure & quote today. No obligation, no hidden costs.</p>
+      <a href="free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
     </div>
   </section>
 
@@ -241,26 +214,34 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></span>
+        <a href="index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
         <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
       </div>
       <div class="footer-links">
         <h4>Products</h4>
-        <a href="#products">Roller Blinds</a>
-        <a href="#products">Curtains</a>
-        <a href="#products">Shutters</a>
-        <a href="#products">Venetian Blinds</a>
+        <a href="products/roller-blinds.html">Roller Blinds</a>
+        <a href="products/curtains.html">Curtains</a>
+        <a href="products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="products/motorised.html">Motorised Solutions</a>
       </div>
       <div class="footer-links">
         <h4>Company</h4>
-        <a href="#about">About Us</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="free-quote.html">Free Quote</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 iSeekBlinds. All rights reserved.</p>
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
       </div>
     </div>
   </footer>

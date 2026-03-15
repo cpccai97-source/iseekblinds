@@ -25,11 +25,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Simple form handler
-const form = document.getElementById('contactForm');
-if (form) {
+document.querySelectorAll('#contactForm, #quoteForm').forEach(form => {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    alert('Thank you for your enquiry! We will get back to you within 24 hours.');
+    const isQuote = form.id === 'quoteForm';
+    alert(isQuote
+      ? 'Thank you for your quote request! We\'ll contact you within 24 hours to arrange your free measure & quote.'
+      : 'Thank you for your enquiry! We will get back to you within 24 hours.');
     form.reset();
   });
-}
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    // Close all others in the same category
+    const category = btn.closest('.faq-category');
+    if (category) {
+      category.querySelectorAll('.faq-question').forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherBtn.nextElementSibling.classList.remove('open');
+        }
+      });
+    }
+
+    // Toggle current
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    answer.classList.toggle('open', !isOpen);
+  });
+});
