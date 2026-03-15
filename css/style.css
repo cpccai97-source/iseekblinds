@@ -427,12 +427,15 @@ h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; 
 
 /* === Nav Dropdown === */
 .nav-dropdown { position: relative; }
-.nav-dropdown-toggle { cursor: pointer; }
+.nav-dropdown-toggle { cursor: pointer; padding-bottom: 12px; margin-bottom: -12px; }
 .nav-dropdown-menu {
   display: none; position: absolute; top: calc(100% + 12px); left: -16px;
   background: #fff; border-radius: 4px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
   min-width: 220px; padding: 8px 0; z-index: 200;
+}
+.nav-dropdown-menu::before {
+  content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px;
 }
 .nav-dropdown:hover .nav-dropdown-menu { display: block; }
 .nav-dropdown-menu a {
