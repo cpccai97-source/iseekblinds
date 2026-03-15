@@ -446,6 +446,7 @@ h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; 
 
 /* Mega dropdown */
 .nav-dropdown-mega {
+  display: none;
   min-width: 340px;
   grid-template-columns: 1fr 1fr;
   gap: 0;
