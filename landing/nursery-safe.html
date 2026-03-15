@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursery Safe Window Coverings | Cordless & Child-Safe Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Safe, beautiful nursery window coverings for your baby's room. Cordless blinds, blackout solutions, non-toxic materials. Australian safety standards compliant. Free consultation Melbourne.">
+  <meta name="keywords" content="nursery blinds, baby room window coverings, cordless blinds Melbourne, child safe blinds, nursery blackout, baby safe curtains, non-toxic blinds, nursery window treatments">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === SOFT PASTEL NURSERY THEME === */
+    :root {
+      --nr-cream: #fef9f3;
+      --nr-blush: #f8e8e0;
+      --nr-blush-deep: #e8c4b8;
+      --nr-sage: #b8c9a3;
+      --nr-sage-deep: #8aab6e;
+      --nr-lavender: #c5b8d9;
+      --nr-lavender-deep: #9b87c2;
+      --nr-sky: #a8d4e6;
+      --nr-sky-deep: #6bb4d4;
+      --nr-peach: #f5c7a9;
+      --nr-warm: #f0dcc8;
+      --nr-text: #4a3f35;
+      --nr-text-muted: #8a7e72;
+      --nr-white: #ffffff;
+    }
+
+    .lp-nursery {
+      background: var(--nr-cream);
+      color: var(--nr-text);
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .lp-nursery .header { background: rgba(254,249,243,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--nr-blush); }
+    .lp-nursery .top-bar { background: var(--nr-sage-deep); }
+    .lp-nursery .top-bar a { color: #fff; }
+    .lp-nursery .footer { background: var(--nr-text); }
+
+    /* Floating soft shapes */
+    .nr-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .nr-shape-1 { width: 400px; height: 400px; background: rgba(184,201,163,0.2); top: -5%; left: -10%; animation: nrFloat 12s ease-in-out infinite alternate; }
+    .nr-shape-2 { width: 350px; height: 350px; background: rgba(197,184,217,0.15); top: 15%; right: -8%; animation: nrFloat 15s ease-in-out infinite alternate-reverse; }
+    .nr-shape-3 { width: 300px; height: 300px; background: rgba(248,232,224,0.3); bottom: 10%; left: 20%; animation: nrFloat 10s ease-in-out infinite alternate; }
+
+    @keyframes nrFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, -20px) scale(1.1); }
+    }
+
+    @keyframes nrFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes nrFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes nrScaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes nrBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Hero */
+    .nr-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--nr-cream) 0%, var(--nr-blush) 40%, var(--nr-warm) 70%, var(--nr-cream) 100%);
+    }
+
+    .nr-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .nr-hero-text .nr-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--nr-sage-deep);
+      padding: 0.6rem 1.5rem;
+      background: rgba(184,201,163,0.2);
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: nrFadeUp 0.6s ease forwards 0.2s;
+    }
+
+    .nr-hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: nrFadeUp 0.6s ease forwards 0.4s;
+    }
+
+    .nr-hero-text h1 .nr-highlight {
+      background: linear-gradient(135deg, var(--nr-sage-deep), var(--nr-lavender-deep));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nr-hero-text p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--nr-text-muted);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: nrFadeUp 0.6s ease forwards 0.6s;
+    }
+
+    .nr-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: nrFadeUp 0.6s ease forwards 0.8s;
+    }
+
+    .btn-sage {
+      background: var(--nr-sage-deep);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(138,171,110,0.3);
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .btn-sage:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(138,171,110,0.4);
+    }
+
+    .btn-outline-nr {
+      border: 2px solid var(--nr-lavender-deep);
+      color: var(--nr-lavender-deep);
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      background: transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .btn-outline-nr:hover {
+      background: var(--nr-lavender-deep);
+      color: #fff;
+    }
+
+    .nr-hero-visual {
+      position: relative;
+      opacity: 0;
+      animation: nrScaleIn 0.8s ease forwards 0.5s;
+    }
+
+    .nr-hero-img-wrap {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(74,63,53,0.15);
+      position: relative;
+    }
+
+    .nr-hero-img-wrap img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nr-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--nr-white);
+      padding: 1rem 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      animation: nrBounce 3s ease-in-out infinite;
+    }
+
+    .nr-badge-icon { font-size: 2rem; }
+    .nr-badge-text { font-weight: 700; font-size: 0.9rem; line-height: 1.3; }
+    .nr-badge-text span { color: var(--nr-sage-deep); }
+
+    /* Safety Features Section */
+    .nr-safety {
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nr-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .nr-section-header .nr-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--nr-lavender-deep);
+      margin-bottom: 1rem;
+    }
+
+    .nr-section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .nr-section-header p {
+      color: var(--nr-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .nr-safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nr-safety-card {
+      background: var(--nr-white);
+      border-radius: 24px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 4px 20px rgba(74,63,53,0.06);
+      border: 1px solid rgba(248,232,224,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .nr-safety-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nr-safety-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(74,63,53,0.12);
+    }
+
+    .nr-safety-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .nr-safety-icon.sage { background: rgba(184,201,163,0.25); }
+    .nr-safety-icon.lavender { background: rgba(197,184,217,0.25); }
+    .nr-safety-icon.sky { background: rgba(168,212,230,0.25); }
+    .nr-safety-icon.peach { background: rgba(245,199,169,0.25); }
+    .nr-safety-icon.blush { background: rgba(248,232,224,0.4); }
+    .nr-safety-icon.warm { background: rgba(240,220,200,0.3); }
+
+    .nr-safety-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .nr-safety-card p {
+      color: var(--nr-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Products Section */
+    .nr-products {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, var(--nr-white) 0%, var(--nr-cream) 100%);
+    }
+
+    .nr-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nr-product-card {
+      background: var(--nr-cream);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(74,63,53,0.06);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .nr-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nr-product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(74,63,53,0.12);
+    }
+
+    .nr-product-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .nr-product-body {
+      padding: 2rem;
+    }
+
+    .nr-product-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .nr-product-label.safe { background: rgba(184,201,163,0.25); color: var(--nr-sage-deep); }
+    .nr-product-label.blackout { background: rgba(197,184,217,0.25); color: var(--nr-lavender-deep); }
+    .nr-product-label.motorised { background: rgba(168,212,230,0.25); color: var(--nr-sky-deep); }
+    .nr-product-label.natural { background: rgba(245,199,169,0.25); color: #c48a5a; }
+
+    .nr-product-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .nr-product-body p {
+      color: var(--nr-text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .nr-product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nr-product-features li {
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+      color: var(--nr-text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nr-product-features li::before {
+      content: '✓';
+      color: var(--nr-sage-deep);
+      font-weight: 700;
+    }
+
+    /* Tips Section */
+    .nr-tips {
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .nr-tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nr-tip-card {
+      background: var(--nr-white);
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid var(--nr-sage);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .nr-tip-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nr-tip-card:nth-child(2) { border-left-color: var(--nr-lavender); }
+    .nr-tip-card:nth-child(3) { border-left-color: var(--nr-sky); }
+
+    .nr-tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(74,63,53,0.08);
+    }
+
+    .nr-tip-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--nr-blush-deep);
+      opacity: 0.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .nr-tip-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .nr-tip-card p {
+      color: var(--nr-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Standards Section */
+    .nr-standards {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--nr-sage-deep) 0%, #6a9450 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .nr-standards h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .nr-standards p {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    .nr-standards-badges {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .nr-std-badge {
+      text-align: center;
+    }
+
+    .nr-std-badge-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 0.8rem;
+    }
+
+    .nr-std-badge-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    /* CTA Section */
+    .nr-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--nr-cream) 0%, var(--nr-blush) 100%);
+    }
+
+    .nr-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .nr-cta p {
+      color: var(--nr-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .nr-cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Cross-links */
+    .nr-crosslinks {
+      padding: 4rem 2rem;
+      background: var(--nr-white);
+    }
+
+    .nr-crosslinks h3 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--nr-text);
+    }
+
+    .nr-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nr-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      color: var(--nr-text-muted);
+      text-decoration: none;
+      border-radius: 20px;
+      border: 1px solid var(--nr-blush);
+      transition: all 0.2s ease;
+      background: var(--nr-cream);
+    }
+
+    .nr-crosslink-item:hover {
+      color: var(--nr-sage-deep);
+      border-color: var(--nr-sage);
+      background: rgba(184,201,163,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nr-hero-inner { grid-template-columns: 1fr; text-align: center; padding-top: 7rem; }
+      .nr-hero-actions { justify-content: center; }
+      .nr-hero-visual { max-width: 500px; margin: 0 auto; }
+      .nr-safety-grid { grid-template-columns: repeat(2, 1fr); }
+      .nr-products-grid { grid-template-columns: 1fr; }
+      .nr-tips-grid { grid-template-columns: 1fr; }
+      .nr-badge { left: auto; right: -10px; }
+    }
+
+    @media (max-width: 600px) {
+      .nr-safety-grid { grid-template-columns: 1fr; }
+      .nr-hero-img-wrap img { height: 350px; }
+      .nr-standards-badges { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body class="lp-nursery">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="nr-hero">
+    <div class="nr-shape nr-shape-1"></div>
+    <div class="nr-shape nr-shape-2"></div>
+    <div class="nr-shape nr-shape-3"></div>
+    <div class="nr-hero-inner">
+      <div class="nr-hero-text">
+        <div class="nr-tag">🧸 Baby-Safe Living</div>
+        <h1>Create a <span class="nr-highlight">Safe & Serene</span> Nursery</h1>
+        <p>Every parent deserves peace of mind. Our nursery window coverings are 100% cordless, non-toxic, and compliant with Australian safety standards — beautifully designed to help your little one sleep soundly.</p>
+        <div class="nr-hero-actions">
+          <a href="../free-quote.html" class="btn-sage">Free Nursery Consultation</a>
+          <a href="#safety" class="btn-outline-nr">Safety Features</a>
+        </div>
+      </div>
+      <div class="nr-hero-visual">
+        <div class="nr-hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1586105449897-20b5efeb3233?w=800&q=80" alt="Beautiful safe nursery with soft natural light filtering through cordless blinds">
+        </div>
+        <div class="nr-badge">
+          <span class="nr-badge-icon">🛡️</span>
+          <div class="nr-badge-text">100% Cordless<br><span>AS/NZS Certified</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety Features -->
+  <section id="safety" class="nr-safety">
+    <div class="nr-section-header">
+      <p class="nr-eyebrow">Why Safety Matters</p>
+      <h2>Built for Your Baby's Protection</h2>
+      <p>Window covering cords are a leading cause of childhood injury. All our nursery solutions eliminate this risk entirely.</p>
+    </div>
+    <div class="nr-safety-grid">
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon sage">🔒</div>
+        <h3>100% Cordless Design</h3>
+        <p>No chains, no cords, no loops. Spring-loaded, magnetic, or motorised mechanisms only.</p>
+      </div>
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon lavender">🌿</div>
+        <h3>Non-Toxic Materials</h3>
+        <p>Low-VOC fabrics and finishes that are safe for sensitive little lungs. OEKO-TEX certified options.</p>
+      </div>
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon sky">🌙</div>
+        <h3>Total Blackout</h3>
+        <p>Block 99.9% of light for uninterrupted naps and early bedtimes — even in summer daylight.</p>
+      </div>
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon peach">🤫</div>
+        <h3>Whisper-Quiet Operation</h3>
+        <p>Motorised options operate silently, so you can adjust blinds without waking baby.</p>
+      </div>
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon blush">🌡️</div>
+        <h3>Temperature Control</h3>
+        <p>Honeycomb cellular structure insulates against heat and cold, keeping the nursery comfortable year-round.</p>
+      </div>
+      <div class="nr-safety-card">
+        <div class="nr-safety-icon warm">📱</div>
+        <h3>Smart App Control</h3>
+        <p>Adjust from your phone while nursing or rocking. Set schedules to match nap routines automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="nr-products">
+    <div class="nr-section-header">
+      <p class="nr-eyebrow">Our Nursery Range</p>
+      <h2>Safe Solutions, Beautiful Designs</h2>
+      <p>Every product in our nursery range meets or exceeds Australian Standard AS/NZS 13120 for child safety.</p>
+    </div>
+    <div class="nr-products-grid">
+      <div class="nr-product-card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Cordless honeycomb blinds in nursery" class="nr-product-img">
+        <div class="nr-product-body">
+          <span class="nr-product-label safe">Top Pick</span>
+          <h3>Cordless Honeycomb Blinds</h3>
+          <p>Our most popular nursery choice. Cellular pockets trap air for insulation while the cordless design ensures complete safety.</p>
+          <ul class="nr-product-features">
+            <li>Total blackout fabric available</li>
+            <li>Honeycomb insulation keeps room comfortable</li>
+            <li>Spring-assisted cordless lift</li>
+            <li>30+ nursery-friendly colours</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nr-product-card">
+        <img src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80" alt="Motorised roller blinds in children's room" class="nr-product-img">
+        <div class="nr-product-body">
+          <span class="nr-product-label motorised">Smart</span>
+          <h3>Motorised Roller Blinds</h3>
+          <p>Zero cords, zero effort. Operate via remote, app, or voice. Set automated schedules for nap time.</p>
+          <ul class="nr-product-features">
+            <li>Rechargeable battery or hardwired</li>
+            <li>Google Home / Alexa compatible</li>
+            <li>Timer schedules for nap routines</li>
+            <li>Whisper-quiet motor (< 35dB)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nr-product-card">
+        <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=600&q=80" alt="Plantation shutters in light nursery" class="nr-product-img">
+        <div class="nr-product-body">
+          <span class="nr-product-label natural">Classic</span>
+          <h3>Plantation Shutters</h3>
+          <p>Inherently cordless and incredibly durable. Adjustable louvres let you control light perfectly.</p>
+          <ul class="nr-product-features">
+            <li>No cords, no mechanisms to worry about</li>
+            <li>Easy to clean (no dust traps)</li>
+            <li>Excellent light and airflow control</li>
+            <li>Adds value to your home</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nr-product-card">
+        <img src="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?w=600&q=80" alt="Soft sheer curtains in baby room" class="nr-product-img">
+        <div class="nr-product-body">
+          <span class="nr-product-label blackout">Gentle</span>
+          <h3>Blockout Curtains</h3>
+          <p>Soft, flowing fabric with a 3-pass blockout lining. Gentle diffused light during the day, total darkness at night.</p>
+          <ul class="nr-product-features">
+            <li>3-pass blockout lining standard</li>
+            <li>Soft fabrics in nursery palettes</li>
+            <li>Tracks mounted out of reach</li>
+            <li>Machine washable options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="nr-tips">
+    <div class="nr-section-header">
+      <p class="nr-eyebrow">Expert Advice</p>
+      <h2>Nursery Window Tips from Our Specialists</h2>
+    </div>
+    <div class="nr-tips-grid">
+      <div class="nr-tip-card">
+        <div class="nr-tip-num">01</div>
+        <h3>Layer for Flexibility</h3>
+        <p>Combine a sheer for daytime soft light with a blackout blind behind it. This gives you full control over nursery lighting at every hour.</p>
+      </div>
+      <div class="nr-tip-card">
+        <div class="nr-tip-num">02</div>
+        <h3>Consider Orientation</h3>
+        <p>East-facing rooms need strong blackout for morning naps. West-facing rooms benefit from UV-blocking fabric to keep the afternoon heat out.</p>
+      </div>
+      <div class="nr-tip-card">
+        <div class="nr-tip-num">03</div>
+        <h3>Future-Proof the Design</h3>
+        <p>Choose neutral colours and timeless styles. A nursery becomes a toddler room fast — pick coverings that grow with your child.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards -->
+  <section class="nr-standards">
+    <h2>Meeting Australia's Strictest Safety Standards</h2>
+    <p>Every iSeekBlinds nursery product complies with AS/NZS 13120 and our own additional safety protocols.</p>
+    <div class="nr-standards-badges">
+      <div class="nr-std-badge">
+        <div class="nr-std-badge-icon">🇦🇺</div>
+        <div class="nr-std-badge-text">AS/NZS 13120<br>Compliant</div>
+      </div>
+      <div class="nr-std-badge">
+        <div class="nr-std-badge-icon">🧪</div>
+        <div class="nr-std-badge-text">OEKO-TEX<br>Certified</div>
+      </div>
+      <div class="nr-std-badge">
+        <div class="nr-std-badge-icon">🏆</div>
+        <div class="nr-std-badge-text">10 Year<br>Warranty</div>
+      </div>
+      <div class="nr-std-badge">
+        <div class="nr-std-badge-icon">👶</div>
+        <div class="nr-std-badge-text">Zero Cord<br>Guarantee</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="nr-cta">
+    <h2>Ready to Create a Safe Space for Baby?</h2>
+    <p>Book a free in-home consultation. We'll measure, advise on the safest options, and install — all at no obligation.</p>
+    <div class="nr-cta-actions">
+      <a href="../free-quote.html" class="btn-sage">Book Free Nursery Consultation</a>
+      <a href="../contact.html" class="btn-outline-nr">Ask a Question</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="nr-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="nr-crosslinks-grid">
+      <a href="acoustic-solutions.html" class="nr-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      <a href="apartment-solutions.html" class="nr-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="arched-specialty-windows.html" class="nr-crosslink-item"><span>→</span> Arched & Specialty Windows</a>
+      <a href="bathroom-kitchen.html" class="nr-crosslink-item"><span>→</span> Bathroom & Kitchen</a>
+      <a href="bedroom-blackout.html" class="nr-crosslink-item"><span>→</span> Bedroom Blackout</a>
+      <a href="bifold-door-blinds.html" class="nr-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+      <a href="blinds-vs-curtains.html" class="nr-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+      <a href="care-maintenance.html" class="nr-crosslink-item"><span>→</span> Care & Maintenance</a>
+      <a href="child-safety.html" class="nr-crosslink-item"><span>→</span> Child Safety</a>
+      <a href="coastal-home-blinds.html" class="nr-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+      <a href="colour-trends-2026.html" class="nr-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="commercial-blinds.html" class="nr-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="conservatory-sunroom.html" class="nr-crosslink-item"><span>→</span> Conservatory & Sunroom</a>
+      <a href="day-night-blinds.html" class="nr-crosslink-item"><span>→</span> Day Night Blinds</a>
+      <a href="design-inspiration.html" class="nr-crosslink-item"><span>→</span> Design Inspiration</a>
+      <a href="diy-installation-guide.html" class="nr-crosslink-item"><span>→</span> DIY Installation Guide</a>
+      <a href="diy-measuring-guide.html" class="nr-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+      <a href="eco-friendly.html" class="nr-crosslink-item"><span>→</span> Eco-Friendly</a>
+      <a href="energy-efficient.html" class="nr-crosslink-item"><span>→</span> Energy Efficient</a>
+      <a href="fabric-encyclopedia.html" class="nr-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+      <a href="free-samples.html" class="nr-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="heritage-homes.html" class="nr-crosslink-item"><span>→</span> Heritage Homes</a>
+      <a href="high-rise-glare.html" class="nr-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+      <a href="home-office.html" class="nr-crosslink-item"><span>→</span> Home Office</a>
+      <a href="hospitality-blinds.html" class="nr-crosslink-item"><span>→</span> Hospitality</a>
+      <a href="large-windows.html" class="nr-crosslink-item"><span>→</span> Large Windows</a>
+      <a href="layered-treatments.html" class="nr-crosslink-item"><span>→</span> Layered Treatments</a>
+      <a href="media-room.html" class="nr-crosslink-item"><span>→</span> Media Room</a>
+      <a href="medical-clinic.html" class="nr-crosslink-item"><span>→</span> Medical Clinic</a>
+      <a href="melbourne-service-areas.html" class="nr-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      <a href="minimalist-styling.html" class="nr-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+      <a href="new-home-packages.html" class="nr-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="outdoor-blinds.html" class="nr-crosslink-item"><span>→</span> Outdoor Blinds</a>
+      <a href="pet-friendly.html" class="nr-crosslink-item"><span>→</span> Pet-Friendly</a>
+      <a href="privacy-blinds.html" class="nr-crosslink-item"><span>→</span> Privacy Blinds</a>
+      <a href="property-styling.html" class="nr-crosslink-item"><span>→</span> Property Styling</a>
+      <a href="rental-property.html" class="nr-crosslink-item"><span>→</span> Rental Property</a>
+      <a href="restaurant-cafe.html" class="nr-crosslink-item"><span>→</span> Restaurant & Cafe Blinds</a>
+      <a href="scandinavian-style.html" class="nr-crosslink-item"><span>→</span> Scandinavian Style</a>
+      <a href="seasonal-sale.html" class="nr-crosslink-item"><span>→</span> Seasonal Sale</a>
+      <a href="skylight-blinds.html" class="nr-crosslink-item"><span>→</span> Skylight Blinds</a>
+      <a href="smart-home.html" class="nr-crosslink-item"><span>→</span> Smart Home</a>
+      <a href="summer-uv-protection.html" class="nr-crosslink-item"><span>→</span> Summer UV Protection</a>
+      <a href="testimonials.html" class="nr-crosslink-item"><span>→</span> Testimonials</a>
+      <a href="winter-insulation.html" class="nr-crosslink-item"><span>→</span> Winter Insulation Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.nr-safety-card, .nr-product-card, .nr-tip-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

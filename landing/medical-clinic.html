@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Clinic & Healthcare Blinds | Privacy & Hygiene Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialist window blinds for medical clinics, dental surgeries, GP offices and healthcare facilities in Melbourne. Anti-bacterial, privacy-compliant, easy-clean solutions. Free commercial consultation.">
+  <meta name="keywords" content="medical clinic blinds, healthcare window treatments, dental surgery blinds Melbourne, GP clinic blinds, anti-bacterial blinds, privacy blinds medical, hospital blinds, healthcare facility window coverings">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === ULTRA-CLEAN CLINICAL MINIMALIST THEME === */
+    :root {
+      --mc-white: #ffffff;
+      --mc-snow: #f8fafb;
+      --mc-ice: #eef2f5;
+      --mc-steel: #d1d9e0;
+      --mc-blue: #0066cc;
+      --mc-blue-deep: #004999;
+      --mc-blue-light: #e8f2ff;
+      --mc-blue-glow: rgba(0, 102, 204, 0.08);
+      --mc-teal: #00897b;
+      --mc-teal-light: #e0f2f1;
+      --mc-text: #1a2332;
+      --mc-text-secondary: #5a6a7a;
+      --mc-text-light: #8a96a6;
+      --mc-border: #e4e9ed;
+      --mc-success: #2e7d32;
+    }
+
+    .lp-medical {
+      background: var(--mc-snow);
+      color: var(--mc-text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-medical .header { background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid var(--mc-border); }
+    .lp-medical .top-bar { background: var(--mc-blue-deep); }
+    .lp-medical .top-bar a { color: #fff; }
+    .lp-medical .footer { background: var(--mc-text); }
+
+    @keyframes mcFadeUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes mcSlideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes mcPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,102,204,0.2); }
+      50% { box-shadow: 0 0 0 15px rgba(0,102,204,0); }
+    }
+
+    @keyframes mcLineGrow {
+      from { width: 0; }
+      to { width: 60px; }
+    }
+
+    /* Hero - Split clinical layout */
+    .mc-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--mc-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mc-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--mc-blue-light) 0%, var(--mc-snow) 100%);
+    }
+
+    .mc-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mc-hero-text .mc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--mc-blue);
+      padding: 0.6rem 1.2rem;
+      background: var(--mc-blue-light);
+      border-radius: 6px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: mcFadeUp 0.5s ease forwards 0.2s;
+    }
+
+    .mc-hero-text h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: mcFadeUp 0.5s ease forwards 0.35s;
+    }
+
+    .mc-hero-text h1 .mc-accent {
+      color: var(--mc-blue);
+    }
+
+    .mc-hero-text .mc-hero-line {
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--mc-blue);
+      margin-bottom: 1.5rem;
+      animation: mcLineGrow 0.6s ease forwards 0.5s;
+    }
+
+    .mc-hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--mc-text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      opacity: 0;
+      animation: mcFadeUp 0.5s ease forwards 0.5s;
+    }
+
+    .mc-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: mcFadeUp 0.5s ease forwards 0.65s;
+    }
+
+    .btn-mc-primary {
+      background: var(--mc-blue);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-mc-primary:hover {
+      background: var(--mc-blue-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,102,204,0.25);
+    }
+
+    .btn-mc-secondary {
+      border: 1.5px solid var(--mc-border);
+      color: var(--mc-text);
+      padding: 0.9rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: var(--mc-white);
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-mc-secondary:hover {
+      border-color: var(--mc-blue);
+      color: var(--mc-blue);
+    }
+
+    .mc-hero-visual {
+      position: relative;
+      opacity: 0;
+      animation: mcFadeUp 0.6s ease forwards 0.4s;
+    }
+
+    .mc-hero-img-main {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(26,35,50,0.1);
+    }
+
+    .mc-hero-img-main img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mc-stat-pill {
+      position: absolute;
+      background: var(--mc-white);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .mc-stat-pill.top-right {
+      top: -15px;
+      right: -15px;
+    }
+
+    .mc-stat-pill.bottom-left {
+      bottom: -15px;
+      left: -15px;
+      animation: mcPulse 3s ease-in-out infinite;
+    }
+
+    .mc-stat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .mc-stat-icon.blue { background: var(--mc-blue-light); }
+    .mc-stat-icon.teal { background: var(--mc-teal-light); }
+
+    .mc-stat-text { font-weight: 700; font-size: 0.85rem; line-height: 1.3; }
+    .mc-stat-text span { color: var(--mc-blue); display: block; font-size: 1.1rem; }
+
+    /* Stats Bar */
+    .mc-stats-bar {
+      background: var(--mc-white);
+      border-top: 1px solid var(--mc-border);
+      border-bottom: 1px solid var(--mc-border);
+      padding: 2rem 0;
+    }
+
+    .mc-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .mc-stat-item h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--mc-blue);
+      margin-bottom: 0.3rem;
+    }
+
+    .mc-stat-item p {
+      font-size: 0.85rem;
+      color: var(--mc-text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Facility Types */
+    .mc-facilities {
+      padding: 6rem 2rem;
+    }
+
+    .mc-section-header {
+      max-width: 600px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .mc-section-header .mc-overline {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--mc-blue);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mc-section-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .mc-section-header p {
+      color: var(--mc-text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .mc-facility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mc-facility-card {
+      background: var(--mc-white);
+      border: 1px solid var(--mc-border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .mc-facility-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mc-facility-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--mc-blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .mc-facility-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .mc-facility-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .mc-facility-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--mc-blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .mc-facility-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .mc-facility-card p {
+      color: var(--mc-text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* Requirements Section */
+    .mc-requirements {
+      padding: 6rem 2rem;
+      background: var(--mc-white);
+    }
+
+    .mc-req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .mc-req-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mc-req-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--mc-ice);
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+
+    .mc-req-list li.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .mc-req-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--mc-blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--mc-blue);
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+
+    .mc-req-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .mc-req-text p {
+      font-size: 0.9rem;
+      color: var(--mc-text-secondary);
+      line-height: 1.6;
+    }
+
+    .mc-req-visual {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .mc-req-visual img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Products */
+    .mc-products {
+      padding: 6rem 2rem;
+    }
+
+    .mc-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mc-product-card {
+      background: var(--mc-white);
+      border: 1px solid var(--mc-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .mc-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mc-product-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transform: translateY(-4px);
+    }
+
+    .mc-product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .mc-product-body {
+      padding: 1.5rem;
+    }
+
+    .mc-product-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+    }
+
+    .mc-product-tag.hygiene { background: var(--mc-teal-light); color: var(--mc-teal); }
+    .mc-product-tag.privacy { background: var(--mc-blue-light); color: var(--mc-blue); }
+    .mc-product-tag.durable { background: #fff3e0; color: #e65100; }
+
+    .mc-product-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .mc-product-body p {
+      color: var(--mc-text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .mc-product-specs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--mc-ice);
+      padding-top: 1rem;
+    }
+
+    .mc-product-specs li {
+      font-size: 0.85rem;
+      color: var(--mc-text);
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .mc-product-specs li::before {
+      content: '✓';
+      color: var(--mc-teal);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    /* Process Section */
+    .mc-process {
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--mc-blue-deep) 0%, #003366 100%);
+      color: #fff;
+    }
+
+    .mc-process .mc-section-header .mc-overline { color: rgba(255,255,255,0.6); }
+    .mc-process .mc-section-header p { color: rgba(255,255,255,0.7); }
+
+    .mc-process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mc-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .mc-step::after {
+      content: '→';
+      position: absolute;
+      right: -1.2rem;
+      top: 35px;
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .mc-step:last-child::after { display: none; }
+
+    .mc-step-num {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .mc-step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .mc-step p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .mc-cta {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--mc-white);
+    }
+
+    .mc-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .mc-cta p {
+      color: var(--mc-text-secondary);
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .mc-cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Cross Links */
+    .mc-crosslinks {
+      padding: 4rem 2rem;
+      background: var(--mc-snow);
+      border-top: 1px solid var(--mc-border);
+    }
+
+    .mc-crosslinks h3 {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: var(--mc-text);
+    }
+
+    .mc-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .mc-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      color: var(--mc-text-secondary);
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid var(--mc-border);
+      transition: all 0.2s ease;
+      background: var(--mc-white);
+    }
+
+    .mc-crosslink-item:hover {
+      color: var(--mc-blue);
+      border-color: var(--mc-blue);
+      background: var(--mc-blue-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .mc-hero-grid { grid-template-columns: 1fr; gap: 3rem; padding-top: 7rem; }
+      .mc-hero::before { width: 100%; height: 50%; bottom: 0; top: auto; }
+      .mc-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .mc-facility-grid { grid-template-columns: repeat(2, 1fr); }
+      .mc-req-grid { grid-template-columns: 1fr; }
+      .mc-products-grid { grid-template-columns: repeat(2, 1fr); }
+      .mc-process-steps { grid-template-columns: repeat(2, 1fr); }
+      .mc-step::after { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .mc-stats-row { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .mc-facility-grid { grid-template-columns: 1fr; }
+      .mc-products-grid { grid-template-columns: 1fr; }
+      .mc-process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+      .mc-hero-img-main img { height: 350px; }
+      .mc-stat-pill { display: none; }
+    }
+  </style>
+</head>
+<body class="lp-medical">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mc-hero">
+    <div class="mc-hero-grid">
+      <div class="mc-hero-text">
+        <div class="mc-badge">🏥 Healthcare Specialist</div>
+        <h1>Window Solutions for <span class="mc-accent">Medical & Healthcare</span> Facilities</h1>
+        <span class="mc-hero-line"></span>
+        <p>Anti-bacterial, easy-clean blinds engineered for clinical environments. Privacy compliance, infection control, and professional aesthetics — all in one solution.</p>
+        <div class="mc-hero-actions">
+          <a href="../free-quote.html" class="btn-mc-primary">Request Commercial Quote →</a>
+          <a href="#facilities" class="btn-mc-secondary">View Solutions</a>
+        </div>
+      </div>
+      <div class="mc-hero-visual">
+        <div class="mc-hero-img-main">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Modern medical clinic interior with clean window blinds">
+        </div>
+        <div class="mc-stat-pill top-right">
+          <div class="mc-stat-icon blue">🧹</div>
+          <div class="mc-stat-text">Easy Clean<span>Anti-Bacterial</span></div>
+        </div>
+        <div class="mc-stat-pill bottom-left">
+          <div class="mc-stat-icon teal">🔒</div>
+          <div class="mc-stat-text">Privacy<span>Compliant</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="mc-stats-bar">
+    <div class="mc-stats-row">
+      <div class="mc-stat-item">
+        <h4>200+</h4>
+        <p>Clinics Fitted</p>
+      </div>
+      <div class="mc-stat-item">
+        <h4>100%</h4>
+        <p>Privacy Compliant</p>
+      </div>
+      <div class="mc-stat-item">
+        <h4>5 Year</h4>
+        <p>Commercial Warranty</p>
+      </div>
+      <div class="mc-stat-item">
+        <h4>48hr</h4>
+        <p>Emergency Service</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facility Types -->
+  <section id="facilities" class="mc-facilities">
+    <div class="mc-section-header">
+      <span class="mc-overline">Specialised Solutions</span>
+      <h2>Tailored for Every Healthcare Setting</h2>
+      <p>We understand the unique requirements of different medical environments.</p>
+    </div>
+    <div class="mc-facility-grid">
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">🏥</div>
+        <h3>GP Clinics</h3>
+        <p>Consultation room privacy with adjustable light control. Waiting room blinds that are durable and easy to maintain.</p>
+      </div>
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">🦷</div>
+        <h3>Dental Surgeries</h3>
+        <p>Glare reduction for procedure rooms. Anti-bacterial roller blinds that withstand daily wipe-down cleaning protocols.</p>
+      </div>
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">👁️</div>
+        <h3>Optometry & Eye Clinics</h3>
+        <p>Precision light control for examination rooms. Total blackout for diagnostic areas. Adjustable for patient comfort.</p>
+      </div>
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">💊</div>
+        <h3>Pharmacies</h3>
+        <p>Shopfront UV protection for product displays. Privacy screening for consultation areas. Professional appearance.</p>
+      </div>
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">🏋️</div>
+        <h3>Allied Health & Physio</h3>
+        <p>Treatment room privacy. Durable blinds for high-traffic facilities. Easy operation between patient sessions.</p>
+      </div>
+      <div class="mc-facility-card">
+        <div class="mc-facility-icon">🧠</div>
+        <h3>Psychology & Counselling</h3>
+        <p>Creating a calming, private environment. Soft light filtering. Sound-absorbing options for confidential consultations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requirements -->
+  <section class="mc-requirements">
+    <div class="mc-req-grid">
+      <div>
+        <div class="mc-section-header" style="text-align:left; margin: 0 0 2rem;">
+          <span class="mc-overline">Healthcare Compliance</span>
+          <h2>Meeting Medical Facility Standards</h2>
+          <p>Our healthcare range addresses every regulatory and practical requirement.</p>
+        </div>
+        <ul class="mc-req-list">
+          <li>
+            <div class="mc-req-check">✓</div>
+            <div class="mc-req-text">
+              <h4>Infection Control</h4>
+              <p>Anti-bacterial and anti-fungal coated fabrics. Wipe-clean surfaces compatible with clinical disinfectants.</p>
+            </div>
+          </li>
+          <li>
+            <div class="mc-req-check">✓</div>
+            <div class="mc-req-text">
+              <h4>Patient Privacy</h4>
+              <p>Full opacity options for consultation rooms. Adjustable from transparent to complete privacy in seconds.</p>
+            </div>
+          </li>
+          <li>
+            <div class="mc-req-check">✓</div>
+            <div class="mc-req-text">
+              <h4>Fire Safety</h4>
+              <p>Group 1 fire-rated fabrics meeting AS 1530.2 for commercial healthcare environments.</p>
+            </div>
+          </li>
+          <li>
+            <div class="mc-req-check">✓</div>
+            <div class="mc-req-text">
+              <h4>Glare Reduction</h4>
+              <p>Screen fabrics that reduce glare on medical screens and monitors while maintaining natural light.</p>
+            </div>
+          </li>
+          <li>
+            <div class="mc-req-check">✓</div>
+            <div class="mc-req-text">
+              <h4>Low Maintenance</h4>
+              <p>Dust-resistant coatings and washable fabrics. Minimal downtime for cleaning and servicing.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="mc-req-visual">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Clean modern medical office with privacy blinds">
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="mc-products">
+    <div class="mc-section-header">
+      <span class="mc-overline">Recommended Products</span>
+      <h2>Healthcare-Grade Window Solutions</h2>
+      <p>Proven products trusted by medical professionals across Melbourne.</p>
+    </div>
+    <div class="mc-products-grid">
+      <div class="mc-product-card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Anti-bacterial roller blinds" class="mc-product-img">
+        <div class="mc-product-body">
+          <span class="mc-product-tag hygiene">Hygiene</span>
+          <h3>Anti-Bacterial Roller Blinds</h3>
+          <p>Silver-ion treated fabric that inhibits 99.9% of bacterial growth. The gold standard for clinical spaces.</p>
+          <ul class="mc-product-specs">
+            <li>Silver-ion anti-microbial coating</li>
+            <li>Wipe-clean with clinical disinfectants</li>
+            <li>Fire-rated Group 1 fabric</li>
+            <li>5-year commercial warranty</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mc-product-card">
+        <img src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80" alt="Privacy vision blinds" class="mc-product-img">
+        <div class="mc-product-body">
+          <span class="mc-product-tag privacy">Privacy</span>
+          <h3>Day-Night Vision Blinds</h3>
+          <p>Alternating sheer and opaque bands let you switch between light filtering and full privacy instantly.</p>
+          <ul class="mc-product-specs">
+            <li>Adjustable transparency levels</li>
+            <li>No need for dual blind systems</li>
+            <li>Easy single-hand operation</li>
+            <li>Available in 20+ neutral tones</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mc-product-card">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Motorised blinds in medical setting" class="mc-product-img">
+        <div class="mc-product-body">
+          <span class="mc-product-tag durable">Smart</span>
+          <h3>Motorised Clinical Blinds</h3>
+          <p>Touch-free operation ideal for sterile environments. Programmable schedules to manage light throughout the day.</p>
+          <ul class="mc-product-specs">
+            <li>Touch-free hygiene operation</li>
+            <li>Central management for multi-room</li>
+            <li>Automated scheduling</li>
+            <li>Hardwired or battery options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="mc-process">
+    <div class="mc-section-header">
+      <span class="mc-overline">How It Works</span>
+      <h2 style="color:#fff">Our Healthcare Fit-Out Process</h2>
+      <p>Minimal disruption to your practice. We work around your schedule.</p>
+    </div>
+    <div class="mc-process-steps">
+      <div class="mc-step">
+        <div class="mc-step-num">01</div>
+        <h4>Site Assessment</h4>
+        <p>We visit your facility, assess windows, lighting, and compliance requirements at no charge.</p>
+      </div>
+      <div class="mc-step">
+        <div class="mc-step-num">02</div>
+        <h4>Custom Proposal</h4>
+        <p>Receive a detailed quote with product recommendations, fire ratings, and compliance documentation.</p>
+      </div>
+      <div class="mc-step">
+        <div class="mc-step-num">03</div>
+        <h4>Manufacturing</h4>
+        <p>Custom-made in Melbourne. Typical lead time 2-3 weeks for healthcare-grade products.</p>
+      </div>
+      <div class="mc-step">
+        <div class="mc-step-num">04</div>
+        <h4>After-Hours Install</h4>
+        <p>Installation outside business hours. Zero disruption to patients. Clean-up and testing included.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mc-cta">
+    <h2>Ready to Upgrade Your Clinic?</h2>
+    <p>Book a free site assessment. We'll provide a detailed proposal with compliance documentation and product recommendations.</p>
+    <div class="mc-cta-actions">
+      <a href="../free-quote.html" class="btn-mc-primary">Request Free Site Assessment →</a>
+      <a href="../contact.html" class="btn-mc-secondary">Call 0400 000 000</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="mc-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="mc-crosslinks-grid">
+      <a href="acoustic-solutions.html" class="mc-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      <a href="apartment-solutions.html" class="mc-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="arched-specialty-windows.html" class="mc-crosslink-item"><span>→</span> Arched & Specialty Windows</a>
+      <a href="bathroom-kitchen.html" class="mc-crosslink-item"><span>→</span> Bathroom & Kitchen</a>
+      <a href="bedroom-blackout.html" class="mc-crosslink-item"><span>→</span> Bedroom Blackout</a>
+      <a href="bifold-door-blinds.html" class="mc-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+      <a href="blinds-vs-curtains.html" class="mc-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+      <a href="care-maintenance.html" class="mc-crosslink-item"><span>→</span> Care & Maintenance</a>
+      <a href="child-safety.html" class="mc-crosslink-item"><span>→</span> Child Safety</a>
+      <a href="coastal-home-blinds.html" class="mc-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+      <a href="colour-trends-2026.html" class="mc-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="commercial-blinds.html" class="mc-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="conservatory-sunroom.html" class="mc-crosslink-item"><span>→</span> Conservatory & Sunroom</a>
+      <a href="day-night-blinds.html" class="mc-crosslink-item"><span>→</span> Day Night Blinds</a>
+      <a href="design-inspiration.html" class="mc-crosslink-item"><span>→</span> Design Inspiration</a>
+      <a href="diy-installation-guide.html" class="mc-crosslink-item"><span>→</span> DIY Installation Guide</a>
+      <a href="diy-measuring-guide.html" class="mc-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+      <a href="eco-friendly.html" class="mc-crosslink-item"><span>→</span> Eco-Friendly</a>
+      <a href="energy-efficient.html" class="mc-crosslink-item"><span>→</span> Energy Efficient</a>
+      <a href="fabric-encyclopedia.html" class="mc-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+      <a href="free-samples.html" class="mc-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="heritage-homes.html" class="mc-crosslink-item"><span>→</span> Heritage Homes</a>
+      <a href="high-rise-glare.html" class="mc-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+      <a href="home-office.html" class="mc-crosslink-item"><span>→</span> Home Office</a>
+      <a href="hospitality-blinds.html" class="mc-crosslink-item"><span>→</span> Hospitality</a>
+      <a href="large-windows.html" class="mc-crosslink-item"><span>→</span> Large Windows</a>
+      <a href="layered-treatments.html" class="mc-crosslink-item"><span>→</span> Layered Treatments</a>
+      <a href="media-room.html" class="mc-crosslink-item"><span>→</span> Media Room</a>
+      <a href="melbourne-service-areas.html" class="mc-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      <a href="minimalist-styling.html" class="mc-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+      <a href="new-home-packages.html" class="mc-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="nursery-safe.html" class="mc-crosslink-item"><span>→</span> Nursery Safe</a>
+      <a href="outdoor-blinds.html" class="mc-crosslink-item"><span>→</span> Outdoor Blinds</a>
+      <a href="pet-friendly.html" class="mc-crosslink-item"><span>→</span> Pet-Friendly</a>
+      <a href="privacy-blinds.html" class="mc-crosslink-item"><span>→</span> Privacy Blinds</a>
+      <a href="property-styling.html" class="mc-crosslink-item"><span>→</span> Property Styling</a>
+      <a href="rental-property.html" class="mc-crosslink-item"><span>→</span> Rental Property</a>
+      <a href="restaurant-cafe.html" class="mc-crosslink-item"><span>→</span> Restaurant & Cafe Blinds</a>
+      <a href="scandinavian-style.html" class="mc-crosslink-item"><span>→</span> Scandinavian Style</a>
+      <a href="seasonal-sale.html" class="mc-crosslink-item"><span>→</span> Seasonal Sale</a>
+      <a href="skylight-blinds.html" class="mc-crosslink-item"><span>→</span> Skylight Blinds</a>
+      <a href="smart-home.html" class="mc-crosslink-item"><span>→</span> Smart Home</a>
+      <a href="summer-uv-protection.html" class="mc-crosslink-item"><span>→</span> Summer UV Protection</a>
+      <a href="testimonials.html" class="mc-crosslink-item"><span>→</span> Testimonials</a>
+      <a href="winter-insulation.html" class="mc-crosslink-item"><span>→</span> Winter Insulation Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.mc-facility-card, .mc-product-card, .mc-req-list li').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
