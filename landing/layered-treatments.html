@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layered Window Treatments | Blinds + Curtains Styling | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Create depth and dimension with layered window treatments. Combine blinds, sheers and curtains for ultimate light control and style. iSeekBlinds Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GLASSMORPHISM THEME — Frosted glass, transparent layers, light & shadow === */
+    :root {
+      --glass-bg: #0f0c29;
+      --glass-mid: #302b63;
+      --glass-light: #24243e;
+      --glass-accent: #a78bfa;
+      --glass-accent2: #f0abfc;
+      --glass-rose: #fb7185;
+      --glass-sky: #7dd3fc;
+      --glass-white: rgba(255,255,255,0.95);
+      --glass-muted: rgba(255,255,255,0.6);
+    }
+
+    .lp-layered {
+      background: linear-gradient(135deg, var(--glass-bg) 0%, var(--glass-mid) 50%, var(--glass-light) 100%);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Glassmorphism card base */
+    .glass-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+    }
+
+    /* Hero */
+    .ly-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .ly-hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+    }
+
+    .ly-hero-orb.orb1 {
+      width: 500px; height: 500px;
+      background: rgba(167,139,250,0.25);
+      top: -10%; left: -10%;
+      animation: orbDrift 18s ease-in-out infinite alternate;
+    }
+
+    .ly-hero-orb.orb2 {
+      width: 400px; height: 400px;
+      background: rgba(240,171,252,0.2);
+      bottom: -15%; right: -5%;
+      animation: orbDrift 22s ease-in-out infinite alternate-reverse;
+    }
+
+    .ly-hero-orb.orb3 {
+      width: 300px; height: 300px;
+      background: rgba(125,211,252,0.15);
+      top: 40%; right: 20%;
+      animation: orbDrift 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes orbDrift {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.1); }
+      100% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    .ly-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .ly-hero-badge {
+      display: inline-block;
+      background: rgba(167,139,250,0.2);
+      border: 1px solid rgba(167,139,250,0.3);
+      color: var(--glass-accent);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .ly-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    .ly-hero h1 .ly-gradient-text {
+      background: linear-gradient(135deg, var(--glass-accent), var(--glass-accent2), var(--glass-sky));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ly-hero-sub {
+      font-size: 1.15rem;
+      color: var(--glass-muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .ly-hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .ly-btn {
+      display: inline-block;
+      padding: 1rem 2.4rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .ly-btn-primary {
+      background: linear-gradient(135deg, var(--glass-accent), var(--glass-accent2));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(167,139,250,0.3);
+    }
+
+    .ly-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(167,139,250,0.5);
+    }
+
+    .ly-btn-glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    .ly-btn-glass:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--glass-accent);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Layer Explainer */
+    .ly-layers {
+      padding: 6rem 6%;
+      position: relative;
+    }
+
+    .ly-layers-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .ly-section-tag {
+      display: inline-block;
+      background: rgba(167,139,250,0.15);
+      border: 1px solid rgba(167,139,250,0.25);
+      color: var(--glass-accent);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .ly-layers h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .ly-layers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ly-layer-card {
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ly-layer-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ly-layer-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .ly-layer-num {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 4rem;
+      font-weight: 900;
+      opacity: 0.06;
+      color: #fff;
+    }
+
+    .ly-layer-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .ly-layer-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .ly-layer-card h3 span {
+      color: var(--glass-accent);
+    }
+
+    .ly-layer-card p {
+      color: var(--glass-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Combos Section */
+    .ly-combos {
+      padding: 6rem 6%;
+      position: relative;
+    }
+
+    .ly-combos-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .ly-combos h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .ly-combos-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ly-combo-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    .ly-combo-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .ly-combo-item:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .ly-combo-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .ly-combo-layer {
+      width: 80px;
+      height: 16px;
+      border-radius: 8px;
+      opacity: 0.9;
+    }
+
+    .ly-combo-layer:nth-child(1) { width: 80px; }
+    .ly-combo-layer:nth-child(2) { width: 70px; }
+    .ly-combo-layer:nth-child(3) { width: 60px; }
+
+    .ly-combo-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .ly-combo-content p {
+      color: var(--glass-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .ly-combo-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .ly-combo-tag {
+      background: rgba(167,139,250,0.12);
+      color: var(--glass-accent);
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Benefits */
+    .ly-benefits {
+      padding: 6rem 6%;
+      text-align: center;
+    }
+
+    .ly-benefits h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+    }
+
+    .ly-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ly-benefit {
+      padding: 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s ease;
+    }
+
+    .ly-benefit.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .ly-benefit:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .ly-benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .ly-benefit h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .ly-benefit p {
+      color: var(--glass-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Room Showcase */
+    .ly-rooms {
+      padding: 6rem 6%;
+    }
+
+    .ly-rooms-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .ly-rooms h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .ly-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ly-room-card {
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ly-room-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ly-room-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .ly-room-top {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+
+    .ly-room-top.living { background: linear-gradient(135deg, rgba(167,139,250,0.3), rgba(240,171,252,0.2)); }
+    .ly-room-top.bed { background: linear-gradient(135deg, rgba(240,171,252,0.3), rgba(251,113,133,0.2)); }
+    .ly-room-top.dining { background: linear-gradient(135deg, rgba(125,211,252,0.3), rgba(167,139,250,0.2)); }
+
+    .ly-room-body {
+      padding: 1.5rem;
+    }
+
+    .ly-room-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .ly-room-body p {
+      color: var(--glass-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .ly-room-rec {
+      font-size: 0.8rem;
+      color: var(--glass-accent);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .ly-cta {
+      padding: 6rem 6%;
+      text-align: center;
+      position: relative;
+    }
+
+    .ly-cta-glass {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ly-cta-glass::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(167,139,250,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 50%, rgba(240,171,252,0.1) 0%, transparent 50%);
+    }
+
+    .ly-cta h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .ly-cta p {
+      color: var(--glass-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .ly-cta .ly-btn-primary {
+      position: relative;
+    }
+
+    /* Cross-links */
+    .ly-crosslinks {
+      padding: 4rem 6%;
+    }
+
+    .ly-crosslinks h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .ly-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ly-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .ly-crosslink-item:hover {
+      background: rgba(167,139,250,0.15);
+      border-color: rgba(167,139,250,0.3);
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .ly-crosslink-item span {
+      color: var(--glass-accent);
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ly-hero-content { padding: 6rem 1.5rem 3rem; }
+      .ly-layers, .ly-combos, .ly-benefits, .ly-rooms, .ly-cta { padding: 3rem 1.5rem; }
+      .ly-layers-grid { grid-template-columns: 1fr; }
+      .ly-combo-item { grid-template-columns: 1fr; text-align: center; }
+      .ly-combo-visual { flex-direction: row; justify-content: center; }
+      .ly-hero-actions { flex-direction: column; align-items: center; }
+      .ly-cta-glass { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body class="lp-layered">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ly-hero">
+    <div class="ly-hero-orb orb1"></div>
+    <div class="ly-hero-orb orb2"></div>
+    <div class="ly-hero-orb orb3"></div>
+    <div class="ly-hero-content">
+      <div class="ly-hero-badge">✦ The Art of Layering</div>
+      <h1>Depth, Texture &<br><span class="ly-gradient-text">Dimension</span></h1>
+      <p class="ly-hero-sub">Combine blinds, sheers and curtains to create layered window treatments that give you complete control over light, privacy and style.</p>
+      <div class="ly-hero-actions">
+        <a href="../free-quote.html" class="ly-btn ly-btn-primary">Design Your Layers</a>
+        <a href="#layers" class="ly-btn ly-btn-glass">How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layer Explainer -->
+  <section id="layers" class="ly-layers">
+    <div class="ly-layers-header">
+      <span class="ly-section-tag">The Three Layers</span>
+      <h2>Building the Perfect Window</h2>
+    </div>
+    <div class="ly-layers-grid">
+      <div class="ly-layer-card glass-card">
+        <span class="ly-layer-num">01</span>
+        <span class="ly-layer-icon">🪟</span>
+        <h3>Layer 1: <span>The Blind</span></h3>
+        <p>Your functional foundation. Roller, venetian or honeycomb blinds sit closest to the glass, providing UV protection and precise light control.</p>
+      </div>
+      <div class="ly-layer-card glass-card">
+        <span class="ly-layer-num">02</span>
+        <span class="ly-layer-icon">🌤️</span>
+        <h3>Layer 2: <span>The Sheer</span></h3>
+        <p>The middle layer diffuses natural light beautifully, softening the view while maintaining daytime privacy. Creates an ethereal glow.</p>
+      </div>
+      <div class="ly-layer-card glass-card">
+        <span class="ly-layer-num">03</span>
+        <span class="ly-layer-icon">🏡</span>
+        <h3>Layer 3: <span>The Curtain</span></h3>
+        <p>The statement piece. S-fold or pinch pleat curtains frame your window, add insulation and complete the layered look with dramatic flair.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Combos -->
+  <section class="ly-combos">
+    <div class="ly-combos-header">
+      <span class="ly-section-tag">Popular Combinations</span>
+      <h2>Curated Layer Pairings</h2>
+    </div>
+    <div class="ly-combos-list">
+      <div class="ly-combo-item glass-card">
+        <div class="ly-combo-visual">
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, var(--glass-accent), var(--glass-accent2));"></div>
+          <div class="ly-combo-layer" style="background: rgba(255,255,255,0.2);"></div>
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, var(--glass-sky), var(--glass-accent));"></div>
+        </div>
+        <div class="ly-combo-content">
+          <h3>The Classic Luxe</h3>
+          <p>Blockout roller blind + sheer curtain + S-fold drape. Maximum versatility — go from full darkness to soft filtered light to wide open.</p>
+          <div class="ly-combo-tags">
+            <span class="ly-combo-tag">Best for Bedrooms</span>
+            <span class="ly-combo-tag">Full Light Control</span>
+          </div>
+        </div>
+      </div>
+      <div class="ly-combo-item glass-card">
+        <div class="ly-combo-visual">
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, var(--glass-rose), var(--glass-accent2));"></div>
+          <div class="ly-combo-layer" style="background: rgba(255,255,255,0.15);"></div>
+        </div>
+        <div class="ly-combo-content">
+          <h3>The Soft Living</h3>
+          <p>Sunscreen roller blind + pinch pleat sheer. Maintains the view while controlling glare. Perfect for living rooms with a garden outlook.</p>
+          <div class="ly-combo-tags">
+            <span class="ly-combo-tag">Living Rooms</span>
+            <span class="ly-combo-tag">View Preservation</span>
+          </div>
+        </div>
+      </div>
+      <div class="ly-combo-item glass-card">
+        <div class="ly-combo-visual">
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, #64748b, #94a3b8);"></div>
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, var(--glass-accent2), var(--glass-rose));"></div>
+        </div>
+        <div class="ly-combo-content">
+          <h3>The Modern Statement</h3>
+          <p>Venetian blind + bold coloured curtain. Industrial meets softness — textured timber venetians paired with a dramatic fabric drape.</p>
+          <div class="ly-combo-tags">
+            <span class="ly-combo-tag">Dining Rooms</span>
+            <span class="ly-combo-tag">Design Forward</span>
+          </div>
+        </div>
+      </div>
+      <div class="ly-combo-item glass-card">
+        <div class="ly-combo-visual">
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, var(--glass-sky), #a5f3fc);"></div>
+          <div class="ly-combo-layer" style="background: rgba(255,255,255,0.12);"></div>
+          <div class="ly-combo-layer" style="background: linear-gradient(90deg, #e2e8f0, #f1f5f9);"></div>
+        </div>
+        <div class="ly-combo-content">
+          <h3>The Thermal Shield</h3>
+          <p>Honeycomb blind + sheer + thermal curtain. Triple-layer insulation for extreme Melbourne weather. Saves up to 50% on energy bills.</p>
+          <div class="ly-combo-tags">
+            <span class="ly-combo-tag">Energy Saving</span>
+            <span class="ly-combo-tag">All Seasons</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="ly-benefits">
+    <span class="ly-section-tag">Why Layer</span>
+    <h2>The Benefits of Layered Treatments</h2>
+    <div class="ly-benefits-grid">
+      <div class="ly-benefit glass-card">
+        <span class="ly-benefit-icon">🌗</span>
+        <h3>Total Light Control</h3>
+        <p>From blackout to filtered sunshine — adjust each layer independently for the perfect ambiance.</p>
+      </div>
+      <div class="ly-benefit glass-card">
+        <span class="ly-benefit-icon">🔇</span>
+        <h3>Acoustic Insulation</h3>
+        <p>Multiple fabric layers absorb sound, creating a quieter, more peaceful space.</p>
+      </div>
+      <div class="ly-benefit glass-card">
+        <span class="ly-benefit-icon">🌡️</span>
+        <h3>Climate Control</h3>
+        <p>Trapped air pockets between layers provide excellent thermal insulation year-round.</p>
+      </div>
+      <div class="ly-benefit glass-card">
+        <span class="ly-benefit-icon">✨</span>
+        <h3>Visual Depth</h3>
+        <p>Layers create a sense of luxury and sophistication that single treatments simply can't match.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Room Showcase -->
+  <section class="ly-rooms">
+    <div class="ly-rooms-header">
+      <span class="ly-section-tag">Room by Room</span>
+      <h2>Layered Looks for Every Space</h2>
+    </div>
+    <div class="ly-rooms-grid">
+      <div class="ly-room-card glass-card">
+        <div class="ly-room-top living">🛋️</div>
+        <div class="ly-room-body">
+          <h3>Living Room</h3>
+          <p>Make a statement with floor-to-ceiling curtains over sunscreen rollers. The ultimate entertaining backdrop.</p>
+          <span class="ly-room-rec">Recommended: Sunscreen Roller + S-Fold Sheer + Pinch Pleat Drape</span>
+        </div>
+      </div>
+      <div class="ly-room-card glass-card">
+        <div class="ly-room-top bed">🛏️</div>
+        <div class="ly-room-body">
+          <h3>Bedroom</h3>
+          <p>Achieve total darkness when needed, soft morning glow when wanted. Layering gives you both.</p>
+          <span class="ly-room-rec">Recommended: Blockout Roller + Sheer Curtain + Thermal Drape</span>
+        </div>
+      </div>
+      <div class="ly-room-card glass-card">
+        <div class="ly-room-top dining">🍽️</div>
+        <div class="ly-room-body">
+          <h3>Dining Room</h3>
+          <p>Create intimate dining atmospheres with venetian blinds paired with elegant floor-length curtains.</p>
+          <span class="ly-room-rec">Recommended: Timber Venetian + Linen Curtain</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ly-cta">
+    <div class="ly-cta-glass glass-card">
+      <h2>Let's Design Your Layers</h2>
+      <p>Book a free in-home consultation. Our designers will help you choose the perfect layered combination for every room.</p>
+      <a href="../free-quote.html" class="ly-btn ly-btn-primary">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ly-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="ly-crosslinks-grid">
+      <a href="commercial-blinds.html" class="ly-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="ly-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="ly-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="ly-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="colour-trends-2026.html" class="ly-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="energy-efficient.html" class="ly-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      <a href="child-safety.html" class="ly-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+      <a href="outdoor-blinds.html" class="ly-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+      <a href="apartment-solutions.html" class="ly-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="care-maintenance.html" class="ly-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+      <a href="design-inspiration.html" class="ly-crosslink-item"><span>→</span> Design Inspiration</a>
+      <a href="testimonials.html" class="ly-crosslink-item"><span>→</span> Customer Testimonials</a>
+      <a href="melbourne-service-areas.html" class="ly-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      <a href="blinds-vs-curtains.html" class="ly-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+      <a href="smart-home.html" class="ly-crosslink-item"><span>→</span> Smart Home Blinds</a>
+      <a href="acoustic-solutions.html" class="ly-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      <a href="hospitality-blinds.html" class="ly-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+      <a href="large-windows.html" class="ly-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+      <a href="eco-friendly.html" class="ly-crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ly-layer-card, .ly-combo-item, .ly-benefit, .ly-room-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

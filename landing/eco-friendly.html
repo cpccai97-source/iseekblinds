@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Friendly & Sustainable Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Sustainable window furnishings made from recycled, organic and eco-friendly materials. Reduce your carbon footprint with iSeekBlinds Melbourne's green collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === WARM NATURAL THEME — Earth tones, organic shapes, soft shadows === */
+    :root {
+      --earth-dark: #2d2a1e;
+      --earth-brown: #6b5b3e;
+      --earth-tan: #c4a96a;
+      --earth-cream: #f5f0e6;
+      --earth-sage: #7a8b6f;
+      --earth-sage-light: #a3b895;
+      --earth-terracotta: #c17547;
+      --earth-leaf: #4a6741;
+      --earth-sand: #e8dcc8;
+    }
+
+    .lp-eco {
+      background: var(--earth-cream);
+      color: var(--earth-dark);
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .eco-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #2d2a1e 0%, #3d4a2e 40%, #4a6741 70%, #7a8b6f 100%);
+    }
+
+    .eco-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -15%;
+      width: 70vw;
+      height: 70vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(163,184,149,0.15) 0%, transparent 70%);
+      animation: organicFloat 12s ease-in-out infinite alternate;
+    }
+
+    .eco-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(193,117,71,0.1) 0%, transparent 60%);
+      animation: organicFloat 15s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes organicFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(3%, -3%) scale(1.05); }
+    }
+
+    .eco-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 2rem 2rem 2rem 6%;
+    }
+
+    .eco-hero-leaf {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--earth-sage-light);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.2s;
+    }
+
+    .eco-hero-leaf svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--earth-sage-light);
+    }
+
+    .eco-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.4s;
+    }
+
+    .eco-hero h1 span {
+      color: var(--earth-sage-light);
+    }
+
+    .eco-hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.6s;
+    }
+
+    .eco-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .eco-btn {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .eco-btn-primary {
+      background: var(--earth-sage-light);
+      color: var(--earth-dark);
+    }
+
+    .eco-btn-primary:hover {
+      background: var(--earth-tan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(163,184,149,0.3);
+    }
+
+    .eco-btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+    }
+
+    .eco-btn-outline:hover {
+      border-color: var(--earth-sage-light);
+      color: var(--earth-sage-light);
+    }
+
+    .eco-hero-stat {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease forwards 1s;
+    }
+
+    .eco-stat-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      min-width: 160px;
+    }
+
+    .eco-stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--earth-sage-light);
+      display: block;
+    }
+
+    .eco-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Organic shapes divider */
+    .eco-divider {
+      height: 80px;
+      background: var(--earth-cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eco-divider::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -5%;
+      width: 110%;
+      height: 80px;
+      background: linear-gradient(160deg, #2d2a1e 0%, #3d4a2e 40%, #4a6741 70%, #7a8b6f 100%);
+      border-radius: 0 0 50% 50%;
+    }
+
+    /* Why Eco Section */
+    .eco-why {
+      padding: 5rem 6%;
+      background: var(--earth-cream);
+    }
+
+    .eco-section-tag {
+      display: inline-block;
+      background: var(--earth-sage);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .eco-why h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--earth-dark);
+      margin-bottom: 1rem;
+    }
+
+    .eco-why-subtitle {
+      font-size: 1.1rem;
+      color: var(--earth-brown);
+      max-width: 600px;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+
+    .eco-why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .eco-why-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(45,42,30,0.06);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .eco-why-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eco-why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(45,42,30,0.12);
+    }
+
+    .eco-why-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .eco-why-icon.green { background: rgba(74,103,65,0.12); }
+    .eco-why-icon.tan { background: rgba(196,169,106,0.15); }
+    .eco-why-icon.terracotta { background: rgba(193,117,71,0.12); }
+    .eco-why-icon.sage { background: rgba(122,139,111,0.12); }
+
+    .eco-why-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--earth-dark);
+    }
+
+    .eco-why-card p {
+      color: var(--earth-brown);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* Materials Section */
+    .eco-materials {
+      padding: 5rem 6%;
+      background: var(--earth-sand);
+    }
+
+    .eco-materials-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .eco-materials h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--earth-dark);
+      margin-bottom: 1rem;
+    }
+
+    .eco-materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eco-material-card {
+      background: var(--earth-cream);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .eco-material-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eco-material-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(45,42,30,0.1);
+    }
+
+    .eco-material-visual {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .eco-material-visual.bamboo { background: linear-gradient(135deg, #7a8b6f, #a3b895); }
+    .eco-material-visual.recycled { background: linear-gradient(135deg, #6b8ba4, #94b8cc); }
+    .eco-material-visual.organic { background: linear-gradient(135deg, #c4a96a, #e8dcc8); }
+    .eco-material-visual.hemp { background: linear-gradient(135deg, #8b7d5e, #b5a882); }
+    .eco-material-visual.linen { background: linear-gradient(135deg, #c17547, #e0a87e); }
+
+    .eco-material-info {
+      padding: 1.5rem;
+    }
+
+    .eco-material-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--earth-dark);
+    }
+
+    .eco-material-info p {
+      font-size: 0.9rem;
+      color: var(--earth-brown);
+      line-height: 1.6;
+    }
+
+    .eco-material-badge {
+      display: inline-block;
+      background: var(--earth-leaf);
+      color: #fff;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* Impact counter section */
+    .eco-impact {
+      padding: 5rem 6%;
+      background: linear-gradient(160deg, var(--earth-dark) 0%, #3d4a2e 100%);
+      text-align: center;
+      color: #fff;
+    }
+
+    .eco-impact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 3rem;
+    }
+
+    .eco-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .eco-impact-item {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .eco-impact-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eco-impact-num {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--earth-sage-light);
+      display: block;
+    }
+
+    .eco-impact-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.5rem;
+    }
+
+    /* Process Section */
+    .eco-process {
+      padding: 5rem 6%;
+      background: var(--earth-cream);
+    }
+
+    .eco-process-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .eco-process h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--earth-dark);
+      margin-bottom: 1rem;
+    }
+
+    .eco-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .eco-step {
+      text-align: center;
+      position: relative;
+      padding: 2rem 1.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .eco-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .eco-step-num {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--earth-sage);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin: 0 auto 1rem;
+    }
+
+    .eco-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--earth-dark);
+    }
+
+    .eco-step p {
+      font-size: 0.9rem;
+      color: var(--earth-brown);
+      line-height: 1.6;
+    }
+
+    /* CTA Section */
+    .eco-cta {
+      padding: 5rem 6%;
+      background: linear-gradient(135deg, var(--earth-sage) 0%, var(--earth-leaf) 100%);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eco-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80vw;
+      height: 80vw;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .eco-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .eco-cta p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .eco-cta .eco-btn-primary {
+      background: #fff;
+      color: var(--earth-leaf);
+      position: relative;
+    }
+
+    .eco-cta .eco-btn-primary:hover {
+      background: var(--earth-cream);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Cross-links */
+    .eco-crosslinks {
+      padding: 4rem 6%;
+      background: var(--earth-sand);
+    }
+
+    .eco-crosslinks h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      text-align: center;
+      color: var(--earth-dark);
+      margin-bottom: 2rem;
+    }
+
+    .eco-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .eco-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: var(--earth-cream);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--earth-dark);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .eco-crosslink-item:hover {
+      background: var(--earth-sage);
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .eco-crosslink-item span {
+      color: var(--earth-sage);
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .eco-crosslink-item:hover span {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .eco-hero-content { padding: 6rem 1.5rem 3rem; }
+      .eco-hero-stat { display: none; }
+      .eco-why, .eco-materials, .eco-impact, .eco-process, .eco-cta { padding: 3rem 1.5rem; }
+      .eco-hero-actions { flex-direction: column; }
+      .eco-btn { text-align: center; }
+    }
+  </style>
+</head>
+<body class="lp-eco">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="eco-hero">
+    <div class="eco-hero-content">
+      <div class="eco-hero-leaf">
+        <svg viewBox="0 0 24 24"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>
+        Sustainable Living
+      </div>
+      <h1>Beautiful Blinds,<br><span>Better Planet</span></h1>
+      <p>Eco-friendly window furnishings crafted from sustainable, recycled and organic materials. Style your home while reducing your environmental footprint.</p>
+      <div class="eco-hero-actions">
+        <a href="../free-quote.html" class="eco-btn eco-btn-primary">Get a Green Quote</a>
+        <a href="#materials" class="eco-btn eco-btn-outline">Explore Materials</a>
+      </div>
+    </div>
+    <div class="eco-hero-stat">
+      <div class="eco-stat-card">
+        <span class="eco-stat-num">100%</span>
+        <span class="eco-stat-label">Recyclable Options</span>
+      </div>
+      <div class="eco-stat-card">
+        <span class="eco-stat-num">40%</span>
+        <span class="eco-stat-label">Energy Savings</span>
+      </div>
+      <div class="eco-stat-card">
+        <span class="eco-stat-num">0</span>
+        <span class="eco-stat-label">Harmful Chemicals</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="eco-divider"></div>
+
+  <!-- Why Eco -->
+  <section class="eco-why">
+    <span class="eco-section-tag">Why Go Green</span>
+    <h2>Sustainability Starts at Home</h2>
+    <p class="eco-why-subtitle">Your choice of window furnishings can make a real difference to the environment — without compromising on style or performance.</p>
+    <div class="eco-why-grid">
+      <div class="eco-why-card">
+        <div class="eco-why-icon green">🌱</div>
+        <h3>Renewable Materials</h3>
+        <p>Bamboo, organic cotton, linen and responsibly sourced timber — materials that grow back and leave minimal environmental impact.</p>
+      </div>
+      <div class="eco-why-card">
+        <div class="eco-why-icon tan">♻️</div>
+        <h3>Recycled Fabrics</h3>
+        <p>Our recycled polyester blinds are made from post-consumer plastic bottles, diverting waste from landfill into beautiful window treatments.</p>
+      </div>
+      <div class="eco-why-card">
+        <div class="eco-why-icon terracotta">🌡️</div>
+        <h3>Energy Efficiency</h3>
+        <p>Honeycomb and thermal blinds create insulating air pockets that reduce heating and cooling costs by up to 40%.</p>
+      </div>
+      <div class="eco-why-card">
+        <div class="eco-why-icon sage">💚</div>
+        <h3>Non-Toxic Finishes</h3>
+        <p>All our eco-range uses VOC-free paints, water-based stains and formaldehyde-free adhesives for healthier indoor air quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials -->
+  <section id="materials" class="eco-materials">
+    <div class="eco-materials-header">
+      <span class="eco-section-tag">Our Materials</span>
+      <h2>Crafted from Nature</h2>
+    </div>
+    <div class="eco-materials-grid">
+      <div class="eco-material-card">
+        <div class="eco-material-visual bamboo">🎋</div>
+        <div class="eco-material-info">
+          <h3>Bamboo Blinds</h3>
+          <p>Fast-growing, naturally renewable bamboo creates warm, textured blinds perfect for any room.</p>
+          <span class="eco-material-badge">Rapidly Renewable</span>
+        </div>
+      </div>
+      <div class="eco-material-card">
+        <div class="eco-material-visual recycled">🔄</div>
+        <div class="eco-material-info">
+          <h3>Recycled PET Fabric</h3>
+          <p>Roller blinds made from recycled plastic bottles — durable, colourfast, and reducing ocean waste.</p>
+          <span class="eco-material-badge">Post-Consumer Recycled</span>
+        </div>
+      </div>
+      <div class="eco-material-card">
+        <div class="eco-material-visual organic">🌾</div>
+        <div class="eco-material-info">
+          <h3>Organic Cotton</h3>
+          <p>GOTS-certified organic cotton curtains grown without pesticides or synthetic fertilisers.</p>
+          <span class="eco-material-badge">GOTS Certified</span>
+        </div>
+      </div>
+      <div class="eco-material-card">
+        <div class="eco-material-visual hemp">🪢</div>
+        <div class="eco-material-info">
+          <h3>Hemp Blends</h3>
+          <p>Incredibly durable hemp fabric that softens with age and requires minimal water to produce.</p>
+          <span class="eco-material-badge">Low Water Use</span>
+        </div>
+      </div>
+      <div class="eco-material-card">
+        <div class="eco-material-visual linen">🧵</div>
+        <div class="eco-material-info">
+          <h3>Natural Linen</h3>
+          <p>Made from flax fibres, linen curtains are biodegradable, breathable and beautifully textured.</p>
+          <span class="eco-material-badge">Biodegradable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="eco-impact">
+    <h2>Our Environmental Impact</h2>
+    <div class="eco-impact-grid">
+      <div class="eco-impact-item">
+        <span class="eco-impact-num">12,000+</span>
+        <span class="eco-impact-label">Plastic Bottles Diverted from Landfill</span>
+      </div>
+      <div class="eco-impact-item">
+        <span class="eco-impact-num">85%</span>
+        <span class="eco-impact-label">Sustainable Materials in Eco Range</span>
+      </div>
+      <div class="eco-impact-item">
+        <span class="eco-impact-num">Zero</span>
+        <span class="eco-impact-label">Single-Use Packaging</span>
+      </div>
+      <div class="eco-impact-item">
+        <span class="eco-impact-num">Local</span>
+        <span class="eco-impact-label">Made in Melbourne, Reducing Transport</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="eco-process">
+    <div class="eco-process-header">
+      <span class="eco-section-tag">How It Works</span>
+      <h2>Your Green Journey</h2>
+    </div>
+    <div class="eco-steps">
+      <div class="eco-step">
+        <div class="eco-step-num">1</div>
+        <h3>Eco Consultation</h3>
+        <p>We visit your home, discuss your sustainability goals and recommend the best eco-friendly options.</p>
+      </div>
+      <div class="eco-step">
+        <div class="eco-step-num">2</div>
+        <h3>Material Selection</h3>
+        <p>Browse our curated range of sustainable samples — bamboo, recycled PET, organic cotton and more.</p>
+      </div>
+      <div class="eco-step">
+        <div class="eco-step-num">3</div>
+        <h3>Custom Made</h3>
+        <p>Every piece is custom crafted locally in Melbourne using eco-conscious manufacturing processes.</p>
+      </div>
+      <div class="eco-step">
+        <div class="eco-step-num">4</div>
+        <h3>Green Install</h3>
+        <p>Professional installation with minimal waste. We recycle all offcuts and packaging materials.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="eco-cta">
+    <h2>Ready to Make the Switch?</h2>
+    <p>Get a free measure and quote for eco-friendly window furnishings. Beautiful for your home, better for the planet.</p>
+    <a href="../free-quote.html" class="eco-btn eco-btn-primary">Book Your Free Eco Consultation</a>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="eco-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="eco-crosslinks-grid">
+      <a href="commercial-blinds.html" class="eco-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="new-home-packages.html" class="eco-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="seasonal-sale.html" class="eco-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+      <a href="free-samples.html" class="eco-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="colour-trends-2026.html" class="eco-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="energy-efficient.html" class="eco-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+      <a href="child-safety.html" class="eco-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+      <a href="outdoor-blinds.html" class="eco-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+      <a href="apartment-solutions.html" class="eco-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="care-maintenance.html" class="eco-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+      <a href="design-inspiration.html" class="eco-crosslink-item"><span>→</span> Design Inspiration</a>
+      <a href="testimonials.html" class="eco-crosslink-item"><span>→</span> Customer Testimonials</a>
+      <a href="melbourne-service-areas.html" class="eco-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      <a href="blinds-vs-curtains.html" class="eco-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+      <a href="smart-home.html" class="eco-crosslink-item"><span>→</span> Smart Home Blinds</a>
+      <a href="acoustic-solutions.html" class="eco-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      <a href="hospitality-blinds.html" class="eco-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+      <a href="large-windows.html" class="eco-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+      <a href="layered-treatments.html" class="eco-crosslink-item"><span>→</span> Layered Window Treatments</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.eco-why-card, .eco-material-card, .eco-impact-item, .eco-step').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
