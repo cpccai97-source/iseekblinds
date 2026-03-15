@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinds vs Curtains — Which is Right for You? | iSeekBlinds Melbourne</title>
+  <meta name="description" content="The ultimate guide to choosing between blinds and curtains. Compare style, light control, insulation, cost and maintenance. Expert advice from iSeekBlinds Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === MAGAZINE EDITORIAL THEME === */
+    :root {
+      --mag-ink: #1a1a2e;
+      --mag-cream: #faf8f4;
+      --mag-accent: #c0392b;
+      --mag-accent2: #2c3e50;
+      --mag-border: #d4cfc4;
+      --mag-muted: #7f8c8d;
+      --mag-highlight: #f9e8c9;
+    }
+
+    .lp-magazine {
+      background: var(--mag-cream);
+      color: var(--mag-ink);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-magazine h1, .lp-magazine h2, .lp-magazine h3, .lp-magazine .mag-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Hero — editorial cover */
+    .mag-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--mag-ink);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .mag-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.03) 59px, rgba(255,255,255,0.03) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.03) 59px, rgba(255,255,255,0.03) 60px);
+    }
+    .mag-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 800px; padding: 2rem;
+    }
+    .mag-hero .mag-kicker {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 0.85rem;
+      color: var(--mag-accent);
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: magFadeUp .8s ease forwards;
+    }
+    .mag-hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: magFadeUp .8s ease .15s forwards;
+    }
+    .mag-hero h1 em {
+      font-style: italic;
+      color: var(--mag-accent);
+    }
+    .mag-hero .mag-byline {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0; animation: magFadeUp .8s ease .3s forwards;
+    }
+    .mag-hero .mag-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.3);
+      animation: magBounce 2s ease infinite;
+    }
+
+    /* Two-column editorial section */
+    .mag-section {
+      padding: 6rem 2rem;
+    }
+    .mag-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .mag-section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .mag-section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--mag-muted);
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+    .mag-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--mag-accent);
+      margin: 1.5rem auto 2rem;
+    }
+
+    /* Two-column compare layout */
+    .mag-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--mag-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mag-compare-col {
+      padding: 3rem;
+    }
+    .mag-compare-col:first-child {
+      border-right: 1px solid var(--mag-border);
+    }
+    .mag-compare-col h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .mag-compare-col .mag-tag {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+    .mag-compare-col.blinds-col .mag-tag {
+      background: var(--mag-accent2);
+      color: #fff;
+    }
+    .mag-compare-col.curtains-col .mag-tag {
+      background: var(--mag-accent);
+      color: #fff;
+    }
+    .mag-compare-col p {
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .mag-compare-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .mag-compare-col ul li {
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--mag-border);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+    }
+    .mag-compare-col ul li:last-child { border-bottom: none; }
+    .mag-compare-col ul li .check { color: #27ae60; font-weight: 700; }
+
+    /* Feature comparison table — magazine style */
+    .mag-table-wrap {
+      overflow-x: auto;
+      margin-top: 3rem;
+    }
+    .mag-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .mag-table th, .mag-table td {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--mag-border);
+    }
+    .mag-table th {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      color: var(--mag-muted);
+      background: rgba(0,0,0,0.02);
+    }
+    .mag-table td:first-child {
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+    .mag-table .winner {
+      background: var(--mag-highlight);
+      font-weight: 600;
+    }
+
+    /* Pull quote */
+    .mag-pullquote {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--mag-ink);
+      color: #fff;
+    }
+    .mag-pullquote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-style: italic;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .mag-pullquote blockquote::before {
+      content: '"';
+      font-size: 6rem;
+      position: absolute;
+      top: -2.5rem;
+      left: -1rem;
+      color: var(--mag-accent);
+      font-family: 'Playfair Display', serif;
+    }
+    .mag-pullquote .mag-pq-author {
+      margin-top: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--mag-muted);
+    }
+
+    /* Room guide cards — three column */
+    .mag-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .mag-room-card {
+      border: 1px solid var(--mag-border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .mag-room-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .mag-room-card .mag-room-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .mag-room-card:nth-child(1) .mag-room-visual { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+    .mag-room-card:nth-child(2) .mag-room-visual { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+    .mag-room-card:nth-child(3) .mag-room-visual { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+    .mag-room-card:nth-child(4) .mag-room-visual { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+    .mag-room-card:nth-child(5) .mag-room-visual { background: linear-gradient(135deg, #ffeaa7, #dfe6e9); }
+    .mag-room-card:nth-child(6) .mag-room-visual { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); }
+    .mag-room-card .mag-room-body {
+      padding: 1.5rem;
+    }
+    .mag-room-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: .5rem;
+    }
+    .mag-room-card .mag-room-rec {
+      font-size: 0.85rem;
+      color: var(--mag-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .5rem;
+    }
+    .mag-room-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .mag-cta {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--mag-accent2), var(--mag-ink));
+      text-align: center;
+      color: #fff;
+    }
+    .mag-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .mag-cta p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 550px;
+      margin: 0 auto 2rem;
+    }
+    .mag-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all .3s ease;
+    }
+    .mag-btn-primary {
+      background: var(--mag-accent);
+      color: #fff;
+    }
+    .mag-btn-primary:hover {
+      background: #e74c3c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(192,57,43,0.4);
+    }
+    .mag-btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      margin-left: 1rem;
+    }
+    .mag-btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Cross-links */
+    .mag-crosslinks {
+      padding: 4rem 2rem;
+      background: #f0ece4;
+    }
+    .mag-crosslinks h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .mag-crosslinks-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: .75rem;
+    }
+    .mag-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1rem;
+      background: var(--mag-cream);
+      border: 1px solid var(--mag-border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--mag-ink);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all .2s ease;
+    }
+    .mag-crosslink-item:hover {
+      background: var(--mag-ink);
+      color: #fff;
+      border-color: var(--mag-ink);
+    }
+
+    /* Animations */
+    @keyframes magFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes magBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    .mag-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .mag-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .mag-compare {
+        grid-template-columns: 1fr;
+      }
+      .mag-compare-col:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--mag-border);
+      }
+      .mag-rooms-grid {
+        grid-template-columns: 1fr;
+      }
+      .mag-hero h1 {
+        font-size: 2.4rem;
+      }
+      .mag-section {
+        padding: 3.5rem 1.2rem;
+      }
+      .mag-btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+      }
+      .mag-table th, .mag-table td {
+        padding: .75rem 1rem;
+        font-size: .85rem;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .mag-rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="lp-magazine">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mag-hero">
+    <div class="mag-hero-inner">
+      <p class="mag-kicker">The Definitive Guide</p>
+      <h1>Blinds <em>vs</em> Curtains</h1>
+      <p class="mag-byline">Which window treatment is right for your home? We break down style, function, cost and maintenance — so you can decide with confidence.</p>
+    </div>
+    <span class="mag-scroll-hint">Scroll to explore ↓</span>
+  </section>
+
+  <!-- Side by side overview -->
+  <section class="mag-section mag-reveal">
+    <div class="mag-container">
+      <h2 class="mag-section-title">The Quick Overview</h2>
+      <div class="mag-divider"></div>
+      <p class="mag-section-subtitle">Both blinds and curtains have their strengths. Here's how they stack up at a glance.</p>
+
+      <div class="mag-compare">
+        <div class="mag-compare-col blinds-col">
+          <span class="mag-tag">Blinds</span>
+          <h3>Precise & Modern</h3>
+          <p>Blinds offer clean lines, precise light control, and a contemporary aesthetic. They're ideal for kitchens, bathrooms and offices where moisture resistance and easy cleaning matter.</p>
+          <ul>
+            <li><span class="check">✓</span> Precise light control with adjustable slats</li>
+            <li><span class="check">✓</span> Easy to clean — wipe or dust</li>
+            <li><span class="check">✓</span> Space-saving, sits flush to the window</li>
+            <li><span class="check">✓</span> Moisture-resistant options available</li>
+            <li><span class="check">✓</span> Modern, minimal aesthetic</li>
+            <li><span class="check">✓</span> Wide range: roller, venetian, honeycomb</li>
+          </ul>
+        </div>
+        <div class="mag-compare-col curtains-col">
+          <span class="mag-tag">Curtains</span>
+          <h3>Elegant & Warm</h3>
+          <p>Curtains bring softness, warmth and a sense of luxury to any room. They're unmatched for insulation, acoustic dampening and creating a cosy atmosphere in living and bedrooms.</p>
+          <ul>
+            <li><span class="check">✓</span> Superior thermal & acoustic insulation</li>
+            <li><span class="check">✓</span> Adds texture, colour and visual warmth</li>
+            <li><span class="check">✓</span> Makes rooms feel grander</li>
+            <li><span class="check">✓</span> Wide fabric and pattern choices</li>
+            <li><span class="check">✓</span> Great for large & odd-shaped windows</li>
+            <li><span class="check">✓</span> Can be layered with sheers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull quote -->
+  <section class="mag-pullquote mag-reveal">
+    <div class="mag-container">
+      <blockquote>
+        The best window treatment isn't about trends — it's about how you live in the space.
+      </blockquote>
+      <p class="mag-pq-author">— iSeekBlinds Design Team</p>
+    </div>
+  </section>
+
+  <!-- Detailed comparison table -->
+  <section class="mag-section mag-reveal">
+    <div class="mag-container">
+      <h2 class="mag-section-title">Feature-by-Feature Comparison</h2>
+      <div class="mag-divider"></div>
+      <p class="mag-section-subtitle">A detailed look at how blinds and curtains perform across the factors that matter most.</p>
+      <div class="mag-table-wrap">
+        <table class="mag-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Blinds</th>
+              <th>Curtains</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light Control</td>
+              <td class="winner">⭐ Excellent — adjustable slats/fabric</td>
+              <td>Good — blockout or sheer options</td>
+            </tr>
+            <tr>
+              <td>Privacy</td>
+              <td>Very good — tilt for partial view</td>
+              <td class="winner">⭐ Excellent — full coverage when drawn</td>
+            </tr>
+            <tr>
+              <td>Insulation</td>
+              <td>Good — honeycomb blinds excel</td>
+              <td class="winner">⭐ Excellent — heavy fabrics trap air</td>
+            </tr>
+            <tr>
+              <td>Cleaning</td>
+              <td class="winner">⭐ Easy — wipe, dust or vacuum</td>
+              <td>Moderate — dry clean or machine wash</td>
+            </tr>
+            <tr>
+              <td>Durability</td>
+              <td class="winner">⭐ 10-15 years typical</td>
+              <td>8-12 years, fabric may fade</td>
+            </tr>
+            <tr>
+              <td>Moisture Areas</td>
+              <td class="winner">⭐ Ideal — PVC, aluminium options</td>
+              <td>Not recommended for wet areas</td>
+            </tr>
+            <tr>
+              <td>Style Impact</td>
+              <td>Clean, modern, understated</td>
+              <td class="winner">⭐ Dramatic, luxurious, transformative</td>
+            </tr>
+            <tr>
+              <td>Child Safety</td>
+              <td class="winner">⭐ Cordless & motorised options</td>
+              <td>Good — no cords by default</td>
+            </tr>
+            <tr>
+              <td>Cost Range</td>
+              <td>$$ — mid-range</td>
+              <td>$$ – $$$ — varies with fabric</td>
+            </tr>
+            <tr>
+              <td>Motorisation</td>
+              <td class="winner">⭐ Widely available, easy to retrofit</td>
+              <td>Available — curtain track motors</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Room-by-room guide -->
+  <section class="mag-section mag-reveal" style="background: #f5f1ea;">
+    <div class="mag-container">
+      <h2 class="mag-section-title">Room-by-Room Recommendations</h2>
+      <div class="mag-divider"></div>
+      <p class="mag-section-subtitle">Every room has different needs. Here's our expert pick for each space.</p>
+      <div class="mag-rooms-grid">
+        <div class="mag-room-card">
+          <div class="mag-room-visual">🛋️</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: Curtains + Sheers</div>
+            <h4>Living Room</h4>
+            <p>Layer sheer curtains with blockout curtains for maximum versatility — warmth, style and light control in one.</p>
+          </div>
+        </div>
+        <div class="mag-room-card">
+          <div class="mag-room-visual">🛏️</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: Blockout Roller Blinds</div>
+            <h4>Bedroom</h4>
+            <p>Roller blinds with blockout fabric ensure darkness for better sleep. Add curtains for a luxe layered look.</p>
+          </div>
+        </div>
+        <div class="mag-room-card">
+          <div class="mag-room-visual">🍳</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: Venetian Blinds</div>
+            <h4>Kitchen</h4>
+            <p>Aluminium or faux-wood venetians handle steam and splashes easily, with great light control while cooking.</p>
+          </div>
+        </div>
+        <div class="mag-room-card">
+          <div class="mag-room-visual">🚿</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: PVC Blinds</div>
+            <h4>Bathroom</h4>
+            <p>Moisture-resistant PVC or aluminium blinds. Curtains and fabric options will deteriorate in humid conditions.</p>
+          </div>
+        </div>
+        <div class="mag-room-card">
+          <div class="mag-room-visual">💼</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: Sunscreen Rollers</div>
+            <h4>Home Office</h4>
+            <p>Reduce glare on screens while maintaining the view. Sunscreen roller blinds are the clear winner here.</p>
+          </div>
+        </div>
+        <div class="mag-room-card">
+          <div class="mag-room-visual">🧸</div>
+          <div class="mag-room-body">
+            <div class="mag-room-rec">Our Pick: Cordless Honeycomb</div>
+            <h4>Children's Room</h4>
+            <p>Child-safe cordless honeycomb blinds provide blockout, insulation and safety — all in one product.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why not both? -->
+  <section class="mag-section mag-reveal">
+    <div class="mag-container" style="max-width: 700px; text-align: center;">
+      <h2 class="mag-section-title">Why Not Both?</h2>
+      <div class="mag-divider"></div>
+      <p style="font-size: 1.1rem; line-height: 1.9; color: #555;">
+        The biggest trend in window furnishings right now? <strong>Layering.</strong> Combine roller blinds with sheer curtains, or pair honeycomb blinds with s-fold curtains for the ultimate in style, light control and insulation. At iSeekBlinds, we specialise in creating the perfect combination for your home.
+      </p>
+      <div style="margin-top: 2.5rem;">
+        <a href="../free-quote.html" class="mag-btn mag-btn-primary">Get Expert Advice — Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mag-cta mag-reveal">
+    <div class="mag-container">
+      <h2>Still Not Sure?<br>Let Us Help You Choose</h2>
+      <p>Book a free in-home consultation. We'll measure your windows, discuss your needs, and recommend the perfect solution.</p>
+      <a href="../free-quote.html" class="mag-btn mag-btn-primary">Book Free Consultation</a>
+      <a href="../contact.html" class="mag-btn mag-btn-outline">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="mag-crosslinks">
+    <div class="mag-container">
+      <h3>Explore More Solutions</h3>
+      <div class="mag-crosslinks-grid">
+        <a href="commercial-blinds.html" class="mag-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="mag-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="mag-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="mag-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="mag-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="mag-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="mag-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="mag-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="mag-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="mag-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="mag-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="mag-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="acoustic-solutions.html" class="mag-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="mag-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="mag-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="smart-home.html" class="mag-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="large-windows.html" class="mag-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const magObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.mag-reveal').forEach(el => magObserver.observe(el));
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => nav.classList.toggle('active'));
+    }
+  </script>
+</body>
+</html>
