@@ -7,17 +7,10 @@
   <meta name="description" content="Premium custom-made blinds, curtains and shutters in Melbourne. Free measure & quote. Professional installation. Australian made quality.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container">
-      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
-      <span>📍 Serving Melbourne & Surrounds</span>
-    </div>
-  </div>
 
   <!-- Header -->
   <header class="header">
@@ -27,7 +20,7 @@
       </a>
       <nav class="nav">
         <div class="nav-dropdown">
-          <a href="#products" class="nav-dropdown-toggle">Products ▾</a>
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
           <div class="nav-dropdown-menu">
             <a href="products/roller-blinds.html">Roller Blinds</a>
             <a href="products/curtains.html">Curtains</a>
@@ -38,22 +31,22 @@
           </div>
         </div>
         <div class="nav-dropdown">
-          <a href="#solutions" class="nav-dropdown-toggle">Solutions ▾</a>
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
           <div class="nav-dropdown-menu nav-dropdown-mega">
-            <a href="landing/commercial-blinds.html">🏢 Commercial</a>
-            <a href="landing/new-home-packages.html">🏡 New Home</a>
-            <a href="landing/energy-efficient.html">🌿 Energy Efficient</a>
-            <a href="landing/smart-home.html">📱 Smart Home</a>
-            <a href="landing/child-safety.html">👶 Child Safety</a>
-            <a href="landing/outdoor-blinds.html">☀️ Outdoor</a>
-            <a href="landing/apartment-solutions.html">🏙️ Apartments</a>
-            <a href="landing/acoustic-solutions.html">🔇 Acoustic</a>
-            <a href="landing/large-windows.html">🪟 Large Windows</a>
-            <a href="landing/eco-friendly.html">♻️ Eco-Friendly</a>
+            <a href="landing/commercial-blinds.html">Commercial</a>
+            <a href="landing/new-home-packages.html">New Home</a>
+            <a href="landing/energy-efficient.html">Energy Efficient</a>
+            <a href="landing/smart-home.html">Smart Home</a>
+            <a href="landing/child-safety.html">Child Safety</a>
+            <a href="landing/outdoor-blinds.html">Outdoor</a>
+            <a href="landing/apartment-solutions.html">Apartments</a>
+            <a href="landing/acoustic-solutions.html">Acoustic</a>
+            <a href="landing/large-windows.html">Large Windows</a>
+            <a href="landing/eco-friendly.html">Eco-Friendly</a>
           </div>
         </div>
         <div class="nav-dropdown">
-          <a href="#guides" class="nav-dropdown-toggle">Guides ▾</a>
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
           <div class="nav-dropdown-menu">
             <a href="landing/blinds-vs-curtains.html">Blinds vs Curtains</a>
             <a href="landing/colour-trends-2026.html">Colour Trends 2026</a>
@@ -64,11 +57,14 @@
           </div>
         </div>
         <a href="gallery.html">Gallery</a>
-        <a href="about.html">About Us</a>
+        <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a href="free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
       <button class="mobile-menu-btn" aria-label="Menu">☰</button>
     </div>
   </header>
@@ -76,213 +72,207 @@
   <!-- Hero -->
   <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=80');">
     <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
     <div class="container hero-content">
-      <h1>Premium Custom Blinds,<br>Curtains & Shutters</h1>
-      <p class="hero-subtitle">Melbourne's trusted window furnishing experts. Free measure & quote.</p>
-      <div class="hero-actions">
-        <a href="free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
-        <a href="#products" class="btn btn-outline btn-lg">View Products</a>
-      </div>
+      <p class="hero-eyebrow">Melbourne's Window Furnishing Specialists</p>
+      <h1 class="hero-headline">
+        <span class="hero-word">Transform</span>
+        <span class="hero-word">Your</span>
+        <span class="hero-word">Space</span>
+      </h1>
+      <p class="hero-subtitle">Custom blinds, curtains & shutters — crafted for<br>how you actually live.</p>
+      <a href="free-quote.html" class="btn btn-primary btn-lg hero-cta">Get Your Free Quote</a>
     </div>
   </section>
 
-  <!-- Products -->
-  <section id="products" class="section products">
+  <!-- Products — Bento Grid -->
+  <section id="products" class="section hp-products">
     <div class="container">
-      <h2 class="section-title">Our Products</h2>
-      <p class="section-subtitle">Quality window furnishings for every style and budget</p>
-      <div class="product-grid">
-        <a href="products/roller-blinds.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="Roller Blinds" class="product-card-img" loading="lazy">
-          <h3>Roller Blinds</h3>
-          <p>Sleek, modern roller blinds in blockout, sunscreen and light-filtering options. Perfect for any room.</p>
-          <span class="product-link">Learn More →</span>
+      <div class="section-header-left reveal">
+        <p class="section-eyebrow">Our Collection</p>
+        <h2 class="section-title-left">Window furnishings<br>for every style</h2>
+      </div>
+      <div class="bento-grid">
+        <a href="products/roller-blinds.html" class="bento-card bento-large reveal">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80" alt="Roller Blinds" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Roller Blinds</h3>
+            <p>Sleek, modern. Blockout, sunscreen & light-filtering options.</p>
+          </div>
         </a>
-        <a href="products/curtains.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Curtains" class="product-card-img" loading="lazy">
-          <h3>Curtains</h3>
-          <p>S-Fold, pinch pleat and sheer curtains. Custom made with premium Australian fabrics.</p>
-          <span class="product-link">Learn More →</span>
+        <a href="products/curtains.html" class="bento-card bento-tall reveal">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Curtains" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Curtains</h3>
+            <p>S-Fold, pinch pleat & sheer. Premium Australian fabrics.</p>
+          </div>
         </a>
-        <a href="products/plantation-shutters.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Plantation Shutters" class="product-card-img" loading="lazy">
-          <h3>Plantation Shutters</h3>
-          <p>Timeless elegance with our premium plantation shutters. Built to last a lifetime.</p>
-          <span class="product-link">Learn More →</span>
+        <a href="products/plantation-shutters.html" class="bento-card reveal">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Plantation Shutters" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Plantation Shutters</h3>
+            <p>Timeless. Built to last a lifetime.</p>
+          </div>
         </a>
-        <a href="products/venetian-blinds.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Venetian Blinds" class="product-card-img" loading="lazy">
-          <h3>Venetian Blinds</h3>
-          <p>Classic venetian blinds in timber, aluminium and faux wood. Full light control.</p>
-          <span class="product-link">Learn More →</span>
+        <a href="products/venetian-blinds.html" class="bento-card reveal">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Venetian Blinds" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Venetian Blinds</h3>
+            <p>Timber, aluminium & faux wood.</p>
+          </div>
         </a>
-        <a href="products/honeycomb-blinds.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="Honeycomb Blinds" class="product-card-img" loading="lazy">
-          <h3>Honeycomb Blinds</h3>
-          <p>Energy-efficient honeycomb blinds that keep your home cool in summer and warm in winter.</p>
-          <span class="product-link">Learn More →</span>
+        <a href="products/honeycomb-blinds.html" class="bento-card bento-wide reveal">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Honeycomb Blinds" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Honeycomb Blinds</h3>
+            <p>Energy-efficient — cool in summer, warm in winter.</p>
+          </div>
         </a>
-        <a href="products/motorised.html" class="product-card">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Motorised Solutions" class="product-card-img" loading="lazy">
-          <h3>Motorised Solutions</h3>
-          <p>Smart motorised blinds and curtains. Control with your phone or voice assistant.</p>
-          <span class="product-link">Learn More →</span>
+        <a href="products/motorised.html" class="bento-card reveal">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Motorised Solutions" loading="lazy">
+          <div class="bento-overlay">
+            <h3>Motorised</h3>
+            <p>Phone & voice control for effortless living.</p>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works" class="section how-it-works">
+  <!-- How It Works — Timeline -->
+  <section id="how-it-works" class="section hp-process">
     <div class="container">
-      <h2 class="section-title">4 Easy Steps</h2>
-      <p class="section-subtitle">From enquiry to installation, we make it simple</p>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Free Consultation</h3>
-          <p>Contact us for a free in-home or in-store consultation to discuss your needs.</p>
+      <div class="section-header-left reveal">
+        <p class="section-eyebrow">The Process</p>
+        <h2 class="section-title-left">Four steps to<br>your perfect fit</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-line"></div>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Consultation</h3>
+            <p>Free in-home or in-store session to discuss your vision and needs.</p>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Measure & Quote</h3>
-          <p>We professionally measure your windows and provide a no-obligation quote.</p>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Measure & Quote</h3>
+            <p>Professional measurement. No-obligation quote. No hidden costs.</p>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Custom Made</h3>
-          <p>Your blinds are custom manufactured to your exact specifications.</p>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Custom Made</h3>
+            <p>Manufactured to your exact specifications in Australia.</p>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3>Professional Install</h3>
-          <p>Our experienced team installs your blinds with care and precision.</p>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Installation</h3>
+            <p>Expert fitting by our experienced team. Done right, first time.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="section why-us">
+  <!-- Why Us — Single elegant section with stats -->
+  <section class="section hp-trust">
     <div class="container">
-      <h2 class="section-title">Why Choose iSeekBlinds?</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">🇦🇺</div>
-          <h3>Australian Made</h3>
-          <p>Quality products made right here in Australia</p>
+      <div class="trust-layout reveal">
+        <div class="trust-text">
+          <p class="section-eyebrow">Why iSeekBlinds</p>
+          <h2 class="trust-headline">Quality you can see.<br>Service you can feel.</h2>
+          <p class="trust-body">We're Melbourne's trusted window furnishing specialists — Australian-made products, professional installation, and a 5-year warranty on everything we do. No shortcuts, no compromises.</p>
+          <a href="about.html" class="btn btn-outline-dark">About Us</a>
         </div>
-        <div class="feature">
-          <div class="feature-icon">📏</div>
-          <h3>Free Measure & Quote</h3>
-          <p>No obligation, no hidden costs</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🔧</div>
-          <h3>Professional Installation</h3>
-          <p>Expert fitting by experienced installers</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">⭐</div>
-          <h3>5-Year Warranty</h3>
-          <p>Peace of mind with our quality guarantee</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">💰</div>
-          <h3>Best Price Guarantee</h3>
-          <p>Competitive pricing without compromising quality</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🚚</div>
-          <h3>Fast Turnaround</h3>
-          <p>Quick production and delivery times</p>
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <span class="trust-stat-number">1000+</span>
+            <span class="trust-stat-label">Happy Customers</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">10+</span>
+            <span class="trust-stat-label">Years Experience</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">5★</span>
+            <span class="trust-stat-label">Google Rating</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">5yr</span>
+            <span class="trust-stat-label">Warranty</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section about">
-    <div class="container about-inner">
-      <div class="about-text">
-        <h2>About iSeekBlinds</h2>
-        <p>We are Melbourne's trusted window furnishing specialists, providing premium blinds, curtains and shutters at competitive prices.</p>
-        <p>With years of experience in the industry, we pride ourselves on quality products, professional service and customer satisfaction. Whether you're renovating your home or fitting out a commercial space, we have the perfect solution for you.</p>
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80" alt="iSeekBlinds showroom" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin:20px 0;">
+  <!-- About — Full-width image strip -->
+  <section id="about" class="section hp-about">
+    <div class="hp-about-image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80');">
+      <div class="hp-about-image-overlay"></div>
+      <div class="container hp-about-image-content reveal">
+        <h2>Melbourne's Window<br>Furnishing Experts</h2>
+        <p>From renovations to new builds, apartments to commercial spaces — we've been helping Melburnians find their perfect window treatment for over a decade.</p>
         <a href="about.html" class="btn btn-primary">Learn More</a>
       </div>
-      <div class="about-stats">
-        <div class="stat">
-          <span class="stat-number">1000+</span>
-          <span class="stat-label">Happy Customers</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">5★</span>
-          <span class="stat-label">Google Rating</span>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- Solutions Grid -->
-  <section id="solutions" class="section solutions">
+  <!-- Solutions -->
+  <section id="solutions" class="section hp-solutions">
     <div class="container">
-      <h2 class="section-title">Explore Our Solutions</h2>
-      <p class="section-subtitle">Tailored window furnishing solutions for every need</p>
-      <div class="solutions-grid">
-        <a href="landing/commercial-blinds.html" class="solution-card" style="--accent:#2c3e50">
-          <span class="solution-emoji">🏢</span><h3>Commercial Spaces</h3><p>Office & retail solutions</p>
-        </a>
-        <a href="landing/new-home-packages.html" class="solution-card" style="--accent:#27ae60">
-          <span class="solution-emoji">🏡</span><h3>New Home Packages</h3><p>Whole-home deals</p>
-        </a>
-        <a href="landing/smart-home.html" class="solution-card" style="--accent:#8e44ad">
-          <span class="solution-emoji">📱</span><h3>Smart Home</h3><p>Voice & app control</p>
-        </a>
-        <a href="landing/energy-efficient.html" class="solution-card" style="--accent:#16a085">
-          <span class="solution-emoji">🌿</span><h3>Energy Efficient</h3><p>Save on bills</p>
-        </a>
-        <a href="landing/child-safety.html" class="solution-card" style="--accent:#e74c3c">
-          <span class="solution-emoji">👶</span><h3>Child Safety</h3><p>Cordless & safe</p>
-        </a>
-        <a href="landing/outdoor-blinds.html" class="solution-card" style="--accent:#f39c12">
-          <span class="solution-emoji">☀️</span><h3>Outdoor Living</h3><p>Alfresco & patio</p>
-        </a>
-        <a href="landing/apartment-solutions.html" class="solution-card" style="--accent:#3498db">
-          <span class="solution-emoji">🏙️</span><h3>Apartments</h3><p>Compact & stylish</p>
-        </a>
-        <a href="landing/acoustic-solutions.html" class="solution-card" style="--accent:#9b59b6">
-          <span class="solution-emoji">🔇</span><h3>Acoustic</h3><p>Noise reduction</p>
-        </a>
-        <a href="landing/hospitality-blinds.html" class="solution-card" style="--accent:#d35400">
-          <span class="solution-emoji">🏨</span><h3>Hotels & Airbnb</h3><p>Hospitality spec</p>
-        </a>
-        <a href="landing/eco-friendly.html" class="solution-card" style="--accent:#1abc9c">
-          <span class="solution-emoji">♻️</span><h3>Eco-Friendly</h3><p>Sustainable choices</p>
-        </a>
-        <a href="landing/large-windows.html" class="solution-card" style="--accent:#34495e">
-          <span class="solution-emoji">🪟</span><h3>Large Windows</h3><p>Floor to ceiling</p>
-        </a>
-        <a href="landing/seasonal-sale.html" class="solution-card" style="--accent:#c0392b">
-          <span class="solution-emoji">🏷️</span><h3>Current Specials</h3><p>Autumn/Winter sale</p>
-        </a>
+      <div class="section-header-left reveal">
+        <p class="section-eyebrow">Solutions</p>
+        <h2 class="section-title-left">Tailored to your needs</h2>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="landing/testimonials.html" class="btn btn-outline">View Customer Stories →</a>
-        <a href="landing/design-inspiration.html" class="btn btn-outline" style="margin-left:1rem;">Get Design Inspiration →</a>
+      <div class="solutions-editorial reveal">
+        <div class="solutions-featured">
+          <a href="landing/commercial-blinds.html" class="sol-featured-card">
+            <h3>Commercial Spaces</h3>
+            <p>Office & retail solutions built for durability and style.</p>
+            <span class="sol-arrow">→</span>
+          </a>
+          <a href="landing/new-home-packages.html" class="sol-featured-card">
+            <h3>New Home Packages</h3>
+            <p>Whole-home deals that take the stress out of building.</p>
+            <span class="sol-arrow">→</span>
+          </a>
+          <a href="landing/smart-home.html" class="sol-featured-card">
+            <h3>Smart Home</h3>
+            <p>Voice & app control for the connected home.</p>
+            <span class="sol-arrow">→</span>
+          </a>
+        </div>
+        <div class="solutions-list">
+          <a href="landing/energy-efficient.html" class="sol-list-item">Energy Efficient <span>→</span></a>
+          <a href="landing/child-safety.html" class="sol-list-item">Child Safety <span>→</span></a>
+          <a href="landing/outdoor-blinds.html" class="sol-list-item">Outdoor Living <span>→</span></a>
+          <a href="landing/apartment-solutions.html" class="sol-list-item">Apartments <span>→</span></a>
+          <a href="landing/acoustic-solutions.html" class="sol-list-item">Acoustic <span>→</span></a>
+          <a href="landing/hospitality-blinds.html" class="sol-list-item">Hotels & Airbnb <span>→</span></a>
+          <a href="landing/eco-friendly.html" class="sol-list-item">Eco-Friendly <span>→</span></a>
+          <a href="landing/large-windows.html" class="sol-list-item">Large Windows <span>→</span></a>
+          <a href="landing/seasonal-sale.html" class="sol-list-item sol-list-accent">Current Specials <span>→</span></a>
+        </div>
+      </div>
+      <div class="solutions-links reveal">
+        <a href="landing/testimonials.html" class="btn btn-outline-dark">Customer Stories</a>
+        <a href="landing/design-inspiration.html" class="btn btn-outline-dark">Design Inspiration</a>
       </div>
     </div>
   </section>
 
   <!-- CTA Banner -->
-  <section class="section cta-banner">
-    <div class="container" style="text-align:center;">
-      <h2 class="section-title" style="color:#fff;">Ready to Transform Your Home?</h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Book your free measure & quote today. No obligation, no hidden costs.</p>
+  <section class="section hp-cta">
+    <div class="container hp-cta-inner reveal">
+      <h2>Ready to transform<br>your home?</h2>
+      <p>Book your free measure & quote. No obligation. No hidden costs.</p>
       <a href="free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
     </div>
   </section>
@@ -294,26 +284,28 @@
         <a href="index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
         <p>Melbourne's trusted window furnishing experts.</p>
         <div class="footer-contact-info">
-          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
-          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+          <p><a href="tel:0400000000">0400 000 000</a></p>
+          <p><a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
         </div>
       </div>
-      <div class="footer-links">
-        <h4>Products</h4>
-        <a href="products/roller-blinds.html">Roller Blinds</a>
-        <a href="products/curtains.html">Curtains</a>
-        <a href="products/plantation-shutters.html">Plantation Shutters</a>
-        <a href="products/venetian-blinds.html">Venetian Blinds</a>
-        <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
-        <a href="products/motorised.html">Motorised Solutions</a>
-      </div>
-      <div class="footer-links">
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="faq.html">FAQ</a>
-        <a href="free-quote.html">Free Quote</a>
-        <a href="contact.html">Contact</a>
+      <div class="footer-nav">
+        <div class="footer-links">
+          <h4>Products</h4>
+          <a href="products/roller-blinds.html">Roller Blinds</a>
+          <a href="products/curtains.html">Curtains</a>
+          <a href="products/plantation-shutters.html">Plantation Shutters</a>
+          <a href="products/venetian-blinds.html">Venetian Blinds</a>
+          <a href="products/honeycomb-blinds.html">Honeycomb Blinds</a>
+          <a href="products/motorised.html">Motorised Solutions</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="free-quote.html">Free Quote</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
