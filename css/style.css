@@ -447,10 +447,10 @@ h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; 
 /* Mega dropdown */
 .nav-dropdown-mega {
   min-width: 340px;
-  display: grid !important;
   grid-template-columns: 1fr 1fr;
   gap: 0;
 }
+.nav-dropdown:hover .nav-dropdown-mega { display: grid; }
 .nav-dropdown-mega a { white-space: nowrap; }
 
 /* === Active Nav === */
