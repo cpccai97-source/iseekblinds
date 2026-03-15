@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Office Blinds — Glare-Free, Zoom-Ready Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Work from home in comfort with blinds designed for home offices. Anti-glare, screen-friendly light control, sound dampening and motorised options. Free quote Melbourne.">
+  <meta name="keywords" content="home office blinds Melbourne, work from home blinds, anti-glare blinds, screen-friendly blinds, Zoom background blinds, motorised office blinds, light control blinds">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === DARK NEON PRODUCTIVITY THEME — Deep darks, electric accents, tech vibes === */
+    :root {
+      --ho-bg: #0a0a0f;
+      --ho-surface: #13131a;
+      --ho-card: #1a1a25;
+      --ho-border: #2a2a3a;
+      --ho-text: #e4e4ef;
+      --ho-muted: #8888a0;
+      --ho-cyan: #06d6a0;
+      --ho-cyan-glow: rgba(6,214,160,0.15);
+      --ho-purple: #8b5cf6;
+      --ho-purple-glow: rgba(139,92,246,0.15);
+      --ho-amber: #fbbf24;
+      --ho-pink: #ec4899;
+      --ho-white: #ffffff;
+      --ho-radius: 16px;
+    }
+
+    .lp-ho {
+      background: var(--ho-bg);
+      color: var(--ho-text);
+      overflow-x: hidden;
+    }
+
+    /* Grid overlay */
+    .lp-ho::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(6,214,160,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,214,160,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* --- HERO --- */
+    .ho-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ho-hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .ho-hero-glow-1 {
+      top: -20%;
+      right: -10%;
+      background: var(--ho-purple);
+    }
+
+    .ho-hero-glow-2 {
+      bottom: -20%;
+      left: -10%;
+      background: var(--ho-cyan);
+      opacity: 0.2;
+    }
+
+    .ho-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 140px 24px 100px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .ho-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--ho-cyan-glow);
+      border: 1px solid rgba(6,214,160,0.3);
+      border-radius: 30px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--ho-cyan);
+      margin-bottom: 28px;
+      animation: ho-fadeDown 0.6s ease-out;
+    }
+
+    @keyframes ho-fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ho-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: ho-fadeUp 0.8s ease-out;
+    }
+
+    .ho-hero h1 .ho-gradient {
+      background: linear-gradient(135deg, var(--ho-cyan), var(--ho-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ho-hero-sub {
+      font-size: 1.25rem;
+      color: var(--ho-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      animation: ho-fadeUp 0.8s ease-out 0.15s both;
+    }
+
+    .ho-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      animation: ho-fadeUp 0.8s ease-out 0.3s both;
+    }
+
+    .ho-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--ho-cyan), #04b890);
+      color: var(--ho-bg);
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 30px var(--ho-cyan-glow);
+    }
+
+    .ho-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(6,214,160,0.35);
+    }
+
+    .ho-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border: 1px solid var(--ho-border);
+      color: var(--ho-text);
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .ho-btn-ghost:hover {
+      border-color: var(--ho-purple);
+      color: var(--ho-purple);
+    }
+
+    .ho-hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 60px;
+      animation: ho-fadeUp 0.8s ease-out 0.45s both;
+    }
+
+    .ho-hero-stat {
+      text-align: center;
+    }
+
+    .ho-hero-stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ho-cyan);
+    }
+
+    .ho-hero-stat-label {
+      font-size: 0.85rem;
+      color: var(--ho-muted);
+      margin-top: 4px;
+    }
+
+    @keyframes ho-fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- SECTION --- */
+    .ho-section {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ho-section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .ho-section-sub {
+      font-size: 1.1rem;
+      color: var(--ho-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+    }
+
+    /* --- PAIN POINTS --- */
+    .ho-pains {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .ho-pain {
+      background: var(--ho-card);
+      border: 1px solid var(--ho-border);
+      border-radius: var(--ho-radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .ho-pain.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ho-pain:hover {
+      border-color: var(--ho-cyan);
+      box-shadow: 0 0 30px var(--ho-cyan-glow);
+    }
+
+    .ho-pain-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .ho-pain h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--ho-text);
+    }
+
+    .ho-pain p {
+      font-size: 0.88rem;
+      color: var(--ho-muted);
+      line-height: 1.6;
+    }
+
+    /* --- SOLUTIONS GRID --- */
+    .ho-solutions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .ho-solution {
+      background: var(--ho-card);
+      border: 1px solid var(--ho-border);
+      border-radius: var(--ho-radius);
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ho-solution.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ho-solution:hover {
+      transform: translateY(-8px);
+      border-color: var(--ho-purple);
+      box-shadow: 0 0 40px var(--ho-purple-glow);
+    }
+
+    .ho-solution-top {
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(6,214,160,0.05));
+      border-bottom: 1px solid var(--ho-border);
+      text-align: center;
+    }
+
+    .ho-solution-emoji {
+      font-size: 3.5rem;
+      margin-bottom: 12px;
+    }
+
+    .ho-solution-top h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .ho-solution-body {
+      padding: 28px;
+    }
+
+    .ho-solution-body p {
+      font-size: 0.92rem;
+      color: var(--ho-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .ho-solution-perks {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ho-solution-perks li {
+      padding: 8px 0;
+      font-size: 0.88rem;
+      color: var(--ho-text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ho-solution-perks li::before {
+      content: '▸';
+      color: var(--ho-cyan);
+      font-weight: 800;
+    }
+
+    .ho-solution-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--ho-cyan-glow);
+      border: 1px solid rgba(6,214,160,0.2);
+      color: var(--ho-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      margin-top: 16px;
+    }
+
+    /* --- SETUP TIPS --- */
+    .ho-tips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .ho-tip {
+      background: var(--ho-card);
+      border: 1px solid var(--ho-border);
+      border-radius: var(--ho-radius);
+      padding: 36px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .ho-tip.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .ho-tip:hover {
+      border-color: var(--ho-amber);
+    }
+
+    .ho-tip-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ho-purple);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .ho-tip h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .ho-tip p {
+      font-size: 0.9rem;
+      color: var(--ho-muted);
+      line-height: 1.6;
+    }
+
+    /* --- ZOOM SECTION --- */
+    .ho-zoom-section {
+      background: var(--ho-surface);
+      border-radius: 24px;
+      padding: 60px;
+      margin: 0 auto;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      border: 1px solid var(--ho-border);
+    }
+
+    .ho-zoom-left h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .ho-zoom-left h2 span {
+      color: var(--ho-amber);
+    }
+
+    .ho-zoom-left p {
+      color: var(--ho-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .ho-zoom-checks {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ho-zoom-checks li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+
+    .ho-zoom-checks li::before {
+      content: '✓';
+      color: var(--ho-cyan);
+      font-weight: 800;
+    }
+
+    .ho-zoom-right {
+      background: var(--ho-card);
+      border-radius: var(--ho-radius);
+      padding: 40px;
+      border: 1px solid var(--ho-border);
+      text-align: center;
+    }
+
+    .ho-zoom-mockup {
+      font-size: 6rem;
+      margin-bottom: 16px;
+    }
+
+    .ho-zoom-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--ho-cyan);
+    }
+
+    /* --- CTA --- */
+    .ho-cta {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ho-cta-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(6,214,160,0.1));
+      border: 1px solid var(--ho-border);
+      border-radius: 24px;
+      padding: 60px 40px;
+    }
+
+    .ho-cta h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .ho-cta p {
+      font-size: 1.1rem;
+      color: var(--ho-muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* --- CROSS LINKS --- */
+    .ho-crosslinks {
+      padding: 80px 24px;
+      background: var(--ho-surface);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ho-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ho-crosslinks h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .ho-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .ho-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      background: var(--ho-card);
+      border: 1px solid var(--ho-border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--ho-text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .ho-crosslink-item:hover {
+      border-color: var(--ho-cyan);
+      color: var(--ho-cyan);
+      transform: translateX(4px);
+    }
+
+    .ho-crosslink-item span {
+      color: var(--ho-cyan);
+      font-weight: 700;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .ho-hero h1 { font-size: 2.5rem; }
+      .ho-hero-stats { flex-direction: column; gap: 20px; }
+      .ho-pains { grid-template-columns: 1fr 1fr; }
+      .ho-solutions { grid-template-columns: 1fr; }
+      .ho-tips { grid-template-columns: 1fr; }
+      .ho-zoom-section { grid-template-columns: 1fr; padding: 32px; }
+      .ho-crosslinks-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .ho-pains { grid-template-columns: 1fr; }
+      .ho-hero-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body class="lp-ho">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ho-hero">
+    <div class="ho-hero-glow ho-hero-glow-1"></div>
+    <div class="ho-hero-glow ho-hero-glow-2"></div>
+    <div class="ho-hero-inner">
+      <div class="ho-hero-tag">💻 Designed for Remote Workers</div>
+      <h1>Your Office Deserves<br><span class="ho-gradient">Better Light Control</span></h1>
+      <p class="ho-hero-sub">Glare-free screens. Perfect Zoom backgrounds. Focused productivity. Blinds engineered for the way you work now.</p>
+      <div class="ho-hero-actions">
+        <a href="../free-quote.html" class="ho-btn-primary">Get Free Quote →</a>
+        <a href="#solutions" class="ho-btn-ghost">See Solutions ↓</a>
+      </div>
+      <div class="ho-hero-stats">
+        <div class="ho-hero-stat">
+          <div class="ho-hero-stat-num">92%</div>
+          <div class="ho-hero-stat-label">Glare reduction</div>
+        </div>
+        <div class="ho-hero-stat">
+          <div class="ho-hero-stat-num">3x</div>
+          <div class="ho-hero-stat-label">Better screen clarity</div>
+        </div>
+        <div class="ho-hero-stat">
+          <div class="ho-hero-stat-num">5dB</div>
+          <div class="ho-hero-stat-label">Noise dampening</div>
+        </div>
+        <div class="ho-hero-stat">
+          <div class="ho-hero-stat-num">30%</div>
+          <div class="ho-hero-stat-label">Energy savings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="ho-section">
+    <h2 class="ho-section-title">The WFH Light Problem</h2>
+    <p class="ho-section-sub">Every remote worker knows these frustrations. Your blinds should solve them, not cause them.</p>
+    <div class="ho-pains">
+      <div class="ho-pain">
+        <div class="ho-pain-icon">☀️</div>
+        <h3>Screen Glare</h3>
+        <p>Afternoon sun washing out your monitor. Squinting through meetings.</p>
+      </div>
+      <div class="ho-pain">
+        <div class="ho-pain-icon">🌡️</div>
+        <h3>Heat Build-up</h3>
+        <p>West-facing offices become saunas. AC works overtime, productivity drops.</p>
+      </div>
+      <div class="ho-pain">
+        <div class="ho-pain-icon">📹</div>
+        <h3>Bad Zoom Lighting</h3>
+        <p>Backlit face, washed out background. You look like a witness protection interview.</p>
+      </div>
+      <div class="ho-pain">
+        <div class="ho-pain-icon">🔊</div>
+        <h3>Street Noise</h3>
+        <p>Traffic, neighbours, dogs. Every sound bleeds through standard windows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="ho-section">
+    <h2 class="ho-section-title">Solutions That Work</h2>
+    <p class="ho-section-sub">Purpose-built for productivity. Each option solves different home office challenges.</p>
+    <div class="ho-solutions">
+      <div class="ho-solution">
+        <div class="ho-solution-top">
+          <div class="ho-solution-emoji">🪟</div>
+          <h3>Sunscreen Rollers</h3>
+        </div>
+        <div class="ho-solution-body">
+          <p>The default choice for home offices. Cuts glare while keeping natural light and your view.</p>
+          <ul class="ho-solution-perks">
+            <li>1-5% openness factor options</li>
+            <li>Reduces UV by 99%</li>
+            <li>Maintains outside view</li>
+            <li>Neutral colours for Zoom backgrounds</li>
+            <li>Motorised option with timer</li>
+          </ul>
+          <span class="ho-solution-badge">// MOST POPULAR</span>
+        </div>
+      </div>
+      <div class="ho-solution">
+        <div class="ho-solution-top">
+          <div class="ho-solution-emoji">🔲</div>
+          <h3>Day/Night Duo Rollers</h3>
+        </div>
+        <div class="ho-solution-body">
+          <p>Two blinds in one cassette. Sunscreen for day work, blockout for presentations and naps.</p>
+          <ul class="ho-solution-perks">
+            <li>Dual fabric system</li>
+            <li>Instant switch: light ↔ dark</li>
+            <li>Perfect for video calls</li>
+            <li>Single bracket installation</li>
+            <li>Motorised with scene presets</li>
+          </ul>
+          <span class="ho-solution-badge">// BEST ALL-ROUNDER</span>
+        </div>
+      </div>
+      <div class="ho-solution">
+        <div class="ho-solution-top">
+          <div class="ho-solution-emoji">🏛️</div>
+          <h3>Plantation Shutters</h3>
+        </div>
+        <div class="ho-solution-body">
+          <p>Adjustable louvres give you precise light control. Tilt to direct light away from screen.</p>
+          <ul class="ho-solution-perks">
+            <li>Infinite angle adjustment</li>
+            <li>Excellent noise reduction</li>
+            <li>Premium Zoom background</li>
+            <li>Adds property value</li>
+            <li>Durable — lasts 20+ years</li>
+          </ul>
+          <span class="ho-solution-badge">// PREMIUM CHOICE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zoom Section -->
+  <section class="ho-section">
+    <div class="ho-zoom-section">
+      <div class="ho-zoom-left">
+        <h2>Look Pro on <span>Every Call</span></h2>
+        <p>Your blinds are in every video call background. Make them an asset, not an eyesore. Consistent, neutral tones create a professional backdrop that works with any lighting.</p>
+        <ul class="ho-zoom-checks">
+          <li>Even light diffusion — no hot spots</li>
+          <li>Neutral colours complement skin tones</li>
+          <li>Clean lines add visual order</li>
+          <li>Motorised = adjust without leaving frame</li>
+          <li>Blockout mode for screen-sharing</li>
+        </ul>
+      </div>
+      <div class="ho-zoom-right">
+        <div class="ho-zoom-mockup">🖥️</div>
+        <div class="ho-zoom-caption">// your.new.background</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Setup Tips -->
+  <section class="ho-section">
+    <h2 class="ho-section-title">Office Setup Tips</h2>
+    <p class="ho-section-sub">Get the most from your window treatments with smart desk positioning.</p>
+    <div class="ho-tips">
+      <div class="ho-tip">
+        <div class="ho-tip-num">01</div>
+        <div>
+          <h3>Face Perpendicular to Windows</h3>
+          <p>Position your desk so windows are to the side, not behind or in front. Reduces direct glare and creates even lighting for video calls.</p>
+        </div>
+      </div>
+      <div class="ho-tip">
+        <div class="ho-tip-num">02</div>
+        <div>
+          <h3>Use Sunscreen, Not Blockout</h3>
+          <p>Complete darkness causes eye strain under artificial light. Sunscreen fabric lets in diffused natural light — better for focus and mood.</p>
+        </div>
+      </div>
+      <div class="ho-tip">
+        <div class="ho-tip-num">03</div>
+        <div>
+          <h3>Automate with Schedules</h3>
+          <p>Motorised blinds can open at 8am and adjust for afternoon sun automatically. One less thing to think about during deep work.</p>
+        </div>
+      </div>
+      <div class="ho-tip">
+        <div class="ho-tip-num">04</div>
+        <div>
+          <h3>Layer for Acoustics</h3>
+          <p>Add heavy curtains over blinds for sound dampening. Honeycomb blinds also trap air and reduce noise. Essential for street-facing offices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ho-cta">
+    <div class="ho-cta-card">
+      <h2>Upgrade Your Office Light</h2>
+      <p>Free consultation. We'll assess your window orientation, screen position and recommend the ideal blinds for your work setup.</p>
+      <a href="../free-quote.html" class="ho-btn-primary">Book Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="ho-crosslinks">
+    <div class="ho-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="ho-crosslinks-grid">
+        <a href="commercial-blinds.html" class="ho-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="ho-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="ho-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="ho-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="ho-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="ho-crosslink-item"><span>→</span> Energy Efficient Blinds</a>
+        <a href="child-safety.html" class="ho-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="smart-home.html" class="ho-crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="outdoor-blinds.html" class="ho-crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="apartment-solutions.html" class="ho-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="ho-crosslink-item"><span>→</span> Care &amp; Maintenance Guide</a>
+        <a href="design-inspiration.html" class="ho-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="ho-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="melbourne-service-areas.html" class="ho-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="ho-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="ho-crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="large-windows.html" class="ho-crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="eco-friendly.html" class="ho-crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="layered-treatments.html" class="ho-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="acoustic-solutions.html" class="ho-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="bathroom-kitchen.html" class="ho-crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ho-pain, .ho-solution, .ho-tip').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html>
