@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre & Media Room Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Total blackout blinds for home theatres and media rooms in Melbourne. Motorised control, acoustic fabrics, and smart integration for the ultimate cinema experience.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── Media Room Theme ── */
+    :root {
+      --mr-bg-deep: #0d0d0d;
+      --mr-bg-purple: #1a0a2e;
+      --mr-accent-red: #e63946;
+      --mr-accent-magenta: #ff006e;
+      --mr-accent-glow: #ff006e80;
+      --mr-text: #e8e8e8;
+      --mr-text-muted: #a0a0b0;
+      --mr-card-bg: #16102a;
+      --mr-card-border: #2a1f4e;
+    }
+
+    .mr-page { background: var(--mr-bg-deep); color: var(--mr-text); overflow-x: hidden; }
+    .mr-page .header { background: rgba(13,13,13,0.95); backdrop-filter: blur(12px); }
+    .mr-page .top-bar { background: var(--mr-bg-purple); }
+
+    /* ── Hero ── */
+    .mr-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, #2d1050 0%, var(--mr-bg-deep) 70%);
+      overflow: hidden;
+    }
+    .mr-hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 60%;
+      background: radial-gradient(ellipse at center, rgba(255,0,110,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .mr-hero::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 200px;
+      background: linear-gradient(to bottom, var(--mr-accent-magenta), transparent);
+      opacity: 0.5;
+      animation: mr-beam 3s ease-in-out infinite;
+    }
+    @keyframes mr-beam {
+      0%, 100% { opacity: 0.3; height: 200px; }
+      50% { opacity: 0.7; height: 300px; }
+    }
+    .mr-hero-content { position: relative; z-index: 2; max-width: 800px; padding: 2rem; }
+    .mr-hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--mr-accent-red), var(--mr-accent-magenta));
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .mr-hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #ddd 50%, var(--mr-accent-magenta) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .mr-hero p { font-size: 1.15rem; color: var(--mr-text-muted); max-width: 600px; margin: 0 auto 2rem; line-height: 1.7; }
+    .mr-hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--mr-accent-red), var(--mr-accent-magenta));
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 30px var(--mr-accent-glow);
+    }
+    .mr-hero-cta:hover { transform: translateY(-3px); box-shadow: 0 0 50px var(--mr-accent-glow); }
+
+    /* Spotlight orbs */
+    .mr-spotlight {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .mr-spotlight-1 { width: 400px; height: 400px; background: var(--mr-accent-magenta); top: -100px; right: -100px; }
+    .mr-spotlight-2 { width: 300px; height: 300px; background: var(--mr-accent-red); bottom: -50px; left: -80px; }
+
+    /* ── Sections ── */
+    .mr-section { padding: 5rem 1.5rem; position: relative; }
+    .mr-section-dark { background: var(--mr-bg-deep); }
+    .mr-section-purple { background: linear-gradient(180deg, var(--mr-bg-purple) 0%, var(--mr-bg-deep) 100%); }
+    .mr-inner { max-width: 1100px; margin: 0 auto; }
+    .mr-section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--mr-accent-magenta);
+      margin-bottom: 0.75rem;
+    }
+    .mr-section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .mr-section-subtitle { color: var(--mr-text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 700px; margin-bottom: 3rem; }
+
+    /* ── Why Blackout ── */
+    .mr-reasons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .mr-reason-card {
+      background: var(--mr-card-bg);
+      border: 1px solid var(--mr-card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .mr-reason-card:hover { transform: translateY(-5px); border-color: var(--mr-accent-magenta); }
+    .mr-reason-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .mr-reason-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .mr-reason-card p { color: var(--mr-text-muted); line-height: 1.65; font-size: 0.95rem; }
+
+    /* ── Products ── */
+    .mr-products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .mr-product-card {
+      background: linear-gradient(145deg, var(--mr-card-bg), #1e1438);
+      border: 1px solid var(--mr-card-border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .mr-product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--mr-accent-red), var(--mr-accent-magenta));
+    }
+    .mr-product-card:hover { transform: translateY(-5px); }
+    .mr-product-icon { font-size: 3rem; margin-bottom: 1.25rem; }
+    .mr-product-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .mr-product-card p { color: var(--mr-text-muted); line-height: 1.65; font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .mr-product-features { list-style: none; padding: 0; text-align: left; }
+    .mr-product-features li { padding: 0.4rem 0; color: var(--mr-text-muted); font-size: 0.9rem; }
+    .mr-product-features li::before { content: '✦ '; color: var(--mr-accent-magenta); }
+
+    /* ── Smart Control ── */
+    .mr-smart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .mr-smart-features { list-style: none; padding: 0; }
+    .mr-smart-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--mr-card-border);
+    }
+    .mr-smart-features li:last-child { border-bottom: none; }
+    .mr-smart-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.2rem; }
+    .mr-smart-text h4 { font-weight: 700; margin-bottom: 0.3rem; }
+    .mr-smart-text p { color: var(--mr-text-muted); font-size: 0.9rem; line-height: 1.6; }
+    .mr-smart-visual {
+      background: radial-gradient(circle at center, #2d1050 0%, var(--mr-bg-deep) 70%);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid var(--mr-card-border);
+    }
+    .mr-smart-visual-icon { font-size: 5rem; margin-bottom: 1rem; }
+    .mr-smart-visual p { color: var(--mr-text-muted); font-style: italic; }
+
+    /* ── Process ── */
+    .mr-process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; counter-reset: step-counter; }
+    .mr-step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--mr-card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--mr-card-border);
+      position: relative;
+      counter-increment: step-counter;
+    }
+    .mr-step::before {
+      content: counter(step-counter);
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--mr-accent-red), var(--mr-accent-magenta));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 30px;
+    }
+    .mr-step-icon { font-size: 2rem; margin: 0.5rem 0 1rem; }
+    .mr-step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .mr-step p { color: var(--mr-text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ── CTA ── */
+    .mr-cta {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, #2d1050 0%, var(--mr-bg-deep) 70%);
+      position: relative;
+    }
+    .mr-cta h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .mr-cta p { color: var(--mr-text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+    .mr-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--mr-accent-red), var(--mr-accent-magenta));
+      color: #fff;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 0 40px var(--mr-accent-glow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mr-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 0 60px var(--mr-accent-glow); }
+    .mr-cta-sub { display: block; margin-top: 1rem; color: var(--mr-text-muted); font-size: 0.9rem; }
+
+    /* ── Crosslinks ── */
+    .mr-crosslinks { padding: 4rem 1.5rem; background: var(--mr-bg-deep); border-top: 1px solid var(--mr-card-border); }
+    .mr-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .mr-crosslinks h3 { font-family: 'Orbitron', sans-serif; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--mr-text-muted); }
+    .mr-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .mr-crosslink-item {
+      background: var(--mr-card-bg);
+      border: 1px solid var(--mr-card-border);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      color: var(--mr-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .mr-crosslink-item:hover { border-color: var(--mr-accent-magenta); color: #fff; }
+
+    /* ── Animations ── */
+    @keyframes mrFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes mrFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .mr-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .mr-animate.mr-visible { opacity: 1; transform: translateY(0); }
+    .mr-hero-content { animation: mrFadeUp 1s ease forwards; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .mr-hero { min-height: 70vh; }
+      .mr-smart-grid { grid-template-columns: 1fr; }
+      .mr-section { padding: 3.5rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .mr-hero h1 { font-size: 1.75rem; }
+      .mr-products-grid { grid-template-columns: 1fr; }
+      .mr-process-steps { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Footer Override ── */
+    .mr-page .footer { background: #0a0a0a; color: var(--mr-text-muted); }
+    .mr-page .footer a { color: var(--mr-text-muted); }
+    .mr-page .footer a:hover { color: var(--mr-accent-magenta); }
+    .mr-page .footer-bottom { border-top: 1px solid var(--mr-card-border); }
+  </style>
+</head>
+<body class="mr-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mr-hero">
+    <div class="mr-spotlight mr-spotlight-1"></div>
+    <div class="mr-spotlight mr-spotlight-2"></div>
+    <div class="mr-hero-content">
+      <span class="mr-hero-badge">Cinema Experience</span>
+      <h1>Total Blackout for Your Home Theatre</h1>
+      <p>Transform any room into an immersive cinema with precision-engineered blackout blinds, motorised control, and acoustic fabric options designed for Melbourne homes.</p>
+      <a href="../free-quote.html" class="mr-hero-cta">Get Your Free Cinema Consult →</a>
+    </div>
+  </section>
+
+  <!-- Why Blackout Matters -->
+  <section class="mr-section mr-section-purple">
+    <div class="mr-inner">
+      <div class="mr-animate">
+        <div class="mr-section-label">Why It Matters</div>
+        <h2 class="mr-section-title">Light Is the Enemy of Great Cinema</h2>
+        <p class="mr-section-subtitle">Even a sliver of ambient light ruins contrast ratios, washes out projector images, and breaks immersion. Here's why dedicated media room blinds are essential.</p>
+      </div>
+      <div class="mr-reasons-grid">
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">🎬</div>
+          <h3>Projector Performance</h3>
+          <p>Projectors need true darkness to deliver their rated contrast ratio. Ambient light can reduce perceived contrast by up to 80%, turning your $5,000 projector into a $500 one.</p>
+        </div>
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">👁️</div>
+          <h3>Eye Strain Reduction</h3>
+          <p>Controlled darkness eliminates glare and reflections on screens, reducing eye fatigue during long movie nights or gaming sessions.</p>
+        </div>
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">🔇</div>
+          <h3>Acoustic Dampening</h3>
+          <p>Heavy blackout fabrics absorb sound reflections, improving audio clarity and reducing echo — especially important in rooms with hard floors or glass.</p>
+        </div>
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">🌡️</div>
+          <h3>Temperature Control</h3>
+          <p>Blackout blinds provide excellent insulation, keeping your media room cool in summer and warm in winter — critical for heat-generating AV equipment.</p>
+        </div>
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">💰</div>
+          <h3>Protect Your Investment</h3>
+          <p>UV rays fade screens, furniture, and acoustic panels. Total blackout extends the life of your entire home theatre setup.</p>
+        </div>
+        <div class="mr-reason-card mr-animate">
+          <div class="mr-reason-icon">🏠</div>
+          <h3>Multi-Purpose Rooms</h3>
+          <p>Not everyone has a dedicated theatre. Blackout blinds instantly convert living rooms, bedrooms, or rumpus rooms into cinema-ready spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Options -->
+  <section class="mr-section mr-section-dark">
+    <div class="mr-inner">
+      <div class="mr-animate">
+        <div class="mr-section-label">Product Options</div>
+        <h2 class="mr-section-title">Engineered for Darkness</h2>
+        <p class="mr-section-subtitle">Every window is different. We match the right blackout solution to your room layout, window type, and usage pattern.</p>
+      </div>
+      <div class="mr-products-grid">
+        <div class="mr-product-card mr-animate">
+          <div class="mr-product-icon">🎞️</div>
+          <h3>Roller Blackout Blinds</h3>
+          <p>The gold standard for media rooms. Precision side channels eliminate light gaps completely.</p>
+          <ul class="mr-product-features">
+            <li>100% blackout fabric with side channels</li>
+            <li>Motorised with silent operation</li>
+            <li>Cassette headbox for zero light leak</li>
+            <li>Custom widths up to 3.6m</li>
+            <li>Choice of fabric textures & colours</li>
+          </ul>
+        </div>
+        <div class="mr-product-card mr-animate">
+          <div class="mr-product-icon">🪟</div>
+          <h3>Plantation Shutters</h3>
+          <p>Premium light control with architectural elegance. Perfect for media rooms that double as living spaces.</p>
+          <ul class="mr-product-features">
+            <li>Adjustable louvres for partial/full blackout</li>
+            <li>Solid timber or PVC options</li>
+            <li>Excellent acoustic properties</li>
+            <li>Bi-fold, sliding, or hinged configurations</li>
+            <li>Built-in insulation value</li>
+          </ul>
+        </div>
+        <div class="mr-product-card mr-animate">
+          <div class="mr-product-icon">🎭</div>
+          <h3>Blackout Curtains</h3>
+          <p>Theatre-grade curtains with triple-weave blackout lining for the authentic cinema experience.</p>
+          <ul class="mr-product-features">
+            <li>Triple-weave blackout lining</li>
+            <li>Heavy fabric for acoustic benefit</li>
+            <li>Motorised curtain tracks available</li>
+            <li>Dramatic floor-to-ceiling draping</li>
+            <li>Velvet & suede texture options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Control -->
+  <section class="mr-section mr-section-purple">
+    <div class="mr-inner">
+      <div class="mr-animate">
+        <div class="mr-section-label">Smart Integration</div>
+        <h2 class="mr-section-title">One Button. Lights Down. Show Starts.</h2>
+        <p class="mr-section-subtitle">Integrate your blinds with your home automation for seamless cinema mode activation.</p>
+      </div>
+      <div class="mr-smart-grid mr-animate">
+        <div>
+          <ul class="mr-smart-features">
+            <li>
+              <span class="mr-smart-icon">🗣️</span>
+              <div class="mr-smart-text">
+                <h4>Voice Control</h4>
+                <p>"Hey Google, movie time" — blinds close, lights dim, projector fires up. Works with Alexa, Google Home, and Siri Shortcuts.</p>
+              </div>
+            </li>
+            <li>
+              <span class="mr-smart-icon">📱</span>
+              <div class="mr-smart-text">
+                <h4>App Control</h4>
+                <p>Control from your phone via Somfy, Automate, or smart home apps. Set schedules, create scenes, and group multiple blinds.</p>
+              </div>
+            </li>
+            <li>
+              <span class="mr-smart-icon">🔗</span>
+              <div class="mr-smart-text">
+                <h4>Home Automation</h4>
+                <p>Full integration with Control4, Crestron, Savant, and Home Assistant. Trigger blinds as part of complex cinema scenes.</p>
+              </div>
+            </li>
+            <li>
+              <span class="mr-smart-icon">🎮</span>
+              <div class="mr-smart-text">
+                <h4>Remote & Wall Switch</h4>
+                <p>15-channel remotes for multi-blind control. Sleek wall-mount switches blend into your cinema room design.</p>
+              </div>
+            </li>
+            <li>
+              <span class="mr-smart-icon">🔋</span>
+              <div class="mr-smart-text">
+                <h4>Battery & Solar Options</h4>
+                <p>No electrician needed. Rechargeable battery motors or solar-panel options for wire-free installation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mr-smart-visual">
+          <div class="mr-smart-visual-icon">🎬</div>
+          <p>"Cinema mode activated — blinds closing, lights dimming, projector warming up…"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="mr-section mr-section-dark">
+    <div class="mr-inner">
+      <div class="mr-animate">
+        <div class="mr-section-label">Our Process</div>
+        <h2 class="mr-section-title">From Consultation to Curtain Call</h2>
+        <p class="mr-section-subtitle">We handle everything — measure, design, install — so you can focus on your popcorn.</p>
+      </div>
+      <div class="mr-process-steps">
+        <div class="mr-step mr-animate">
+          <div class="mr-step-icon">📐</div>
+          <h3>Room Assessment</h3>
+          <p>We assess your windows, light sources, projector placement, and screen position for optimal blackout design.</p>
+        </div>
+        <div class="mr-step mr-animate">
+          <div class="mr-step-icon">🎨</div>
+          <h3>Custom Design</h3>
+          <p>Choose fabrics, colours, and control options. We'll recommend the best solution for your specific setup.</p>
+        </div>
+        <div class="mr-step mr-animate">
+          <div class="mr-step-icon">🏭</div>
+          <h3>Precision Manufacturing</h3>
+          <p>Every blind is custom-made to your exact measurements with quality Australian-sourced materials.</p>
+        </div>
+        <div class="mr-step mr-animate">
+          <div class="mr-step-icon">🔧</div>
+          <h3>Professional Install</h3>
+          <p>Our installers specialise in media rooms — we test light leaks, program automation, and ensure perfection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mr-cta">
+    <div class="mr-animate">
+      <h2>Ready to Build Your Cinema?</h2>
+      <p>Free in-home consultation across Melbourne. We bring samples, measure up, and design your perfect media room blackout solution.</p>
+      <a href="../free-quote.html" class="mr-cta-btn">Book Free Consultation</a>
+      <span class="mr-cta-sub">No obligation · Same-week appointments · Melbourne-wide</span>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="mr-crosslinks">
+    <div class="mr-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="mr-crosslinks-grid">
+        <a href="commercial-blinds.html" class="mr-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="mr-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="mr-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="mr-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="mr-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="mr-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="mr-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="mr-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="mr-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="mr-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="mr-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="mr-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="acoustic-solutions.html" class="mr-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="mr-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="mr-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="mr-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="mr-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="mr-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="mr-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="mr-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="mr-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="mr-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="mr-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="mr-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="pet-friendly.html" class="mr-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations with IntersectionObserver
+    const mrObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('mr-visible');
+          }, index * 100);
+          mrObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.mr-animate').forEach(el => mrObserver.observe(el));
+  </script>
+
+</body>
+</html>

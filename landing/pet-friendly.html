@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet-Friendly & Durable Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Pet-friendly blinds and window coverings in Melbourne. Scratch-resistant, cordless safety, easy-clean fabrics designed for homes with cats, dogs, and curious critters.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Pet-Friendly Theme ── */
+    :root {
+      --pf-orange: #FF8C42;
+      --pf-orange-light: #FFB380;
+      --pf-teal: #2EC4B6;
+      --pf-teal-dark: #1a9e91;
+      --pf-cream: #FFF5E4;
+      --pf-cream-dark: #F5E6CC;
+      --pf-charcoal: #2d2d2d;
+      --pf-text: #3a3a3a;
+      --pf-text-muted: #6b6b6b;
+      --pf-card-bg: #ffffff;
+      --pf-card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .pf-page { background: var(--pf-cream); color: var(--pf-text); overflow-x: hidden; }
+    .pf-page .top-bar { background: var(--pf-teal); }
+    .pf-page .top-bar a { color: #fff; }
+
+    /* Paw prints decorative */
+    .pf-paw {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0.08;
+      pointer-events: none;
+      transform: rotate(var(--paw-rot, 0deg));
+    }
+
+    /* ── Hero ── */
+    .pf-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--pf-cream) 0%, #FFF0D6 50%, #E8F8F5 100%);
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .pf-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%; }
+    .pf-hero-content { position: relative; z-index: 2; }
+    .pf-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--pf-card-bg);
+      border: 2px solid var(--pf-orange);
+      color: var(--pf-orange);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .pf-hero h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--pf-charcoal);
+      margin-bottom: 1.25rem;
+    }
+    .pf-hero h1 span { color: var(--pf-teal); }
+    .pf-hero p { font-size: 1.1rem; color: var(--pf-text-muted); line-height: 1.7; margin-bottom: 2rem; max-width: 500px; }
+    .pf-hero-cta {
+      display: inline-block;
+      background: var(--pf-orange);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      box-shadow: 0 4px 15px rgba(255,140,66,0.3);
+    }
+    .pf-hero-cta:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(255,140,66,0.4); background: #e67a30; }
+    .pf-hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pf-hero-circle {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pf-teal), var(--pf-orange));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      animation: pfBounce 3s ease-in-out infinite;
+      box-shadow: 0 20px 60px rgba(46,196,182,0.2);
+    }
+    @keyframes pfBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .pf-hero-float {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: pfFloat 4s ease-in-out infinite;
+    }
+    .pf-hero-float:nth-child(2) { top: 10%; right: 10%; animation-delay: 0.5s; }
+    .pf-hero-float:nth-child(3) { bottom: 15%; left: 5%; animation-delay: 1s; }
+    .pf-hero-float:nth-child(4) { top: 60%; right: 5%; animation-delay: 1.5s; }
+    @keyframes pfFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(10deg); }
+    }
+
+    /* ── Sections ── */
+    .pf-section { padding: 5rem 1.5rem; position: relative; }
+    .pf-section-white { background: #fff; }
+    .pf-section-cream { background: var(--pf-cream); }
+    .pf-section-teal { background: linear-gradient(135deg, var(--pf-teal), var(--pf-teal-dark)); color: #fff; }
+    .pf-inner { max-width: 1100px; margin: 0 auto; }
+    .pf-section-label {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--pf-orange);
+      margin-bottom: 0.5rem;
+    }
+    .pf-section-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--pf-charcoal);
+      margin-bottom: 1rem;
+    }
+    .pf-section-teal .pf-section-title { color: #fff; }
+    .pf-section-teal .pf-section-label { color: var(--pf-cream); }
+    .pf-section-subtitle { color: var(--pf-text-muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; margin-bottom: 3rem; }
+    .pf-section-teal .pf-section-subtitle { color: rgba(255,255,255,0.85); }
+
+    /* ── Pet Problems ── */
+    .pf-problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .pf-problem-card {
+      background: var(--pf-card-bg);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--pf-card-shadow);
+      border: 2px solid transparent;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .pf-problem-card:hover { transform: translateY(-5px); border-color: var(--pf-orange); }
+    .pf-problem-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .pf-problem-card h3 { font-family: 'Fredoka', sans-serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--pf-charcoal); }
+    .pf-problem-card p { color: var(--pf-text-muted); line-height: 1.65; font-size: 0.95rem; }
+
+    /* ── Product Solutions ── */
+    .pf-solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .pf-solution-card {
+      background: var(--pf-card-bg);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--pf-card-shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .pf-solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 24px 24px 0 0;
+    }
+    .pf-solution-card:nth-child(1)::before { background: var(--pf-orange); }
+    .pf-solution-card:nth-child(2)::before { background: var(--pf-teal); }
+    .pf-solution-card:nth-child(3)::before { background: linear-gradient(90deg, var(--pf-orange), var(--pf-teal)); }
+    .pf-solution-card:hover { transform: translateY(-5px); }
+    .pf-solution-icon { font-size: 3rem; margin-bottom: 1.25rem; }
+    .pf-solution-card h3 { font-family: 'Fredoka', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--pf-charcoal); }
+    .pf-solution-card p { color: var(--pf-text-muted); line-height: 1.65; margin-bottom: 1.25rem; font-size: 0.95rem; }
+    .pf-solution-features { list-style: none; padding: 0; }
+    .pf-solution-features li { padding: 0.4rem 0; color: var(--pf-text-muted); font-size: 0.9rem; }
+    .pf-solution-features li::before { content: '🐾 '; }
+
+    /* ── Material Guide ── */
+    .pf-materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pf-material-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .pf-material-card:hover { transform: translateY(-5px); border-color: var(--pf-cream); }
+    .pf-material-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .pf-material-card h3 { font-family: 'Fredoka', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .pf-material-card p { font-size: 0.9rem; line-height: 1.6; opacity: 0.9; }
+    .pf-material-rating { margin-top: 0.75rem; font-size: 0.85rem; }
+    .pf-material-rating span { color: var(--pf-cream); }
+
+    /* ── Safety Features ── */
+    .pf-safety-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .pf-safety-list { list-style: none; padding: 0; }
+    .pf-safety-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--pf-card-bg);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      box-shadow: var(--pf-card-shadow);
+      transition: transform 0.3s;
+    }
+    .pf-safety-list li:hover { transform: translateX(5px); }
+    .pf-safety-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .pf-safety-text h4 { font-family: 'Fredoka', sans-serif; font-weight: 600; margin-bottom: 0.3rem; color: var(--pf-charcoal); }
+    .pf-safety-text p { color: var(--pf-text-muted); font-size: 0.9rem; line-height: 1.6; }
+    .pf-safety-visual {
+      background: linear-gradient(135deg, #FFF0D6, #E8F8F5);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      border: 2px solid var(--pf-cream-dark);
+    }
+    .pf-safety-visual-icon { font-size: 5rem; margin-bottom: 1rem; animation: pfBounce 3s ease-in-out infinite; }
+    .pf-safety-visual p { color: var(--pf-text-muted); font-style: italic; font-family: 'Fredoka', sans-serif; }
+
+    /* ── Testimonials ── */
+    .pf-testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .pf-testimonial-card {
+      background: var(--pf-card-bg);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--pf-card-shadow);
+      position: relative;
+    }
+    .pf-testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      font-family: 'Fredoka', sans-serif;
+      color: var(--pf-orange);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    .pf-testimonial-card p { color: var(--pf-text); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem; font-style: italic; }
+    .pf-testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .pf-testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pf-orange), var(--pf-teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .pf-testimonial-name { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--pf-charcoal); font-size: 0.9rem; }
+    .pf-testimonial-pet { font-size: 0.8rem; color: var(--pf-text-muted); }
+    .pf-testimonial-stars { color: var(--pf-orange); font-size: 0.85rem; margin-bottom: 0.75rem; }
+
+    /* ── CTA ── */
+    .pf-cta {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(135deg, #FFF0D6 0%, #E8F8F5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .pf-cta::before {
+      content: '🐾';
+      position: absolute;
+      font-size: 15rem;
+      opacity: 0.04;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pf-cta h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--pf-charcoal);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .pf-cta p { color: var(--pf-text-muted); margin-bottom: 2rem; font-size: 1.1rem; position: relative; }
+    .pf-cta-btn {
+      display: inline-block;
+      background: var(--pf-teal);
+      color: #fff;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(46,196,182,0.3);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      position: relative;
+    }
+    .pf-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(46,196,182,0.4); background: var(--pf-teal-dark); }
+    .pf-cta-sub { display: block; margin-top: 1rem; color: var(--pf-text-muted); font-size: 0.9rem; position: relative; }
+
+    /* ── Crosslinks ── */
+    .pf-crosslinks { padding: 4rem 1.5rem; background: #fff; border-top: 2px solid var(--pf-cream-dark); }
+    .pf-crosslinks-inner { max-width: 1100px; margin: 0 auto; }
+    .pf-crosslinks h3 { font-family: 'Fredoka', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--pf-charcoal); }
+    .pf-crosslinks-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .pf-crosslink-item {
+      background: var(--pf-cream);
+      border: 2px solid var(--pf-cream-dark);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      color: var(--pf-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .pf-crosslink-item:hover { border-color: var(--pf-teal); color: var(--pf-teal); background: #E8F8F5; }
+
+    /* ── Animations ── */
+    @keyframes pfFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pfBounceIn { 
+      0% { opacity: 0; transform: scale(0.8); }
+      60% { transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .pf-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .pf-animate.pf-visible { opacity: 1; transform: translateY(0); }
+    .pf-hero-content { animation: pfFadeUp 0.8s ease forwards; }
+    .pf-hero-visual { animation: pfBounceIn 1s ease 0.3s forwards; opacity: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .pf-hero { min-height: auto; padding: 6rem 1.5rem 3rem; }
+      .pf-hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .pf-hero p { margin: 0 auto 2rem; }
+      .pf-hero-circle { width: 250px; height: 250px; font-size: 6rem; margin: 2rem auto; }
+      .pf-safety-grid { grid-template-columns: 1fr; }
+      .pf-section { padding: 3.5rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .pf-hero h1 { font-size: 1.75rem; }
+      .pf-solutions-grid { grid-template-columns: 1fr; }
+      .pf-materials-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="pf-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>📞 Call us: <a href="tel:0400000000">0400 000 000</a></span>
+      <span>📍 Serving Melbourne & Surrounds</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pf-hero">
+    <div class="pf-hero-inner">
+      <div class="pf-hero-content">
+        <span class="pf-hero-badge">🐾 Pet-Friendly Solutions</span>
+        <h1>Blinds That Survive <span>Your Fur Babies</span></h1>
+        <p>Scratch-proof, chew-resistant, cordless, and easy to clean. Window blinds designed for real homes with real pets — because your cat shouldn't dictate your décor.</p>
+        <a href="../free-quote.html" class="pf-hero-cta">Get Pet-Safe Blinds →</a>
+      </div>
+      <div class="pf-hero-visual">
+        <div class="pf-hero-circle">🐕</div>
+        <span class="pf-hero-float" style="top:10%;right:10%">🐾</span>
+        <span class="pf-hero-float" style="bottom:15%;left:5%">🐈</span>
+        <span class="pf-hero-float" style="top:60%;right:5%">❤️</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Pet Problems -->
+  <section class="pf-section pf-section-white">
+    <div class="pf-inner">
+      <div class="pf-animate">
+        <div class="pf-section-label">The Struggle Is Real</div>
+        <h2 class="pf-section-title">Common Pet vs. Blinds Problems 🐱</h2>
+        <p class="pf-section-subtitle">Every pet owner knows the pain. Here's what we hear from Melbourne pet parents every day.</p>
+      </div>
+      <div class="pf-problems-grid">
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">😼</div>
+          <h3>Cats Climbing Blinds</h3>
+          <p>Cats love vertical blinds like a personal jungle gym. Bent slats, broken chains, and dangling cords become their favourite toys.</p>
+        </div>
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">🐕</div>
+          <h3>Dogs Nosing Through</h3>
+          <p>Dogs push their noses through blinds to watch the world go by, bending slats and leaving nose prints on every surface.</p>
+        </div>
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">🦷</div>
+          <h3>Chewing & Scratching</h3>
+          <p>Puppies and anxious dogs chew blind cords and bottom rails. Cats scratch fabric blinds when they can't get to the window.</p>
+        </div>
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">⚠️</div>
+          <h3>Cord Dangers</h3>
+          <p>Dangling cords are a serious strangulation risk for curious pets. Cordless operation isn't just convenient — it's essential.</p>
+        </div>
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">🧹</div>
+          <h3>Fur Everywhere</h3>
+          <p>Pet hair clings to fabric blinds and curtains. Standard materials are fur magnets that need constant cleaning.</p>
+        </div>
+        <div class="pf-problem-card pf-animate">
+          <div class="pf-problem-icon">☀️</div>
+          <h3>UV Damage to Furniture</h3>
+          <p>Pets love sunny spots — but UV rays fade your floors, couches, and pet beds. Protection matters for furniture longevity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Solutions -->
+  <section class="pf-section pf-section-cream">
+    <div class="pf-inner">
+      <div class="pf-animate">
+        <div class="pf-section-label">Our Solutions</div>
+        <h2 class="pf-section-title">Pet-Proof Window Treatments</h2>
+        <p class="pf-section-subtitle">Designed to handle everything your pets throw at them — literally.</p>
+      </div>
+      <div class="pf-solutions-grid">
+        <div class="pf-solution-card pf-animate">
+          <div class="pf-solution-icon">🪟</div>
+          <h3>Plantation Shutters</h3>
+          <p>The ultimate pet-proof option. Solid timber or PVC that cats can't climb and dogs can't chew through.</p>
+          <ul class="pf-solution-features">
+            <li>Virtually indestructible PVC option</li>
+            <li>No cords, no chains, no dangling parts</li>
+            <li>Adjustable louvres for pet viewing</li>
+            <li>Easy wipe-clean surfaces</li>
+            <li>Won't collect pet hair</li>
+          </ul>
+        </div>
+        <div class="pf-solution-card pf-animate">
+          <div class="pf-solution-icon">🎞️</div>
+          <h3>Roller Blinds</h3>
+          <p>When retracted, they're completely out of reach. Choose scratch-resistant fabrics for added durability.</p>
+          <ul class="pf-solution-features">
+            <li>Rolls up completely out of pet reach</li>
+            <li>Cordless spring or motorised operation</li>
+            <li>PVC-coated fabrics resist scratching</li>
+            <li>Easy to replace fabric if damaged</li>
+            <li>Anti-static options repel pet hair</li>
+          </ul>
+        </div>
+        <div class="pf-solution-card pf-animate">
+          <div class="pf-solution-icon">🏠</div>
+          <h3>Honeycomb Blinds</h3>
+          <p>Lightweight, cordless, and surprisingly tough. The cellular structure adds insulation for comfortable pet napping spots.</p>
+          <ul class="pf-solution-features">
+            <li>Cordless top-down/bottom-up</li>
+            <li>Lets pets see out while blocking UV</li>
+            <li>Anti-static fabric resists fur</li>
+            <li>Excellent insulation for pet comfort</li>
+            <li>Motorised option keeps them safe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Guide -->
+  <section class="pf-section pf-section-teal">
+    <div class="pf-inner">
+      <div class="pf-animate">
+        <div class="pf-section-label">Material Guide</div>
+        <h2 class="pf-section-title">Pet Durability Ratings</h2>
+        <p class="pf-section-subtitle">Not all materials are created equal. Here's how they stack up against your fur family.</p>
+      </div>
+      <div class="pf-materials-grid">
+        <div class="pf-material-card pf-animate">
+          <div class="pf-material-icon">🪨</div>
+          <h3>PVC / Faux Wood</h3>
+          <p>Waterproof, scratch-resistant, and nearly indestructible. The best choice for destructive pets.</p>
+          <div class="pf-material-rating">Durability: <span>★★★★★</span></div>
+        </div>
+        <div class="pf-material-card pf-animate">
+          <div class="pf-material-icon">🪵</div>
+          <h3>Solid Timber</h3>
+          <p>Beautiful and tough. Minor scratches add character. Easily refinished if needed.</p>
+          <div class="pf-material-rating">Durability: <span>★★★★☆</span></div>
+        </div>
+        <div class="pf-material-card pf-animate">
+          <div class="pf-material-icon">🧵</div>
+          <h3>PVC-Coated Fabric</h3>
+          <p>Wipe-clean surface resists stains and light scratching. Great for roller blinds.</p>
+          <div class="pf-material-rating">Durability: <span>★★★★☆</span></div>
+        </div>
+        <div class="pf-material-card pf-animate">
+          <div class="pf-material-icon">🫧</div>
+          <h3>Anti-Static Polyester</h3>
+          <p>Repels pet hair and dust. Easy vacuum cleaning. Moderate scratch resistance.</p>
+          <div class="pf-material-rating">Durability: <span>★★★☆☆</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pet Safety Features -->
+  <section class="pf-section pf-section-white">
+    <div class="pf-inner">
+      <div class="pf-animate">
+        <div class="pf-section-label">Safety First</div>
+        <h2 class="pf-section-title">Keeping Pets Safe at Home</h2>
+        <p class="pf-section-subtitle">Every product we recommend is assessed for pet safety as standard.</p>
+      </div>
+      <div class="pf-safety-grid pf-animate">
+        <div>
+          <ul class="pf-safety-list">
+            <li>
+              <span class="pf-safety-icon">🚫</span>
+              <div class="pf-safety-text">
+                <h4>100% Cordless Options</h4>
+                <p>Spring-loaded, motorised, or wand-operated — no dangling cords that could entangle curious pets.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pf-safety-icon">🔒</span>
+              <div class="pf-safety-text">
+                <h4>Breakaway Brackets</h4>
+                <p>Safety brackets release under pressure, preventing injury if a pet gets caught or pulls on the blind.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pf-safety-icon">🧪</span>
+              <div class="pf-safety-text">
+                <h4>Non-Toxic Materials</h4>
+                <p>All our fabrics and finishes are non-toxic and safe if chewed. Low-VOC paints and coatings standard.</p>
+              </div>
+            </li>
+            <li>
+              <span class="pf-safety-icon">📱</span>
+              <div class="pf-safety-text">
+                <h4>Smart Motorisation</h4>
+                <p>Control blinds via app or voice even when away. Open blinds for pet daylight or close for their nap time.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="pf-safety-visual">
+          <div class="pf-safety-visual-icon">🐾</div>
+          <p>"Peace of mind knowing our blinds are pet-safe, every single one."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Happy Pet Homes (Testimonials) -->
+  <section class="pf-section pf-section-cream">
+    <div class="pf-inner">
+      <div class="pf-animate">
+        <div class="pf-section-label">Happy Pet Homes</div>
+        <h2 class="pf-section-title">What Melbourne Pet Owners Say</h2>
+        <p class="pf-section-subtitle">Real stories from real pet parents who found window treatments that actually last.</p>
+      </div>
+      <div class="pf-testimonials-grid">
+        <div class="pf-testimonial-card pf-animate">
+          <div class="pf-testimonial-stars">★★★★★</div>
+          <p>"Our two ragdoll cats destroyed three sets of vertical blinds before we switched to plantation shutters. It's been 2 years now — not a single scratch. Best investment ever."</p>
+          <div class="pf-testimonial-author">
+            <div class="pf-testimonial-avatar">🐱</div>
+            <div>
+              <div class="pf-testimonial-name">Sarah M.</div>
+              <div class="pf-testimonial-pet">2 Ragdoll cats · Richmond</div>
+            </div>
+          </div>
+        </div>
+        <div class="pf-testimonial-card pf-animate">
+          <div class="pf-testimonial-stars">★★★★★</div>
+          <p>"Our golden retriever used to nose through the blinds 50 times a day. The motorised rollers are genius — he can see out when they're up, and there's nothing to destroy when they're down."</p>
+          <div class="pf-testimonial-author">
+            <div class="pf-testimonial-avatar">🐕</div>
+            <div>
+              <div class="pf-testimonial-name">James & Lisa K.</div>
+              <div class="pf-testimonial-pet">Golden Retriever · South Yarra</div>
+            </div>
+          </div>
+        </div>
+        <div class="pf-testimonial-card pf-animate">
+          <div class="pf-testimonial-stars">★★★★★</div>
+          <p>"I was worried about cord safety with our new puppy. iSeekBlinds fitted completely cordless honeycomb blinds throughout the house. Puppy-proof and they look amazing too."</p>
+          <div class="pf-testimonial-author">
+            <div class="pf-testimonial-avatar">🐶</div>
+            <div>
+              <div class="pf-testimonial-name">Michael T.</div>
+              <div class="pf-testimonial-pet">Cavoodle puppy · Brunswick</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pf-cta">
+    <div class="pf-animate">
+      <h2>Let's Find Your Pet-Proof Solution 🐾</h2>
+      <p>Free in-home consultation across Melbourne. We'll assess your windows, meet your pets, and recommend the perfect durable solution.</p>
+      <a href="../free-quote.html" class="pf-cta-btn">Book Free Pet-Friendly Consult</a>
+      <span class="pf-cta-sub">No obligation · We love meeting pets · Melbourne-wide</span>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="pf-crosslinks">
+    <div class="pf-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="pf-crosslinks-grid">
+        <a href="commercial-blinds.html" class="pf-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="new-home-packages.html" class="pf-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="seasonal-sale.html" class="pf-crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="free-samples.html" class="pf-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="colour-trends-2026.html" class="pf-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="energy-efficient.html" class="pf-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="child-safety.html" class="pf-crosslink-item"><span>→</span> Child-Safe Blinds</a>
+        <a href="outdoor-blinds.html" class="pf-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="apartment-solutions.html" class="pf-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="care-maintenance.html" class="pf-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="design-inspiration.html" class="pf-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="testimonials.html" class="pf-crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="acoustic-solutions.html" class="pf-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="melbourne-service-areas.html" class="pf-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="hospitality-blinds.html" class="pf-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="blinds-vs-curtains.html" class="pf-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="large-windows.html" class="pf-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="eco-friendly.html" class="pf-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="layered-treatments.html" class="pf-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="smart-home.html" class="pf-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="bathroom-kitchen.html" class="pf-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="home-office.html" class="pf-crosslink-item"><span>→</span> Home Office</a>
+        <a href="bedroom-blackout.html" class="pf-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="property-styling.html" class="pf-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="media-room.html" class="pf-crosslink-item"><span>→</span> Media Room Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About Us</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 iSeekBlinds. All rights reserved. | Melbourne, Australia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+
+    // Scroll animations with IntersectionObserver
+    const pfObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('pf-visible');
+          }, index * 80);
+          pfObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.pf-animate').forEach(el => pfObserver.observe(el));
+  </script>
+
+</body>
+</html>
