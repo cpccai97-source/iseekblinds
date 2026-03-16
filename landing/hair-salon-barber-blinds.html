@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Salon & Barber Shop Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Elegant window treatments for hair salons, barber shops & beauty parlours. Light control for colour accuracy, client privacy & luxurious ambiance. Free consultation Melbourne-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--gold:#C9A84C;--gold-light:#E5D5A0;--gold-dark:#8B6914;
+--black:#0D0D0D;--charcoal:#1A1A1A;--ink:#2C2C2C;
+--cream:#F5F0E8;--ivory:#FAF7F2;--paper:#EDE8DD;
+--jade:#2D6A5A;--rose:#8B3A4A;
+--col-rule:1px solid rgba(201,168,76,.3);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Hanken Grotesk',sans-serif;color:var(--charcoal);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ===== LOADER ===== */
+.loader{position:fixed;inset:0;z-index:10000;background:var(--black);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity .8s ease,visibility .8s ease}
+.loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-line{width:120px;height:1px;background:var(--gold);position:relative;overflow:hidden}
+.loader-line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--cream);animation:loaderSlide 1s ease-in-out infinite}
+@keyframes loaderSlide{0%{left:-100%}100%{left:100%}}
+.loader-text{font-family:'Bodoni Moda',serif;color:var(--gold);font-size:.85rem;letter-spacing:.35em;text-transform:uppercase}
+
+/* ===== ART DECO PATTERNS ===== */
+.deco-frame{position:fixed;inset:0;pointer-events:none;z-index:999}
+.deco-corner{position:absolute;width:60px;height:60px;border-color:var(--gold);opacity:.25}
+.deco-corner--tl{top:12px;left:12px;border-top:2px solid;border-left:2px solid}
+.deco-corner--tr{top:12px;right:12px;border-top:2px solid;border-right:2px solid}
+.deco-corner--bl{bottom:12px;left:12px;border-bottom:2px solid;border-left:2px solid}
+.deco-corner--br{bottom:12px;right:12px;border-bottom:2px solid;border-right:2px solid}
+.deco-rule{position:absolute;background:var(--gold);opacity:.15}
+.deco-rule--top{top:10px;left:72px;right:72px;height:1px}
+.deco-rule--bottom{bottom:10px;left:72px;right:72px;height:1px}
+.deco-rule--left{left:10px;top:72px;bottom:72px;width:1px}
+.deco-rule--right{right:10px;top:72px;bottom:72px;width:1px}
+
+/* ===== HEADER ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.7rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold);transition:transform .4s ease}
+header.hide-header{transform:translateY(-100%)}
+.logo{font-family:'Bodoni Moda',serif;font-size:1.2rem;font-weight:700;color:var(--cream);text-decoration:none;display:flex;align-items:center;gap:.5rem;letter-spacing:.05em}
+.logo span{color:var(--gold)}
+.logo-diamond{display:inline-block;width:6px;height:6px;background:var(--gold);transform:rotate(45deg);margin:0 2px}
+header nav{display:flex;gap:1.5rem;align-items:center}
+header nav a{color:var(--cream);text-decoration:none;font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;position:relative;padding:.2rem 0;transition:color .3s;opacity:.7}
+header nav a:hover{opacity:1;color:var(--gold)}
+header nav a::after{content:'';position:absolute;bottom:-2px;left:50%;width:0;height:1px;background:var(--gold);transition:all .3s ease;transform:translateX(-50%)}
+header nav a:hover::after{width:100%}
+.nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:.45rem 1.1rem!important;font-weight:700!important;letter-spacing:.1em!important;opacity:1!important;border:none;transition:all .3s!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.nav-cta::after{display:none!important}
+
+/* ===== NEWSPAPER MASTHEAD / HERO ===== */
+.masthead{padding:7rem 2rem 2rem;text-align:center;border-bottom:3px double var(--gold);position:relative;background:var(--black);color:var(--cream);overflow:hidden}
+.masthead::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 49.5%,rgba(201,168,76,.06) 49.5%,rgba(201,168,76,.06) 50.5%,transparent 50.5%);pointer-events:none}
+.masthead-date{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;opacity:0;animation:fadeUp .8s .5s ease forwards}
+.masthead-title{font-family:'Bodoni Moda',serif;font-size:clamp(3rem,8vw,7rem);font-weight:900;line-height:.9;letter-spacing:-.02em;margin-bottom:.6rem;opacity:0;animation:fadeUp .8s .7s ease forwards}
+.masthead-title em{font-style:italic;font-weight:400;color:var(--gold)}
+.masthead-rule{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1rem auto;max-width:500px;opacity:0;animation:fadeUp .8s .9s ease forwards}
+.masthead-rule::before,.masthead-rule::after{content:'';flex:1;height:1px;background:var(--gold)}
+.masthead-rule .diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+.masthead-sub{font-family:'Bodoni Moda',serif;font-style:italic;font-size:clamp(1rem,2vw,1.4rem);color:var(--gold-light);max-width:600px;margin:0 auto;opacity:0;animation:fadeUp .8s 1.1s ease forwards}
+.masthead-edition{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;margin-top:1.2rem;color:rgba(245,240,232,.4);opacity:0;animation:fadeUp .8s 1.3s ease forwards}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== SECTION HEADLINE BAR ===== */
+.section-bar{background:var(--black);color:var(--gold);padding:.4rem 2rem;font-family:'Bodoni Moda',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.section-bar .bar-diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+
+/* ===== NEWSPAPER COLUMNS ===== */
+.newspaper-section{padding:2.5rem 2rem;position:relative}
+.newspaper-section::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(201,168,76,.15);pointer-events:none}
+.columns-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;position:relative}
+.columns-3 .col{padding:0 1.5rem;position:relative}
+.columns-3 .col:not(:last-child)::after{content:'';position:absolute;right:0;top:0;bottom:0;width:1px;background:rgba(201,168,76,.2)}
+.columns-2{display:grid;grid-template-columns:1.2fr .8fr;gap:0}
+.columns-2 .col{padding:0 1.5rem;position:relative}
+.columns-2 .col:not(:last-child)::after{content:'';position:absolute;right:0;top:0;bottom:0;width:1px;background:rgba(201,168,76,.2)}
+.col-headline{font-family:'Bodoni Moda',serif;font-size:1.6rem;font-weight:700;line-height:1.15;margin-bottom:.8rem;color:var(--black)}
+.col-subhead{font-family:'Bodoni Moda',serif;font-style:italic;font-size:.95rem;color:var(--gold-dark);margin-bottom:1rem;line-height:1.3}
+.col p{font-size:.88rem;line-height:1.7;margin-bottom:1rem;text-align:justify;hyphens:auto;color:var(--ink)}
+.col p:first-of-type::first-letter{font-family:'Bodoni Moda',serif;font-size:3.2rem;float:left;line-height:.8;padding-right:.4rem;padding-top:.15rem;color:var(--gold);font-weight:900}
+.col-img{width:100%;aspect-ratio:4/3;background:var(--paper);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;margin:1rem 0;position:relative;overflow:hidden}
+.col-img::before{content:'';position:absolute;inset:4px;border:1px solid rgba(201,168,76,.15)}
+.col-img-placeholder{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--gold-dark);font-size:.8rem;opacity:.5}
+.col-caption{font-size:.7rem;font-style:italic;color:var(--gold-dark);text-align:center;margin-top:-.5rem;margin-bottom:1rem}
+
+/* ===== PULL QUOTE ===== */
+.pull-quote{border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:1.2rem 0;margin:1.5rem 0;text-align:center}
+.pull-quote blockquote{font-family:'Bodoni Moda',serif;font-size:1.3rem;font-style:italic;color:var(--black);line-height:1.4}
+.pull-quote cite{display:block;font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dark);margin-top:.5rem}
+
+/* ===== DECO DIVIDER ===== */
+.deco-divider{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:1.5rem 2rem}
+.deco-divider::before,.deco-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.deco-divider svg{width:40px;height:40px;fill:none;stroke:var(--gold);stroke-width:1}
+
+/* ===== INTERACTIVE: LIGHT CALCULATOR ===== */
+.light-calc{background:var(--black);padding:3rem 2rem;position:relative;overflow:hidden}
+.light-calc::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(201,168,76,.03) 30px,rgba(201,168,76,.03) 31px);pointer-events:none}
+.light-calc-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.light-calc h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--cream);margin-bottom:.5rem}
+.light-calc h2 em{font-style:italic;color:var(--gold)}
+.light-calc-sub{font-size:.85rem;color:rgba(245,240,232,.5);margin-bottom:2rem;font-style:italic}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;text-align:left;margin-bottom:2rem}
+.calc-field label{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.calc-field select,.calc-field input{width:100%;padding:.7rem 1rem;background:rgba(245,240,232,.05);border:1px solid rgba(201,168,76,.3);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:.85rem;outline:none;transition:border-color .3s}
+.calc-field select:focus,.calc-field input:focus{border-color:var(--gold)}
+.calc-field select option{background:var(--black);color:var(--cream)}
+.calc-result{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);padding:1.5rem;opacity:0;transform:translateY(10px);transition:all .5s ease}
+.calc-result.visible{opacity:1;transform:translateY(0)}
+.calc-result h3{font-family:'Bodoni Moda',serif;color:var(--gold);font-size:1.1rem;margin-bottom:.5rem}
+.calc-result p{color:var(--cream);font-size:.85rem;line-height:1.6;opacity:.8}
+.calc-result .rec-product{display:inline-block;background:var(--gold);color:var(--black);padding:.3rem .8rem;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:.8rem}
+.calc-btn{background:var(--gold);color:var(--black);border:none;padding:.8rem 2.5rem;font-family:'Hanken Grotesk',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.calc-btn::before{content:'';position:absolute;inset:0;background:var(--cream);transform:scaleX(0);transform-origin:right;transition:transform .4s ease}
+.calc-btn:hover::before{transform:scaleX(1);transform-origin:left}
+.calc-btn span{position:relative;z-index:1}
+
+/* ===== GAZETTE CLASSIFIED ADS — PRODUCTS ===== */
+.classifieds{padding:2rem;background:var(--ivory)}
+.classifieds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--gold)}
+.classified-ad{padding:1.2rem;border:1px solid rgba(201,168,76,.2);position:relative;transition:all .4s ease;cursor:default}
+.classified-ad:hover{background:var(--black);color:var(--cream)}
+.classified-ad:hover .ad-title{color:var(--gold)}
+.classified-ad:hover .ad-price{color:var(--gold-light)}
+.classified-ad:hover .ad-desc{color:rgba(245,240,232,.7)}
+.ad-number{font-family:'Bodoni Moda',serif;font-size:2.5rem;font-weight:900;color:rgba(201,168,76,.15);line-height:1;margin-bottom:.3rem}
+.classified-ad:hover .ad-number{color:rgba(201,168,76,.4)}
+.ad-title{font-family:'Bodoni Moda',serif;font-size:1rem;font-weight:700;margin-bottom:.3rem;transition:color .4s}
+.ad-price{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.5rem;transition:color .4s}
+.ad-desc{font-size:.78rem;line-height:1.5;color:var(--ink);transition:color .4s}
+.ad-badge{position:absolute;top:8px;right:8px;background:var(--gold);color:var(--black);font-size:.55rem;padding:.2rem .5rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+
+/* ===== TESTIMONIALS — LETTERS TO THE EDITOR ===== */
+.letters{padding:2.5rem 2rem;background:var(--paper)}
+.letters h2{font-family:'Bodoni Moda',serif;font-size:1.8rem;text-align:center;margin-bottom:.3rem}
+.letters-sub{text-align:center;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:2rem}
+.letters-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+.letter{padding:1.5rem;background:var(--ivory);border:1px solid rgba(201,168,76,.15);position:relative}
+.letter::before{content:'"';font-family:'Bodoni Moda',serif;font-size:4rem;color:var(--gold);opacity:.2;position:absolute;top:-.2rem;left:.8rem;line-height:1}
+.letter p{font-size:.85rem;line-height:1.7;font-style:italic;color:var(--ink);margin-bottom:.8rem;position:relative;z-index:1}
+.letter-author{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);font-weight:600}
+.letter-author span{display:block;font-weight:400;letter-spacing:.05em;text-transform:none;margin-top:.2rem;font-size:.75rem;color:var(--ink);opacity:.6}
+.letter:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(13,13,13,.08);transition:all .4s ease}
+
+/* ===== CTA — LATE EDITION ===== */
+.late-edition{background:var(--black);padding:4rem 2rem;text-align:center;position:relative;overflow:hidden}
+.late-edition::before{content:'EXTRA EXTRA';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bodoni Moda',serif;font-size:clamp(4rem,12vw,10rem);font-weight:900;color:rgba(201,168,76,.04);white-space:nowrap;pointer-events:none}
+.late-edition h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--cream);margin-bottom:.5rem;position:relative;z-index:1}
+.late-edition h2 em{color:var(--gold);font-style:italic}
+.late-edition p{color:rgba(245,240,232,.5);font-size:.9rem;max-width:500px;margin:0 auto 2rem;position:relative;z-index:1}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--black);padding:.9rem 3rem;font-family:'Hanken Grotesk',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);position:relative;overflow:hidden;transition:all .4s ease;z-index:1}
+.cta-btn::before{content:'';position:absolute;inset:0;background:var(--cream);transform:translateY(100%);transition:transform .4s ease}
+.cta-btn:hover::before{transform:translateY(0)}
+.cta-btn span{position:relative;z-index:1}
+.cta-phone{display:block;margin-top:1rem;color:var(--gold);font-family:'Bodoni Moda',serif;font-size:1.3rem;text-decoration:none;letter-spacing:.05em;position:relative;z-index:1}
+.cta-phone:hover{color:var(--gold-light)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--charcoal);border-top:1px solid var(--gold);padding:2rem;color:rgba(245,240,232,.4);font-size:.75rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Bodoni Moda',serif;font-size:.9rem;color:var(--cream)}
+.footer-brand span{color:var(--gold)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:rgba(245,240,232,.4);text-decoration:none;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{width:100%;text-align:center;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,.1);font-size:.65rem;letter-spacing:.1em}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.columns-3{grid-template-columns:1fr}
+.columns-3 .col:not(:last-child)::after{display:none}
+.columns-3 .col{padding:0 0 1.5rem;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:1.5rem}
+.columns-2{grid-template-columns:1fr}
+.columns-2 .col:not(:last-child)::after{display:none}
+.calc-grid{grid-template-columns:1fr}
+.classifieds-grid{grid-template-columns:1fr 1fr}
+.letters-grid{grid-template-columns:1fr}
+.newspaper-section::before{display:none}
+header nav{display:none}
+}
+@media(max-width:550px){
+.classifieds-grid{grid-template-columns:1fr}
+.masthead-title{font-size:2.5rem}
+.deco-frame{display:none}
+}
+
+/* ===== GRAIN OVERLAY ===== */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+.reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+<div class="loader-line"></div>
+<div class="loader-text">iSeekBlinds Gazette</div>
+</div>
+
+<!-- ART DECO FRAME -->
+<div class="deco-frame">
+<div class="deco-corner deco-corner--tl"></div>
+<div class="deco-corner deco-corner--tr"></div>
+<div class="deco-corner deco-corner--bl"></div>
+<div class="deco-corner deco-corner--br"></div>
+<div class="deco-rule deco-rule--top"></div>
+<div class="deco-rule deco-rule--bottom"></div>
+<div class="deco-rule deco-rule--left"></div>
+<div class="deco-rule deco-rule--right"></div>
+</div>
+
+<!-- HEADER -->
+<header id="mainHeader">
+<a href="/index.html" class="logo">iSeek<span>Blinds</span><span class="logo-diamond"></span></a>
+<nav>
+<a href="/index.html">Home</a>
+<a href="/products.html">Products</a>
+<a href="/landing/index.html">Solutions</a>
+<a href="/gallery.html">Gallery</a>
+<a href="/contact.html" class="nav-cta">Free Quote</a>
+</nav>
+</header>
+
+<!-- MASTHEAD / HERO -->
+<section class="masthead">
+<div class="masthead-date">Melbourne's Premier Window Furnishings Gazette</div>
+<h1 class="masthead-title">Hair Salon<br>&amp; Barber <em>Blinds</em></h1>
+<div class="masthead-rule"><span class="diamond"></span></div>
+<p class="masthead-sub">Where precision lighting meets luxurious privacy — the art of dressing salon windows</p>
+<div class="masthead-edition">Special Edition · Vol. XXVI · No. 3 · Autumn 2026</div>
+</section>
+
+<!-- SECTION: THE LIGHT PROBLEM -->
+<div class="section-bar">
+<span>The Light Problem</span>
+<span class="bar-diamond"></span>
+<span>Feature Story</span>
+</div>
+
+<section class="newspaper-section">
+<div class="columns-3">
+<div class="col reveal">
+<h2 class="col-headline">Why Every Strand Depends on Your Windows</h2>
+<p>Light is the invisible tool in every stylist's kit. Too much direct sun washes out colour, turning a rich burgundy into something resembling week-old tea. Too little, and your colourist works blind — the sort of gamble no client wants to take with their hair.</p>
+<p>Melbourne's unpredictable light compounds the problem. A morning booking faces east-streaming glare; by two o'clock, the same chair sits in shadow. Without intervention, your salon's quality depends on the weather. That's not a business plan — it's a coin flip.</p>
+<p>The right window treatment transforms this chaos into consistency. Dual roller systems let you switch between sheer diffusion (flattering consultation light) and blockout (precise colour-matching conditions) in a single pull. Your clients see better results. Your stylists work with confidence.</p>
+</div>
+<div class="col reveal" style="transition-delay:.15s">
+<div class="col-img">
+<span class="col-img-placeholder">Salon interior with filtered light through sheer blinds</span>
+</div>
+<p class="col-caption">Fig. 1 — Dual rollers provide both privacy and light diffusion</p>
+<div class="pull-quote">
+<blockquote>"We stopped guessing at colours the day we installed dual rollers. The before-and-after was embarrassing — we'd been working in terrible light for years."</blockquote>
+<cite>— Marcus T., Brunswick East</cite>
+</div>
+<p>Privacy matters in salons more than most spaces. Clients in foils, mid-colour, or during a vulnerable new-look reveal deserve to feel unobserved. Sheer-to-opaque transitions handle this without making the space feel like a bunker.</p>
+</div>
+<div class="col reveal" style="transition-delay:.3s">
+<h2 class="col-headline">The Barber's Dilemma: Heat, Glare &amp; Street Appeal</h2>
+<p>Barber shops face a different calculus. The traditional glass-front shopfront is both asset and liability — it draws passing trade but invites the full force of afternoon sun, turning a west-facing chair into a sweatbox.</p>
+<p>Exterior zip-track blinds or solar mesh screens cut heat gain by up to 90% while maintaining that crucial street visibility. Your shop still glows warmly from the pavement. Clients inside stay comfortable.</p>
+<p>For the increasingly popular "gentleman's lounge" concept — offering whisky-and-a-shave experiences — motorised blinds add theatrical atmosphere. Dim the street view at the touch of a button, and the space transforms from bustling barbershop to private retreat.</p>
+<p>Chemical resilience matters too. Salon environments expose materials to peroxide, ammonia, tints and styling products. Standard fabric blinds yellow and deteriorate. Our PVC and synthetic ranges shrug off chemical exposure and wipe clean in seconds.</p>
+</div>
+</div>
+</section>
+
+<!-- DECO DIVIDER -->
+<div class="deco-divider">
+<svg viewBox="0 0 40 40"><path d="M20 2 L38 20 L20 38 L2 20 Z" /><path d="M20 8 L32 20 L20 32 L8 20 Z" /></svg>
+</div>
+
+<!-- SECTION: WHAT MATTERS -->
+<div class="section-bar">
+<span>Analysis</span>
+<span class="bar-diamond"></span>
+<span>What Matters Most</span>
+</div>
+
+<section class="newspaper-section">
+<div class="columns-2">
+<div class="col reveal-left">
+<h2 class="col-headline">The Five Demands of Salon Windows</h2>
+<p class="col-subhead">A systematic look at what beauty professionals actually need from their window treatments — beyond the aesthetic.</p>
+<p>First, colour-accurate lighting. Natural CRI (Colour Rendering Index) must remain high even when light is filtered. This eliminates most tinted films and coloured sheers — you need neutral-tone fabrics that reduce intensity without shifting the spectrum.</p>
+<p>Second, humidity control. Salon air carries moisture from washing stations, steam from straighteners, and aerosol from styling products. Blinds must resist warping, mildew, and moisture absorption. Aluminium venetians and PVC verticals excel here; timber and cotton do not.</p>
+<p>Third, ease of cleaning. In a working salon, every surface collects product residue. Blinds with smooth surfaces, removable slats, or wipeable coatings aren't luxury — they're hygiene.</p>
+<p>Fourth, durability under UV. Salon-facing windows often run floor-to-ceiling. The lower sections cop direct sun for hours. Fade-resistant fabrics and UV-stabilised components separate professional-grade from residential-grade.</p>
+<p>Fifth — and this is the one most fitout consultants miss — acoustic contribution. Hard salon surfaces (mirrors, tiles, glass) create echo chambers. Honeycomb blinds with their cellular air pockets add meaningful sound absorption, softening the buzz-clipper-blowdryer cacophony.</p>
+</div>
+<div class="col reveal-right">
+<div class="col-img" style="aspect-ratio:3/4">
+<span class="col-img-placeholder">Modern barber shop with exterior zip-track blinds</span>
+</div>
+<p class="col-caption">Fig. 2 — Zip-track screens maintain street presence while cutting 90% heat</p>
+<div class="pull-quote">
+<blockquote>"Our energy bill dropped $340/month after the zip-tracks went on. The AC was running flat out every afternoon before."</blockquote>
+<cite>— Jade W., Salon Owner, South Yarra</cite>
+</div>
+</div>
+</div>
+</section>
+
+<!-- INTERACTIVE: LIGHT CALCULATOR -->
+<section class="light-calc reveal">
+<div class="light-calc-inner">
+<h2>Your Salon's <em>Light Profile</em></h2>
+<p class="light-calc-sub">Answer four questions and we'll recommend the ideal blind system for your space</p>
+<div class="calc-grid">
+<div class="calc-field">
+<label>Window Orientation</label>
+<select id="calcOrientation">
+<option value="">Select direction...</option>
+<option value="north">North-facing</option>
+<option value="east">East-facing</option>
+<option value="south">South-facing</option>
+<option value="west">West-facing</option>
+<option value="mixed">Mixed / Multiple</option>
+</select>
+</div>
+<div class="calc-field">
+<label>Primary Service</label>
+<select id="calcService">
+<option value="">Select service type...</option>
+<option value="colour">Hair Colouring</option>
+<option value="cut">Cutting & Styling</option>
+<option value="barber">Barbering</option>
+<option value="beauty">Beauty / Aesthetics</option>
+<option value="mixed">Full-Service Salon</option>
+</select>
+</div>
+<div class="calc-field">
+<label>Window Height</label>
+<select id="calcHeight">
+<option value="">Select height...</option>
+<option value="standard">Standard (up to 1.5m)</option>
+<option value="tall">Tall (1.5m–2.5m)</option>
+<option value="floor">Floor-to-Ceiling (2.5m+)</option>
+<option value="shopfront">Full Glass Shopfront</option>
+</select>
+</div>
+<div class="calc-field">
+<label>Key Concern</label>
+<select id="calcConcern">
+<option value="">Select priority...</option>
+<option value="glare">Glare Reduction</option>
+<option value="heat">Heat Control</option>
+<option value="privacy">Client Privacy</option>
+<option value="ambiance">Ambiance & Mood</option>
+<option value="all">All of the Above</option>
+</select>
+</div>
+</div>
+<button class="calc-btn" id="calcSubmit"><span>Get Recommendation</span></button>
+<div class="calc-result" id="calcResult">
+<h3 id="recTitle">—</h3>
+<p id="recText">—</p>
+<span class="rec-product" id="recProduct">—</span>
+</div>
+</div>
+</section>
+
+<!-- SECTION: PRODUCTS — CLASSIFIEDS -->
+<div class="section-bar">
+<span>Salon-Tested Products</span>
+<span class="bar-diamond"></span>
+<span>The Classifieds</span>
+</div>
+
+<section class="classifieds reveal">
+<div class="classifieds-grid">
+<div class="classified-ad">
+<div class="ad-number">01</div>
+<div class="ad-title">Dual Roller System</div>
+<div class="ad-price">From $189 per window</div>
+<p class="ad-desc">Sheer + blockout on a single bracket. Switch between consultation light and colour-matching precision. The gold standard for colouring stations.</p>
+<span class="ad-badge">Most Popular</span>
+</div>
+<div class="classified-ad">
+<div class="ad-number">02</div>
+<div class="ad-title">Aluminium Venetian</div>
+<div class="ad-price">From $125 per window</div>
+<p class="ad-desc">Moisture-proof, wipe-clean, angle-adjustable. Ideal for wash stations and humid environments. Available in 50+ metallic finishes.</p>
+</div>
+<div class="classified-ad">
+<div class="ad-number">03</div>
+<div class="ad-title">Exterior Zip-Track</div>
+<div class="ad-price">From $395 per window</div>
+<p class="ad-desc">Block 90% heat before it hits the glass. Essential for west-facing shopfronts. Maintain street visibility with solar mesh fabric.</p>
+</div>
+<div class="classified-ad">
+<div class="ad-number">04</div>
+<div class="ad-title">Honeycomb Cellular</div>
+<div class="ad-price">From $210 per window</div>
+<p class="ad-desc">Acoustic absorption meets thermal insulation. Dual-cell construction softens salon noise and reduces energy costs year-round.</p>
+<span class="ad-badge">Eco Choice</span>
+</div>
+<div class="classified-ad">
+<div class="ad-number">05</div>
+<div class="ad-title">Motorised Roller</div>
+<div class="ad-price">From $320 per window</div>
+<p class="ad-desc">One-touch light control. Integrate with smart scheduling to auto-adjust for morning vs afternoon appointments. No chains near styling chairs.</p>
+</div>
+<div class="classified-ad">
+<div class="ad-number">06</div>
+<div class="ad-title">PVC Vertical</div>
+<div class="ad-price">From $145 per window</div>
+<p class="ad-desc">Chemical-resistant slats that shrug off peroxide, tint and ammonia. Individual slat replacement means damage doesn't mean full replacement.</p>
+</div>
+<div class="classified-ad">
+<div class="ad-number">07</div>
+<div class="ad-title">Sheer Curtain Panel</div>
+<div class="ad-price">From $175 per panel</div>
+<p class="ad-desc">Soft diffused light for beauty and aesthetic treatments. Creates an intimate, flattering glow. Pairs with rollers behind for blackout option.</p>
+</div>
+<div class="classified-ad">
+<div class="ad-number">08</div>
+<div class="ad-title">Printed Graphic Blind</div>
+<div class="ad-price">From $250 per window</div>
+<p class="ad-desc">Your brand on your blinds. Custom-printed rollers double as signage when closed — after-hours marketing that works while you sleep.</p>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS: LETTERS TO THE EDITOR -->
+<div class="section-bar">
+<span>Letters to the Editor</span>
+<span class="bar-diamond"></span>
+<span>Client Voices</span>
+</div>
+
+<section class="letters reveal">
+<h2>From Our Readers</h2>
+<p class="letters-sub">Real salons, real results</p>
+<div class="letters-grid">
+<div class="letter">
+<p>The dual rollers changed how we work. Morning colour consultations in natural light, afternoon tinting in controlled conditions — same chair, same window, completely different light. Clients notice the difference.</p>
+<div class="letter-author">Sarah K.<span>Colour Specialist, Fitzroy</span></div>
+</div>
+<div class="letter">
+<p>We spent $15,000 on our shopfront fitout then realised the afternoon sun made it unusable for three hours daily. The zip-tracks paid for themselves in one summer of not running the AC at maximum.</p>
+<div class="letter-author">Damo L.<span>Barber Shop Owner, Footscray</span></div>
+</div>
+<div class="letter">
+<p>Didn't expect blinds to affect the acoustics, but the honeycomb cells genuinely softened the noise. Six dryers running used to mean shouting at clients. Now it's a normal conversation volume.</p>
+<div class="letter-author">Mei C.<span>Salon Manager, Richmond</span></div>
+</div>
+</div>
+</section>
+
+<!-- CTA: LATE EDITION -->
+<section class="late-edition">
+<h2>Extra, Extra:<br><em>Free Consultation</em></h2>
+<p>Melbourne's salon blinds specialists. Measure, supply and install — with zero disruption to your trading hours.</p>
+<a href="/contact.html" class="cta-btn"><span>Book Your Free Quote</span></a>
+<a href="tel:1300918237" class="cta-phone">1300 918 237</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">iSeek<span>Blinds</span> · Melbourne's Window Furnishings Specialists</div>
+<div class="footer-links">
+<a href="/index.html">Home</a>
+<a href="/products.html">Products</a>
+<a href="/landing/index.html">All Solutions</a>
+<a href="/contact.html">Contact</a>
+</div>
+<div class="footer-copy">© 2026 iSeekBlinds. All rights reserved. ABN XX XXX XXX XXX. Melbourne, Victoria.</div>
+</div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{
+setTimeout(()=>document.getElementById('loader').classList.add('hidden'),800);
+});
+
+// Header hide on scroll
+let lastScroll=0;
+const header=document.getElementById('mainHeader');
+window.addEventListener('scroll',()=>{
+const curr=window.pageYOffset;
+header.classList.toggle('hide-header',curr>lastScroll&&curr>100);
+lastScroll=curr;
+},{passive:true});
+
+// Scroll reveal
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const revealObs=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}});
+},{threshold:.15});
+revealEls.forEach(el=>revealObs.observe(el));
+
+// Light Calculator
+const recs={
+'north-colour-floor-glare':{title:'Dual Roller with Neutral Sheer',text:'North light is consistent but can flood floor-to-ceiling windows. A neutral 3% sheer filters glare without colour-shifting, with blockout behind for precise matching sessions.',product:'Dual Roller — Neutral Sheer + Blockout'},
+'west-barber-shopfront-heat':{title:'Exterior Zip-Track + Interior Roller',text:'West-facing shopfronts need exterior intervention. Zip-track solar mesh blocks 90% of heat before it reaches the glass, while an interior roller adds privacy flexibility.',product:'Zip-Track Screen + Roller Blind'},
+'east-colour-tall-privacy':{title:'Top-Down Bottom-Up Cellular',text:'East morning sun is intense but brief. Top-down cellular blinds let you admit overhead light while blocking direct eye-level glare and maintaining street-level privacy.',product:'Honeycomb Cellular — Top-Down/Bottom-Up'},
+'default':{title:'Dual Roller System — The Salon Standard',text:'Based on your combination, we recommend starting with our dual roller system. Sheer for consultation, blockout for colour work, easy to clean. We\'ll refine the spec during your free on-site consultation.',product:'Dual Roller — Custom Configured'}
+};
+document.getElementById('calcSubmit').addEventListener('click',()=>{
+const o=document.getElementById('calcOrientation').value;
+const s=document.getElementById('calcService').value;
+const h=document.getElementById('calcHeight').value;
+const c=document.getElementById('calcConcern').value;
+if(!o||!s||!h||!c){alert('Please complete all fields');return}
+const key=`${o}-${s}-${h}-${c}`;
+const r=recs[key]||recs['default'];
+document.getElementById('recTitle').textContent=r.title;
+document.getElementById('recText').textContent=r.text;
+document.getElementById('recProduct').textContent=r.product;
+const result=document.getElementById('calcResult');
+result.classList.add('visible');
+result.scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+// Classified ad hover number animation
+document.querySelectorAll('.classified-ad').forEach(ad=>{
+ad.addEventListener('mouseenter',()=>{
+const num=ad.querySelector('.ad-number');
+num.style.transform='scale(1.1)';
+num.style.transition='transform .3s ease';
+});
+ad.addEventListener('mouseleave',()=>{
+const num=ad.querySelector('.ad-number');
+num.style.transform='scale(1)';
+});
+});
+</script>
+</body>
+</html>
