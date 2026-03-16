@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bay Window Blinds & Curtains | Custom Fit Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Expert bay window blinds, curtains and shutters in Melbourne. Custom-fitted to every angle. Roller, venetian, plantation shutters for bay & bow windows. Free measure & quote.">
+  <meta name="keywords" content="bay window blinds, bay window curtains Melbourne, bow window blinds, custom bay window treatments, angled window blinds, bay window shutters">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GLASSMORPHISM DESIGN STYLE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bay-bg: #0f172a;
+      --bay-surface: rgba(255,255,255,0.06);
+      --bay-glass: rgba(255,255,255,0.08);
+      --bay-glass-border: rgba(255,255,255,0.15);
+      --bay-glass-strong: rgba(255,255,255,0.12);
+      --bay-accent: #38bdf8;
+      --bay-accent2: #a78bfa;
+      --bay-accent3: #f472b6;
+      --bay-warm: #fbbf24;
+      --bay-text: #e2e8f0;
+      --bay-text-muted: #94a3b8;
+      --bay-white: #ffffff;
+      --font-main: 'Outfit', -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
+    }
+
+    .lp-bay {
+      background: var(--bay-bg);
+      color: var(--bay-text);
+      min-height: 100vh;
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient orbs */
+    .bay-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bay-orb-1 { width: 600px; height: 600px; background: rgba(56,189,248,0.15); top: -200px; right: -200px; animation: bayFloat 20s ease-in-out infinite; }
+    .bay-orb-2 { width: 500px; height: 500px; background: rgba(167,139,250,0.12); bottom: -100px; left: -150px; animation: bayFloat 25s ease-in-out infinite reverse; }
+    .bay-orb-3 { width: 400px; height: 400px; background: rgba(244,114,182,0.1); top: 50%; left: 40%; animation: bayFloat 18s ease-in-out infinite; }
+
+    @keyframes bayFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.1); }
+      66% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    .bay-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* Shared Header */
+    .top-bar {
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(10px);
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--bay-text-muted);
+      border-bottom: 1px solid var(--bay-glass-border);
+    }
+    .top-bar .bay-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .top-bar a { color: var(--bay-accent); text-decoration: none; }
+
+    .header {
+      background: rgba(15,23,42,0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--bay-glass-border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+    .logo { text-decoration: none; font-size: 24px; font-weight: 700; font-family: var(--font-main); }
+    .logo-i { color: var(--bay-accent); }
+    .logo-seek { color: var(--bay-white); }
+    .logo-blinds { color: var(--bay-accent2); }
+
+    .nav { display: flex; gap: 24px; align-items: center; }
+    .nav a, .nav-dropdown-toggle { color: var(--bay-text); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; background: none; border: none; cursor: pointer; font-family: inherit; }
+    .nav a:hover, .nav-dropdown-toggle:hover { color: var(--bay-accent); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0; background: rgba(15,23,42,0.95);
+      backdrop-filter: blur(20px); border: 1px solid var(--bay-glass-border);
+      border-radius: 12px; padding: 8px 0; min-width: 200px; z-index: 200;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: var(--bay-text-muted); }
+    .nav-dropdown-menu a:hover { color: var(--bay-accent); background: var(--bay-glass); }
+    .nav-dropdown-mega { min-width: 260px; }
+
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .header-phone { color: var(--bay-text-muted); font-size: 14px; text-decoration: none; }
+    .header-phone:hover { color: var(--bay-accent); }
+    .header-cta {
+      background: linear-gradient(135deg, var(--bay-accent), var(--bay-accent2));
+      color: var(--bay-bg); padding: 10px 24px; border-radius: 8px;
+      font-weight: 600; font-size: 14px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .header-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(56,189,248,0.3); }
+
+    .mobile-menu-btn { display: none; background: none; border: none; color: var(--bay-white); font-size: 24px; cursor: pointer; }
+
+    /* Glass Card */
+    .glass {
+      background: var(--bay-glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--bay-glass-border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .glass-strong {
+      background: var(--bay-glass-strong);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+    }
+
+    /* Hero */
+    .bay-hero {
+      padding: 120px 0 100px;
+      position: relative;
+      text-align: center;
+    }
+    .bay-hero-badge {
+      display: inline-block;
+      background: var(--bay-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--bay-glass-border);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 14px;
+      color: var(--bay-accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+      animation: bayFadeUp 0.6s ease both;
+    }
+    .bay-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: bayFadeUp 0.6s ease 0.15s both;
+    }
+    .bay-hero h1 span {
+      background: linear-gradient(135deg, var(--bay-accent), var(--bay-accent2), var(--bay-accent3));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bay-hero p {
+      font-size: 1.2rem;
+      color: var(--bay-text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      animation: bayFadeUp 0.6s ease 0.3s both;
+    }
+    .bay-hero-btns {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      animation: bayFadeUp 0.6s ease 0.45s both;
+    }
+    .bay-btn-primary {
+      background: linear-gradient(135deg, var(--bay-accent), var(--bay-accent2));
+      color: var(--bay-bg); padding: 14px 32px; border-radius: 12px;
+      font-weight: 600; font-size: 16px; text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer;
+    }
+    .bay-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(56,189,248,0.3); }
+    .bay-btn-outline {
+      background: var(--bay-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--bay-glass-border);
+      color: var(--bay-text); padding: 14px 32px; border-radius: 12px;
+      font-weight: 500; font-size: 16px; text-decoration: none;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .bay-btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--bay-accent); }
+
+    /* Window Types */
+    .bay-types {
+      padding: 80px 0;
+    }
+    .bay-types h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .bay-types > .bay-container > p {
+      text-align: center;
+      color: var(--bay-text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .bay-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .bay-type-card {
+      padding: 40px 32px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .bay-type-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(56,189,248,0.1);
+    }
+    .bay-type-icon {
+      width: 72px; height: 72px; margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--bay-accent), var(--bay-accent2));
+      border-radius: 16px; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; transform: rotate(-5deg);
+    }
+    .bay-type-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--bay-white);
+    }
+    .bay-type-card p { color: var(--bay-text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* Solutions */
+    .bay-solutions { padding: 80px 0; }
+    .bay-solutions h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .bay-sol-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .bay-sol-card {
+      padding: 36px;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: transform 0.3s;
+    }
+    .bay-sol-card:hover { transform: translateY(-4px); }
+    .bay-sol-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--bay-accent), var(--bay-accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; line-height: 1; flex-shrink: 0;
+    }
+    .bay-sol-card h3 { color: var(--bay-white); font-size: 1.15rem; margin-bottom: 8px; }
+    .bay-sol-card p { color: var(--bay-text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* Benefits */
+    .bay-benefits { padding: 80px 0; }
+    .bay-benefits h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .bay-benefits-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .bay-benefit {
+      text-align: center; padding: 32px 20px;
+      transition: transform 0.3s;
+    }
+    .bay-benefit:hover { transform: scale(1.03); }
+    .bay-benefit-icon {
+      width: 56px; height: 56px; margin: 0 auto 16px;
+      background: var(--bay-glass-strong); border: 1px solid var(--bay-glass-border);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .bay-benefit h4 { color: var(--bay-white); font-size: 1rem; margin-bottom: 8px; }
+    .bay-benefit p { color: var(--bay-text-muted); font-size: 0.85rem; line-height: 1.5; }
+
+    /* Process */
+    .bay-process { padding: 80px 0; }
+    .bay-process h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .bay-process-timeline {
+      display: flex; gap: 0; position: relative; justify-content: center;
+    }
+    .bay-process-timeline::before {
+      content: ''; position: absolute; top: 40px; left: 10%; right: 10%;
+      height: 2px; background: linear-gradient(90deg, var(--bay-accent), var(--bay-accent2), var(--bay-accent3));
+      opacity: 0.3;
+    }
+    .bay-step {
+      flex: 1; text-align: center; padding: 0 16px; position: relative;
+    }
+    .bay-step-dot {
+      width: 80px; height: 80px; margin: 0 auto 20px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; position: relative; z-index: 1;
+      background: var(--bay-glass-strong); border: 2px solid var(--bay-accent);
+      box-shadow: 0 0 30px rgba(56,189,248,0.2);
+    }
+    .bay-step h4 { color: var(--bay-white); font-size: 1rem; margin-bottom: 6px; }
+    .bay-step p { color: var(--bay-text-muted); font-size: 0.85rem; }
+
+    /* FAQ */
+    .bay-faq { padding: 80px 0; }
+    .bay-faq h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .bay-faq-list {
+      max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;
+    }
+    .bay-faq-item {
+      padding: 24px 28px; cursor: pointer; transition: all 0.3s;
+    }
+    .bay-faq-item:hover { border-color: var(--bay-accent); }
+    .bay-faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      font-weight: 600; color: var(--bay-white); font-size: 1.05rem;
+    }
+    .bay-faq-q::after { content: '+'; font-size: 1.5rem; color: var(--bay-accent); transition: transform 0.3s; }
+    .bay-faq-item.open .bay-faq-q::after { transform: rotate(45deg); }
+    .bay-faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+      color: var(--bay-text-muted); line-height: 1.6; font-size: 0.95rem;
+    }
+    .bay-faq-item.open .bay-faq-a { max-height: 300px; padding-top: 16px; }
+
+    /* CTA */
+    .bay-cta {
+      padding: 100px 0; text-align: center;
+    }
+    .bay-cta-inner {
+      padding: 60px 40px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(167,139,250,0.1));
+      border: 1px solid rgba(56,189,248,0.2);
+    }
+    .bay-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+      color: var(--bay-white);
+    }
+    .bay-cta p { color: var(--bay-text-muted); font-size: 1.1rem; margin-bottom: 32px; }
+
+    /* Cross-links */
+    .crosslinks { padding: 60px 0 40px; }
+    .crosslinks h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem; color: var(--bay-white);
+      text-align: center; margin-bottom: 32px;
+    }
+    .crosslinks-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 8px;
+    }
+    .crosslink-item {
+      color: var(--bay-text-muted); text-decoration: none; font-size: 0.9rem;
+      padding: 10px 16px; border-radius: 8px; transition: all 0.2s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .crosslink-item:hover { color: var(--bay-accent); background: var(--bay-glass); }
+    .crosslink-item span { color: var(--bay-accent); }
+
+    /* Footer */
+    .footer {
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--bay-glass-border);
+      padding: 48px 0 0;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .footer-brand { max-width: 300px; }
+    .footer-brand p { color: var(--bay-text-muted); margin-top: 12px; font-size: 14px; }
+    .footer-contact-info { margin-top: 16px; }
+    .footer-contact-info p { margin-bottom: 4px; }
+    .footer-contact-info a { color: var(--bay-accent); text-decoration: none; }
+    .footer-links h4 { color: var(--bay-white); margin-bottom: 16px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-links a { display: block; color: var(--bay-text-muted); text-decoration: none; font-size: 14px; margin-bottom: 8px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--bay-accent); }
+    .footer-bottom { border-top: 1px solid var(--bay-glass-border); margin-top: 40px; padding: 20px 0; text-align: center; }
+    .footer-bottom p { color: var(--bay-text-muted); font-size: 13px; }
+
+    /* Animations */
+    @keyframes bayFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .bay-reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .bay-reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav, .header-right { display: none; }
+      .mobile-menu-btn { display: block; }
+      .bay-types-grid { grid-template-columns: 1fr; }
+      .bay-sol-grid { grid-template-columns: 1fr; }
+      .bay-benefits-row { grid-template-columns: repeat(2, 1fr); }
+      .bay-process-timeline { flex-direction: column; gap: 24px; }
+      .bay-process-timeline::before { display: none; }
+      .bay-hero { padding: 80px 0 60px; }
+      .bay-sol-card { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .bay-benefits-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="lp-bay">
+
+  <!-- Animated BG Orbs -->
+  <div class="bay-orb bay-orb-1"></div>
+  <div class="bay-orb bay-orb-2"></div>
+  <div class="bay-orb bay-orb-3"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="bay-container">
+      <span>Melbourne's Bay & Bow Window Specialists</span>
+      <span>Free Measure & Quote: <a href="tel:0400000000">0400 000 000</a></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bay-hero">
+    <div class="bay-container">
+      <div class="bay-hero-badge">🏠 Bay & Bow Window Experts</div>
+      <h1>Perfect Blinds for<br><span>Bay Windows</span></h1>
+      <p>Custom-fitted window treatments designed to follow every angle and curve of your bay and bow windows. Precision measured, beautifully installed.</p>
+      <div class="bay-hero-btns">
+        <a href="../free-quote.html" class="bay-btn-primary">Get Free Bay Window Quote</a>
+        <a href="#types" class="bay-btn-outline">See Window Types</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Window Types -->
+  <section class="bay-types" id="types">
+    <div class="bay-container">
+      <h2>Bay Window Configurations We Cover</h2>
+      <p>Every bay window is unique. We custom-fit solutions for all angles and styles.</p>
+      <div class="bay-types-grid">
+        <div class="glass bay-type-card bay-reveal">
+          <div class="bay-type-icon">📐</div>
+          <h3>Angled Bay Windows</h3>
+          <p>The classic three-panel bay with 30° or 45° angles. We precision-measure each panel for roller blinds, venetians or curtains that sit flush against each face.</p>
+        </div>
+        <div class="glass bay-type-card bay-reveal">
+          <div class="bay-type-icon">🌀</div>
+          <h3>Bow Windows</h3>
+          <p>Curved bow windows with 4-6 panels need flexible tracking systems. Our curved curtain tracks and individual panel blinds create a seamless look.</p>
+        </div>
+        <div class="glass bay-type-card bay-reveal">
+          <div class="bay-type-icon">🔲</div>
+          <h3>Box Bay Windows</h3>
+          <p>Square box bays with 90° angles are perfect for plantation shutters or roman blinds. Each side treated independently for maximum light control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="bay-solutions">
+    <div class="bay-container">
+      <h2>Our Bay Window Solutions</h2>
+      <div class="bay-sol-grid">
+        <div class="glass bay-sol-card bay-reveal">
+          <div class="bay-sol-num">01</div>
+          <div>
+            <h3>Plantation Shutters</h3>
+            <p>The premium choice for bay windows. Custom-built panels follow your bay's exact angles, providing timeless elegance and full light control. Hinged or bi-fold options available.</p>
+          </div>
+        </div>
+        <div class="glass bay-sol-card bay-reveal">
+          <div class="bay-sol-num">02</div>
+          <div>
+            <h3>Individual Roller Blinds</h3>
+            <p>Each bay panel gets its own precisely fitted roller blind. Choose from blockout, sunscreen or translucent fabrics. Motorised options mean no dangling cords in tight spaces.</p>
+          </div>
+        </div>
+        <div class="glass bay-sol-card bay-reveal">
+          <div class="bay-sol-num">03</div>
+          <div>
+            <h3>Curved Curtain Tracks</h3>
+            <p>Bespoke curved tracks follow the contour of your bay perfectly. Pair with pinch-pleat, S-fold or ripplefold curtains for a flowing, unified look across the entire bay.</p>
+          </div>
+        </div>
+        <div class="glass bay-sol-card bay-reveal">
+          <div class="bay-sol-num">04</div>
+          <div>
+            <h3>Venetian & Honeycomb Blinds</h3>
+            <p>Individual venetian or honeycomb blinds per panel offer precise light and privacy control. Honeycomb blinds add excellent insulation—ideal for bay windows that catch cold draughts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="bay-benefits">
+    <div class="bay-container">
+      <h2>Why iSeekBlinds for Bay Windows?</h2>
+      <div class="bay-benefits-row">
+        <div class="glass bay-benefit bay-reveal">
+          <div class="bay-benefit-icon">📏</div>
+          <h4>Precision Measure</h4>
+          <p>Laser-accurate measurement of every angle and panel. No gaps, no overlap, perfect fit guaranteed.</p>
+        </div>
+        <div class="glass bay-benefit bay-reveal">
+          <div class="bay-benefit-icon">🎨</div>
+          <h4>Unified Design</h4>
+          <p>Coordinated fabrics and finishes across all panels for a cohesive, designed look.</p>
+        </div>
+        <div class="glass bay-benefit bay-reveal">
+          <div class="bay-benefit-icon">🔧</div>
+          <h4>Expert Install</h4>
+          <p>Our installers specialize in bay window configurations. Clean, professional, done in a single visit.</p>
+        </div>
+        <div class="glass bay-benefit bay-reveal">
+          <div class="bay-benefit-icon">💰</div>
+          <h4>Bay Window Pricing</h4>
+          <p>Transparent per-panel pricing. No hidden surprises. Package deals available for multi-panel bays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bay-process">
+    <div class="bay-container">
+      <h2>Our Bay Window Process</h2>
+      <div class="bay-process-timeline">
+        <div class="bay-step bay-reveal">
+          <div class="bay-step-dot">📞</div>
+          <h4>1. Book Consult</h4>
+          <p>Free in-home visit to assess your bay windows</p>
+        </div>
+        <div class="bay-step bay-reveal">
+          <div class="bay-step-dot">📐</div>
+          <h4>2. Measure</h4>
+          <p>Laser measurement of every angle and dimension</p>
+        </div>
+        <div class="bay-step bay-reveal">
+          <div class="bay-step-dot">🎨</div>
+          <h4>3. Design</h4>
+          <p>Choose products, fabrics and styles with expert guidance</p>
+        </div>
+        <div class="bay-step bay-reveal">
+          <div class="bay-step-dot">✨</div>
+          <h4>4. Install</h4>
+          <p>Professional installation, typically in one appointment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bay-faq">
+    <div class="bay-container">
+      <h2>Bay Window FAQs</h2>
+      <div class="bay-faq-list">
+        <div class="glass bay-faq-item bay-reveal">
+          <div class="bay-faq-q">What's the best blind for a bay window?</div>
+          <div class="bay-faq-a">It depends on your style and priorities. Plantation shutters are the premium choice for a classic look. Roller blinds offer a modern, clean line. Curtains on curved tracks create softness. We'll help you choose during our free consultation.</div>
+        </div>
+        <div class="glass bay-faq-item bay-reveal">
+          <div class="bay-faq-q">Can you do motorised blinds in a bay window?</div>
+          <div class="bay-faq-a">Absolutely! Motorised roller or honeycomb blinds are a popular bay window choice. Each panel operates independently via remote or smart home integration. No cords means a cleaner look and improved child safety.</div>
+        </div>
+        <div class="glass bay-faq-item bay-reveal">
+          <div class="bay-faq-q">How do you handle the angles?</div>
+          <div class="bay-faq-a">We laser-measure each panel individually, including the exact angles between panels. Each blind or shutter panel is manufactured to precise specifications. For curtains, we use custom-bent tracks that follow your bay's exact curve.</div>
+        </div>
+        <div class="glass bay-faq-item bay-reveal">
+          <div class="bay-faq-q">Are bay window blinds more expensive?</div>
+          <div class="bay-faq-a">Bay windows typically require 3-5 individual panels, so the total cost is proportional. However, we offer bay window package pricing that's more competitive than pricing each panel separately. Contact us for a free quote.</div>
+        </div>
+        <div class="glass bay-faq-item bay-reveal">
+          <div class="bay-faq-q">Do you service heritage bay windows?</div>
+          <div class="bay-faq-a">Yes! Many Melbourne heritage homes have stunning bay windows. We offer sympathetic solutions—timber shutters, traditional curtains on concealed tracks—that respect the character while adding modern functionality.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bay-cta">
+    <div class="bay-container">
+      <div class="glass-strong bay-cta-inner bay-reveal">
+        <h2>Ready to Transform Your Bay Windows?</h2>
+        <p>Book a free in-home consultation. We'll measure, advise and quote—no obligation.</p>
+        <a href="../free-quote.html" class="bay-btn-primary">Get Your Free Bay Window Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross Links -->
+  <section class="crosslinks">
+    <div class="bay-container">
+      <h3>Explore More Solutions</h3>
+      <div class="crosslinks-grid">
+        <a href="acoustic-solutions.html" class="crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="crosslink-item"><span>→</span> Bathroom &amp; Kitchen Blinds</a>
+        <a href="bedroom-blackout.html" class="crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="crosslink-item"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="bushfire-safe-blinds.html" class="crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="crosslink-item"><span>→</span> Child Safety Blinds</a>
+        <a href="coastal-home-blinds.html" class="crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="crosslink-item"><span>→</span> Day Night Zebra Blinds</a>
+        <a href="design-inspiration.html" class="crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="crosslink-item"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="elderly-accessible.html" class="crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="crosslink-item"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html" class="crosslink-item"><span>→</span> Granny Flat Blinds</a>
+        <a href="hamptons-style.html" class="crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="crosslink-item"><span>→</span> Home Office Blinds</a>
+        <a href="home-renovation.html" class="crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="japandi-zen-style.html" class="crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
+        <a href="large-windows.html" class="crosslink-item"><span>→</span> Large Windows &amp; Sliding Doors</a>
+        <a href="layered-treatments.html" class="crosslink-item"><span>→</span> Layered Window Treatments</a>
+        <a href="luxury-penthouse.html" class="crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="crosslink-item"><span>→</span> Media Room Blinds</a>
+        <a href="medical-clinic.html" class="crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="motorised-blinds.html" class="crosslink-item"><span>→</span> Motorised Blinds Guide</a>
+        <a href="new-home-packages.html" class="crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="crosslink-item"><span>→</span> Office Partition Curtains</a>
+        <a href="open-kitchen.html" class="crosslink-item"><span>→</span> Open Kitchen Windows</a>
+        <a href="outdoor-blinds.html" class="crosslink-item"><span>→</span> Outdoor Blinds &amp; Awnings</a>
+        <a href="pet-friendly.html" class="crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="plantation-shutters-guide.html" class="crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="privacy-blinds.html" class="crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="crosslink-item"><span>→</span> Rental Property Blinds</a>
+        <a href="restaurant-cafe.html" class="crosslink-item"><span>→</span> Restaurant &amp; Cafe Blinds</a>
+        <a href="retail-shopfront.html" class="crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="crosslink-item"><span>→</span> Autumn/Winter Sale</a>
+        <a href="skylight-blinds.html" class="crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="crosslink-item"><span>→</span> Smart Home Blinds</a>
+        <a href="spa-wellness-blinds.html" class="crosslink-item"><span>→</span> Spa &amp; Wellness Blinds</a>
+        <a href="staircase-windows.html" class="crosslink-item"><span>→</span> Staircase Windows</a>
+        <a href="summer-uv-protection.html" class="crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="crosslink-item"><span>→</span> Customer Testimonials</a>
+        <a href="townhouse-strata.html" class="crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="bay-container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.bay-reveal').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.bay-faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.bay-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
