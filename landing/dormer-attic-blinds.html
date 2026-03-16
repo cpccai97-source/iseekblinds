@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dormer & Attic Window Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Find the perfect blinds for dormer windows, attic skylights & loft conversions. Interactive quiz to match your window shape. Free measure & quote Melbourne-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--concrete:#D4D0C8;--concrete-dark:#A8A299;
+--raw:#E8E4DC;--raw-light:#F2F0EB;
+--black:#111;--white:#FAFAF8;
+--red:#E23636;--red-dark:#B82020;
+--blue-ink:#1A2B4A;
+--border:3px solid var(--black);
+--border-thin:1.5px solid var(--black);
+--mono:'JetBrains Mono',monospace;
+--sans:'Space Grotesk',sans-serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);color:var(--black);background:var(--raw);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* LOADER */
+.loader{position:fixed;inset:0;z-index:10000;background:var(--black);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s,visibility .6s}
+.loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-bar{width:200px;height:4px;background:rgba(255,255,255,.15);position:relative;overflow:hidden}
+.loader-bar::after{content:'';position:absolute;left:-100%;top:0;width:60%;height:100%;background:var(--red);animation:loadSlide .8s ease-in-out infinite}
+@keyframes loadSlide{0%{left:-60%}100%{left:100%}}
+.loader-label{font-family:var(--mono);color:rgba(255,255,255,.5);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;margin-top:.8rem}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.6rem 1.5rem;display:flex;justify-content:space-between;align-items:center;background:var(--white);border-bottom:var(--border);transition:transform .3s}
+header.hide{transform:translateY(-100%)}
+.logo{font-family:var(--sans);font-size:1.1rem;font-weight:700;color:var(--black);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--red)}
+header nav{display:flex;gap:1.2rem;align-items:center}
+header nav a{color:var(--black);text-decoration:none;font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.25rem 0;border-bottom:1.5px solid transparent;transition:border-color .2s}
+header nav a:hover{border-color:var(--red)}
+.nav-cta{background:var(--red)!important;color:var(--white)!important;padding:.4rem .9rem!important;border:none!important;font-weight:700!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--red-dark)!important}
+
+/* BRUTALIST GRID OVERLAY */
+.grid-overlay{position:fixed;inset:0;pointer-events:none;z-index:998;opacity:.04}
+.grid-overlay::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,var(--black) 0,var(--black) 1px,transparent 1px,transparent calc(100%/12));background-size:100% 100%}
+
+/* ===== HERO ===== */
+.hero{padding:8rem 2rem 4rem;position:relative;min-height:90vh;display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;border-bottom:var(--border)}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:3rem 2rem 3rem 1rem}
+.hero-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.hero-tag::before{content:'';width:30px;height:2px;background:var(--red)}
+.hero-title{font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;line-height:.92;letter-spacing:-.04em;margin-bottom:1.5rem}
+.hero-title em{font-style:normal;color:var(--red);display:inline-block;position:relative}
+.hero-title em::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:4px;background:var(--red);opacity:.3}
+.hero-sub{font-family:var(--mono);font-size:.85rem;line-height:1.7;color:rgba(17,17,17,.6);max-width:420px;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-brutal{display:inline-block;padding:.8rem 1.6rem;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:var(--border);background:var(--black);color:var(--white);cursor:pointer;position:relative;transition:transform .15s,box-shadow .15s}
+.btn-brutal:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--black)}
+.btn-brutal:active{transform:translate(0);box-shadow:none}
+.btn-brutal--outline{background:transparent;color:var(--black)}
+.btn-brutal--outline:hover{background:var(--black);color:var(--white)}
+.btn-brutal--red{background:var(--red);border-color:var(--red);color:var(--white)}
+.btn-brutal--red:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--red-dark)}
+
+.hero-right{background:var(--concrete);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-illustration{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+/* CSS-only dormer window illustration */
+.dormer-visual{width:320px;height:380px;position:relative}
+.dormer-roof{width:0;height:0;border-left:160px solid transparent;border-right:160px solid transparent;border-bottom:120px solid var(--black);position:absolute;top:0;left:0}
+.dormer-roof-inner{width:0;height:0;border-left:140px solid transparent;border-right:140px solid transparent;border-bottom:105px solid var(--blue-ink);position:absolute;top:8px;left:20px}
+.dormer-window{position:absolute;top:100px;left:60px;width:200px;height:220px;border:var(--border);background:linear-gradient(135deg,#87CEEB 0%,#B0D4E8 40%,rgba(255,255,255,.3) 60%,#87CEEB 100%);overflow:hidden}
+.dormer-window::before{content:'';position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--black);transform:translateX(-50%)}
+.dormer-window::after{content:'';position:absolute;top:50%;left:0;width:100%;height:3px;background:var(--black);transform:translateY(-50%)}
+.blind-slat{position:absolute;left:3px;right:3px;height:8px;background:var(--white);border:1px solid rgba(0,0,0,.15);opacity:0;animation:slatDrop .4s ease forwards}
+@keyframes slatDrop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.dormer-wall{position:absolute;top:218px;left:30px;right:30px;bottom:0;background:var(--raw-light);border-left:var(--border);border-right:var(--border);border-bottom:var(--border)}
+.dormer-sill{position:absolute;top:316px;left:50px;right:50px;height:8px;background:var(--black)}
+.measurement-line{position:absolute;font-family:var(--mono);font-size:.55rem;color:var(--red);font-weight:700}
+.measure-w{top:85px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.3rem}
+.measure-w::before,.measure-w::after{content:'';width:20px;height:1.5px;background:var(--red)}
+.measure-h{right:-45px;top:200px;transform:rotate(90deg);display:flex;align-items:center;gap:.3rem}
+.measure-h::before,.measure-h::after{content:'';width:15px;height:1.5px;background:var(--red)}
+
+/* ===== WINDOW TYPE SECTION ===== */
+.window-types{padding:5rem 2rem;border-bottom:var(--border);position:relative}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.section-number{font-family:var(--mono);font-size:8rem;font-weight:700;line-height:.8;color:var(--concrete);margin-right:1.5rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.section-desc{font-family:var(--mono);font-size:.7rem;color:rgba(17,17,17,.5);letter-spacing:.05em;max-width:300px;text-align:right;line-height:1.6}
+
+.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.type-card{border:var(--border-thin);padding:2rem 1.5rem;position:relative;cursor:pointer;transition:background .2s}
+.type-card:hover{background:var(--white)}
+.type-card::before{content:attr(data-num);font-family:var(--mono);font-size:.55rem;font-weight:700;color:var(--red);position:absolute;top:.8rem;right:.8rem;letter-spacing:.1em}
+.type-icon{width:80px;height:80px;margin:0 auto 1.5rem;position:relative}
+/* CSS window shapes */
+.icon-gable .shape{width:60px;height:50px;background:var(--concrete);border:2px solid var(--black);margin:20px auto 0;position:relative}
+.icon-gable .shape::before{content:'';position:absolute;top:-25px;left:-2px;width:0;height:0;border-left:32px solid transparent;border-right:32px solid transparent;border-bottom:25px solid var(--black)}
+.icon-gable .shape::after{content:'';position:absolute;top:-21px;left:4px;width:0;height:0;border-left:26px solid transparent;border-right:26px solid transparent;border-bottom:21px solid var(--concrete)}
+.icon-skylight .shape{width:55px;height:45px;background:var(--concrete);border:2px solid var(--black);margin:25px auto 0;transform:perspective(200px) rotateX(25deg)}
+.icon-shed .shape{width:60px;height:45px;background:var(--concrete);border:2px solid var(--black);margin:25px auto 0;clip-path:polygon(0 30%,100% 0,100% 100%,0 100%)}
+.icon-arched .shape{width:50px;height:55px;background:var(--concrete);border:2px solid var(--black);margin:15px auto 0;border-radius:25px 25px 0 0}
+.type-name{font-weight:700;font-size:1rem;text-align:center;margin-bottom:.5rem}
+.type-desc{font-family:var(--mono);font-size:.65rem;color:rgba(17,17,17,.5);text-align:center;line-height:1.5}
+
+/* ===== QUIZ SECTION ===== */
+.quiz-section{padding:5rem 2rem;background:var(--black);color:var(--white);border-bottom:var(--border);position:relative;overflow:hidden}
+.quiz-section::before{content:'FIND YOUR BLINDS';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(4rem,12vw,10rem);font-weight:700;opacity:.03;white-space:nowrap;pointer-events:none;letter-spacing:-.03em}
+.quiz-container{max-width:800px;margin:0 auto;position:relative}
+.quiz-header{text-align:center;margin-bottom:3rem}
+.quiz-header h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem}
+.quiz-header p{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.08em}
+.quiz-progress{display:flex;gap:4px;margin-bottom:3rem}
+.quiz-progress-bar{flex:1;height:4px;background:rgba(255,255,255,.1);position:relative;overflow:hidden}
+.quiz-progress-bar.active{background:var(--red)}
+.quiz-progress-bar.active::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shimmer 2s infinite}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+.quiz-step{display:none;animation:fadeUp .5s ease}
+.quiz-step.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question{font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+.quiz-hint{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:2rem;letter-spacing:.05em}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.quiz-option{border:2px solid rgba(255,255,255,.15);padding:1.2rem 1.5rem;cursor:pointer;position:relative;transition:all .2s;background:transparent;color:var(--white);font-family:var(--sans);font-size:.9rem;text-align:left;display:flex;align-items:flex-start;gap:.8rem}
+.quiz-option:hover{border-color:var(--red);background:rgba(226,54,54,.08)}
+.quiz-option.selected{border-color:var(--red);background:rgba(226,54,54,.15)}
+.quiz-option-marker{width:22px;height:22px;border:2px solid rgba(255,255,255,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.55rem;font-weight:700;transition:all .2s;margin-top:2px}
+.quiz-option.selected .quiz-option-marker{border-color:var(--red);background:var(--red);color:var(--white)}
+.quiz-option-text{line-height:1.4}
+.quiz-option-text small{display:block;font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.35);margin-top:.3rem}
+.quiz-nav{display:flex;justify-content:space-between;margin-top:2.5rem}
+.quiz-btn{padding:.7rem 1.5rem;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:2px solid rgba(255,255,255,.2);background:transparent;color:var(--white);cursor:pointer;transition:all .2s}
+.quiz-btn:hover{border-color:var(--white)}
+.quiz-btn--next{border-color:var(--red);background:var(--red);color:var(--white)}
+.quiz-btn--next:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.quiz-btn:disabled{opacity:.3;cursor:not-allowed}
+
+/* Quiz Result */
+.quiz-result{display:none;animation:fadeUp .6s ease}
+.quiz-result.active{display:block}
+.result-card{border:3px solid var(--red);padding:2.5rem;position:relative}
+.result-card::before{content:'RECOMMENDED';position:absolute;top:-10px;left:20px;background:var(--red);color:var(--white);font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.15em;padding:.2rem .8rem}
+.result-title{font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
+.result-product{color:var(--red);font-family:var(--mono);font-size:.8rem;font-weight:700;letter-spacing:.05em;margin-bottom:1.2rem}
+.result-desc{font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:1.5rem}
+.result-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
+.result-spec{border:1px solid rgba(255,255,255,.1);padding:1rem;text-align:center}
+.result-spec-val{font-family:var(--mono);font-size:1.3rem;font-weight:700;color:var(--red)}
+.result-spec-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-top:.3rem;text-transform:uppercase}
+
+/* ===== CHALLENGES SECTION ===== */
+.challenges{padding:5rem 2rem;border-bottom:var(--border)}
+.challenge-grid{display:grid;grid-template-columns:2fr 1fr;gap:0;margin-top:3rem}
+.challenge-list{border-right:var(--border)}
+.challenge-item{padding:2rem;border-bottom:var(--border-thin);display:grid;grid-template-columns:60px 1fr auto;gap:1.5rem;align-items:center;cursor:pointer;transition:background .2s}
+.challenge-item:hover{background:var(--white)}
+.challenge-item:last-child{border-bottom:none}
+.challenge-num{font-family:var(--mono);font-size:2rem;font-weight:700;color:var(--concrete-dark)}
+.challenge-item:hover .challenge-num{color:var(--red)}
+.challenge-title{font-weight:600;font-size:1rem;margin-bottom:.3rem}
+.challenge-text{font-family:var(--mono);font-size:.65rem;color:rgba(17,17,17,.5);line-height:1.5}
+.challenge-arrow{font-size:1.5rem;color:var(--concrete-dark);transition:transform .2s,color .2s}
+.challenge-item:hover .challenge-arrow{transform:translateX(5px);color:var(--red)}
+
+.challenge-visual{background:var(--concrete);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:400px}
+.angle-display{text-align:center}
+.angle-number{font-family:var(--mono);font-size:6rem;font-weight:700;color:var(--black);line-height:1}
+.angle-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(17,17,17,.4);margin-top:.5rem}
+.angle-graphic{width:120px;height:120px;margin:1.5rem auto 0;position:relative}
+.angle-line{position:absolute;bottom:0;left:50%;width:2px;height:100%;background:var(--black);transform-origin:bottom center;transition:transform 1s ease}
+.angle-base{position:absolute;bottom:0;left:10%;right:10%;height:2px;background:var(--black)}
+.angle-arc{position:absolute;bottom:0;left:50%;width:40px;height:40px;border:2px solid var(--red);border-radius:50%;clip-path:polygon(50% 100%,100% 100%,100% 0);transform-origin:bottom left}
+
+/* ===== SOLUTIONS SECTION ===== */
+.solutions{padding:5rem 2rem;background:var(--blue-ink);color:var(--white);border-bottom:var(--border)}
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3rem}
+.solution-card{border:1px solid rgba(255,255,255,.1);padding:2.5rem 2rem;position:relative;transition:background .3s}
+.solution-card:hover{background:rgba(255,255,255,.03)}
+.solution-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.solution-card:hover::before{transform:scaleX(1)}
+.solution-tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem}
+.solution-name{font-size:1.3rem;font-weight:700;margin-bottom:.8rem;letter-spacing:-.02em}
+.solution-desc{font-size:.8rem;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+.solution-features{list-style:none;margin-bottom:2rem}
+.solution-features li{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.6);padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.5rem}
+.solution-features li::before{content:'→';color:var(--red);font-weight:700}
+.solution-price{font-family:var(--mono);font-weight:700;font-size:.75rem;letter-spacing:.05em}
+.solution-price span{color:var(--red);font-size:1.1rem}
+
+/* ===== MEASUREMENT GUIDE ===== */
+.measure-guide{padding:5rem 2rem;border-bottom:var(--border)}
+.measure-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem}
+.measure-step{padding:2rem 1.5rem;border:var(--border-thin);position:relative;counter-increment:measure}
+.measure-step::before{content:counter(measure,decimal-leading-zero);font-family:var(--mono);font-size:3rem;font-weight:700;color:var(--concrete);display:block;margin-bottom:1rem;line-height:1}
+.measure-step:hover::before{color:var(--red)}
+.measure-step h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.measure-step p{font-family:var(--mono);font-size:.65rem;line-height:1.6;color:rgba(17,17,17,.5)}
+.measure-warning{margin-top:2rem;padding:1.5rem;border:2px solid var(--red);background:rgba(226,54,54,.04);display:flex;gap:1rem;align-items:flex-start}
+.measure-warning-icon{font-size:1.5rem;flex-shrink:0}
+.measure-warning p{font-family:var(--mono);font-size:.7rem;line-height:1.6;color:rgba(17,17,17,.7)}
+.measure-warning strong{color:var(--red)}
+
+/* ===== CTA SECTION ===== */
+.cta-section{padding:6rem 2rem;background:var(--black);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(226,54,54,.03),transparent,rgba(226,54,54,.03),transparent);animation:ctaSpin 30s linear infinite}
+@keyframes ctaSpin{to{transform:rotate(360deg)}}
+.cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.cta-inner h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem}
+.cta-inner p{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:2.5rem}
+.cta-phone{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--red);text-decoration:none;display:inline-block;margin-bottom:1.5rem;border-bottom:2px solid var(--red);padding-bottom:.3rem;transition:color .2s}
+.cta-phone:hover{color:var(--white)}
+.cta-badges{display:flex;justify-content:center;gap:2rem;margin-top:2rem}
+.cta-badge{font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:.5rem}
+.cta-badge::before{content:'✓';color:var(--red);font-weight:700}
+
+/* FOOTER */
+footer{background:var(--black);border-top:var(--border);padding:2rem 1.5rem;color:rgba(255,255,255,.3);font-size:.7rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:var(--sans);font-size:.9rem;font-weight:700;color:var(--white)}
+.footer-brand span{color:var(--red)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:rgba(255,255,255,.3);text-decoration:none;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--red)}
+.footer-copy{width:100%;text-align:center;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono);font-size:.55rem;letter-spacing:.1em}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;min-height:auto}
+.hero-right{min-height:350px}
+.type-grid{grid-template-columns:1fr 1fr}
+.challenge-grid{grid-template-columns:1fr}
+.challenge-visual{min-height:250px}
+.solutions-grid{grid-template-columns:1fr}
+.measure-steps{grid-template-columns:1fr 1fr}
+.quiz-options{grid-template-columns:1fr}
+.result-specs{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.hero-left{padding:2rem 1rem}
+.type-grid{grid-template-columns:1fr}
+.section-header{flex-direction:column;align-items:flex-start}
+.section-desc{text-align:left}
+.measure-steps{grid-template-columns:1fr}
+.challenge-item{grid-template-columns:40px 1fr auto;gap:1rem;padding:1.5rem 1rem}
+header nav a:not(.nav-cta){display:none}
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* ===== BRUTALIST CURSOR STAMP ===== */
+.stamp-cursor{position:fixed;width:40px;height:40px;pointer-events:none;z-index:9999;opacity:0;transition:opacity .2s;mix-blend-mode:difference}
+.stamp-cursor::before{content:'';position:absolute;inset:0;border:2px solid var(--white);transform:rotate(45deg)}
+body:hover .stamp-cursor{opacity:.4}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+<div class="loader-bar"></div>
+<div class="loader-label">Loading specs...</div>
+</div>
+
+<!-- Grid overlay -->
+<div class="grid-overlay"></div>
+
+<!-- Custom cursor -->
+<div class="stamp-cursor" id="cursor"></div>
+
+<!-- Header -->
+<header id="mainHeader">
+<a href="/index.html" class="logo">iSeek<span>Blinds</span></a>
+<nav>
+<a href="/products.html">Products</a>
+<a href="/landing/index.html">Solutions</a>
+<a href="#quiz">Take Quiz</a>
+<a href="/contact.html" class="nav-cta">Free Quote</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-left">
+<div class="hero-tag">Specialist Solutions</div>
+<h1 class="hero-title reveal">Dormer &<br>Attic<br><em>Blinds</em></h1>
+<p class="hero-sub reveal">Angled roofs, skylights, odd-shaped windows — your attic deserves better than a draped bedsheet. We engineer precise fits for spaces others won't touch.</p>
+<div class="hero-actions reveal">
+<a href="#quiz" class="btn-brutal btn-brutal--red">Find My Blinds →</a>
+<a href="#solutions" class="btn-brutal btn-brutal--outline" style="border-color:var(--black);color:var(--black)">View Solutions</a>
+</div>
+</div>
+<div class="hero-right">
+<div class="hero-illustration">
+<div class="dormer-visual">
+<div class="dormer-roof"></div>
+<div class="dormer-roof-inner"></div>
+<div class="dormer-window" id="dormerWindow"></div>
+<div class="dormer-wall"></div>
+<div class="dormer-sill"></div>
+<div class="measurement-line measure-w">1240mm</div>
+<div class="measurement-line measure-h">1580mm</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WINDOW TYPES -->
+<section class="window-types">
+<div class="section-header">
+<div style="display:flex;align-items:flex-end">
+<span class="section-number reveal-left">01</span>
+<div>
+<h2 class="section-title reveal">Know Your<br>Window Type</h2>
+</div>
+</div>
+<p class="section-desc reveal">Different attic windows need different approaches. Here's what we see across Melbourne's rooftops.</p>
+</div>
+<div class="type-grid">
+<div class="type-card reveal" data-num="A">
+<div class="type-icon icon-gable"><div class="shape"></div></div>
+<div class="type-name">Gable Dormer</div>
+<div class="type-desc">Classic triangular roof dormers. Standard rectangular window in a vertical wall — the most common and easiest to fit.</div>
+</div>
+<div class="type-card reveal" data-num="B">
+<div class="type-icon icon-skylight"><div class="shape"></div></div>
+<div class="type-name">Roof Skylight</div>
+<div class="type-desc">Angled windows set into the roof slope. Need tension-held or track-guided blinds that stay flush against the glass.</div>
+</div>
+<div class="type-card reveal" data-num="C">
+<div class="type-icon icon-shed"><div class="shape"></div></div>
+<div class="type-name">Shed Dormer</div>
+<div class="type-desc">Single-slope roof with wider window spans. Often found in loft conversions — great light but challenging angles.</div>
+</div>
+<div class="type-card reveal" data-num="D">
+<div class="type-icon icon-arched"><div class="shape"></div></div>
+<div class="type-name">Arched Dormer</div>
+<div class="type-desc">Curved top windows found in heritage and character homes. Require custom-shaped blinds or shutters for a clean fit.</div>
+</div>
+</div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+<div class="quiz-container">
+<div class="quiz-header">
+<h2 class="reveal">Which Blinds Suit<br>Your Attic?</h2>
+<p class="reveal">4 questions. 60 seconds. One perfect recommendation.</p>
+</div>
+<div class="quiz-progress" id="quizProgress">
+<div class="quiz-progress-bar active"></div>
+<div class="quiz-progress-bar"></div>
+<div class="quiz-progress-bar"></div>
+<div class="quiz-progress-bar"></div>
+</div>
+
+<!-- Step 1 -->
+<div class="quiz-step active" data-step="1">
+<div class="quiz-question">What type of attic window do you have?</div>
+<div class="quiz-hint">Select the closest match — we'll refine during the free measure.</div>
+<div class="quiz-options">
+<button class="quiz-option" data-value="gable" onclick="selectOption(this)">
+<span class="quiz-option-marker">A</span>
+<span class="quiz-option-text">Vertical dormer window<small>Standard rectangular window in a dormer wall</small></span>
+</button>
+<button class="quiz-option" data-value="skylight" onclick="selectOption(this)">
+<span class="quiz-option-marker">B</span>
+<span class="quiz-option-text">Angled skylight / roof window<small>Set into the roof slope at an angle</small></span>
+</button>
+<button class="quiz-option" data-value="velux" onclick="selectOption(this)">
+<span class="quiz-option-marker">C</span>
+<span class="quiz-option-text">VELUX or brand-name roof window<small>Factory-installed with a specific model code</small></span>
+</button>
+<button class="quiz-option" data-value="arched" onclick="selectOption(this)">
+<span class="quiz-option-marker">D</span>
+<span class="quiz-option-text">Arched or oddly-shaped window<small>Non-rectangular, curved tops, triangular</small></span>
+</button>
+</div>
+<div class="quiz-nav">
+<div></div>
+<button class="quiz-btn quiz-btn--next" id="next1" disabled onclick="nextStep(2)">Next →</button>
+</div>
+</div>
+
+<!-- Step 2 -->
+<div class="quiz-step" data-step="2">
+<div class="quiz-question">What's your main priority?</div>
+<div class="quiz-hint">You can always have more than one — but what matters most?</div>
+<div class="quiz-options">
+<button class="quiz-option" data-value="blackout" onclick="selectOption(this)">
+<span class="quiz-option-marker">A</span>
+<span class="quiz-option-text">Total blackout<small>Bedroom, shift worker, light sleeper</small></span>
+</button>
+<button class="quiz-option" data-value="heat" onclick="selectOption(this)">
+<span class="quiz-option-marker">B</span>
+<span class="quiz-option-text">Heat & UV reduction<small>Attic gets unbearably hot in summer</small></span>
+</button>
+<button class="quiz-option" data-value="privacy" onclick="selectOption(this)">
+<span class="quiz-option-marker">C</span>
+<span class="quiz-option-text">Privacy with natural light<small>Want light in but neighbours out</small></span>
+</button>
+<button class="quiz-option" data-value="style" onclick="selectOption(this)">
+<span class="quiz-option-marker">D</span>
+<span class="quiz-option-text">Aesthetic / interior design<small>It needs to look as good as it functions</small></span>
+</button>
+</div>
+<div class="quiz-nav">
+<button class="quiz-btn" onclick="prevStep(1)">← Back</button>
+<button class="quiz-btn quiz-btn--next" id="next2" disabled onclick="nextStep(3)">Next →</button>
+</div>
+</div>
+
+<!-- Step 3 -->
+<div class="quiz-step" data-step="3">
+<div class="quiz-question">How do you want to operate them?</div>
+<div class="quiz-hint">Attic windows are often out of reach — consider automation.</div>
+<div class="quiz-options">
+<button class="quiz-option" data-value="manual" onclick="selectOption(this)">
+<span class="quiz-option-marker">A</span>
+<span class="quiz-option-text">Manual cord or wand<small>Window is within easy reach</small></span>
+</button>
+<button class="quiz-option" data-value="motorised" onclick="selectOption(this)">
+<span class="quiz-option-marker">B</span>
+<span class="quiz-option-text">Motorised / remote control<small>Hard to reach — want one-button ease</small></span>
+</button>
+<button class="quiz-option" data-value="smart" onclick="selectOption(this)">
+<span class="quiz-option-marker">C</span>
+<span class="quiz-option-text">Smart home integrated<small>Google Home, Alexa, Apple HomeKit</small></span>
+</button>
+<button class="quiz-option" data-value="fixed" onclick="selectOption(this)">
+<span class="quiz-option-marker">D</span>
+<span class="quiz-option-text">Fixed / static<small>Just want it installed and left alone</small></span>
+</button>
+</div>
+<div class="quiz-nav">
+<button class="quiz-btn" onclick="prevStep(2)">← Back</button>
+<button class="quiz-btn quiz-btn--next" id="next3" disabled onclick="nextStep(4)">Next →</button>
+</div>
+</div>
+
+<!-- Step 4 -->
+<div class="quiz-step" data-step="4">
+<div class="quiz-question">What's your budget range per window?</div>
+<div class="quiz-hint">Custom attic blinds cost more than standard — but last a lifetime.</div>
+<div class="quiz-options">
+<button class="quiz-option" data-value="budget" onclick="selectOption(this)">
+<span class="quiz-option-marker">A</span>
+<span class="quiz-option-text">Under $300<small>Practical, no frills — just works</small></span>
+</button>
+<button class="quiz-option" data-value="mid" onclick="selectOption(this)">
+<span class="quiz-option-marker">B</span>
+<span class="quiz-option-text">$300 – $600<small>Good quality, some customisation</small></span>
+</button>
+<button class="quiz-option" data-value="premium" onclick="selectOption(this)">
+<span class="quiz-option-marker">C</span>
+<span class="quiz-option-text">$600 – $1,000<small>Premium fabrics, motorised options</small></span>
+</button>
+<button class="quiz-option" data-value="luxury" onclick="selectOption(this)">
+<span class="quiz-option-marker">D</span>
+<span class="quiz-option-text">$1,000+<small>Best of everything — fully integrated</small></span>
+</button>
+</div>
+<div class="quiz-nav">
+<button class="quiz-btn" onclick="prevStep(3)">← Back</button>
+<button class="quiz-btn quiz-btn--next" id="next4" disabled onclick="showResult()">See My Match →</button>
+</div>
+</div>
+
+<!-- Result -->
+<div class="quiz-result" id="quizResult">
+<div class="result-card">
+<h3 class="result-title" id="resultTitle">Your Perfect Match</h3>
+<div class="result-product" id="resultProduct">Loading recommendation...</div>
+<p class="result-desc" id="resultDesc"></p>
+<div class="result-specs">
+<div class="result-spec">
+<div class="result-spec-val" id="resultLight">95%</div>
+<div class="result-spec-label">Light Block</div>
+</div>
+<div class="result-spec">
+<div class="result-spec-val" id="resultHeat">R3.2</div>
+<div class="result-spec-label">Insulation</div>
+</div>
+<div class="result-spec">
+<div class="result-spec-val" id="resultPrice">$$$</div>
+<div class="result-spec-label">Price Range</div>
+</div>
+</div>
+<div style="display:flex;gap:1rem;flex-wrap:wrap">
+<a href="/contact.html" class="btn-brutal btn-brutal--red">Book Free Measure</a>
+<button class="btn-brutal btn-brutal--outline" style="border-color:rgba(255,255,255,.3);color:var(--white)" onclick="resetQuiz()">Retake Quiz</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="challenges">
+<div class="section-header">
+<div style="display:flex;align-items:flex-end">
+<span class="section-number reveal-left">02</span>
+<div>
+<h2 class="section-title reveal">Why Attics Are<br>Difficult</h2>
+</div>
+</div>
+<p class="section-desc reveal">Standard blinds don't work up here. These are the five challenges we solve every week.</p>
+</div>
+<div class="challenge-grid">
+<div class="challenge-list">
+<div class="challenge-item reveal" data-angle="35">
+<div class="challenge-num">01</div>
+<div>
+<div class="challenge-title">Angled Roof Slopes</div>
+<div class="challenge-text">Most attic windows sit on an angle. Standard blinds sag away from the glass. We use tensioned systems and side channels that keep fabric flush at any pitch.</div>
+</div>
+<div class="challenge-arrow">→</div>
+</div>
+<div class="challenge-item reveal" data-angle="90">
+<div class="challenge-num">02</div>
+<div>
+<div class="challenge-title">Extreme Heat Gain</div>
+<div class="challenge-text">Roof-level windows cop direct sun. An uncovered attic skylight can push room temps past 45°C in summer. Our reflective-backed fabrics reject up to 80% of solar heat.</div>
+</div>
+<div class="challenge-arrow">→</div>
+</div>
+<div class="challenge-item reveal" data-angle="55">
+<div class="challenge-num">03</div>
+<div>
+<div class="challenge-title">Hard to Reach</div>
+<div class="challenge-text">High ceilings, steep slopes — you can't just pull a cord. Motorised and smart-home systems let you control attic blinds from your phone, voice assistant, or schedule.</div>
+</div>
+<div class="challenge-arrow">→</div>
+</div>
+<div class="challenge-item reveal" data-angle="15">
+<div class="challenge-num">04</div>
+<div>
+<div class="challenge-title">Non-Standard Shapes</div>
+<div class="challenge-text">Triangles, trapezoids, arches — off-the-shelf won't cut it. Every attic blind we make is measured to the millimetre and fabricated to the exact window profile.</div>
+</div>
+<div class="challenge-arrow">→</div>
+</div>
+<div class="challenge-item reveal" data-angle="70">
+<div class="challenge-num">05</div>
+<div>
+<div class="challenge-title">Condensation & Moisture</div>
+<div class="challenge-text">Temperature differentials at roof level cause condensation. Our fabrics are moisture-resistant, and our tracks are aluminium — no rust, no mould, no warping.</div>
+</div>
+<div class="challenge-arrow">→</div>
+</div>
+</div>
+<div class="challenge-visual">
+<div class="angle-display">
+<div class="angle-number" id="angleNumber">35°</div>
+<div class="angle-label">Roof Pitch Angle</div>
+<div class="angle-graphic">
+<div class="angle-line" id="angleLine" style="transform:rotate(-35deg)"></div>
+<div class="angle-base"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+<div class="section-header">
+<div style="display:flex;align-items:flex-end">
+<span class="section-number reveal-left" style="color:rgba(255,255,255,.08)">03</span>
+<div>
+<h2 class="section-title reveal" style="color:var(--white)">Engineered<br>Solutions</h2>
+</div>
+</div>
+<p class="section-desc reveal" style="color:rgba(255,255,255,.3)">Three product lines. Every attic window covered. Literally.</p>
+</div>
+<div class="solutions-grid">
+<div class="solution-card reveal">
+<div class="solution-tag">Most Popular</div>
+<div class="solution-name">Tensioned Roller Blinds</div>
+<div class="solution-desc">Spring-tensioned wire guides keep the fabric pressed flat against angled skylights. Clean look, minimal hardware, maximum light control.</div>
+<ul class="solution-features">
+<li>Side-channel guided for flush fit</li>
+<li>Blockout or sunscreen fabric options</li>
+<li>Manual, motorised, or solar-powered</li>
+<li>Custom cut to your skylight brand</li>
+<li>5-year mechanical warranty</li>
+</ul>
+<div class="solution-price">From <span>$289</span> per window</div>
+</div>
+<div class="solution-card reveal">
+<div class="solution-tag">Premium</div>
+<div class="solution-name">Honeycomb / Cellular Blinds</div>
+<div class="solution-desc">Double-cell construction traps air for insulation — keeping attics cooler in summer and warmer in winter. The best thermal performer in our range.</div>
+<ul class="solution-features">
+<li>R-value up to 3.8 (double cell)</li>
+<li>Reduces heat gain by up to 60%</li>
+<li>Top-down / bottom-up operation</li>
+<li>Available in 140+ colours</li>
+<li>Tensioned for angled windows</li>
+</ul>
+<div class="solution-price">From <span>$429</span> per window</div>
+</div>
+<div class="solution-card reveal">
+<div class="solution-tag">Specialist</div>
+<div class="solution-name">Custom-Shape Shutters</div>
+<div class="solution-desc">For arched, triangular, or irregular dormer windows. CNC-cut from your exact measurements. The architectural statement piece your attic deserves.</div>
+<ul class="solution-features">
+<li>Any shape — arches, triangles, trapezoids</li>
+<li>Basswood or aluminium construction</li>
+<li>Adjustable louvres for light control</li>
+<li>Heritage-compliant finishes</li>
+<li>10-year structural warranty</li>
+</ul>
+<div class="solution-price">From <span>$680</span> per window</div>
+</div>
+</div>
+</section>
+
+<!-- MEASUREMENT GUIDE -->
+<section class="measure-guide">
+<div class="section-header">
+<div style="display:flex;align-items:flex-end">
+<span class="section-number reveal-left">04</span>
+<div>
+<h2 class="section-title reveal">How to Measure<br>Attic Windows</h2>
+</div>
+</div>
+<p class="section-desc reveal">Get approximate sizes for a quote. We'll do the precise measure on-site for free.</p>
+</div>
+<div class="measure-steps">
+<div class="measure-step reveal">
+<h3>Width at Top</h3>
+<p>Measure the inside width at the narrowest point of the window recess, from left edge to right edge.</p>
+</div>
+<div class="measure-step reveal">
+<h3>Width at Bottom</h3>
+<p>Repeat at the bottom. If widths differ, note both — your window may not be perfectly square.</p>
+</div>
+<div class="measure-step reveal">
+<h3>Drop / Height</h3>
+<p>Measure from the top of the recess to the sill. For angled windows, measure along the glass surface.</p>
+</div>
+<div class="measure-step reveal">
+<h3>Roof Angle</h3>
+<p>Use your phone's level app to measure the angle of the roof slope. This determines the mounting system we'll use.</p>
+</div>
+</div>
+<div class="measure-warning reveal">
+<div class="measure-warning-icon">⚠</div>
+<div>
+<p><strong>Don't stress about perfect measurements.</strong> Attic windows are notoriously tricky to measure. Just get us approximate numbers and a few photos. Our installer will do the precision measure on-site — it's part of the free consultation.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="cta-inner reveal">
+<h2>Your Attic Deserves<br>Better Than "Good Enough"</h2>
+<p>Free measure. Free design advice. Melbourne-wide installation.<br>We've fitted blinds to attics, lofts, and dormers across every suburb — from Victorian terraces in Fitzroy to modern builds in Point Cook.</p>
+<a href="tel:1300000000" class="cta-phone">1300 iSeek Blinds</a>
+<div style="margin-top:1rem">
+<a href="/contact.html" class="btn-brutal btn-brutal--red">Book Free Consultation</a>
+</div>
+<div class="cta-badges">
+<div class="cta-badge">Free Measure & Quote</div>
+<div class="cta-badge">Melbourne-Wide</div>
+<div class="cta-badge">5-Year Warranty</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">iSeek<span>Blinds</span> · Melbourne's Window Furnishings Specialists</div>
+<div class="footer-links">
+<a href="/index.html">Home</a>
+<a href="/products.html">Products</a>
+<a href="/landing/index.html">All Solutions</a>
+<a href="/contact.html">Contact</a>
+</div>
+<div class="footer-copy">© 2026 iSeekBlinds. All rights reserved. ABN XX XXX XXX XXX. Melbourne, Victoria.</div>
+</div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('hidden'),700)});
+
+// Header hide on scroll
+let lastY=0;const hdr=document.getElementById('mainHeader');
+window.addEventListener('scroll',()=>{const y=window.pageYOffset;hdr.classList.toggle('hide',y>lastY&&y>80);lastY=y},{passive:true});
+
+// Custom cursor
+const cur=document.getElementById('cursor');let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function animCur(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cur.style.transform=`translate(${cx-20}px,${cy-20}px)`;requestAnimationFrame(animCur)})();
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal,.reveal-left').forEach(el=>obs.observe(el));
+
+// Dormer blind slats animation
+function addSlats(){const w=document.getElementById('dormerWindow');if(!w)return;for(let i=0;i<12;i++){const s=document.createElement('div');s.className='blind-slat';s.style.top=(8+i*17)+'px';s.style.animationDelay=(i*.08)+'s';w.appendChild(s)}}
+setTimeout(addSlats,1200);
+
+// Challenge angle interaction
+document.querySelectorAll('.challenge-item').forEach(item=>{
+item.addEventListener('mouseenter',()=>{
+const a=item.dataset.angle;
+document.getElementById('angleNumber').textContent=a+'°';
+document.getElementById('angleLine').style.transform='rotate(-'+a+'deg)';
+});
+});
+
+// ===== QUIZ ENGINE =====
+let answers={};
+function selectOption(btn){
+const step=btn.closest('.quiz-step');
+step.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+btn.classList.add('selected');
+const stepNum=step.dataset.step;
+answers[stepNum]=btn.dataset.value;
+const nextBtn=document.getElementById('next'+stepNum);
+if(nextBtn)nextBtn.disabled=false;
+}
+
+function nextStep(n){
+document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+document.querySelector(`.quiz-step[data-step="${n}"]`).classList.add('active');
+updateProgress(n);
+}
+function prevStep(n){
+document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+document.querySelector(`.quiz-step[data-step="${n}"]`).classList.add('active');
+updateProgress(n);
+}
+function updateProgress(step){
+document.querySelectorAll('.quiz-progress-bar').forEach((bar,i)=>{
+bar.classList.toggle('active',i<step);
+});
+}
+
+function showResult(){
+document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+document.querySelectorAll('.quiz-progress-bar').forEach(b=>b.classList.add('active'));
+const result=document.getElementById('quizResult');
+result.classList.add('active');
+
+// Determine recommendation
+const type=answers['1']||'gable';
+const priority=answers['2']||'blackout';
+const operation=answers['3']||'manual';
+const budget=answers['4']||'mid';
+
+let rec={title:'Tensioned Roller Blinds',product:'SKYLINE BLOCKOUT ROLLER',desc:'A precision-tensioned roller blind with side channels, engineered for angled installations. Blockout fabric eliminates 100% of light. Available with manual spring or motorised operation.',light:'100%',heat:'R2.1',price:'$$'};
+
+if(type==='skylight'||type==='velux'){
+if(priority==='heat'){
+rec={title:'Honeycomb Cellular Blinds',product:'THERMA-CELL DOUBLE HONEYCOMB',desc:'Double-cell honeycomb structure creates an insulating air barrier. Purpose-built for roof skylights with tensioned guide wires. Reduces heat transfer by up to 60% and blocks UV without losing natural light.',light:'85%',heat:'R3.8',price:'$$$'};
+}else if(priority==='blackout'){
+rec={title:'Motorised Blackout Roller',product:'SKYLINE SMART BLACKOUT',desc:'Total darkness at the touch of a button. Motorised roller with side-seal channels eliminates every sliver of light. Integrates with Google Home, Alexa, and Apple HomeKit for scheduled operation.',light:'100%',heat:'R2.4',price:'$$$'};
+}else{
+rec={title:'Sunscreen Roller Blind',product:'SKYLINE SUNSCREEN 5%',desc:'5% openness factor lets you see out while blocking 95% of UV. Wire-tensioned for angled skylights. Maintains the view while cutting glare and heat.',light:'30%',heat:'R1.5',price:'$$'};
+}
+}else if(type==='arched'){
+rec={title:'Custom-Shape Plantation Shutters',product:'ARTISAN CUSTOM SHUTTER',desc:'CNC-machined to your exact window profile — arches, triangles, circles. Premium basswood construction with adjustable louvres. The architectural centrepiece your dormer was built for.',light:'90%',heat:'R2.8',price:'$$$$'};
+}else{
+if(priority==='heat'){
+rec={title:'Honeycomb Blinds',product:'THERMA-CELL STANDARD',desc:'Cellular honeycomb blinds with top-down/bottom-up flexibility. Perfect for vertical dormer windows that get intense afternoon sun. Insulates in winter too.',light:'80%',heat:'R3.2',price:'$$'};
+}else if(priority==='style'){
+rec={title:'Sheer & Blockout Combo',product:'DUETTE DAY-NIGHT',desc:'Two fabrics in one system — sheer for daytime softness, blockout for sleeping. Operates as a single blind with two positions. Elegant, practical, and designed to be seen.',light:'100%',heat:'R2.6',price:'$$$'};
+}
+}
+
+if(operation==='smart'||operation==='motorised'){
+rec.desc+=' Motorised with quiet DC motor and RF remote included.';
+if(budget==='luxury')rec.price='$$$$';
+else rec.price='$$$';
+}
+
+document.getElementById('resultTitle').textContent=rec.title;
+document.getElementById('resultProduct').textContent=rec.product;
+document.getElementById('resultDesc').textContent=rec.desc;
+document.getElementById('resultLight').textContent=rec.light;
+document.getElementById('resultHeat').textContent=rec.heat;
+document.getElementById('resultPrice').textContent=rec.price;
+
+result.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function resetQuiz(){
+answers={};
+document.getElementById('quizResult').classList.remove('active');
+document.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));
+document.querySelectorAll('.quiz-btn--next').forEach(b=>b.disabled=true);
+nextStep(1);
+updateProgress(1);
+}
+</script>
+</body>
+</html>
