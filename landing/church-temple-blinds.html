@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacred Space Window Treatments — Churches, Temples & Places of Worship | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialist blinds and window treatments for churches, temples, synagogues and sacred spaces. Preserve heritage architecture while controlling light, temperature and privacy. Expert installation across Melbourne.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CHURCH & TEMPLE BLINDS — Art Deco Timeline Journey ===== */
+    :root {
+      --ct-navy: #0a1225;
+      --ct-gold: #c9a84c;
+      --ct-gold-light: #e4d5a0;
+      --ct-ivory: #f5f0e6;
+      --ct-burgundy: #6b1d2a;
+      --ct-warm: #8c8478;
+      --ct-cream: #faf6ee;
+      --ct-dark: #0d0d0d;
+      --ct-mid: #2a2520;
+      --ct-display: 'Cinzel', Georgia, serif;
+      --ct-body: 'Jost', system-ui, sans-serif;
+    }
+
+    .lp-ct { background: var(--ct-navy); color: var(--ct-ivory); font-family: var(--ct-body); overflow-x: hidden; }
+    .lp-ct *, .lp-ct *::before, .lp-ct *::after { box-sizing: border-box; }
+
+    /* ===== Art Deco pattern overlay ===== */
+    .ct-deco-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.04;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, var(--ct-gold) 79px, var(--ct-gold) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, var(--ct-gold) 79px, var(--ct-gold) 80px);
+    }
+
+    /* ===== Header overrides ===== */
+    .lp-ct .header { background: var(--ct-navy); border-bottom: 1px solid rgba(201,168,76,0.25); position: sticky; top: 0; z-index: 200; }
+    .lp-ct .header .logo-i { color: var(--ct-gold); }
+    .lp-ct .header .logo-seek, .lp-ct .header .logo-blinds { color: var(--ct-ivory); }
+    .lp-ct .header .nav a { color: rgba(245,240,230,0.7); font-family: var(--ct-body); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; }
+    .lp-ct .header .nav a:hover { color: var(--ct-gold); }
+    .lp-ct .header .header-phone { color: var(--ct-gold-light); font-family: var(--ct-body); font-weight: 500; font-size: 0.8rem; }
+    .lp-ct .header .btn-primary { background: var(--ct-gold); color: var(--ct-navy); border: none; font-family: var(--ct-body); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 0; }
+    .lp-ct .header .btn-primary:hover { background: var(--ct-gold-light); }
+
+    .ct-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
+
+    /* ===== HERO — Cathedral arch motif ===== */
+    .ct-hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 120px 40px 80px;
+    }
+    .ct-hero::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 2px; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--ct-gold));
+    }
+    .ct-hero-arch {
+      width: 320px; height: 480px;
+      border: 2px solid var(--ct-gold);
+      border-radius: 160px 160px 0 0;
+      position: relative;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 60px 40px;
+      margin-bottom: 60px;
+      opacity: 0; transform: translateY(40px);
+      animation: ct-arch-in 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+    }
+    .ct-hero-arch::before {
+      content: '';
+      position: absolute; inset: 8px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 156px 156px 0 0;
+    }
+    .ct-hero-arch::after {
+      content: '✦';
+      position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+      font-size: 24px; color: var(--ct-gold);
+    }
+    @keyframes ct-arch-in {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ct-hero-sub {
+      font-family: var(--ct-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .ct-hero-title {
+      font-family: var(--ct-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ct-ivory);
+      letter-spacing: 0.03em;
+    }
+    .ct-hero-title em {
+      font-style: italic;
+      color: var(--ct-gold);
+    }
+    .ct-hero-desc {
+      font-family: var(--ct-body);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(245,240,230,0.65);
+      max-width: 640px;
+      font-weight: 300;
+    }
+    .ct-hero-stats {
+      display: flex; gap: 60px;
+      margin-top: 50px;
+    }
+    .ct-hero-stat {
+      text-align: center;
+      opacity: 0; transform: translateY(20px);
+      animation: ct-stat-in 0.8s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .ct-hero-stat:nth-child(1) { animation-delay: 1.2s; }
+    .ct-hero-stat:nth-child(2) { animation-delay: 1.4s; }
+    .ct-hero-stat:nth-child(3) { animation-delay: 1.6s; }
+    @keyframes ct-stat-in { to { opacity: 1; transform: translateY(0); } }
+    .ct-hero-stat-num {
+      font-family: var(--ct-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ct-gold);
+      display: block;
+    }
+    .ct-hero-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,240,230,0.5);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ===== Decorative divider ===== */
+    .ct-divider {
+      display: flex; align-items: center; justify-content: center;
+      gap: 20px; padding: 60px 0;
+    }
+    .ct-divider-line { width: 80px; height: 1px; background: var(--ct-gold); opacity: 0.4; }
+    .ct-divider-sym { color: var(--ct-gold); font-size: 14px; opacity: 0.6; }
+
+    /* ===== SACRED CHALLENGES section ===== */
+    .ct-challenges {
+      padding: 80px 0;
+    }
+    .ct-section-tag {
+      font-family: var(--ct-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .ct-section-title {
+      font-family: var(--ct-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      color: var(--ct-ivory);
+      line-height: 1.3;
+      margin-bottom: 50px;
+      letter-spacing: 0.02em;
+    }
+    .ct-challenges-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .ct-challenge-card {
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-challenge-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--ct-gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-challenge-card:hover::before { transform: scaleX(1); }
+    .ct-challenge-card:hover { background: rgba(201,168,76,0.04); }
+    .ct-challenge-num {
+      font-family: var(--ct-display);
+      font-size: 3rem; font-weight: 800;
+      color: rgba(201,168,76,0.1);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .ct-challenge-title {
+      font-family: var(--ct-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--ct-gold-light);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .ct-challenge-desc {
+      font-size: 0.95rem; line-height: 1.7;
+      color: rgba(245,240,230,0.55);
+      font-weight: 300;
+    }
+
+    /* ===== TIMELINE — The Journey ===== */
+    .ct-timeline {
+      padding: 100px 0;
+      position: relative;
+    }
+    .ct-timeline-line {
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent 0%, var(--ct-gold) 10%, var(--ct-gold) 90%, transparent 100%);
+      opacity: 0.3;
+      transform: translateX(-50%);
+    }
+    .ct-timeline-step {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+      align-items: start;
+      margin-bottom: 100px;
+      position: relative;
+    }
+    .ct-timeline-step:last-child { margin-bottom: 0; }
+
+    .ct-timeline-content {
+      padding: 0 40px;
+    }
+    .ct-timeline-step:nth-child(odd) .ct-timeline-content { grid-column: 1; text-align: right; }
+    .ct-timeline-step:nth-child(odd) .ct-timeline-visual { grid-column: 3; }
+    .ct-timeline-step:nth-child(even) .ct-timeline-content { grid-column: 3; text-align: left; }
+    .ct-timeline-step:nth-child(even) .ct-timeline-visual { grid-column: 1; grid-row: 1; }
+
+    .ct-timeline-node {
+      grid-column: 2;
+      display: flex; flex-direction: column; align-items: center;
+      justify-self: center;
+    }
+    .ct-timeline-diamond {
+      width: 36px; height: 36px;
+      border: 2px solid var(--ct-gold);
+      transform: rotate(45deg);
+      display: flex; align-items: center; justify-content: center;
+      background: var(--ct-navy);
+      position: relative; z-index: 2;
+      transition: all 0.4s ease;
+    }
+    .ct-timeline-step:hover .ct-timeline-diamond {
+      background: var(--ct-gold);
+    }
+    .ct-timeline-diamond-inner {
+      transform: rotate(-45deg);
+      font-family: var(--ct-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ct-gold);
+      transition: color 0.4s ease;
+    }
+    .ct-timeline-step:hover .ct-timeline-diamond-inner { color: var(--ct-navy); }
+
+    .ct-timeline-step-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .ct-timeline-step-title {
+      font-family: var(--ct-display);
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--ct-ivory);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .ct-timeline-step-desc {
+      font-size: 0.95rem; line-height: 1.8;
+      color: rgba(245,240,230,0.6);
+      font-weight: 300;
+    }
+
+    .ct-timeline-visual {
+      padding: 0 20px;
+    }
+    .ct-timeline-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.15);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ct-timeline-img::after {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(201,168,76,0.1);
+    }
+    .ct-timeline-img-icon {
+      font-size: 3rem;
+      opacity: 0.4;
+    }
+
+    /* ===== SOLUTIONS — Product cards ===== */
+    .ct-solutions {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent, rgba(201,168,76,0.03) 50%, transparent);
+    }
+    .ct-solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .ct-solution-card {
+      background: rgba(10,18,37,0.8);
+      border: 1px solid rgba(201,168,76,0.12);
+      padding: 50px 35px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-solution-card::before {
+      content: '';
+      position: absolute;
+      top: -100%; left: -100%;
+      width: 300%; height: 300%;
+      background: radial-gradient(circle at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .ct-solution-card:hover::before { opacity: 1; }
+    .ct-solution-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-4px); }
+
+    .ct-solution-icon {
+      font-size: 2.4rem;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .ct-solution-name {
+      font-family: var(--ct-display);
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--ct-gold-light);
+      margin-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+    .ct-solution-desc {
+      font-size: 0.88rem; line-height: 1.7;
+      color: rgba(245,240,230,0.5);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .ct-solution-features {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .ct-solution-features li {
+      font-size: 0.78rem;
+      color: rgba(245,240,230,0.45);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.06);
+      font-weight: 300;
+    }
+    .ct-solution-features li::before {
+      content: '◆ ';
+      color: var(--ct-gold);
+      font-size: 0.5rem;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* ===== VENUES served — scrolling marquee ===== */
+    .ct-venues {
+      padding: 60px 0;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      overflow: hidden;
+      position: relative; z-index: 1;
+    }
+    .ct-venues-track {
+      display: flex; gap: 60px;
+      animation: ct-marquee 30s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes ct-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ct-venue-item {
+      font-family: var(--ct-display);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.35);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .ct-venue-sep {
+      color: var(--ct-gold); opacity: 0.3;
+      flex-shrink: 0;
+    }
+
+    /* ===== HERITAGE section ===== */
+    .ct-heritage {
+      padding: 100px 0;
+    }
+    .ct-heritage-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .ct-heritage-content {}
+    .ct-heritage-quote {
+      font-family: var(--ct-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ct-gold-light);
+      line-height: 1.6;
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid var(--ct-gold);
+      margin-bottom: 30px;
+    }
+    .ct-heritage-text {
+      font-size: 0.95rem; line-height: 1.8;
+      color: rgba(245,240,230,0.6);
+      font-weight: 300;
+    }
+    .ct-heritage-visual {
+      position: relative;
+    }
+    .ct-heritage-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 2px solid var(--ct-gold);
+      border-radius: 50% 50% 0 0;
+      background: rgba(201,168,76,0.04);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .ct-heritage-frame::before {
+      content: '';
+      position: absolute; inset: 12px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50% 50% 0 0;
+    }
+    .ct-heritage-icon { font-size: 4rem; opacity: 0.3; margin-bottom: 20px; }
+    .ct-heritage-frame-text {
+      font-family: var(--ct-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      opacity: 0.5;
+    }
+
+    /* ===== LIGHT CONTROL interactive demo ===== */
+    .ct-light-demo {
+      padding: 100px 0;
+      background: var(--ct-mid);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      position: relative; z-index: 1;
+    }
+    .ct-light-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .ct-light-preview {
+      aspect-ratio: 16/10;
+      background: var(--ct-navy);
+      border: 1px solid rgba(201,168,76,0.2);
+      position: relative;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ct-light-window {
+      width: 50%; height: 70%;
+      border: 2px solid var(--ct-gold);
+      border-radius: 50% 50% 0 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    .ct-light-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top, rgba(201,168,76,0.6), transparent 70%);
+      transition: opacity 0.5s ease;
+    }
+    .ct-light-blind {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 0%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(10,18,37,0.9) 0px, rgba(10,18,37,0.9) 8px,
+        rgba(201,168,76,0.15) 8px, rgba(201,168,76,0.15) 9px
+      );
+      transition: height 0.5s ease;
+    }
+    .ct-light-controls {}
+    .ct-light-label {
+      font-family: var(--ct-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ct-ivory);
+      margin-bottom: 12px;
+    }
+    .ct-light-sublabel {
+      font-size: 0.85rem;
+      color: rgba(245,240,230,0.5);
+      font-weight: 300;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .ct-slider-group { margin-bottom: 30px; }
+    .ct-slider-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 10px;
+    }
+    .ct-slider-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      font-weight: 500;
+    }
+    .ct-slider-value {
+      font-family: var(--ct-display);
+      font-size: 0.9rem;
+      color: var(--ct-ivory);
+      font-weight: 600;
+    }
+    .ct-slider {
+      -webkit-appearance: none;
+      width: 100%; height: 2px;
+      background: rgba(201,168,76,0.2);
+      outline: none;
+      cursor: pointer;
+    }
+    .ct-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      background: var(--ct-gold);
+      cursor: pointer;
+      transform: rotate(45deg);
+      border: none;
+    }
+    .ct-slider::-moz-range-thumb {
+      width: 20px; height: 20px;
+      background: var(--ct-gold);
+      cursor: pointer;
+      border: none;
+    }
+    .ct-light-readout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 30px;
+    }
+    .ct-readout-box {
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 16px;
+      text-align: center;
+    }
+    .ct-readout-num {
+      font-family: var(--ct-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--ct-gold);
+    }
+    .ct-readout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,240,230,0.4);
+      margin-top: 4px;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .ct-testimonials {
+      padding: 100px 0;
+    }
+    .ct-testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 2px;
+    }
+    .ct-testimonial {
+      border: 1px solid rgba(201,168,76,0.12);
+      padding: 50px 40px;
+      position: relative;
+    }
+    .ct-testimonial:first-child {
+      grid-row: span 2;
+      display: flex; flex-direction: column; justify-content: center;
+      background: rgba(201,168,76,0.03);
+    }
+    .ct-testimonial-stars {
+      color: var(--ct-gold);
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+    .ct-testimonial-text {
+      font-family: var(--ct-display);
+      font-size: 1.1rem; font-weight: 400;
+      font-style: italic;
+      color: var(--ct-ivory);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .ct-testimonial:first-child .ct-testimonial-text {
+      font-size: 1.4rem;
+    }
+    .ct-testimonial-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      font-weight: 500;
+    }
+    .ct-testimonial-role {
+      font-size: 0.8rem;
+      color: rgba(245,240,230,0.4);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    /* ===== CTA section ===== */
+    .ct-cta {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+    }
+    .ct-cta::before, .ct-cta::after {
+      content: '';
+      position: absolute; left: 50%; transform: translateX(-50%);
+      width: 2px; background: var(--ct-gold); opacity: 0.3;
+    }
+    .ct-cta::before { top: 0; height: 60px; }
+    .ct-cta::after { bottom: 0; height: 60px; }
+    .ct-cta-arch {
+      width: 100%; max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 350px 350px 0 0;
+      padding: 80px 60px 60px;
+      position: relative;
+    }
+    .ct-cta-arch::before {
+      content: '✦';
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      font-size: 18px; color: var(--ct-gold);
+      background: var(--ct-navy); padding: 0 12px;
+    }
+    .ct-cta-title {
+      font-family: var(--ct-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      color: var(--ct-ivory);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .ct-cta-desc {
+      font-size: 1rem;
+      color: rgba(245,240,230,0.55);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .ct-cta-buttons {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    }
+    .ct-btn-gold {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px;
+      background: var(--ct-gold);
+      color: var(--ct-navy);
+      font-family: var(--ct-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .ct-btn-gold:hover { background: var(--ct-gold-light); transform: translateY(-2px); }
+    .ct-btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px;
+      background: transparent;
+      color: var(--ct-gold);
+      font-family: var(--ct-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--ct-gold);
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .ct-btn-outline:hover { background: rgba(201,168,76,0.1); }
+    .ct-cta-phone {
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: rgba(245,240,230,0.45);
+      font-weight: 300;
+    }
+    .ct-cta-phone a { color: var(--ct-gold-light); text-decoration: none; font-weight: 500; }
+
+    /* ===== Footer ===== */
+    .lp-ct .footer { background: var(--ct-dark); color: rgba(245,240,230,0.4); border-top: 1px solid rgba(201,168,76,0.15); }
+    .lp-ct .footer a { color: rgba(245,240,230,0.4); }
+    .lp-ct .footer a:hover { color: var(--ct-gold); }
+    .lp-ct .footer h4 { color: var(--ct-gold-light); font-family: var(--ct-display); letter-spacing: 0.05em; }
+
+    /* ===== REVEAL animations ===== */
+    .ct-reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-reveal.ct-visible {
+      opacity: 1; transform: translateY(0);
+    }
+    .ct-reveal-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-reveal-left.ct-visible { opacity: 1; transform: translateX(0); }
+    .ct-reveal-right {
+      opacity: 0; transform: translateX(40px);
+      transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ct-reveal-right.ct-visible { opacity: 1; transform: translateX(0); }
+
+    /* ===== Grain overlay ===== */
+    .ct-grain {
+      position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.025;
+    }
+
+    /* ===== LOADING ===== */
+    .ct-loader {
+      position: fixed; inset: 0; z-index: 10000;
+      background: var(--ct-navy);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .ct-loader.ct-loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+    .ct-loader-diamond {
+      width: 40px; height: 40px;
+      border: 2px solid var(--ct-gold);
+      transform: rotate(45deg);
+      animation: ct-pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes ct-pulse {
+      0%, 100% { transform: rotate(45deg) scale(1); opacity: 1; }
+      50% { transform: rotate(45deg) scale(1.15); opacity: 0.6; }
+    }
+    .ct-loader-text {
+      margin-top: 24px;
+      font-family: var(--ct-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ct-gold);
+      opacity: 0.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .ct-container { padding: 0 24px; }
+      .ct-hero-arch { width: 260px; height: 380px; padding: 40px 28px; }
+      .ct-hero-stats { gap: 30px; }
+      .ct-challenges-grid { grid-template-columns: 1fr; }
+      .ct-timeline-line { left: 30px; }
+      .ct-timeline-step {
+        grid-template-columns: 60px 1fr;
+        gap: 0;
+      }
+      .ct-timeline-step:nth-child(odd) .ct-timeline-content,
+      .ct-timeline-step:nth-child(even) .ct-timeline-content { grid-column: 2; text-align: left; }
+      .ct-timeline-step:nth-child(odd) .ct-timeline-visual,
+      .ct-timeline-step:nth-child(even) .ct-timeline-visual { grid-column: 2; grid-row: auto; margin-top: 20px; }
+      .ct-timeline-node { grid-column: 1; }
+      .ct-solutions-grid { grid-template-columns: 1fr; }
+      .ct-heritage-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ct-heritage-visual { order: -1; }
+      .ct-light-inner { grid-template-columns: 1fr; }
+      .ct-testimonials-grid { grid-template-columns: 1fr; }
+      .ct-testimonial:first-child { grid-row: auto; }
+      .ct-cta-arch { padding: 50px 30px 40px; border-radius: 200px 200px 0 0; }
+    }
+    @media (max-width: 600px) {
+      .ct-hero-arch { width: 220px; height: 320px; padding: 30px 20px; }
+      .ct-hero-stats { flex-direction: column; gap: 20px; }
+      .ct-challenge-card { padding: 30px 24px; }
+      .ct-cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="lp-ct">
+
+  <!-- Loading -->
+  <div class="ct-loader" id="ctLoader">
+    <div class="ct-loader-diamond"></div>
+    <div class="ct-loader-text">Sacred Spaces</div>
+  </div>
+
+  <!-- Art Deco grid overlay -->
+  <div class="ct-deco-bg"></div>
+  <!-- Film grain -->
+  <div class="ct-grain"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0493410484" class="header-phone">0493 410 484</a>
+        <a href="../contact.html" class="btn-primary">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="ct-hero">
+    <div class="ct-hero-arch">
+      <div class="ct-hero-sub">Window Treatments for Sacred Spaces</div>
+      <h1 class="ct-hero-title">Where <em>Light</em><br>Meets <em>Reverence</em></h1>
+    </div>
+    <p class="ct-hero-desc">
+      Every place of worship tells its story through light. We craft bespoke window treatments
+      that honour your sacred architecture — controlling glare, preserving heritage,
+      and letting the right light in at the right moment.
+    </p>
+    <div class="ct-hero-stats">
+      <div class="ct-hero-stat">
+        <span class="ct-hero-stat-num" data-count="120">0</span>
+        <span class="ct-hero-stat-label">Places of Worship Served</span>
+      </div>
+      <div class="ct-hero-stat">
+        <span class="ct-hero-stat-num" data-count="35">0</span>
+        <span class="ct-hero-stat-label">Years Combined Experience</span>
+      </div>
+      <div class="ct-hero-stat">
+        <span class="ct-hero-stat-num" data-count="15">0</span>
+        <span class="ct-hero-stat-label">Heritage-Listed Projects</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="ct-divider">
+    <div class="ct-divider-line"></div>
+    <span class="ct-divider-sym">✦</span>
+    <div class="ct-divider-line"></div>
+  </div>
+
+  <!-- ===== SACRED CHALLENGES ===== -->
+  <section class="ct-challenges">
+    <div class="ct-container">
+      <div class="ct-section-tag ct-reveal">The Unique Challenge</div>
+      <h2 class="ct-section-title ct-reveal">Sacred Spaces Demand<br>a Different Approach</h2>
+      <div class="ct-challenges-grid">
+        <div class="ct-challenge-card ct-reveal">
+          <div class="ct-challenge-num">01</div>
+          <div class="ct-challenge-title">Towering Windows</div>
+          <div class="ct-challenge-desc">Cathedral windows reaching 8+ metres. Standard solutions don't exist. We engineer motorised systems built to the exact dimensions of your arched, pointed, or rose windows.</div>
+        </div>
+        <div class="ct-challenge-card ct-reveal">
+          <div class="ct-challenge-num">02</div>
+          <div class="ct-challenge-title">Heritage Compliance</div>
+          <div class="ct-challenge-desc">Heritage overlays, council restrictions, conservation architects. We navigate the approvals process and use reversible, non-invasive installation methods that protect original fabric.</div>
+        </div>
+        <div class="ct-challenge-card ct-reveal">
+          <div class="ct-challenge-num">03</div>
+          <div class="ct-challenge-title">Acoustic Sensitivity</div>
+          <div class="ct-challenge-desc">Motors that whisper, not whir. Fabric that absorbs rather than reflects. Every element is chosen so your blinds enhance the acoustic character of the space, never disrupt it.</div>
+        </div>
+        <div class="ct-challenge-card ct-reveal">
+          <div class="ct-challenge-num">04</div>
+          <div class="ct-challenge-title">Multi-Purpose Demands</div>
+          <div class="ct-challenge-desc">Worship at dawn, presentations at noon, evening ceremonies by candlelight. Your blinds must adapt throughout the day — full blackout, filtered light, and everything between.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="ct-divider">
+    <div class="ct-divider-line"></div>
+    <span class="ct-divider-sym">◇</span>
+    <div class="ct-divider-line"></div>
+  </div>
+
+  <!-- ===== TIMELINE JOURNEY ===== -->
+  <section class="ct-timeline">
+    <div class="ct-container">
+      <div style="text-align:center; margin-bottom: 80px;">
+        <div class="ct-section-tag ct-reveal">Your Journey With Us</div>
+        <h2 class="ct-section-title ct-reveal" style="max-width:600px;margin-left:auto;margin-right:auto;">From First Visit to<br>Transformed Space</h2>
+      </div>
+
+      <div style="position:relative;">
+        <div class="ct-timeline-line"></div>
+
+        <!-- Step 1 -->
+        <div class="ct-timeline-step">
+          <div class="ct-timeline-content ct-reveal-left">
+            <div class="ct-timeline-step-tag">Step One</div>
+            <h3 class="ct-timeline-step-title">Sacred Space Audit</h3>
+            <p class="ct-timeline-step-desc">We visit your space to understand its unique character — the way light moves through the day, the architectural heritage, the acoustic needs, and how the space is used beyond worship. Not a sales call. A listening session.</p>
+          </div>
+          <div class="ct-timeline-node">
+            <div class="ct-timeline-diamond"><span class="ct-timeline-diamond-inner">I</span></div>
+          </div>
+          <div class="ct-timeline-visual ct-reveal-right">
+            <div class="ct-timeline-img"><span class="ct-timeline-img-icon">🏛️</span></div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="ct-timeline-step">
+          <div class="ct-timeline-content ct-reveal-right">
+            <div class="ct-timeline-step-tag">Step Two</div>
+            <h3 class="ct-timeline-step-title">Heritage & Compliance</h3>
+            <p class="ct-timeline-step-desc">If your building has heritage overlays or strata restrictions, we handle it. Our team prepares documentation, works with conservation architects, and ensures every installation method is reversible and non-damaging.</p>
+          </div>
+          <div class="ct-timeline-node">
+            <div class="ct-timeline-diamond"><span class="ct-timeline-diamond-inner">II</span></div>
+          </div>
+          <div class="ct-timeline-visual ct-reveal-left">
+            <div class="ct-timeline-img"><span class="ct-timeline-img-icon">📋</span></div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="ct-timeline-step">
+          <div class="ct-timeline-content ct-reveal-left">
+            <div class="ct-timeline-step-tag">Step Three</div>
+            <h3 class="ct-timeline-step-title">Bespoke Design</h3>
+            <p class="ct-timeline-step-desc">Every solution is engineered from scratch. We select fabrics that complement your interior palette, specify motorisation that meets acoustic requirements, and design mounting systems for non-standard window shapes.</p>
+          </div>
+          <div class="ct-timeline-node">
+            <div class="ct-timeline-diamond"><span class="ct-timeline-diamond-inner">III</span></div>
+          </div>
+          <div class="ct-timeline-visual ct-reveal-right">
+            <div class="ct-timeline-img"><span class="ct-timeline-img-icon">✏️</span></div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="ct-timeline-step">
+          <div class="ct-timeline-content ct-reveal-right">
+            <div class="ct-timeline-step-tag">Step Four</div>
+            <h3 class="ct-timeline-step-title">Respectful Installation</h3>
+            <p class="ct-timeline-step-desc">We work around your schedule — early mornings, between services, during school holidays. Our installers are trained in working within active worship spaces with the care and quiet these environments demand.</p>
+          </div>
+          <div class="ct-timeline-node">
+            <div class="ct-timeline-diamond"><span class="ct-timeline-diamond-inner">IV</span></div>
+          </div>
+          <div class="ct-timeline-visual ct-reveal-left">
+            <div class="ct-timeline-img"><span class="ct-timeline-img-icon">🔧</span></div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="ct-timeline-step">
+          <div class="ct-timeline-content ct-reveal-left">
+            <div class="ct-timeline-step-tag">Step Five</div>
+            <h3 class="ct-timeline-step-title">Light, Transformed</h3>
+            <p class="ct-timeline-step-desc">The moment you see your congregation in perfect, soft light — screens visible without glare, stained glass still glowing, temperature finally comfortable — that's when the investment makes sense. We stay for ongoing support.</p>
+          </div>
+          <div class="ct-timeline-node">
+            <div class="ct-timeline-diamond"><span class="ct-timeline-diamond-inner">V</span></div>
+          </div>
+          <div class="ct-timeline-visual ct-reveal-right">
+            <div class="ct-timeline-img"><span class="ct-timeline-img-icon">✨</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTIONS ===== -->
+  <section class="ct-solutions">
+    <div class="ct-container">
+      <div style="text-align:center; margin-bottom: 60px;">
+        <div class="ct-section-tag ct-reveal">Solutions Catalogue</div>
+        <h2 class="ct-section-title ct-reveal">Crafted for Every<br>Sacred Architecture</h2>
+      </div>
+      <div class="ct-solutions-grid">
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">🪟</span>
+          <div class="ct-solution-name">Motorised Roller Blinds</div>
+          <div class="ct-solution-desc">Whisper-quiet motors with programmable scenes. Set "Worship", "Presentation", and "Evening" modes that adjust all blinds simultaneously.</div>
+          <ul class="ct-solution-features">
+            <li>Ultra-quiet 35dB motors</li>
+            <li>Programmable scene presets</li>
+            <li>RF remote & wall switch</li>
+            <li>Custom widths to 6m+</li>
+          </ul>
+        </div>
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">⛪</span>
+          <div class="ct-solution-name">Arched Window Systems</div>
+          <div class="ct-solution-desc">Custom-shaped blinds that follow the exact contour of gothic, romanesque, or pointed arch windows. No light gaps, no compromise on form.</div>
+          <ul class="ct-solution-features">
+            <li>Shaped to any arch profile</li>
+            <li>Fan, half-circle & lancet</li>
+            <li>Reversible mounting</li>
+            <li>Heritage-safe brackets</li>
+          </ul>
+        </div>
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">🌡️</span>
+          <div class="ct-solution-name">Honeycomb Insulation</div>
+          <div class="ct-solution-desc">Double-cell honeycomb blinds trap air to insulate massive window expanses. Cut heating costs by up to 40% in draughty heritage buildings.</div>
+          <ul class="ct-solution-features">
+            <li>R-value up to 3.2</li>
+            <li>Double-cell construction</li>
+            <li>UV protection 98%</li>
+            <li>Condensation reduction</li>
+          </ul>
+        </div>
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">🎭</span>
+          <div class="ct-solution-name">Dual Blackout + Sheer</div>
+          <div class="ct-solution-desc">Two blinds in one cassette — switch between filtered daylight for gatherings and full blackout for projector presentations and evening services.</div>
+          <ul class="ct-solution-features">
+            <li>Single headrail, dual fabric</li>
+            <li>Sheer: 5% openness</li>
+            <li>Blockout: 100% opacity</li>
+            <li>Motorised or manual</li>
+          </ul>
+        </div>
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">🏗️</span>
+          <div class="ct-solution-name">Skylight & Clerestory</div>
+          <div class="ct-solution-desc">Tensioned systems for angled skylights and high clerestory windows. No sagging, no drooping — clean lines at any angle.</div>
+          <ul class="ct-solution-features">
+            <li>Tension wire guided</li>
+            <li>Any angle installation</li>
+            <li>Solar-powered motors</li>
+            <li>No mains wiring needed</li>
+          </ul>
+        </div>
+        <div class="ct-solution-card ct-reveal">
+          <span class="ct-solution-icon">🎵</span>
+          <div class="ct-solution-name">Acoustic Panel Blinds</div>
+          <div class="ct-solution-desc">Fabric panels that absorb sound reflections from hard window surfaces. Improve speech clarity and reduce echo in reverberant worship spaces.</div>
+          <ul class="ct-solution-features">
+            <li>NRC rating 0.65+</li>
+            <li>Panel track system</li>
+            <li>Stack to one side</li>
+            <li>Flame retardant fabrics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VENUE MARQUEE ===== -->
+  <div class="ct-venues">
+    <div class="ct-venues-track">
+      <span class="ct-venue-item">Churches</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Temples</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Synagogues</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Mosques</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Chapels</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Cathedrals</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Meditation Halls</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Community Centres</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Funeral Homes</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Heritage Halls</span><span class="ct-venue-sep">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ct-venue-item">Churches</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Temples</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Synagogues</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Mosques</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Chapels</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Cathedrals</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Meditation Halls</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Community Centres</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Funeral Homes</span><span class="ct-venue-sep">✦</span>
+      <span class="ct-venue-item">Heritage Halls</span><span class="ct-venue-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ===== HERITAGE PRESERVATION ===== -->
+  <section class="ct-heritage">
+    <div class="ct-container">
+      <div class="ct-heritage-grid">
+        <div class="ct-heritage-content ct-reveal-left">
+          <div class="ct-section-tag">Heritage Preservation</div>
+          <blockquote class="ct-heritage-quote">
+            "The light through those windows has told our story for a hundred years. We needed someone who understood that."
+          </blockquote>
+          <p class="ct-heritage-text">
+            Melbourne's sacred buildings span bluestone Gothic Revival churches from the 1860s to
+            modernist temples from the 1970s. Each has unique heritage requirements.<br><br>
+            Our approach is always conservation-first: reversible fixings, no drilling into heritage
+            stonework, colour-matched components that disappear into the architecture. We work
+            alongside your conservation architect — not against them.<br><br>
+            Every installation is documented with before/after photography and a detailed
+            methods statement, so your heritage file stays complete.
+          </p>
+        </div>
+        <div class="ct-heritage-visual ct-reveal-right">
+          <div class="ct-heritage-frame">
+            <span class="ct-heritage-icon">🕊️</span>
+            <span class="ct-heritage-frame-text">Preserving Sacred Light</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE LIGHT CONTROL DEMO ===== -->
+  <section class="ct-light-demo">
+    <div class="ct-container">
+      <div class="ct-light-inner">
+        <div class="ct-light-preview">
+          <div class="ct-light-window" id="ctWindow">
+            <div class="ct-light-glow" id="ctGlow"></div>
+            <div class="ct-light-blind" id="ctBlind"></div>
+          </div>
+        </div>
+        <div class="ct-light-controls">
+          <h3 class="ct-light-label">Interactive Light Control</h3>
+          <p class="ct-light-sublabel">Drag the sliders to see how our blinds transform light and temperature in your sacred space.</p>
+
+          <div class="ct-slider-group">
+            <div class="ct-slider-header">
+              <span class="ct-slider-name">Blind Coverage</span>
+              <span class="ct-slider-value" id="coverageVal">0%</span>
+            </div>
+            <input type="range" class="ct-slider" id="coverageSlider" min="0" max="100" value="0">
+          </div>
+
+          <div class="ct-slider-group">
+            <div class="ct-slider-header">
+              <span class="ct-slider-name">Light Intensity</span>
+              <span class="ct-slider-value" id="lightVal">100%</span>
+            </div>
+            <input type="range" class="ct-slider" id="lightSlider" min="0" max="100" value="100">
+          </div>
+
+          <div class="ct-light-readout">
+            <div class="ct-readout-box">
+              <div class="ct-readout-num" id="glareRead">100%</div>
+              <div class="ct-readout-label">Glare Level</div>
+            </div>
+            <div class="ct-readout-box">
+              <div class="ct-readout-num" id="tempRead">32°C</div>
+              <div class="ct-readout-label">Surface Temp</div>
+            </div>
+            <div class="ct-readout-box">
+              <div class="ct-readout-num" id="uvRead">98%</div>
+              <div class="ct-readout-label">UV Exposure</div>
+            </div>
+            <div class="ct-readout-box">
+              <div class="ct-readout-num" id="energyRead">$0</div>
+              <div class="ct-readout-label">Annual Savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="ct-testimonials">
+    <div class="ct-container">
+      <div style="text-align:center; margin-bottom: 60px;">
+        <div class="ct-section-tag ct-reveal">Voices of Faith</div>
+        <h2 class="ct-section-title ct-reveal">Trusted by Melbourne's<br>Faith Communities</h2>
+      </div>
+      <div class="ct-testimonials-grid">
+        <div class="ct-testimonial ct-reveal">
+          <div class="ct-testimonial-stars">★ ★ ★ ★ ★</div>
+          <p class="ct-testimonial-text">"Our 1890 church had windows no one could solve. These people didn't just install blinds — they studied the building, understood the light, and gave us something that feels like it was always there."</p>
+          <div class="ct-testimonial-author">Rev. Margaret Chen</div>
+          <div class="ct-testimonial-role">St Andrew's Uniting Church, Hawthorn</div>
+        </div>
+        <div class="ct-testimonial ct-reveal">
+          <div class="ct-testimonial-stars">★ ★ ★ ★ ★</div>
+          <p class="ct-testimonial-text">"The motorised system is so quiet — our congregation doesn't even notice when they adjust during service. And the energy savings have been remarkable."</p>
+          <div class="ct-testimonial-author">Father Anthony Russo</div>
+          <div class="ct-testimonial-role">Sacred Heart Catholic Church, Oakleigh</div>
+        </div>
+        <div class="ct-testimonial ct-reveal">
+          <div class="ct-testimonial-stars">★ ★ ★ ★ ★</div>
+          <p class="ct-testimonial-text">"They worked entirely outside prayer times and left the space immaculate each day. The respect for our community's needs was evident throughout."</p>
+          <div class="ct-testimonial-author">Imam Yusuf Al-Rashid</div>
+          <div class="ct-testimonial-role">Melbourne Islamic Centre, Broadmeadows</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="ct-cta">
+    <div class="ct-container">
+      <div class="ct-cta-arch ct-reveal">
+        <h2 class="ct-cta-title">Let There Be<br>the Right Light</h2>
+        <p class="ct-cta-desc">
+          Every sacred space deserves window treatments as considered as its architecture.
+          Book a free consultation — we'll visit, listen, and propose something worthy of your space.
+        </p>
+        <div class="ct-cta-buttons">
+          <a href="../contact.html" class="ct-btn-gold">Book Sacred Space Consultation</a>
+          <a href="tel:0493410484" class="ct-btn-outline">Call 0493 410 484</a>
+        </div>
+        <p class="ct-cta-phone">Or email <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>iSeekBlinds</h4>
+        <p>Melbourne's specialist in sacred space window treatments. Reverent solutions for churches, temples, and places of worship.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="heritage-homes.html">Heritage Homes</a>
+        <a href="commercial-blinds.html">Commercial</a>
+        <a href="acoustic-solutions.html">Acoustic</a>
+        <a href="motorised-blinds.html">Motorised</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0493410484">0493 410 484</a>
+        <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a>
+        <p>Melbourne, VIC</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 iSeekBlinds. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== LOADER ===== */
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('ctLoader').classList.add('ct-loaded'), 600);
+    });
+
+    /* ===== SCROLL REVEALS ===== */
+    const ctObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('ct-visible'), i * 80);
+          ctObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.ct-reveal, .ct-reveal-left, .ct-reveal-right').forEach(el => ctObserver.observe(el));
+
+    /* ===== COUNTER ANIMATION ===== */
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('[data-count]').forEach(el => {
+            const target = parseInt(el.dataset.count);
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 40));
+            const interval = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(interval); }
+              el.textContent = current;
+            }, 35);
+          });
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const statsEl = document.querySelector('.ct-hero-stats');
+    if (statsEl) counterObs.observe(statsEl);
+
+    /* ===== LIGHT CONTROL DEMO ===== */
+    const coverageSlider = document.getElementById('coverageSlider');
+    const lightSlider = document.getElementById('lightSlider');
+    const blind = document.getElementById('ctBlind');
+    const glow = document.getElementById('ctGlow');
+
+    function updateLightDemo() {
+      const coverage = parseInt(coverageSlider.value);
+      const light = parseInt(lightSlider.value);
+
+      // Visual
+      blind.style.height = coverage + '%';
+      glow.style.opacity = (light / 100) * (1 - coverage / 120);
+
+      // Labels
+      document.getElementById('coverageVal').textContent = coverage + '%';
+      document.getElementById('lightVal').textContent = light + '%';
+
+      // Readouts
+      const effectiveGlare = Math.max(0, Math.round(light * (1 - coverage / 110)));
+      const temp = Math.round(32 - (coverage * 0.12) - ((100 - light) * 0.04));
+      const uv = Math.max(0, Math.round(98 - coverage * 0.95));
+      const savings = Math.round(coverage * 28 + (100 - light) * 8);
+
+      document.getElementById('glareRead').textContent = effectiveGlare + '%';
+      document.getElementById('tempRead').textContent = temp + '°C';
+      document.getElementById('uvRead').textContent = uv + '%';
+      document.getElementById('energyRead').textContent = '$' + savings.toLocaleString();
+    }
+
+    coverageSlider.addEventListener('input', updateLightDemo);
+    lightSlider.addEventListener('input', updateLightDemo);
+    updateLightDemo();
+
+    /* ===== MOBILE MENU ===== */
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn && nav) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
