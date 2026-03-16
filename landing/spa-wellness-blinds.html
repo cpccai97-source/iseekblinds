@@ -3,1073 +3,656 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spa & Wellness Centre Window Blinds | iSeekBlinds Melbourne</title>
-  <meta name="description" content="Specialist window treatments for spas, wellness centres, yoga studios & beauty salons in Melbourne. Moisture-resistant, light-filtering blinds that create the perfect calming ambiance. Free consultation.">
-  <meta name="keywords" content="spa blinds Melbourne, wellness centre window treatments, yoga studio blinds, beauty salon window furnishings, massage room blinds, moisture resistant blinds spa, light filtering wellness blinds">
+  <title>Spa & Wellness Centre Blinds | Serenity by Design | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Bespoke blinds for spas, wellness centres & day retreats. Moisture-resistant, light-diffusing treatments that create calm. Melbourne specialists with Australia-wide delivery.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* === SPA WELLNESS THEME — 温暖自然风 Warm Natural === */
     :root {
-      --sw-cream: #faf6f0;
-      --sw-sand: #e8ddd0;
-      --sw-terracotta: #c4704b;
-      --sw-terracotta-light: #d98a68;
-      --sw-terracotta-glow: rgba(196, 112, 75, 0.12);
-      --sw-sage: #7a9a7e;
-      --sw-sage-deep: #4d6e51;
-      --sw-olive: #8b9a6b;
-      --sw-earth: #6b5b4a;
-      --sw-earth-light: #8a7a69;
-      --sw-warm-white: #fffcf7;
-      --sw-text: #3d3229;
-      --sw-text-soft: #6b5f54;
-      --sw-bg: #f7f2eb;
-      --sw-radius: 24px;
-      --sw-radius-sm: 14px;
+      --sp-white: #fafaf8;
+      --sp-paper: #f3f1ed;
+      --sp-ink: #1c1c1a;
+      --sp-muted: #8a8680;
+      --sp-line: rgba(28,28,26,0.08);
+      --sp-sage: #7a8b6f;
+      --sp-warm: #c4a882;
+      --sp-blush: #d4b5a0;
+      --sp-deep: #3a3632;
+      --sp-font-display: 'Bodoni Moda', 'Georgia', serif;
+      --sp-font-body: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .lp-spa { background: var(--sp-white); color: var(--sp-ink); font-family: var(--sp-font-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .lp-spa * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .sw-wellness {
-      background: var(--sw-bg);
-      color: var(--sw-text);
-      font-family: 'Nunito', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.75;
-      font-weight: 400;
-    }
+    /* ===== LOADING ===== */
+    .sp-loader { position: fixed; inset: 0; z-index: 9999; background: var(--sp-white); display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
+    .sp-loader.sp-loaded { opacity: 0; visibility: hidden; }
+    .sp-loader-line { width: 120px; height: 1px; background: var(--sp-line); position: relative; overflow: hidden; }
+    .sp-loader-line::after { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: var(--sp-ink); animation: sp-load 1.2s ease-in-out infinite; }
+    @keyframes sp-load { 0% { left: -100%; } 100% { left: 100%; } }
 
-    .sw-wellness h1, .sw-wellness h2, .sw-wellness h3, .sw-wellness h4 {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--sw-text);
-      font-weight: 400;
-      line-height: 1.2;
-    }
+    /* ===== HEADER OVERRIDES ===== */
+    .lp-spa .header { background: rgba(250,250,248,0.92); border-bottom: 1px solid var(--sp-line); position: fixed; top: 0; left: 0; right: 0; z-index: 300; backdrop-filter: blur(20px); transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .lp-spa .header.sp-hidden { transform: translateY(-100%); }
+    .lp-spa .header .logo-i { color: var(--sp-sage); }
+    .lp-spa .header .logo-seek, .lp-spa .header .logo-blinds { color: var(--sp-ink); }
+    .lp-spa .header .nav a { color: var(--sp-muted); font-family: var(--sp-font-body); font-size: 0.72rem; letter-spacing: 0.08em; font-weight: 400; }
+    .lp-spa .header .nav a:hover { color: var(--sp-sage); }
+    .lp-spa .header .header-phone { color: var(--sp-deep); font-family: var(--sp-font-body); font-weight: 300; font-size: 0.78rem; }
+    .lp-spa .header .btn-primary { background: var(--sp-ink); color: var(--sp-white); border: none; font-family: var(--sp-font-body); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; border-radius: 0; padding: 10px 28px; }
+    .lp-spa .header .btn-primary:hover { background: var(--sp-sage); }
 
-    .sw-wellness .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+    /* ===== CONTENT COLUMN ===== */
+    .sp-col { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    .sp-col-wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .sp-col-full { width: 100%; padding: 0; }
 
-    /* Header overrides for warm theme */
-    .sw-wellness .header {
-      background: rgba(250, 246, 240, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(196, 112, 75, 0.1);
-    }
-    .sw-wellness .header .nav a {
-      color: var(--sw-text);
-    }
-    .sw-wellness .header .nav a:hover {
-      color: var(--sw-terracotta);
-    }
-    .sw-wellness .header .btn-primary {
-      background: var(--sw-terracotta);
-      color: #fff;
-      border: none;
-      border-radius: var(--sw-radius-sm);
-    }
-    .sw-wellness .header .btn-primary:hover {
-      background: var(--sw-terracotta-light);
-    }
-    .sw-wellness .mobile-menu-btn {
-      color: var(--sw-terracotta);
-    }
+    /* ===== HERO ===== */
+    .sp-hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 80px; position: relative; }
+    .sp-hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, var(--sp-paper) 0%, var(--sp-white) 100%); }
+    .sp-hero-content { position: relative; z-index: 2; }
+    .sp-hero-label { font-family: var(--sp-font-body); font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sp-muted); margin-bottom: 32px; font-weight: 400; }
+    .sp-hero-title { font-family: var(--sp-font-display); font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; color: var(--sp-ink); }
+    .sp-hero-title em { font-style: italic; color: var(--sp-sage); }
+    .sp-hero-rule { width: 60px; height: 1px; background: var(--sp-ink); margin: 40px 0; opacity: 0.3; }
+    .sp-hero-sub { font-family: var(--sp-font-body); font-size: 1.05rem; line-height: 1.7; color: var(--sp-muted); font-weight: 300; max-width: 480px; }
 
-    /* Animations */
-    @keyframes swFadeUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes swFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes swScaleIn {
-      from { opacity: 0; transform: scale(0.92); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes swFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    @keyframes swOrganicPulse {
-      0%, 100% { border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%; }
-      33% { border-radius: 40% 60% 50% 50% / 60% 40% 50% 60%; }
-      66% { border-radius: 50% 50% 40% 60% / 40% 50% 60% 40%; }
-    }
-    @keyframes swLeafSway {
-      0%, 100% { transform: rotate(-2deg); }
-      50% { transform: rotate(2deg); }
-    }
+    /* ===== READING PROGRESS ===== */
+    .sp-progress { position: fixed; top: 0; left: 0; width: 0%; height: 2px; background: var(--sp-sage); z-index: 999; transition: width 0.1s linear; }
 
-    .sw-animate {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .sw-animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* ===== ARTICLE BODY ===== */
+    .sp-article { padding: 100px 0 60px; }
+    .sp-section { margin-bottom: 100px; }
+    .sp-section:last-child { margin-bottom: 0; }
 
-    /* === HERO === */
-    .sw-hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: var(--sw-cream);
-    }
-    .sw-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=1600&q=80') center/cover no-repeat;
-      filter: brightness(0.55) saturate(0.8);
-    }
-    .sw-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, rgba(250,246,240,0.85) 0%, rgba(196,112,75,0.15) 40%, rgba(122,154,126,0.25) 100%);
-    }
-    .sw-hero-organic {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(ellipse, rgba(196,112,75,0.08) 0%, transparent 70%);
-      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
-      animation: swOrganicPulse 15s ease-in-out infinite;
-      top: -100px;
-      right: -100px;
-    }
-    .sw-hero-organic-2 {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(ellipse, rgba(122,154,126,0.1) 0%, transparent 70%);
-      border-radius: 40% 60% 50% 50% / 60% 40% 50% 60%;
-      animation: swOrganicPulse 18s ease-in-out infinite reverse;
-      bottom: -80px;
-      left: -80px;
-    }
-    .sw-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      padding: 7rem 2rem 5rem;
-    }
-    .sw-hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: rgba(122, 154, 126, 0.15);
-      border: 1px solid rgba(122, 154, 126, 0.3);
-      color: var(--sw-sage-deep);
-      padding: 0.5rem 1.5rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border-radius: 50px;
-      margin-bottom: 2rem;
-      animation: swFadeIn 1s ease 0.3s both;
-    }
-    .sw-hero-tag .sw-leaf {
-      font-size: 1rem;
-      animation: swLeafSway 3s ease-in-out infinite;
-      display: inline-block;
-    }
-    .sw-hero h1 {
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      line-height: 1.08;
-      margin-bottom: 1.5rem;
-      animation: swFadeUp 1s ease 0.5s both;
-      color: var(--sw-text);
-    }
-    .sw-hero h1 em {
-      font-style: italic;
-      color: var(--sw-terracotta);
-    }
-    .sw-hero-divider {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--sw-terracotta), var(--sw-sage));
-      border-radius: 2px;
-      margin-bottom: 1.5rem;
-      animation: swFadeIn 1s ease 0.8s both;
-    }
-    .sw-hero p {
-      font-size: 1.1rem;
-      color: var(--sw-text-soft);
-      max-width: 520px;
-      margin-bottom: 2.5rem;
-      animation: swFadeUp 1s ease 1s both;
-    }
-    .sw-hero-ctas {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: swFadeUp 1s ease 1.2s both;
-    }
-    .sw-btn-primary {
-      display: inline-block;
-      background: var(--sw-terracotta);
-      color: #fff;
-      padding: 1rem 2.2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-      box-shadow: 0 4px 20px rgba(196, 112, 75, 0.25);
-    }
-    .sw-btn-primary:hover {
-      background: var(--sw-terracotta-light);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(196, 112, 75, 0.35);
-    }
-    .sw-btn-secondary {
-      display: inline-block;
-      border: 2px solid var(--sw-sage);
-      color: var(--sw-sage-deep);
-      padding: 0.9rem 2.2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.4s ease;
-    }
-    .sw-btn-secondary:hover {
-      background: var(--sw-sage);
-      color: #fff;
-      transform: translateY(-3px);
+    /* ===== PULL QUOTE ===== */
+    .sp-pullquote { font-family: var(--sp-font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; line-height: 1.3; color: var(--sp-sage); text-align: center; padding: 80px 0; border-top: 1px solid var(--sp-line); border-bottom: 1px solid var(--sp-line); margin: 80px 0; position: relative; }
+    .sp-pullquote::before { content: '"'; font-family: var(--sp-font-display); font-size: 8rem; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: var(--sp-line); line-height: 1; opacity: 0.5; }
+
+    /* ===== PARAGRAPH ===== */
+    .sp-body { font-family: var(--sp-font-body); font-size: 1rem; line-height: 1.85; color: var(--sp-deep); font-weight: 300; margin-bottom: 28px; }
+    .sp-body strong { font-weight: 600; color: var(--sp-ink); }
+    .sp-dropcap::first-letter { font-family: var(--sp-font-display); float: left; font-size: 4.2rem; line-height: 0.85; padding-right: 12px; padding-top: 6px; color: var(--sp-sage); font-weight: 700; }
+
+    /* ===== HEADINGS ===== */
+    .sp-h2 { font-family: var(--sp-font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 400; line-height: 1.15; color: var(--sp-ink); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .sp-h3 { font-family: var(--sp-font-body); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sp-muted); font-weight: 500; margin-bottom: 24px; }
+    .sp-label { font-family: var(--sp-font-body); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sp-warm); font-weight: 500; margin-bottom: 12px; display: block; }
+
+    /* ===== DIVIDER ===== */
+    .sp-divider { width: 40px; height: 1px; background: var(--sp-ink); opacity: 0.15; margin: 60px auto; }
+    .sp-divider-dot { text-align: center; margin: 60px 0; color: var(--sp-muted); font-size: 0.7rem; letter-spacing: 1em; }
+
+    /* ===== FULL BLEED IMAGE BAND ===== */
+    .sp-bleed { width: 100vw; margin-left: calc(-50vw + 50%); height: 50vh; min-height: 360px; position: relative; overflow: hidden; margin-top: 80px; margin-bottom: 80px; }
+    .sp-bleed-inner { position: absolute; inset: -40px; background-size: cover; background-position: center; filter: grayscale(0.2) contrast(0.95); transition: transform 6s ease-out; }
+    .sp-bleed.sp-vis .sp-bleed-inner { transform: scale(1.04); }
+    .sp-bleed-caption { position: absolute; bottom: 20px; right: 24px; font-family: var(--sp-font-body); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .sp-bleed-gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(250,250,248,0.15) 0%, transparent 30%, transparent 70%, rgba(250,250,248,0.3) 100%); }
+
+    /* ===== STAT BAND ===== */
+    .sp-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--sp-line); margin: 80px 0; }
+    .sp-stat { background: var(--sp-white); padding: 48px 32px; text-align: center; }
+    .sp-stat-num { font-family: var(--sp-font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; color: var(--sp-ink); line-height: 1; margin-bottom: 8px; }
+    .sp-stat-label { font-family: var(--sp-font-body); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sp-muted); font-weight: 400; }
+
+    /* ===== INTERACTIVE AMBIENCE SLIDER ===== */
+    .sp-ambience { background: var(--sp-paper); padding: 60px 40px; margin: 80px 0; position: relative; }
+    .sp-ambience-title { font-family: var(--sp-font-display); font-size: 1.4rem; font-weight: 400; text-align: center; margin-bottom: 40px; color: var(--sp-ink); }
+    .sp-ambience-scene { width: 100%; height: 200px; border-radius: 0; position: relative; overflow: hidden; margin-bottom: 32px; transition: background 0.6s ease; background: linear-gradient(135deg, #e8e4dc 0%, #d4cfc5 100%); }
+    .sp-ambience-light { position: absolute; top: -20%; left: 30%; width: 40%; height: 60%; background: radial-gradient(ellipse, rgba(255,248,230,0.8) 0%, transparent 70%); transition: opacity 0.6s ease; }
+    .sp-ambience-blinds { position: absolute; bottom: 0; left: 0; right: 0; display: flex; gap: 2px; }
+    .sp-ambience-slat { flex: 1; height: 200px; background: rgba(196,168,130,0.3); transition: transform 0.4s ease, height 0.4s ease; transform-origin: top; }
+    .sp-ambience-control { display: flex; align-items: center; gap: 20px; }
+    .sp-ambience-control label { font-family: var(--sp-font-body); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sp-muted); font-weight: 500; white-space: nowrap; }
+    .sp-ambience-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 1px; background: var(--sp-ink); outline: none; opacity: 0.3; }
+    .sp-ambience-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--sp-ink); cursor: pointer; }
+    .sp-ambience-slider::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--sp-ink); cursor: pointer; border: none; }
+    .sp-ambience-mood { font-family: var(--sp-font-display); font-style: italic; font-size: 1rem; text-align: center; color: var(--sp-sage); margin-top: 20px; min-height: 1.5em; transition: opacity 0.3s ease; }
+
+    /* ===== PRODUCT CARDS (editorial style) ===== */
+    .sp-products { display: grid; gap: 1px; background: var(--sp-line); margin: 60px 0; }
+    .sp-product { display: grid; grid-template-columns: 1fr 1fr; background: var(--sp-white); min-height: 300px; transition: background 0.4s ease; }
+    .sp-product:hover { background: var(--sp-paper); }
+    .sp-product:nth-child(even) { direction: rtl; }
+    .sp-product:nth-child(even) > * { direction: ltr; }
+    .sp-product-img { background-size: cover; background-position: center; min-height: 300px; position: relative; }
+    .sp-product-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--sp-white) 0%, transparent 20%); opacity: 0; transition: opacity 0.4s ease; }
+    .sp-product:nth-child(even) .sp-product-img::after { background: linear-gradient(-90deg, var(--sp-white) 0%, transparent 20%); }
+    .sp-product-info { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .sp-product-name { font-family: var(--sp-font-display); font-size: 1.5rem; font-weight: 400; color: var(--sp-ink); margin-bottom: 12px; }
+    .sp-product-desc { font-family: var(--sp-font-body); font-size: 0.88rem; line-height: 1.7; color: var(--sp-muted); font-weight: 300; margin-bottom: 20px; }
+    .sp-product-tag { font-family: var(--sp-font-body); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sp-warm); font-weight: 500; }
+
+    /* ===== TESTIMONIAL ===== */
+    .sp-testimonial { text-align: center; padding: 100px 0; }
+    .sp-testimonial-text { font-family: var(--sp-font-display); font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 400; font-style: italic; line-height: 1.55; color: var(--sp-deep); max-width: 560px; margin: 0 auto 24px; }
+    .sp-testimonial-attr { font-family: var(--sp-font-body); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sp-muted); font-weight: 400; }
+
+    /* ===== HUMIDITY METER ===== */
+    .sp-humidity { margin: 60px 0; }
+    .sp-humidity-bar { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+    .sp-humidity-label { font-family: var(--sp-font-body); font-size: 0.72rem; color: var(--sp-muted); font-weight: 400; min-width: 100px; }
+    .sp-humidity-track { flex: 1; height: 3px; background: var(--sp-line); position: relative; overflow: hidden; }
+    .sp-humidity-fill { height: 100%; background: var(--sp-sage); width: 0%; transition: width 1.2s cubic-bezier(0.22,1,0.36,1); }
+    .sp-humidity-val { font-family: var(--sp-font-display); font-size: 0.9rem; color: var(--sp-ink); min-width: 44px; text-align: right; }
+
+    /* ===== ZONES GRID ===== */
+    .sp-zones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--sp-line); margin: 60px 0; }
+    .sp-zone { background: var(--sp-white); padding: 40px 32px; cursor: default; transition: background 0.4s ease; }
+    .sp-zone:hover { background: var(--sp-paper); }
+    .sp-zone-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .sp-zone-name { font-family: var(--sp-font-display); font-size: 1.1rem; font-weight: 400; color: var(--sp-ink); margin-bottom: 8px; }
+    .sp-zone-need { font-family: var(--sp-font-body); font-size: 0.78rem; line-height: 1.6; color: var(--sp-muted); font-weight: 300; }
+    .sp-zone-rec { font-family: var(--sp-font-body); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sp-sage); font-weight: 500; margin-top: 12px; }
+
+    /* ===== CTA ===== */
+    .sp-cta { text-align: center; padding: 120px 0 100px; }
+    .sp-cta-title { font-family: var(--sp-font-display); font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 400; line-height: 1.1; color: var(--sp-ink); margin-bottom: 20px; }
+    .sp-cta-title em { font-style: italic; color: var(--sp-sage); }
+    .sp-cta-sub { font-family: var(--sp-font-body); font-size: 0.95rem; color: var(--sp-muted); font-weight: 300; margin-bottom: 40px; line-height: 1.6; }
+    .sp-cta-btn { display: inline-block; font-family: var(--sp-font-body); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--sp-white); background: var(--sp-ink); padding: 18px 52px; text-decoration: none; position: relative; overflow: hidden; transition: color 0.4s ease; }
+    .sp-cta-btn::before { content: ''; position: absolute; inset: 0; background: var(--sp-sage); transform: translateX(-101%); transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .sp-cta-btn:hover::before { transform: translateX(0); }
+    .sp-cta-btn span { position: relative; z-index: 1; }
+    .sp-cta-secondary { display: block; margin-top: 16px; font-family: var(--sp-font-body); font-size: 0.72rem; color: var(--sp-muted); text-decoration: none; font-weight: 300; }
+    .sp-cta-secondary:hover { color: var(--sp-sage); }
+
+    /* ===== PROCESS STEPS ===== */
+    .sp-process { counter-reset: step; margin: 60px 0; }
+    .sp-step { display: grid; grid-template-columns: 60px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--sp-line); counter-increment: step; }
+    .sp-step:first-child { border-top: 1px solid var(--sp-line); }
+    .sp-step-num::before { content: counter(step, decimal-leading-zero); font-family: var(--sp-font-display); font-size: 1.5rem; color: var(--sp-warm); font-weight: 400; }
+    .sp-step-title { font-family: var(--sp-font-display); font-size: 1.15rem; font-weight: 400; color: var(--sp-ink); margin-bottom: 6px; }
+    .sp-step-desc { font-family: var(--sp-font-body); font-size: 0.82rem; line-height: 1.65; color: var(--sp-muted); font-weight: 300; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .sp-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .sp-reveal.sp-vis { opacity: 1; transform: translateY(0); }
+    .sp-reveal-line { opacity: 0; transform: translateY(12px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .sp-reveal-line.sp-vis { opacity: 1; transform: translateY(0); }
+
+    /* ===== GRAIN OVERLAY ===== */
+    .sp-grain::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: 0.018; pointer-events: none; z-index: 9998; }
+
+    /* ===== FOOTER OVERRIDES ===== */
+    .lp-spa .footer { background: var(--sp-ink); }
+    .lp-spa .footer .logo-i { color: var(--sp-sage); }
+    .lp-spa .footer .logo-seek, .lp-spa .footer .logo-blinds { color: var(--sp-paper); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .sp-hero { min-height: 85vh; padding-bottom: 60px; }
+      .sp-hero-title { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+      .sp-stats { grid-template-columns: 1fr; }
+      .sp-product { grid-template-columns: 1fr; }
+      .sp-product:nth-child(even) { direction: ltr; }
+      .sp-product-img { min-height: 220px; }
+      .sp-product-info { padding: 32px 24px; }
+      .sp-zones { grid-template-columns: 1fr; }
+      .sp-ambience { padding: 40px 24px; }
+      .sp-bleed { height: 35vh; min-height: 240px; }
+      .sp-step { grid-template-columns: 40px 1fr; gap: 16px; }
+      .sp-pullquote { font-size: clamp(1.3rem, 5vw, 1.8rem); padding: 60px 0; }
     }
 
-    /* === WHY SPA BLINDS MATTER === */
-    .sw-why {
-      padding: 7rem 0;
-      background: var(--sw-warm-white);
-      position: relative;
-    }
-    .sw-why::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, var(--sw-terracotta-glow) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .sw-section-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sw-sage-deep);
-      margin-bottom: 1rem;
-    }
-    .sw-why-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .sw-why-header h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 1rem;
-    }
-    .sw-why-header p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--sw-text-soft);
-      font-size: 1.05rem;
-    }
-    .sw-why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .sw-why-card {
-      background: var(--sw-cream);
-      border-radius: var(--sw-radius);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: all 0.4s ease;
-      border: 1px solid rgba(196, 112, 75, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-    .sw-why-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--sw-terracotta), var(--sw-sage));
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-    .sw-why-card:hover::after {
-      transform: scaleX(1);
-    }
-    .sw-why-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(107, 91, 74, 0.08);
-    }
-    .sw-why-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      background: var(--sw-terracotta-glow);
-      border-radius: 50% 40% 50% 40%;
-      animation: swOrganicPulse 12s ease-in-out infinite;
-    }
-    .sw-why-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-    }
-    .sw-why-card p {
-      color: var(--sw-text-soft);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* === OUR RANGE === */
-    .sw-range {
-      padding: 7rem 0;
-      background: var(--sw-bg);
-    }
-    .sw-range-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .sw-range-header h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 1rem;
-    }
-    .sw-range-items {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-    .sw-range-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2rem;
-      align-items: center;
-      background: var(--sw-warm-white);
-      border-radius: var(--sw-radius);
-      padding: 2rem;
-      transition: all 0.4s ease;
-      border: 1px solid rgba(196, 112, 75, 0.06);
-    }
-    .sw-range-item:hover {
-      box-shadow: 0 12px 40px rgba(107, 91, 74, 0.08);
-      transform: translateY(-4px);
-    }
-    .sw-range-img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: var(--sw-radius-sm);
-    }
-    .sw-range-item h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.6rem;
-      color: var(--sw-terracotta);
-    }
-    .sw-range-item p {
-      color: var(--sw-text-soft);
-      font-size: 0.92rem;
-    }
-    .sw-range-tag {
-      display: inline-block;
-      background: rgba(122, 154, 126, 0.12);
-      color: var(--sw-sage-deep);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      margin-top: 0.8rem;
-    }
-
-    /* === AMBIANCE === */
-    .sw-ambiance {
-      padding: 7rem 0;
-      background: var(--sw-warm-white);
-      position: relative;
-    }
-    .sw-ambiance-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .sw-ambiance-img-wrapper {
-      position: relative;
-      border-radius: var(--sw-radius);
-      overflow: hidden;
-    }
-    .sw-ambiance-img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: var(--sw-radius);
-      transition: transform 0.6s ease;
-    }
-    .sw-ambiance-img-wrapper:hover .sw-ambiance-img {
-      transform: scale(1.04);
-    }
-    .sw-ambiance-float {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 160px;
-      height: 160px;
-      background: var(--sw-terracotta);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      text-align: center;
-      line-height: 1.3;
-      padding: 1rem;
-      animation: swFloat 6s ease-in-out infinite;
-      box-shadow: 0 8px 30px rgba(196, 112, 75, 0.3);
-    }
-    .sw-ambiance-content h2 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 1.5rem;
-    }
-    .sw-ambiance-content p {
-      color: var(--sw-text-soft);
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-    }
-    .sw-ambiance-list {
-      list-style: none;
-      padding: 0;
-      margin: 2rem 0;
-    }
-    .sw-ambiance-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(196, 112, 75, 0.08);
-    }
-    .sw-ambiance-list li:last-child {
-      border-bottom: none;
-    }
-    .sw-ambiance-list .sw-check {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      background: var(--sw-sage);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 0.75rem;
-      margin-top: 0.1rem;
-    }
-
-    /* === GALLERY === */
-    .sw-gallery {
-      padding: 7rem 0;
-      background: var(--sw-bg);
-    }
-    .sw-gallery-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .sw-gallery-header h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 0.8rem;
-    }
-    .sw-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .sw-gallery-item {
-      position: relative;
-      border-radius: var(--sw-radius-sm);
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .sw-gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .sw-gallery-item:hover img {
-      transform: scale(1.08);
-    }
-    .sw-gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem 1.2rem 1.2rem;
-      background: linear-gradient(transparent, rgba(61, 50, 41, 0.8));
-      color: #fff;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-    .sw-gallery-item:hover .sw-gallery-caption {
-      transform: translateY(0);
-    }
-
-    /* === TESTIMONIAL === */
-    .sw-testimonial {
-      padding: 6rem 0;
-      background: linear-gradient(135deg, var(--sw-sage-deep) 0%, var(--sw-sage) 100%);
-      color: #fff;
-      text-align: center;
-    }
-    .sw-testimonial blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-      font-style: italic;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-    .sw-testimonial cite {
-      font-style: normal;
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-    .sw-testimonial cite strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      opacity: 1;
-    }
-
-    /* === CTA === */
-    .sw-cta {
-      padding: 7rem 0;
-      background: var(--sw-cream);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .sw-cta::before {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(122, 154, 126, 0.06) 0%, transparent 70%);
-      top: -200px;
-      left: -200px;
-      border-radius: 50%;
-    }
-    .sw-cta::after {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--sw-terracotta-glow) 0%, transparent 70%);
-      bottom: -150px;
-      right: -100px;
-      border-radius: 50%;
-    }
-    .sw-cta-inner {
-      position: relative;
-      z-index: 1;
-    }
-    .sw-cta h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1rem;
-    }
-    .sw-cta p {
-      max-width: 550px;
-      margin: 0 auto 2.5rem;
-      color: var(--sw-text-soft);
-      font-size: 1.05rem;
-    }
-
-    /* === CROSS-LINKS === */
-    .sw-crosslinks {
-      padding: 4rem 0;
-      background: var(--sw-warm-white);
-      border-top: 1px solid rgba(196, 112, 75, 0.08);
-    }
-    .sw-crosslinks h2 {
-      text-align: center;
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-    }
-    .sw-crosslink-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.5rem;
-    }
-    .sw-crosslink-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1rem;
-      color: var(--sw-text-soft);
-      text-decoration: none;
-      font-size: 0.85rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .sw-crosslink-item:hover {
-      background: var(--sw-terracotta-glow);
-      color: var(--sw-terracotta);
-    }
-    .sw-crosslink-item span {
-      color: var(--sw-sage);
-      font-weight: 600;
-    }
-
-    /* === FOOTER OVERRIDES === */
-    .sw-wellness .footer {
-      background: var(--sw-text);
-      color: var(--sw-sand);
-    }
-    .sw-wellness .footer a {
-      color: var(--sw-sand);
-    }
-    .sw-wellness .footer a:hover {
-      color: var(--sw-terracotta-light);
-    }
-    .sw-wellness .footer h4 {
-      color: var(--sw-cream);
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 968px) {
-      .sw-why-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      .sw-range-items {
-        grid-template-columns: 1fr;
-      }
-      .sw-ambiance-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .sw-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 640px) {
-      .sw-hero-content {
-        padding: 6rem 1rem 3rem;
-      }
-      .sw-range-item {
-        grid-template-columns: 1fr;
-      }
-      .sw-range-img {
-        aspect-ratio: 16/9;
-      }
-      .sw-gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .sw-hero-organic, .sw-hero-organic-2 {
-        display: none;
-      }
-      .sw-ambiance-float {
-        width: 110px;
-        height: 110px;
-        font-size: 0.85rem;
-        bottom: -10px;
-        right: -10px;
-      }
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
-<body class="sw-wellness">
+<body class="lp-spa sp-grain">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
+<!-- LOADER -->
+<div class="sp-loader" id="spLoader">
+  <div class="sp-loader-line"></div>
+</div>
+
+<!-- READING PROGRESS -->
+<div class="sp-progress" id="spProgress"></div>
+
+<!-- HEADER -->
+<header class="header" id="spHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <a href="../products/roller-blinds.html">Products</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../landing/">Guides</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="sp-hero">
+  <div class="sp-hero-bg"></div>
+  <div class="sp-hero-content sp-col">
+    <div class="sp-hero-label sp-reveal">iSeekBlinds — Wellness Spaces</div>
+    <h1 class="sp-hero-title sp-reveal">The Art of<br><em>Stillness</em></h1>
+    <div class="sp-hero-rule sp-reveal"></div>
+    <p class="sp-hero-sub sp-reveal">Window treatments for spaces where light is therapy, privacy is sacred, and every detail speaks calm.</p>
+  </div>
+</section>
+
+<!-- ===== ARTICLE ===== -->
+<article class="sp-article">
+
+  <!-- INTRO -->
+  <section class="sp-section sp-col">
+    <span class="sp-label sp-reveal">The Challenge</span>
+    <h2 class="sp-h2 sp-reveal">Why Spa Environments Demand More</h2>
+    <p class="sp-body sp-dropcap sp-reveal">Wellness spaces are paradoxes of design. They need abundant natural light for vitality, yet total privacy for vulnerability. They must resist constant moisture while appearing effortlessly natural. The window treatment isn't decoration — it's infrastructure, setting the emotional temperature before a single candle is lit.</p>
+    <p class="sp-body sp-reveal">Most commercial blind suppliers treat spas like any other fit-out. Generic aluminium venetians. Standard blockout rollers. Solutions that function but fail to <strong>feel</strong>. At iSeekBlinds, we understand that in wellness environments, the window is as much a part of the treatment as the table.</p>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <div class="sp-col">
+    <blockquote class="sp-pullquote sp-reveal">
+      Light should arrive softly, like a hand on the shoulder.
+    </blockquote>
+  </div>
+
+  <!-- ZONE MAP -->
+  <section class="sp-section sp-col-wide">
+    <div class="sp-col">
+      <span class="sp-label sp-reveal">Zone by Zone</span>
+      <h2 class="sp-h2 sp-reveal">Every Room Has a Different Need</h2>
+      <p class="sp-body sp-reveal">A spa is many rooms in one building, each with distinct light, moisture, and privacy requirements. We map every zone.</p>
+    </div>
+    <div class="sp-zones sp-reveal">
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🧖</div>
+        <div class="sp-zone-name">Treatment Rooms</div>
+        <div class="sp-zone-need">Full blackout capability with soft diffuse option. Moisture-resistant. Whisper-quiet operation.</div>
+        <div class="sp-zone-rec">→ Honeycomb Blockout or Sheer Layers</div>
+      </div>
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🧘</div>
+        <div class="sp-zone-name">Yoga & Meditation</div>
+        <div class="sp-zone-need">Dawn light filtering. No harsh shadows. Manual or motorised for uninterrupted flow.</div>
+        <div class="sp-zone-rec">→ Sheer Roller or Day-Night Blinds</div>
+      </div>
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🪴</div>
+        <div class="sp-zone-name">Reception & Lobby</div>
+        <div class="sp-zone-need">Brand-first aesthetics. UV protection for furnishings. Welcoming filtered light.</div>
+        <div class="sp-zone-rec">→ Linen Panel Glides or Curtains</div>
+      </div>
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🌊</div>
+        <div class="sp-zone-name">Wet Areas & Pools</div>
+        <div class="sp-zone-need">100% waterproof. Resistant to chlorine and steam. Anti-microbial surfaces.</div>
+        <div class="sp-zone-rec">→ PVC Shutters or Aluminium Venetians</div>
+      </div>
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🍵</div>
+        <div class="sp-zone-name">Relaxation Lounge</div>
+        <div class="sp-zone-need">Warm, cocoon-like dimness. Layered light control. Luxurious fabric feel.</div>
+        <div class="sp-zone-rec">→ Dual Roller System (Sheer + Blockout)</div>
+      </div>
+      <div class="sp-zone">
+        <div class="sp-zone-icon">🧴</div>
+        <div class="sp-zone-name">Retail & Display</div>
+        <div class="sp-zone-need">Showcase products without UV damage. Adjustable for seasonal light changes.</div>
+        <div class="sp-zone-rec">→ Sunscreen Roller Blinds</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAND -->
+  <section class="sp-section sp-col-wide">
+    <div class="sp-stats">
+      <div class="sp-stat sp-reveal">
+        <div class="sp-stat-num"><span data-count="92">0</span>%</div>
+        <div class="sp-stat-label">Humidity Resistance</div>
+      </div>
+      <div class="sp-stat sp-reveal">
+        <div class="sp-stat-num"><span data-count="78">0</span>%</div>
+        <div class="sp-stat-label">UV Blocked (Sheer Mode)</div>
+      </div>
+      <div class="sp-stat sp-reveal">
+        <div class="sp-stat-num"><span data-count="100">0</span>%</div>
+        <div class="sp-stat-label">Blackout (Treatment Mode)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBIENCE INTERACTIVE -->
+  <section class="sp-section sp-col">
+    <span class="sp-label sp-reveal">Interactive</span>
+    <h2 class="sp-h2 sp-reveal">Set the Ambience</h2>
+    <p class="sp-body sp-reveal">Drag the slider to see how our blinds transform your treatment room from full daylight to complete serenity.</p>
+    <div class="sp-ambience sp-reveal" id="spAmbience">
+      <div class="sp-ambience-scene" id="spScene">
+        <div class="sp-ambience-light" id="spLight"></div>
+        <div class="sp-ambience-blinds" id="spBlinds"></div>
+      </div>
+      <div class="sp-ambience-control">
+        <label>Daylight</label>
+        <input type="range" class="sp-ambience-slider" id="spSlider" min="0" max="100" value="80">
+        <label>Serenity</label>
+      </div>
+      <div class="sp-ambience-mood" id="spMood">Morning glow — energising warmth</div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="sp-divider-dot">· · ·</div>
+
+  <!-- MOISTURE DATA -->
+  <section class="sp-section sp-col">
+    <span class="sp-label sp-reveal">Performance Data</span>
+    <h2 class="sp-h2 sp-reveal">Built for Humidity</h2>
+    <p class="sp-body sp-reveal">Standard blinds warp, discolour, and harbour mould in high-moisture environments. Our spa-rated treatments are engineered for exactly these conditions.</p>
+    <div class="sp-humidity sp-reveal">
+      <div class="sp-humidity-bar">
+        <span class="sp-humidity-label">Treatment Room</span>
+        <div class="sp-humidity-track"><div class="sp-humidity-fill" data-width="75"></div></div>
+        <span class="sp-humidity-val">75%</span>
+      </div>
+      <div class="sp-humidity-bar">
+        <span class="sp-humidity-label">Steam Room</span>
+        <div class="sp-humidity-track"><div class="sp-humidity-fill" data-width="95"></div></div>
+        <span class="sp-humidity-val">95%</span>
+      </div>
+      <div class="sp-humidity-bar">
+        <span class="sp-humidity-label">Pool Area</span>
+        <div class="sp-humidity-track"><div class="sp-humidity-fill" data-width="88"></div></div>
+        <span class="sp-humidity-val">88%</span>
+      </div>
+      <div class="sp-humidity-bar">
+        <span class="sp-humidity-label">Yoga Studio</span>
+        <div class="sp-humidity-track"><div class="sp-humidity-fill" data-width="55"></div></div>
+        <span class="sp-humidity-val">55%</span>
+      </div>
+    </div>
+    <p class="sp-body sp-reveal" style="font-size:0.82rem; color:var(--sp-muted);">All iSeekBlinds spa-rated products are tested to perform in environments up to 95% relative humidity without warping, discolouration, or mould growth.</p>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="sp-section sp-col-wide">
+    <div class="sp-col">
+      <span class="sp-label sp-reveal">Curated Solutions</span>
+      <h2 class="sp-h2 sp-reveal">The Spa Collection</h2>
+      <p class="sp-body sp-reveal">Each treatment selected for its performance in high-moisture, high-privacy environments — without compromising on beauty.</p>
+    </div>
+    <div class="sp-products sp-reveal">
+      <div class="sp-product">
+        <div class="sp-product-img" style="background: linear-gradient(135deg, var(--sp-paper) 0%, #e6e0d6 50%, #d6cec2 100%);"></div>
+        <div class="sp-product-info">
+          <div class="sp-product-tag">Best for Treatment Rooms</div>
+          <div class="sp-product-name">Honeycomb Cellular Blinds</div>
+          <div class="sp-product-desc">Double-cell construction traps air for insulation and sound absorption. Available in sheer, light-filtering, and full blockout. The hexagonal cells create a soft, organic aesthetic that complements spa interiors.</div>
+        </div>
+      </div>
+      <div class="sp-product">
+        <div class="sp-product-img" style="background: linear-gradient(135deg, #e8e4dc 0%, #ddd8ce 50%, #cfc8bc 100%);"></div>
+        <div class="sp-product-info">
+          <div class="sp-product-tag">Best for Wet Areas</div>
+          <div class="sp-product-name">PVC Plantation Shutters</div>
+          <div class="sp-product-desc">Engineered polymer with aluminium core. 100% waterproof, anti-microbial surface coating. Adjustable louvres for precise light and airflow control. Will not warp, crack, or discolour in steam or chlorinated environments.</div>
+        </div>
+      </div>
+      <div class="sp-product">
+        <div class="sp-product-img" style="background: linear-gradient(135deg, #f0ebe3 0%, #e8e2d8 50%, #ddd6ca 100%);"></div>
+        <div class="sp-product-info">
+          <div class="sp-product-tag">Best for Yoga & Meditation</div>
+          <div class="sp-product-name">Day-Night Dual Rollers</div>
+          <div class="sp-product-desc">Two fabrics on one bracket — sheer for gentle diffusion during morning classes, blockout for restorative sessions. Motorised option for seamless transitions mid-session without breaking the flow.</div>
+        </div>
+      </div>
+      <div class="sp-product">
+        <div class="sp-product-img" style="background: linear-gradient(135deg, #ede8e0 0%, #e2dbd1 50%, #d8cfc3 100%);"></div>
+        <div class="sp-product-info">
+          <div class="sp-product-tag">Best for Reception</div>
+          <div class="sp-product-name">Linen-Look Panel Glides</div>
+          <div class="sp-product-desc">Wide panels that stack neatly for full aperture or glide across for gentle screening. Natural linen-look fabric with UV-resistant coating. Creates a spa-like first impression the moment clients walk in.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="sp-section sp-col">
+    <div class="sp-testimonial sp-reveal">
+      <div class="sp-testimonial-text">"We renovated our entire day spa and the blinds were the detail that tied everything together. The treatment rooms feel like cocoons — our therapists say clients relax faster now."</div>
+      <div class="sp-testimonial-attr">Sarah Chen — Elysium Day Spa, South Yarra</div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="sp-divider"></div>
+
+  <!-- PROCESS -->
+  <section class="sp-section sp-col">
+    <span class="sp-label sp-reveal">How It Works</span>
+    <h2 class="sp-h2 sp-reveal">From Consultation to Calm</h2>
+    <div class="sp-process sp-reveal">
+      <div class="sp-step">
+        <div class="sp-step-num"></div>
+        <div>
+          <div class="sp-step-title">On-Site Assessment</div>
+          <div class="sp-step-desc">We visit your space, measure every window, assess moisture zones, and understand your treatment flow.</div>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-num"></div>
+        <div>
+          <div class="sp-step-title">Bespoke Recommendation</div>
+          <div class="sp-step-desc">A tailored solution for each zone — not one-size-fits-all. We bring fabric samples so you can feel the quality.</div>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-num"></div>
+        <div>
+          <div class="sp-step-title">Custom Manufacturing</div>
+          <div class="sp-step-desc">Made to your exact specifications in Melbourne. 2-3 week turnaround with quality checks at every stage.</div>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-num"></div>
+        <div>
+          <div class="sp-step-title">Professional Installation</div>
+          <div class="sp-step-desc">Our team installs outside your peak hours. Clean, quiet, and complete — with zero disruption to your bookings.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECOND PULL QUOTE -->
+  <div class="sp-col">
+    <blockquote class="sp-pullquote sp-reveal">
+      The best window treatment is the one you never notice — until you notice how calm you feel.
+    </blockquote>
+  </div>
+
+  <!-- CTA -->
+  <section class="sp-cta sp-col">
+    <div class="sp-reveal">
+      <h2 class="sp-cta-title">Create Your <em>Sanctuary</em></h2>
+      <p class="sp-cta-sub">Free on-site consultation for all Melbourne wellness spaces.<br>Obligation-free quote. Australia-wide delivery available.</p>
+      <a href="../free-quote.html" class="sp-cta-btn"><span>Book Your Consultation</span></a>
+      <a href="tel:0400000000" class="sp-cta-secondary">or call 0400 000 000</a>
+    </div>
+  </section>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
       <a href="../index.html" class="logo">
         <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
       </a>
-      <nav class="nav">
-        <a href="../index.html">Home</a>
-        <a href="../gallery.html">Gallery</a>
-        <a href="../about.html">About</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../contact.html">Contact</a>
-      </nav>
-      <div class="header-right">
-        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
-        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      <p>Melbourne's trusted blinds & window furnishings specialists. Custom-made, professionally installed.</p>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="sw-hero">
-    <div class="sw-hero-bg"></div>
-    <div class="sw-hero-overlay"></div>
-    <div class="sw-hero-organic"></div>
-    <div class="sw-hero-organic-2"></div>
-    <div class="container sw-hero-content">
-      <span class="sw-hero-tag"><span class="sw-leaf">🌿</span> Spa & Wellness Specialists</span>
-      <h1>Window Solutions<br>for Spaces of<br><em>Serenity</em></h1>
-      <div class="sw-hero-divider"></div>
-      <p>Bespoke window treatments designed for Melbourne's finest spas, wellness centres, yoga studios, and beauty salons. Where light becomes therapy.</p>
-      <div class="sw-hero-ctas">
-        <a href="../free-quote.html" class="sw-btn-primary">Free Consultation</a>
-        <a href="#range" class="sw-btn-secondary">Explore Our Range</a>
-      </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/curtains-drapes.html">Curtains & Drapes</a>
+      <a href="../products/shutters.html">Plantation Shutters</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
     </div>
-  </section>
-
-  <!-- Why Spa Blinds Matter -->
-  <section class="sw-why">
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="tel:0400000000">0400 000 000</a>
+      <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a>
+      <p>Melbourne, Victoria<br>Australia</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <div class="container">
-      <div class="sw-why-header sw-animate">
-        <span class="sw-section-label">Why It Matters</span>
-        <h2>Your Windows Set the Mood<br>for Every Treatment</h2>
-        <p>In a wellness space, light isn't just illumination — it's part of the experience. The right window treatments transform a room from ordinary to restorative.</p>
-      </div>
-      <div class="sw-why-grid">
-        <div class="sw-why-card sw-animate">
-          <div class="sw-why-icon">💆</div>
-          <h3>Client Comfort</h3>
-          <p>Soft, filtered natural light reduces glare during treatments while maintaining a connection to the outdoors. No harsh beams disrupting a facial or massage.</p>
-        </div>
-        <div class="sw-why-card sw-animate">
-          <div class="sw-why-icon">🌡️</div>
-          <h3>Climate Control</h3>
-          <p>Insulating blinds maintain consistent room temperatures crucial for treatment rooms, saunas, and hot yoga studios — reducing energy costs by up to 30%.</p>
-        </div>
-        <div class="sw-why-card sw-animate">
-          <div class="sw-why-icon">🔒</div>
-          <h3>Privacy & Trust</h3>
-          <p>Complete privacy is non-negotiable in wellness spaces. Our treatments offer full coverage without sacrificing natural light — clients feel safe and serene.</p>
-        </div>
-      </div>
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. Melbourne, Australia.</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Our Range -->
-  <section class="sw-range" id="range">
-    <div class="container">
-      <div class="sw-range-header sw-animate">
-        <span class="sw-section-label">Our Range</span>
-        <h2>Designed for Wellness Environments</h2>
-      </div>
-      <div class="sw-range-items">
-        <div class="sw-range-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Moisture resistant roller blinds" class="sw-range-img">
-          <div>
-            <h3>Moisture-Resistant Rollers</h3>
-            <p>Purpose-built for steam rooms, hot tubs, and wet areas. Our PVC-free, mould-resistant fabrics withstand 95% humidity while maintaining their beauty for years.</p>
-            <span class="sw-range-tag">★ Most Popular for Spas</span>
-          </div>
-        </div>
-        <div class="sw-range-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80" alt="Light filtering honeycomb blinds" class="sw-range-img">
-          <div>
-            <h3>Light-Filtering Honeycomb</h3>
-            <p>Cellular structure diffuses harsh sunlight into a warm, even glow. Perfect for meditation rooms and yoga studios where ambiance is everything.</p>
-            <span class="sw-range-tag">Energy Efficient</span>
-          </div>
-        </div>
-        <div class="sw-range-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Sheer curtains for beauty salon" class="sw-range-img">
-          <div>
-            <h3>Layered Sheers & Blockout</h3>
-            <p>Our dual-layer system lets therapists transition from bright reception areas to completely darkened treatment rooms — all with a single, smooth adjustment.</p>
-            <span class="sw-range-tag">Dual Function</span>
-          </div>
-        </div>
-        <div class="sw-range-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80" alt="Motorised blinds for wellness" class="sw-range-img">
-          <div>
-            <h3>Motorised & Smart Controls</h3>
-            <p>Set automated scenes — "Morning Yoga", "Deep Tissue", "Relaxation" — blinds adjust automatically to create the ideal light environment for every service.</p>
-            <span class="sw-range-tag">Smart Integration</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+// ===== LOADER =====
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('spLoader').classList.add('sp-loaded'), 600);
+});
 
-  <!-- Create the Perfect Ambiance -->
-  <section class="sw-ambiance">
-    <div class="container">
-      <div class="sw-ambiance-grid">
-        <div class="sw-ambiance-img-wrapper sw-animate">
-          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Spa treatment room with natural light" class="sw-ambiance-img">
-          <div class="sw-ambiance-float">Natural<br>Light,<br>Perfected</div>
-        </div>
-        <div class="sw-ambiance-content sw-animate">
-          <span class="sw-section-label">The iSeekBlinds Difference</span>
-          <h2>Creating the Perfect<br>Wellness Ambiance</h2>
-          <p>We've partnered with over 120 Melbourne spas, clinics, and wellness centres. Our consultants understand the unique demands of each space type.</p>
-          <ul class="sw-ambiance-list">
-            <li>
-              <span class="sw-check">✓</span>
-              <div><strong>Free On-Site Assessment</strong> — We visit your space to assess window orientations, humidity levels, and treatment room layouts.</div>
-            </li>
-            <li>
-              <span class="sw-check">✓</span>
-              <div><strong>Commercial-Grade Fabrics</strong> — Anti-bacterial, fire-retardant, and washable fabrics rated for high-traffic wellness environments.</div>
-            </li>
-            <li>
-              <span class="sw-check">✓</span>
-              <div><strong>Colour Psychology Guidance</strong> — We recommend tones proven to promote calm: sage, sand, blush, and stone across our 200+ fabric range.</div>
-            </li>
-            <li>
-              <span class="sw-check">✓</span>
-              <div><strong>After-Hours Installation</strong> — Zero disruption to your business. We install evenings and weekends at no extra cost.</div>
-            </li>
-            <li>
-              <span class="sw-check">✓</span>
-              <div><strong>5-Year Commercial Warranty</strong> — Every installation backed by our comprehensive warranty and free service callouts.</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+// ===== READING PROGRESS BAR =====
+const progressBar = document.getElementById('spProgress');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = progress + '%';
+}, { passive: true });
 
-  <!-- Gallery -->
-  <section class="sw-gallery" id="gallery">
-    <div class="container">
-      <div class="sw-gallery-header sw-animate">
-        <span class="sw-section-label">Our Work</span>
-        <h2>Wellness Spaces We've Transformed</h2>
-      </div>
-      <div class="sw-gallery-grid">
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80" alt="Day spa with honeycomb blinds">
-          <div class="sw-gallery-caption">Day Spa — Toorak</div>
-        </div>
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Yoga studio with light filtering blinds">
-          <div class="sw-gallery-caption">Yoga Studio — Fitzroy</div>
-        </div>
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Beauty salon with sheer curtains">
-          <div class="sw-gallery-caption">Beauty Salon — South Yarra</div>
-        </div>
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80" alt="Massage room with blackout blinds">
-          <div class="sw-gallery-caption">Massage Room — St Kilda</div>
-        </div>
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Pilates studio with roller blinds">
-          <div class="sw-gallery-caption">Pilates Studio — Brighton</div>
-        </div>
-        <div class="sw-gallery-item sw-animate">
-          <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&q=80" alt="Wellness centre reception">
-          <div class="sw-gallery-caption">Wellness Centre — Prahran</div>
-        </div>
-      </div>
-    </div>
-  </section>
+// ===== HEADER HIDE ON SCROLL DOWN =====
+let lastSY = 0;
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const header = document.getElementById('spHeader');
+  if (st > lastSY && st > 100) header.classList.add('sp-hidden');
+  else header.classList.remove('sp-hidden');
+  lastSY = st;
+}, { passive: true });
 
-  <!-- Testimonial -->
-  <section class="sw-testimonial">
-    <div class="container sw-animate">
-      <blockquote>"iSeekBlinds completely understood our vision. The motorised sheers in our treatment rooms create this beautiful, soft glow that our clients absolutely love. We've had so many compliments — it's become part of our brand experience."</blockquote>
-      <cite>
-        <strong>Mei-Lin Wong</strong>
-        Owner, Sakura Day Spa · South Yarra
-      </cite>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="sw-cta">
-    <div class="container sw-cta-inner sw-animate">
-      <span class="sw-section-label">Let's Begin</span>
-      <h2>Ready to Transform<br>Your Wellness Space?</h2>
-      <p>Book a free, no-obligation consultation. Our wellness specialists will visit your space with a curated selection of commercial-grade samples.</p>
-      <a href="../free-quote.html" class="sw-btn-primary">Book Your Free Consultation</a>
-    </div>
-  </section>
-
-  <!-- Cross-links -->
-  <section class="sw-crosslinks">
-    <div class="container">
-      <h2>Explore More Solutions</h2>
-      <div class="sw-crosslink-grid">
-        <a href="acoustic-solutions.html" class="sw-crosslink-item"><span>→</span> Acoustic Solutions</a>
-        <a href="allergy-friendly.html" class="sw-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
-        <a href="apartment-solutions.html" class="sw-crosslink-item"><span>→</span> Apartment Solutions</a>
-        <a href="arched-specialty-windows.html" class="sw-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
-        <a href="art-gallery-studio.html" class="sw-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
-        <a href="bathroom-kitchen.html" class="sw-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
-        <a href="bedroom-blackout.html" class="sw-crosslink-item"><span>→</span> Bedroom Blackout</a>
-        <a href="bifold-door-blinds.html" class="sw-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
-        <a href="blinds-vs-curtains.html" class="sw-crosslink-item"><span>→</span> Blinds vs Curtains</a>
-        <a href="budget-friendly.html" class="cm-crosslink-item"><span>→</span> Budget-Friendly Blinds</a>
-        <a href="bushfire-safe-blinds.html" class="sw-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
-        <a href="care-maintenance.html" class="sw-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
-        <a href="child-safety.html" class="sw-crosslink-item"><span>→</span> Child Safety</a>
-        <a href="coastal-home-blinds.html" class="sw-crosslink-item"><span>→</span> Coastal Home Blinds</a>
-        <a href="colour-matching-guide.html" class="sw-crosslink-item"><span>→</span> Colour Matching Guide</a>
-        <a href="colour-trends-2026.html" class="sw-crosslink-item"><span>→</span> Colour Trends 2026</a>
-        <a href="commercial-blinds.html" class="sw-crosslink-item"><span>→</span> Commercial Blinds</a>
-        <a href="conservatory-sunroom.html" class="sw-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
-        <a href="day-night-blinds.html" class="sw-crosslink-item"><span>→</span> Day Night Blinds</a>
-        <a href="design-inspiration.html" class="sw-crosslink-item"><span>→</span> Design Inspiration</a>
-        <a href="diy-installation-guide.html" class="sw-crosslink-item"><span>→</span> DIY Installation Guide</a>
-        <a href="diy-measuring-guide.html" class="sw-crosslink-item"><span>→</span> DIY Measuring Guide</a>
-        <a href="double-glazed-blinds.html" class="sw-crosslink-item"><span>→</span> Double Glazed Blinds</a>
-        <a href="eco-friendly.html" class="sw-crosslink-item"><span>→</span> Eco-Friendly</a>
-        <a href="elderly-accessible.html" class="sw-crosslink-item"><span>→</span> Elderly Accessible</a>
-        <a href="energy-efficient.html" class="sw-crosslink-item"><span>→</span> Energy Efficient</a>
-        <a href="fabric-encyclopedia.html" class="sw-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
-        <a href="festive-seasonal-styling.html" class="sw-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
-        <a href="free-samples.html" class="sw-crosslink-item"><span>→</span> Free Samples</a>
-        <a href="granny-flat-blinds.html" class="sw-crosslink-item"><span>→</span> Granny Flat</a>
-        <a href="gym-fitness-centre.html" class="sw-crosslink-item"><span>→</span> Gym &amp; Fitness Centre ✨</a>
-        <a href="hamptons-style.html" class="sw-crosslink-item"><span>→</span> Hamptons Style</a>
-        <a href="heritage-homes.html" class="sw-crosslink-item"><span>→</span> Heritage Homes</a>
-        <a href="high-rise-glare.html" class="sw-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
-        <a href="home-gym-blinds.html" class="sw-crosslink-item"><span>→</span> Home Gym Blinds</a>
-        <a href="home-library-study.html" class="sw-crosslink-item"><span>→</span> Home Library &amp; Study</a>
-        <a href="home-office.html" class="sw-crosslink-item"><span>→</span> Home Office</a>
-        <a href="home-renovation.html" class="sw-crosslink-item"><span>→</span> Home Renovation</a>
-        <a href="hospitality-blinds.html" class="sw-crosslink-item"><span>→</span> Hospitality Blinds</a>
-        <a href="japandi-zen-style.html" class="sw-crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
-        <a href="large-windows.html" class="sw-crosslink-item"><span>→</span> Large Windows</a>
-        <a href="layered-treatments.html" class="sw-crosslink-item"><span>→</span> Layered Treatments</a>
-        <a href="luxury-penthouse.html" class="sw-crosslink-item"><span>→</span> Luxury Penthouse</a>
-        <a href="media-room.html" class="sw-crosslink-item"><span>→</span> Media Room</a>
-        <a href="medical-clinic.html" class="sw-crosslink-item"><span>→</span> Medical Clinic</a>
-        <a href="melbourne-service-areas.html" class="sw-crosslink-item"><span>→</span> Melbourne Service Areas</a>
-        <a href="mid-century-modern.html" class="sw-crosslink-item"><span>→</span> Mid-Century Modern ✨</a>
-        <a href="minimalist-styling.html" class="sw-crosslink-item"><span>→</span> Minimalist Styling</a>
-        <a href="new-home-packages.html" class="sw-crosslink-item"><span>→</span> New Home Packages</a>
-        <a href="nursery-safe.html" class="sw-crosslink-item"><span>→</span> Nursery Safe</a>
-        <a href="office-partition.html" class="sw-crosslink-item"><span>→</span> Office Partition</a>
-        <a href="open-kitchen.html" class="sw-crosslink-item"><span>→</span> Open Kitchen</a>
-        <a href="outdoor-blinds.html" class="sw-crosslink-item"><span>→</span> Outdoor Blinds</a>
-        <a href="pet-friendly.html" class="sw-crosslink-item"><span>→</span> Pet-Friendly</a>
-        <a href="plantation-shutters-guide.html" class="sw-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
-        <a href="pool-outdoor-entertaining.html" class="sw-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining ✨</a>
-        <a href="privacy-blinds.html" class="sw-crosslink-item"><span>→</span> Privacy Blinds</a>
-        <a href="property-styling.html" class="sw-crosslink-item"><span>→</span> Property Styling</a>
-        <a href="rental-property.html" class="sw-crosslink-item"><span>→</span> Rental Property</a>
-        <a href="restaurant-cafe.html" class="sw-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
-        <a href="retail-shopfront.html" class="sw-crosslink-item"><span>→</span> Retail Shopfront</a>
-        <a href="scandinavian-style.html" class="sw-crosslink-item"><span>→</span> Scandinavian Style</a>
-        <a href="school-childcare.html" class="sw-crosslink-item"><span>→</span> School &amp; Childcare</a>
-        <a href="seasonal-sale.html" class="sw-crosslink-item"><span>→</span> Seasonal Sale</a>
-        <a href="skylight-blinds.html" class="sw-crosslink-item"><span>→</span> Skylight Blinds</a>
-        <a href="smart-home.html" class="sw-crosslink-item"><span>→</span> Smart Home</a>
-        <a href="staircase-windows.html" class="sw-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
-        <a href="summer-uv-protection.html" class="sw-crosslink-item"><span>→</span> Summer UV Protection</a>
-        <a href="testimonials.html" class="sw-crosslink-item"><span>→</span> Testimonials</a>
-        <a href="townhouse-strata.html" class="sw-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
-        <a href="warehouse-industrial-blinds.html" class="sw-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
-        <a href="wine-entertainment-room.html" class="sw-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
-        <a href="winter-insulation.html" class="sw-crosslink-item"><span>→</span> Winter Insulation</a>
-        <a href="yoga-meditation-room.html" class="sw-crosslink-item"><span>→</span> Yoga &amp; Meditation Room ✨</a>
-        <a href="bay-window-blinds.html" class="crosslink-item"><span>→</span> Bay Window Blinds</a>
-        <a href="motorised-blinds.html" class="crosslink-item"><span>→</span> Motorised Blinds Guide</a>
-        <a href="french-door-blinds.html" class="cm-crosslink-item"><span>→</span> French &amp; Patio Door Blinds</a>
-        <a href="laundry-utility-room.html" class="cm-crosslink-item"><span>→</span> Laundry &amp; Utility Room</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
-        <p>Melbourne's trusted window furnishing experts.</p>
-        <div class="footer-contact-info">
-          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
-          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <h4>Products</h4>
-        <a href="../products/roller-blinds.html">Roller Blinds</a>
-        <a href="../products/curtains.html">Curtains</a>
-        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
-        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
-        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
-        <a href="../products/motorised.html">Motorised Solutions</a>
-      </div>
-      <div class="footer-links">
-        <h4>Company</h4>
-        <a href="../about.html">About Us</a>
-        <a href="../gallery.html">Gallery</a>
-        <a href="../faq.html">FAQ</a>
-        <a href="../free-quote.html">Free Quote</a>
-        <a href="../contact.html">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // IntersectionObserver for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.sw-animate').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Mobile menu toggle
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('.nav');
-    if (menuBtn) {
-      menuBtn.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
-        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
-      });
+// ===== SCROLL REVEAL =====
+const revealEls = document.querySelectorAll('.sp-reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('sp-vis'), i * 60);
+      revealObs.unobserve(e.target);
     }
-  </script>
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
 
+// ===== COUNTER ANIMATION =====
+const counters = document.querySelectorAll('[data-count]');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.count);
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 50));
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(interval); }
+        el.textContent = current;
+      }, 25);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(el => counterObs.observe(el));
+
+// ===== HUMIDITY BARS =====
+const humBars = document.querySelectorAll('.sp-humidity-fill');
+const humObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.dataset.width + '%';
+      humObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+humBars.forEach(el => humObs.observe(el));
+
+// ===== PARALLAX BLEED IMAGES =====
+const bleeds = document.querySelectorAll('.sp-bleed');
+const bleedObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('sp-vis');
+  });
+}, { threshold: 0.1 });
+bleeds.forEach(el => bleedObs.observe(el));
+
+// ===== AMBIENCE SLIDER =====
+const slider = document.getElementById('spSlider');
+const scene = document.getElementById('spScene');
+const light = document.getElementById('spLight');
+const mood = document.getElementById('spMood');
+const blindsContainer = document.getElementById('spBlinds');
+
+// Generate slats
+for (let i = 0; i < 16; i++) {
+  const slat = document.createElement('div');
+  slat.className = 'sp-ambience-slat';
+  blindsContainer.appendChild(slat);
+}
+const slats = document.querySelectorAll('.sp-ambience-slat');
+
+const moods = [
+  { max: 15, text: 'Total serenity — deep restorative rest', bg: 'linear-gradient(135deg, #3a3632 0%, #2a2622 100%)' },
+  { max: 35, text: 'Candlelit calm — gentle intimacy', bg: 'linear-gradient(135deg, #6b6258 0%, #4a433c 100%)' },
+  { max: 55, text: 'Soft diffusion — balanced tranquility', bg: 'linear-gradient(135deg, #a89e90 0%, #8a8074 100%)' },
+  { max: 75, text: 'Filtered warmth — afternoon glow', bg: 'linear-gradient(135deg, #d4cfc5 0%, #c4bdb1 100%)' },
+  { max: 100, text: 'Morning glow — energising warmth', bg: 'linear-gradient(135deg, #e8e4dc 0%, #d4cfc5 100%)' },
+];
+
+function updateAmbience(val) {
+  const openness = val / 100;
+  light.style.opacity = openness;
+  slats.forEach(s => {
+    s.style.transform = `scaleY(${1 - openness * 0.85})`;
+    s.style.background = `rgba(196,168,130,${0.5 - openness * 0.35})`;
+  });
+  const m = moods.find(m => val <= m.max) || moods[moods.length - 1];
+  scene.style.background = m.bg;
+  mood.textContent = m.text;
+}
+
+slider.addEventListener('input', () => updateAmbience(parseInt(slider.value)));
+updateAmbience(80);
+
+// ===== MOBILE MENU =====
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+if (mobileBtn) {
+  mobileBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+  });
+}
+</script>
 </body>
 </html>
