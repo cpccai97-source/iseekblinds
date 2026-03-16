@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga & Meditation Room Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialist window treatments for yoga studios, meditation rooms & mindful spaces in Melbourne. Gentle light diffusion, acoustic privacy, natural materials & circadian-friendly light control. Free consultation.">
+  <meta name="keywords" content="yoga room blinds Melbourne, meditation room blinds, yoga studio window treatments, zen blinds, light diffusing blinds, acoustic blinds yoga, natural material blinds, mindful space blinds">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === YOGA MEDITATION THEME — Soft Lavender Zen === */
+    :root {
+      --ym-cream: #faf5ef;
+      --ym-sand: #ede5d8;
+      --ym-violet: #7c3aed;
+      --ym-violet-light: #a78bfa;
+      --ym-violet-glow: rgba(124, 58, 237, 0.10);
+      --ym-lavender: #c4b5fd;
+      --ym-violet-deep: #5b21b6;
+      --ym-plum: #6d28d9;
+      --ym-earth: #5c4a3a;
+      --ym-earth-light: #8a7a69;
+      --ym-warm-white: #fffcf7;
+      --ym-text: #332b3d;
+      --ym-text-soft: #635a6e;
+      --ym-bg: #f8f5fd;
+      --ym-radius: 24px;
+      --ym-radius-sm: 14px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .ym-zen {
+      background: var(--ym-bg);
+      color: var(--ym-text);
+      font-family: 'Nunito', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    .ym-zen h1, .ym-zen h2, .ym-zen h3, .ym-zen h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ym-text);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .ym-zen .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header overrides */
+    .ym-zen .header {
+      background: rgba(248, 245, 253, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+    }
+    .ym-zen .header .nav a { color: var(--ym-text); }
+    .ym-zen .header .nav a:hover { color: var(--ym-violet); }
+    .ym-zen .header .btn-primary {
+      background: var(--ym-violet);
+      color: #fff;
+      border: none;
+      border-radius: var(--ym-radius-sm);
+    }
+    .ym-zen .header .btn-primary:hover { background: var(--ym-violet-light); }
+    .ym-zen .mobile-menu-btn { color: var(--ym-violet); }
+
+    /* Animations */
+    @keyframes ymFadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ymFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes ymScaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes ymFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes ymOrganicPulse {
+      0%, 100% { border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%; }
+      33% { border-radius: 40% 60% 50% 50% / 60% 40% 50% 60%; }
+      66% { border-radius: 50% 50% 40% 60% / 40% 50% 60% 40%; }
+    }
+    @keyframes ymBreathePulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+
+    .ym-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ym-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === HERO === */
+    .ym-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--ym-cream);
+    }
+    .ym-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.5) saturate(0.7);
+    }
+    .ym-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(248,245,253,0.9) 0%, rgba(124,58,237,0.12) 40%, rgba(250,245,239,0.25) 100%);
+    }
+    .ym-hero-organic {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(124,58,237,0.06) 0%, transparent 70%);
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+      animation: ymOrganicPulse 15s ease-in-out infinite;
+      top: -100px;
+      right: -100px;
+    }
+    .ym-hero-organic-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(167,139,250,0.08) 0%, transparent 70%);
+      border-radius: 40% 60% 50% 50% / 60% 40% 50% 60%;
+      animation: ymOrganicPulse 18s ease-in-out infinite reverse;
+      bottom: -80px;
+      left: -80px;
+    }
+    .ym-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 7rem 2rem 5rem;
+    }
+    .ym-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--ym-violet-deep);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      animation: ymFadeIn 1s ease 0.3s both;
+    }
+    .ym-hero-tag .ym-icon {
+      font-size: 1rem;
+      animation: ymBreathePulse 4s ease-in-out infinite;
+      display: inline-block;
+    }
+    .ym-hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      animation: ymFadeUp 1s ease 0.5s both;
+      color: var(--ym-text);
+    }
+    .ym-hero h1 em {
+      font-style: italic;
+      color: var(--ym-violet);
+    }
+    .ym-hero-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ym-violet), var(--ym-lavender));
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      animation: ymFadeIn 1s ease 0.8s both;
+    }
+    .ym-hero p {
+      font-size: 1.1rem;
+      color: var(--ym-text-soft);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      animation: ymFadeUp 1s ease 1s both;
+    }
+    .ym-hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: ymFadeUp 1s ease 1.2s both;
+    }
+    .ym-btn-primary {
+      display: inline-block;
+      background: var(--ym-violet);
+      color: #fff;
+      padding: 1rem 2.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+    }
+    .ym-btn-primary:hover {
+      background: var(--ym-violet-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+    }
+    .ym-btn-secondary {
+      display: inline-block;
+      border: 2px solid var(--ym-lavender);
+      color: var(--ym-violet-deep);
+      padding: 0.9rem 2.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+    }
+    .ym-btn-secondary:hover {
+      background: var(--ym-lavender);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* === WHY SECTION === */
+    .ym-why {
+      padding: 7rem 0;
+      background: var(--ym-warm-white);
+      position: relative;
+    }
+    .ym-why::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--ym-violet-glow) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .ym-section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ym-violet-deep);
+      margin-bottom: 1rem;
+    }
+    .ym-why-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .ym-why-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .ym-why-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--ym-text-soft);
+      font-size: 1.05rem;
+    }
+    .ym-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .ym-why-card {
+      background: var(--ym-cream);
+      border-radius: var(--ym-radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(124, 58, 237, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .ym-why-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ym-violet), var(--ym-lavender));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .ym-why-card:hover::after { transform: scaleX(1); }
+    .ym-why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(124, 58, 237, 0.08);
+    }
+    .ym-why-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      background: var(--ym-violet-glow);
+      border-radius: 50% 40% 50% 40%;
+      animation: ymOrganicPulse 12s ease-in-out infinite;
+    }
+    .ym-why-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .ym-why-card p {
+      color: var(--ym-text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* === OUR RANGE === */
+    .ym-range {
+      padding: 7rem 0;
+      background: var(--ym-bg);
+    }
+    .ym-range-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .ym-range-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .ym-range-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    .ym-range-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: var(--ym-warm-white);
+      border-radius: var(--ym-radius);
+      padding: 2rem;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(124, 58, 237, 0.05);
+    }
+    .ym-range-item:hover {
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.08);
+      transform: translateY(-4px);
+    }
+    .ym-range-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: var(--ym-radius-sm);
+    }
+    .ym-range-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+      color: var(--ym-violet);
+    }
+    .ym-range-item p {
+      color: var(--ym-text-soft);
+      font-size: 0.92rem;
+    }
+    .ym-range-tag {
+      display: inline-block;
+      background: rgba(124, 58, 237, 0.1);
+      color: var(--ym-violet-deep);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      margin-top: 0.8rem;
+    }
+
+    /* === AMBIANCE === */
+    .ym-ambiance {
+      padding: 7rem 0;
+      background: var(--ym-warm-white);
+      position: relative;
+    }
+    .ym-ambiance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .ym-ambiance-img-wrapper {
+      position: relative;
+      border-radius: var(--ym-radius);
+      overflow: hidden;
+    }
+    .ym-ambiance-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--ym-radius);
+      transition: transform 0.6s ease;
+    }
+    .ym-ambiance-img-wrapper:hover .ym-ambiance-img {
+      transform: scale(1.04);
+    }
+    .ym-ambiance-float {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 160px;
+      height: 160px;
+      background: var(--ym-violet);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.3;
+      padding: 1rem;
+      animation: ymFloat 6s ease-in-out infinite;
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+    }
+    .ym-ambiance-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .ym-ambiance-content p {
+      color: var(--ym-text-soft);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .ym-ambiance-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .ym-ambiance-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.06);
+    }
+    .ym-ambiance-list li:last-child { border-bottom: none; }
+    .ym-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--ym-violet);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      margin-top: 0.1rem;
+    }
+
+    /* === GALLERY === */
+    .ym-gallery {
+      padding: 7rem 0;
+      background: var(--ym-bg);
+    }
+    .ym-gallery-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .ym-gallery-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 0.8rem;
+    }
+    .ym-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .ym-gallery-item {
+      position: relative;
+      border-radius: var(--ym-radius-sm);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .ym-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ym-gallery-item:hover img { transform: scale(1.08); }
+    .ym-gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 1.2rem 1.2rem;
+      background: linear-gradient(transparent, rgba(51, 43, 61, 0.8));
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .ym-gallery-item:hover .ym-gallery-caption { transform: translateY(0); }
+
+    /* === TESTIMONIAL === */
+    .ym-testimonial {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--ym-violet-deep) 0%, var(--ym-violet) 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .ym-testimonial blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .ym-testimonial cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    .ym-testimonial cite strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      opacity: 1;
+    }
+
+    /* === CTA === */
+    .ym-cta {
+      padding: 7rem 0;
+      background: var(--ym-cream);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ym-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+      border-radius: 50%;
+    }
+    .ym-cta::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%);
+      bottom: -150px;
+      right: -100px;
+      border-radius: 50%;
+    }
+    .ym-cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .ym-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .ym-cta p {
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      color: var(--ym-text-soft);
+      font-size: 1.05rem;
+    }
+
+    /* === CROSS-LINKS === */
+    .ym-crosslinks {
+      padding: 4rem 0;
+      background: var(--ym-warm-white);
+      border-top: 1px solid rgba(124, 58, 237, 0.06);
+    }
+    .ym-crosslinks h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .ym-crosslink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .ym-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      color: var(--ym-text-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .ym-crosslink-item:hover {
+      background: var(--ym-violet-glow);
+      color: var(--ym-violet);
+    }
+    .ym-crosslink-item span { color: var(--ym-violet); font-weight: 600; }
+
+    /* === FOOTER OVERRIDES === */
+    .ym-zen .footer {
+      background: var(--ym-text);
+      color: var(--ym-sand);
+    }
+    .ym-zen .footer a { color: var(--ym-sand); }
+    .ym-zen .footer a:hover { color: var(--ym-violet-light); }
+    .ym-zen .footer h4 { color: var(--ym-cream); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 968px) {
+      .ym-why-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .ym-range-items { grid-template-columns: 1fr; }
+      .ym-ambiance-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .ym-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .ym-hero-content { padding: 6rem 1rem 3rem; }
+      .ym-range-item { grid-template-columns: 1fr; }
+      .ym-range-img { aspect-ratio: 16/9; }
+      .ym-gallery-grid { grid-template-columns: 1fr; }
+      .ym-hero-organic, .ym-hero-organic-2 { display: none; }
+      .ym-ambiance-float { width: 110px; height: 110px; font-size: 0.85rem; bottom: -10px; right: -10px; }
+    }
+  </style>
+</head>
+<body class="ym-zen">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ym-hero">
+    <div class="ym-hero-bg"></div>
+    <div class="ym-hero-overlay"></div>
+    <div class="ym-hero-organic"></div>
+    <div class="ym-hero-organic-2"></div>
+    <div class="container ym-hero-content">
+      <span class="ym-hero-tag"><span class="ym-icon">🧘</span> Mindful Space Specialists</span>
+      <h1>Where Light Meets<br><em>Stillness</em></h1>
+      <div class="ym-hero-divider"></div>
+      <p>Window treatments designed for Melbourne's yoga studios, meditation rooms, and mindful spaces. Where every ray of light is intentional, and peace begins at the window.</p>
+      <div class="ym-hero-ctas">
+        <a href="../free-quote.html" class="ym-btn-primary">Free Consultation</a>
+        <a href="#range" class="ym-btn-secondary">Explore Our Range</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="ym-why">
+    <div class="container">
+      <div class="ym-why-header ym-animate">
+        <span class="ym-section-label">Why It Matters</span>
+        <h2>Light Shapes Your Practice<br>More Than You Think</h2>
+        <p>In a space dedicated to presence and awareness, harsh glare or distracting shadows can break concentration. The right window treatment becomes part of your practice.</p>
+      </div>
+      <div class="ym-why-grid">
+        <div class="ym-why-card ym-animate">
+          <div class="ym-why-icon">🌅</div>
+          <h3>Gentle Light Diffusion</h3>
+          <p>Transform harsh sunlight into a soft, even glow that enhances focus without distraction. Our light-filtering fabrics create the warm, enveloping atmosphere every practice deserves.</p>
+        </div>
+        <div class="ym-why-card ym-animate">
+          <div class="ym-why-icon">🔇</div>
+          <h3>Acoustic Privacy</h3>
+          <p>Honeycomb and layered treatments absorb sound, reducing outside noise by up to 50%. Keep traffic, construction, and neighbours from interrupting your flow state.</p>
+        </div>
+        <div class="ym-why-card ym-animate">
+          <div class="ym-why-icon">🌿</div>
+          <h3>Natural &amp; Mindful Materials</h3>
+          <p>Bamboo, linen, organic cotton — our natural fabric range aligns with eco-conscious values. Low-VOC, sustainably sourced materials that honour both your practice and the planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Range -->
+  <section class="ym-range" id="range">
+    <div class="container">
+      <div class="ym-range-header ym-animate">
+        <span class="ym-section-label">Our Range</span>
+        <h2>Designed for Mindful Spaces</h2>
+      </div>
+      <div class="ym-range-items">
+        <div class="ym-range-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80" alt="Honeycomb blinds for yoga room" class="ym-range-img">
+          <div>
+            <h3>Cellular Honeycomb Blinds</h3>
+            <p>Double-cell construction diffuses light into a soft, golden glow while providing exceptional acoustic insulation. The most popular choice for dedicated meditation rooms and yoga studios.</p>
+            <span class="ym-range-tag">★ Most Popular for Yoga</span>
+          </div>
+        </div>
+        <div class="ym-range-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Sheer curtains for meditation" class="ym-range-img">
+          <div>
+            <h3>Flowing Sheer Curtains</h3>
+            <p>Gentle, organic movement that responds to air currents. Our linen and organic cotton sheers create a living, breathing atmosphere that mirrors the rhythm of your practice.</p>
+            <span class="ym-range-tag">Natural Fabrics</span>
+          </div>
+        </div>
+        <div class="ym-range-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80" alt="Day night blinds for studios" class="ym-range-img">
+          <div>
+            <h3>Day-Night Dual Rollers</h3>
+            <p>Transition seamlessly from energising morning yoga to candlelit evening meditation. One system, two fabrics — sheer for sunrise sessions, blockout for restorative practices.</p>
+            <span class="ym-range-tag">Dual Function</span>
+          </div>
+        </div>
+        <div class="ym-range-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1600573472556-e636c2acda9e?w=400&q=80" alt="Bamboo blinds zen room" class="ym-range-img">
+          <div>
+            <h3>Woven Bamboo &amp; Timber</h3>
+            <p>Natural bamboo and timber weaves bring earthy texture and organic warmth. Perfect for Japandi-inspired zen rooms where connection to nature enhances the meditative experience.</p>
+            <span class="ym-range-tag">Eco-Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambiance Section -->
+  <section class="ym-ambiance">
+    <div class="container">
+      <div class="ym-ambiance-grid">
+        <div class="ym-ambiance-img-wrapper ym-animate">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" alt="Meditation room with gentle light" class="ym-ambiance-img">
+          <div class="ym-ambiance-float">Light as<br>Part of<br>Practice</div>
+        </div>
+        <div class="ym-ambiance-content ym-animate">
+          <span class="ym-section-label">The iSeekBlinds Difference</span>
+          <h2>Creating Spaces for<br>Stillness &amp; Flow</h2>
+          <p>We've designed window treatments for over 80 Melbourne yoga studios, wellness centres, and home meditation spaces. Our consultants understand how light affects mindfulness and practice quality.</p>
+          <ul class="ym-ambiance-list">
+            <li>
+              <span class="ym-check">✓</span>
+              <div><strong>Circadian Rhythm Consultation</strong> — We assess your space's sun path and recommend fabrics that support natural light cycles for morning energy and evening calm.</div>
+            </li>
+            <li>
+              <span class="ym-check">✓</span>
+              <div><strong>Natural Material Curation</strong> — Bamboo, organic linen, hemp, and recycled polyester — every fabric in our mindful range is sustainably sourced and low-VOC.</div>
+            </li>
+            <li>
+              <span class="ym-check">✓</span>
+              <div><strong>Acoustic Performance Testing</strong> — We measure your room's reverberation and recommend treatments that reduce echo for better sound quality during guided sessions.</div>
+            </li>
+            <li>
+              <span class="ym-check">✓</span>
+              <div><strong>Silent Operation</strong> — Whisper-quiet motorised systems with no clicking or buzzing. Schedule blinds to adjust automatically between class times without breaking the silence.</div>
+            </li>
+            <li>
+              <span class="ym-check">✓</span>
+              <div><strong>Colour Psychology Guidance</strong> — Soft lavenders, warm creams, sage greens — we recommend tones scientifically shown to reduce cortisol and promote calm.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="ym-gallery" id="gallery">
+    <div class="container">
+      <div class="ym-gallery-header ym-animate">
+        <span class="ym-section-label">Our Work</span>
+        <h2>Mindful Spaces We've Transformed</h2>
+      </div>
+      <div class="ym-gallery-grid">
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Yoga studio with light filtering blinds">
+          <div class="ym-gallery-caption">Yoga Studio — Fitzroy</div>
+        </div>
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Home meditation room">
+          <div class="ym-gallery-caption">Meditation Room — Hawthorn</div>
+        </div>
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600&q=80" alt="Yoga retreat space">
+          <div class="ym-gallery-caption">Retreat Space — Daylesford</div>
+        </div>
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Zen room with bamboo blinds">
+          <div class="ym-gallery-caption">Zen Room — Camberwell</div>
+        </div>
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Pilates studio blinds">
+          <div class="ym-gallery-caption">Pilates Studio — Brighton</div>
+        </div>
+        <div class="ym-gallery-item ym-animate">
+          <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&q=80" alt="Home yoga space">
+          <div class="ym-gallery-caption">Home Yoga Space — Kew</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="ym-testimonial">
+    <div class="container ym-animate">
+      <blockquote>"The honeycomb blinds iSeekBlinds installed in our studio completely transformed the energy of the space. The light is so soft and even now — students comment on how calming it feels the moment they walk in. And the noise reduction is remarkable."</blockquote>
+      <cite>
+        <strong>Priya Sharma</strong>
+        Founder, Lotus Flow Yoga · Fitzroy
+      </cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ym-cta">
+    <div class="container ym-cta-inner ym-animate">
+      <span class="ym-section-label">Let's Begin</span>
+      <h2>Ready to Create Your<br>Perfect Mindful Space?</h2>
+      <p>Book a free consultation. Our mindful space specialists will visit with a curated selection of natural, light-diffusing fabrics designed for yoga and meditation environments.</p>
+      <a href="../free-quote.html" class="ym-btn-primary">Book Your Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ym-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="ym-crosslink-grid">
+        <a href="acoustic-solutions.html" class="ym-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="ym-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="ym-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="ym-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="ym-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="ym-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html" class="ym-crosslink-item"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html" class="ym-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="ym-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="ym-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="ym-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="ym-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="ym-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="ym-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="ym-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="ym-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="ym-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="ym-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="ym-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="ym-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="ym-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="ym-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="ym-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="ym-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="ym-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="ym-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="ym-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="ym-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="ym-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html" class="ym-crosslink-item"><span>→</span> Granny Flat</a>
+        <a href="hamptons-style.html" class="ym-crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="ym-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="ym-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="ym-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="ym-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="ym-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="ym-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="ym-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="japandi-zen-style.html" class="ym-crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
+        <a href="large-windows.html" class="ym-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="ym-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="ym-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="ym-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="ym-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="ym-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="ym-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html" class="ym-crosslink-item"><span>→</span> Motorised Blinds Guide</a>
+        <a href="new-home-packages.html" class="ym-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="ym-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="ym-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="ym-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="ym-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="ym-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html" class="ym-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html" class="ym-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining ✨</a>
+        <a href="privacy-blinds.html" class="ym-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="ym-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="ym-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="ym-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="ym-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="ym-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="ym-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="ym-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="ym-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="ym-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="ym-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html" class="ym-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
+        <a href="summer-uv-protection.html" class="ym-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="ym-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="ym-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="ym-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="ym-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="ym-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ym-animate').forEach(el => { observer.observe(el); });
+
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
