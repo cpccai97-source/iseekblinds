@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Co-Working Space Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Commercial blinds for co-working spaces, shared offices & flexible workplaces. Light control, acoustic privacy, and modern design. Free consultation Melbourne-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--charcoal:#1e1e1e;--concrete:#e8e2da;--steel:#3a5a78;--signal:#ff6b35;
+--blueprint:#1a3a5c;--light:#f5f2ed;--grid:#c8c2b8;--deep:#0d1b2a;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Space Grotesk',sans-serif;color:var(--charcoal);background:var(--light);overflow-x:hidden;cursor:default}
+
+/* ========= CUSTOM CURSOR ========= */
+.cursor-dot{position:fixed;width:8px;height:8px;background:var(--signal);border-radius:50%;pointer-events:none;z-index:10000;transition:transform .15s ease;mix-blend-mode:difference}
+.cursor-ring{position:fixed;width:40px;height:40px;border:1.5px solid var(--signal);border-radius:50%;pointer-events:none;z-index:10000;transition:transform .3s ease, width .3s ease, height .3s ease;mix-blend-mode:difference}
+.cursor-ring.hover{width:60px;height:60px;border-color:var(--signal)}
+@media(hover:none){.cursor-dot,.cursor-ring{display:none}}
+
+/* ========= BLUEPRINT GRID BG ========= */
+.blueprint-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.04;
+background-image:
+  linear-gradient(var(--steel) 1px,transparent 1px),
+  linear-gradient(90deg,var(--steel) 1px,transparent 1px);
+background-size:60px 60px}
+
+/* ========= GRAIN ========= */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.03;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ========= TYPOGRAPHY ========= */
+h1,h2,h3,.display{font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--steel)}
+
+/* ========= HEADER ========= */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+header a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em}
+.logo{font-family:'Archivo Black',sans-serif;font-size:1.1rem;text-transform:uppercase}
+header nav{display:flex;gap:1.5rem}
+header nav a{position:relative}
+header nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#fff;transition:width .3s ease}
+header nav a:hover::after{width:100%}
+
+/* ========= HERO: SPLIT DIAGONAL ========= */
+.hero{height:100vh;position:relative;display:flex;overflow:hidden}
+.hero-left{width:55%;height:100%;background:var(--deep);display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 4rem;position:relative;clip-path:polygon(0 0,100% 0,85% 100%,0 100%);z-index:2}
+.hero-right{position:absolute;right:0;top:0;width:55%;height:100%;background:var(--concrete);display:flex;align-items:center;justify-content:center;z-index:1}
+.hero-right .zone-preview{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;width:300px;height:300px;transform:rotate(-3deg)}
+.zone-preview .zone-cell{background:var(--grid);border:1px solid var(--steel);position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.zone-cell:hover{transform:scale(1.05);z-index:2}
+.zone-cell span{position:absolute;bottom:6px;left:8px;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.zone-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(255,107,53,.15));opacity:0;transition:opacity .3s}
+.zone-cell:hover::before{opacity:1}
+.hero h1{color:var(--concrete);font-size:clamp(2.5rem,6vw,5rem);line-height:.95;margin-bottom:1.5rem}
+.hero h1 .accent{color:var(--signal);display:block}
+.hero-tagline{color:var(--grid);font-size:1.05rem;line-height:1.6;max-width:420px;font-weight:300}
+.hero-cta{display:inline-flex;align-items:center;gap:.8rem;margin-top:2.5rem;padding:1rem 2rem;background:var(--signal);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;position:relative;overflow:hidden;transition:transform .3s ease}
+.hero-cta::before{content:'';position:absolute;inset:0;background:var(--steel);transform:translateX(-101%);transition:transform .4s cubic-bezier(.77,0,.175,1)}
+.hero-cta:hover::before{transform:translateX(0)}
+.hero-cta span{position:relative;z-index:1}
+.hero-cta svg{position:relative;z-index:1;transition:transform .3s ease}
+.hero-cta:hover svg{transform:translateX(4px)}
+.hero-badge{position:absolute;bottom:3rem;left:4rem;display:flex;align-items:center;gap:.8rem}
+.hero-badge .line{width:40px;height:1px;background:var(--grid)}
+.hero-badge .text{color:var(--grid);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* ========= SPLIT COMPARE SECTIONS ========= */
+.split-section{display:flex;min-height:100vh;position:relative}
+.split-section.reverse{flex-direction:row-reverse}
+.split-panel{flex:1;padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+.split-panel.dark{background:var(--charcoal);color:var(--concrete)}
+.split-panel.light{background:var(--light);color:var(--charcoal)}
+.split-panel.accent{background:var(--steel);color:var(--concrete)}
+
+/* Architectural divider */
+.split-divider{width:80px;background:var(--signal);position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.split-divider::before{content:'VS';font-family:'Archivo Black',sans-serif;font-size:.8rem;letter-spacing:.2em;color:rgba(255,255,255,.7);writing-mode:vertical-rl;text-orientation:mixed}
+.split-divider .line-pattern{position:absolute;inset:0;opacity:.15;
+background-image:repeating-linear-gradient(0deg,transparent,transparent 10px,rgba(255,255,255,.3) 10px,rgba(255,255,255,.3) 11px)}
+
+.split-panel h2{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1rem;line-height:1}
+.split-panel .zone-label{margin-bottom:2rem}
+.panel-content{max-width:440px}
+.panel-content p{font-size:.95rem;line-height:1.7;font-weight:300;margin-bottom:1.5rem;opacity:.85}
+
+/* Feature stacks */
+.feature-stack{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.feature-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;border-left:3px solid var(--signal);background:rgba(255,107,53,.04);transition:transform .3s ease,background .3s ease}
+.feature-item:hover{transform:translateX(6px);background:rgba(255,107,53,.1)}
+.feature-icon{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--signal);color:#fff;font-size:1.1rem;font-weight:700}
+.feature-text h4{font-family:'Archivo Black',sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem}
+.feature-text p{font-size:.8rem;line-height:1.5;opacity:.7;margin:0}
+
+/* Dark panel features */
+.split-panel.dark .feature-item{border-left-color:var(--signal);background:rgba(255,255,255,.03)}
+.split-panel.dark .feature-item:hover{background:rgba(255,255,255,.07)}
+.split-panel.accent .feature-item{border-left-color:var(--concrete);background:rgba(255,255,255,.05)}
+.split-panel.accent .feature-item:hover{background:rgba(255,255,255,.1)}
+.split-panel.accent .feature-icon{background:var(--concrete);color:var(--steel)}
+
+/* ========= INTERACTIVE ZONE PLANNER ========= */
+.zone-planner{min-height:100vh;background:var(--deep);color:var(--concrete);padding:6rem 4rem;position:relative;overflow:hidden}
+.zone-planner::before{content:'';position:absolute;inset:0;opacity:.06;
+background-image:
+  linear-gradient(rgba(255,107,53,.3) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,107,53,.3) 1px,transparent 1px);
+background-size:40px 40px}
+.planner-header{text-align:center;margin-bottom:4rem;position:relative;z-index:2}
+.planner-header h2{font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem}
+.planner-header p{font-size:1rem;opacity:.6;max-width:500px;margin:0 auto;font-weight:300}
+.zone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1000px;margin:0 auto;position:relative;z-index:2}
+.zone-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:2.5rem 2rem;cursor:pointer;transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden}
+.zone-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--signal);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.zone-card:hover::before,.zone-card.active::before{transform:scaleX(1)}
+.zone-card:hover,.zone-card.active{background:rgba(255,107,53,.08);border-color:var(--signal)}
+.zone-card .zone-num{font-family:'Archivo Black',sans-serif;font-size:2.5rem;color:var(--signal);opacity:.3;margin-bottom:1rem;transition:opacity .3s}
+.zone-card:hover .zone-num,.zone-card.active .zone-num{opacity:.8}
+.zone-card h3{font-size:.85rem;letter-spacing:.08em;margin-bottom:.5rem}
+.zone-card p{font-size:.8rem;line-height:1.5;opacity:.5;font-weight:300}
+.zone-card .recommend{margin-top:1rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);opacity:0;transform:translateY(8px);transition:all .3s ease}
+.zone-card:hover .recommend,.zone-card.active .recommend{opacity:1;transform:translateY(0)}
+
+/* ========= PRODUCT SPECS — ANGULAR CARDS ========= */
+.specs-section{padding:6rem 4rem;background:var(--concrete);position:relative;overflow:hidden}
+.specs-section .section-header{margin-bottom:4rem}
+.specs-section h2{font-size:clamp(2rem,3.5vw,3rem);color:var(--charcoal)}
+.specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:0 auto}
+.spec-card{padding:3rem 2.5rem;border:1px solid var(--grid);position:relative;overflow:hidden;transition:all .4s ease}
+.spec-card:nth-child(odd){background:var(--light)}
+.spec-card:nth-child(even){background:var(--charcoal);color:var(--concrete)}
+.spec-card::after{content:'';position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 50px 50px 0;border-color:transparent var(--signal) transparent transparent;opacity:0;transition:opacity .3s}
+.spec-card:hover::after{opacity:1}
+.spec-card .spec-num{font-family:'Archivo Black',sans-serif;font-size:3.5rem;color:var(--signal);opacity:.2;line-height:1}
+.spec-card h3{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin:.8rem 0 .5rem}
+.spec-card p{font-size:.85rem;line-height:1.6;opacity:.7;font-weight:300}
+.spec-card .spec-tag{display:inline-block;margin-top:1rem;padding:.3rem .8rem;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid currentColor;opacity:.4}
+
+/* ========= TESTIMONIALS: OFFSET GRID ========= */
+.testimonials{padding:6rem 4rem;background:var(--charcoal);color:var(--concrete);position:relative}
+.testimonials h2{font-size:clamp(2rem,3vw,2.8rem);margin-bottom:3rem}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px}
+.test-card{padding:2rem;border-left:3px solid var(--signal);position:relative}
+.test-card:nth-child(even){margin-top:3rem}
+.test-card blockquote{font-size:1rem;line-height:1.7;font-style:italic;font-weight:300;opacity:.85;margin-bottom:1rem}
+.test-card .author{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+
+/* ========= CTA SECTION ========= */
+.cta-section{min-height:60vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.cta-left{width:50%;background:var(--signal);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;min-height:60vh}
+.cta-right{width:50%;background:var(--deep);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:60vh}
+.cta-section h2{font-size:clamp(2rem,4vw,3.5rem);color:#fff;margin-bottom:1rem;line-height:1}
+.cta-section p{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.6;max-width:400px;font-weight:300;margin-bottom:2rem}
+.cta-btn{display:inline-flex;align-items:center;gap:.8rem;padding:1.1rem 2.5rem;font-weight:600;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:all .3s ease;position:relative;overflow:hidden}
+.cta-btn.white{background:#fff;color:var(--charcoal)}
+.cta-btn.outline{border:2px solid var(--signal);color:var(--signal);background:transparent}
+.cta-btn:hover{transform:translateY(-2px)}
+.cta-btn.white:hover{box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.cta-btn.outline:hover{background:var(--signal);color:#fff}
+
+/* ========= FOOTER ========= */
+footer{background:var(--charcoal);color:var(--grid);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;border-top:1px solid rgba(255,255,255,.06)}
+footer a{color:var(--signal);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* ========= SCROLL REVEALS ========= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.stagger{transition-delay:calc(var(--i,0) * .12s)}
+
+/* ========= COUNTER ANIMATION ========= */
+.counter-row{display:flex;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
+.counter-item .count{font-family:'Archivo Black',sans-serif;font-size:2.5rem;color:var(--signal);line-height:1}
+.counter-item .count-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-top:.3rem}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width:900px){
+  .hero{flex-direction:column}
+  .hero-left{width:100%;clip-path:none;padding:7rem 2rem 3rem;min-height:60vh}
+  .hero-right{position:relative;width:100%;height:40vh}
+  .hero-right .zone-preview{width:200px;height:200px}
+  .split-section,.split-section.reverse{flex-direction:column}
+  .split-panel{padding:3rem 2rem}
+  .split-divider{width:100%;height:50px;writing-mode:horizontal-tb}
+  .split-divider::before{writing-mode:horizontal-tb}
+  .zone-grid{grid-template-columns:1fr 1fr}
+  .specs-grid{grid-template-columns:1fr}
+  .test-grid{grid-template-columns:1fr}
+  .test-card:nth-child(even){margin-top:0}
+  .cta-section{flex-direction:column}
+  .cta-left,.cta-right{width:100%;min-height:40vh}
+  .counter-row{gap:1.5rem}
+  header nav{display:none}
+  .hero-badge{bottom:1.5rem;left:2rem}
+}
+@media(max-width:600px){
+  .zone-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
+
+/* ========= REDUCED MOTION ========= */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="blueprint-bg"></div>
+<div class="grain"></div>
+
+<!-- HEADER -->
+<header>
+  <a href="/iseekblinds/" class="logo">iSeekBlinds</a>
+  <nav>
+    <a href="/iseekblinds/">Home</a>
+    <a href="/iseekblinds/landing/commercial-blinds.html">Commercial</a>
+    <a href="/iseekblinds/#free-quote">Free Quote</a>
+    <a href="tel:1300000000">1300 iSeek</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="label reveal" style="--i:0;margin-bottom:1.5rem">Co-Working & Shared Office</div>
+    <h1 class="reveal" style="--i:1">Blinds that<br><span class="accent">work as hard</span><br>as your tenants</h1>
+    <p class="hero-tagline reveal" style="--i:2">Every zone in a co-working space has different light, privacy, and acoustic needs. We design window treatments zone-by-zone — so hot desks stay glare-free, meeting rooms stay private, and your fitout looks intentional, not afterthought.</p>
+    <a href="/iseekblinds/#free-quote" class="hero-cta reveal" style="--i:3">
+      <span>Get a workspace consultation</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="hero-badge reveal" style="--i:4">
+      <div class="line"></div>
+      <div class="text">Melbourne's commercial blinds specialists</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="zone-preview reveal" style="--i:2">
+      <div class="zone-cell" style="background:linear-gradient(135deg,var(--steel),var(--deep))"><span>Open Plan</span></div>
+      <div class="zone-cell" style="background:linear-gradient(135deg,var(--signal),#c44d1f)"><span>Meeting</span></div>
+      <div class="zone-cell" style="background:linear-gradient(135deg,var(--concrete),var(--grid))"><span>Focus Pod</span></div>
+      <div class="zone-cell" style="background:linear-gradient(135deg,var(--deep),var(--charcoal))"><span>Lounge</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 1: OPEN PLAN vs MEETING ROOMS -->
+<section class="split-section">
+  <div class="split-panel light">
+    <div class="panel-content reveal-left">
+      <div class="label zone-label">Zone 01 — Open Plan</div>
+      <h2>Where everyone<br>sees everything</h2>
+      <p>Open-plan hot desks need abundant daylight without screen glare. Our light-filtering roller blinds let natural light flood in while cutting harsh reflections — no more laptop-lid-angle gymnastics.</p>
+      <div class="feature-stack">
+        <div class="feature-item stagger" style="--i:0">
+          <div class="feature-icon">☀</div>
+          <div class="feature-text">
+            <h4>Glare elimination</h4>
+            <p>5% openness factor fabrics — see outside, block glare</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:1">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <h4>Motorised group control</h4>
+            <p>One remote adjusts an entire bank of windows</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:2">
+          <div class="feature-icon">🎨</div>
+          <div class="feature-text">
+            <h4>Brand-matched fabrics</h4>
+            <p>350+ colours to nail your interior palette</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="split-divider"><div class="line-pattern"></div></div>
+  <div class="split-panel dark">
+    <div class="panel-content reveal-right">
+      <div class="label zone-label" style="color:var(--signal)">Zone 02 — Meeting Rooms</div>
+      <h2>Where ideas<br>stay inside</h2>
+      <p>Glass-walled meeting rooms look great until a client presentation is visible from the kitchen. Our switchable privacy blinds go from transparent to opaque in seconds — presentation mode, activated.</p>
+      <div class="feature-stack">
+        <div class="feature-item stagger" style="--i:0">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-text">
+            <h4>Instant privacy</h4>
+            <p>Dual roller blinds — sheer for light, blockout for meetings</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:1">
+          <div class="feature-icon">🎤</div>
+          <div class="feature-text">
+            <h4>Acoustic dampening</h4>
+            <p>Heavy-weave fabrics absorb 40% more echo</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:2">
+          <div class="feature-icon">📱</div>
+          <div class="feature-text">
+            <h4>Smart scheduling</h4>
+            <p>Timer-controlled blinds that match booking systems</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 2: FOCUS PODS vs LOUNGE -->
+<section class="split-section reverse">
+  <div class="split-panel accent">
+    <div class="panel-content reveal-right">
+      <div class="label zone-label" style="color:var(--concrete)">Zone 03 — Focus Pods</div>
+      <h2>Where deep<br>work happens</h2>
+      <p>Phone booths and focus pods are concentration capsules. Our blackout cellular blinds block distracting movement from outside while trapping heat in winter and keeping cool in summer — tiny spaces, big comfort.</p>
+      <div class="feature-stack">
+        <div class="feature-item stagger" style="--i:0">
+          <div class="feature-icon" style="background:var(--concrete);color:var(--steel)">🧠</div>
+          <div class="feature-text">
+            <h4>Distraction-free</h4>
+            <p>Honeycomb cells block 95% of visual noise</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:1">
+          <div class="feature-icon" style="background:var(--concrete);color:var(--steel)">🌡</div>
+          <div class="feature-text">
+            <h4>Thermal insulation</h4>
+            <p>Cellular structure creates dead-air pockets for R-value boost</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="split-divider"><div class="line-pattern"></div></div>
+  <div class="split-panel light">
+    <div class="panel-content reveal-left">
+      <div class="label zone-label">Zone 04 — Breakout & Lounge</div>
+      <h2>Where people<br>recharge</h2>
+      <p>The lounge is your space's personality. We match blinds to the vibe — linen sheers for that chill Scandinavian look, bold prints for creative energy, or wooden venetians for that WeWork-meets-library feel.</p>
+      <div class="feature-stack">
+        <div class="feature-item stagger" style="--i:0">
+          <div class="feature-icon">✨</div>
+          <div class="feature-text">
+            <h4>Design-forward fabrics</h4>
+            <p>Texture, pattern, and movement — not just plain white</p>
+          </div>
+        </div>
+        <div class="feature-item stagger" style="--i:1">
+          <div class="feature-icon">🍃</div>
+          <div class="feature-text">
+            <h4>Biophilic elements</h4>
+            <p>Natural timber, woven bamboo, and organic textures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE ZONE PLANNER -->
+<section class="zone-planner">
+  <div class="planner-header reveal">
+    <div class="label" style="color:var(--signal);margin-bottom:1rem">Interactive</div>
+    <h2>Map your<br>workspace zones</h2>
+    <p>Click a zone to see our recommended blind solution. Every co-working space is unique — this is where we start the conversation.</p>
+  </div>
+  <div class="zone-grid">
+    <div class="zone-card reveal stagger" style="--i:0" data-zone="reception">
+      <div class="zone-num">01</div>
+      <h3>Reception</h3>
+      <p>First impressions. Sheer roller blinds with logo-printed panels make your entry memorable.</p>
+      <div class="recommend">→ Printed sheer rollers</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:1" data-zone="hotdesk">
+      <div class="zone-num">02</div>
+      <h3>Hot Desks</h3>
+      <p>Maximum daylight, zero glare. Sunscreen fabric with 3-5% openness factor is the sweet spot.</p>
+      <div class="recommend">→ Sunscreen rollers</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:2" data-zone="meeting">
+      <div class="zone-num">03</div>
+      <h3>Meeting Rooms</h3>
+      <p>Dual-layer for flexibility. Sheer for daylight presentations, blockout for projector sessions.</p>
+      <div class="recommend">→ Dual roller system</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:3" data-zone="phone">
+      <div class="zone-num">04</div>
+      <h3>Phone Booths</h3>
+      <p>Compact blackout. Honeycomb blinds maximise space and minimise distraction in tight quarters.</p>
+      <div class="recommend">→ Cellular honeycomb</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:4" data-zone="kitchen">
+      <div class="zone-num">05</div>
+      <h3>Kitchen & Café</h3>
+      <p>Easy-clean PVC or aluminium venetians. Handles splashes, steam, and that one person who burns toast.</p>
+      <div class="recommend">→ PVC venetians</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:5" data-zone="lounge">
+      <div class="zone-num">06</div>
+      <h3>Breakout Lounge</h3>
+      <p>Texture and warmth. Woven timber venetians or linen-look rollers set the chill-out tone.</p>
+      <div class="recommend">→ Timber venetians</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:6" data-zone="event">
+      <div class="zone-num">07</div>
+      <h3>Event Space</h3>
+      <p>Motorised for drama. Blinds that rise in unison when the talk begins — very TED, very impressive.</p>
+      <div class="recommend">→ Motorised rollers</div>
+    </div>
+    <div class="zone-card reveal stagger" style="--i:7" data-zone="server">
+      <div class="zone-num">08</div>
+      <h3>Server / Utility</h3>
+      <p>UV-blocking and fire-rated. Protect equipment from sun damage with commercial-grade blockout.</p>
+      <div class="recommend">→ FR blockout rollers</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT SPECS -->
+<section class="specs-section">
+  <div class="section-header reveal">
+    <div class="label" style="margin-bottom:1rem">Product Range</div>
+    <h2>Built for commercial<br>duty cycles</h2>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-card reveal stagger" style="--i:0">
+      <div class="spec-num">01</div>
+      <h3>Sunscreen Rollers</h3>
+      <p>The co-working workhorse. Reduces glare by 94% while maintaining outward visibility. Available in 350+ colours with chain, spring, or motorised operation.</p>
+      <div class="spec-tag">Most Popular</div>
+    </div>
+    <div class="spec-card reveal stagger" style="--i:1">
+      <div class="spec-num">02</div>
+      <h3>Dual Roller System</h3>
+      <p>Two blinds, one bracket. Front sheer for day use, rear blockout for presentations. Switch modes in seconds without touching the window.</p>
+      <div class="spec-tag">Meeting Rooms</div>
+    </div>
+    <div class="spec-card reveal stagger" style="--i:2">
+      <div class="spec-num">03</div>
+      <h3>Honeycomb Cellular</h3>
+      <p>Double-cell construction traps air for insulation. Reduces heating costs by up to 40% and absorbs ambient noise. Ideal for focus pods.</p>
+      <div class="spec-tag">Energy Efficient</div>
+    </div>
+    <div class="spec-card reveal stagger" style="--i:3">
+      <div class="spec-num">04</div>
+      <h3>Motorised Blinds</h3>
+      <p>Hardwired or rechargeable. Integrates with building management systems, Google Home, Alexa, and Apple HomeKit. Group control for open-plan zones.</p>
+      <div class="spec-tag">Smart Home</div>
+    </div>
+    <div class="spec-card reveal stagger" style="--i:4">
+      <div class="spec-num">05</div>
+      <h3>Timber Venetians</h3>
+      <p>Real basswood or PVC timber-look. Adjustable slats for precise light control. The classic choice for breakout areas and reception spaces.</p>
+      <div class="spec-tag">Design Forward</div>
+    </div>
+    <div class="spec-card reveal stagger" style="--i:5">
+      <div class="spec-num">06</div>
+      <h3>Panel Glide</h3>
+      <p>Floor-to-ceiling fabric panels on a sleek track. Perfect for large glass facades and room dividers. Stacks neatly to one side.</p>
+      <div class="spec-tag">Large Windows</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="background:var(--signal);padding:4rem;position:relative;overflow:hidden">
+  <div style="max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem" class="reveal">
+    <div class="counter-item" style="text-align:center;flex:1;min-width:150px">
+      <div class="count" data-target="200" style="color:#fff">0+</div>
+      <div class="count-label" style="color:rgba(255,255,255,.7)">Co-working spaces fitted</div>
+    </div>
+    <div class="counter-item" style="text-align:center;flex:1;min-width:150px">
+      <div class="count" data-target="15000" style="color:#fff">0+</div>
+      <div class="count-label" style="color:rgba(255,255,255,.7)">Commercial blinds installed</div>
+    </div>
+    <div class="counter-item" style="text-align:center;flex:1;min-width:150px">
+      <div class="count" data-target="98" style="color:#fff">0%</div>
+      <div class="count-label" style="color:rgba(255,255,255,.7)">Client satisfaction rate</div>
+    </div>
+    <div class="counter-item" style="text-align:center;flex:1;min-width:150px">
+      <div class="count" data-target="5" style="color:#fff">0yr</div>
+      <div class="count-label" style="color:rgba(255,255,255,.7)">Commercial warranty</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="reveal">
+    <div class="label" style="color:var(--signal);margin-bottom:1rem">What Operators Say</div>
+    <h2>Real spaces,<br>real feedback</h2>
+  </div>
+  <div class="test-grid" style="margin-top:2rem">
+    <div class="test-card reveal stagger" style="--i:0">
+      <blockquote>"We fitted out three floors of hot desks and meeting rooms. iSeekBlinds mapped every zone and recommended different products for each — our members noticed the difference immediately. Glare complaints dropped to zero."</blockquote>
+      <div class="author">— Sarah K., Workspace Manager, Hub Australia</div>
+    </div>
+    <div class="test-card reveal stagger" style="--i:1">
+      <blockquote>"The motorised blinds in our event space are a showstopper. When they rise in sync before a talk, the audience always reacts. It's become part of our brand experience."</blockquote>
+      <div class="author">— Tom L., Operations Director, CreativeCubes</div>
+    </div>
+    <div class="test-card reveal stagger" style="--i:2">
+      <blockquote>"Honest consultation — they talked us out of an expensive option and suggested a smarter solution that saved 30% on our budget. Rare to find a supplier who doesn't just upsell."</blockquote>
+      <div class="author">— Priya M., Fitout Manager, Spaces Melbourne</div>
+    </div>
+    <div class="test-card reveal stagger" style="--i:3">
+      <blockquote>"Our phone booths were unusable after 2pm — sun turned them into ovens. The honeycomb blinds fixed heat AND noise. Best small upgrade we've made."</blockquote>
+      <div class="author">— James W., Community Lead, WeWork Cremorne</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SPLIT -->
+<section class="cta-section">
+  <div class="cta-left reveal-left">
+    <h2>Free workspace<br>consultation</h2>
+    <p>We'll visit your space, map every zone, and deliver a custom recommendation — no obligation, no pressure. Just expert advice from people who've fitted hundreds of commercial spaces.</p>
+    <a href="/iseekblinds/#free-quote" class="cta-btn white">
+      <span>Book a site visit</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="cta-right reveal-right">
+    <h2>Need a<br>quick quote?</h2>
+    <p>Send us your floor plan or window measurements. We'll turn around a detailed quote within 24 hours — commercial pricing, no hidden fees.</p>
+    <a href="tel:1300000000" class="cta-btn outline">
+      <span>Call 1300 iSeek</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 iSeekBlinds — Melbourne's Window Furnishing Specialists</div>
+  <div><a href="/iseekblinds/">Home</a> · <a href="/iseekblinds/landing/">All Solutions</a> · <a href="/iseekblinds/#free-quote">Free Quote</a></div>
+</footer>
+
+<script>
+// Custom cursor
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,dx=0,dy=0,rx=0,ry=0;
+if(window.matchMedia('(hover:hover)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+  const interactives=document.querySelectorAll('a,button,.zone-card,.spec-card,.feature-item');
+  interactives.forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+  });
+  (function animCursor(){
+    dx+=(mx-dx)*.15;dy+=(my-dy)*.15;
+    rx+=(mx-rx)*.08;ry+=(my-ry)*.08;
+    dot.style.transform=`translate(${dx-4}px,${dy-4}px)`;
+    ring.style.transform=`translate(${rx-20}px,${ry-20}px)`;
+    requestAnimationFrame(animCursor);
+  })();
+  document.body.style.cursor='none';
+}
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.15,rootMargin:'0px 0px -50px 0px'});
+reveals.forEach(el=>observer.observe(el));
+
+// Counter animation
+const counters=document.querySelectorAll('.count[data-target]');
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    const target=parseInt(el.dataset.target);
+    const suffix=el.textContent.replace(/[0-9,]/g,'');
+    let current=0;
+    const step=Math.max(1,Math.floor(target/60));
+    const timer=setInterval(()=>{
+      current+=step;
+      if(current>=target){current=target;clearInterval(timer)}
+      el.textContent=current.toLocaleString()+suffix;
+    },25);
+    counterObs.unobserve(el);
+  });
+},{threshold:.5});
+counters.forEach(c=>counterObs.observe(c));
+
+// Zone card click interaction
+document.querySelectorAll('.zone-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    document.querySelectorAll('.zone-card').forEach(c=>c.classList.remove('active'));
+    card.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
