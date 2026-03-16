@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Studio Blackout Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Total light control for photography studios. Blackout roller blinds, motorised solutions, and custom installations for Melbourne photographers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & VARS ===== */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --ps-black: #0a0a0a;
+      --ps-concrete: #2d2d2d;
+      --ps-mid: #6b6b6b;
+      --ps-light: #b5b5b5;
+      --ps-offwhite: #f0ede8;
+      --ps-yellow: #FFD600;
+      --ps-yellow-dim: #c4a600;
+      --ps-red: #ff3333;
+      --ps-mono: 'Space Mono', 'Courier New', monospace;
+      --ps-display: 'Major Mono Display', monospace;
+      --ps-border: 3px solid var(--ps-black);
+      --ps-border-thin: 1px solid var(--ps-mid);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ps-mono);
+      background: var(--ps-offwhite);
+      color: var(--ps-black);
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--ps-black); }
+    a:hover { color: var(--ps-yellow-dim); }
+
+    /* ===== UTILITY ===== */
+    .ps-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .ps-label {
+      font-family: var(--ps-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ps-mid);
+      display: block;
+    }
+    .ps-tag {
+      display: inline-block;
+      border: 2px solid var(--ps-black);
+      padding: 0.2rem 0.6rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: var(--ps-mono);
+      font-weight: 700;
+    }
+    .ps-tag--yellow { border-color: var(--ps-yellow); background: var(--ps-yellow); color: var(--ps-black); }
+
+    /* ===== TOPBAR ===== */
+    .ps-topbar {
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+      padding: 0.6rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 4px solid var(--ps-yellow);
+    }
+    .ps-topbar a { color: var(--ps-yellow); text-decoration: none; }
+    .ps-topbar a:hover { text-decoration: underline; }
+    .ps-topbar-logo {
+      font-family: var(--ps-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .ps-topbar-links { display: flex; gap: 1.5rem; align-items: center; }
+    .ps-topbar-links a { color: var(--ps-offwhite); }
+    .ps-topbar-cta {
+      background: var(--ps-yellow);
+      color: var(--ps-black) !important;
+      padding: 0.35rem 0.8rem;
+      font-weight: 700;
+      text-decoration: none !important;
+    }
+
+    /* ===== HERO — BRUTALIST GRID ===== */
+    .ps-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 90vh;
+      border-bottom: var(--ps-border);
+    }
+    .ps-hero-left {
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ps-hero-left::before {
+      content: 'F/2.8';
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-family: var(--ps-display);
+      font-size: 6rem;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+    }
+    .ps-hero-overline {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ps-yellow);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--ps-yellow);
+      padding-left: 0.8rem;
+    }
+    .ps-hero-title {
+      font-family: var(--ps-display);
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .ps-hero-title span { color: var(--ps-yellow); }
+    .ps-hero-sub {
+      font-size: 0.85rem;
+      color: var(--ps-light);
+      max-width: 420px;
+      line-height: 1.8;
+    }
+    .ps-hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .ps-hero-stat-num {
+      font-family: var(--ps-display);
+      font-size: 2rem;
+      color: var(--ps-yellow);
+      display: block;
+    }
+    .ps-hero-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ps-mid);
+    }
+    .ps-hero-right {
+      background: var(--ps-concrete);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ps-hero-visual {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* Simulated studio setup - abstract geometric */
+    .ps-studio-diagram {
+      width: 320px;
+      height: 400px;
+      position: relative;
+    }
+    .ps-studio-window {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 140px;
+      border: 3px solid var(--ps-light);
+      background: linear-gradient(180deg, rgba(255,214,0,0.15) 0%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ps-mono);
+      font-size: 0.55rem;
+      color: var(--ps-light);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .ps-studio-blind {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      height: 0%;
+      background: repeating-linear-gradient(
+        180deg,
+        var(--ps-black) 0px,
+        var(--ps-black) 8px,
+        var(--ps-concrete) 8px,
+        var(--ps-concrete) 10px
+      );
+      transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ps-studio-tripod {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 120px;
+      background: var(--ps-light);
+    }
+    .ps-studio-tripod::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -15px;
+      width: 32px;
+      height: 22px;
+      border: 2px solid var(--ps-yellow);
+      background: var(--ps-concrete);
+    }
+    .ps-studio-tripod::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -20px;
+      width: 42px;
+      height: 2px;
+      background: var(--ps-light);
+    }
+    .ps-studio-light-l, .ps-studio-light-r {
+      position: absolute;
+      bottom: 100px;
+      width: 40px;
+      height: 50px;
+      border: 2px solid var(--ps-mid);
+    }
+    .ps-studio-light-l { left: 20px; transform: rotate(-15deg); }
+    .ps-studio-light-r { right: 20px; transform: rotate(15deg); }
+    .ps-studio-light-l::after, .ps-studio-light-r::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: var(--ps-mid);
+    }
+    .ps-studio-label {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.55rem;
+      color: var(--ps-mid);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ps-hero-corner-tag {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      writing-mode: vertical-rl;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ps-mid);
+    }
+
+    /* ===== BEFORE / AFTER COMPARISON ===== */
+    .ps-compare-section {
+      padding: 5rem 0;
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+      border-bottom: 4px solid var(--ps-yellow);
+    }
+    .ps-compare-header {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .ps-compare-header h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.5rem, 3vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .ps-compare-header p {
+      color: var(--ps-light);
+      max-width: 600px;
+      font-size: 0.85rem;
+    }
+
+    .ps-compare-widget {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16/10;
+      border: var(--ps-border);
+      border-color: var(--ps-mid);
+      overflow: hidden;
+      cursor: ew-resize;
+      user-select: none;
+      margin-bottom: 1rem;
+    }
+    .ps-compare-before, .ps-compare-after {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+    }
+    .ps-compare-before {
+      background: linear-gradient(135deg, #f5e6c8 0%, #fdf5e6 40%, #fff9ef 100%);
+      color: var(--ps-concrete);
+    }
+    .ps-compare-after {
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+      clip-path: inset(0 0 0 50%);
+    }
+    .ps-compare-scene {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    /* Before: harsh light spilling everywhere */
+    .ps-compare-before .ps-scene-title {
+      font-family: var(--ps-display);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .ps-compare-before .ps-scene-desc {
+      font-size: 0.7rem;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+    .ps-compare-before .ps-light-leak {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(225deg, rgba(255,214,0,0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .ps-compare-before .ps-hotspot {
+      position: absolute;
+      top: 20%;
+      right: 15%;
+      width: 80px;
+      height: 80px;
+      border: 2px dashed var(--ps-red);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5rem;
+      color: var(--ps-red);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: ps-pulse 2s ease infinite;
+    }
+    @keyframes ps-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .ps-compare-before .ps-glare-lines {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,214,0,0.05) 10px,
+        rgba(255,214,0,0.05) 11px
+      );
+      pointer-events: none;
+    }
+
+    /* After: controlled, dark, professional */
+    .ps-compare-after .ps-scene-title {
+      font-family: var(--ps-display);
+      font-size: 1.4rem;
+      color: var(--ps-yellow);
+      margin-bottom: 0.5rem;
+    }
+    .ps-compare-after .ps-scene-desc {
+      font-size: 0.7rem;
+      line-height: 1.6;
+      max-width: 300px;
+      color: var(--ps-light);
+    }
+    .ps-compare-after .ps-controlled-spot {
+      position: absolute;
+      top: 20%;
+      right: 15%;
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--ps-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5rem;
+      color: var(--ps-yellow);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .ps-compare-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--ps-yellow);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .ps-compare-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: var(--ps-yellow);
+      border: 3px solid var(--ps-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ps-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ps-black);
+      z-index: 11;
+      cursor: ew-resize;
+      user-select: none;
+      letter-spacing: -0.05em;
+    }
+    .ps-compare-labels {
+      display: flex;
+      justify-content: space-between;
+      max-width: 900px;
+    }
+    .ps-compare-labels span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ps-mid);
+    }
+
+    /* ===== SPECS GRID — BRUTALIST ===== */
+    .ps-specs {
+      padding: 5rem 0;
+      border-bottom: var(--ps-border);
+    }
+    .ps-specs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: var(--ps-border);
+    }
+    .ps-specs-header h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    .ps-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .ps-spec-card {
+      border: var(--ps-border);
+      padding: 2rem;
+      margin: -1.5px;
+      position: relative;
+      transition: background 0.3s, color 0.3s;
+    }
+    .ps-spec-card:hover {
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+    }
+    .ps-spec-card:hover .ps-spec-num { color: var(--ps-yellow); }
+    .ps-spec-card:hover .ps-label { color: var(--ps-light); }
+    .ps-spec-num {
+      font-family: var(--ps-display);
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+    .ps-spec-title {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .ps-spec-desc {
+      font-size: 0.75rem;
+      line-height: 1.7;
+      color: var(--ps-mid);
+    }
+    .ps-spec-card:hover .ps-spec-desc { color: var(--ps-light); }
+
+    /* ===== PROBLEM / SOLUTION — ASYMMETRIC SPLIT ===== */
+    .ps-problems {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      border-bottom: var(--ps-border);
+    }
+    .ps-problems-left {
+      background: var(--ps-yellow);
+      padding: 4rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .ps-problems-left h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      margin-bottom: 1rem;
+    }
+    .ps-problems-left p {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--ps-concrete);
+    }
+    .ps-problems-right {
+      border-left: var(--ps-border);
+    }
+    .ps-problem-item {
+      padding: 3rem 3rem;
+      border-bottom: var(--ps-border);
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      transition: background 0.3s;
+    }
+    .ps-problem-item:last-child { border-bottom: none; }
+    .ps-problem-item:hover { background: rgba(255,214,0,0.05); }
+    .ps-problem-num {
+      font-family: var(--ps-display);
+      font-size: 2rem;
+      color: var(--ps-mid);
+      line-height: 1;
+    }
+    .ps-problem-item:hover .ps-problem-num { color: var(--ps-yellow-dim); }
+    .ps-problem-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .ps-problem-text {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--ps-mid);
+    }
+    .ps-problem-solution {
+      margin-top: 0.8rem;
+      padding: 0.8rem 1rem;
+      border-left: 3px solid var(--ps-yellow);
+      background: rgba(255,214,0,0.04);
+      font-size: 0.75rem;
+      color: var(--ps-concrete);
+    }
+    .ps-problem-solution strong { color: var(--ps-black); }
+
+    /* ===== PRODUCTS STRIP ===== */
+    .ps-products {
+      padding: 5rem 0;
+      background: var(--ps-concrete);
+      color: var(--ps-offwhite);
+      border-bottom: 4px solid var(--ps-yellow);
+    }
+    .ps-products h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      margin-bottom: 0.8rem;
+    }
+    .ps-products-sub {
+      color: var(--ps-light);
+      font-size: 0.8rem;
+      margin-bottom: 3rem;
+      max-width: 500px;
+    }
+    .ps-product-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .ps-product-card {
+      border: 1px solid var(--ps-mid);
+      padding: 0;
+      margin: -0.5px;
+      overflow: hidden;
+      position: relative;
+    }
+    .ps-product-visual {
+      height: 200px;
+      background: var(--ps-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ps-product-visual::after {
+      content: attr(data-product);
+      font-family: var(--ps-display);
+      font-size: 3.5rem;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      white-space: nowrap;
+    }
+    .ps-product-icon {
+      width: 60px;
+      height: 80px;
+      border: 2px solid var(--ps-mid);
+      position: relative;
+      z-index: 1;
+    }
+    .ps-product-icon--roller {
+      background: repeating-linear-gradient(180deg, var(--ps-mid) 0px, var(--ps-mid) 3px, transparent 3px, transparent 6px);
+    }
+    .ps-product-icon--motorised {
+      background: var(--ps-concrete);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ps-product-icon--motorised::after {
+      content: '⚡';
+      font-size: 1.5rem;
+    }
+    .ps-product-icon--panel {
+      background: linear-gradient(90deg, var(--ps-mid) 50%, transparent 50%);
+    }
+    .ps-product-body {
+      padding: 1.5rem;
+      border-top: 1px solid var(--ps-mid);
+    }
+    .ps-product-name {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .ps-product-desc {
+      font-size: 0.7rem;
+      color: var(--ps-light);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .ps-product-specs {
+      font-size: 0.6rem;
+      color: var(--ps-mid);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .ps-product-specs span {
+      display: inline-block;
+      border: 1px solid var(--ps-mid);
+      padding: 0.15rem 0.4rem;
+      margin: 0.15rem 0.2rem 0.15rem 0;
+    }
+
+    /* ===== TESTIMONIAL — RAW QUOTE ===== */
+    .ps-testimonial {
+      padding: 5rem 0;
+      border-bottom: var(--ps-border);
+      position: relative;
+    }
+    .ps-testimonial::before {
+      content: '"';
+      font-family: var(--ps-display);
+      font-size: 20rem;
+      color: rgba(0,0,0,0.03);
+      position: absolute;
+      top: -2rem;
+      left: 2rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .ps-testimonial-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .ps-testimonial-quote {
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      line-height: 1.6;
+      font-style: italic;
+      position: relative;
+      padding-left: 2rem;
+      border-left: 4px solid var(--ps-yellow);
+    }
+    .ps-testimonial-meta {
+      padding: 2rem;
+      border: var(--ps-border);
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+    }
+    .ps-testimonial-name {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .ps-testimonial-role {
+      font-size: 0.7rem;
+      color: var(--ps-light);
+      margin-bottom: 1rem;
+    }
+    .ps-testimonial-detail {
+      font-size: 0.65rem;
+      color: var(--ps-mid);
+      line-height: 1.6;
+    }
+
+    /* ===== PROCESS — VERTICAL TIMELINE (exposed) ===== */
+    .ps-process {
+      padding: 5rem 0;
+      background: var(--ps-offwhite);
+      border-bottom: var(--ps-border);
+    }
+    .ps-process h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      margin-bottom: 3rem;
+    }
+    .ps-timeline {
+      position: relative;
+      padding-left: 4rem;
+    }
+    .ps-timeline::before {
+      content: '';
+      position: absolute;
+      left: 1.2rem;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--ps-black);
+    }
+    .ps-step {
+      position: relative;
+      padding: 0 0 3rem 2rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .ps-step.ps-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .ps-step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: -3.8rem;
+      top: 0;
+      width: 2.6rem;
+      height: 2.6rem;
+      background: var(--ps-yellow);
+      border: 3px solid var(--ps-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ps-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 1;
+    }
+    .ps-step-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .ps-step-text {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--ps-mid);
+      max-width: 500px;
+    }
+    .ps-step-duration {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ps-concrete);
+      border-bottom: 2px solid var(--ps-yellow);
+      padding-bottom: 0.1rem;
+    }
+
+    /* ===== CTA — BOLD BLOCK ===== */
+    .ps-cta {
+      background: var(--ps-black);
+      color: var(--ps-offwhite);
+      padding: 5rem 0;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .ps-cta::before {
+      content: 'BOOK';
+      position: absolute;
+      bottom: -2rem;
+      right: -1rem;
+      font-family: var(--ps-display);
+      font-size: 18rem;
+      color: rgba(255,255,255,0.02);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .ps-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .ps-cta h2 {
+      font-family: var(--ps-display);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .ps-cta h2 span { color: var(--ps-yellow); }
+    .ps-cta p {
+      font-size: 0.85rem;
+      color: var(--ps-light);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .ps-cta-btn {
+      display: inline-block;
+      background: var(--ps-yellow);
+      color: var(--ps-black);
+      padding: 1rem 2.5rem;
+      font-family: var(--ps-mono);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 3px solid var(--ps-yellow);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .ps-cta-btn:hover {
+      background: transparent;
+      color: var(--ps-yellow);
+    }
+    .ps-cta-phone {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      color: var(--ps-mid);
+    }
+    .ps-cta-phone a { color: var(--ps-yellow); text-decoration: none; }
+    .ps-cta-right {
+      border: var(--ps-border);
+      border-color: var(--ps-mid);
+      padding: 2.5rem;
+    }
+    .ps-cta-checklist {
+      list-style: none;
+    }
+    .ps-cta-checklist li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .ps-cta-checklist li::before {
+      content: '✓';
+      font-weight: 700;
+      color: var(--ps-yellow);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== FOOTER ===== */
+    .ps-footer {
+      background: var(--ps-black);
+      color: var(--ps-mid);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      border-top: 4px solid var(--ps-yellow);
+    }
+    .ps-footer a { color: var(--ps-yellow); text-decoration: none; }
+    .ps-footer strong {
+      font-family: var(--ps-display);
+      font-size: 0.8rem;
+      color: var(--ps-offwhite);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .ps-hero { grid-template-columns: 1fr; }
+      .ps-hero-right { min-height: 50vh; }
+      .ps-hero-left { padding: 3rem 1.5rem; }
+      .ps-specs-grid { grid-template-columns: 1fr; }
+      .ps-problems { grid-template-columns: 1fr; }
+      .ps-problems-left { position: static; height: auto; padding: 3rem 1.5rem; }
+      .ps-problem-item { grid-template-columns: 40px 1fr; padding: 2rem 1.5rem; }
+      .ps-product-row { grid-template-columns: 1fr; }
+      .ps-testimonial-grid { grid-template-columns: 1fr; }
+      .ps-cta-inner { grid-template-columns: 1fr; }
+      .ps-topbar { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .ps-topbar-links { display: none; }
+      .ps-compare-widget { aspect-ratio: 4/5; }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .ps-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ps-reveal.ps-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== STAGGER LOAD ANIMATION ===== */
+    @keyframes ps-load-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ps-hero-overline { animation: ps-load-in 0.6s 0.1s both; }
+    .ps-hero-title { animation: ps-load-in 0.6s 0.25s both; }
+    .ps-hero-sub { animation: ps-load-in 0.6s 0.4s both; }
+    .ps-hero-stats { animation: ps-load-in 0.6s 0.55s both; }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <nav class="ps-topbar">
+    <div class="ps-topbar-logo">iSeekBlinds</div>
+    <div class="ps-topbar-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html">All Solutions</a>
+      <a href="free-samples.html">Samples</a>
+      <a href="tel:1300123456" class="ps-topbar-cta">1300 123 456</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="ps-hero">
+    <div class="ps-hero-left">
+      <div class="ps-hero-overline">Studio-Grade Window Solutions</div>
+      <h1 class="ps-hero-title">Photography<br>Studio<br><span>Blackout</span></h1>
+      <p class="ps-hero-sub">
+        Total light elimination for photographers who demand absolute control.
+        Custom-fitted blackout blinds that turn any Melbourne space into a
+        professional-grade studio — zero light leak, zero compromise.
+      </p>
+      <div class="ps-hero-stats">
+        <div>
+          <span class="ps-hero-stat-num">100%</span>
+          <span class="ps-hero-stat-label">Light Blockage</span>
+        </div>
+        <div>
+          <span class="ps-hero-stat-num">48hr</span>
+          <span class="ps-hero-stat-label">Quote Turnaround</span>
+        </div>
+        <div>
+          <span class="ps-hero-stat-num">5yr</span>
+          <span class="ps-hero-stat-label">Warranty</span>
+        </div>
+      </div>
+    </div>
+    <div class="ps-hero-right">
+      <span class="ps-hero-corner-tag">Technical spec</span>
+      <div class="ps-studio-diagram" id="studioDiagram">
+        <div class="ps-studio-window">
+          <div class="ps-studio-blind" id="heroBlinds"></div>
+          <span style="position:relative;z-index:2;">Window</span>
+        </div>
+        <div class="ps-studio-light-l"></div>
+        <div class="ps-studio-light-r"></div>
+        <div class="ps-studio-tripod"></div>
+        <div class="ps-studio-label">studio cross-section</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER COMPARISON -->
+  <section class="ps-compare-section">
+    <div class="ps-container">
+      <div class="ps-compare-header ps-reveal">
+        <h2>drag to compare_</h2>
+        <p>See the difference blackout blinds make to your studio environment. Drag the handle to reveal the transformation.</p>
+      </div>
+
+      <div class="ps-compare-widget" id="compareWidget">
+        <div class="ps-compare-before">
+          <div class="ps-scene-title">without_</div>
+          <div class="ps-scene-desc">
+            Uncontrolled ambient light spills across your set. Colour temperature shifts throughout the day. Harsh window glare ruins backdrops and creates unwanted hotspots.
+          </div>
+          <div class="ps-light-leak"></div>
+          <div class="ps-glare-lines"></div>
+          <div class="ps-hotspot">Glare<br>zone</div>
+        </div>
+        <div class="ps-compare-after" id="compareAfter">
+          <div class="ps-scene-title">with blackout_</div>
+          <div class="ps-scene-desc">
+            Complete darkness on demand. You control every photon. Consistent results, shoot after shoot. Your strobes are the only light source.
+          </div>
+          <div class="ps-controlled-spot">Your<br>light</div>
+        </div>
+        <div class="ps-compare-divider" id="compareDivider"></div>
+        <div class="ps-compare-handle" id="compareHandle">◄ ►</div>
+      </div>
+      <div class="ps-compare-labels">
+        <span>← No blinds</span>
+        <span>Blackout installed →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECS GRID -->
+  <section class="ps-specs">
+    <div class="ps-container">
+      <div class="ps-specs-header ps-reveal">
+        <h2>technical specs_</h2>
+        <span class="ps-tag ps-tag--yellow">Studio Grade</span>
+      </div>
+      <div class="ps-specs-grid">
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">01</span>
+          <div class="ps-spec-title">100% Blockout Fabric</div>
+          <div class="ps-spec-desc">Multi-layer coated polyester with foam-backed blackout core. Completely eliminates light transmission — verified to Australian standards.</div>
+        </div>
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">02</span>
+          <div class="ps-spec-title">Side Channel System</div>
+          <div class="ps-spec-desc">Aluminium side channels seal the gap between blind and window frame. No light leaks at the edges — the detail most installers miss.</div>
+        </div>
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">03</span>
+          <div class="ps-spec-title">Pelmet Integration</div>
+          <div class="ps-spec-desc">Concealed pelmet box eliminates top-gap light spill. Custom-colour matched or raw aluminium finish for industrial studios.</div>
+        </div>
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">04</span>
+          <div class="ps-spec-title">Motorised Option</div>
+          <div class="ps-spec-desc">Somfy or Automate motors with wall switch, remote, or app control. Raise all blinds simultaneously between shoots with one tap.</div>
+        </div>
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">05</span>
+          <div class="ps-spec-title">Thermal Insulation</div>
+          <div class="ps-spec-desc">Blackout fabric doubles as thermal barrier — reduces studio HVAC costs by up to 30%. Keep strobes cool and models comfortable.</div>
+        </div>
+        <div class="ps-spec-card ps-reveal">
+          <span class="ps-spec-num">06</span>
+          <div class="ps-spec-title">Custom Widths to 3.6m</div>
+          <div class="ps-spec-desc">Warehouse windows and converted industrial spaces welcome. Single blind spans up to 3.6m wide — no joins, no light gaps.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS / SOLUTIONS — ASYMMETRIC -->
+  <section class="ps-problems">
+    <div class="ps-problems-left">
+      <span class="ps-label" style="color:var(--ps-black);margin-bottom:1rem;">Common studio problems</span>
+      <h2>every photographer knows these pain points_</h2>
+      <p>Ambient light is the enemy of controlled photography. Here's how blackout blinds solve the problems you've been working around.</p>
+    </div>
+    <div class="ps-problems-right">
+      <div class="ps-problem-item ps-reveal">
+        <span class="ps-problem-num">01</span>
+        <div>
+          <div class="ps-problem-title">Colour Temperature Drift</div>
+          <div class="ps-problem-text">Window light changes from warm to cool throughout the day, contaminating your controlled lighting setup and creating inconsistent white balance across a shoot.</div>
+          <div class="ps-problem-solution"><strong>Solution:</strong> Total blackout eliminates all ambient colour influence. Your strobes are the only variable — and you control them completely.</div>
+        </div>
+      </div>
+      <div class="ps-problem-item ps-reveal">
+        <span class="ps-problem-num">02</span>
+        <div>
+          <div class="ps-problem-title">Backdrop Hotspots</div>
+          <div class="ps-problem-text">Direct sun or reflected glare creates bright patches on backdrops and surfaces. Visible in shots, painful to edit out, impossible to prevent with curtains alone.</div>
+          <div class="ps-problem-solution"><strong>Solution:</strong> Side-channeled blackout blinds create an airtight seal. No stray photons reach your background — pure, even darkness.</div>
+        </div>
+      </div>
+      <div class="ps-problem-item ps-reveal">
+        <span class="ps-problem-num">03</span>
+        <div>
+          <div class="ps-problem-title">Video Flicker & Exposure Shifts</div>
+          <div class="ps-problem-text">Cloud movement changes ambient light intensity during video shoots. Even minor shifts are visible in footage and require complex colour grading to fix.</div>
+          <div class="ps-problem-solution"><strong>Solution:</strong> Blackout = consistent exposure from first take to last. No post-production headaches, no re-shoots.</div>
+        </div>
+      </div>
+      <div class="ps-problem-item ps-reveal">
+        <span class="ps-problem-num">04</span>
+        <div>
+          <div class="ps-problem-title">Product Photography Reflections</div>
+          <div class="ps-problem-text">Shooting reflective products (jewellery, glass, tech) near windows creates unwanted reflections that reveal the studio environment in the product surface.</div>
+          <div class="ps-problem-solution"><strong>Solution:</strong> Dark matte blackout fabric absorbs light rather than reflecting it. Your lightbox stays clean, your products look flawless.</div>
+        </div>
+      </div>
+      <div class="ps-problem-item ps-reveal">
+        <span class="ps-problem-num">05</span>
+        <div>
+          <div class="ps-problem-title">Multi-Use Space Compromise</div>
+          <div class="ps-problem-text">Many Melbourne studios share space with other functions — office, retail, warehouse. You need blackout on demand, but natural light the rest of the time.</div>
+          <div class="ps-problem-solution"><strong>Solution:</strong> Motorised blackout blinds give you both worlds. Studio mode in 15 seconds. Office mode at the touch of a button.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="ps-products">
+    <div class="ps-container">
+      <h2 class="ps-reveal">recommended systems_</h2>
+      <p class="ps-products-sub ps-reveal">Three options, each purpose-built for studio environments. All available in custom sizes and finishes.</p>
+
+      <div class="ps-product-row">
+        <div class="ps-product-card ps-reveal">
+          <div class="ps-product-visual" data-product="ROLLER">
+            <div class="ps-product-icon ps-product-icon--roller"></div>
+          </div>
+          <div class="ps-product-body">
+            <div class="ps-product-name">Blackout Roller</div>
+            <div class="ps-product-desc">The workhorse. Foam-backed blockout fabric in a compact cassette headrail with side channels. Clean, reliable, zero light leak. Available in charcoal, white, and custom colours.</div>
+            <div class="ps-product-specs">
+              <span>Up to 3.6m wide</span>
+              <span>Side channels</span>
+              <span>Cassette head</span>
+            </div>
+          </div>
+        </div>
+        <div class="ps-product-card ps-reveal">
+          <div class="ps-product-visual" data-product="MOTOR">
+            <div class="ps-product-icon ps-product-icon--motorised"></div>
+          </div>
+          <div class="ps-product-body">
+            <div class="ps-product-name">Motorised Blackout</div>
+            <div class="ps-product-desc">Everything the roller offers, plus Somfy or Automate motor integration. Control via wall switch, RF remote, or smartphone app. Group multiple windows for one-tap blackout mode.</div>
+            <div class="ps-product-specs">
+              <span>App control</span>
+              <span>Group scenes</span>
+              <span>Silent motor</span>
+            </div>
+          </div>
+        </div>
+        <div class="ps-product-card ps-reveal">
+          <div class="ps-product-visual" data-product="PANEL">
+            <div class="ps-product-icon ps-product-icon--panel"></div>
+          </div>
+          <div class="ps-product-body">
+            <div class="ps-product-name">Sliding Panel Track</div>
+            <div class="ps-product-desc">For wide openings and warehouse doors. Overlapping blackout panels slide on a ceiling-mounted track. Stack neatly to one side when not needed. Industrial aesthetic.</div>
+            <div class="ps-product-specs">
+              <span>Up to 6m span</span>
+              <span>Stackable</span>
+              <span>Industrial look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="ps-testimonial">
+    <div class="ps-container">
+      <div class="ps-testimonial-grid ps-reveal">
+        <blockquote class="ps-testimonial-quote">
+          "I'd been taping black plastic to the windows for three years. These blinds changed everything — I can switch between natural light portraits and full blackout product work in seconds. The side channels are the real hero. Absolutely zero light leak."
+        </blockquote>
+        <div class="ps-testimonial-meta">
+          <div class="ps-testimonial-name">Sarah Chen</div>
+          <div class="ps-testimonial-role">Commercial Photographer, Collingwood</div>
+          <div class="ps-testimonial-detail">
+            Converted warehouse studio · 6 windows<br>
+            Motorised blackout rollers with side channels<br>
+            Installed: November 2025
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS TIMELINE -->
+  <section class="ps-process">
+    <div class="ps-container">
+      <h2 class="ps-reveal">how it works_</h2>
+      <div class="ps-timeline">
+        <div class="ps-step" data-step="01">
+          <div class="ps-step-title">Studio Assessment</div>
+          <div class="ps-step-text">We visit your space and map every window, noting orientation, existing fixings, and your specific light control needs. We bring sample fabrics and test light transmission on-site.</div>
+          <span class="ps-step-duration">Duration: 45–60 min</span>
+        </div>
+        <div class="ps-step" data-step="02">
+          <div class="ps-step-title">Custom Specification</div>
+          <div class="ps-step-text">We design a system tailored to your studio — choosing between roller, panel, or hybrid setups. Motorised or manual. Side channels, pelmets, and mounting strategy all spec'd to your space.</div>
+          <span class="ps-step-duration">Quote within 48 hours</span>
+        </div>
+        <div class="ps-step" data-step="03">
+          <div class="ps-step-title">Manufacture</div>
+          <div class="ps-step-text">Your blinds are made to measure in Melbourne. Every component — fabric, channels, cassette, motor — assembled and quality-checked before installation day.</div>
+          <span class="ps-step-duration">2–3 weeks</span>
+        </div>
+        <div class="ps-step" data-step="04">
+          <div class="ps-step-title">Professional Installation</div>
+          <div class="ps-step-text">Our installers work around your schedule — we know studio downtime costs money. Clean install, full demonstration, and light-leak testing before we leave.</div>
+          <span class="ps-step-duration">Half-day install</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ps-cta">
+    <div class="ps-container">
+      <div class="ps-cta-inner ps-reveal">
+        <div>
+          <h2>ready to take <span>control</span> of your light?</h2>
+          <p>Book a free studio assessment. We'll measure your windows, discuss your workflow, and deliver a no-obligation quote within 48 hours.</p>
+          <a href="free-samples.html" class="ps-cta-btn">Book Free Assessment →</a>
+          <span class="ps-cta-phone">Or call directly: <a href="tel:1300123456">1300 123 456</a></span>
+        </div>
+        <div class="ps-cta-right">
+          <ul class="ps-cta-checklist">
+            <li>Free on-site studio assessment</li>
+            <li>Custom quote within 48 hours</li>
+            <li>Made to measure in Melbourne</li>
+            <li>Professional installation included</li>
+            <li>5-year warranty on all products</li>
+            <li>Motorised options with app control</li>
+            <li>Side channels for zero light leak</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ps-footer">
+    <strong>iSeekBlinds</strong> — Melbourne's Specialist Window Furnishings<br>
+    <a href="https://iseekblinds.com.au">iseekblinds.com.au</a> · <a href="tel:1300123456">1300 123 456</a><br>
+    Serving all Melbourne metropolitan areas
+  </footer>
+
+  <script>
+    // === BEFORE/AFTER COMPARISON SLIDER ===
+    const widget = document.getElementById('compareWidget');
+    const afterEl = document.getElementById('compareAfter');
+    const divider = document.getElementById('compareDivider');
+    const handle = document.getElementById('compareHandle');
+    let isDragging = false;
+
+    function updateCompare(x) {
+      const rect = widget.getBoundingClientRect();
+      let pct = ((x - rect.left) / rect.width) * 100;
+      pct = Math.max(5, Math.min(95, pct));
+      afterEl.style.clipPath = `inset(0 0 0 ${pct}%)`;
+      divider.style.left = pct + '%';
+      handle.style.left = pct + '%';
+    }
+
+    widget.addEventListener('mousedown', (e) => { isDragging = true; updateCompare(e.clientX); });
+    document.addEventListener('mousemove', (e) => { if (isDragging) updateCompare(e.clientX); });
+    document.addEventListener('mouseup', () => { isDragging = false; });
+
+    widget.addEventListener('touchstart', (e) => { isDragging = true; updateCompare(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('touchmove', (e) => { if (isDragging) updateCompare(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('touchend', () => { isDragging = false; });
+
+    // === HERO BLIND ANIMATION (on load) ===
+    setTimeout(() => {
+      document.getElementById('heroBlinds').style.height = '85%';
+    }, 800);
+
+    // === SCROLL REVEAL ===
+    const revealEls = document.querySelectorAll('.ps-reveal, .ps-step');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ps-visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // === SPEC CARD TILT ON HOVER (surprise interaction) ===
+    document.querySelectorAll('.ps-spec-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(600px) rotateY(0) rotateX(0)';
+        card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s, color 0.3s';
+      });
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'background 0.3s, color 0.3s';
+      });
+    });
+  </script>
+</body>
+</html>
