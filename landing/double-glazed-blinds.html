@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinds for Double Glazed Windows | Perfect Fit Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialist blinds for double glazed windows in Melbourne. Perfect fit systems, no drilling required. Maintain your window warranty. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === TECH FUTURISTIC — NEON GRID THEME === */
+    :root {
+      --dg-bg: #0a0e1a;
+      --dg-surface: #111827;
+      --dg-card: #1a2036;
+      --dg-border: rgba(99, 179, 237, 0.15);
+      --dg-neon-blue: #63b3ed;
+      --dg-neon-cyan: #22d3ee;
+      --dg-neon-purple: #a78bfa;
+      --dg-neon-green: #34d399;
+      --dg-text: #e2e8f0;
+      --dg-text-muted: #94a3b8;
+      --dg-white: #f8fafc;
+      --dg-gradient: linear-gradient(135deg, #63b3ed 0%, #a78bfa 50%, #22d3ee 100%);
+      --dg-glow: 0 0 30px rgba(99, 179, 237, 0.3);
+    }
+
+    .lp-dg {
+      background: var(--dg-bg);
+      color: var(--dg-text);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .lp-dg .header { background: rgba(10, 14, 26, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--dg-border); }
+    .lp-dg .footer { background: #060810; }
+
+    /* Grid background */
+    .dg-grid-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(99, 179, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 179, 237, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .dg-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      overflow: hidden;
+    }
+
+    .dg-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(99, 179, 237, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 30%, rgba(167, 139, 250, 0.06) 0%, transparent 50%);
+      animation: dg-aurora 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes dg-aurora {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-5%, 5%) rotate(3deg); }
+    }
+
+    .dg-hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+    .dg-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(99, 179, 237, 0.1);
+      border: 1px solid rgba(99, 179, 237, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--dg-neon-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      animation: dg-fadeDown 0.8s ease;
+    }
+
+    .dg-hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--dg-neon-green);
+      border-radius: 50%;
+      animation: dg-pulse 2s ease infinite;
+    }
+
+    @keyframes dg-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    .dg-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: dg-fadeUp 1s ease;
+    }
+
+    .dg-hero h1 .dg-gradient-text {
+      background: var(--dg-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .dg-hero-sub {
+      font-size: 1.2rem;
+      color: var(--dg-text-muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      animation: dg-fadeUp 1.2s ease;
+    }
+
+    .dg-hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: dg-fadeUp 1.4s ease;
+    }
+
+    .dg-btn-primary {
+      padding: 16px 36px;
+      background: var(--dg-gradient);
+      color: #0a0e1a;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: var(--dg-glow);
+    }
+
+    .dg-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(99, 179, 237, 0.5);
+    }
+
+    .dg-btn-outline {
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--dg-neon-blue);
+      border: 1px solid rgba(99, 179, 237, 0.4);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .dg-btn-outline:hover {
+      background: rgba(99, 179, 237, 0.1);
+      border-color: var(--dg-neon-blue);
+    }
+
+    @keyframes dg-fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes dg-fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section */
+    .dg-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 20px;
+    }
+
+    .dg-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dg-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .dg-section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--dg-neon-cyan);
+      margin-bottom: 16px;
+      padding: 6px 16px;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 4px;
+    }
+
+    .dg-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dg-white);
+      margin-bottom: 16px;
+    }
+
+    .dg-section-desc {
+      color: var(--dg-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Challenge Cards */
+    .dg-challenges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .dg-challenge-card {
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .dg-challenge-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dg-challenge-card:hover {
+      border-color: var(--dg-neon-blue);
+      box-shadow: 0 0 40px rgba(99, 179, 237, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .dg-challenge-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: rgba(99, 179, 237, 0.1);
+      border: 1px solid rgba(99, 179, 237, 0.2);
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .dg-challenge-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dg-white);
+      margin-bottom: 12px;
+    }
+
+    .dg-challenge-card p {
+      color: var(--dg-text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Solutions */
+    .dg-solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .dg-solution {
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .dg-solution.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dg-solution:hover {
+      border-color: var(--dg-neon-purple);
+      box-shadow: 0 0 50px rgba(167, 139, 250, 0.1);
+    }
+
+    .dg-solution-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--dg-border);
+    }
+
+    .dg-solution-body {
+      padding: 32px;
+    }
+
+    .dg-solution-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(167, 139, 250, 0.15);
+      color: var(--dg-neon-purple);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .dg-solution h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--dg-white);
+      margin-bottom: 12px;
+    }
+
+    .dg-solution p {
+      color: var(--dg-text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .dg-solution-features {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dg-solution-features li {
+      padding: 6px 14px;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--dg-neon-cyan);
+    }
+
+    /* Comparison */
+    .dg-compare {
+      background: var(--dg-surface);
+      border-radius: 20px;
+      border: 1px solid var(--dg-border);
+      overflow: hidden;
+    }
+
+    .dg-compare-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--dg-card);
+      border-bottom: 1px solid var(--dg-border);
+    }
+
+    .dg-compare-header div {
+      padding: 20px;
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .dg-compare-header div:first-child {
+      text-align: left;
+      color: var(--dg-text-muted);
+    }
+
+    .dg-compare-header .dg-highlight {
+      background: rgba(99, 179, 237, 0.1);
+      color: var(--dg-neon-blue);
+    }
+
+    .dg-compare-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border-bottom: 1px solid rgba(99, 179, 237, 0.05);
+    }
+
+    .dg-compare-row:last-child { border-bottom: none; }
+
+    .dg-compare-row div {
+      padding: 16px 20px;
+      text-align: center;
+      color: var(--dg-text-muted);
+      font-size: 0.9rem;
+    }
+
+    .dg-compare-row div:first-child {
+      text-align: left;
+      color: var(--dg-text);
+      font-weight: 500;
+    }
+
+    .dg-compare-row .dg-highlight {
+      background: rgba(99, 179, 237, 0.04);
+      color: var(--dg-neon-green);
+    }
+
+    /* Stats */
+    .dg-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .dg-stat {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 16px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.5s;
+    }
+
+    .dg-stat.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .dg-stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--dg-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .dg-stat-label {
+      color: var(--dg-text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Process */
+    .dg-process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .dg-process::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--dg-neon-blue), var(--dg-neon-purple), var(--dg-neon-cyan));
+      opacity: 0.3;
+    }
+
+    .dg-process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .dg-process-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dg-process-num {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dg-neon-blue);
+      background: var(--dg-card);
+      border: 2px solid var(--dg-neon-blue);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 30px rgba(99, 179, 237, 0.2);
+    }
+
+    .dg-process-step h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dg-white);
+      margin-bottom: 8px;
+    }
+
+    .dg-process-step p {
+      color: var(--dg-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .dg-faq-list { max-width: 800px; margin: 0 auto; }
+
+    .dg-faq-item {
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .dg-faq-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .dg-faq-q {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--dg-white);
+      transition: color 0.3s;
+    }
+
+    .dg-faq-q:hover { color: var(--dg-neon-blue); }
+
+    .dg-faq-q::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--dg-neon-blue);
+      transition: transform 0.3s;
+    }
+
+    .dg-faq-item.open .dg-faq-q::after {
+      transform: rotate(45deg);
+    }
+
+    .dg-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .dg-faq-item.open .dg-faq-a {
+      max-height: 300px;
+    }
+
+    .dg-faq-a p {
+      padding: 0 24px 20px;
+      color: var(--dg-text-muted);
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .dg-cta-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .dg-cta-box {
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 24px;
+      padding: 60px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dg-cta-box::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      background: var(--dg-gradient);
+      border-radius: 26px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .dg-cta-box h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--dg-white);
+      margin-bottom: 16px;
+    }
+
+    .dg-cta-box p {
+      color: var(--dg-text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    /* Cross-links */
+    .dg-crosslinks {
+      position: relative;
+      z-index: 1;
+      padding: 80px 20px;
+      background: var(--dg-surface);
+      border-top: 1px solid var(--dg-border);
+    }
+
+    .dg-crosslinks h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: var(--dg-white);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .dg-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dg-crosslink-item {
+      padding: 8px 18px;
+      background: var(--dg-card);
+      border: 1px solid var(--dg-border);
+      border-radius: 8px;
+      color: var(--dg-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+
+    .dg-crosslink-item:hover {
+      color: var(--dg-neon-blue);
+      border-color: var(--dg-neon-blue);
+      background: rgba(99, 179, 237, 0.08);
+    }
+
+    .dg-crosslink-item span { margin-right: 6px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dg-solutions-grid { grid-template-columns: 1fr; }
+      .dg-stats { grid-template-columns: repeat(2, 1fr); }
+      .dg-process { grid-template-columns: repeat(2, 1fr); }
+      .dg-process::before { display: none; }
+      .dg-compare-header div,
+      .dg-compare-row div { padding: 12px 8px; font-size: 0.8rem; }
+    }
+
+    @media (max-width: 480px) {
+      .dg-stats { grid-template-columns: 1fr; }
+      .dg-process { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="lp-dg">
+
+  <div class="dg-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="dg-hero">
+    <div class="dg-hero-content">
+      <div class="dg-hero-badge">Specialist Solutions</div>
+      <h1>Blinds for <span class="dg-gradient-text">Double Glazed</span> Windows</h1>
+      <p class="dg-hero-sub">Purpose-engineered window coverings that work perfectly with double glazed windows. No drilling, no damage, no compromised warranties.</p>
+      <div class="dg-hero-ctas">
+        <a href="../free-quote.html" class="dg-btn-primary">Get Free Quote</a>
+        <a href="#solutions" class="dg-btn-outline">View Solutions ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section class="dg-section">
+    <div class="dg-container">
+      <div class="dg-section-header">
+        <span class="dg-section-label">The Challenge</span>
+        <h2 class="dg-section-title">Why Standard Blinds Don't Work</h2>
+        <p class="dg-section-desc">Double glazed windows require specialist solutions. Here's what you need to know.</p>
+      </div>
+      <div class="dg-challenges">
+        <div class="dg-challenge-card">
+          <div class="dg-challenge-icon">🔩</div>
+          <h3>Drilling Risks</h3>
+          <p>Drilling into double glazed frames can break the seal, void your warranty, and compromise thermal performance. Our solutions require zero drilling.</p>
+        </div>
+        <div class="dg-challenge-card">
+          <div class="dg-challenge-icon">📏</div>
+          <h3>Shallow Frame Depth</h3>
+          <p>Many double glazed windows have shallow reveals that won't accommodate standard brackets. We use ultra-slim mounting systems designed for tight spaces.</p>
+        </div>
+        <div class="dg-challenge-card">
+          <div class="dg-challenge-icon">🌡️</div>
+          <h3>Heat Build-Up</h3>
+          <p>Incorrect blind types can trap heat between the glass layers, potentially damaging seals. We select materials that work with your glazing, not against it.</p>
+        </div>
+        <div class="dg-challenge-card">
+          <div class="dg-challenge-icon">🔒</div>
+          <h3>Warranty Concerns</h3>
+          <p>Most window manufacturers void warranties if frames are drilled. Our perfect fit and clip-in systems keep your warranty fully intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="dg-section" id="solutions">
+    <div class="dg-container">
+      <div class="dg-section-header">
+        <span class="dg-section-label">Our Solutions</span>
+        <h2 class="dg-section-title">Perfect Fit for Every Frame</h2>
+        <p class="dg-section-desc">Engineered specifically for double glazed windows across Melbourne homes.</p>
+      </div>
+      <div class="dg-solutions-grid">
+        <div class="dg-solution">
+          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Perfect Fit Roller Blinds" class="dg-solution-img">
+          <div class="dg-solution-body">
+            <span class="dg-solution-tag">Most Popular</span>
+            <h3>Perfect Fit Roller Blinds</h3>
+            <p>Clip directly into the window bead — no screws, no drilling. Sits flush within the frame for a sleek, integrated look. Available in blockout, sunscreen, and translucent fabrics.</p>
+            <ul class="dg-solution-features">
+              <li>No drilling</li>
+              <li>Clips into bead</li>
+              <li>Flush fit</li>
+              <li>Easy to remove</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dg-solution">
+          <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80" alt="Honeycomb Cellular Blinds" class="dg-solution-img">
+          <div class="dg-solution-body">
+            <span class="dg-solution-tag">Best Insulation</span>
+            <h3>Honeycomb Cellular Blinds</h3>
+            <p>Double-cell structure adds another insulation layer to your already efficient double glazing. Top-down bottom-up options for perfect light and privacy control.</p>
+            <ul class="dg-solution-features">
+              <li>Extra insulation</li>
+              <li>Top-down/bottom-up</li>
+              <li>Lightweight</li>
+              <li>Cordless</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dg-solution">
+          <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=600&q=80" alt="Venetian Blinds" class="dg-solution-img">
+          <div class="dg-solution-body">
+            <span class="dg-solution-tag">Classic Control</span>
+            <h3>Perfect Fit Venetians</h3>
+            <p>Aluminium or timber-look venetians that clip into the glazing bead. Tilt for precise light control without interfering with window operation. Ideal for tilt-and-turn windows.</p>
+            <ul class="dg-solution-features">
+              <li>Tilt control</li>
+              <li>Aluminium or timber</li>
+              <li>Tilt & turn compatible</li>
+              <li>Low profile</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dg-solution">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Pleated Blinds" class="dg-solution-img">
+          <div class="dg-solution-body">
+            <span class="dg-solution-tag">Versatile</span>
+            <h3>Pleated Blinds</h3>
+            <p>Ultra-slim profile perfect for shallow double glazed frames. Available in hundreds of fabrics and can be configured for shaped windows including triangles and arches.</p>
+            <ul class="dg-solution-features">
+              <li>Ultra slim</li>
+              <li>Shaped windows</li>
+              <li>200+ fabrics</li>
+              <li>Day & night</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="dg-section">
+    <div class="dg-container">
+      <div class="dg-section-header">
+        <span class="dg-section-label">Comparison</span>
+        <h2 class="dg-section-title">Perfect Fit vs Standard Blinds</h2>
+      </div>
+      <div class="dg-compare">
+        <div class="dg-compare-header">
+          <div>Feature</div>
+          <div class="dg-highlight">Perfect Fit</div>
+          <div>Standard Blinds</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Drilling Required</div>
+          <div class="dg-highlight">✓ No drilling</div>
+          <div>✗ Requires screws</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Warranty Safe</div>
+          <div class="dg-highlight">✓ Fully preserved</div>
+          <div>✗ May void warranty</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Frame Compatibility</div>
+          <div class="dg-highlight">✓ Any depth</div>
+          <div>✗ Needs 40mm+ depth</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Window Operation</div>
+          <div class="dg-highlight">✓ Open/tilt freely</div>
+          <div>✗ May interfere</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Appearance</div>
+          <div class="dg-highlight">✓ Flush, integrated</div>
+          <div>Bracket visible</div>
+        </div>
+        <div class="dg-compare-row">
+          <div>Removal</div>
+          <div class="dg-highlight">✓ Unclip in seconds</div>
+          <div>✗ Leaves holes</div>
+        </div>
+      </div>
+
+      <div class="dg-stats">
+        <div class="dg-stat">
+          <div class="dg-stat-number">1,200+</div>
+          <div class="dg-stat-label">Double Glazed Installs</div>
+        </div>
+        <div class="dg-stat">
+          <div class="dg-stat-number">100%</div>
+          <div class="dg-stat-label">Warranty Safe</div>
+        </div>
+        <div class="dg-stat">
+          <div class="dg-stat-number">0</div>
+          <div class="dg-stat-label">Holes Drilled</div>
+        </div>
+        <div class="dg-stat">
+          <div class="dg-stat-number">4.9★</div>
+          <div class="dg-stat-label">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="dg-section">
+    <div class="dg-container">
+      <div class="dg-section-header">
+        <span class="dg-section-label">How It Works</span>
+        <h2 class="dg-section-title">From Consultation to Installation</h2>
+      </div>
+      <div class="dg-process">
+        <div class="dg-process-step">
+          <div class="dg-process-num">01</div>
+          <h3>Free Assessment</h3>
+          <p>We inspect your double glazed windows, measure frame depth, and identify the best mounting system.</p>
+        </div>
+        <div class="dg-process-step">
+          <div class="dg-process-num">02</div>
+          <h3>Custom Design</h3>
+          <p>Choose from our curated range of fabrics and systems specifically compatible with your glazing type.</p>
+        </div>
+        <div class="dg-process-step">
+          <div class="dg-process-num">03</div>
+          <h3>Precision Manufacture</h3>
+          <p>Every blind is custom-made to millimetre precision for a flawless perfect fit installation.</p>
+        </div>
+        <div class="dg-process-step">
+          <div class="dg-process-num">04</div>
+          <h3>Expert Install</h3>
+          <p>Professional installation with no damage to frames, seals, or glazing. Takes minutes per window.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="dg-section">
+    <div class="dg-container">
+      <div class="dg-section-header">
+        <span class="dg-section-label">FAQ</span>
+        <h2 class="dg-section-title">Common Questions</h2>
+      </div>
+      <div class="dg-faq-list">
+        <div class="dg-faq-item">
+          <div class="dg-faq-q">Will blinds void my double glazing warranty?</div>
+          <div class="dg-faq-a"><p>Not with our perfect fit systems. They clip into the glazing bead without any screws or drilling, keeping your warranty fully intact. We provide documentation confirming our installation method is non-invasive.</p></div>
+        </div>
+        <div class="dg-faq-item">
+          <div class="dg-faq-q">Can I still open tilt-and-turn windows with blinds fitted?</div>
+          <div class="dg-faq-a"><p>Absolutely. Perfect fit blinds move with the window sash, so you can tilt and turn as normal. The blind stays in place regardless of window position.</p></div>
+        </div>
+        <div class="dg-faq-item">
+          <div class="dg-faq-q">Will blinds cause condensation or heat damage?</div>
+          <div class="dg-faq-a"><p>We carefully select materials and colours that won't cause excessive heat build-up between the glass panes. Our specialist advice ensures the right product for your specific glazing system.</p></div>
+        </div>
+        <div class="dg-faq-item">
+          <div class="dg-faq-q">What if my window frames are very shallow?</div>
+          <div class="dg-faq-a"><p>Our perfect fit systems are designed for frames as shallow as 15mm. We also offer face-fix adhesive options for ultra-narrow profiles, still without drilling.</p></div>
+        </div>
+        <div class="dg-faq-item">
+          <div class="dg-faq-q">Can I remove the blinds myself if needed?</div>
+          <div class="dg-faq-a"><p>Yes — perfect fit blinds unclip in seconds with no tools required. This is ideal for cleaning or if you're a renter who needs to remove them when moving out.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="dg-cta-section">
+    <div class="dg-cta-box">
+      <h2>Ready to Find Your <span class="dg-gradient-text">Perfect Fit</span>?</h2>
+      <p>Free assessment for double glazed windows across Melbourne. No obligation, expert advice.</p>
+      <a href="../free-quote.html" class="dg-btn-primary">Book Free Assessment →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="dg-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="dg-crosslinks-grid">
+      <a href="acoustic-solutions.html" class="dg-crosslink-item"><span>→</span> Acoustic Solutions</a>
+      <a href="apartment-solutions.html" class="dg-crosslink-item"><span>→</span> Apartment Solutions</a>
+      <a href="arched-specialty-windows.html" class="dg-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+      <a href="bathroom-kitchen.html" class="dg-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+      <a href="bedroom-blackout.html" class="dg-crosslink-item"><span>→</span> Bedroom Blackout</a>
+      <a href="bifold-door-blinds.html" class="dg-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+      <a href="blinds-vs-curtains.html" class="dg-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+      <a href="care-maintenance.html" class="dg-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+      <a href="child-safety.html" class="dg-crosslink-item"><span>→</span> Child Safety</a>
+      <a href="coastal-home-blinds.html" class="dg-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+      <a href="colour-matching-guide.html" class="dg-crosslink-item"><span>→</span> Colour Matching Guide</a>
+      <a href="colour-trends-2026.html" class="dg-crosslink-item"><span>→</span> Colour Trends 2026</a>
+      <a href="commercial-blinds.html" class="dg-crosslink-item"><span>→</span> Commercial Blinds</a>
+      <a href="conservatory-sunroom.html" class="dg-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+      <a href="day-night-blinds.html" class="dg-crosslink-item"><span>→</span> Day Night Blinds</a>
+      <a href="design-inspiration.html" class="dg-crosslink-item"><span>→</span> Design Inspiration</a>
+      <a href="diy-installation-guide.html" class="dg-crosslink-item"><span>→</span> DIY Installation Guide</a>
+      <a href="diy-measuring-guide.html" class="dg-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+      <a href="eco-friendly.html" class="dg-crosslink-item"><span>→</span> Eco-Friendly</a>
+      <a href="elderly-accessible.html" class="dg-crosslink-item"><span>→</span> Elderly Accessible</a>
+      <a href="energy-efficient.html" class="dg-crosslink-item"><span>→</span> Energy Efficient</a>
+      <a href="fabric-encyclopedia.html" class="dg-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+      <a href="festive-seasonal-styling.html" class="dg-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+      <a href="free-samples.html" class="dg-crosslink-item"><span>→</span> Free Samples</a>
+      <a href="heritage-homes.html" class="dg-crosslink-item"><span>→</span> Heritage Homes</a>
+      <a href="high-rise-glare.html" class="dg-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+      <a href="home-office.html" class="dg-crosslink-item"><span>→</span> Home Office</a>
+      <a href="home-gym-blinds.html" class="dg-crosslink-item"><span>→</span> Home Gym Blinds</a>
+      <a href="hospitality-blinds.html" class="dg-crosslink-item"><span>→</span> Hospitality</a>
+      <a href="large-windows.html" class="dg-crosslink-item"><span>→</span> Large Windows</a>
+      <a href="layered-treatments.html" class="dg-crosslink-item"><span>→</span> Layered Treatments</a>
+      <a href="media-room.html" class="dg-crosslink-item"><span>→</span> Media Room</a>
+      <a href="medical-clinic.html" class="dg-crosslink-item"><span>→</span> Medical Clinic</a>
+      <a href="melbourne-service-areas.html" class="dg-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+      <a href="minimalist-styling.html" class="dg-crosslink-item"><span>→</span> Minimalist Styling</a>
+      <a href="new-home-packages.html" class="dg-crosslink-item"><span>→</span> New Home Packages</a>
+      <a href="nursery-safe.html" class="dg-crosslink-item"><span>→</span> Nursery Safe</a>
+      <a href="office-partition.html" class="dg-crosslink-item"><span>→</span> Office Partition</a>
+      <a href="open-kitchen.html" class="dg-crosslink-item"><span>→</span> Open Kitchen</a>
+      <a href="outdoor-blinds.html" class="dg-crosslink-item"><span>→</span> Outdoor Blinds</a>
+      <a href="pet-friendly.html" class="dg-crosslink-item"><span>→</span> Pet-Friendly</a>
+      <a href="privacy-blinds.html" class="dg-crosslink-item"><span>→</span> Privacy Blinds</a>
+      <a href="property-styling.html" class="dg-crosslink-item"><span>→</span> Property Styling</a>
+      <a href="rental-property.html" class="dg-crosslink-item"><span>→</span> Rental Property</a>
+      <a href="restaurant-cafe.html" class="dg-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+      <a href="retail-shopfront.html" class="dg-crosslink-item"><span>→</span> Retail Shopfront</a>
+      <a href="scandinavian-style.html" class="dg-crosslink-item"><span>→</span> Scandinavian Style</a>
+      <a href="school-childcare.html" class="dg-crosslink-item"><span>→</span> School &amp; Childcare</a>
+      <a href="seasonal-sale.html" class="dg-crosslink-item"><span>→</span> Seasonal Sale</a>
+      <a href="skylight-blinds.html" class="dg-crosslink-item"><span>→</span> Skylight Blinds</a>
+      <a href="smart-home.html" class="dg-crosslink-item"><span>→</span> Smart Home</a>
+      <a href="summer-uv-protection.html" class="dg-crosslink-item"><span>→</span> Summer UV Protection</a>
+      <a href="testimonials.html" class="dg-crosslink-item"><span>→</span> Testimonials</a>
+      <a href="warehouse-industrial-blinds.html" class="dg-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+      <a href="winter-insulation.html" class="dg-crosslink-item"><span>→</span> Winter Insulation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // IntersectionObserver for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.dg-challenge-card, .dg-solution, .dg-stat, .dg-process-step, .dg-faq-item').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.dg-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
