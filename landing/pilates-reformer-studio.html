@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilates & Reformer Studio Blinds | Movement Meets Light | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Precision-engineered blinds for Pilates studios & reformer spaces. Control light without interrupting flow. Melbourne specialists, Australia-wide delivery.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;700;900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pl-bg: #f6f2ed;
+      --pl-cream: #ece6dd;
+      --pl-ink: #1a1714;
+      --pl-muted: #8a847b;
+      --pl-coral: #d45a3a;
+      --pl-coral-light: rgba(212,90,58,0.12);
+      --pl-warm: #c2a882;
+      --pl-deep: #2c2620;
+      --pl-line: rgba(26,23,20,0.1);
+      --pl-display: 'Unbounded', sans-serif;
+      --pl-body: 'Atkinson Hyperlegible Next', 'Atkinson Hyperlegible', sans-serif;
+    }
+
+    /* ===== RESET & BASE ===== */
+    .lp-pilates { background: var(--pl-bg); color: var(--pl-ink); font-family: var(--pl-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.65; }
+    .lp-pilates * { box-sizing: border-box; margin: 0; padding: 0; }
+    .lp-pilates img { max-width: 100%; display: block; }
+    .lp-pilates a { color: inherit; text-decoration: none; }
+
+    /* ===== LOADER ===== */
+    .pl-loader { position: fixed; inset: 0; z-index: 9999; background: var(--pl-ink); display: flex; align-items: center; justify-content: center; transition: opacity .6s ease, visibility .6s ease; }
+    .pl-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .pl-loader-ring { width: 48px; height: 48px; border: 2px solid rgba(246,242,237,0.15); border-top-color: var(--pl-coral); border-radius: 50%; animation: pl-spin 1s linear infinite; }
+    @keyframes pl-spin { to { transform: rotate(360deg); } }
+
+    /* ===== HEADER ===== */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; transition: transform .4s ease, background .3s ease; }
+    .header.scrolled { background: rgba(246,242,237,0.92); backdrop-filter: blur(12px); }
+    .header.hide { transform: translateY(-100%); }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--pl-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -.02em; }
+    .logo-i { color: var(--pl-coral); }
+    .logo-seek { color: var(--pl-ink); }
+    .logo-blinds { color: var(--pl-muted); }
+    .nav { display: flex; gap: 2rem; }
+    .nav a { font-size: .85rem; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; position: relative; }
+    .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--pl-coral); transition: width .3s ease; }
+    .nav a:hover::after { width: 100%; }
+    .header-right { display: flex; align-items: center; gap: 1.5rem; }
+    .header-phone { font-size: .85rem; font-weight: 500; }
+    .btn-primary { display: inline-block; padding: .65rem 1.5rem; font-size: .82rem; font-weight: 700; font-family: var(--pl-display); letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--pl-coral); border: none; border-radius: 0; cursor: pointer; transition: background .2s, transform .2s; }
+    .btn-primary:hover { background: #bf4e30; transform: translateY(-1px); }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--pl-ink); }
+
+    /* ===== CUSTOM CURSOR ===== */
+    .pl-cursor { position: fixed; width: 18px; height: 18px; border: 1.5px solid var(--pl-coral); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: width .25s, height .25s, border-color .25s, background .25s; mix-blend-mode: difference; }
+    .pl-cursor.hover { width: 50px; height: 50px; background: rgba(212,90,58,0.15); border-color: transparent; }
+    @media (pointer: coarse) { .pl-cursor { display: none; } }
+
+    /* ===== HERO — PINNED SCROLL-SCRUB ===== */
+    .pl-hero-wrap { position: relative; height: 400vh; }
+    .pl-hero-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .pl-hero-bg { position: absolute; inset: 0; background: var(--pl-ink); }
+    .pl-hero-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(212,90,58,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(194,168,130,0.06) 0%, transparent 50%); }
+    .pl-hero-grain { position: absolute; inset: 0; opacity: .04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; }
+
+    /* hero text layers */
+    .pl-hero-content { position: relative; z-index: 2; text-align: center; max-width: 1100px; padding: 0 2rem; }
+    .pl-hero-eyebrow { font-family: var(--pl-body); font-size: .75rem; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; color: var(--pl-coral); opacity: 0; transform: translateY(30px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+    .pl-hero-title { font-family: var(--pl-display); font-size: clamp(2.8rem, 8vw, 7rem); font-weight: 900; line-height: .95; letter-spacing: -.04em; color: var(--pl-bg); margin-top: 1rem; opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(.16,1,.3,1) .15s; }
+    .pl-hero-title em { font-style: normal; color: var(--pl-coral); }
+    .pl-hero-sub { font-size: clamp(1rem, 2vw, 1.35rem); color: rgba(246,242,237,0.6); max-width: 600px; margin: 1.5rem auto 0; font-weight: 400; opacity: 0; transform: translateY(30px); transition: all .8s cubic-bezier(.16,1,.3,1) .3s; }
+    .pl-hero-content.visible .pl-hero-eyebrow,
+    .pl-hero-content.visible .pl-hero-title,
+    .pl-hero-content.visible .pl-hero-sub { opacity: 1; transform: none; }
+
+    /* hero scroll chapters — overlaying text panels */
+    .pl-hero-chapters { position: absolute; top: 100vh; left: 0; right: 0; z-index: 3; pointer-events: none; }
+    .pl-hero-chapter { height: 100vh; display: flex; align-items: center; padding: 0 8vw; pointer-events: auto; }
+    .pl-hero-chapter:nth-child(odd) { justify-content: flex-start; }
+    .pl-hero-chapter:nth-child(even) { justify-content: flex-end; }
+    .pl-chapter-card { max-width: 440px; padding: 2.5rem 3rem; background: rgba(246,242,237,0.95); backdrop-filter: blur(8px); border-left: 3px solid var(--pl-coral); opacity: 0; transform: translateY(60px); transition: all .7s cubic-bezier(.16,1,.3,1); }
+    .pl-chapter-card.visible { opacity: 1; transform: none; }
+    .pl-chapter-num { font-family: var(--pl-display); font-size: 3.5rem; font-weight: 200; color: var(--pl-coral); line-height: 1; margin-bottom: .5rem; }
+    .pl-chapter-title { font-family: var(--pl-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .75rem; }
+    .pl-chapter-text { font-size: .95rem; color: var(--pl-muted); line-height: 1.7; }
+
+    /* SVG morphing silhouette */
+    .pl-pose-svg { position: absolute; bottom: 8vh; right: 8vw; z-index: 1; width: clamp(200px, 20vw, 320px); height: auto; opacity: .12; }
+    .pl-pose-svg path { fill: none; stroke: var(--pl-coral); stroke-width: 1.5; transition: d .8s cubic-bezier(.4,0,.2,1); }
+
+    /* ===== FLOWING SVG DIVIDER ===== */
+    .pl-wave-divider { width: 100%; overflow: hidden; line-height: 0; }
+    .pl-wave-divider svg { width: 100%; height: auto; display: block; }
+
+    /* ===== SECTION: WHY PILATES STUDIOS ===== */
+    .pl-why { padding: 8rem 2rem; position: relative; }
+    .pl-container { max-width: 1200px; margin: 0 auto; }
+    .pl-section-label { font-family: var(--pl-display); font-size: .7rem; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--pl-coral); margin-bottom: 1rem; }
+    .pl-section-title { font-family: var(--pl-display); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; max-width: 700px; }
+    .pl-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: start; }
+    .pl-why-visual { position: relative; aspect-ratio: 4/5; background: var(--pl-cream); overflow: hidden; }
+    .pl-why-visual::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--pl-cream) 0%, rgba(212,90,58,0.06) 100%); }
+    .pl-why-visual-text { position: absolute; bottom: 2rem; left: 2rem; font-family: var(--pl-display); font-size: 6rem; font-weight: 200; color: var(--pl-coral); opacity: .25; line-height: .9; }
+    .pl-why-items { display: flex; flex-direction: column; gap: 2.5rem; }
+    .pl-why-item { padding-left: 2rem; border-left: 1px solid var(--pl-line); opacity: 0; transform: translateX(40px); transition: all .6s cubic-bezier(.16,1,.3,1); }
+    .pl-why-item.visible { opacity: 1; transform: none; }
+    .pl-why-item h3 { font-family: var(--pl-display); font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; }
+    .pl-why-item p { font-size: .9rem; color: var(--pl-muted); line-height: 1.7; }
+    .pl-why-item .pl-stat { font-family: var(--pl-display); font-size: 2.5rem; font-weight: 900; color: var(--pl-coral); display: block; margin-top: .5rem; }
+
+    /* ===== SECTION: PRODUCTS — Diagonal Offset Grid ===== */
+    .pl-products { padding: 6rem 2rem 8rem; background: var(--pl-ink); color: var(--pl-bg); position: relative; overflow: hidden; }
+    .pl-products::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(212,90,58,0.06) 0%, transparent 70%); }
+    .pl-products .pl-section-title { color: var(--pl-bg); }
+    .pl-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+    .pl-product-card { position: relative; padding: 2.5rem 2rem; background: rgba(246,242,237,0.04); border: 1px solid rgba(246,242,237,0.08); transition: all .4s ease; overflow: hidden; }
+    .pl-product-card:nth-child(even) { transform: translateY(2rem); }
+    .pl-product-card:hover { background: rgba(246,242,237,0.08); border-color: var(--pl-coral); transform: translateY(-4px); }
+    .pl-product-card:nth-child(even):hover { transform: translateY(calc(2rem - 4px)); }
+    .pl-product-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .pl-product-name { font-family: var(--pl-display); font-size: 1.2rem; font-weight: 700; margin-bottom: .75rem; }
+    .pl-product-desc { font-size: .88rem; color: rgba(246,242,237,0.55); line-height: 1.7; margin-bottom: 1rem; }
+    .pl-product-specs { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pl-product-spec { font-size: .7rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; padding: .3rem .7rem; background: rgba(212,90,58,0.12); color: var(--pl-coral); }
+    .pl-product-card .pl-product-arrow { position: absolute; top: 2rem; right: 2rem; font-size: 1.2rem; color: var(--pl-coral); opacity: 0; transform: translate(-10px, 10px); transition: all .3s ease; }
+    .pl-product-card:hover .pl-product-arrow { opacity: 1; transform: none; }
+
+    /* ===== SECTION: INTERACTIVE LIGHT DEMO ===== */
+    .pl-demo { padding: 8rem 2rem; background: var(--pl-cream); position: relative; }
+    .pl-demo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .pl-demo-visual { position: relative; aspect-ratio: 1; background: var(--pl-bg); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .pl-demo-room { width: 100%; height: 100%; position: relative; }
+    .pl-demo-window { position: absolute; top: 15%; left: 20%; width: 60%; height: 55%; border: 2px solid var(--pl-ink); background: linear-gradient(180deg, #e8dfd4, #f6f2ed); transition: background .4s ease; }
+    .pl-demo-blinds { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(26,23,20,0.08) 0px, rgba(26,23,20,0.08) 2px, transparent 2px, transparent 12px); transition: opacity .3s ease; }
+    .pl-demo-glow { position: absolute; inset: -20%; background: radial-gradient(ellipse at 50% 30%, rgba(255,220,160,0.3), transparent 70%); transition: opacity .5s ease; pointer-events: none; }
+    .pl-demo-figure { position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); font-size: 3rem; opacity: .6; }
+    .pl-demo-controls { max-width: 500px; }
+    .pl-demo-controls h3 { font-family: var(--pl-display); font-size: 2rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -.02em; }
+    .pl-demo-controls p { font-size: .95rem; color: var(--pl-muted); margin-bottom: 2rem; }
+    .pl-slider-wrap { margin-bottom: 1.5rem; }
+    .pl-slider-label { display: flex; justify-content: space-between; margin-bottom: .5rem; font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; }
+    .pl-slider-value { color: var(--pl-coral); font-family: var(--pl-display); font-weight: 700; }
+    .pl-slider { -webkit-appearance: none; width: 100%; height: 3px; background: var(--pl-line); outline: none; border-radius: 0; }
+    .pl-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: var(--pl-coral); border-radius: 50%; cursor: pointer; transition: transform .2s; }
+    .pl-slider::-webkit-slider-thumb:hover { transform: scale(1.3); }
+    .pl-demo-rec { margin-top: 2rem; padding: 1.5rem; background: var(--pl-bg); border-left: 3px solid var(--pl-coral); }
+    .pl-demo-rec-title { font-family: var(--pl-display); font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
+    .pl-demo-rec-text { font-size: .9rem; color: var(--pl-muted); }
+
+    /* ===== SECTION: TESTIMONIALS ===== */
+    .pl-testimonials { padding: 8rem 2rem; position: relative; overflow: hidden; }
+    .pl-testimonial-track { display: flex; gap: 2rem; margin-top: 4rem; }
+    .pl-testimonial-card { flex: 0 0 400px; padding: 2.5rem; background: var(--pl-cream); position: relative; }
+    .pl-testimonial-card::before { content: '"'; position: absolute; top: 1rem; right: 1.5rem; font-family: var(--pl-display); font-size: 5rem; font-weight: 200; color: var(--pl-coral); opacity: .15; line-height: 1; }
+    .pl-testimonial-quote { font-size: 1rem; line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; color: var(--pl-deep); }
+    .pl-testimonial-author { display: flex; align-items: center; gap: 1rem; }
+    .pl-testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pl-coral-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .pl-testimonial-name { font-family: var(--pl-display); font-weight: 700; font-size: .9rem; }
+    .pl-testimonial-role { font-size: .78rem; color: var(--pl-muted); }
+
+    /* ===== SECTION: PROCESS ===== */
+    .pl-process { padding: 8rem 2rem; background: var(--pl-bg); }
+    .pl-process-flow { display: flex; gap: 0; margin-top: 4rem; position: relative; }
+    .pl-process-flow::before { content: ''; position: absolute; top: 40px; left: 0; right: 0; height: 1px; background: var(--pl-line); }
+    .pl-process-step { flex: 1; padding: 0 2rem; text-align: center; position: relative; opacity: 0; transform: translateY(30px); transition: all .6s cubic-bezier(.16,1,.3,1); }
+    .pl-process-step.visible { opacity: 1; transform: none; }
+    .pl-process-num { font-family: var(--pl-display); font-size: 2rem; font-weight: 200; color: var(--pl-coral); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; background: var(--pl-bg); border: 1px solid var(--pl-coral); border-radius: 50%; position: relative; z-index: 1; }
+    .pl-process-title { font-family: var(--pl-display); font-weight: 700; font-size: .95rem; margin-bottom: .5rem; }
+    .pl-process-desc { font-size: .85rem; color: var(--pl-muted); line-height: 1.6; }
+
+    /* ===== SECTION: STATS MARQUEE ===== */
+    .pl-stats { padding: 3rem 0; background: var(--pl-coral); color: #fff; overflow: hidden; }
+    .pl-stats-track { display: flex; gap: 4rem; animation: pl-marquee 25s linear infinite; white-space: nowrap; }
+    .pl-stats-item { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+    .pl-stats-num { font-family: var(--pl-display); font-size: 2.5rem; font-weight: 900; }
+    .pl-stats-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; opacity: .8; max-width: 120px; white-space: normal; line-height: 1.3; }
+    .pl-stats-dot { width: 6px; height: 6px; background: rgba(255,255,255,.4); border-radius: 50%; flex-shrink: 0; }
+    @keyframes pl-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ===== CTA ===== */
+    .pl-cta { padding: 10rem 2rem; text-align: center; position: relative; }
+    .pl-cta-title { font-family: var(--pl-display); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -.04em; line-height: 1; margin-bottom: 1.5rem; }
+    .pl-cta-title em { font-style: normal; color: var(--pl-coral); }
+    .pl-cta-sub { font-size: 1.1rem; color: var(--pl-muted); max-width: 500px; margin: 0 auto 2.5rem; }
+    .pl-cta-btn { display: inline-block; padding: 1.1rem 3rem; font-family: var(--pl-display); font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #fff; background: var(--pl-ink); border: none; cursor: pointer; position: relative; overflow: hidden; transition: color .3s; }
+    .pl-cta-btn::before { content: ''; position: absolute; inset: 0; background: var(--pl-coral); transform: translateX(-101%); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+    .pl-cta-btn:hover::before { transform: translateX(0); }
+    .pl-cta-btn span { position: relative; z-index: 1; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--pl-ink); color: rgba(246,242,237,0.6); padding: 4rem 2rem; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer .logo { margin-bottom: 1rem; display: inline-block; }
+    .footer .logo .logo-i { color: var(--pl-coral); }
+    .footer .logo .logo-seek { color: var(--pl-bg); }
+    .footer .logo .logo-blinds { color: rgba(246,242,237,.4); }
+    .footer-about p { font-size: .85rem; line-height: 1.7; }
+    .footer-links h4 { color: var(--pl-bg); font-family: var(--pl-display); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; }
+    .footer-links a { display: block; font-size: .85rem; margin-bottom: .5rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--pl-coral); }
+    .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(246,242,237,0.08); display: flex; justify-content: space-between; font-size: .78rem; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .pl-reveal { opacity: 0; transform: translateY(40px); transition: all .7s cubic-bezier(.16,1,.3,1); }
+    .pl-reveal.visible { opacity: 1; transform: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .pl-why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .pl-why-visual { max-height: 400px; }
+      .pl-demo-layout { grid-template-columns: 1fr; }
+      .pl-product-grid { grid-template-columns: repeat(2, 1fr); }
+      .pl-process-flow { flex-wrap: wrap; justify-content: center; }
+      .pl-process-flow::before { display: none; }
+      .pl-process-step { flex: 0 0 45%; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .header-phone { display: none; }
+      .mobile-menu-btn { display: block; }
+      .pl-hero-title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+      .pl-hero-chapter { padding: 0 1.5rem; }
+      .pl-chapter-card { padding: 2rem; max-width: 100%; }
+      .pl-product-grid { grid-template-columns: 1fr; }
+      .pl-product-card:nth-child(even) { transform: none; }
+      .pl-product-card:nth-child(even):hover { transform: translateY(-4px); }
+      .pl-testimonial-card { flex: 0 0 85vw; }
+      .pl-process-step { flex: 0 0 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: .5rem; }
+      .pl-pose-svg { display: none; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="lp-pilates">
+
+<!-- LOADER -->
+<div class="pl-loader" id="plLoader">
+  <div class="pl-loader-ring"></div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="pl-cursor" id="plCursor"></div>
+
+<!-- HEADER -->
+<header class="header" id="plHeader">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <a href="../products/roller-blinds.html">Products</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../landing/">Guides</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+      <a href="../free-quote.html" class="btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO: PINNED SCROLL-SCRUB ===== -->
+<section class="pl-hero-wrap" id="plHeroWrap">
+  <div class="pl-hero-sticky">
+    <div class="pl-hero-bg">
+      <div class="pl-hero-grain"></div>
+    </div>
+
+    <!-- Morphing pose SVG -->
+    <svg class="pl-pose-svg" id="plPoseSvg" viewBox="0 0 200 300" aria-hidden="true">
+      <path id="plPosePath" d="M100,40 C100,40 95,55 100,70 L100,130 Q80,150 65,180 L55,240 M100,130 Q120,150 135,180 L145,240 M100,90 Q70,100 55,115 M100,90 Q130,100 145,115" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="pl-hero-content" id="plHeroContent">
+      <div class="pl-hero-eyebrow">iSeekBlinds — Pilates & Reformer Studios</div>
+      <h1 class="pl-hero-title">Light That <em>Moves</em><br>With You</h1>
+      <p class="pl-hero-sub">Precision-engineered window treatments for studios where every detail affects the practice.</p>
+    </div>
+
+    <!-- Scroll-through chapters -->
+    <div class="pl-hero-chapters">
+      <div class="pl-hero-chapter">
+        <div class="pl-chapter-card" data-chapter="1">
+          <div class="pl-chapter-num">01</div>
+          <h2 class="pl-chapter-title">Mirror-Safe Diffusion</h2>
+          <p class="pl-chapter-text">Wall-to-wall mirrors demand even light without hot spots or glare. Our sheer rollers scatter sunlight uniformly across your studio, eliminating the harsh reflections that distract during form checks.</p>
+        </div>
+      </div>
+      <div class="pl-hero-chapter">
+        <div class="pl-chapter-card" data-chapter="2">
+          <div class="pl-chapter-num">02</div>
+          <h2 class="pl-chapter-title">Temperature Precision</h2>
+          <p class="pl-chapter-text">Reformer work demands stable air. Our honeycomb blinds create a thermal envelope that keeps your studio 3–5°C cooler in summer, so clients can focus on their powerhouse — not the heat.</p>
+        </div>
+      </div>
+      <div class="pl-hero-chapter">
+        <div class="pl-chapter-card" data-chapter="3">
+          <div class="pl-chapter-num">03</div>
+          <h2 class="pl-chapter-title">Motorised Flow</h2>
+          <p class="pl-chapter-text">Transition from an energetic reformer class to a gentle mat session. One touch adjusts every blind, shifting the mood from bright and activating to soft and restorative — without breaking rhythm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WAVE DIVIDER ===== -->
+<div class="pl-wave-divider">
+  <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none" style="height:80px;">
+    <path d="M0,40 C360,80 720,0 1080,40 S1440,80 1440,40 L1440,80 L0,80 Z" fill="var(--pl-bg)"/>
+  </svg>
+</div>
+
+<!-- ===== WHY PILATES STUDIOS ===== -->
+<section class="pl-why" id="plWhy">
+  <div class="pl-container">
+    <div class="pl-section-label pl-reveal">The Challenge</div>
+    <h2 class="pl-section-title pl-reveal">Why Pilates studios have unique window needs</h2>
+    <div class="pl-why-grid">
+      <div class="pl-why-visual">
+        <div class="pl-why-visual-text">光</div>
+      </div>
+      <div class="pl-why-items">
+        <div class="pl-why-item">
+          <h3>Mirrors Amplify Everything</h3>
+          <p>A single shaft of direct sun bouncing off wall mirrors creates blinding glare across the entire studio. Standard blinds leave gaps — ours seal edge-to-edge.</p>
+          <span class="pl-stat" data-target="87">0%</span>
+          <span style="font-size:.75rem;color:var(--pl-muted);">of studios report glare complaints with standard blinds</span>
+        </div>
+        <div class="pl-why-item">
+          <h3>Reformers Need Cool Air</h3>
+          <p>Spring-loaded equipment in direct sun means metal burns and uncomfortable grips. Thermal blinds keep equipment contact surfaces at a comfortable temperature.</p>
+          <span class="pl-stat" data-target="5">0°C</span>
+          <span style="font-size:.75rem;color:var(--pl-muted);">average temperature reduction with honeycomb blinds</span>
+        </div>
+        <div class="pl-why-item">
+          <h3>Class Mood Shifts</h3>
+          <p>A 6am energising class needs different light to a 7pm restorative session. Smart motorised blinds let instructors set the scene with a single command.</p>
+          <span class="pl-stat" data-target="12">0</span>
+          <span style="font-size:.75rem;color:var(--pl-muted);">preset lighting scenes available per studio</span>
+        </div>
+        <div class="pl-why-item">
+          <h3>Floor-to-Ceiling Windows</h3>
+          <p>Modern studios love natural light, but those beautiful tall windows are the hardest to treat. We specialise in large-format blinds that operate smoothly up to 4 metres.</p>
+          <span class="pl-stat" data-target="4">0m</span>
+          <span style="font-size:.75rem;color:var(--pl-muted);">maximum blind height, motorised as standard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS MARQUEE ===== -->
+<section class="pl-stats">
+  <div class="pl-stats-track" id="plStatsTrack">
+    <div class="pl-stats-item"><span class="pl-stats-num">200+</span><span class="pl-stats-label">Studios Fitted Across Melbourne</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">98%</span><span class="pl-stats-label">Client Satisfaction Rate</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">5yr</span><span class="pl-stats-label">Warranty On All Products</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">48hr</span><span class="pl-stats-label">Express Quote Turnaround</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">$0</span><span class="pl-stats-label">Measure & Quote Always Free</span></div>
+    <div class="pl-stats-dot"></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="pl-stats-item"><span class="pl-stats-num">200+</span><span class="pl-stats-label">Studios Fitted Across Melbourne</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">98%</span><span class="pl-stats-label">Client Satisfaction Rate</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">5yr</span><span class="pl-stats-label">Warranty On All Products</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">48hr</span><span class="pl-stats-label">Express Quote Turnaround</span></div>
+    <div class="pl-stats-dot"></div>
+    <div class="pl-stats-item"><span class="pl-stats-num">$0</span><span class="pl-stats-label">Measure & Quote Always Free</span></div>
+    <div class="pl-stats-dot"></div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="pl-products" id="plProducts">
+  <div class="pl-container">
+    <div class="pl-section-label pl-reveal" style="color:var(--pl-coral);">Solutions</div>
+    <h2 class="pl-section-title pl-reveal">Engineered for movement spaces</h2>
+    <div class="pl-product-grid">
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">◎</div>
+        <h3 class="pl-product-name">Sheer Roller Blinds</h3>
+        <p class="pl-product-desc">Diffuse natural light evenly across mirrors without hot spots. UV-filtering fabric protects equipment and flooring while maintaining that airy studio feel.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">UV Block 95%</span>
+          <span class="pl-product-spec">Anti-Glare</span>
+          <span class="pl-product-spec">Wipe Clean</span>
+        </div>
+      </div>
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">⬡</div>
+        <h3 class="pl-product-name">Honeycomb Thermal</h3>
+        <p class="pl-product-desc">Dual-cell honeycomb structure creates an insulating air pocket. Keeps studio temperature stable so spring-loaded equipment stays comfortable to touch.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">R-Value 3.2</span>
+          <span class="pl-product-spec">Dual Cell</span>
+          <span class="pl-product-spec">Cordless</span>
+        </div>
+      </div>
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">▤</div>
+        <h3 class="pl-product-name">Motorised Day-Night</h3>
+        <p class="pl-product-desc">Alternating sheer and opaque bands let you dial in the exact light level. Motorised for seamless class transitions — from high-energy to candlelit flow.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">Smart Home</span>
+          <span class="pl-product-spec">Silent Motor</span>
+          <span class="pl-product-spec">Scene Memory</span>
+        </div>
+      </div>
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">▮</div>
+        <h3 class="pl-product-name">Panel Glide Systems</h3>
+        <p class="pl-product-desc">For expansive floor-to-ceiling windows. Smooth-tracking panels slide horizontally, offering flexible coverage for studios with varied window configurations.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">Up to 6m Wide</span>
+          <span class="pl-product-spec">Stackable</span>
+          <span class="pl-product-spec">Custom Print</span>
+        </div>
+      </div>
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">◈</div>
+        <h3 class="pl-product-name">Blackout Rollers</h3>
+        <p class="pl-product-desc">Total darkness for meditation classes, infrared sessions, or projector-based instruction. Side channels eliminate light bleed even in a fully-glazed studio.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">100% Blockout</span>
+          <span class="pl-product-spec">Side Channels</span>
+          <span class="pl-product-spec">Fire Rated</span>
+        </div>
+      </div>
+      <div class="pl-product-card pl-reveal">
+        <span class="pl-product-arrow">↗</span>
+        <div class="pl-product-icon">◐</div>
+        <h3 class="pl-product-name">Privacy Sheers</h3>
+        <p class="pl-product-desc">Ground-level studios facing footpaths need privacy without sacrificing light. Our one-way sheers let clients focus inward while passers-by see only a soft glow.</p>
+        <div class="pl-product-specs">
+          <span class="pl-product-spec">One-Way Vision</span>
+          <span class="pl-product-spec">Light Filter</span>
+          <span class="pl-product-spec">Antibacterial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERACTIVE LIGHT DEMO ===== -->
+<section class="pl-demo" id="plDemo">
+  <div class="pl-container">
+    <div class="pl-demo-layout">
+      <div class="pl-demo-visual pl-reveal">
+        <div class="pl-demo-room">
+          <div class="pl-demo-glow" id="plDemoGlow"></div>
+          <div class="pl-demo-window" id="plDemoWindow">
+            <div class="pl-demo-blinds" id="plDemoBlinds"></div>
+          </div>
+          <div class="pl-demo-figure">🧘</div>
+        </div>
+      </div>
+      <div class="pl-demo-controls pl-reveal">
+        <div class="pl-section-label">Try It</div>
+        <h3>Control the studio light</h3>
+        <p>Drag the slider to see how different blind positions change the atmosphere in a Pilates studio — from full natural light to complete blackout.</p>
+        <div class="pl-slider-wrap">
+          <div class="pl-slider-label">
+            <span>Light Level</span>
+            <span class="pl-slider-value" id="plLightVal">50%</span>
+          </div>
+          <input type="range" class="pl-slider" id="plLightSlider" min="0" max="100" value="50">
+        </div>
+        <div class="pl-slider-wrap">
+          <div class="pl-slider-label">
+            <span>Class Type</span>
+            <span class="pl-slider-value" id="plClassVal">Reformer</span>
+          </div>
+          <input type="range" class="pl-slider" id="plClassSlider" min="0" max="4" value="2" step="1">
+        </div>
+        <div class="pl-demo-rec" id="plDemoRec">
+          <div class="pl-demo-rec-title">Recommended</div>
+          <div class="pl-demo-rec-text" id="plRecText">Sheer Roller Blinds — even diffusion for mirror-side reformer work.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="pl-testimonials" id="plTestimonials">
+  <div class="pl-container">
+    <div class="pl-section-label pl-reveal">Studio Owners Love Us</div>
+    <h2 class="pl-section-title pl-reveal">Real studios, real results</h2>
+    <div class="pl-testimonial-track" id="plTestimonialTrack">
+      <div class="pl-testimonial-card">
+        <p class="pl-testimonial-quote">We spent months struggling with glare on our mirrors before finding iSeekBlinds. The sheer rollers completely solved it — clients actually comment on how much better the studio feels now.</p>
+        <div class="pl-testimonial-author">
+          <div class="pl-testimonial-avatar">🏋️</div>
+          <div>
+            <div class="pl-testimonial-name">Sarah M.</div>
+            <div class="pl-testimonial-role">Core Movement Pilates, South Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="pl-testimonial-card">
+        <p class="pl-testimonial-quote">The motorised blinds were a game changer. Between reformer and mat classes we just tap a button and the whole mood shifts. Our evening restorative sessions feel completely different to morning power classes.</p>
+        <div class="pl-testimonial-author">
+          <div class="pl-testimonial-avatar">✨</div>
+          <div>
+            <div class="pl-testimonial-name">James & Lin T.</div>
+            <div class="pl-testimonial-role">Balance Studio, Fitzroy</div>
+          </div>
+        </div>
+      </div>
+      <div class="pl-testimonial-card">
+        <p class="pl-testimonial-quote">Our ground-floor studio faces a busy street. The privacy sheers were exactly what we needed — our clients feel completely secluded while the studio still feels bright and open. Installation was seamless too.</p>
+        <div class="pl-testimonial-author">
+          <div class="pl-testimonial-avatar">🌿</div>
+          <div>
+            <div class="pl-testimonial-name">Priya K.</div>
+            <div class="pl-testimonial-role">Flow & Form, Richmond</div>
+          </div>
+        </div>
+      </div>
+      <div class="pl-testimonial-card">
+        <p class="pl-testimonial-quote">We run infrared Pilates sessions and needed total blackout. iSeekBlinds installed rollers with side channels — zero light leakage. The honeycomb blinds also cut our cooling bill by nearly 30%.</p>
+        <div class="pl-testimonial-author">
+          <div class="pl-testimonial-avatar">🔥</div>
+          <div>
+            <div class="pl-testimonial-name">Tom D.</div>
+            <div class="pl-testimonial-role">Inferno Pilates, Prahran</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="pl-process" id="plProcess">
+  <div class="pl-container">
+    <div class="pl-section-label pl-reveal">How It Works</div>
+    <h2 class="pl-section-title pl-reveal">From first call to first class</h2>
+    <div class="pl-process-flow">
+      <div class="pl-process-step">
+        <div class="pl-process-num">1</div>
+        <h3 class="pl-process-title">Studio Assessment</h3>
+        <p class="pl-process-desc">We visit your space, map window orientations, note mirror positions, and understand your class schedule.</p>
+      </div>
+      <div class="pl-process-step">
+        <div class="pl-process-num">2</div>
+        <h3 class="pl-process-title">Design & Quote</h3>
+        <p class="pl-process-desc">A tailored plan with product recommendations, fabric samples, and a transparent quote — no hidden costs.</p>
+      </div>
+      <div class="pl-process-step">
+        <div class="pl-process-num">3</div>
+        <h3 class="pl-process-title">Custom Manufacture</h3>
+        <p class="pl-process-desc">Every blind is made to your exact measurements. Commercial-grade fabrics, premium hardware, built to last.</p>
+      </div>
+      <div class="pl-process-step">
+        <div class="pl-process-num">4</div>
+        <h3 class="pl-process-title">Install & Calibrate</h3>
+        <p class="pl-process-desc">Professional installation outside class hours. We test every blind, program scenes, and train your team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="pl-cta">
+  <div class="pl-container">
+    <h2 class="pl-cta-title pl-reveal">Ready to<br><em>transform</em> your studio?</h2>
+    <p class="pl-cta-sub pl-reveal">Free measure & quote. Expert advice on light, privacy, and temperature control for movement spaces.</p>
+    <a href="../free-quote.html" class="pl-cta-btn pl-reveal"><span>Book Free Studio Assessment →</span></a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <p>Melbourne's trusted blinds & window furnishings specialists. Custom-made, professionally installed.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/curtains-drapes.html">Curtains & Drapes</a>
+      <a href="../products/shutters.html">Plantation Shutters</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <a href="../landing/">Inspiration Guides</a>
+      <a href="../landing/diy-measuring-guide.html">Measuring Guide</a>
+      <a href="../landing/care-maintenance.html">Care & Maintenance</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 iSeekBlinds. All rights reserved.</span>
+    <span>Melbourne, Australia</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // === Loader ===
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('plLoader').classList.add('hidden'), 400);
+    document.getElementById('plHeroContent').classList.add('visible');
+  });
+
+  // === Custom Cursor ===
+  const cursor = document.getElementById('plCursor');
+  let cx = 0, cy = 0, tx = 0, ty = 0;
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+  (function loop() {
+    cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+    cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a, button, .pl-product-card, .pl-slider').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+
+  // === Auto-hide Header ===
+  let lastY = 0;
+  const header = document.getElementById('plHeader');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 80);
+    header.classList.toggle('hide', y > 300 && y > lastY);
+    lastY = y;
+  }, { passive: true });
+
+  // === Scroll Reveal ===
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.pl-reveal, .pl-why-item, .pl-process-step, .pl-chapter-card').forEach(el => revealObs.observe(el));
+
+  // === Hero Chapter Cards — reveal on scroll ===
+  const chapterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      e.target.classList.toggle('visible', e.isIntersecting);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.pl-chapter-card').forEach(el => chapterObs.observe(el));
+
+  // === SVG Pose Morph — scroll-driven ===
+  const poses = [
+    'M100,40 C100,40 95,55 100,70 L100,130 Q80,150 65,180 L55,240 M100,130 Q120,150 135,180 L145,240 M100,90 Q70,100 55,115 M100,90 Q130,100 145,115', // standing
+    'M100,40 C100,40 95,55 100,70 L100,130 Q75,140 55,155 L40,200 M100,130 Q125,140 145,155 L160,200 M100,90 Q60,80 40,90 M100,90 Q140,80 160,90', // arms wide
+    'M100,50 C100,50 95,65 100,80 L100,140 Q80,155 70,190 L70,250 M100,140 Q120,155 130,190 L130,250 M100,100 Q65,90 45,100 M100,100 Q135,110 155,130', // warrior
+    'M100,55 C100,55 98,68 100,80 L105,120 Q140,115 160,105 L160,105 M105,120 Q85,145 75,175 L70,220 M100,90 Q70,75 50,85 M100,90 Q120,70 140,60'  // reaching
+  ];
+  const heroWrap = document.getElementById('plHeroWrap');
+  const posePath = document.getElementById('plPosePath');
+  window.addEventListener('scroll', () => {
+    const rect = heroWrap.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+    const idx = Math.min(Math.floor(progress * poses.length), poses.length - 1);
+    posePath.setAttribute('d', poses[idx]);
+  }, { passive: true });
+
+  // === Counter Animation ===
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.textContent.replace(/[\d]/g, '').trim() || '';
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 40));
+      const intv = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(intv);
+      }, 30);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.pl-stat').forEach(el => counterObs.observe(el));
+
+  // === Interactive Light Demo ===
+  const lightSlider = document.getElementById('plLightSlider');
+  const classSlider = document.getElementById('plClassSlider');
+  const lightVal = document.getElementById('plLightVal');
+  const classVal = document.getElementById('plClassVal');
+  const demoGlow = document.getElementById('plDemoGlow');
+  const demoBlinds = document.getElementById('plDemoBlinds');
+  const recText = document.getElementById('plRecText');
+
+  const classTypes = ['Meditation', 'Mat Pilates', 'Reformer', 'Cardio Reformer', 'Infrared'];
+  const recommendations = [
+    'Blackout Rollers with side channels — total darkness for deep meditation focus.',
+    'Honeycomb Thermal — soft filtered light for grounded mat work.',
+    'Sheer Roller Blinds — even diffusion for mirror-side reformer work.',
+    'Day-Night Blinds — adjustable brightness for high-energy reformer sessions.',
+    'Blackout Rollers + Honeycomb — zero light, maximum heat retention for infrared.'
+  ];
+
+  function updateDemo() {
+    const light = parseInt(lightSlider.value);
+    const cls = parseInt(classSlider.value);
+    lightVal.textContent = light + '%';
+    classVal.textContent = classTypes[cls];
+    demoGlow.style.opacity = light / 100 * 0.5;
+    demoBlinds.style.opacity = 1 - (light / 100);
+    recText.textContent = recommendations[cls];
+  }
+  lightSlider.addEventListener('input', updateDemo);
+  classSlider.addEventListener('input', updateDemo);
+
+  // === Testimonial horizontal drag-scroll ===
+  const track = document.getElementById('plTestimonialTrack');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; track.style.cursor = 'grabbing'; });
+  track.addEventListener('mouseleave', () => { isDown = false; track.style.cursor = ''; });
+  track.addEventListener('mouseup', () => { isDown = false; track.style.cursor = ''; });
+  track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.5; });
+  track.style.overflowX = 'auto'; track.style.cursor = 'grab'; track.style.scrollbarWidth = 'none';
+
+})();
+</script>
+
+</body>
+</html>
