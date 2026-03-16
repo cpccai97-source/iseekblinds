@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garage Conversion Studio Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Transform your garage into a functional studio with perfect blinds. Light control, insulation & privacy for ADUs, art studios, home gyms & workshops. Free measure & quote Melbourne-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════ RESET & BASE ═══════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --electric:#1446ff;
+  --tangerine:#ff6b2b;
+  --charcoal:#1a1a22;
+  --cream:#faf5ee;
+  --lime:#c8ff00;
+  --deep:#0d0d14;
+  --slate:#3a3a4a;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Karla',sans-serif;background:var(--charcoal);color:var(--cream);overflow-x:hidden;cursor:none}
+
+/* ═══════ CUSTOM CURSOR ═══════ */
+.cursor-dot{position:fixed;width:10px;height:10px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:40px;height:40px;border:2px solid var(--tangerine);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+.cursor-dot.hover{width:20px;height:20px}
+.cursor-ring.hover{width:60px;height:60px;border-color:var(--lime)}
+
+/* ═══════ LOADER ═══════ */
+.loader{position:fixed;inset:0;background:var(--deep);z-index:9998;display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+.loader.done{opacity:0;visibility:hidden}
+.loader-text{font-family:'Dela Gothic One',sans-serif;font-size:clamp(2rem,6vw,5rem);background:linear-gradient(90deg,var(--electric),var(--tangerine),var(--lime));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:loaderPulse 1s ease infinite alternate}
+@keyframes loaderPulse{0%{opacity:.4;transform:scale(.95)}100%{opacity:1;transform:scale(1)}}
+
+/* ═══════ NAV ═══════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px);background:rgba(26,26,34,.6);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-family:'Dela Gothic One',sans-serif;font-size:1.2rem;color:var(--cream);text-decoration:none}
+.nav-logo span{color:var(--tangerine)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--tangerine);transition:width .3s ease}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--tangerine);color:var(--deep);padding:.55rem 1.2rem;border-radius:2px;font-weight:700;font-size:.85rem;text-decoration:none;text-transform:uppercase;letter-spacing:.03em;transition:background .3s,transform .2s;border:none;cursor:none}
+.nav-cta:hover{background:var(--lime);transform:translateY(-2px)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+}
+
+/* ═══════ HERO ═══════ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:8rem 2rem 4rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .block{position:absolute;border-radius:4px}
+.hero-bg .block-1{width:45vw;height:55vh;background:var(--electric);top:-5%;right:-5%;transform:rotate(-8deg);opacity:.15}
+.hero-bg .block-2{width:30vw;height:40vh;background:var(--tangerine);bottom:-10%;left:-3%;transform:rotate(12deg);opacity:.12}
+.hero-bg .block-3{width:20vw;height:20vh;background:var(--lime);top:30%;left:20%;transform:rotate(-20deg);opacity:.08}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-tag{display:inline-block;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--lime);border:2px solid var(--lime);padding:.4rem 1rem;margin-bottom:1.5rem;transform:rotate(-2deg)}
+.hero h1{font-family:'Dela Gothic One',sans-serif;font-size:clamp(2.5rem,7vw,6rem);line-height:1;margin-bottom:1.5rem;color:var(--cream)}
+.hero h1 .clash{color:var(--tangerine);position:relative;display:inline-block}
+.hero h1 .clash::after{content:'';position:absolute;bottom:-.05em;left:0;width:100%;height:.12em;background:var(--electric);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.hero h1 .clash.visible::after{transform:scaleX(1)}
+.hero-desc{font-size:clamp(1rem,2vw,1.3rem);max-width:600px;line-height:1.7;color:rgba(250,245,238,.75);margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--tangerine);color:var(--deep);padding:.8rem 2rem;font-family:'Karla',sans-serif;font-weight:700;font-size:1rem;border:none;cursor:none;text-transform:uppercase;letter-spacing:.05em;position:relative;overflow:hidden;transition:transform .2s}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--lime);transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.btn-primary:hover::before{transform:translateY(0)}
+.btn-primary span{position:relative;z-index:1}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--cream);padding:.8rem 2rem;border:2px solid var(--cream);font-family:'Karla',sans-serif;font-weight:700;font-size:1rem;cursor:none;text-transform:uppercase;letter-spacing:.05em;transition:background .3s,color .3s,transform .2s}
+.btn-outline:hover{background:var(--cream);color:var(--charcoal);transform:translateY(-2px)}
+
+/* scroll indicator */
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.5;animation:scrollBounce 2s ease infinite}
+.scroll-hint span{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em}
+.scroll-arrow{width:20px;height:20px;border-right:2px solid var(--cream);border-bottom:2px solid var(--cream);transform:rotate(45deg)}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ═══════ STATS TICKER ═══════ */
+.stats-ticker{padding:2rem 0;background:var(--electric);overflow:hidden;position:relative}
+.ticker-track{display:flex;gap:4rem;animation:tickerScroll 20s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1rem,2.5vw,1.5rem);color:var(--deep)}
+.ticker-track .sep{color:var(--tangerine)}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══════ LEFT-RIGHT ALTERNATING SECTIONS ═══════ */
+.alt-section{padding:6rem 2rem;position:relative;overflow:hidden}
+.alt-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.alt-section:nth-child(even) .alt-inner{direction:rtl}
+.alt-section:nth-child(even) .alt-inner>*{direction:ltr}
+
+.alt-visual{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden}
+.alt-visual-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.scene-box{width:85%;height:80%;border-radius:4px;position:relative;overflow:hidden}
+
+/* Scene 1: Garage → Studio transformation */
+.scene-garage{background:linear-gradient(135deg,#2a2a35 0%,#1a1a22 100%);border:2px solid rgba(255,255,255,.08)}
+.scene-garage .wall{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 48%,rgba(255,255,255,.03) 48%,rgba(255,255,255,.03) 52%)}
+.scene-garage .window{position:absolute;top:15%;right:10%;width:40%;height:50%;border:3px solid var(--tangerine);background:linear-gradient(180deg,rgba(20,70,255,.15),rgba(20,70,255,.05));display:flex;align-items:center;justify-content:center}
+.scene-garage .blind-slats{width:90%;height:80%;display:flex;flex-direction:column;gap:3px}
+.scene-garage .slat{height:8%;background:rgba(255,107,43,.3);border-radius:1px;transform-origin:center;transition:transform .3s ease}
+.scene-garage:hover .slat:nth-child(odd){transform:rotateX(40deg)}
+.scene-garage .label{position:absolute;bottom:8%;left:8%;font-family:'Dela Gothic One',sans-serif;font-size:.7rem;color:var(--lime);text-transform:uppercase;letter-spacing:.1em}
+
+/* Scene 2: Light control visual */
+.scene-light{background:var(--deep);border:2px solid rgba(200,255,0,.1)}
+.light-meter{width:80%;margin:0 auto}
+.light-bar{height:12px;background:rgba(255,255,255,.08);border-radius:6px;margin-bottom:.8rem;position:relative;overflow:hidden}
+.light-fill{height:100%;border-radius:6px;transition:width 1s cubic-bezier(.16,1,.3,1)}
+.light-label{display:flex;justify-content:space-between;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(250,245,238,.5);margin-bottom:1.5rem}
+.light-fill.roller{background:linear-gradient(90deg,var(--electric),var(--lime));width:0}
+.light-fill.venetian{background:linear-gradient(90deg,var(--tangerine),#ff3366);width:0}
+.light-fill.panel{background:linear-gradient(90deg,var(--lime),var(--electric));width:0}
+.alt-section.visible .light-fill.roller{width:95%}
+.alt-section.visible .light-fill.venetian{width:78%}
+.alt-section.visible .light-fill.panel{width:88%}
+
+/* Scene 3: Insulation diagram */
+.scene-insulate{background:linear-gradient(180deg,#1a2744,var(--deep));border:2px solid rgba(20,70,255,.2)}
+.insulate-layers{display:flex;align-items:center;justify-content:center;gap:3px;height:100%;padding:2rem}
+.insulate-layer{height:70%;border-radius:3px;transition:transform .4s ease,opacity .4s ease}
+.insulate-layer:nth-child(1){width:8%;background:repeating-linear-gradient(0deg,var(--tangerine) 0px,var(--tangerine) 2px,transparent 2px,transparent 6px);opacity:.6}
+.insulate-layer:nth-child(2){width:20%;background:rgba(200,255,0,.1);border:1px dashed var(--lime)}
+.insulate-layer:nth-child(3){width:5%;background:rgba(255,255,255,.15)}
+.insulate-layer:nth-child(4){width:20%;background:rgba(20,70,255,.1);border:1px dashed var(--electric)}
+.insulate-layer:nth-child(5){width:8%;background:repeating-linear-gradient(0deg,var(--electric) 0px,var(--electric) 2px,transparent 2px,transparent 6px);opacity:.6}
+.scene-insulate:hover .insulate-layer{transform:scaleX(1.3)}
+.insulate-labels{position:absolute;bottom:8%;left:0;right:0;display:flex;justify-content:center;gap:1.5rem;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(250,245,238,.5)}
+.insulate-labels span::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle}
+.insulate-labels .l-ext::before{background:var(--tangerine)}
+.insulate-labels .l-blind::before{background:var(--lime)}
+.insulate-labels .l-air::before{background:rgba(255,255,255,.4)}
+.insulate-labels .l-glass::before{background:var(--electric)}
+
+/* Scene 4: Cost comparison */
+.scene-cost{background:var(--deep);border:2px solid rgba(255,107,43,.15);padding:2rem}
+.cost-bars{display:flex;align-items:flex-end;justify-content:center;gap:1.5rem;height:70%}
+.cost-bar{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex:1}
+.cost-bar-fill{width:100%;border-radius:3px 3px 0 0;transition:height 1s cubic-bezier(.16,1,.3,1);height:0}
+.cost-bar-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;text-align:center;color:rgba(250,245,238,.6)}
+.cost-bar-value{font-family:'Dela Gothic One',sans-serif;font-size:.9rem}
+.alt-section.visible .bar-full{height:100%}
+.alt-section.visible .bar-med{height:55%}
+.alt-section.visible .bar-low{height:25%}
+.bar-full .cost-bar-fill{background:linear-gradient(0deg,var(--tangerine),#ff3366);height:inherit}
+.bar-med .cost-bar-fill{background:linear-gradient(0deg,var(--electric),#6b8aff);height:inherit}
+.bar-low .cost-bar-fill{background:linear-gradient(0deg,var(--lime),#a0cc00);height:inherit}
+
+.alt-text{max-width:500px}
+.alt-text .section-num{font-family:'Dela Gothic One',sans-serif;font-size:5rem;line-height:1;color:transparent;-webkit-text-stroke:2px var(--electric);opacity:.3;margin-bottom:.5rem}
+.alt-text h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:1rem}
+.alt-text h2 .accent{color:var(--tangerine)}
+.alt-text p{line-height:1.8;color:rgba(250,245,238,.7);margin-bottom:1.5rem;font-size:1.05rem}
+.alt-text .feature-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.alt-text .feature-list li{display:flex;align-items:flex-start;gap:.6rem;font-size:.95rem;color:rgba(250,245,238,.8)}
+.alt-text .feature-list li::before{content:'▸';color:var(--lime);font-weight:700;flex-shrink:0;margin-top:1px}
+
+@media(max-width:768px){
+  .alt-inner{grid-template-columns:1fr;gap:2rem}
+  .alt-section:nth-child(even) .alt-inner{direction:ltr}
+  .alt-text .section-num{font-size:3rem}
+}
+
+/* ═══════ CONVERSION TYPES BAND ═══════ */
+.types-band{padding:6rem 2rem;background:var(--deep);position:relative}
+.types-band::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--electric),var(--tangerine),var(--lime),var(--electric))}
+.types-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.type-card{padding:2rem;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:border-color .3s,transform .3s}
+.type-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;transition:height .5s cubic-bezier(.16,1,.3,1)}
+.type-card:hover::before{height:100%}
+.type-card:nth-child(1)::before{background:var(--electric)}
+.type-card:nth-child(2)::before{background:var(--tangerine)}
+.type-card:nth-child(3)::before{background:var(--lime)}
+.type-card:nth-child(4)::before{background:#ff3366}
+.type-card:nth-child(5)::before{background:var(--electric)}
+.type-card:nth-child(6)::before{background:var(--tangerine)}
+.type-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-4px)}
+.type-card .icon{font-size:2rem;margin-bottom:1rem}
+.type-card h3{font-family:'Dela Gothic One',sans-serif;font-size:1rem;margin-bottom:.6rem}
+.type-card p{font-size:.85rem;line-height:1.6;color:rgba(250,245,238,.6)}
+.types-title{text-align:center;margin-bottom:3rem}
+.types-title h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1.8rem,4vw,3rem)}
+.types-title h2 .accent{color:var(--lime)}
+.types-title p{color:rgba(250,245,238,.5);margin-top:.8rem;font-size:1.05rem}
+
+/* ═══════ INTERACTIVE: TEMP SLIDER ═══════ */
+.temp-section{padding:6rem 2rem;position:relative;overflow:hidden}
+.temp-section::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(20,70,255,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,107,43,.06),transparent 60%)}
+.temp-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.temp-inner h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:1rem}
+.temp-inner h2 .accent{color:var(--tangerine)}
+.temp-inner>p{color:rgba(250,245,238,.6);margin-bottom:3rem}
+.temp-display{font-family:'Dela Gothic One',sans-serif;font-size:clamp(4rem,10vw,8rem);line-height:1;margin-bottom:1.5rem;transition:color .3s}
+.temp-display sup{font-size:.4em;vertical-align:super}
+.temp-slider{width:80%;max-width:500px;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--electric),var(--tangerine));outline:none;cursor:none}
+.temp-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--lime);cursor:none;box-shadow:0 0 20px rgba(200,255,0,.4)}
+.temp-label{margin-top:1rem;font-size:.85rem;color:rgba(250,245,238,.5);display:flex;justify-content:space-between;max-width:500px;margin-left:auto;margin-right:auto}
+.temp-recommendation{margin-top:2rem;padding:1.5rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;text-align:left;transition:border-color .3s}
+.temp-recommendation h4{font-family:'Dela Gothic One',sans-serif;font-size:.9rem;margin-bottom:.5rem;color:var(--lime)}
+.temp-recommendation p{font-size:.9rem;color:rgba(250,245,238,.65);line-height:1.6}
+
+/* ═══════ TESTIMONIALS ═══════ */
+.testimonials{padding:6rem 2rem;background:var(--deep)}
+.testimonials-inner{max-width:1100px;margin:0 auto}
+.testimonials h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:3rem}
+.testimonials h2 .accent{color:var(--electric)}
+.test-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.5rem}
+.test-card{padding:2rem;border:1px solid rgba(255,255,255,.06);position:relative;transition:transform .3s}
+.test-card:hover{transform:translateY(-3px)}
+.test-card .stars{color:var(--tangerine);font-size:1rem;letter-spacing:2px;margin-bottom:1rem}
+.test-card blockquote{font-style:italic;font-size:1rem;line-height:1.7;color:rgba(250,245,238,.8);margin-bottom:1rem}
+.test-card .author{font-weight:700;font-size:.85rem;color:var(--lime)}
+.test-card .meta{font-size:.75rem;color:rgba(250,245,238,.4);margin-top:.2rem}
+.test-card:nth-child(1){grid-row:span 2;border-color:rgba(20,70,255,.2)}
+.test-card:nth-child(1) blockquote{font-size:1.15rem}
+
+@media(max-width:768px){
+  .test-grid{grid-template-columns:1fr}
+  .test-card:nth-child(1){grid-row:auto}
+}
+
+/* ═══════ PROCESS STEPS ═══════ */
+.process{padding:6rem 2rem;position:relative}
+.process-inner{max-width:900px;margin:0 auto}
+.process h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:3rem;text-align:center}
+.process h2 .accent{color:var(--tangerine)}
+.steps{display:flex;flex-direction:column;gap:0;position:relative}
+.steps::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--electric),var(--tangerine),var(--lime))}
+.step{display:flex;gap:2rem;padding:2rem 0;position:relative}
+.step-num{width:50px;height:50px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Dela Gothic One',sans-serif;font-size:1.1rem;border-radius:50%;background:var(--charcoal);border:2px solid var(--electric);position:relative;z-index:1;transition:background .3s,border-color .3s}
+.step:hover .step-num{background:var(--electric);border-color:var(--lime)}
+.step-content h3{font-family:'Dela Gothic One',sans-serif;font-size:1.1rem;margin-bottom:.4rem}
+.step-content p{font-size:.9rem;color:rgba(250,245,238,.6);line-height:1.6}
+
+@media(max-width:768px){
+  .step{gap:1rem}
+}
+
+/* ═══════ CTA ═══════ */
+.final-cta{padding:8rem 2rem;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,70,255,.12),rgba(255,107,43,.08),rgba(200,255,0,.05))}
+.final-cta .inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.final-cta h2{font-family:'Dela Gothic One',sans-serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem}
+.final-cta h2 .accent{color:var(--tangerine)}
+.final-cta p{color:rgba(250,245,238,.65);font-size:1.1rem;line-height:1.7;margin-bottom:2.5rem}
+.final-cta .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.final-cta .phone{font-family:'Dela Gothic One',sans-serif;font-size:1.5rem;color:var(--lime);margin-top:1.5rem;text-decoration:none;display:inline-block}
+.final-cta .phone:hover{color:var(--tangerine)}
+
+/* ═══════ FOOTER ═══════ */
+footer{padding:3rem 2rem;background:var(--deep);border-top:1px solid rgba(255,255,255,.06);text-align:center}
+footer p{font-size:.8rem;color:rgba(250,245,238,.3)}
+footer a{color:var(--tangerine);text-decoration:none}
+
+/* ═══════ GRAIN OVERLAY ═══════ */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9997;opacity:.03}
+.grain::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ═══════ SCROLL REVEAL ═══════ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.stagger-1{transition-delay:.1s}
+.stagger-2{transition-delay:.2s}
+.stagger-3{transition-delay:.3s}
+.stagger-4{transition-delay:.4s}
+
+/* ═══════ REDUCED MOTION ═══════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader"><span class="loader-text">GARAGE → STUDIO</span></div>
+
+<!-- Grain -->
+<div class="grain"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="/index.html" class="nav-logo">iSeek<span>Blinds</span></a>
+  <ul class="nav-links">
+    <li><a href="#transform">The Transformation</a></li>
+    <li><a href="#types">Conversion Types</a></li>
+    <li><a href="#process">How It Works</a></li>
+  </ul>
+  <a href="/free-measure.html" class="nav-cta">Free Measure</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="block block-1"></div>
+    <div class="block block-2"></div>
+    <div class="block block-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag reveal">Garage Conversion Specialists</div>
+    <h1 class="reveal stagger-1">Your garage deserves better than <span class="clash" id="heroClash">bare walls.</span></h1>
+    <p class="hero-desc reveal stagger-2">Converting your garage into a studio, gym, office, or ADU? The blinds you choose will make or break the space. We've fitted hundreds of Melbourne garage conversions — and we know what actually works.</p>
+    <div class="hero-actions reveal stagger-3">
+      <button class="btn-primary" onclick="document.getElementById('tempSection').scrollIntoView({behavior:'smooth'})"><span>Find Your Solution</span></button>
+      <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">How It Works</button>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- Stats Ticker -->
+<div class="stats-ticker">
+  <div class="ticker-track" id="ticker">
+    <span>1,200+ Garage Conversions Fitted</span><span class="sep">◆</span>
+    <span>4.9★ Google Rating</span><span class="sep">◆</span>
+    <span>Free Measure & Quote</span><span class="sep">◆</span>
+    <span>Melbourne-Wide Service</span><span class="sep">◆</span>
+    <span>Same-Week Installation</span><span class="sep">◆</span>
+    <span>5-Year Warranty</span><span class="sep">◆</span>
+    <span>1,200+ Garage Conversions Fitted</span><span class="sep">◆</span>
+    <span>4.9★ Google Rating</span><span class="sep">◆</span>
+    <span>Free Measure & Quote</span><span class="sep">◆</span>
+    <span>Melbourne-Wide Service</span><span class="sep">◆</span>
+    <span>Same-Week Installation</span><span class="sep">◆</span>
+    <span>5-Year Warranty</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- Section 1: The Problem -->
+<section class="alt-section" id="transform">
+  <div class="alt-inner">
+    <div class="alt-visual reveal-left">
+      <div class="alt-visual-bg">
+        <div class="scene-box scene-garage">
+          <div class="wall"></div>
+          <div class="window">
+            <div class="blind-slats">
+              <div class="slat"></div><div class="slat"></div><div class="slat"></div>
+              <div class="slat"></div><div class="slat"></div><div class="slat"></div>
+              <div class="slat"></div><div class="slat"></div>
+            </div>
+          </div>
+          <div class="label">Hover to tilt blinds ↗</div>
+        </div>
+      </div>
+    </div>
+    <div class="alt-text reveal-right">
+      <div class="section-num">01</div>
+      <h2>Garages weren't built for <span class="accent">living.</span></h2>
+      <p>Single-skin walls. No insulation. Metal roller doors that turn the space into an oven in summer and a fridge in winter. Converting a garage means fighting every element — and your window treatments are the frontline.</p>
+      <ul class="feature-list">
+        <li>Temperature swings of 15°C+ between seasons</li>
+        <li>No eaves = direct sun exposure all day</li>
+        <li>Street-facing windows with zero privacy</li>
+        <li>Concrete floors amplify heat and cold</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Light Control -->
+<section class="alt-section">
+  <div class="alt-inner">
+    <div class="alt-visual reveal-right">
+      <div class="alt-visual-bg">
+        <div class="scene-box scene-light">
+          <div style="padding:2rem">
+            <div style="font-family:'Dela Gothic One',sans-serif;font-size:.8rem;margin-bottom:2rem;color:var(--lime)">LIGHT BLOCKING PERFORMANCE</div>
+            <div class="light-meter">
+              <div class="light-label"><span>Roller Blockout</span><span>95%</span></div>
+              <div class="light-bar"><div class="light-fill roller"></div></div>
+              <div class="light-label"><span>Venetian Aluminium</span><span>78%</span></div>
+              <div class="light-bar"><div class="light-fill venetian"></div></div>
+              <div class="light-label"><span>Panel Glide</span><span>88%</span></div>
+              <div class="light-bar"><div class="light-fill panel"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alt-text reveal-left">
+      <div class="section-num">02</div>
+      <h2>Light on your <span class="accent">terms.</span></h2>
+      <p>An art studio needs diffused north light. A home gym needs motivation, not glare. A music room needs darkness for focus. We match the blind type to how you'll actually use the space — not just what looks nice in a catalogue.</p>
+      <ul class="feature-list">
+        <li>Blockout rollers for home cinemas & sleep studios</li>
+        <li>Sunscreen mesh for natural light without UV</li>
+        <li>Day-night combos for versatile use</li>
+        <li>Motorised control for hard-to-reach garage windows</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Insulation -->
+<section class="alt-section">
+  <div class="alt-inner">
+    <div class="alt-visual reveal-left">
+      <div class="alt-visual-bg">
+        <div class="scene-box scene-insulate">
+          <div class="insulate-layers">
+            <div class="insulate-layer"></div>
+            <div class="insulate-layer"></div>
+            <div class="insulate-layer"></div>
+            <div class="insulate-layer"></div>
+            <div class="insulate-layer"></div>
+          </div>
+          <div class="insulate-labels">
+            <span class="l-ext">Exterior</span>
+            <span class="l-blind">Blind</span>
+            <span class="l-air">Air gap</span>
+            <span class="l-glass">Glass</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alt-text reveal-right">
+      <div class="section-num">03</div>
+      <h2>Insulation that <span class="accent">actually works.</span></h2>
+      <p>Honeycomb blinds create an air pocket that traps heat in winter and blocks it in summer. In a garage conversion where walls are often single-skin, your blinds do more thermal work than you'd expect.</p>
+      <ul class="feature-list">
+        <li>Cellular/honeycomb blinds reduce heat loss by up to 40%</li>
+        <li>Double-cell design for maximum R-value</li>
+        <li>Cuts energy bills in poorly insulated garages</li>
+        <li>Hover the diagram to see thermal expansion →</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Cost -->
+<section class="alt-section">
+  <div class="alt-inner">
+    <div class="alt-visual reveal-right">
+      <div class="alt-visual-bg">
+        <div class="scene-box scene-cost">
+          <div style="font-family:'Dela Gothic One',sans-serif;font-size:.7rem;margin-bottom:1.5rem;color:var(--tangerine);text-transform:uppercase;letter-spacing:.1em">Avg. Window Treatment Cost per Garage</div>
+          <div class="cost-bars">
+            <div class="cost-bar bar-full">
+              <div class="cost-bar-value" style="color:var(--tangerine)">$2,800</div>
+              <div class="cost-bar-fill" style="height:100%;background:linear-gradient(0deg,var(--tangerine),#ff3366)"></div>
+              <div class="cost-bar-label">Full custom<br>shutters</div>
+            </div>
+            <div class="cost-bar bar-med">
+              <div class="cost-bar-value" style="color:var(--electric)">$1,400</div>
+              <div class="cost-bar-fill" style="height:55%;background:linear-gradient(0deg,var(--electric),#6b8aff)"></div>
+              <div class="cost-bar-label">Motorised<br>rollers</div>
+            </div>
+            <div class="cost-bar bar-low">
+              <div class="cost-bar-value" style="color:var(--lime)">$650</div>
+              <div class="cost-bar-fill" style="height:25%;background:linear-gradient(0deg,var(--lime),#a0cc00)"></div>
+              <div class="cost-bar-label">Manual<br>rollers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alt-text reveal-left">
+      <div class="section-num">04</div>
+      <h2>Budget-smart, not <span class="accent">budget-looking.</span></h2>
+      <p>Garage conversions already eat budgets. We work with your numbers — from basic manual rollers to full motorised setups. Most garage studios land in the $800-$1,500 range and look a million bucks.</p>
+      <ul class="feature-list">
+        <li>Free measure and no-obligation quote</li>
+        <li>Interest-free payment plans available</li>
+        <li>Bundle pricing for multiple windows</li>
+        <li>We price match any written Melbourne quote</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Conversion Types -->
+<section class="types-band" id="types">
+  <div class="types-title reveal">
+    <h2>What's your garage <span class="accent">becoming?</span></h2>
+    <p>Every conversion type has different blind requirements. Here's what works.</p>
+  </div>
+  <div class="types-grid">
+    <div class="type-card reveal stagger-1">
+      <div class="icon">🎨</div>
+      <h3>Art Studio</h3>
+      <p>Diffused natural light without UV. Sunscreen rollers that protect work while keeping the space bright and inspiring.</p>
+    </div>
+    <div class="type-card reveal stagger-2">
+      <div class="icon">🏋️</div>
+      <h3>Home Gym</h3>
+      <p>Anti-glare venetians that handle sweat humidity. Easy to clean, motorised for convenience mid-workout.</p>
+    </div>
+    <div class="type-card reveal stagger-3">
+      <div class="icon">💼</div>
+      <h3>Home Office / ADU</h3>
+      <p>Privacy from the street. Light control for video calls. Honeycomb for all-day thermal comfort.</p>
+    </div>
+    <div class="type-card reveal stagger-4">
+      <div class="icon">🎸</div>
+      <h3>Music / Recording</h3>
+      <p>Heavy blockout fabrics that double as sound dampening. Seal the garage-door side for acoustic isolation.</p>
+    </div>
+    <div class="type-card reveal stagger-1">
+      <div class="icon">🛏️</div>
+      <h3>Guest Suite / Airbnb</h3>
+      <p>Dual day-night rollers for guest flexibility. Blockout for sleeping, sheer for daytime — one bracket.</p>
+    </div>
+    <div class="type-card reveal stagger-2">
+      <div class="icon">🎮</div>
+      <h3>Entertainment Room</h3>
+      <p>Full blackout for projectors and gaming. Panel glides for wide openings where the garage door was.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Temperature Section -->
+<section class="temp-section" id="tempSection">
+  <div class="temp-inner reveal">
+    <h2>How hot does your garage <span class="accent">really get?</span></h2>
+    <p>Drag the slider to see what we recommend for your garage's peak temperature.</p>
+    <div class="temp-display" id="tempDisplay">32<sup>°C</sup></div>
+    <input type="range" class="temp-slider" id="tempSlider" min="15" max="50" value="32">
+    <div class="temp-label"><span>15°C — Mild</span><span>50°C — Extreme</span></div>
+    <div class="temp-recommendation" id="tempRec">
+      <h4>🔥 Hot garage — You need serious thermal control</h4>
+      <p>At 32°C+, standard blinds won't cut it. We'd recommend dual-layer honeycomb blinds with a reflective backing. They'll knock 8-12°C off peak temps and pay for themselves in aircon savings within two summers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <h2 class="reveal">Real garages, <span class="accent">real results.</span></h2>
+    <div class="test-grid">
+      <div class="test-card reveal stagger-1">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We converted our double garage into an art studio and the iSeekBlinds team nailed it. The sunscreen rollers give me perfect diffused light for painting without any UV hitting my canvases. They even helped figure out what to do with the old roller door opening — panel glides were genius."</blockquote>
+        <div class="author">— Sarah K.</div>
+        <div class="meta">Garage → Art Studio · Northcote</div>
+      </div>
+      <div class="test-card reveal stagger-2">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Garage gym was hitting 42°C in summer. Honeycomb blinds brought it down to low 30s. Life-changing."</blockquote>
+        <div class="author">— Marcus T.</div>
+        <div class="meta">Garage → Home Gym · Ringwood</div>
+      </div>
+      <div class="test-card reveal stagger-3">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Turned our garage into an Airbnb studio. Day-night rollers were perfect — guests love the flexibility."</blockquote>
+        <div class="author">— Jenny & Paul</div>
+        <div class="meta">Garage → Airbnb · Brunswick</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <h2 class="reveal">Dead simple. <span class="accent">Four steps.</span></h2>
+    <div class="steps">
+      <div class="step reveal stagger-1">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Book a Free Measure</h3>
+          <p>We come to your garage — converted or mid-build — and assess windows, light, orientation, and your plans for the space. Takes 20 minutes.</p>
+        </div>
+      </div>
+      <div class="step reveal stagger-2">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Get Your Custom Quote</h3>
+          <p>Same day quote by email. We'll recommend the right blind type for your conversion and give you options at different price points.</p>
+        </div>
+      </div>
+      <div class="step reveal stagger-3">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>We Make Them</h3>
+          <p>Custom-made to your exact measurements. Most orders ready in 5-7 business days. Express available if you're on a builder's timeline.</p>
+        </div>
+      </div>
+      <div class="step reveal stagger-4">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Professional Install</h3>
+          <p>Our team installs everything. We work around builders if the conversion's still in progress. Clean up after ourselves. Done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="inner reveal">
+    <h2>Ready to make your garage <span class="accent">actually liveable?</span></h2>
+    <p>Free measure and quote. No pushy sales. Just honest advice from people who've done over a thousand garage conversions across Melbourne.</p>
+    <div class="cta-row">
+      <button class="btn-primary" onclick="window.location.href='/free-measure.html'"><span>Book Free Measure</span></button>
+      <button class="btn-outline" onclick="window.location.href='/contact.html'">Ask a Question</button>
+    </div>
+    <a href="tel:1300000000" class="phone">1300 iSeek</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 <a href="/index.html">iSeekBlinds</a> Melbourne. All rights reserved. <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+</footer>
+
+<script>
+// ═══════ LOADER ═══════
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('done'),800);
+});
+
+// ═══════ CUSTOM CURSOR ═══════
+const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,dx=0,dy=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+function animCursor(){
+  dx+=(mx-dx)*.2;dy+=(my-dy)*.2;
+  rx+=(mx-rx)*.08;ry+=(my-ry)*.08;
+  dot.style.left=dx+'px';dot.style.top=dy+'px';
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a,button,.type-card,.test-card,.step').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{dot.classList.add('hover');ring.classList.add('hover')});
+  el.addEventListener('mouseleave',()=>{dot.classList.remove('hover');ring.classList.remove('hover')});
+});
+// Hide cursor on touch
+if('ontouchstart' in window){
+  dot.style.display='none';ring.style.display='none';
+  document.body.style.cursor='auto';
+}
+
+// ═══════ SCROLL REVEAL ═══════
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.alt-section');
+const revObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.15,rootMargin:'0px 0px -50px 0px'});
+revealEls.forEach(el=>revObs.observe(el));
+
+// ═══════ HERO CLASH UNDERLINE ═══════
+setTimeout(()=>document.getElementById('heroClash').classList.add('visible'),1200);
+
+// ═══════ TEMPERATURE SLIDER ═══════
+const slider=document.getElementById('tempSlider');
+const display=document.getElementById('tempDisplay');
+const rec=document.getElementById('tempRec');
+const recommendations=[
+  {max:20,color:'var(--electric)',icon:'❄️',title:'Cool garage — Light treatments work fine',text:'At these temperatures, any blind type will work. Standard roller blinds or venetians will handle light and privacy. Save your budget for the fun stuff.'},
+  {max:28,color:'var(--cream)',icon:'☀️',title:'Warm garage — Consider thermal options',text:'Getting into territory where thermal performance matters. Blockout rollers with a reflective white backing are great value. Honeycomb blinds if budget allows — the insulation is noticeable.'},
+  {max:38,color:'var(--tangerine)',icon:'🔥',title:'Hot garage — You need serious thermal control',text:'At these temps, standard blinds won\'t cut it. Dual-layer honeycomb blinds with reflective backing will knock 8-12°C off peak temps and pay for themselves in aircon savings within two summers.'},
+  {max:999,color:'#ff3366',icon:'🌋',title:'Extreme heat — Full thermal intervention needed',text:'Your garage is basically an oven. You need honeycomb blinds + external awnings or shutters. Consider reflective film on glass too. We\'ll design a multi-layer system that makes this space usable year-round.'}
+];
+slider.addEventListener('input',()=>{
+  const v=parseInt(slider.value);
+  display.innerHTML=v+'<sup>°C</sup>';
+  const r=recommendations.find(r=>v<=r.max);
+  display.style.color=r.color;
+  rec.style.borderColor=r.color;
+  rec.innerHTML=`<h4>${r.icon} ${r.title}</h4><p>${r.text}</p>`;
+});
+
+// ═══════ COST BAR ANIMATION (already handled by .visible class) ═══════
+</script>
+</body>
+</html>
