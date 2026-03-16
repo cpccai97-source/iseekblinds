@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Podcast & Streaming Studio Blinds | Sound-Dampening Window Solutions | iSeekBlinds Melbourne</title>
+<meta name="description" content="Professional acoustic blinds for podcast studios, streaming setups & home recording spaces. Sound-dampening honeycomb & blackout solutions. Free Melbourne consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;600;700;900&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & VARS ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ps-bg:#141210;
+  --ps-panel:#1e1b17;
+  --ps-walnut:#2a2318;
+  --ps-brushed:#3a3632;
+  --ps-amber:#e8963a;
+  --ps-amber-dim:#a06828;
+  --ps-green:#5cb85c;
+  --ps-red:#d9534f;
+  --ps-cream:#f0e8d8;
+  --ps-text:#d4cbbe;
+  --ps-text-dim:#887e6f;
+  --ps-gold:#c8a55a;
+  --ps-tube-glow:rgba(232,150,58,0.15);
+  --ps-radius:3px;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:'Satoshi',sans-serif;
+  background:var(--ps-bg);
+  color:var(--ps-text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Walnut grain texture overlay */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
+  background:repeating-linear-gradient(
+    87deg,
+    transparent,
+    transparent 2px,
+    rgba(42,35,24,0.03) 2px,
+    rgba(42,35,24,0.03) 4px
+  );
+  mix-blend-mode:overlay;
+}
+
+/* ===== LOADING ===== */
+.ps-loader{
+  position:fixed;inset:0;z-index:10000;background:var(--ps-bg);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;
+  transition:opacity 0.6s,visibility 0.6s;
+}
+.ps-loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.vu-load{display:flex;gap:4px;align-items:flex-end;height:60px}
+.vu-load span{width:6px;background:var(--ps-amber);border-radius:1px;animation:vuBounce 1.2s ease-in-out infinite}
+.vu-load span:nth-child(1){height:20px;animation-delay:0s}
+.vu-load span:nth-child(2){height:35px;animation-delay:0.1s}
+.vu-load span:nth-child(3){height:50px;animation-delay:0.2s}
+.vu-load span:nth-child(4){height:40px;animation-delay:0.3s}
+.vu-load span:nth-child(5){height:25px;animation-delay:0.4s}
+.vu-load span:nth-child(6){height:45px;animation-delay:0.15s}
+.vu-load span:nth-child(7){height:30px;animation-delay:0.35s}
+@keyframes vuBounce{
+  0%,100%{transform:scaleY(0.4);opacity:0.5}
+  50%{transform:scaleY(1);opacity:1}
+}
+.loader-text{font-family:'Azeret Mono',monospace;font-size:0.75rem;color:var(--ps-amber);letter-spacing:0.15em;text-transform:uppercase}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* ===== HEADER ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(20,18,16,0.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(200,165,90,0.15);
+  transition:transform 0.4s;
+}
+.header.hidden{transform:translateY(-100%)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1200px;margin:0 auto}
+.logo{text-decoration:none;display:flex;align-items:center;gap:0}
+.logo-i{font-family:'Azeret Mono',monospace;font-weight:900;font-size:1.3rem;color:var(--ps-amber)}
+.logo-seek{font-family:'Satoshi',sans-serif;font-weight:700;font-size:1.1rem;color:var(--ps-cream)}
+.logo-blinds{font-family:'Satoshi',sans-serif;font-weight:400;font-size:1.1rem;color:var(--ps-text-dim)}
+.nav{display:flex;gap:2rem}
+.nav a{color:var(--ps-text-dim);text-decoration:none;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-family:'Azeret Mono',monospace;transition:color 0.3s}
+.nav a:hover{color:var(--ps-amber)}
+.header-right{display:flex;align-items:center;gap:1.2rem}
+.header-phone{color:var(--ps-amber);text-decoration:none;font-family:'Azeret Mono',monospace;font-size:0.8rem}
+.btn{display:inline-block;padding:0.6rem 1.4rem;text-decoration:none;font-family:'Azeret Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:var(--ps-radius);transition:all 0.3s;cursor:pointer;border:none}
+.btn-primary{background:var(--ps-amber);color:var(--ps-bg)}
+.btn-primary:hover{background:var(--ps-gold);box-shadow:0 0 25px var(--ps-tube-glow)}
+.btn-outline{border:1px solid var(--ps-amber);color:var(--ps-amber);background:transparent}
+.btn-outline:hover{background:var(--ps-amber);color:var(--ps-bg)}
+.mobile-menu-btn{display:none;background:none;border:none;color:var(--ps-cream);font-size:1.5rem;cursor:pointer}
+
+/* ===== HERO — MIXER CONSOLE ===== */
+.ps-hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:8rem 2rem 4rem;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--ps-tube-glow) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(92,184,92,0.05) 0%, transparent 40%),
+    var(--ps-bg);
+}
+.hero-content{max-width:900px;text-align:center;position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-family:'Azeret Mono',monospace;font-size:0.7rem;color:var(--ps-amber);
+  letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.4rem 1rem;
+  border:1px solid rgba(232,150,58,0.3);border-radius:20px;
+  margin-bottom:2rem;
+}
+.hero-badge .led{width:6px;height:6px;border-radius:50%;background:var(--ps-green);box-shadow:0 0 8px var(--ps-green);animation:ledPulse 2s infinite}
+@keyframes ledPulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-title{
+  font-family:'Azeret Mono',monospace;font-weight:900;
+  font-size:clamp(2.2rem,5.5vw,4.5rem);
+  line-height:1.05;color:var(--ps-cream);
+  margin-bottom:1.5rem;
+}
+.hero-title .accent{color:var(--ps-amber)}
+.hero-sub{font-size:1.15rem;color:var(--ps-text-dim);max-width:600px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* VU Meter decoration in hero */
+.hero-vu{
+  position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:3px;opacity:0.4;
+}
+.hero-vu-bar{width:4px;height:40px;background:var(--ps-green);border-radius:1px;transform-origin:bottom;animation:vuIdle 1.5s ease-in-out infinite}
+.hero-vu-bar:nth-child(even){animation-delay:0.2s}
+.hero-vu-bar.hot{background:var(--ps-amber)}
+.hero-vu-bar.clip{background:var(--ps-red)}
+@keyframes vuIdle{0%,100%{transform:scaleY(0.3)}50%{transform:scaleY(1)}}
+
+/* ===== CHANNEL STRIP SECTION — Problems ===== */
+.mixer-section{padding:6rem 0;position:relative}
+.mixer-section::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:80%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--ps-amber-dim),transparent);
+}
+.section-label{
+  font-family:'Azeret Mono',monospace;font-size:0.65rem;
+  letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--ps-amber);margin-bottom:0.5rem;
+}
+.section-title{
+  font-family:'Azeret Mono',monospace;font-weight:700;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--ps-cream);
+  margin-bottom:1rem;line-height:1.15;
+}
+.section-desc{color:var(--ps-text-dim);max-width:600px;margin-bottom:3rem;font-size:1rem}
+
+/* Channel strips — like an audio mixer */
+.channel-strips{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  background:var(--ps-brushed);border-radius:var(--ps-radius);
+  overflow:hidden;border:1px solid rgba(200,165,90,0.1);
+}
+.channel-strip{
+  background:var(--ps-panel);padding:2rem 1.5rem;
+  display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+  position:relative;
+  transition:background 0.3s;
+}
+.channel-strip:hover{background:var(--ps-walnut)}
+.ch-number{
+  font-family:'Azeret Mono',monospace;font-size:0.6rem;
+  color:var(--ps-amber-dim);letter-spacing:0.15em;
+  padding:0.2rem 0.5rem;border:1px solid var(--ps-amber-dim);border-radius:2px;
+}
+.ch-icon{font-size:2rem;filter:grayscale(0.3)}
+.ch-label{
+  font-family:'Azeret Mono',monospace;font-size:0.75rem;font-weight:600;
+  color:var(--ps-cream);text-align:center;letter-spacing:0.05em;
+}
+.ch-desc{font-size:0.85rem;color:var(--ps-text-dim);text-align:center;line-height:1.5}
+/* Fader visual */
+.ch-fader{
+  width:4px;height:60px;background:var(--ps-brushed);border-radius:2px;
+  position:relative;margin-top:auto;
+}
+.ch-fader-knob{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:16px;height:8px;background:var(--ps-amber);border-radius:1px;
+  bottom:30%;transition:bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.channel-strip:hover .ch-fader-knob{bottom:65%}
+
+/* ===== INTERACTIVE DECIBEL METER ===== */
+.db-section{padding:6rem 0;position:relative}
+.db-meter-wrap{
+  background:var(--ps-panel);border:1px solid rgba(200,165,90,0.12);
+  border-radius:var(--ps-radius);padding:3rem;
+  max-width:800px;margin:0 auto;
+}
+.db-display{
+  display:flex;align-items:center;gap:2rem;margin-bottom:2rem;
+  flex-wrap:wrap;justify-content:center;
+}
+.db-readout{
+  font-family:'Azeret Mono',monospace;font-size:4rem;font-weight:900;
+  color:var(--ps-amber);
+  text-shadow:0 0 30px var(--ps-tube-glow);
+  min-width:180px;text-align:right;
+}
+.db-readout small{font-size:1.2rem;color:var(--ps-text-dim)}
+.db-label-text{font-family:'Azeret Mono',monospace;font-size:0.9rem;color:var(--ps-text-dim);max-width:300px}
+.db-slider-track{
+  position:relative;height:12px;
+  background:linear-gradient(90deg,var(--ps-green) 0%,var(--ps-green) 40%,var(--ps-amber) 60%,var(--ps-red) 90%);
+  border-radius:6px;overflow:visible;cursor:pointer;
+}
+.db-slider-input{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:12px;background:transparent;
+  position:relative;z-index:2;cursor:pointer;
+}
+.db-slider-input::-webkit-slider-thumb{
+  -webkit-appearance:none;width:22px;height:28px;
+  background:var(--ps-cream);border-radius:2px;
+  border:2px solid var(--ps-amber);cursor:grab;
+  box-shadow:0 2px 8px rgba(0,0,0,0.5);
+}
+.db-result{
+  margin-top:2rem;padding:1.5rem;
+  background:var(--ps-walnut);border-radius:var(--ps-radius);
+  border-left:3px solid var(--ps-amber);
+  font-family:'Azeret Mono',monospace;font-size:0.85rem;
+  color:var(--ps-cream);line-height:1.8;
+}
+.db-result .rec{color:var(--ps-amber);font-weight:700}
+
+/* ===== PRODUCT RACK — Equipment rack style ===== */
+.rack-section{padding:6rem 0}
+.rack-unit{
+  display:grid;grid-template-columns:60px 1fr auto;
+  border:1px solid rgba(200,165,90,0.1);
+  background:var(--ps-panel);
+  margin-bottom:2px;
+  transition:all 0.4s;
+  cursor:pointer;overflow:hidden;
+}
+.rack-unit:hover{border-color:var(--ps-amber);background:var(--ps-walnut)}
+.rack-u-num{
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Azeret Mono',monospace;font-size:0.7rem;
+  color:var(--ps-amber-dim);
+  border-right:1px solid rgba(200,165,90,0.08);
+  background:rgba(0,0,0,0.2);
+}
+.rack-u-body{padding:1.8rem 2rem}
+.rack-u-name{
+  font-family:'Azeret Mono',monospace;font-weight:700;font-size:1.1rem;
+  color:var(--ps-cream);margin-bottom:0.4rem;
+}
+.rack-u-type{
+  font-family:'Azeret Mono',monospace;font-size:0.65rem;
+  color:var(--ps-amber);letter-spacing:0.15em;text-transform:uppercase;
+  margin-bottom:0.6rem;
+}
+.rack-u-desc{font-size:0.9rem;color:var(--ps-text-dim);line-height:1.6}
+.rack-u-specs{
+  display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;
+}
+.rack-spec{
+  display:flex;align-items:center;gap:0.5rem;
+  font-family:'Azeret Mono',monospace;font-size:0.75rem;color:var(--ps-text-dim);
+}
+.rack-spec .dot{width:5px;height:5px;border-radius:50%;background:var(--ps-green)}
+.rack-u-indicator{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  padding:1.5rem;
+}
+.indicator-led{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--ps-green);opacity:0.3;
+  transition:opacity 0.3s,box-shadow 0.3s;
+}
+.rack-unit:hover .indicator-led{opacity:1;box-shadow:0 0 10px var(--ps-green)}
+
+/* ===== FREQUENCY CHART — NRC ratings ===== */
+.freq-section{padding:6rem 0}
+.freq-chart{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;
+  max-width:800px;margin:0 auto;
+}
+.freq-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.freq-bar-track{
+  width:100%;height:200px;background:var(--ps-panel);
+  border-radius:var(--ps-radius);position:relative;overflow:hidden;
+  border:1px solid rgba(200,165,90,0.08);
+}
+.freq-bar-fill{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,var(--ps-amber),var(--ps-gold));
+  border-radius:0 0 var(--ps-radius) var(--ps-radius);
+  transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1);
+  height:0;
+}
+.freq-bar-fill.animated{height:var(--h)}
+.freq-label{font-family:'Azeret Mono',monospace;font-size:0.65rem;color:var(--ps-text-dim)}
+.freq-value{font-family:'Azeret Mono',monospace;font-size:0.8rem;color:var(--ps-amber);font-weight:700}
+
+/* ===== TESTIMONIAL — Waveform style ===== */
+.test-section{padding:6rem 0}
+.test-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.test-card{
+  background:var(--ps-panel);padding:2rem;
+  border:1px solid rgba(200,165,90,0.08);border-radius:var(--ps-radius);
+  position:relative;
+}
+.test-card::before{
+  content:'';position:absolute;top:0;left:2rem;right:2rem;height:30px;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15 Q10 5 20 15 T40 15 T60 15 T80 15 T100 15 T120 15 T140 15 T160 15 T180 15 T200 15' fill='none' stroke='%23e8963a' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E") repeat-x;
+  opacity:0.5;
+}
+.test-quote{font-size:1rem;line-height:1.7;margin-bottom:1.2rem;font-style:italic;color:var(--ps-text);position:relative;z-index:1}
+.test-author{
+  font-family:'Azeret Mono',monospace;font-size:0.75rem;color:var(--ps-amber);
+}
+.test-role{font-size:0.8rem;color:var(--ps-text-dim);margin-top:0.2rem}
+
+/* ===== PROCESS — Signal Chain ===== */
+.signal-section{padding:6rem 0}
+.signal-chain{
+  display:flex;align-items:stretch;gap:0;
+  overflow-x:auto;padding-bottom:1rem;
+}
+.signal-node{
+  flex:1;min-width:220px;padding:2rem 1.5rem;
+  background:var(--ps-panel);
+  border:1px solid rgba(200,165,90,0.08);
+  position:relative;
+  text-align:center;
+}
+.signal-node:not(:last-child)::after{
+  content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);
+  font-family:'Azeret Mono',monospace;font-size:1.2rem;color:var(--ps-amber);z-index:2;
+}
+.signal-num{
+  font-family:'Azeret Mono',monospace;font-size:2rem;font-weight:900;
+  color:var(--ps-amber);opacity:0.3;margin-bottom:0.5rem;
+}
+.signal-label{
+  font-family:'Azeret Mono',monospace;font-size:0.85rem;font-weight:700;
+  color:var(--ps-cream);margin-bottom:0.5rem;
+}
+.signal-desc{font-size:0.85rem;color:var(--ps-text-dim);line-height:1.5}
+
+/* ===== STATS TICKER ===== */
+.ticker-band{
+  padding:1.5rem 0;overflow:hidden;
+  border-top:1px solid rgba(200,165,90,0.1);
+  border-bottom:1px solid rgba(200,165,90,0.1);
+  background:var(--ps-panel);
+}
+.ticker-track{
+  display:flex;gap:4rem;
+  animation:tickerScroll 25s linear infinite;
+  width:max-content;
+}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{
+  display:flex;align-items:center;gap:0.8rem;white-space:nowrap;
+  font-family:'Azeret Mono',monospace;font-size:0.8rem;color:var(--ps-text-dim);
+}
+.ticker-item strong{color:var(--ps-amber);font-size:1.1rem}
+
+/* ===== CTA SECTION ===== */
+.cta-section{
+  padding:6rem 0;text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 50%, var(--ps-tube-glow) 0%, transparent 60%),
+    var(--ps-bg);
+}
+.cta-title{
+  font-family:'Azeret Mono',monospace;font-weight:900;
+  font-size:clamp(1.8rem,3.5vw,3rem);color:var(--ps-cream);
+  margin-bottom:1rem;
+}
+.cta-desc{color:var(--ps-text-dim);max-width:500px;margin:0 auto 2rem;font-size:1.05rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ===== FOOTER ===== */
+.footer{padding:4rem 0 2rem;border-top:1px solid rgba(200,165,90,0.1)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem}
+.footer-about p{color:var(--ps-text-dim);font-size:0.85rem;margin-top:0.8rem;line-height:1.6}
+.footer-links h4{font-family:'Azeret Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ps-amber);margin-bottom:1rem}
+.footer-links a{display:block;color:var(--ps-text-dim);text-decoration:none;font-size:0.85rem;padding:0.25rem 0;transition:color 0.3s}
+.footer-links a:hover{color:var(--ps-amber)}
+.footer-bottom{
+  margin-top:3rem;padding-top:1.5rem;
+  border-top:1px solid rgba(200,165,90,0.06);
+  font-size:0.75rem;color:var(--ps-text-dim);text-align:center;
+  font-family:'Azeret Mono',monospace;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.sr{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(.22,1,.36,1),transform 0.7s cubic-bezier(.22,1,.36,1)}
+.sr.visible{opacity:1;transform:translateY(0)}
+.sr-d1{transition-delay:0.1s}.sr-d2{transition-delay:0.2s}.sr-d3{transition-delay:0.3s}.sr-d4{transition-delay:0.4s}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .channel-strips{grid-template-columns:repeat(2,1fr)}
+  .test-cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .signal-chain{flex-direction:column}
+  .signal-node:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
+  .freq-chart{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .channel-strips{grid-template-columns:1fr}
+  .nav{display:none}
+  .mobile-menu-btn{display:block}
+  .header-phone{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .db-display{flex-direction:column;text-align:center}
+  .freq-chart{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="ps-loader" id="psLoader">
+  <div class="vu-load">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="loader-text">Initialising Studio...</div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="psHeader">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <a href="../products/roller-blinds.html">Products</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../landing/">Guides</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="ps-hero">
+  <div class="hero-content sr">
+    <div class="hero-badge"><span class="led"></span> Now Streaming</div>
+    <h1 class="hero-title">Your Studio.<br><span class="accent">Your Sound.</span></h1>
+    <p class="hero-sub">Professional acoustic blinds engineered for podcast studios, streaming setups, and home recording spaces. Control light, kill reflections, look great on camera.</p>
+    <div class="hero-ctas">
+      <a href="../free-quote.html" class="btn btn-primary">Get Studio Quote</a>
+      <a href="#products" class="btn btn-outline">Browse Solutions</a>
+    </div>
+  </div>
+  <div class="hero-vu" aria-hidden="true">
+    <div class="hero-vu-bar"></div><div class="hero-vu-bar"></div><div class="hero-vu-bar"></div>
+    <div class="hero-vu-bar"></div><div class="hero-vu-bar"></div><div class="hero-vu-bar hot"></div>
+    <div class="hero-vu-bar"></div><div class="hero-vu-bar"></div><div class="hero-vu-bar"></div>
+    <div class="hero-vu-bar hot"></div><div class="hero-vu-bar"></div><div class="hero-vu-bar clip"></div>
+    <div class="hero-vu-bar"></div><div class="hero-vu-bar"></div><div class="hero-vu-bar"></div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMS — Channel Strips ===== -->
+<section class="mixer-section">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 01 — The Problem</div>
+      <h2 class="section-title">Every Studio Has<br>Window Problems</h2>
+      <p class="section-desc">Windows are the weakest link in any recording chain. Here's what they're doing to your audio and video.</p>
+    </div>
+    <div class="channel-strips">
+      <div class="channel-strip sr sr-d1">
+        <span class="ch-number">CH 01</span>
+        <span class="ch-icon">🔊</span>
+        <span class="ch-label">Sound Leak</span>
+        <p class="ch-desc">External noise bleeds into recordings — traffic, birds, neighbours. A single-pane window blocks only 20-25 dB.</p>
+        <div class="ch-fader"><div class="ch-fader-knob"></div></div>
+      </div>
+      <div class="channel-strip sr sr-d2">
+        <span class="ch-number">CH 02</span>
+        <span class="ch-icon">💡</span>
+        <span class="ch-label">Glare & Hotspots</span>
+        <p class="ch-desc">Uncontrolled daylight creates blown-out backgrounds on camera and harsh reflections on screens and monitors.</p>
+        <div class="ch-fader"><div class="ch-fader-knob"></div></div>
+      </div>
+      <div class="channel-strip sr sr-d3">
+        <span class="ch-number">CH 03</span>
+        <span class="ch-icon">🔁</span>
+        <span class="ch-label">Reverb & Echo</span>
+        <p class="ch-desc">Hard glass surfaces reflect mid-to-high frequencies, adding unwanted room reverb that muddles vocal clarity.</p>
+        <div class="ch-fader"><div class="ch-fader-knob"></div></div>
+      </div>
+      <div class="channel-strip sr sr-d4">
+        <span class="ch-number">CH 04</span>
+        <span class="ch-label">Heat & HVAC Noise</span>
+        <span class="ch-icon">🌡️</span>
+        <p class="ch-desc">Sun-heated rooms force AC to work harder — and that hum shows up on sensitive condenser microphones.</p>
+        <div class="ch-fader"><div class="ch-fader-knob"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS TICKER ===== -->
+<div class="ticker-band" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-item"><strong>72%</strong> of podcasters record at home</div>
+    <div class="ticker-item"><strong>12dB</strong> noise reduction with honeycomb blinds</div>
+    <div class="ticker-item"><strong>100%</strong> blackout for controlled lighting</div>
+    <div class="ticker-item"><strong>500+</strong> Melbourne studios fitted</div>
+    <div class="ticker-item"><strong>NRC 0.65</strong> honeycomb sound absorption</div>
+    <div class="ticker-item"><strong>4.9★</strong> average creator rating</div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><strong>72%</strong> of podcasters record at home</div>
+    <div class="ticker-item"><strong>12dB</strong> noise reduction with honeycomb blinds</div>
+    <div class="ticker-item"><strong>100%</strong> blackout for controlled lighting</div>
+    <div class="ticker-item"><strong>500+</strong> Melbourne studios fitted</div>
+    <div class="ticker-item"><strong>NRC 0.65</strong> honeycomb sound absorption</div>
+    <div class="ticker-item"><strong>4.9★</strong> average creator rating</div>
+  </div>
+</div>
+
+<!-- ===== INTERACTIVE DB METER ===== -->
+<section class="db-section" id="db-meter">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 02 — Noise Floor</div>
+      <h2 class="section-title">What's Your Studio<br>Noise Floor?</h2>
+      <p class="section-desc">Drag the fader to match your current ambient noise level and see what we recommend.</p>
+    </div>
+    <div class="db-meter-wrap sr">
+      <div class="db-display">
+        <div class="db-readout" id="dbValue">45<small>dB</small></div>
+        <div class="db-label-text" id="dbLabel">Quiet suburban room — good starting point, but street noise spikes will still clip your recordings.</div>
+      </div>
+      <div class="db-slider-track">
+        <input type="range" class="db-slider-input" id="dbSlider" min="20" max="80" value="45" step="1">
+      </div>
+      <div class="db-result" id="dbResult">
+        <span class="rec">▶ RECOMMENDED:</span> Dual-cell honeycomb blinds (blockout) — reduces window noise by ~12dB, bringing your effective floor to ~33dB. Add side channels for maximum seal.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS — Equipment Rack ===== -->
+<section class="rack-section" id="products">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 03 — The Gear</div>
+      <h2 class="section-title">Studio-Grade<br>Window Solutions</h2>
+      <p class="section-desc">Each product rated for acoustic performance, light control, and on-camera aesthetics.</p>
+    </div>
+
+    <div class="rack-unit sr">
+      <div class="rack-u-num">1U</div>
+      <div class="rack-u-body">
+        <div class="rack-u-type">★ Top Pick for Podcasters</div>
+        <div class="rack-u-name">Dual-Cell Honeycomb Blockout</div>
+        <p class="rack-u-desc">The workhorse. Dual air chambers trap sound and heat while delivering 100% blackout. The soft cellular fabric absorbs mid-high frequencies that cause vocal muddiness. Clean, minimal on camera.</p>
+        <div class="rack-u-specs">
+          <div class="rack-spec"><span class="dot"></span> NRC 0.65 — absorbs 65% of sound energy</div>
+          <div class="rack-spec"><span class="dot"></span> 100% blockout — total light control</div>
+          <div class="rack-spec"><span class="dot"></span> R-value 3.8 — reduces HVAC load & noise</div>
+          <div class="rack-spec"><span class="dot"></span> Side channels available for acoustic seal</div>
+        </div>
+      </div>
+      <div class="rack-u-indicator"><div class="indicator-led"></div><div class="indicator-led"></div><div class="indicator-led"></div></div>
+    </div>
+
+    <div class="rack-unit sr">
+      <div class="rack-u-num">2U</div>
+      <div class="rack-u-body">
+        <div class="rack-u-type">Streaming Favourite</div>
+        <div class="rack-u-name">Motorised Roller — Blockout</div>
+        <p class="rack-u-desc">One-touch blackout via remote, voice, or smart home integration. Smooth, silent motor won't interfere with live recordings. Flat fabric eliminates visual distractions on camera.</p>
+        <div class="rack-u-specs">
+          <div class="rack-spec"><span class="dot"></span> Whisper motor — under 30dB operation</div>
+          <div class="rack-spec"><span class="dot"></span> Smart home compatible (Alexa, Google, HomeKit)</div>
+          <div class="rack-spec"><span class="dot"></span> Flat profile — zero visual clutter on webcam</div>
+        </div>
+      </div>
+      <div class="rack-u-indicator"><div class="indicator-led"></div><div class="indicator-led"></div><div class="indicator-led"></div></div>
+    </div>
+
+    <div class="rack-unit sr">
+      <div class="rack-u-num">3U</div>
+      <div class="rack-u-body">
+        <div class="rack-u-type">Dual Light Control</div>
+        <div class="rack-u-name">Day/Night Double Roller</div>
+        <p class="rack-u-desc">Two blinds in one bracket: sheer for diffused daylight fill during daytime streams, blockout for night sessions and controlled-light setups. Switch modes in seconds.</p>
+        <div class="rack-u-specs">
+          <div class="rack-spec"><span class="dot"></span> Day mode — soft diffused fill light</div>
+          <div class="rack-spec"><span class="dot"></span> Night mode — 100% blackout</div>
+          <div class="rack-spec"><span class="dot"></span> Single bracket — clean look</div>
+        </div>
+      </div>
+      <div class="rack-u-indicator"><div class="indicator-led"></div><div class="indicator-led"></div><div class="indicator-led"></div></div>
+    </div>
+
+    <div class="rack-unit sr">
+      <div class="rack-u-num">4U</div>
+      <div class="rack-u-body">
+        <div class="rack-u-type">Premium Aesthetic</div>
+        <div class="rack-u-name">Panel Glide — Acoustic Fabric</div>
+        <p class="rack-u-desc">For studios with wide windows or sliding doors. Heavy acoustic-grade fabric panels slide smoothly on tracks, doubling as both window treatment and sound-absorbing wall feature.</p>
+        <div class="rack-u-specs">
+          <div class="rack-spec"><span class="dot"></span> NRC 0.55 — significant absorption</div>
+          <div class="rack-spec"><span class="dot"></span> Up to 6m wide — covers large openings</div>
+          <div class="rack-spec"><span class="dot"></span> Doubles as acoustic panel feature wall</div>
+        </div>
+      </div>
+      <div class="rack-u-indicator"><div class="indicator-led"></div><div class="indicator-led"></div><div class="indicator-led"></div></div>
+    </div>
+
+    <div class="rack-unit sr">
+      <div class="rack-u-num">5U</div>
+      <div class="rack-u-body">
+        <div class="rack-u-type">Budget Option</div>
+        <div class="rack-u-name">Blockout Curtains & Drapes</div>
+        <p class="rack-u-desc">Heavy triple-weave curtains provide excellent noise absorption and total blackout. The fabric mass alone absorbs significant low-mid frequency energy. Great for the DIY studio builder on a budget.</p>
+        <div class="rack-u-specs">
+          <div class="rack-spec"><span class="dot"></span> NRC 0.45 — solid absorption at low cost</div>
+          <div class="rack-spec"><span class="dot"></span> Multiple layers stack for more dB reduction</div>
+          <div class="rack-spec"><span class="dot"></span> Wide colour range to match room treatment</div>
+        </div>
+      </div>
+      <div class="rack-u-indicator"><div class="indicator-led"></div><div class="indicator-led"></div><div class="indicator-led"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FREQUENCY ABSORPTION CHART ===== -->
+<section class="freq-section">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 04 — Performance Data</div>
+      <h2 class="section-title">Sound Absorption<br>by Frequency</h2>
+      <p class="section-desc">Dual-cell honeycomb NRC ratings across the frequency spectrum. Higher = more absorption.</p>
+    </div>
+    <div class="freq-chart sr" id="freqChart">
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.35</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:35%"></div></div>
+        <div class="freq-label">125Hz</div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.52</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:52%"></div></div>
+        <div class="freq-label">250Hz</div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.68</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:68%"></div></div>
+        <div class="freq-label">500Hz</div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.78</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:78%"></div></div>
+        <div class="freq-label">1kHz</div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.82</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:82%"></div></div>
+        <div class="freq-label">2kHz</div>
+      </div>
+      <div class="freq-bar-wrap">
+        <div class="freq-value">0.75</div>
+        <div class="freq-bar-track"><div class="freq-bar-fill" style="--h:75%"></div></div>
+        <div class="freq-label">4kHz</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS — Signal Chain ===== -->
+<section class="signal-section">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 05 — Signal Flow</div>
+      <h2 class="section-title">From Enquiry<br>to On Air</h2>
+    </div>
+    <div class="signal-chain sr">
+      <div class="signal-node">
+        <div class="signal-num">01</div>
+        <div class="signal-label">Studio Assessment</div>
+        <p class="signal-desc">We visit your space, assess window types, measure ambient noise, and understand your recording workflow.</p>
+      </div>
+      <div class="signal-node">
+        <div class="signal-num">02</div>
+        <div class="signal-label">Acoustic Matching</div>
+        <p class="signal-desc">Our team recommends products based on your noise floor, window size, lighting needs, and budget.</p>
+      </div>
+      <div class="signal-node">
+        <div class="signal-num">03</div>
+        <div class="signal-label">Custom Fabrication</div>
+        <p class="signal-desc">Blinds manufactured to exact specifications with acoustic-rated fabrics and precision fit for maximum seal.</p>
+      </div>
+      <div class="signal-node">
+        <div class="signal-num">04</div>
+        <div class="signal-label">Install & Tune</div>
+        <p class="signal-desc">Professional installation with noise-floor testing before and after. We don't leave until your sound is clean.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="test-section">
+  <div class="container">
+    <div class="sr">
+      <div class="section-label">CH 06 — Reviews</div>
+      <h2 class="section-title">What Creators Say</h2>
+    </div>
+    <div class="test-cards">
+      <div class="test-card sr sr-d1">
+        <p class="test-quote">"The honeycomb blinds dropped my noise floor from 42dB to about 31dB. My condenser mic picks up almost nothing from outside now. The difference in my podcast audio quality was night and day."</p>
+        <div class="test-author">Jake M.</div>
+        <div class="test-role">Podcaster — True Crime AU (Spotify Top 100)</div>
+      </div>
+      <div class="test-card sr sr-d2">
+        <p class="test-quote">"I stream 5-6 hours a day and the motorised blackout rollers are a game changer. One voice command and the room goes dark — no getting up mid-stream. Plus they look clean on camera."</p>
+        <div class="test-author">Sophia T.</div>
+        <div class="test-role">Twitch Partner — 45K followers</div>
+      </div>
+      <div class="test-card sr sr-d3">
+        <p class="test-quote">"We fitted three rooms in our production house with dual-cell honeycombs. The acoustic improvement was significant enough that we cancelled our order for additional foam panels."</p>
+        <div class="test-author">Marcus & Yen</div>
+        <div class="test-role">Co-founders, Wavelength Studios Melbourne</div>
+      </div>
+      <div class="test-card sr sr-d4">
+        <p class="test-quote">"The day/night roller is perfect for my YouTube setup. Sheer mode gives me gorgeous soft fill light for beauty shots, then I switch to blockout for product photography. One bracket, two moods."</p>
+        <div class="test-author">Priya K.</div>
+        <div class="test-role">YouTuber — 120K subscribers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container sr">
+    <div class="section-label">Output</div>
+    <h2 class="cta-title">Ready to Level Up<br>Your Studio?</h2>
+    <p class="cta-desc">Free studio consultation. Custom acoustic blind solutions. Professional installation across Melbourne.</p>
+    <div class="cta-btns">
+      <a href="../free-quote.html" class="btn btn-primary">Book Free Studio Consult</a>
+      <a href="tel:0400000000" class="btn btn-outline">Call 0400 000 000</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <p>Melbourne's trusted blinds & window furnishings specialists. Custom-made, professionally installed.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/curtains-drapes.html">Curtains & Drapes</a>
+      <a href="../products/shutters.html">Plantation Shutters</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Service Areas</h4>
+      <a href="../landing/melbourne-service-areas.html">All Melbourne</a>
+      <a href="#">Eastern Suburbs</a>
+      <a href="#">Western Suburbs</a>
+      <a href="#">Northern Suburbs</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 iSeekBlinds. All rights reserved. Melbourne, Australia.</div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('psLoader').classList.add('done'), 800);
+});
+
+// Auto-hide header
+let lastY = 0;
+const header = document.getElementById('psHeader');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('hidden', y > lastY && y > 100);
+  lastY = y;
+}, {passive:true});
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold:0.15});
+document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+
+// Frequency bar animation
+const freqObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.freq-bar-fill').forEach(b => b.classList.add('animated'));
+      freqObs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.3});
+const fc = document.getElementById('freqChart');
+if(fc) freqObs.observe(fc);
+
+// DB Meter interactive
+const dbSlider = document.getElementById('dbSlider');
+const dbValue = document.getElementById('dbValue');
+const dbLabel = document.getElementById('dbLabel');
+const dbResult = document.getElementById('dbResult');
+
+const dbData = [
+  {max:25, label:"Whisper-quiet studio — already excellent. Minor fine-tuning only.", rec:"Light-filtering roller for glare control. Your noise floor is already professional-grade."},
+  {max:35, label:"Very quiet room — ideal for sensitive condenser mics with minor treatment.", rec:"Single-cell honeycomb (blockout) — adds ~8dB reduction at the window. Paired with good foam, you're broadcast-ready."},
+  {max:45, label:"Quiet suburban room — good starting point, but street noise spikes will still clip your recordings.", rec:"Dual-cell honeycomb blinds (blockout) — reduces window noise by ~12dB, bringing your effective floor to ~33dB. Add side channels for maximum seal."},
+  {max:55, label:"Average room near a road — noticeable hum on recordings, especially during pauses.", rec:"Dual-cell honeycomb with side channels + blockout curtains layered. Combined ~18dB reduction at the window. Consider motorised for quick scene changes."},
+  {max:65, label:"Noisy environment — traffic, construction, or shared walls. Significant post-production needed.", rec:"Maximum treatment: Dual-cell honeycomb + heavy blockout curtains + consider secondary glazing. Target 20+dB reduction. We'll do a full acoustic assessment."},
+  {max:80, label:"Very noisy — major road, airport path, or industrial area. Professional treatment essential.", rec:"Full acoustic overhaul recommended. Triple-layer approach: secondary glazing + dual-cell honeycomb with sealed channels + acoustic curtains. Book our specialist studio consultation."},
+];
+
+dbSlider.addEventListener('input', () => {
+  const v = parseInt(dbSlider.value);
+  dbValue.innerHTML = v + '<small>dB</small>';
+  const d = dbData.find(x => v <= x.max) || dbData[dbData.length-1];
+  dbLabel.textContent = d.label;
+  dbResult.innerHTML = '<span class="rec">▶ RECOMMENDED:</span> ' + d.rec;
+});
+</script>
+</body>
+</html>
