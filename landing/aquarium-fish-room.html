@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquarium & Fish Room Blinds | iSeekBlinds</title>
+<meta name="description" content="Precision light control for aquariums, fish rooms, and aquatic setups. Protect light cycles, prevent algae, and create the perfect environment for your aquatic life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,200;0,400;0,600;0,800;1,400&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --deep:#040d1a;
+  --abyss:#061224;
+  --midnight:#0a1929;
+  --surface:#0e2a47;
+  --cyan:#00e5ff;
+  --cyan-dim:rgba(0,229,255,.15);
+  --teal:#00bfa5;
+  --biolum:#7df3e1;
+  --coral:#ff6b6b;
+  --gold:#ffd54f;
+  --txt:rgba(255,255,255,.88);
+  --txt-dim:rgba(255,255,255,.5);
+  --mono:'Chivo Mono',monospace;
+  --display:'Red Hat Display',sans-serif;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;overflow-x:hidden;background:var(--deep)}
+body{font-family:var(--display);color:var(--txt);background:var(--deep);overflow-x:hidden}
+
+/* === PRELOADER === */
+.preloader{position:fixed;inset:0;z-index:9999;background:var(--deep);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s,visibility .8s}
+.preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-ring{width:80px;height:80px;border-radius:50%;border:3px solid var(--cyan-dim);border-top-color:var(--cyan);animation:spin 1s linear infinite}
+.preloader-text{font-family:var(--mono);font-size:.75rem;color:var(--cyan);margin-top:1.5rem;letter-spacing:.2em;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* === NAV === */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(4,13,26,.95),transparent);backdrop-filter:blur(8px);transition:background .4s}
+.nav-logo{font-family:var(--mono);font-weight:800;font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:.7rem;color:var(--txt-dim);text-decoration:none;letter-spacing:.15em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{font-family:var(--mono);font-size:.7rem;padding:.6rem 1.4rem;background:transparent;border:1px solid var(--cyan);color:var(--cyan);border-radius:2px;cursor:pointer;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;text-decoration:none}
+.nav-cta:hover{background:var(--cyan);color:var(--deep)}
+.mobile-menu{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
+
+/* === SECTION BASE === */
+.section{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;overflow:hidden}
+
+/* === BUBBLES GLOBAL === */
+.bubbles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.bubble{position:absolute;bottom:-20px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(0,229,255,.12),rgba(0,229,255,.03));animation:rise linear infinite;opacity:0}
+@keyframes rise{
+  0%{transform:translateX(0) scale(1);opacity:0}
+  10%{opacity:1}
+  90%{opacity:.6}
+  100%{transform:translateX(var(--drift)) scale(.3);opacity:0;bottom:110vh}
+}
+
+/* === HERO === */
+.hero{background:linear-gradient(180deg,var(--deep) 0%,#051a2e 40%,#072a3d 80%,#0a3d5c 100%);flex-direction:column;text-align:center;padding:2rem}
+.hero-depth{position:absolute;inset:0;overflow:hidden}
+.hero-depth::before{content:'';position:absolute;top:60%;left:50%;width:200vw;height:100vh;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(0,229,255,.08) 0%,transparent 60%);animation:depthPulse 6s ease-in-out infinite}
+@keyframes depthPulse{0%,100%{opacity:.4;transform:translateX(-50%) scale(1)}50%{opacity:.8;transform:translateX(-50%) scale(1.1)}}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem;opacity:0;animation:fadeUp .8s .5s forwards}
+.hero-title{font-family:var(--display);font-weight:900;font-size:clamp(3rem,8vw,7rem);line-height:.95;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .7s forwards}
+.hero-title .glow{background:linear-gradient(135deg,var(--cyan),var(--biolum));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px rgba(0,229,255,.3))}
+.hero-sub{font-weight:300;font-size:clamp(1rem,2vw,1.3rem);color:var(--txt-dim);max-width:540px;margin:0 auto 3rem;line-height:1.7;opacity:0;animation:fadeUp .8s .9s forwards}
+.hero-scroll{opacity:0;animation:fadeUp .8s 1.2s forwards}
+.hero-scroll-inner{display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--cyan),transparent);animation:scrollPulse 2s ease-in-out infinite}
+.scroll-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;color:var(--cyan-dim);text-transform:uppercase}
+@keyframes scrollPulse{0%,100%{opacity:.3;height:60px}50%{opacity:1;height:40px}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.hero-tag,.hero-title,.hero-sub,.hero-scroll{transform:translateY(30px)}
+
+/* === DEPTH METER === */
+.depth-meter{position:fixed;right:2rem;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.depth-track{width:2px;height:200px;background:rgba(0,229,255,.1);border-radius:1px;position:relative}
+.depth-fill{position:absolute;top:0;left:0;width:100%;background:var(--cyan);border-radius:1px;transition:height .3s;box-shadow:0 0 8px var(--cyan)}
+.depth-label{font-family:var(--mono);font-size:.55rem;color:var(--cyan);letter-spacing:.1em}
+
+/* === LIGHT SPECTRUM SECTION === */
+.spectrum{background:linear-gradient(180deg,#0a3d5c 0%,var(--midnight) 50%,var(--abyss) 100%);padding:6rem 2rem}
+.spectrum-inner{max-width:1100px;margin:0 auto}
+.section-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.section-title{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;line-height:1.1}
+.section-desc{font-weight:300;color:var(--txt-dim);max-width:600px;line-height:1.8;margin-bottom:4rem;font-size:1.05rem}
+
+/* Spectrum Bars */
+.spectrum-visual{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.spectrum-bars{display:flex;flex-direction:column;gap:1rem}
+.spec-bar{display:flex;align-items:center;gap:1rem}
+.spec-bar-label{font-family:var(--mono);font-size:.65rem;width:80px;text-align:right;color:var(--txt-dim);letter-spacing:.05em}
+.spec-bar-track{flex:1;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;position:relative}
+.spec-bar-fill{height:100%;border-radius:3px;transform-origin:left;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.spec-bar.visible .spec-bar-fill{transform:scaleX(1)}
+.spec-bar-val{font-family:var(--mono);font-size:.65rem;color:var(--txt-dim);width:40px}
+.spec-bar[data-color="uv"] .spec-bar-fill{background:linear-gradient(90deg,#7c4dff,#b388ff);box-shadow:0 0 12px rgba(124,77,255,.4)}
+.spec-bar[data-color="blue"] .spec-bar-fill{background:linear-gradient(90deg,#2962ff,#82b1ff);box-shadow:0 0 12px rgba(41,98,255,.4)}
+.spec-bar[data-color="green"] .spec-bar-fill{background:linear-gradient(90deg,#00c853,#69f0ae);box-shadow:0 0 12px rgba(0,200,83,.4)}
+.spec-bar[data-color="red"] .spec-bar-fill{background:linear-gradient(90deg,#ff1744,#ff8a80);box-shadow:0 0 12px rgba(255,23,68,.4)}
+.spec-bar[data-color="ir"] .spec-bar-fill{background:linear-gradient(90deg,#ff6d00,#ffab40);box-shadow:0 0 12px rgba(255,109,0,.4)}
+
+.spectrum-info{padding:2rem}
+.spectrum-info h3{font-family:var(--display);font-size:1.6rem;font-weight:700;margin-bottom:1rem}
+.spectrum-info p{color:var(--txt-dim);line-height:1.8;font-size:.95rem}
+.spectrum-info .highlight{color:var(--cyan);font-weight:500}
+
+/* === INTERACTIVE LIGHT CONTROL === */
+.light-control{background:var(--abyss);padding:8rem 2rem;position:relative}
+.light-control::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan-dim),transparent)}
+.lc-inner{max-width:1000px;margin:0 auto;text-align:center}
+.aquarium-demo{position:relative;width:100%;max-width:700px;margin:3rem auto;aspect-ratio:16/9;background:linear-gradient(180deg,#0a2940,#061830);border-radius:12px;overflow:hidden;border:1px solid rgba(0,229,255,.1)}
+.aquarium-water{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,229,255,.03),rgba(0,150,200,.08));transition:filter .5s,opacity .5s}
+.aquarium-light{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80%;height:100%;background:radial-gradient(ellipse at top center,rgba(0,229,255,.15),transparent 70%);transition:opacity .5s}
+.fish{position:absolute;font-size:2rem;animation:swim linear infinite;opacity:.7}
+.fish:nth-child(1){top:30%;animation-duration:8s;animation-delay:-2s}
+.fish:nth-child(2){top:50%;animation-duration:12s;animation-delay:-5s;font-size:1.5rem;opacity:.5}
+.fish:nth-child(3){top:70%;animation-duration:10s;animation-delay:-8s;font-size:1.8rem;opacity:.6}
+@keyframes swim{0%{left:-5%;transform:scaleX(1)}49%{transform:scaleX(1)}50%{left:105%;transform:scaleX(-1)}99%{transform:scaleX(-1)}100%{left:-5%;transform:scaleX(1)}}
+.bubbles-tank{position:absolute;inset:0;overflow:hidden}
+.tank-bubble{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:rgba(0,229,255,.15);animation:tankRise 4s ease-in infinite}
+.tank-bubble:nth-child(2){left:30%;animation-delay:-1s;width:4px;height:4px}
+.tank-bubble:nth-child(3){left:60%;animation-delay:-2.5s;width:8px;height:8px}
+.tank-bubble:nth-child(4){left:80%;animation-delay:-3s;width:3px;height:3px}
+@keyframes tankRise{0%{transform:translateY(0);opacity:0}10%{opacity:.6}100%{transform:translateY(-400px);opacity:0}}
+.blinds-overlay{position:absolute;top:0;left:5%;right:5%;height:100%;display:flex;gap:2px;transition:opacity .5s;pointer-events:none}
+.blind-slat{flex:1;background:linear-gradient(180deg,rgba(200,200,200,.85),rgba(180,180,180,.9));transform-origin:top;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.slider-row{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.slider-label{font-family:var(--mono);font-size:.7rem;color:var(--txt-dim);letter-spacing:.1em;text-transform:uppercase}
+.light-slider{-webkit-appearance:none;width:300px;height:4px;background:rgba(0,229,255,.15);border-radius:2px;outline:none}
+.light-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--cyan);cursor:pointer;box-shadow:0 0 12px rgba(0,229,255,.5)}
+.slider-value{font-family:var(--mono);font-size:.8rem;color:var(--cyan);min-width:40px}
+
+/* === PRODUCT CARDS — FLOATING DEPTH === */
+.products{background:linear-gradient(180deg,var(--abyss),var(--deep));padding:8rem 2rem;position:relative}
+.products::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,191,165,.2),transparent)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:3rem auto 0}
+.product-card{background:rgba(255,255,255,.03);border:1px solid rgba(0,229,255,.08);border-radius:8px;padding:2rem;position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .4s;cursor:pointer}
+.product-card:hover{transform:translateY(-8px);border-color:rgba(0,229,255,.25);box-shadow:0 20px 60px rgba(0,229,255,.08)}
+.product-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--teal));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.product-card:hover::after{transform:scaleX(1)}
+.card-icon{font-size:2.5rem;margin-bottom:1.2rem;display:block}
+.card-title{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:.8rem}
+.card-desc{font-size:.9rem;color:var(--txt-dim);line-height:1.7;margin-bottom:1.5rem}
+.card-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);padding:.3rem .8rem;border:1px solid var(--cyan-dim);border-radius:2px;display:inline-block}
+
+/* === STATS COUNTER === */
+.stats{background:var(--deep);padding:6rem 2rem;position:relative}
+.stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,229,255,.04),transparent 60%)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1000px;margin:0 auto;position:relative;z-index:2}
+.stat{text-align:center;padding:2rem}
+.stat-num{font-family:var(--mono);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--biolum));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:.5rem}
+.stat-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-dim)}
+
+/* === TESTIMONIALS — SONAR WAVE === */
+.testimonials{background:linear-gradient(180deg,var(--deep),var(--midnight));padding:8rem 2rem;position:relative}
+.testimonial-carousel{max-width:700px;margin:3rem auto 0;position:relative;min-height:300px}
+.testimonial-item{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:all .6s;display:flex;flex-direction:column;align-items:center;text-align:center}
+.testimonial-item.active{opacity:1;transform:translateY(0)}
+.testimonial-quote{font-family:var(--display);font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;font-style:italic;line-height:1.8;color:var(--txt);margin-bottom:2rem;position:relative;padding:0 2rem}
+.testimonial-quote::before{content:'"';position:absolute;top:-20px;left:-10px;font-size:5rem;color:var(--cyan-dim);font-family:Georgia,serif;line-height:1}
+.testimonial-author{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.testimonial-role{font-family:var(--mono);font-size:.6rem;color:var(--txt-dim);margin-top:.3rem;letter-spacing:.1em}
+.sonar-dots{display:flex;gap:.8rem;justify-content:center;margin-top:3rem}
+.sonar-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,229,255,.15);cursor:pointer;position:relative;transition:all .3s}
+.sonar-dot.active{background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.sonar-dot.active::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--cyan);animation:sonar 1.5s ease-out infinite}
+@keyframes sonar{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.5);opacity:0}}
+
+/* === CTA === */
+.cta-section{background:linear-gradient(180deg,var(--midnight),var(--deep));padding:8rem 2rem;text-align:center;position:relative}
+.cta-section::before{content:'';position:absolute;bottom:0;left:0;right:0;height:300px;background:radial-gradient(ellipse at bottom,rgba(0,229,255,.06),transparent);pointer-events:none}
+.cta-inner{max-width:650px;margin:0 auto;position:relative;z-index:2}
+.cta-title{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem;line-height:1.1}
+.cta-desc{color:var(--txt-dim);font-size:1.05rem;line-height:1.8;margin-bottom:3rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{font-family:var(--mono);font-size:.75rem;padding:1rem 2.5rem;background:var(--cyan);color:var(--deep);border:none;border-radius:3px;cursor:pointer;letter-spacing:.15em;text-transform:uppercase;font-weight:600;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--biolum);box-shadow:0 0 30px rgba(0,229,255,.3);transform:translateY(-2px)}
+.btn-secondary{font-family:var(--mono);font-size:.75rem;padding:1rem 2.5rem;background:transparent;color:var(--cyan);border:1px solid rgba(0,229,255,.3);border-radius:3px;cursor:pointer;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:var(--cyan);background:rgba(0,229,255,.05)}
+
+/* === FOOTER === */
+footer{background:var(--deep);border-top:1px solid rgba(0,229,255,.06);padding:3rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:var(--mono);font-size:.8rem;color:var(--txt-dim)}
+.footer-brand span{color:var(--cyan)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-family:var(--mono);font-size:.65rem;color:var(--txt-dim);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .3s}
+.footer-links a:hover{color:var(--cyan)}
+.footer-copy{font-family:var(--mono);font-size:.55rem;color:rgba(255,255,255,.25);letter-spacing:.1em}
+
+/* === SCROLL REVEAL === */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .mobile-menu{display:block}
+  .spectrum-visual{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .depth-meter{display:none}
+}
+@media(max-width:600px){
+  .hero-title{font-size:clamp(2.5rem,10vw,4rem)}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .cta-buttons{flex-direction:column;align-items:center}
+  .light-slider{width:200px}
+  .slider-row{flex-wrap:wrap;justify-content:center}
+}
+
+/* === REDUCED MOTION === */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto;scroll-snap-type:none}
+}
+
+/* === GRAIN OVERLAY === */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.025}
+.grain::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");width:100%;height:100%}
+
+/* === WAVE DIVIDER === */
+.wave-divider{position:absolute;bottom:0;left:0;right:0;height:80px;overflow:hidden}
+.wave-divider svg{position:absolute;bottom:0;width:100%;height:80px}
+</style>
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <div class="preloader-ring"></div>
+  <div class="preloader-text">Diving in...</div>
+</div>
+
+<div class="grain"></div>
+
+<!-- AMBIENT BUBBLES -->
+<div class="bubbles" id="bubbles"></div>
+
+<!-- DEPTH METER -->
+<div class="depth-meter" id="depthMeter">
+  <div class="depth-label">0m</div>
+  <div class="depth-track"><div class="depth-fill" id="depthFill" style="height:0%"></div></div>
+  <div class="depth-label" id="depthValue">Surface</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/landing/" class="nav-logo">iSeek<span>Blinds</span></a>
+  <ul class="nav-links">
+    <li><a href="#spectrum">Light Science</a></li>
+    <li><a href="#demo">Live Demo</a></li>
+    <li><a href="#products">Solutions</a></li>
+    <li><a href="#stories">Stories</a></li>
+  </ul>
+  <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="nav-cta">Free Quote</a>
+  <button class="mobile-menu" id="mobileMenu" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="section hero" id="hero">
+  <div class="hero-depth"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Precision Light Control for Aquatic Life</p>
+    <h1 class="hero-title">Your Tank.<br>Their <span class="glow">Light Cycle.</span></h1>
+    <p class="hero-sub">Algae blooms from excess light. Stressed fish from unpredictable exposure. We solve both — with blinds engineered for aquarists who take their tanks seriously.</p>
+    <div class="hero-scroll">
+      <div class="hero-scroll-inner">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">Dive deeper</span>
+      </div>
+    </div>
+  </div>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#0a3d5c" opacity="0.5"/><path d="M0,50 C400,20 800,70 1200,40 C1350,30 1400,45 1440,50 L1440,80 L0,80 Z" fill="#0a3d5c" opacity="0.3"/></svg>
+  </div>
+</section>
+
+<!-- LIGHT SPECTRUM -->
+<section class="section spectrum" id="spectrum">
+  <div class="spectrum-inner">
+    <div class="reveal">
+      <p class="section-label">The Science</p>
+      <h2 class="section-title">Not All Light is Equal<br>for Your Tank</h2>
+      <p class="section-desc">Window light carries the full spectrum — UV, blue, green, red, and infrared. Your tank needs precise control over each. Too much blue-green triggers algae. Too little red starves your corals. The wrong hours disrupt circadian rhythms.</p>
+    </div>
+    <div class="spectrum-visual reveal reveal-delay-1">
+      <div class="spectrum-bars" id="spectrumBars">
+        <div class="spec-bar" data-color="uv" data-width="35">
+          <span class="spec-bar-label">UV</span>
+          <div class="spec-bar-track"><div class="spec-bar-fill" style="width:35%"></div></div>
+          <span class="spec-bar-val">Block 95%</span>
+        </div>
+        <div class="spec-bar" data-color="blue" data-width="60">
+          <span class="spec-bar-label">Blue</span>
+          <div class="spec-bar-track"><div class="spec-bar-fill" style="width:60%"></div></div>
+          <span class="spec-bar-val">Control</span>
+        </div>
+        <div class="spec-bar" data-color="green" data-width="70">
+          <span class="spec-bar-label">Green</span>
+          <div class="spec-bar-track"><div class="spec-bar-fill" style="width:70%"></div></div>
+          <span class="spec-bar-val">Reduce</span>
+        </div>
+        <div class="spec-bar" data-color="red" data-width="50">
+          <span class="spec-bar-label">Red</span>
+          <div class="spec-bar-track"><div class="spec-bar-fill" style="width:50%"></div></div>
+          <span class="spec-bar-val">Balance</span>
+        </div>
+        <div class="spec-bar" data-color="ir" data-width="80">
+          <span class="spec-bar-label">IR / Heat</span>
+          <div class="spec-bar-track"><div class="spec-bar-fill" style="width:80%"></div></div>
+          <span class="spec-bar-val">Block 90%</span>
+        </div>
+      </div>
+      <div class="spectrum-info">
+        <h3>Why Window Blinds Matter</h3>
+        <p>Uncontrolled window light adds <span class="highlight">6-8 hours of unpredictable spectrum</span> to your tank every day. Even the best tank lighting becomes useless when ambient light overrides your photoperiod. Our blinds let you <span class="highlight">eliminate window interference</span> while still enjoying natural light when you want it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE DEMO -->
+<section class="section light-control" id="demo">
+  <div class="lc-inner">
+    <div class="reveal">
+      <p class="section-label">Interactive</p>
+      <h2 class="section-title" style="text-align:center">See the Difference</h2>
+      <p class="section-desc" style="text-align:center;margin:0 auto 2rem">Drag the slider to control the blinds and watch how light changes in the tank.</p>
+    </div>
+    <div class="aquarium-demo reveal reveal-delay-1" id="aquariumDemo">
+      <div class="aquarium-water" id="aquaWater"></div>
+      <div class="aquarium-light" id="aquaLight"></div>
+      <div class="bubbles-tank">
+        <div class="tank-bubble" style="left:20%"></div>
+        <div class="tank-bubble" style="left:45%"></div>
+        <div class="tank-bubble" style="left:65%"></div>
+        <div class="tank-bubble" style="left:85%"></div>
+      </div>
+      <span class="fish" style="top:25%">🐠</span>
+      <span class="fish" style="top:50%">🐟</span>
+      <span class="fish" style="top:68%">🐡</span>
+      <div class="blinds-overlay" id="blindsOverlay"></div>
+    </div>
+    <div class="slider-row reveal reveal-delay-2">
+      <span class="slider-label">Open</span>
+      <input type="range" min="0" max="100" value="0" class="light-slider" id="lightSlider">
+      <span class="slider-label">Closed</span>
+      <span class="slider-value" id="sliderVal">0%</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div style="max-width:1100px;margin:0 auto;width:100%">
+    <div class="reveal" style="text-align:center">
+      <p class="section-label">Solutions</p>
+      <h2 class="section-title" style="text-align:center">Built for Aquarists</h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal reveal-delay-1">
+        <span class="card-icon">🌑</span>
+        <h3 class="card-title">Total Blackout Rollers</h3>
+        <p class="card-desc">100% light block for reef tanks and marine setups where your tank lighting must be the only light source. Perfect photoperiod control.</p>
+        <span class="card-tag">Reef Tanks</span>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <span class="card-icon">🔬</span>
+        <h3 class="card-title">UV-Filtering Venetians</h3>
+        <p class="card-desc">Block 95% UV while allowing adjustable visible light. Ideal for planted tanks near windows where you want daylight ambience without the algae.</p>
+        <span class="card-tag">Planted Tanks</span>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <span class="card-icon">🌊</span>
+        <h3 class="card-title">Motorised Day/Night</h3>
+        <p class="card-desc">Timer-controlled motorised blinds that sync with your tank's photoperiod. Set once, forget forever. Works with smart home systems.</p>
+        <span class="card-tag">Automation</span>
+      </div>
+      <div class="product-card reveal reveal-delay-1">
+        <span class="card-icon">💧</span>
+        <h3 class="card-title">Moisture-Resistant PVC</h3>
+        <p class="card-desc">Fish rooms get humid. These PVC venetians handle 90%+ humidity without warping, mould, or degradation. Built for serious fishkeepers.</p>
+        <span class="card-tag">Fish Rooms</span>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <span class="card-icon">🎨</span>
+        <h3 class="card-title">Spectrum-Tinted Sheers</h3>
+        <p class="card-desc">Coloured sheer fabrics that actually filter specific wavelengths. Warm tints reduce blue/green penetration. Turn ambient light into an advantage.</p>
+        <span class="card-tag">Colour Control</span>
+      </div>
+      <div class="product-card reveal reveal-delay-3">
+        <span class="card-icon">🏗️</span>
+        <h3 class="card-title">Custom Multi-Panel</h3>
+        <p class="card-desc">Rack rooms with multiple windows? We design multi-panel systems with individual controls per window for zone-by-zone light management.</p>
+        <span class="card-tag">Fish Rooms</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <span class="stat-num" data-target="95">0</span>
+      <span class="stat-label">% UV Blocked</span>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <span class="stat-num" data-target="340">0</span>
+      <span class="stat-label">Aquarists Served</span>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <span class="stat-num" data-target="72">0</span>
+      <span class="stat-label">% Algae Reduction</span>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <span class="stat-num" data-target="5">0</span>
+      <span class="stat-label">Year Warranty</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="stories">
+  <div style="max-width:800px;margin:0 auto;width:100%">
+    <div class="reveal" style="text-align:center">
+      <p class="section-label">From the Community</p>
+      <h2 class="section-title" style="text-align:center">What Aquarists Say</h2>
+    </div>
+    <div class="testimonial-carousel" id="carousel">
+      <div class="testimonial-item active">
+        <p class="testimonial-quote">I fought green hair algae for two years. Turns out it was the afternoon sun through my west-facing window. iSeekBlinds fitted motorised rollers that close automatically at 2pm. Problem solved in three weeks.</p>
+        <span class="testimonial-author">Marcus T.</span>
+        <span class="testimonial-role">Reef Keeper — Melbourne</span>
+      </div>
+      <div class="testimonial-item">
+        <p class="testimonial-quote">My fish room has 14 tanks across two walls of windows. They built a custom PVC venetian system with individual controls for each window. The humidity hasn't touched them — 18 months and counting.</p>
+        <span class="testimonial-author">Sarah K.</span>
+        <span class="testimonial-role">Discus Breeder — Sydney</span>
+      </div>
+      <div class="testimonial-item">
+        <p class="testimonial-quote">The spectrum-tinted sheers were a revelation. My planted 4-footer sits next to a huge window — now the ambient light actually complements my Chihiros rather than fighting it.</p>
+        <span class="testimonial-author">David L.</span>
+        <span class="testimonial-role">Aquascaper — Brisbane</span>
+      </div>
+    </div>
+    <div class="sonar-dots" id="sonarDots">
+      <div class="sonar-dot active" data-index="0"></div>
+      <div class="sonar-dot" data-index="1"></div>
+      <div class="sonar-dot" data-index="2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+  <div class="cta-inner reveal">
+    <p class="section-label">Take Control</p>
+    <h2 class="cta-title">Your Tank Deserves<br>Better Light</h2>
+    <p class="cta-desc">Free measure and quote for aquarium rooms, fish rooms, and any space where light control matters. We come to you, assess the windows, understand your setup, and recommend solutions that actually work for aquatic life.</p>
+    <div class="cta-buttons">
+      <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="btn-primary">Book Free Consultation</a>
+      <a href="https://iseekblinds.com.au/pages/free-samples" class="btn-secondary">Request Samples</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">iSeek<span>Blinds</span> — Aquarium Solutions</span>
+    <div class="footer-links">
+      <a href="https://iseekblinds.com.au">Main Site</a>
+      <a href="https://iseekblinds.com.au/pages/free-measure-quote">Free Quote</a>
+      <a href="https://iseekblinds.com.au/pages/free-samples">Samples</a>
+      <a href="tel:1300918273">1300 918 273</a>
+    </div>
+    <span class="footer-copy">© 2026 iSeekBlinds. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// Preloader
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('preloader').classList.add('done'),600)
+});
+
+// Ambient bubbles
+(function(){
+  const c=document.getElementById('bubbles');
+  for(let i=0;i<15;i++){
+    const b=document.createElement('div');
+    b.className='bubble';
+    const size=Math.random()*8+3;
+    b.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*10}s;--drift:${(Math.random()-.5)*80}px`;
+    c.appendChild(b);
+  }
+})();
+
+// Blinds slats
+(function(){
+  const overlay=document.getElementById('blindsOverlay');
+  for(let i=0;i<20;i++){
+    const s=document.createElement('div');
+    s.className='blind-slat';
+    overlay.appendChild(s);
+  }
+})();
+
+// Light slider
+const slider=document.getElementById('lightSlider');
+const sliderVal=document.getElementById('sliderVal');
+const slats=document.querySelectorAll('.blind-slat');
+const aquaLight=document.getElementById('aquaLight');
+const aquaWater=document.getElementById('aquaWater');
+
+slider.addEventListener('input',function(){
+  const v=this.value;
+  sliderVal.textContent=v+'%';
+  const angle=v/100*85;
+  slats.forEach(s=>s.style.transform=`rotateX(${angle}deg)`);
+  aquaLight.style.opacity=1-v/100;
+  aquaWater.style.filter=`brightness(${1-v*.004})`;
+});
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)}})
+},{threshold:.15});
+reveals.forEach(r=>revealObs.observe(r));
+
+// Spectrum bars
+const specBars=document.querySelectorAll('.spec-bar');
+const specObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');specObs.unobserve(e.target)}})
+},{threshold:.3});
+specBars.forEach(b=>specObs.observe(b));
+
+// Counter animation
+const statNums=document.querySelectorAll('.stat-num');
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=parseInt(el.dataset.target);
+      let current=0;
+      const step=Math.ceil(target/40);
+      const timer=setInterval(()=>{
+        current+=step;
+        if(current>=target){current=target;clearInterval(timer)}
+        el.textContent=current;
+      },30);
+      counterObs.unobserve(el);
+    }
+  })
+},{threshold:.5});
+statNums.forEach(n=>counterObs.observe(n));
+
+// Testimonial carousel
+const items=document.querySelectorAll('.testimonial-item');
+const dots=document.querySelectorAll('.sonar-dot');
+let currentSlide=0;
+function goTo(i){
+  items[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide=i;
+  items[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+dots.forEach(d=>d.addEventListener('click',()=>goTo(parseInt(d.dataset.index))));
+setInterval(()=>goTo((currentSlide+1)%items.length),6000);
+
+// Depth meter
+const depthFill=document.getElementById('depthFill');
+const depthValue=document.getElementById('depthValue');
+const depthLabels=['Surface','Shallow','Mid-water','Deep','Abyss'];
+window.addEventListener('scroll',()=>{
+  const pct=Math.min(100,window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
+  depthFill.style.height=pct+'%';
+  const idx=Math.min(4,Math.floor(pct/20));
+  depthValue.textContent=depthLabels[idx];
+});
+
+// Mobile menu (simple toggle)
+document.getElementById('mobileMenu').addEventListener('click',function(){
+  const links=document.querySelector('.nav-links');
+  links.style.display=links.style.display==='flex'?'none':'flex';
+  links.style.position='fixed';links.style.top='60px';links.style.left='0';links.style.right='0';
+  links.style.background='rgba(4,13,26,.98)';links.style.flexDirection='column';
+  links.style.padding='2rem';links.style.gap='1.5rem';links.style.zIndex='99';
+});
+</script>
+</body>
+</html>
