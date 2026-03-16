@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basement Blinds Quiz — Find Your Perfect Match | iSeekBlinds Melbourne</title>
+<meta name="description" content="Transforming your basement? Take our 60-second quiz to find the perfect blinds for your underground space. Light control, privacy & style — customised for Melbourne basements.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--void:#0a0a1a;--deep:#12122e;--neon-pink:#ff2d7b;--neon-cyan:#00f0ff;
+--neon-purple:#b14eff;--neon-yellow:#ffe156;--grid-color:rgba(0,240,255,.06);
+--glow-pink:0 0 20px rgba(255,45,123,.5),0 0 60px rgba(255,45,123,.2);
+--glow-cyan:0 0 20px rgba(0,240,255,.5),0 0 60px rgba(0,240,255,.2);
+--text:#e8e8f0;--muted:#8888aa;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Exo 2',sans-serif;background:var(--void);color:var(--text);overflow-x:hidden;min-height:100vh}
+
+/* ========= RETRO GRID FLOOR ========= */
+.retro-grid{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.retro-grid::before{content:'';position:absolute;bottom:0;left:-50%;width:200%;height:70vh;
+background:
+  repeating-linear-gradient(90deg,var(--grid-color) 0,var(--grid-color) 1px,transparent 1px,transparent 80px),
+  repeating-linear-gradient(0deg,var(--grid-color) 0,var(--grid-color) 1px,transparent 1px,transparent 80px);
+transform:perspective(400px) rotateX(60deg);transform-origin:center bottom;
+animation:gridScroll 20s linear infinite}
+@keyframes gridScroll{from{background-position:0 0}to{background-position:0 80px}}
+.retro-grid::after{content:'';position:absolute;bottom:0;left:0;right:0;height:70vh;
+background:linear-gradient(to top,var(--void) 0%,transparent 40%);pointer-events:none}
+
+/* ========= SCANLINES ========= */
+.scanlines{position:fixed;inset:0;pointer-events:none;z-index:9998;
+background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px)}
+
+/* ========= AMBIENT GLOW ========= */
+.ambient{position:fixed;inset:0;pointer-events:none;z-index:1;
+background:
+  radial-gradient(ellipse 600px 400px at 20% 30%,rgba(177,78,255,.08),transparent),
+  radial-gradient(ellipse 500px 500px at 80% 70%,rgba(255,45,123,.06),transparent),
+  radial-gradient(ellipse 400px 300px at 50% 90%,rgba(0,240,255,.05),transparent)}
+
+/* ========= HEADER ========= */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;
+background:rgba(10,10,26,.7);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,240,255,.1)}
+.logo{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.1em;
+background:linear-gradient(135deg,var(--neon-cyan),var(--neon-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+header nav{display:flex;gap:1.5rem}
+header nav a{color:var(--muted);text-decoration:none;font-size:.8rem;letter-spacing:.08em;font-weight:500;transition:color .3s}
+header nav a:hover{color:var(--neon-cyan)}
+
+/* ========= MAIN WRAPPER ========= */
+main{position:relative;z-index:2}
+
+/* ========= HERO ========= */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;position:relative}
+.hero-label{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--neon-cyan);margin-bottom:1.5rem;
+text-shadow:var(--glow-cyan);animation:flicker 4s infinite}
+@keyframes flicker{0%,92%,100%{opacity:1}93%{opacity:.7}94%{opacity:1}96%{opacity:.6}97%{opacity:1}}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,7vw,5.5rem);font-weight:900;line-height:.95;margin-bottom:1rem;
+background:linear-gradient(180deg,#fff 30%,var(--neon-pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .accent{display:block;font-size:.6em;
+background:linear-gradient(90deg,var(--neon-cyan),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+text-shadow:none}
+.hero-sub{font-size:clamp(.9rem,1.5vw,1.15rem);color:var(--muted);max-width:500px;line-height:1.6;margin-bottom:2.5rem;font-weight:300}
+.start-btn{font-family:'Orbitron',sans-serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;
+padding:1rem 3rem;border:2px solid var(--neon-pink);background:transparent;color:var(--neon-pink);
+cursor:pointer;position:relative;transition:all .4s;overflow:hidden}
+.start-btn::before{content:'';position:absolute;inset:0;background:var(--neon-pink);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);z-index:-1}
+.start-btn:hover::before{transform:scaleX(1)}
+.start-btn:hover{color:var(--void);box-shadow:var(--glow-pink)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.hero-scroll span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--neon-cyan),transparent);animation:scrollPulse 2s ease infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3)}}
+
+/* ========= WHY SECTION ========= */
+.why-section{padding:8rem 2rem 6rem;position:relative}
+.why-section .section-label{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--neon-purple);text-shadow:0 0 10px rgba(177,78,255,.4);margin-bottom:1rem}
+.why-section h2{font-family:'Orbitron',sans-serif;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:700;margin-bottom:3rem;line-height:1.1}
+.why-section h2 em{font-style:normal;color:var(--neon-cyan);text-shadow:var(--glow-cyan)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:0 auto}
+.why-card{background:rgba(18,18,46,.6);border:1px solid rgba(0,240,255,.08);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:all .5s}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--neon-cyan),transparent);transform:scaleX(0);transition:transform .5s}
+.why-card:hover::before{transform:scaleX(1)}
+.why-card:hover{background:rgba(18,18,46,.9);border-color:rgba(0,240,255,.2)}
+.why-card .num{font-family:'Orbitron',sans-serif;font-size:3rem;font-weight:900;color:rgba(255,45,123,.1);position:absolute;top:.5rem;right:1rem;line-height:1}
+.why-card h3{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--neon-pink);margin-bottom:.8rem}
+.why-card p{font-size:.9rem;line-height:1.6;color:var(--muted);font-weight:300}
+
+/* ========= QUIZ SECTION ========= */
+.quiz-section{padding:6rem 2rem;position:relative}
+.quiz-container{max-width:700px;margin:0 auto;position:relative}
+.quiz-header{text-align:center;margin-bottom:3rem}
+.quiz-header .section-label{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--neon-yellow);text-shadow:0 0 10px rgba(255,225,86,.3);margin-bottom:1rem}
+.quiz-header h2{font-family:'Orbitron',sans-serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:700}
+.quiz-header h2 em{font-style:normal;color:var(--neon-pink);text-shadow:0 0 15px rgba(255,45,123,.3)}
+
+/* Progress bar */
+.progress-bar{height:3px;background:rgba(255,255,255,.05);margin-bottom:3rem;position:relative;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));width:0%;transition:width .6s cubic-bezier(.4,0,.2,1);box-shadow:0 0 10px rgba(0,240,255,.4)}
+
+/* Question */
+.question-wrap{min-height:400px;position:relative}
+.question{position:absolute;inset:0;opacity:0;transform:translateX(60px);transition:all .5s cubic-bezier(.4,0,.2,1);pointer-events:none;display:flex;flex-direction:column}
+.question.active{opacity:1;transform:translateX(0);pointer-events:all}
+.question.exit-left{opacity:0;transform:translateX(-60px)}
+.question-num{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--neon-cyan);margin-bottom:1rem}
+.question h3{font-family:'Orbitron',sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);font-weight:600;margin-bottom:2rem;line-height:1.3}
+
+/* Options */
+.options{display:flex;flex-direction:column;gap:.8rem;flex:1}
+.option-btn{background:rgba(18,18,46,.5);border:1px solid rgba(255,255,255,.08);padding:1.2rem 1.5rem;text-align:left;color:var(--text);
+font-family:'Exo 2',sans-serif;font-size:.95rem;cursor:pointer;position:relative;transition:all .35s;display:flex;align-items:center;gap:1rem}
+.option-btn .opt-key{font-family:'Orbitron',sans-serif;font-size:.6rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+border:1px solid rgba(0,240,255,.3);color:var(--neon-cyan);flex-shrink:0;transition:all .35s}
+.option-btn:hover{border-color:var(--neon-cyan);background:rgba(0,240,255,.05)}
+.option-btn:hover .opt-key{background:var(--neon-cyan);color:var(--void)}
+.option-btn.selected{border-color:var(--neon-pink);background:rgba(255,45,123,.08)}
+.option-btn.selected .opt-key{background:var(--neon-pink);color:var(--void);border-color:var(--neon-pink)}
+
+/* Results */
+.result-card{display:none;text-align:center;padding:3rem 2rem;border:1px solid rgba(0,240,255,.15);background:rgba(18,18,46,.6);position:relative;overflow:hidden}
+.result-card.visible{display:block;animation:resultReveal .8s cubic-bezier(.4,0,.2,1)}
+@keyframes resultReveal{from{opacity:0;transform:scale(.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.result-card::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-pink),var(--neon-purple));z-index:-1;animation:borderGlow 3s ease infinite}
+.result-card::after{content:'';position:absolute;inset:1px;background:var(--deep);z-index:-1}
+@keyframes borderGlow{0%,100%{opacity:.5}50%{opacity:1}}
+.result-icon{font-size:3rem;margin-bottom:1rem;display:block}
+.result-card h3{font-family:'Orbitron',sans-serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:700;margin-bottom:.5rem;
+background:linear-gradient(90deg,var(--neon-cyan),var(--neon-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.result-card .result-type{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:.2em;color:var(--neon-yellow);text-transform:uppercase;margin-bottom:1.5rem}
+.result-card p{color:var(--muted);line-height:1.7;font-size:.95rem;max-width:500px;margin:0 auto 2rem;font-weight:300}
+.result-features{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
+.result-feat{text-align:center}
+.result-feat .feat-val{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--neon-cyan);display:block}
+.result-feat .feat-label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-primary{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+padding:.9rem 2rem;background:var(--neon-pink);color:var(--void);border:none;cursor:pointer;transition:all .3s;text-decoration:none;font-weight:600}
+.cta-primary:hover{box-shadow:var(--glow-pink);transform:translateY(-2px)}
+.cta-secondary{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+padding:.9rem 2rem;background:transparent;border:1px solid var(--neon-cyan);color:var(--neon-cyan);cursor:pointer;transition:all .3s;text-decoration:none;font-weight:600}
+.cta-secondary:hover{box-shadow:var(--glow-cyan);transform:translateY(-2px)}
+.retake-btn{margin-top:1.5rem;background:none;border:none;color:var(--muted);font-size:.75rem;cursor:pointer;font-family:'Exo 2',sans-serif;letter-spacing:.1em;transition:color .3s}
+.retake-btn:hover{color:var(--neon-cyan)}
+
+/* ========= PRODUCTS SHOWCASE ========= */
+.showcase{padding:6rem 2rem;position:relative}
+.showcase .section-label{font-family:'Orbitron',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--neon-cyan);text-shadow:var(--glow-cyan);margin-bottom:1rem;text-align:center}
+.showcase h2{font-family:'Orbitron',sans-serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:700;text-align:center;margin-bottom:3rem}
+.showcase-row{display:flex;gap:2px;max-width:1200px;margin:0 auto;overflow:hidden}
+.showcase-item{flex:1;min-height:450px;position:relative;overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.4,0,.2,1)}
+.showcase-item:hover{flex:2}
+.showcase-item .bg{position:absolute;inset:0;
+background:linear-gradient(135deg,var(--deep),rgba(18,18,46,.9));transition:all .6s}
+.showcase-item:nth-child(1) .bg{background:linear-gradient(135deg,#1a0a2e,#0a1628)}
+.showcase-item:nth-child(2) .bg{background:linear-gradient(135deg,#0a1628,#1e0a1e)}
+.showcase-item:nth-child(3) .bg{background:linear-gradient(135deg,#1e0a1e,#0a2020)}
+.showcase-item:nth-child(4) .bg{background:linear-gradient(135deg,#0a2020,#1a0a2e)}
+.showcase-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,26,.9) 0%,transparent 60%);z-index:1}
+.showcase-item .content{position:absolute;bottom:0;left:0;right:0;padding:2rem;z-index:2;transform:translateY(20px);transition:transform .5s}
+.showcase-item:hover .content{transform:translateY(0)}
+.showcase-item .item-label{font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--neon-pink);margin-bottom:.5rem}
+.showcase-item h3{font-family:'Orbitron',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:.5rem}
+.showcase-item p{font-size:.8rem;color:var(--muted);line-height:1.5;font-weight:300;max-height:0;overflow:hidden;transition:max-height .5s}
+.showcase-item:hover p{max-height:100px}
+.showcase-item .neon-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--neon-cyan),transparent);opacity:0;transition:opacity .5s}
+.showcase-item:hover .neon-line{opacity:1}
+
+/* ========= TRUST STRIP ========= */
+.trust-strip{padding:4rem 2rem;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03)}
+.trust-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+.trust-stat{text-align:center}
+.trust-stat .val{font-family:'Orbitron',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;
+background:linear-gradient(135deg,var(--neon-cyan),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.trust-stat .label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
+
+/* ========= FOOTER ========= */
+footer{padding:3rem 2rem;text-align:center;border-top:1px solid rgba(0,240,255,.05)}
+footer div{font-size:.75rem;color:var(--muted);margin-bottom:.5rem}
+footer a{color:var(--neon-cyan);text-decoration:none;transition:color .3s}
+footer a:hover{color:var(--neon-pink)}
+
+/* ========= REVEAL ANIMATIONS ========= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(30px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal-stagger.visible>*:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.05s}
+.reveal-stagger.visible>*:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.12s}
+.reveal-stagger.visible>*:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.19s}
+.reveal-stagger.visible>*:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.26s}
+.reveal-stagger.visible>*:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.33s}
+.reveal-stagger.visible>*:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.40s}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width:768px){
+  .why-grid{grid-template-columns:1fr}
+  .showcase-row{flex-direction:column}
+  .showcase-item{min-height:200px}
+  .showcase-item:hover{flex:1}
+  .showcase-item p{max-height:80px}
+  .trust-inner{justify-content:center}
+  header nav{display:none}
+  .hero h1{font-size:clamp(1.8rem,10vw,3rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<div class="retro-grid"></div>
+<div class="ambient"></div>
+<div class="scanlines"></div>
+
+<header>
+  <a href="/iseekblinds/" class="logo">iSeekBlinds</a>
+  <nav>
+    <a href="/iseekblinds/">Home</a>
+    <a href="/iseekblinds/landing/">All Solutions</a>
+    <a href="/iseekblinds/#free-quote">Free Quote</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="hero-label">// basement_renovation.exe</div>
+  <h1>Light Up<br>The Below<span class="accent">Find Your Basement Blinds</span></h1>
+  <p class="hero-sub">Basements are tricky — weird window sizes, zero natural light, moisture issues. We've solved them all. Take our 60-second quiz and get a personalised recommendation.</p>
+  <button class="start-btn" onclick="scrollToQuiz()">▶ Start Quiz</button>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========= WHY BASEMENT BLINDS MATTER ========= -->
+<section class="why-section">
+  <div class="section-label reveal">// why_it_matters</div>
+  <h2 class="reveal">Basements aren't dark holes anymore.<br>They're <em>living spaces</em>.</h2>
+  <div class="why-grid reveal-stagger">
+    <div class="why-card">
+      <div class="num">01</div>
+      <h3>Light Maximisation</h3>
+      <p>Small basement windows need blinds that let every photon in when open, but give total control when you need darkness. Not all blinds do this well.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">02</div>
+      <h3>Moisture Resistance</h3>
+      <p>Underground = humidity. Fabric blinds can mould. We'll match you with materials that laugh at Melbourne's damp basements.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">03</div>
+      <h3>Odd Window Sizes</h3>
+      <p>Basement windows are rarely standard. Hopper windows, glass blocks, egress windows — we custom-make for every weird dimension.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">04</div>
+      <h3>Privacy at Ground Level</h3>
+      <p>When your windows sit at street level, foot traffic sees everything. The right blinds give you privacy without turning your basement into a cave.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">05</div>
+      <h3>Insulation Boost</h3>
+      <p>Basements run cold. Cellular/honeycomb blinds add a layer of air insulation, keeping your space warmer and your energy bills lower.</p>
+    </div>
+    <div class="why-card">
+      <div class="num">06</div>
+      <h3>Fire Safety</h3>
+      <p>Egress windows need blinds that don't block emergency exits. We know the Melbourne building codes — every recommendation is compliant.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= QUIZ ========= -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <div class="section-label">// initialising_quiz</div>
+      <h2>60 Seconds to Your <em>Perfect Match</em></h2>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="question-wrap" id="questionWrap">
+      <!-- Q1 -->
+      <div class="question active" data-q="0">
+        <div class="question-num">Question 01 / 05</div>
+        <h3>What's your basement becoming?</h3>
+        <div class="options">
+          <button class="option-btn" data-val="living" onclick="selectOption(this)"><span class="opt-key">A</span>Living room / lounge area</button>
+          <button class="option-btn" data-val="office" onclick="selectOption(this)"><span class="opt-key">B</span>Home office / study</button>
+          <button class="option-btn" data-val="bedroom" onclick="selectOption(this)"><span class="opt-key">C</span>Bedroom / guest suite</button>
+          <button class="option-btn" data-val="gym" onclick="selectOption(this)"><span class="opt-key">D</span>Home gym / rec room</button>
+          <button class="option-btn" data-val="media" onclick="selectOption(this)"><span class="opt-key">E</span>Media room / cinema</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question" data-q="1">
+        <div class="question-num">Question 02 / 05</div>
+        <h3>How much natural light do your basement windows get?</h3>
+        <div class="options">
+          <button class="option-btn" data-val="plenty" onclick="selectOption(this)"><span class="opt-key">A</span>Decent amount — windows above ground level</button>
+          <button class="option-btn" data-val="some" onclick="selectOption(this)"><span class="opt-key">B</span>Some — small windows at ground level</button>
+          <button class="option-btn" data-val="minimal" onclick="selectOption(this)"><span class="opt-key">C</span>Very little — half-underground wells</button>
+          <button class="option-btn" data-val="none" onclick="selectOption(this)"><span class="opt-key">D</span>Almost none — fully underground</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question" data-q="2">
+        <div class="question-num">Question 03 / 05</div>
+        <h3>What's your #1 priority for these windows?</h3>
+        <div class="options">
+          <button class="option-btn" data-val="privacy" onclick="selectOption(this)"><span class="opt-key">A</span>Privacy — street-level foot traffic</button>
+          <button class="option-btn" data-val="light" onclick="selectOption(this)"><span class="opt-key">B</span>Light control — max light in, blackout when needed</button>
+          <button class="option-btn" data-val="insulation" onclick="selectOption(this)"><span class="opt-key">C</span>Insulation — keeping the cold out</button>
+          <button class="option-btn" data-val="style" onclick="selectOption(this)"><span class="opt-key">D</span>Aesthetics — the space needs to look amazing</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question" data-q="3">
+        <div class="question-num">Question 04 / 05</div>
+        <h3>What's the vibe you're going for?</h3>
+        <div class="options">
+          <button class="option-btn" data-val="modern" onclick="selectOption(this)"><span class="opt-key">A</span>Clean & modern — minimalist lines</button>
+          <button class="option-btn" data-val="cozy" onclick="selectOption(this)"><span class="opt-key">B</span>Warm & cozy — layered textures</button>
+          <button class="option-btn" data-val="industrial" onclick="selectOption(this)"><span class="opt-key">C</span>Industrial — raw, exposed, edgy</button>
+          <button class="option-btn" data-val="classic" onclick="selectOption(this)"><span class="opt-key">D</span>Classic & timeless — heritage feel</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question" data-q="4">
+        <div class="question-num">Question 05 / 05</div>
+        <h3>Any moisture or humidity issues down there?</h3>
+        <div class="options">
+          <button class="option-btn" data-val="dry" onclick="selectOption(this)"><span class="opt-key">A</span>Nope — dry as a bone</button>
+          <button class="option-btn" data-val="slight" onclick="selectOption(this)"><span class="opt-key">B</span>A bit damp in winter</button>
+          <button class="option-btn" data-val="humid" onclick="selectOption(this)"><span class="opt-key">C</span>Yeah, it's quite humid</button>
+          <button class="option-btn" data-val="wet" onclick="selectOption(this)"><span class="opt-key">D</span>Actively working on waterproofing</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="result-card" id="resultCard">
+      <span class="result-icon" id="resultIcon">🎯</span>
+      <h3 id="resultTitle">Your Perfect Match</h3>
+      <div class="result-type" id="resultType">LOADING...</div>
+      <p id="resultDesc">Calculating your ideal basement blinds solution...</p>
+      <div class="result-features" id="resultFeatures"></div>
+      <div class="cta-row">
+        <a href="/iseekblinds/#free-quote" class="cta-primary">Get Free Quote</a>
+        <a href="/iseekblinds/landing/free-samples.html" class="cta-secondary">Order Free Samples</a>
+      </div>
+      <button class="retake-btn" onclick="resetQuiz()">↻ Retake Quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PRODUCT SHOWCASE ========= -->
+<section class="showcase">
+  <div class="section-label reveal">// popular_for_basements</div>
+  <h2 class="reveal">Top Picks for Below-Ground Spaces</h2>
+  <div class="showcase-row reveal-stagger">
+    <div class="showcase-item">
+      <div class="bg"></div>
+      <div class="neon-line"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="item-label">Best Seller</div>
+        <h3>Honeycomb Cellular</h3>
+        <p>Double-cell construction traps air for insulation. Light-filtering or blockout. Ideal for cold basements.</p>
+      </div>
+    </div>
+    <div class="showcase-item">
+      <div class="bg"></div>
+      <div class="neon-line"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="item-label">Moisture Proof</div>
+        <h3>PVC Venetians</h3>
+        <p>Aluminium-look without the rust risk. Wipe clean, humidity-proof, and custom-cut for odd sizes.</p>
+      </div>
+    </div>
+    <div class="showcase-item">
+      <div class="bg"></div>
+      <div class="neon-line"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="item-label">Max Privacy</div>
+        <h3>Top-Down Bottom-Up</h3>
+        <p>Open from the top for light while keeping the bottom closed for privacy. Perfect for street-level basement windows.</p>
+      </div>
+    </div>
+    <div class="showcase-item">
+      <div class="bg"></div>
+      <div class="neon-line"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="item-label">Cinema Mode</div>
+        <h3>Blockout Rollers</h3>
+        <p>100% light block for media rooms and bedrooms. Side channels eliminate light bleed. Motorised option available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= TRUST STRIP ========= -->
+<section class="trust-strip">
+  <div class="trust-inner reveal-stagger">
+    <div class="trust-stat"><div class="val">2,500+</div><div class="label">Basements Fitted</div></div>
+    <div class="trust-stat"><div class="val">4.9★</div><div class="label">Google Rating</div></div>
+    <div class="trust-stat"><div class="val">Free</div><div class="label">Measure & Quote</div></div>
+    <div class="trust-stat"><div class="val">5yr</div><div class="label">Warranty</div></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>© 2026 iSeekBlinds — Melbourne's Window Furnishing Specialists</div>
+  <div><a href="/iseekblinds/">Home</a> · <a href="/iseekblinds/landing/">All Solutions</a> · <a href="/iseekblinds/#free-quote">Free Quote</a></div>
+</footer>
+
+<script>
+// Quiz Logic
+let currentQ = 0;
+const totalQ = 5;
+const answers = [];
+
+function scrollToQuiz() {
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+}
+
+function selectOption(btn) {
+  const wrap = btn.closest('.question');
+  wrap.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[currentQ] = btn.dataset.val;
+
+  setTimeout(() => {
+    if (currentQ < totalQ - 1) {
+      nextQuestion();
+    } else {
+      showResult();
+    }
+  }, 400);
+}
+
+function nextQuestion() {
+  const questions = document.querySelectorAll('.question');
+  questions[currentQ].classList.remove('active');
+  questions[currentQ].classList.add('exit-left');
+  currentQ++;
+  questions[currentQ].classList.add('active');
+  document.getElementById('progressFill').style.width = ((currentQ + 1) / totalQ * 100) + '%';
+}
+
+function showResult() {
+  document.querySelectorAll('.question').forEach(q => {
+    q.classList.remove('active');
+    q.classList.add('exit-left');
+  });
+  document.getElementById('progressFill').style.width = '100%';
+
+  const [usage, light, priority, vibe, moisture] = answers;
+  let result = getRecommendation(usage, light, priority, vibe, moisture);
+
+  const card = document.getElementById('resultCard');
+  document.getElementById('resultIcon').textContent = result.icon;
+  document.getElementById('resultTitle').textContent = result.title;
+  document.getElementById('resultType').textContent = result.type;
+  document.getElementById('resultDesc').textContent = result.desc;
+
+  const featHtml = result.features.map(f =>
+    `<div class="result-feat"><span class="feat-val">${f.val}</span><span class="feat-label">${f.label}</span></div>`
+  ).join('');
+  document.getElementById('resultFeatures').innerHTML = featHtml;
+
+  card.classList.add('visible');
+}
+
+function getRecommendation(usage, light, priority, vibe, moisture) {
+  // Moisture-heavy → PVC
+  if (moisture === 'humid' || moisture === 'wet') {
+    return {
+      icon: '💧', title: 'PVC Venetian Blinds', type: 'moisture-proof champion',
+      desc: `With humidity in your basement, you need blinds that won't warp, mould, or deteriorate. PVC Venetians are practically indestructible — easy to clean, fully adjustable for light, and they come in finishes that look like real timber without the moisture risk. Custom-cut for your ${usage === 'bedroom' ? 'bedroom' : usage === 'office' ? 'home office' : 'space'}.`,
+      features: [{val:'100%',label:'Moisture Proof'},{val:'50mm',label:'Slat Width'},{val:'Easy',label:'Wipe Clean'},{val:'$89',label:'From / m²'}]
+    };
+  }
+  // Media room or bedroom → Blockout
+  if (usage === 'media' || (usage === 'bedroom' && priority !== 'style')) {
+    return {
+      icon: '🎬', title: 'Blockout Roller Blinds', type: 'total darkness mode',
+      desc: `For your ${usage === 'media' ? 'media room' : 'bedroom'}, you want absolute darkness on demand. Our blockout rollers with side channels eliminate 100% of light bleed. Add motorisation and you've got one-touch cinema mode. The fabric is mould-resistant too — important for any basement.`,
+      features: [{val:'100%',label:'Light Block'},{val:'Side',label:'Light Channels'},{val:'Smart',label:'Motorised Option'},{val:'$75',label:'From / m²'}]
+    };
+  }
+  // Privacy priority → Top-Down Bottom-Up
+  if (priority === 'privacy') {
+    return {
+      icon: '🔒', title: 'Top-Down Bottom-Up Cellular', type: 'privacy + light genius',
+      desc: `Street-level basement windows need clever privacy. Top-Down Bottom-Up blinds let you drop the top for natural light while the bottom stays closed — nobody walking past can see in. The honeycomb cells add insulation too, keeping your ${usage === 'office' ? 'office' : usage === 'gym' ? 'gym' : 'space'} warmer.`,
+      features: [{val:'Dual',label:'Open Direction'},{val:'R3.8',label:'Insulation'},{val:'Custom',label:'Cut to Size'},{val:'$95',label:'From / m²'}]
+    };
+  }
+  // Insulation priority → Honeycomb
+  if (priority === 'insulation' || light === 'minimal' || light === 'none') {
+    return {
+      icon: '🧊', title: 'Honeycomb Cellular Blinds', type: 'insulation powerhouse',
+      desc: `Underground spaces lose heat fast. Double-cell honeycomb blinds trap air in two layers, creating genuine insulation — not just a window covering. In light-filtering mode, they diffuse what little light you get beautifully. Your ${usage === 'living' ? 'living area' : usage === 'office' ? 'home office' : 'basement'} will feel warmer and look sleek.`,
+      features: [{val:'Double',label:'Cell Design'},{val:'R4.2',label:'Insulation Rating'},{val:'-30%',label:'Heat Loss'},{val:'$105',label:'From / m²'}]
+    };
+  }
+  // Style / modern → Sunscreen Rollers
+  if (priority === 'style' || vibe === 'modern' || vibe === 'industrial') {
+    return {
+      icon: '✨', title: 'Sunscreen Roller Blinds', type: 'clean lines, filtered light',
+      desc: `For a ${vibe === 'industrial' ? 'raw, industrial' : 'clean, modern'} basement, sunscreen rollers are perfection. They filter light without blocking it — crucial for underground spaces. The minimal profile keeps sight lines clean, and our range includes metallic-look fabrics that suit ${vibe === 'industrial' ? 'exposed brick and concrete' : 'contemporary interiors'} beautifully.`,
+      features: [{val:'3-10%',label:'Openness Factor'},{val:'UV',label:'Block 95%+'},{val:'Slim',label:'Profile'},{val:'$65',label:'From / m²'}]
+    };
+  }
+  // Default → Day-Night
+  return {
+    icon: '🌗', title: 'Day-Night Roller Blinds', type: 'ultimate versatility',
+    desc: `Can't decide between sheer and privacy? Day-Night rollers give you both in one blind. Alternate bands of sheer and opaque fabric — align them for light, offset them for privacy. They're stylish, practical, and perfect for basement spaces where light is precious but privacy matters.`,
+    features: [{val:'Dual',label:'Sheer + Opaque'},{val:'Custom',label:'Any Width'},{val:'Modern',label:'Aesthetic'},{val:'$85',label:'From / m²'}]
+  };
+}
+
+function resetQuiz() {
+  currentQ = 0;
+  answers.length = 0;
+  document.getElementById('resultCard').classList.remove('visible');
+  document.getElementById('progressFill').style.width = '0%';
+  document.querySelectorAll('.question').forEach((q, i) => {
+    q.classList.remove('exit-left', 'active');
+    q.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    if (i === 0) q.classList.add('active');
+  });
+}
+
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+revealEls.forEach(el => observer.observe(el));
+
+// Keyboard navigation for quiz
+document.addEventListener('keydown', (e) => {
+  const activeQ = document.querySelector('.question.active');
+  if (!activeQ) return;
+  const keys = { a: 0, b: 1, c: 2, d: 3, e: 4 };
+  const idx = keys[e.key.toLowerCase()];
+  if (idx !== undefined) {
+    const btns = activeQ.querySelectorAll('.option-btn');
+    if (btns[idx]) btns[idx].click();
+  }
+});
+</script>
+
+</body>
+</html>
