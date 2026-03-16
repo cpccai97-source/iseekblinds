@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore All Solutions & Guides | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Browse all 70+ blinds, curtains & shutters solutions and guides from iSeekBlinds. Room-specific, style, commercial, specialty and how-to resources.">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Directory Page Styles */
+    .dir-hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    .dir-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #1a1a1a;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .dir-hero p {
+      font-family: 'Outfit', sans-serif;
+      color: #8B8680;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* Search */
+    .dir-search {
+      max-width: 520px;
+      margin: 0 auto 60px;
+      position: relative;
+    }
+    .dir-search input {
+      width: 100%;
+      padding: 16px 24px 16px 52px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      border: 1px solid rgba(26,26,26,0.12);
+      border-radius: 2px;
+      background: #fff;
+      color: #2D2D2D;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .dir-search input:focus {
+      border-color: #C45D3E;
+    }
+    .dir-search input::placeholder {
+      color: #B5AFA8;
+    }
+    .dir-search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #B5AFA8;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+    .dir-no-results {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+      color: #8B8680;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+    }
+
+    /* Category Sections */
+    .dir-category {
+      margin-bottom: 64px;
+    }
+    .dir-category-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(26,26,26,0.08);
+    }
+    .dir-category-header h2 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+    }
+    .dir-category-count {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #C45D3E;
+    }
+
+    /* Card Grid */
+    .dir-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .dir-card {
+      display: block;
+      padding: 20px 24px;
+      background: #fff;
+      border: 1px solid rgba(26,26,26,0.06);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .dir-card:hover {
+      border-color: #C45D3E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,93,62,0.08);
+    }
+    .dir-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2D2D2D;
+      margin: 0;
+    }
+    .dir-card .dir-arrow {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #C45D3E;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      font-size: 1.1rem;
+    }
+    .dir-card:hover .dir-arrow {
+      opacity: 1;
+      transform: translateY(-50%) translateX(4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .dir-hero { padding: 60px 0 24px; }
+      .dir-grid {
+        grid-template-columns: 1fr;
+      }
+      .dir-category { margin-bottom: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Guides →</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="dir-hero">
+    <div class="container">
+      <p class="section-eyebrow">Complete Directory</p>
+      <h1>Explore All Solutions & Guides</h1>
+      <p>70+ pages of expert advice, room-specific solutions, style inspiration and practical guides — all in one place.</p>
+      <div class="dir-search">
+        <span class="dir-search-icon">🔍</span>
+        <input type="text" id="dirSearch" placeholder="Search solutions & guides..." autocomplete="off">
+      </div>
+    </div>
+  </section>
+
+  <div class="container" id="dirContent">
+    <div class="dir-no-results" id="noResults">No pages match your search. Try a different term.</div>
+
+    <!-- Room-Specific Solutions -->
+    <div class="dir-category" data-category="room">
+      <div class="dir-category-header">
+        <h2>Room-Specific Solutions</h2>
+        <span class="dir-category-count">11 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="bathroom-kitchen.html" class="dir-card"><h3>Bathroom & Kitchen</h3><span class="dir-arrow">→</span></a>
+        <a href="bedroom-blackout.html" class="dir-card"><h3>Bedroom Blackout</h3><span class="dir-arrow">→</span></a>
+        <a href="conservatory-sunroom.html" class="dir-card"><h3>Conservatory & Sunroom</h3><span class="dir-arrow">→</span></a>
+        <a href="home-gym-blinds.html" class="dir-card"><h3>Home Gym Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="home-library-study.html" class="dir-card"><h3>Home Library & Study</h3><span class="dir-arrow">→</span></a>
+        <a href="home-office.html" class="dir-card"><h3>Home Office</h3><span class="dir-arrow">→</span></a>
+        <a href="media-room.html" class="dir-card"><h3>Media Room</h3><span class="dir-arrow">→</span></a>
+        <a href="nursery-safe.html" class="dir-card"><h3>Nursery Safe</h3><span class="dir-arrow">→</span></a>
+        <a href="open-kitchen.html" class="dir-card"><h3>Open Kitchen</h3><span class="dir-arrow">→</span></a>
+        <a href="spa-wellness-blinds.html" class="dir-card"><h3>Spa & Wellness Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="wine-entertainment-room.html" class="dir-card"><h3>Wine & Entertainment Room</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Property Types -->
+    <div class="dir-category" data-category="property">
+      <div class="dir-category-header">
+        <h2>Property Types</h2>
+        <span class="dir-category-count">10 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="apartment-solutions.html" class="dir-card"><h3>Apartment Solutions</h3><span class="dir-arrow">→</span></a>
+        <a href="granny-flat-blinds.html" class="dir-card"><h3>Granny Flat Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="heritage-homes.html" class="dir-card"><h3>Heritage Homes</h3><span class="dir-arrow">→</span></a>
+        <a href="high-rise-glare.html" class="dir-card"><h3>High Rise Glare</h3><span class="dir-arrow">→</span></a>
+        <a href="home-renovation.html" class="dir-card"><h3>Home Renovation</h3><span class="dir-arrow">→</span></a>
+        <a href="luxury-penthouse.html" class="dir-card"><h3>Luxury Penthouse</h3><span class="dir-arrow">→</span></a>
+        <a href="new-home-packages.html" class="dir-card"><h3>New Home Packages</h3><span class="dir-arrow">→</span></a>
+        <a href="property-styling.html" class="dir-card"><h3>Property Styling</h3><span class="dir-arrow">→</span></a>
+        <a href="rental-property.html" class="dir-card"><h3>Rental Property</h3><span class="dir-arrow">→</span></a>
+        <a href="townhouse-strata.html" class="dir-card"><h3>Townhouse & Strata</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Window & Door Types -->
+    <div class="dir-category" data-category="window">
+      <div class="dir-category-header">
+        <h2>Window & Door Types</h2>
+        <span class="dir-category-count">7 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="arched-specialty-windows.html" class="dir-card"><h3>Arched & Specialty Windows</h3><span class="dir-arrow">→</span></a>
+        <a href="bay-window-blinds.html" class="dir-card"><h3>Bay Window Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="bifold-door-blinds.html" class="dir-card"><h3>Bifold Door Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="double-glazed-blinds.html" class="dir-card"><h3>Double Glazed Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="large-windows.html" class="dir-card"><h3>Large Windows</h3><span class="dir-arrow">→</span></a>
+        <a href="skylight-blinds.html" class="dir-card"><h3>Skylight Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="staircase-windows.html" class="dir-card"><h3>Staircase Windows</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Style & Design -->
+    <div class="dir-category" data-category="style">
+      <div class="dir-category-header">
+        <h2>Style & Design</h2>
+        <span class="dir-category-count">9 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="colour-matching-guide.html" class="dir-card"><h3>Colour Matching Guide</h3><span class="dir-arrow">→</span></a>
+        <a href="colour-trends-2026.html" class="dir-card"><h3>Colour Trends 2026</h3><span class="dir-arrow">→</span></a>
+        <a href="design-inspiration.html" class="dir-card"><h3>Design Inspiration</h3><span class="dir-arrow">→</span></a>
+        <a href="festive-seasonal-styling.html" class="dir-card"><h3>Festive & Seasonal Styling</h3><span class="dir-arrow">→</span></a>
+        <a href="hamptons-style.html" class="dir-card"><h3>Hamptons Style</h3><span class="dir-arrow">→</span></a>
+        <a href="japandi-zen-style.html" class="dir-card"><h3>Japandi & Zen Style</h3><span class="dir-arrow">→</span></a>
+        <a href="layered-treatments.html" class="dir-card"><h3>Layered Treatments</h3><span class="dir-arrow">→</span></a>
+        <a href="minimalist-styling.html" class="dir-card"><h3>Minimalist Styling</h3><span class="dir-arrow">→</span></a>
+        <a href="scandinavian-style.html" class="dir-card"><h3>Scandinavian Style</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Smart, Safety & Specialty -->
+    <div class="dir-category" data-category="specialty">
+      <div class="dir-category-header">
+        <h2>Smart, Safety & Specialty</h2>
+        <span class="dir-category-count">13 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="acoustic-solutions.html" class="dir-card"><h3>Acoustic Solutions</h3><span class="dir-arrow">→</span></a>
+        <a href="allergy-friendly.html" class="dir-card"><h3>Allergy Friendly</h3><span class="dir-arrow">→</span></a>
+        <a href="bushfire-safe-blinds.html" class="dir-card"><h3>Bushfire Safe Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="child-safety.html" class="dir-card"><h3>Child Safety</h3><span class="dir-arrow">→</span></a>
+        <a href="day-night-blinds.html" class="dir-card"><h3>Day Night Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="eco-friendly.html" class="dir-card"><h3>Eco-Friendly</h3><span class="dir-arrow">→</span></a>
+        <a href="elderly-accessible.html" class="dir-card"><h3>Elderly Accessible</h3><span class="dir-arrow">→</span></a>
+        <a href="energy-efficient.html" class="dir-card"><h3>Energy Efficient</h3><span class="dir-arrow">→</span></a>
+        <a href="motorised-blinds.html" class="dir-card"><h3>Motorised Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="outdoor-blinds.html" class="dir-card"><h3>Outdoor Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="pet-friendly.html" class="dir-card"><h3>Pet Friendly</h3><span class="dir-arrow">→</span></a>
+        <a href="privacy-blinds.html" class="dir-card"><h3>Privacy Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="smart-home.html" class="dir-card"><h3>Smart Home</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Climate & Seasonal -->
+    <div class="dir-category" data-category="climate">
+      <div class="dir-category-header">
+        <h2>Climate & Seasonal</h2>
+        <span class="dir-category-count">4 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="coastal-home-blinds.html" class="dir-card"><h3>Coastal Home Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="seasonal-sale.html" class="dir-card"><h3>Seasonal Sale</h3><span class="dir-arrow">→</span></a>
+        <a href="summer-uv-protection.html" class="dir-card"><h3>Summer UV Protection</h3><span class="dir-arrow">→</span></a>
+        <a href="winter-insulation.html" class="dir-card"><h3>Winter Insulation</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Commercial & Business -->
+    <div class="dir-category" data-category="commercial">
+      <div class="dir-category-header">
+        <h2>Commercial & Business</h2>
+        <span class="dir-category-count">9 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="art-gallery-studio.html" class="dir-card"><h3>Art Gallery & Studio</h3><span class="dir-arrow">→</span></a>
+        <a href="commercial-blinds.html" class="dir-card"><h3>Commercial Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="hospitality-blinds.html" class="dir-card"><h3>Hospitality Blinds</h3><span class="dir-arrow">→</span></a>
+        <a href="medical-clinic.html" class="dir-card"><h3>Medical Clinic</h3><span class="dir-arrow">→</span></a>
+        <a href="office-partition.html" class="dir-card"><h3>Office Partition</h3><span class="dir-arrow">→</span></a>
+        <a href="restaurant-cafe.html" class="dir-card"><h3>Restaurant & Café</h3><span class="dir-arrow">→</span></a>
+        <a href="retail-shopfront.html" class="dir-card"><h3>Retail Shopfront</h3><span class="dir-arrow">→</span></a>
+        <a href="school-childcare.html" class="dir-card"><h3>School & Childcare</h3><span class="dir-arrow">→</span></a>
+        <a href="warehouse-industrial-blinds.html" class="dir-card"><h3>Warehouse & Industrial Blinds</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Guides & Resources -->
+    <div class="dir-category" data-category="guides">
+      <div class="dir-category-header">
+        <h2>Guides & Resources</h2>
+        <span class="dir-category-count">9 pages</span>
+      </div>
+      <div class="dir-grid">
+        <a href="blinds-vs-curtains.html" class="dir-card"><h3>Blinds vs Curtains</h3><span class="dir-arrow">→</span></a>
+        <a href="care-maintenance.html" class="dir-card"><h3>Care & Maintenance</h3><span class="dir-arrow">→</span></a>
+        <a href="diy-installation-guide.html" class="dir-card"><h3>DIY Installation Guide</h3><span class="dir-arrow">→</span></a>
+        <a href="diy-measuring-guide.html" class="dir-card"><h3>DIY Measuring Guide</h3><span class="dir-arrow">→</span></a>
+        <a href="fabric-encyclopedia.html" class="dir-card"><h3>Fabric Encyclopedia</h3><span class="dir-arrow">→</span></a>
+        <a href="free-samples.html" class="dir-card"><h3>Free Samples</h3><span class="dir-arrow">→</span></a>
+        <a href="melbourne-service-areas.html" class="dir-card"><h3>Melbourne Service Areas</h3><span class="dir-arrow">→</span></a>
+        <a href="plantation-shutters-guide.html" class="dir-card"><h3>Plantation Shutters Guide</h3><span class="dir-arrow">→</span></a>
+        <a href="testimonials.html" class="dir-card"><h3>Testimonials</h3><span class="dir-arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <section class="section hp-cta" style="margin-top: 20px;">
+    <div class="container hp-cta-inner">
+      <h2>Can't find what<br>you're looking for?</h2>
+      <p>Our experts are happy to help. Get a free consultation today.</p>
+      <a href="../free-quote.html" class="btn btn-primary btn-lg">Get Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p><a href="tel:0400000000">0400 000 000</a></p>
+          <p><a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-links">
+          <h4>Products</h4>
+          <a href="../products/roller-blinds.html">Roller Blinds</a>
+          <a href="../products/curtains.html">Curtains</a>
+          <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+          <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+          <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+          <a href="../products/motorised.html">Motorised Solutions</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="../about.html">About Us</a>
+          <a href="../gallery.html">Gallery</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../free-quote.html">Free Quote</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Client-side search/filter
+    (function() {
+      const input = document.getElementById('dirSearch');
+      const categories = document.querySelectorAll('.dir-category');
+      const noResults = document.getElementById('noResults');
+
+      input.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        let anyVisible = false;
+
+        categories.forEach(function(cat) {
+          const cards = cat.querySelectorAll('.dir-card');
+          let catVisible = false;
+
+          cards.forEach(function(card) {
+            const text = card.textContent.toLowerCase();
+            const match = !query || text.includes(query);
+            card.style.display = match ? '' : 'none';
+            if (match) catVisible = true;
+          });
+
+          cat.style.display = catVisible ? '' : 'none';
+          if (catVisible) anyVisible = true;
+        });
+
+        noResults.style.display = anyVisible ? 'none' : 'block';
+      });
+    })();
+  </script>
+</body>
+</html>
