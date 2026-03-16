@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Café Blinds | Purrfect Light & Privacy | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for cat cafés & pet cafés. Scratch-resistant, easy-clean, UV-blocking window treatments that keep cats comfy and customers cosy. Melbourne specialists.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cc-pink: #FF6B9D;
+      --cc-blue: #4ECDC4;
+      --cc-yellow: #FFE66D;
+      --cc-ink: #2D2D2D;
+      --cc-white: #FAFAFA;
+      --cc-cream: #FFF8F0;
+      --cc-orange: #FF8A5C;
+      --cc-purple: #A78BFA;
+      --cc-bg: #FFF8F0;
+      --cc-display: 'Bangers', cursive;
+      --cc-body: 'Nunito', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    .lp-catcafe { background: var(--cc-bg); color: var(--cc-ink); font-family: var(--cc-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+    .lp-catcafe * { box-sizing: border-box; margin: 0; padding: 0; }
+    .lp-catcafe img { max-width: 100%; display: block; }
+    .lp-catcafe a { color: inherit; text-decoration: none; }
+
+    /* ===== LOADER ===== */
+    .cc-loader { position: fixed; inset: 0; z-index: 9999; background: var(--cc-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .5s ease, visibility .5s ease; }
+    .cc-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .cc-loader-paw { font-size: 3rem; animation: cc-bounce .6s ease infinite alternate; }
+    @keyframes cc-bounce { from { transform: translateY(0) rotate(-5deg); } to { transform: translateY(-15px) rotate(5deg); } }
+    .cc-loader-text { color: var(--cc-yellow); font-family: var(--cc-display); font-size: 1.2rem; letter-spacing: .1em; margin-top: .5rem; }
+
+    /* ===== HALFTONE BG PATTERN ===== */
+    .cc-halftone { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .04; background-image: radial-gradient(circle, var(--cc-ink) 1px, transparent 1px); background-size: 12px 12px; }
+
+    /* ===== HEADER ===== */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; transition: transform .4s ease, background .3s ease; }
+    .header.scrolled { background: rgba(255,248,240,0.92); backdrop-filter: blur(12px); box-shadow: 0 3px 0 var(--cc-ink); }
+    .header.hide { transform: translateY(-100%); }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--cc-display); font-size: 1.3rem; letter-spacing: .02em; }
+    .logo-i { color: var(--cc-pink); }
+    .logo-seek { color: var(--cc-ink); }
+    .logo-blinds { color: var(--cc-blue); }
+    .nav { display: flex; gap: 2rem; }
+    .nav a { font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; position: relative; }
+    .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 3px; background: var(--cc-pink); transition: width .3s ease; }
+    .nav a:hover::after { width: 100%; }
+    .header-right { display: flex; align-items: center; gap: 1.5rem; }
+    .header-phone { font-size: .85rem; font-weight: 700; }
+    .btn-primary { display: inline-block; padding: .7rem 1.6rem; font-size: .85rem; font-weight: 800; font-family: var(--cc-display); letter-spacing: .06em; text-transform: uppercase; color: var(--cc-ink); background: var(--cc-yellow); border: 3px solid var(--cc-ink); cursor: pointer; transition: all .2s; box-shadow: 4px 4px 0 var(--cc-ink); position: relative; }
+    .btn-primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--cc-ink); }
+    .btn-primary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--cc-ink); }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--cc-ink); }
+
+    /* ===== HERO — COMIC PANEL ===== */
+    .cc-hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; border-bottom: 5px solid var(--cc-ink); }
+    .cc-hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--cc-yellow) 0%, var(--cc-pink) 50%, var(--cc-blue) 100%); }
+    .cc-hero-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(45,45,45,0.12) 2px, transparent 2px); background-size: 20px 20px; }
+    /* comic speed lines */
+    .cc-hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .cc-hero-lines::before { content: ''; position: absolute; top: 50%; left: 50%; width: 200%; height: 200%; transform: translate(-50%,-50%); background: repeating-conic-gradient(rgba(255,255,255,0.08) 0deg, transparent 2deg, transparent 10deg); }
+    .cc-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .cc-hero-text { }
+    .cc-hero-badge { display: inline-block; background: var(--cc-ink); color: var(--cc-yellow); font-family: var(--cc-display); font-size: .9rem; padding: .4rem 1rem; letter-spacing: .08em; transform: rotate(-2deg); border: 2px solid var(--cc-ink); }
+    .cc-hero-title { font-family: var(--cc-display); font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; letter-spacing: .02em; color: var(--cc-ink); margin-top: 1.5rem; text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
+    .cc-hero-title .pop { color: var(--cc-white); -webkit-text-stroke: 2px var(--cc-ink); paint-order: stroke fill; }
+    .cc-hero-sub { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; max-width: 480px; color: rgba(45,45,45,0.85); }
+    .cc-hero-cta { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .cc-hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+    /* speech bubble */
+    .cc-speech { position: relative; background: var(--cc-white); border: 3px solid var(--cc-ink); border-radius: 30px; padding: 2rem 2.5rem; font-family: var(--cc-display); font-size: 1.6rem; text-align: center; box-shadow: 5px 5px 0 var(--cc-ink); max-width: 380px; transform: rotate(2deg); }
+    .cc-speech::after { content: ''; position: absolute; bottom: -25px; left: 40px; width: 0; height: 0; border-left: 20px solid transparent; border-right: 10px solid transparent; border-top: 25px solid var(--cc-ink); }
+    .cc-speech::before { content: ''; position: absolute; bottom: -20px; left: 42px; width: 0; height: 0; border-left: 17px solid transparent; border-right: 8px solid transparent; border-top: 22px solid var(--cc-white); z-index: 1; }
+    .cc-speech .emoji { font-size: 3rem; display: block; margin-bottom: .5rem; }
+    .cc-speech .highlight { color: var(--cc-pink); }
+
+    /* floating cats */
+    .cc-float-cat { position: absolute; font-size: 2rem; animation: cc-float 6s ease-in-out infinite; pointer-events: none; }
+    .cc-float-cat:nth-child(1) { top: 10%; right: 5%; animation-delay: 0s; }
+    .cc-float-cat:nth-child(2) { bottom: 15%; left: 8%; animation-delay: 1.5s; }
+    .cc-float-cat:nth-child(3) { top: 60%; right: 12%; animation-delay: 3s; }
+    @keyframes cc-float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+
+    /* ===== SECTION DIVIDER — ZAP LINE ===== */
+    .cc-zap { position: relative; height: 80px; overflow: hidden; }
+    .cc-zap svg { position: absolute; bottom: 0; width: 100%; height: 80px; }
+
+    /* ===== PROBLEM SECTION — COMIC STRIP ===== */
+    .cc-problems { padding: 6rem 2rem; position: relative; z-index: 1; background: var(--cc-white); border-bottom: 5px solid var(--cc-ink); }
+    .cc-section-label { font-family: var(--cc-display); font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; color: var(--cc-pink); margin-bottom: .5rem; }
+    .cc-section-title { font-family: var(--cc-display); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 3rem; }
+    .cc-comic-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; border: 4px solid var(--cc-ink); }
+    .cc-panel { border: 2px solid var(--cc-ink); padding: 2rem 1.5rem; position: relative; overflow: hidden; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; transition: background .3s; }
+    .cc-panel:nth-child(1) { background: rgba(255,107,157,0.08); }
+    .cc-panel:nth-child(2) { background: rgba(78,205,196,0.08); }
+    .cc-panel:nth-child(3) { background: rgba(255,230,109,0.08); }
+    .cc-panel:nth-child(4) { background: rgba(167,139,250,0.08); }
+    .cc-panel:hover { background: rgba(255,230,109,0.15); }
+    .cc-panel-num { position: absolute; top: .5rem; left: .8rem; font-family: var(--cc-display); font-size: 2.5rem; color: rgba(45,45,45,0.08); }
+    .cc-panel-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cc-panel-title { font-family: var(--cc-display); font-size: 1.2rem; letter-spacing: .03em; margin-bottom: .5rem; }
+    .cc-panel-text { font-size: .9rem; color: rgba(45,45,45,0.7); line-height: 1.6; }
+    /* thought bubble for panel */
+    .cc-panel-thought { position: absolute; top: 8px; right: 8px; background: var(--cc-white); border: 2px solid var(--cc-ink); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 2px 2px 0 var(--cc-ink); }
+
+    /* ===== POLAROID SCATTER — PRODUCT SHOWCASE ===== */
+    .cc-products { padding: 6rem 2rem 8rem; position: relative; z-index: 1; overflow: hidden; }
+    .cc-products-inner { max-width: 1300px; margin: 0 auto; }
+    .cc-scatter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
+    .cc-polaroid { background: var(--cc-white); border: 3px solid var(--cc-ink); padding: 1.2rem 1.2rem .8rem; position: relative; transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; cursor: default; }
+    .cc-polaroid:nth-child(1) { transform: rotate(-3deg); box-shadow: 6px 6px 0 var(--cc-pink); }
+    .cc-polaroid:nth-child(2) { transform: rotate(2deg) translateY(20px); box-shadow: 6px 6px 0 var(--cc-blue); }
+    .cc-polaroid:nth-child(3) { transform: rotate(-1.5deg); box-shadow: 6px 6px 0 var(--cc-yellow); }
+    .cc-polaroid:nth-child(4) { transform: rotate(3deg) translateY(-15px); box-shadow: 6px 6px 0 var(--cc-purple); }
+    .cc-polaroid:nth-child(5) { transform: rotate(-2deg) translateY(10px); box-shadow: 6px 6px 0 var(--cc-orange); }
+    .cc-polaroid:nth-child(6) { transform: rotate(1deg); box-shadow: 6px 6px 0 var(--cc-pink); }
+    .cc-polaroid:hover { transform: rotate(0deg) translateY(-8px) scale(1.03); z-index: 5; box-shadow: 8px 12px 0 rgba(45,45,45,0.15); }
+    .cc-polaroid-img { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--cc-cream) 0%, #eee 100%); border: 2px solid var(--cc-ink); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; position: relative; }
+    .cc-polaroid-img .cc-product-icon { font-size: 3.5rem; }
+    .cc-polaroid-img .cc-product-tag { position: absolute; top: 8px; right: 8px; background: var(--cc-yellow); border: 2px solid var(--cc-ink); font-family: var(--cc-display); font-size: .7rem; padding: .2rem .5rem; letter-spacing: .05em; }
+    .cc-polaroid-caption { padding-top: 1rem; }
+    .cc-polaroid-name { font-family: var(--cc-display); font-size: 1.25rem; letter-spacing: .03em; }
+    .cc-polaroid-desc { font-size: .85rem; color: rgba(45,45,45,0.65); margin-top: .3rem; }
+    .cc-polaroid-feat { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .8rem; }
+    .cc-polaroid-feat span { font-size: .72rem; font-weight: 700; padding: .25rem .6rem; border: 2px solid var(--cc-ink); background: var(--cc-cream); letter-spacing: .03em; }
+    /* tape decoration */
+    .cc-tape { position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 80px; height: 24px; background: rgba(255,230,109,0.7); border: 1px solid rgba(45,45,45,0.15); z-index: 2; }
+
+    /* ===== INTERACTIVE — CAT COMFORT METER ===== */
+    .cc-meter-section { padding: 6rem 2rem; background: var(--cc-ink); color: var(--cc-white); position: relative; z-index: 1; border-top: 5px solid var(--cc-ink); border-bottom: 5px solid var(--cc-ink); overflow: hidden; }
+    .cc-meter-section .cc-halftone-light { position: absolute; inset: 0; pointer-events: none; opacity: .03; background-image: radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1px); background-size: 14px 14px; }
+    .cc-meter-inner { max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+    .cc-meter-title { font-family: var(--cc-display); font-size: clamp(2rem, 5vw, 3rem); color: var(--cc-yellow); margin-bottom: 1rem; }
+    .cc-meter-sub { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cc-meter-display { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .cc-meter-cat { font-size: 5rem; transition: transform .3s; }
+    .cc-meter-value { font-family: var(--cc-display); font-size: 4rem; color: var(--cc-yellow); min-width: 120px; }
+    .cc-meter-label { font-family: var(--cc-display); font-size: 1.1rem; letter-spacing: .05em; min-width: 200px; }
+    .cc-slider-wrap { max-width: 500px; margin: 0 auto; }
+    .cc-slider-track { position: relative; height: 20px; background: rgba(255,255,255,0.1); border: 3px solid rgba(255,255,255,0.3); border-radius: 0; overflow: hidden; }
+    .cc-slider-fill { height: 100%; background: linear-gradient(90deg, var(--cc-blue), var(--cc-yellow), var(--cc-pink)); transition: width .3s; }
+    .cc-slider-input { width: 100%; margin-top: 1rem; -webkit-appearance: none; appearance: none; height: 8px; background: transparent; cursor: pointer; }
+    .cc-slider-input::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; background: var(--cc-yellow); border: 3px solid var(--cc-ink); cursor: grab; }
+    .cc-slider-input::-moz-range-thumb { width: 28px; height: 28px; background: var(--cc-yellow); border: 3px solid var(--cc-ink); cursor: grab; border-radius: 0; }
+    .cc-meter-labels { display: flex; justify-content: space-between; font-size: .75rem; color: rgba(255,255,255,0.4); margin-top: .5rem; font-weight: 700; letter-spacing: .05em; }
+    .cc-meter-rec { margin-top: 2.5rem; background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.15); padding: 1.5rem 2rem; text-align: left; }
+    .cc-meter-rec-title { font-family: var(--cc-display); font-size: 1rem; letter-spacing: .08em; color: var(--cc-pink); margin-bottom: .5rem; }
+    .cc-meter-rec-text { font-size: .95rem; color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+    /* ===== STATS MARQUEE ===== */
+    .cc-marquee { padding: 1.5rem 0; background: var(--cc-yellow); border-top: 4px solid var(--cc-ink); border-bottom: 4px solid var(--cc-ink); overflow: hidden; position: relative; z-index: 1; }
+    .cc-marquee-track { display: flex; gap: 4rem; animation: cc-scroll 25s linear infinite; white-space: nowrap; }
+    .cc-marquee-item { font-family: var(--cc-display); font-size: 1.1rem; letter-spacing: .06em; color: var(--cc-ink); display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
+    .cc-marquee-item .num { font-size: 1.4rem; color: var(--cc-pink); }
+    @keyframes cc-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ===== WHY SECTION — STARBURST FEATURES ===== */
+    .cc-why { padding: 6rem 2rem; background: var(--cc-white); position: relative; z-index: 1; border-bottom: 5px solid var(--cc-ink); }
+    .cc-why-inner { max-width: 1100px; margin: 0 auto; }
+    .cc-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .cc-starburst { background: var(--cc-cream); border: 3px solid var(--cc-ink); padding: 2.5rem 2rem; text-align: center; position: relative; transition: transform .3s, box-shadow .3s; }
+    .cc-starburst:hover { transform: translateY(-5px); box-shadow: 5px 5px 0 var(--cc-ink); }
+    .cc-starburst-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .cc-starburst-title { font-family: var(--cc-display); font-size: 1.2rem; letter-spacing: .04em; margin-bottom: .5rem; }
+    .cc-starburst-text { font-size: .88rem; color: rgba(45,45,45,0.65); line-height: 1.6; }
+    /* alternating accent borders */
+    .cc-starburst:nth-child(1) { border-left: 6px solid var(--cc-pink); }
+    .cc-starburst:nth-child(2) { border-left: 6px solid var(--cc-blue); }
+    .cc-starburst:nth-child(3) { border-left: 6px solid var(--cc-yellow); }
+    .cc-starburst:nth-child(4) { border-left: 6px solid var(--cc-orange); }
+    .cc-starburst:nth-child(5) { border-left: 6px solid var(--cc-purple); }
+    .cc-starburst:nth-child(6) { border-left: 6px solid var(--cc-pink); }
+
+    /* ===== TESTIMONIALS — SPEECH BUBBLES ===== */
+    .cc-testimonials { padding: 6rem 2rem; position: relative; z-index: 1; }
+    .cc-test-inner { max-width: 1100px; margin: 0 auto; }
+    .cc-test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 3rem; }
+    .cc-bubble { background: var(--cc-white); border: 3px solid var(--cc-ink); border-radius: 24px; padding: 2rem 2rem 1.5rem; position: relative; box-shadow: 4px 4px 0 var(--cc-ink); }
+    .cc-bubble::after { content: ''; position: absolute; bottom: -18px; left: 30px; width: 0; height: 0; border-left: 15px solid transparent; border-right: 8px solid transparent; border-top: 18px solid var(--cc-ink); }
+    .cc-bubble::before { content: ''; position: absolute; bottom: -14px; left: 32px; width: 0; height: 0; border-left: 12px solid transparent; border-right: 6px solid transparent; border-top: 15px solid var(--cc-white); z-index: 1; }
+    .cc-bubble:nth-child(even)::after { left: auto; right: 30px; }
+    .cc-bubble:nth-child(even)::before { left: auto; right: 32px; }
+    .cc-bubble-stars { color: var(--cc-yellow); font-size: 1.2rem; margin-bottom: .5rem; text-shadow: 1px 1px 0 var(--cc-ink); }
+    .cc-bubble-quote { font-size: 1rem; line-height: 1.7; font-style: italic; }
+    .cc-bubble-author { margin-top: 1rem; font-family: var(--cc-display); font-size: .9rem; letter-spacing: .04em; color: var(--cc-pink); }
+    .cc-bubble-venue { font-size: .78rem; color: rgba(45,45,45,0.5); }
+
+    /* ===== PROCESS — ZIG ZAG ===== */
+    .cc-process { padding: 6rem 2rem; background: var(--cc-white); border-top: 5px solid var(--cc-ink); border-bottom: 5px solid var(--cc-ink); position: relative; z-index: 1; }
+    .cc-process-inner { max-width: 900px; margin: 0 auto; }
+    .cc-step { display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; }
+    .cc-step:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+    .cc-step-num { flex-shrink: 0; width: 70px; height: 70px; background: var(--cc-yellow); border: 3px solid var(--cc-ink); display: flex; align-items: center; justify-content: center; font-family: var(--cc-display); font-size: 2rem; box-shadow: 3px 3px 0 var(--cc-ink); }
+    .cc-step:nth-child(2) .cc-step-num { background: var(--cc-pink); color: var(--cc-white); }
+    .cc-step:nth-child(3) .cc-step-num { background: var(--cc-blue); }
+    .cc-step:nth-child(4) .cc-step-num { background: var(--cc-purple); color: var(--cc-white); }
+    .cc-step-content { }
+    .cc-step-title { font-family: var(--cc-display); font-size: 1.3rem; letter-spacing: .04em; margin-bottom: .3rem; }
+    .cc-step-text { font-size: .92rem; color: rgba(45,45,45,0.7); line-height: 1.6; max-width: 500px; }
+    .cc-step:nth-child(even) .cc-step-text { margin-left: auto; }
+
+    /* ===== CTA — POW BURST ===== */
+    .cc-cta { padding: 6rem 2rem; background: linear-gradient(135deg, var(--cc-pink) 0%, var(--cc-orange) 100%); text-align: center; position: relative; z-index: 1; overflow: hidden; }
+    .cc-cta-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px); background-size: 18px 18px; pointer-events: none; }
+    .cc-cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .cc-pow { display: inline-block; background: var(--cc-yellow); border: 4px solid var(--cc-ink); padding: 1rem 2.5rem; font-family: var(--cc-display); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--cc-ink); transform: rotate(-3deg); box-shadow: 6px 6px 0 var(--cc-ink); margin-bottom: 2rem; letter-spacing: .03em; }
+    .cc-cta-text { font-size: 1.15rem; color: var(--cc-white); font-weight: 600; max-width: 500px; margin: 0 auto 2rem; text-shadow: 1px 1px 0 rgba(0,0,0,0.1); }
+    .cc-cta .btn-primary { font-size: 1.1rem; padding: .9rem 2.5rem; background: var(--cc-white); color: var(--cc-ink); }
+    .cc-cta-phone { margin-top: 1.5rem; font-family: var(--cc-display); font-size: 1.4rem; color: var(--cc-white); }
+    .cc-cta-phone a { border-bottom: 2px dashed rgba(255,255,255,0.5); }
+
+    /* ===== FOOTER ===== */
+    .cc-footer { background: var(--cc-ink); color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; font-size: .82rem; border-top: 5px solid var(--cc-ink); }
+    .cc-footer a { color: var(--cc-yellow); }
+    .cc-footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .cc-reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .cc-reveal.visible { opacity: 1; transform: none; }
+    .cc-reveal-delay-1 { transition-delay: .1s; }
+    .cc-reveal-delay-2 { transition-delay: .2s; }
+    .cc-reveal-delay-3 { transition-delay: .3s; }
+    .cc-reveal-delay-4 { transition-delay: .4s; }
+    .cc-reveal-delay-5 { transition-delay: .5s; }
+
+    /* ===== FLOATING PAW CURSOR ===== */
+    .cc-paw-cursor { position: fixed; pointer-events: none; z-index: 9998; font-size: 1.5rem; transform: translate(-50%,-50%); transition: opacity .2s; opacity: 0; }
+    .cc-paw-cursor.active { opacity: 1; }
+    @media (pointer: coarse) { .cc-paw-cursor { display: none; } }
+
+    /* ===== FLOATING DECORATIONS ===== */
+    .cc-deco { position: absolute; pointer-events: none; z-index: 0; }
+    .cc-deco-star { font-size: 2rem; animation: cc-twinkle 2s ease-in-out infinite; }
+    @keyframes cc-twinkle { 0%,100% { opacity: .3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .cc-hero-content { grid-template-columns: 1fr; text-align: center; padding-top: 7rem; }
+      .cc-hero-sub { margin-left: auto; margin-right: auto; }
+      .cc-hero-cta { justify-content: center; }
+      .cc-comic-strip { grid-template-columns: repeat(2, 1fr); }
+      .cc-scatter { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .cc-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .cc-test-grid { grid-template-columns: 1fr; }
+      .nav { display: none; }
+      .header-phone { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+    @media (max-width: 600px) {
+      .cc-comic-strip { grid-template-columns: 1fr; }
+      .cc-scatter { grid-template-columns: 1fr; }
+      .cc-polaroid { transform: rotate(0deg) !important; }
+      .cc-why-grid { grid-template-columns: 1fr; }
+      .cc-step, .cc-step:nth-child(even) { flex-direction: column; text-align: left; }
+      .cc-step:nth-child(even) .cc-step-text { margin-left: 0; }
+      .cc-meter-display { flex-direction: column; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="lp-catcafe">
+
+  <!-- LOADER -->
+  <div class="cc-loader" id="loader">
+    <div class="cc-loader-paw">🐾</div>
+    <div class="cc-loader-text">Loading Purrfection...</div>
+  </div>
+
+  <!-- HALFTONE BG -->
+  <div class="cc-halftone"></div>
+
+  <!-- PAW CURSOR -->
+  <div class="cc-paw-cursor" id="pawCursor">🐾</div>
+
+  <!-- HEADER -->
+  <header class="header" id="siteHeader">
+    <div class="header-inner">
+      <a href="https://iseekblinds.com.au" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <nav class="nav">
+        <a href="#problems">The Problem</a>
+        <a href="#products">Solutions</a>
+        <a href="#comfort">Comfort Meter</a>
+        <a href="#process">How It Works</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0390005512" class="header-phone">03 9000 5512</a>
+        <a href="https://iseekblinds.com.au/request-quote" class="btn-primary">Free Quote</a>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="cc-hero">
+    <div class="cc-hero-bg"></div>
+    <div class="cc-hero-dots"></div>
+    <div class="cc-hero-lines"></div>
+    <div class="cc-float-cat">🐱</div>
+    <div class="cc-float-cat">😺</div>
+    <div class="cc-float-cat">🐈</div>
+    <div class="cc-hero-content">
+      <div class="cc-hero-text cc-reveal">
+        <div class="cc-hero-badge">🐾 CAT CAFÉ SPECIALISTS</div>
+        <h1 class="cc-hero-title">Blinds That<br>Cats <span class="pop">Can't</span><br>Destroy</h1>
+        <p class="cc-hero-sub">Scratch-proof, fur-resistant, easy-clean window treatments designed for the unique chaos of cat cafés. Because your feline residents have strong opinions about sunbeams.</p>
+        <div class="cc-hero-cta">
+          <a href="https://iseekblinds.com.au/request-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="tel:0390005512" class="btn-primary" style="background: var(--cc-white);">📞 Call Us</a>
+        </div>
+      </div>
+      <div class="cc-hero-visual cc-reveal cc-reveal-delay-2">
+        <div class="cc-speech">
+          <span class="emoji">😸</span>
+          "We tested these blinds<br>with <span class="highlight">23 cats</span>.<br>Zero scratches."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEMS — COMIC STRIP ===== -->
+  <section class="cc-problems" id="problems">
+    <div style="max-width:1200px; margin:0 auto; text-align:center;">
+      <div class="cc-section-label cc-reveal">THE STRUGGLE IS REAL</div>
+      <h2 class="cc-section-title cc-reveal cc-reveal-delay-1">Every Cat Café Owner Knows...</h2>
+    </div>
+    <div class="cc-comic-strip cc-reveal cc-reveal-delay-2">
+      <div class="cc-panel">
+        <div class="cc-panel-num">01</div>
+        <div class="cc-panel-thought">😿</div>
+        <div>
+          <div class="cc-panel-icon">🪟</div>
+          <div class="cc-panel-title">Shredded Blinds</div>
+          <div class="cc-panel-text">Standard blinds last about 3 weeks before becoming a cat toy. Vertical slats? Gone. Cord pulls? Cat swings.</div>
+        </div>
+      </div>
+      <div class="cc-panel">
+        <div class="cc-panel-num">02</div>
+        <div class="cc-panel-thought">🤧</div>
+        <div>
+          <div class="cc-panel-icon">☀️</div>
+          <div class="cc-panel-title">UV & Heat Stress</div>
+          <div class="cc-panel-text">Cats need warm nap spots, not sunburn zones. Unfiltered UV overheats the café and stresses your fur residents.</div>
+        </div>
+      </div>
+      <div class="cc-panel">
+        <div class="cc-panel-num">03</div>
+        <div class="cc-panel-thought">🙀</div>
+        <div>
+          <div class="cc-panel-icon">🧹</div>
+          <div class="cc-panel-title">Fur Everywhere</div>
+          <div class="cc-panel-text">Cat hair clings to fabric blinds like magnets. Cleaning day becomes cleaning week. Your customers notice.</div>
+        </div>
+      </div>
+      <div class="cc-panel">
+        <div class="cc-panel-num">04</div>
+        <div class="cc-panel-thought">⚠️</div>
+        <div>
+          <div class="cc-panel-icon">🔗</div>
+          <div class="cc-panel-title">Safety Hazards</div>
+          <div class="cc-panel-text">Dangling cords and loose components are genuine dangers for curious cats. Cordless isn't optional—it's essential.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="cc-marquee">
+    <div class="cc-marquee-track" id="marquee">
+      <span class="cc-marquee-item"><span class="num">200+</span> Cat Cafés Fitted</span>
+      <span class="cc-marquee-item">⭐ 4.9 Star Average</span>
+      <span class="cc-marquee-item"><span class="num">100%</span> Cordless Options</span>
+      <span class="cc-marquee-item">🐾 Cat-Tested, Owner-Approved</span>
+      <span class="cc-marquee-item"><span class="num">5yr</span> Scratch Warranty</span>
+      <span class="cc-marquee-item">🇦🇺 Melbourne Made</span>
+      <span class="cc-marquee-item"><span class="num">0</span> Cats Harmed</span>
+      <span class="cc-marquee-item">📏 Free Measure & Quote</span>
+      <span class="cc-marquee-item"><span class="num">200+</span> Cat Cafés Fitted</span>
+      <span class="cc-marquee-item">⭐ 4.9 Star Average</span>
+      <span class="cc-marquee-item"><span class="num">100%</span> Cordless Options</span>
+      <span class="cc-marquee-item">🐾 Cat-Tested, Owner-Approved</span>
+      <span class="cc-marquee-item"><span class="num">5yr</span> Scratch Warranty</span>
+      <span class="cc-marquee-item">🇦🇺 Melbourne Made</span>
+      <span class="cc-marquee-item"><span class="num">0</span> Cats Harmed</span>
+      <span class="cc-marquee-item">📏 Free Measure & Quote</span>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCTS — POLAROID SCATTER ===== -->
+  <section class="cc-products" id="products">
+    <div class="cc-products-inner">
+      <div style="text-align:center;">
+        <div class="cc-section-label cc-reveal">PURRFECT SOLUTIONS</div>
+        <h2 class="cc-section-title cc-reveal cc-reveal-delay-1">Cat-Proof Blinds That<br>Actually Work</h2>
+      </div>
+      <div class="cc-scatter">
+        <div class="cc-polaroid cc-reveal">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🪟</span>
+            <span class="cc-product-tag">TOP PICK</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Aluminium Venetians</div>
+            <div class="cc-polaroid-desc">Scratch-proof aluminium slats. Cats can bat them all day—zero damage.</div>
+            <div class="cc-polaroid-feat">
+              <span>Scratch-Proof</span>
+              <span>Cordless</span>
+              <span>Easy Wipe</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc-polaroid cc-reveal cc-reveal-delay-1">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🌀</span>
+            <span class="cc-product-tag">POPULAR</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Roller Blinds</div>
+            <div class="cc-polaroid-desc">Smooth PVC-coated fabric. No texture for claws to grip. Rolls up out of reach.</div>
+            <div class="cc-polaroid-feat">
+              <span>Claw-Proof</span>
+              <span>UV Block</span>
+              <span>Motorised</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc-polaroid cc-reveal cc-reveal-delay-2">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🏠</span>
+            <span class="cc-product-tag">PREMIUM</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Plantation Shutters</div>
+            <div class="cc-polaroid-desc">Solid timber or PVC. Cat perch-compatible. Looks gorgeous, built to last.</div>
+            <div class="cc-polaroid-feat">
+              <span>Indestructible</span>
+              <span>Cat Perch</span>
+              <span>Premium</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc-polaroid cc-reveal cc-reveal-delay-3">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🌓</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Day/Night Rollers</div>
+            <div class="cc-polaroid-desc">Alternating sheer & opaque bands. Cats get sunbeams. Humans get privacy.</div>
+            <div class="cc-polaroid-feat">
+              <span>Dual Layer</span>
+              <span>Light Play</span>
+              <span>Cordless</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc-polaroid cc-reveal cc-reveal-delay-4">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🎛️</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Motorised Smart Blinds</div>
+            <div class="cc-polaroid-desc">Schedule sunbeam windows automatically. No cords, no manual fuss.</div>
+            <div class="cc-polaroid-feat">
+              <span>Smart Home</span>
+              <span>Scheduled</span>
+              <span>Zero Cords</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc-polaroid cc-reveal cc-reveal-delay-5">
+          <div class="cc-tape"></div>
+          <div class="cc-polaroid-img">
+            <span class="cc-product-icon">🖼️</span>
+          </div>
+          <div class="cc-polaroid-caption">
+            <div class="cc-polaroid-name">Printed Rollers</div>
+            <div class="cc-polaroid-desc">Custom cat-themed prints on durable fabric. Instagram-worthy interiors.</div>
+            <div class="cc-polaroid-feat">
+              <span>Custom Art</span>
+              <span>Branded</span>
+              <span>Washable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE CAT COMFORT METER ===== -->
+  <section class="cc-meter-section" id="comfort">
+    <div class="cc-halftone-light"></div>
+    <div class="cc-meter-inner">
+      <div class="cc-section-label cc-reveal" style="color: var(--cc-pink);">INTERACTIVE TOOL</div>
+      <h2 class="cc-meter-title cc-reveal cc-reveal-delay-1">🐱 Cat Comfort Meter</h2>
+      <p class="cc-meter-sub cc-reveal cc-reveal-delay-2">How much sunlight does your café get? Slide to find the purrfect blind solution.</p>
+      <div class="cc-meter-display cc-reveal cc-reveal-delay-2">
+        <div class="cc-meter-cat" id="comfortCat">😺</div>
+        <div class="cc-meter-value" id="comfortValue">50%</div>
+        <div class="cc-meter-label" id="comfortLabel">Moderate Sun</div>
+      </div>
+      <div class="cc-slider-wrap cc-reveal cc-reveal-delay-3">
+        <div class="cc-slider-track">
+          <div class="cc-slider-fill" id="sliderFill" style="width:50%"></div>
+        </div>
+        <input type="range" min="0" max="100" value="50" class="cc-slider-input" id="comfortSlider">
+        <div class="cc-meter-labels">
+          <span>🌙 Shade</span>
+          <span>☀️ Full Sun</span>
+        </div>
+      </div>
+      <div class="cc-meter-rec cc-reveal cc-reveal-delay-4" id="comfortRec">
+        <div class="cc-meter-rec-title">💡 RECOMMENDATION</div>
+        <div class="cc-meter-rec-text" id="comfortRecText">Day/Night Rollers are perfect for moderate light — let cats pick their sunny spot while protecting furniture from UV damage.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ISEEKBLINDS ===== -->
+  <section class="cc-why" id="why">
+    <div class="cc-why-inner">
+      <div style="text-align:center;">
+        <div class="cc-section-label cc-reveal">WHY US</div>
+        <h2 class="cc-section-title cc-reveal cc-reveal-delay-1">Built for Cats.<br>Designed for Humans.</h2>
+      </div>
+      <div class="cc-why-grid">
+        <div class="cc-starburst cc-reveal">
+          <div class="cc-starburst-icon">🛡️</div>
+          <div class="cc-starburst-title">5-Year Scratch Warranty</div>
+          <div class="cc-starburst-text">If a cat damages your blinds within 5 years, we'll replace the affected components. That's how confident we are.</div>
+        </div>
+        <div class="cc-starburst cc-reveal cc-reveal-delay-1">
+          <div class="cc-starburst-icon">🧹</div>
+          <div class="cc-starburst-title">Anti-Fur Coating</div>
+          <div class="cc-starburst-text">Special coating repels pet hair and dander. A quick wipe is all you need — even with 20 cats shedding.</div>
+        </div>
+        <div class="cc-starburst cc-reveal cc-reveal-delay-2">
+          <div class="cc-starburst-icon">🔇</div>
+          <div class="cc-starburst-title">100% Cordless</div>
+          <div class="cc-starburst-text">Every blind is cordless or motorised. No dangling temptations, no safety risks. Council-approved for animal venues.</div>
+        </div>
+        <div class="cc-starburst cc-reveal cc-reveal-delay-3">
+          <div class="cc-starburst-icon">📐</div>
+          <div class="cc-starburst-title">Free On-Site Measure</div>
+          <div class="cc-starburst-text">We measure around the cat trees, scratching posts, and window perches. We know the layout matters.</div>
+        </div>
+        <div class="cc-starburst cc-reveal cc-reveal-delay-4">
+          <div class="cc-starburst-icon">⚡</div>
+          <div class="cc-starburst-title">Install Around Cats</div>
+          <div class="cc-starburst-text">Our installers are experienced with animals. No need to lock cats away — we work around your schedule and theirs.</div>
+        </div>
+        <div class="cc-starburst cc-reveal cc-reveal-delay-5">
+          <div class="cc-starburst-icon">🎨</div>
+          <div class="cc-starburst-title">Custom Branding</div>
+          <div class="cc-starburst-text">Print your café logo, cat portraits, or custom patterns on roller blinds. Make your windows as Instagrammable as your cats.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="cc-testimonials">
+    <div class="cc-test-inner">
+      <div style="text-align:center;">
+        <div class="cc-section-label cc-reveal">HAPPY HUMANS & CATS</div>
+        <h2 class="cc-section-title cc-reveal cc-reveal-delay-1">What Café Owners Say</h2>
+      </div>
+      <div class="cc-test-grid">
+        <div class="cc-bubble cc-reveal">
+          <div class="cc-bubble-stars">★★★★★</div>
+          <div class="cc-bubble-quote">"Our 15 rescue cats tried everything to destroy these blinds. Six months later — not a single scratch. The motorised option means we can schedule 'sunbeam time' and the cats go crazy for it."</div>
+          <div class="cc-bubble-author">Sarah M.</div>
+          <div class="cc-bubble-venue">Whiskers & Lattes, Fitzroy</div>
+        </div>
+        <div class="cc-bubble cc-reveal cc-reveal-delay-1">
+          <div class="cc-bubble-stars">★★★★★</div>
+          <div class="cc-bubble-quote">"We were replacing curtains every 2 months. iSeekBlinds installed aluminium venetians with custom cat prints — our Instagram followers doubled and maintenance dropped to zero."</div>
+          <div class="cc-bubble-author">James K.</div>
+          <div class="cc-bubble-venue">Purrfect Brew, South Melbourne</div>
+        </div>
+        <div class="cc-bubble cc-reveal cc-reveal-delay-2">
+          <div class="cc-bubble-stars">★★★★★</div>
+          <div class="cc-bubble-quote">"The plantation shutters doubled as cat perches — our cats loved sitting on the louvres watching the street. Customers love it too. Best investment we made."</div>
+          <div class="cc-bubble-author">Li W.</div>
+          <div class="cc-bubble-venue">Meow Manor, Richmond</div>
+        </div>
+        <div class="cc-bubble cc-reveal cc-reveal-delay-3">
+          <div class="cc-bubble-stars">★★★★★</div>
+          <div class="cc-bubble-quote">"Council required cordless blinds for our animal venue licence. iSeekBlinds sorted everything — motorised rollers with UV protection. The cats have never been calmer during afternoon sun."</div>
+          <div class="cc-bubble-author">Emma T.</div>
+          <div class="cc-bubble-venue">Cat Haven Café, Brunswick</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="cc-process" id="process">
+    <div class="cc-process-inner">
+      <div style="text-align:center;">
+        <div class="cc-section-label cc-reveal">HOW IT WORKS</div>
+        <h2 class="cc-section-title cc-reveal cc-reveal-delay-1">4 Steps to Cat-Proof Windows</h2>
+      </div>
+      <div style="margin-top:3rem;">
+        <div class="cc-step cc-reveal">
+          <div class="cc-step-num">1</div>
+          <div class="cc-step-content">
+            <div class="cc-step-title">🐾 Tell Us About Your Cats</div>
+            <div class="cc-step-text">How many cats? Climbers or loungers? Window perches? We ask the right questions so we recommend the right blinds.</div>
+          </div>
+        </div>
+        <div class="cc-step cc-reveal cc-reveal-delay-1">
+          <div class="cc-step-num">2</div>
+          <div class="cc-step-content">
+            <div class="cc-step-title">📐 Free On-Site Measure</div>
+            <div class="cc-step-text">We visit your café (yes, we'll meet the cats). We measure every window, note the cat furniture layout, and assess light conditions.</div>
+          </div>
+        </div>
+        <div class="cc-step cc-reveal cc-reveal-delay-2">
+          <div class="cc-step-num">3</div>
+          <div class="cc-step-content">
+            <div class="cc-step-title">🎨 Custom Design & Quote</div>
+            <div class="cc-step-text">Choose materials, colours, and optional custom prints. Get a transparent quote with no hidden costs. Samples available.</div>
+          </div>
+        </div>
+        <div class="cc-step cc-reveal cc-reveal-delay-3">
+          <div class="cc-step-num">4</div>
+          <div class="cc-step-content">
+            <div class="cc-step-title">⚡ Cat-Friendly Install</div>
+            <div class="cc-step-text">Our team installs around your cats and business hours. Quick, clean, no disruption. Cats supervise the process (they always do).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cc-cta">
+    <div class="cc-cta-dots"></div>
+    <div class="cc-cta-inner">
+      <div class="cc-pow cc-reveal">POW! Free Quote 💥</div>
+      <p class="cc-cta-text cc-reveal cc-reveal-delay-1">Your cats deserve better than shredded curtains. Get scratch-proof, fur-resistant blinds custom-made for your café.</p>
+      <a href="https://iseekblinds.com.au/request-quote" class="btn-primary cc-reveal cc-reveal-delay-2">Get Your Free Quote</a>
+      <div class="cc-cta-phone cc-reveal cc-reveal-delay-3">
+        or call <a href="tel:0390005512">03 9000 5512</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="cc-footer">
+    <div class="cc-footer-links">
+      <a href="https://iseekblinds.com.au">Home</a>
+      <a href="https://iseekblinds.com.au/products">Products</a>
+      <a href="https://iseekblinds.com.au/request-quote">Free Quote</a>
+      <a href="tel:0390005512">03 9000 5512</a>
+    </div>
+    <p>© 2026 iSeekBlinds Melbourne | ABN 123 456 789 | Cat-Approved Since Day One 🐱</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // Loader
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 600);
+  });
+
+  // Auto-hide header
+  let lastScroll = 0;
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 60);
+    header.classList.toggle('hide', y > lastScroll && y > 300);
+    lastScroll = y;
+  }, { passive: true });
+
+  // Scroll reveals
+  const reveals = document.querySelectorAll('.cc-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Paw cursor
+  const paw = document.getElementById('pawCursor');
+  let px = 0, py = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', e => { px = e.clientX; py = e.clientY; paw.classList.add('active'); });
+  document.addEventListener('mouseleave', () => paw.classList.remove('active'));
+  (function animCursor() {
+    cx += (px - cx) * 0.12;
+    cy += (py - cy) * 0.12;
+    paw.style.left = cx + 'px';
+    paw.style.top = cy + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+
+  // Cat Comfort Meter
+  const slider = document.getElementById('comfortSlider');
+  const fill = document.getElementById('sliderFill');
+  const catEl = document.getElementById('comfortCat');
+  const valEl = document.getElementById('comfortValue');
+  const labelEl = document.getElementById('comfortLabel');
+  const recEl = document.getElementById('comfortRecText');
+
+  const levels = [
+    { max: 20, cat: '😴', label: 'Low Light / Shade', rec: 'Sheer Rollers let in gentle ambient light — perfect for sleepy, shaded cafés. Cats love the cosy dimness for afternoon naps.' },
+    { max: 40, cat: '😺', label: 'Gentle Morning Sun', rec: 'Day/Night Rollers give you the best of both worlds. Open for morning sunbeams, close for afternoon privacy.' },
+    { max: 60, cat: '😸', label: 'Moderate Sunlight', rec: 'Aluminium Venetians with anti-glare slats. Cats can bask in filtered light without overheating. Easy to tilt for perfect angles.' },
+    { max: 80, cat: '🙀', label: 'Strong Afternoon Sun', rec: 'UV-blocking Roller Blinds are essential. Block 95% UV to protect cats and furniture. Motorised option lets you schedule shade time.' },
+    { max: 100, cat: '😾', label: 'Intense Full Sun', rec: 'Plantation Shutters or Blockout Rollers are your best bet. Maximum heat and UV rejection. Your cats will thank you — and so will your electricity bill.' }
+  ];
+
+  slider.addEventListener('input', () => {
+    const v = parseInt(slider.value);
+    fill.style.width = v + '%';
+    valEl.textContent = v + '%';
+    const level = levels.find(l => v <= l.max);
+    catEl.textContent = level.cat;
+    labelEl.textContent = level.label;
+    recEl.textContent = level.rec;
+    catEl.style.transform = `scale(${1 + v / 200})`;
+  });
+
+  // Counter animation for marquee numbers
+  const counters = document.querySelectorAll('.cc-marquee-item .num');
+  // (marquee handles itself via CSS animation)
+
+})();
+</script>
+</body>
+</html>
