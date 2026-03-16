@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caravan & Motorhome Blinds | Custom Window Coverings for RVs | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom-fit blinds for caravans, motorhomes, campervans & RVs. Lightweight, compact roller blinds, honeycomb shades & blackout solutions. Melbourne specialists with Australia-wide delivery.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cv-concrete: #D4CFC9;
+      --cv-dark: #1A1A1A;
+      --cv-copper: #B87333;
+      --cv-copper-light: #D4944A;
+      --cv-rust: #8B4513;
+      --cv-steel: #71797E;
+      --cv-cream: #F5F0EB;
+      --cv-warm-grey: #A69E97;
+      --cv-off-white: #EDE8E3;
+      --cv-charcoal: #2D2D2D;
+      --cv-font-display: 'Archivo Black', sans-serif;
+      --cv-font-body: 'Source Serif 4', Georgia, serif;
+    }
+
+    .lp-cv { background: var(--cv-cream); color: var(--cv-dark); font-family: var(--cv-font-body); overflow-x: hidden; }
+    .lp-cv * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== HEADER OVERRIDES ===== */
+    .lp-cv .header { background: var(--cv-dark); border-bottom: 3px solid var(--cv-copper); position: sticky; top: 0; z-index: 200; }
+    .lp-cv .header .logo-i { color: var(--cv-copper); }
+    .lp-cv .header .logo-seek, .lp-cv .header .logo-blinds { color: var(--cv-cream); }
+    .lp-cv .header .nav a { color: var(--cv-concrete); font-family: var(--cv-font-body); font-size: 0.8rem; letter-spacing: 0.03em; font-weight: 400; }
+    .lp-cv .header .nav a:hover { color: var(--cv-copper-light); }
+    .lp-cv .header .header-phone { color: var(--cv-copper-light); font-family: var(--cv-font-body); font-weight: 600; font-size: 0.85rem; }
+    .lp-cv .header .btn-primary { background: var(--cv-copper); color: #fff; border: none; font-family: var(--cv-font-display); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0; padding: 12px 28px; }
+    .lp-cv .header .btn-primary:hover { background: var(--cv-copper-light); }
+
+    /* ===== PERSPECTIVE STAGE ===== */
+    .cv-stage {
+      perspective: 1200px;
+      perspective-origin: 50% 40%;
+      min-height: 100vh;
+      position: relative;
+      padding: 120px 0 80px;
+      background:
+        repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(0,0,0,0.03) 99px, rgba(0,0,0,0.03) 100px),
+        repeating-linear-gradient(0deg, transparent, transparent 99px, rgba(0,0,0,0.03) 99px, rgba(0,0,0,0.03) 100px),
+        var(--cv-cream);
+      overflow: hidden;
+    }
+    .cv-stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ===== FLOATING 3D PANELS ===== */
+    .cv-panel {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      z-index: 2;
+    }
+    .cv-panel:hover {
+      transform: translateZ(20px);
+    }
+
+    .cv-hero-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      align-items: center;
+      position: relative;
+    }
+
+    .cv-hero-text {
+      transform: rotateY(2deg) translateZ(30px);
+      transform-style: preserve-3d;
+      padding: 60px 0;
+      opacity: 0;
+      animation: cv-slideIn 1s 0.3s forwards;
+    }
+    .cv-hero-tag {
+      font-family: var(--cv-font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cv-copper);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cv-hero-tag::before {
+      content: '';
+      width: 40px;
+      height: 3px;
+      background: var(--cv-copper);
+    }
+    .cv-hero-h1 {
+      font-family: var(--cv-font-display);
+      font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--cv-dark);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .cv-hero-h1 span {
+      display: block;
+      color: var(--cv-copper);
+      font-size: 0.55em;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+    .cv-hero-desc {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--cv-steel);
+      max-width: 480px;
+      font-weight: 300;
+    }
+
+    .cv-hero-image {
+      position: relative;
+      transform: rotateY(-4deg) rotateX(2deg) translateZ(0px);
+      transform-style: preserve-3d;
+      opacity: 0;
+      animation: cv-floatIn 1.2s 0.6s forwards;
+    }
+    .cv-hero-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+      box-shadow: -30px 30px 0 var(--cv-charcoal);
+    }
+    .cv-hero-img-badge {
+      position: absolute;
+      bottom: -30px;
+      left: -40px;
+      width: 140px;
+      height: 140px;
+      background: var(--cv-copper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--cv-font-display);
+      transform: rotateZ(-6deg) translateZ(60px);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+    }
+    .cv-hero-img-badge .num { font-size: 2.4rem; line-height: 1; }
+    .cv-hero-img-badge .txt { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
+
+    @keyframes cv-slideIn {
+      to { opacity: 1; }
+    }
+    @keyframes cv-floatIn {
+      from { opacity: 0; transform: rotateY(-8deg) rotateX(4deg) translateZ(-40px); }
+      to { opacity: 1; transform: rotateY(-4deg) rotateX(2deg) translateZ(0px); }
+    }
+
+    /* ===== STATS RIBBON ===== */
+    .cv-stats {
+      background: var(--cv-dark);
+      padding: 50px 40px;
+      margin-top: 80px;
+      position: relative;
+      z-index: 3;
+      overflow: hidden;
+    }
+    .cv-stats::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, var(--cv-copper) 0, var(--cv-copper) 40px, transparent 40px, transparent 60px);
+    }
+    .cv-stats-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cv-stat {
+      text-align: center;
+      flex: 1;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .cv-stat.visible { animation: cv-fadeUp 0.6s forwards; }
+    .cv-stat-num {
+      font-family: var(--cv-font-display);
+      font-size: 2.8rem;
+      color: var(--cv-copper-light);
+      line-height: 1;
+    }
+    .cv-stat-label {
+      font-family: var(--cv-font-body);
+      font-size: 0.85rem;
+      color: var(--cv-warm-grey);
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+    }
+    @keyframes cv-fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== 3D CARD GRID — SOLUTIONS ===== */
+    .cv-solutions {
+      perspective: 1000px;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 100px 40px;
+    }
+    .cv-section-label {
+      font-family: var(--cv-font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cv-copper);
+      margin-bottom: 12px;
+    }
+    .cv-section-title {
+      font-family: var(--cv-font-display);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 60px;
+      max-width: 600px;
+    }
+
+    .cv-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .cv-card {
+      background: var(--cv-off-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 48px 36px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: default;
+      overflow: hidden;
+    }
+    .cv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--cv-copper);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .cv-card:hover::before { transform: scaleX(1); }
+    .cv-card:hover {
+      background: #fff;
+      transform: translateZ(20px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      z-index: 5;
+    }
+    .cv-card-num {
+      font-family: var(--cv-font-display);
+      font-size: 4rem;
+      color: rgba(0,0,0,0.04);
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      line-height: 1;
+    }
+    .cv-card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .cv-card h3 {
+      font-family: var(--cv-font-display);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      color: var(--cv-dark);
+    }
+    .cv-card p {
+      font-family: var(--cv-font-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--cv-steel);
+      font-weight: 300;
+    }
+
+    /* ===== LAYERED DEPTH SECTION — WHY US ===== */
+    .cv-why {
+      background: var(--cv-charcoal);
+      position: relative;
+      padding: 120px 0;
+      overflow: hidden;
+    }
+    .cv-why::before {
+      content: 'BUILT FOR THE ROAD';
+      position: absolute;
+      font-family: var(--cv-font-display);
+      font-size: clamp(4rem, 10vw, 12rem);
+      color: rgba(255,255,255,0.02);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateZ(-5deg);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .cv-why-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .cv-why-left {
+      position: relative;
+    }
+    .cv-why-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      filter: grayscale(30%);
+      position: relative;
+      z-index: 2;
+    }
+    .cv-why-img-shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--cv-copper);
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+    .cv-why-right { color: var(--cv-cream); }
+    .cv-why-right .cv-section-label { color: var(--cv-copper-light); }
+    .cv-why-right .cv-section-title { color: #fff; margin-bottom: 40px; }
+
+    .cv-why-list { list-style: none; }
+    .cv-why-list li {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: start;
+    }
+    .cv-why-list li:last-child { border-bottom: none; }
+    .cv-why-num {
+      font-family: var(--cv-font-display);
+      font-size: 1.4rem;
+      color: var(--cv-copper-light);
+    }
+    .cv-why-content h4 {
+      font-family: var(--cv-font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .cv-why-content p {
+      font-family: var(--cv-font-body);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--cv-warm-grey);
+      font-weight: 300;
+    }
+
+    /* ===== PRODUCT SHOWCASE — FLOATING LAYERS ===== */
+    .cv-products {
+      padding: 120px 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+    .cv-prod-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+    }
+    .cv-prod-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+      transform-style: preserve-3d;
+      min-height: 320px;
+    }
+    .cv-prod-item:nth-child(even) { direction: rtl; }
+    .cv-prod-item:nth-child(even) > * { direction: ltr; }
+    .cv-prod-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .cv-prod-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(15%) contrast(1.05);
+      transition: transform 0.6s ease;
+    }
+    .cv-prod-item:hover .cv-prod-img { transform: scale(1.06); }
+    .cv-prod-info {
+      background: var(--cv-off-white);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+    }
+    .cv-prod-item:hover .cv-prod-info {
+      background: #fff;
+      box-shadow: 10px 10px 0 var(--cv-copper);
+    }
+    .cv-prod-info h3 {
+      font-family: var(--cv-font-display);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .cv-prod-info p {
+      font-family: var(--cv-font-body);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--cv-steel);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .cv-prod-price {
+      font-family: var(--cv-font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--cv-copper);
+    }
+
+    /* ===== PROCESS TIMELINE ===== */
+    .cv-process {
+      background: var(--cv-dark);
+      padding: 100px 40px;
+      position: relative;
+    }
+    .cv-process-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .cv-process .cv-section-label { color: var(--cv-copper-light); }
+    .cv-process .cv-section-title { color: #fff; margin-bottom: 70px; }
+    .cv-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .cv-timeline::before {
+      content: '';
+      position: absolute;
+      top: 34px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cv-copper), var(--cv-copper-light));
+    }
+    .cv-step {
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+    .cv-step-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--cv-copper);
+      border: 4px solid var(--cv-dark);
+      border-radius: 0;
+      margin: 26px auto 30px;
+      position: relative;
+      z-index: 2;
+      transform: rotate(45deg);
+      transition: all 0.3s ease;
+    }
+    .cv-step:hover .cv-step-dot {
+      background: var(--cv-copper-light);
+      transform: rotate(45deg) scale(1.3);
+    }
+    .cv-step-num {
+      font-family: var(--cv-font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--cv-warm-grey);
+      text-transform: uppercase;
+    }
+    .cv-step h4 {
+      font-family: var(--cv-font-display);
+      font-size: 0.85rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .cv-step p {
+      font-family: var(--cv-font-body);
+      font-size: 0.85rem;
+      color: var(--cv-warm-grey);
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    /* ===== TESTIMONIAL ===== */
+    .cv-testimonial {
+      padding: 100px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cv-quote-mark {
+      font-family: var(--cv-font-display);
+      font-size: 6rem;
+      color: var(--cv-copper);
+      line-height: 0.5;
+      margin-bottom: 20px;
+    }
+    .cv-quote-text {
+      font-family: var(--cv-font-body);
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--cv-charcoal);
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+    .cv-quote-author {
+      font-family: var(--cv-font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cv-copper);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cv-cta {
+      background: var(--cv-copper);
+      position: relative;
+      padding: 100px 40px;
+      overflow: hidden;
+      perspective: 800px;
+    }
+    .cv-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.03) 20px, rgba(0,0,0,0.03) 22px);
+    }
+    .cv-cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      transform: rotateX(1deg);
+    }
+    .cv-cta h2 {
+      font-family: var(--cv-font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .cv-cta p {
+      font-family: var(--cv-font-body);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+    .cv-cta-btn {
+      display: inline-block;
+      background: var(--cv-dark);
+      color: #fff;
+      font-family: var(--cv-font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 18px 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .cv-cta-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #fff;
+      transition: all 0.3s ease;
+    }
+    .cv-cta-btn:hover { background: #000; }
+    .cv-cta-btn:hover::after { bottom: -8px; right: -8px; }
+
+    .cv-cta-phone {
+      display: block;
+      margin-top: 24px;
+      font-family: var(--cv-font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+    .cv-cta-phone:hover { color: #fff; }
+
+    /* ===== FAQ ===== */
+    .cv-faq {
+      padding: 100px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .cv-faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .cv-faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: var(--cv-font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 24px 40px 24px 0;
+      cursor: pointer;
+      color: var(--cv-dark);
+      position: relative;
+      transition: color 0.3s;
+    }
+    .cv-faq-q:hover { color: var(--cv-copper); }
+    .cv-faq-q::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+      color: var(--cv-copper);
+      transition: transform 0.3s;
+    }
+    .cv-faq-item.active .cv-faq-q::after { content: '−'; }
+    .cv-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .cv-faq-item.active .cv-faq-a { max-height: 300px; padding-bottom: 24px; }
+    .cv-faq-a p {
+      font-family: var(--cv-font-body);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--cv-steel);
+      font-weight: 300;
+    }
+
+    /* ===== FOOTER OVERRIDES ===== */
+    .lp-cv .footer { background: var(--cv-dark); border-top: 3px solid var(--cv-copper); }
+    .lp-cv .footer .logo-i { color: var(--cv-copper); }
+    .lp-cv .footer .logo-seek, .lp-cv .footer .logo-blinds { color: var(--cv-cream); }
+    .lp-cv .footer a { color: var(--cv-warm-grey); }
+    .lp-cv .footer a:hover { color: var(--cv-copper-light); }
+    .lp-cv .footer h4 { color: var(--cv-cream); }
+    .lp-cv .footer p { color: var(--cv-warm-grey); }
+    .lp-cv .footer-bottom { background: rgba(0,0,0,0.3); }
+    .lp-cv .footer-bottom p { color: var(--cv-warm-grey); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .cv-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .cv-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .cv-reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .cv-reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .cv-reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .cv-reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .cv-hero-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .cv-hero-text { transform: none; }
+      .cv-hero-image { transform: none; max-width: 600px; margin: 0 auto; }
+      .cv-hero-img-main { box-shadow: -15px 15px 0 var(--cv-charcoal); height: 380px; }
+      .cv-hero-img-badge { width: 110px; height: 110px; bottom: -20px; left: -15px; }
+      .cv-hero-img-badge .num { font-size: 1.8rem; }
+      .cv-cards { grid-template-columns: 1fr 1fr; }
+      .cv-why-inner { grid-template-columns: 1fr; gap: 50px; }
+      .cv-why-img { height: 350px; }
+      .cv-prod-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cv-prod-item { min-height: 260px; }
+      .cv-prod-item:nth-child(even) { direction: ltr; }
+      .cv-timeline { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .cv-timeline::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .cv-stage { padding: 100px 0 50px; }
+      .cv-hero-wrap { padding: 0 20px; }
+      .cv-hero-h1 { font-size: 2.2rem; }
+      .cv-hero-img-main { height: 280px; }
+      .cv-stats-inner { flex-direction: column; gap: 28px; }
+      .cv-cards { grid-template-columns: 1fr; }
+      .cv-card { padding: 36px 28px; }
+      .cv-prod-item { grid-template-columns: 1fr; }
+      .cv-prod-img-wrap { height: 220px; }
+      .cv-timeline { grid-template-columns: 1fr; gap: 30px; }
+      .cv-solutions, .cv-products, .cv-faq, .cv-process { padding-left: 20px; padding-right: 20px; }
+      .cv-cta h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body class="lp-cv">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#products">Products</a>
+      <a href="../landing/">Solutions</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+    </div>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ===== HERO — 3D PERSPECTIVE STAGE ===== -->
+<section class="cv-stage">
+  <div class="cv-hero-wrap">
+    <div class="cv-hero-text cv-panel">
+      <div class="cv-hero-tag">Engineered for Travel</div>
+      <h1 class="cv-hero-h1">
+        Caravan &amp; Motorhome
+        <span>Window Solutions</span>
+      </h1>
+      <p class="cv-hero-desc">
+        Custom-fit blinds built to handle vibration, compact spaces, and life on the road. Lightweight. Durable. Made to measure for every window shape Australian caravans throw at us.
+      </p>
+    </div>
+    <div class="cv-hero-image cv-panel">
+      <img class="cv-hero-img-main" src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&q=80" alt="Modern caravan interior with fitted blinds" loading="eager">
+      <div class="cv-hero-img-badge">
+        <span class="num">500+</span>
+        <span class="txt">RVs Fitted</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Ribbon -->
+  <div class="cv-stats">
+    <div class="cv-stats-inner">
+      <div class="cv-stat">
+        <div class="cv-stat-num" data-count="100">100%</div>
+        <div class="cv-stat-label">Custom Fit Guarantee</div>
+      </div>
+      <div class="cv-stat">
+        <div class="cv-stat-num">3–5</div>
+        <div class="cv-stat-label">Day Turnaround</div>
+      </div>
+      <div class="cv-stat">
+        <div class="cv-stat-num">40+</div>
+        <div class="cv-stat-label">Fabric Options</div>
+      </div>
+      <div class="cv-stat">
+        <div class="cv-stat-num">5 Yr</div>
+        <div class="cv-stat-label">Warranty on All Installs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTIONS — 3D CARD GRID ===== -->
+<section class="cv-solutions">
+  <div class="cv-section-label cv-reveal">The Challenges</div>
+  <h2 class="cv-section-title cv-reveal">Problems We Solve On The Road</h2>
+  <div class="cv-cards">
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">01</span>
+      <span class="cv-card-icon">🌡️</span>
+      <h3>Heat Buildup</h3>
+      <p>Metal bodies turn into ovens. Our thermal-backed fabrics reflect up to 85% of solar heat, keeping interior temps comfortable without running the AC flat out.</p>
+    </div>
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">02</span>
+      <span class="cv-card-icon">🔩</span>
+      <h3>Odd Window Shapes</h3>
+      <p>Curved corners, angled skylights, pop-top hatches — standard blinds won't cut it. We template every window and fabricate to the exact profile.</p>
+    </div>
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">03</span>
+      <span class="cv-card-icon">🛣️</span>
+      <h3>Road Vibration</h3>
+      <p>Rattling and bouncing destroy flimsy fittings. Our mounting systems use vibration-dampening brackets engineered for corrugated roads and highway travel.</p>
+    </div>
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">04</span>
+      <span class="cv-card-icon">🌙</span>
+      <h3>Total Blackout</h3>
+      <p>Park under a streetlight? No problem. Channel-guided blackout blinds seal every edge for complete darkness — essential for quality sleep away from home.</p>
+    </div>
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">05</span>
+      <span class="cv-card-icon">💨</span>
+      <h3>Weight Matters</h3>
+      <p>Every gram counts for towing. Our aluminium-tube rollers and lightweight honeycomb cells add minimal payload while maxing out insulation performance.</p>
+    </div>
+    <div class="cv-card cv-reveal">
+      <span class="cv-card-num">06</span>
+      <span class="cv-card-icon">🏕️</span>
+      <h3>Privacy at Camp</h3>
+      <p>Close quarters at caravan parks mean neighbours are a metre away. One-way vision fabrics maintain views out while blocking sight in — day and night.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US — LAYERED DEPTH ===== -->
+<section class="cv-why">
+  <div class="cv-why-inner">
+    <div class="cv-why-left cv-reveal-left">
+      <div style="position:relative">
+        <img class="cv-why-img" src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=700&q=80" alt="Caravan setup at campsite" loading="lazy">
+        <div class="cv-why-img-shadow"></div>
+      </div>
+    </div>
+    <div class="cv-why-right cv-reveal-right">
+      <div class="cv-section-label">Why iSeekBlinds</div>
+      <h2 class="cv-section-title">Built Different For Life On The Move</h2>
+      <ul class="cv-why-list">
+        <li>
+          <span class="cv-why-num">01</span>
+          <div class="cv-why-content">
+            <h4>On-Site Templating</h4>
+            <p>We come to your caravan with laser templating tools. No guesswork, no "close enough" — precision fit for every window.</p>
+          </div>
+        </li>
+        <li>
+          <span class="cv-why-num">02</span>
+          <div class="cv-why-content">
+            <h4>RV-Grade Hardware</h4>
+            <p>Stainless steel screws, marine-grade brackets, vibration-tested mechanisms. Built for 200,000km+ of Australian roads.</p>
+          </div>
+        </li>
+        <li>
+          <span class="cv-why-num">03</span>
+          <div class="cv-why-content">
+            <h4>Thermal Performance</h4>
+            <p>Honeycomb cells trap dead air. Reflective coatings bounce heat. Together they cut interior temperatures by up to 12°C.</p>
+          </div>
+        </li>
+        <li>
+          <span class="cv-why-num">04</span>
+          <div class="cv-why-content">
+            <h4>Compact & Stackable</h4>
+            <p>Slimline headrails and stackable mechanisms maximise window clearance. No bulky pelmet boxes eating into your headroom.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT SHOWCASE ===== -->
+<section class="cv-products">
+  <div class="cv-section-label cv-reveal">Our Range</div>
+  <h2 class="cv-section-title cv-reveal">Products Made For Mobile Living</h2>
+  <div class="cv-prod-grid">
+    <div class="cv-prod-item cv-reveal">
+      <div class="cv-prod-img-wrap">
+        <img class="cv-prod-img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80" alt="Compact roller blinds" loading="lazy">
+      </div>
+      <div class="cv-prod-info">
+        <h3>Compact Roller Blinds</h3>
+        <p>25mm tube diameter, spring-assisted or chain-operated. Available in blockout, sunscreen and translucent fabrics. Ideal for side windows and rear panels.</p>
+        <span class="cv-prod-price">From $85 per window</span>
+      </div>
+    </div>
+    <div class="cv-prod-item cv-reveal">
+      <div class="cv-prod-img-wrap">
+        <img class="cv-prod-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&q=80" alt="Honeycomb blinds for caravans" loading="lazy">
+      </div>
+      <div class="cv-prod-info">
+        <h3>Honeycomb Insulators</h3>
+        <p>Double-cell construction creates two insulating air pockets. The lightest thermal option per square metre — adds just 380g per window. Top-down/bottom-up available.</p>
+        <span class="cv-prod-price">From $120 per window</span>
+      </div>
+    </div>
+    <div class="cv-prod-item cv-reveal">
+      <div class="cv-prod-img-wrap">
+        <img class="cv-prod-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&q=80" alt="Skylight and hatch blinds" loading="lazy">
+      </div>
+      <div class="cv-prod-info">
+        <h3>Skylight & Hatch Blinds</h3>
+        <p>Tension-guided systems for roof windows and pop-top hatches. Spring-loaded side channels keep fabric taut through any angle — from flat to 45°.</p>
+        <span class="cv-prod-price">From $150 per unit</span>
+      </div>
+    </div>
+    <div class="cv-prod-item cv-reveal">
+      <div class="cv-prod-img-wrap">
+        <img class="cv-prod-img" src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=500&q=80" alt="Cab windscreen blinds" loading="lazy">
+      </div>
+      <div class="cv-prod-info">
+        <h3>Cab & Windscreen Screens</h3>
+        <p>Magnetic-edge blackout screens for cab windows. Installs in seconds, stores flat. Reduces condensation and provides total privacy when parked up overnight.</p>
+        <span class="cv-prod-price">From $195 per set</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS TIMELINE ===== -->
+<section class="cv-process">
+  <div class="cv-process-inner">
+    <div class="cv-section-label">How It Works</div>
+    <h2 class="cv-section-title">From Enquiry To Hitting The Road</h2>
+    <div class="cv-timeline">
+      <div class="cv-step cv-reveal">
+        <span class="cv-step-num">Step 01</span>
+        <div class="cv-step-dot"></div>
+        <h4>Measure & Template</h4>
+        <p>We visit your van or you send us precise measurements. Laser-template for curved and irregular windows.</p>
+      </div>
+      <div class="cv-step cv-reveal">
+        <span class="cv-step-num">Step 02</span>
+        <div class="cv-step-dot"></div>
+        <h4>Fabric Selection</h4>
+        <p>Choose from 40+ fabrics. We'll recommend based on your travel style — outback heat, coastal glare, or city touring.</p>
+      </div>
+      <div class="cv-step cv-reveal">
+        <span class="cv-step-num">Step 03</span>
+        <div class="cv-step-dot"></div>
+        <h4>Fabrication</h4>
+        <p>Custom-built in our Melbourne workshop. Every blind is road-tested on a vibration rig before shipping.</p>
+      </div>
+      <div class="cv-step cv-reveal">
+        <span class="cv-step-num">Step 04</span>
+        <div class="cv-step-dot"></div>
+        <h4>Install & Go</h4>
+        <p>Professional installation or DIY-friendly kits with video guides. Hit the road with confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIAL ===== -->
+<section class="cv-testimonial cv-reveal">
+  <div class="cv-quote-mark">"</div>
+  <p class="cv-quote-text">
+    We've done 40,000km since iSeekBlinds fitted our Jayco. Not a single rattle, not one bracket loose. The blackout blinds in the bedroom changed everything — we actually sleep properly at rest stops now.
+  </p>
+  <span class="cv-quote-author">Mark & Di — Jayco Journey Outback Owners</span>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="cv-faq">
+  <div class="cv-section-label cv-reveal">Common Questions</div>
+  <h2 class="cv-section-title cv-reveal">Caravan Blinds FAQ</h2>
+
+  <div class="cv-faq-item">
+    <button class="cv-faq-q">Can you fit blinds to any caravan brand?</button>
+    <div class="cv-faq-a"><p>Yes — Jayco, Avida, Coromal, Supreme, Avan, Kokoda, New Age, Lotus and more. We also fit motorhomes (Mercedes Sprinter, Fiat Ducato, VW Crafter builds) and campervans.</p></div>
+  </div>
+  <div class="cv-faq-item">
+    <button class="cv-faq-q">Do I need to bring my van to you?</button>
+    <div class="cv-faq-a"><p>For Melbourne metro, we offer on-site measuring at your home, storage facility or caravan park. Interstate customers can use our measurement guide and video call verification service.</p></div>
+  </div>
+  <div class="cv-faq-item">
+    <button class="cv-faq-q">How do the blinds handle corrugated roads?</button>
+    <div class="cv-faq-a"><p>All brackets use nylon-insert lock nuts and rubber dampening washers. The roller mechanisms have spring-tensioned clutches that prevent unwinding during travel. We've tested across the Gibb River Road — they hold.</p></div>
+  </div>
+  <div class="cv-faq-item">
+    <button class="cv-faq-q">Can I install them myself?</button>
+    <div class="cv-faq-a"><p>Absolutely. Every order comes with pre-drilled brackets, stainless steel fasteners, and a step-by-step video guide. Most people fit a full van in under 2 hours. We're also available on video call if you get stuck.</p></div>
+  </div>
+  <div class="cv-faq-item">
+    <button class="cv-faq-q">What about warranty on the road?</button>
+    <div class="cv-faq-a"><p>5-year warranty on all components. If anything fails while you're travelling, contact us and we'll arrange replacement parts shipped to your nearest town post office or caravan park.</p></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cv-cta">
+  <div class="cv-cta-inner">
+    <h2>Ready To Upgrade Your Van?</h2>
+    <p>Get a free measure and quote — we'll come to you anywhere in Melbourne metro, or guide you through remote measurement for Australia-wide delivery.</p>
+    <a href="../free-quote.html" class="cv-cta-btn">Get Your Free Quote</a>
+    <a href="tel:0400000000" class="cv-cta-phone">or call 0400 000 000</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <p>Melbourne's trusted window furnishing experts.</p>
+      <div class="footer-contact-info">
+        <p><a href="tel:0400000000">0400 000 000</a></p>
+        <p><a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+      </div>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.cv-reveal, .cv-reveal-left, .cv-reveal-right, .cv-stat');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.cv-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.cv-faq-item').forEach(i => i.classList.remove('active'));
+    if (!wasActive) item.classList.add('active');
+  });
+});
+
+// Subtle parallax on hero panels
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      const panels = document.querySelectorAll('.cv-panel');
+      panels.forEach((p, i) => {
+        const speed = i % 2 === 0 ? 0.03 : -0.02;
+        p.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+</script>
+
+</body>
+</html>
