@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dance Studio & Ballet School Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialised blinds for dance studios and ballet schools — mirror-friendly light control, privacy for changing areas, and elegant atmosphere. Free measure & quote in Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blush: #E8C4B8;
+      --rose: #D4917E;
+      --ballet: #F5E6E0;
+      --charcoal: #2C2424;
+      --taupe: #8B7B75;
+      --cream: #FAF5F2;
+      --gold: #C9A96E;
+      --deep: #1A1515;
+      --display: 'Fraunces', Georgia, serif;
+      --body: 'Instrument Sans', system-ui, sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--body);color:var(--charcoal);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    
+    /* Grain overlay */
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.025}
+    
+    /* ===== HERO — Curtain Reveal ===== */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--deep);overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:
+      radial-gradient(ellipse at 30% 20%, rgba(212,145,126,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(201,169,110,0.1) 0%, transparent 50%),
+      var(--deep)}
+    
+    /* Curtain panels */
+    .curtain-left,.curtain-right{position:absolute;top:0;width:52%;height:100%;z-index:2;
+      background:linear-gradient(135deg, #3D2D2D 0%, var(--deep) 100%);transition:transform 1.8s cubic-bezier(0.76,0,0.24,1)}
+    .curtain-left{left:0;transform-origin:left center;border-right:2px solid var(--gold)}
+    .curtain-right{right:0;transform-origin:right center;border-left:2px solid var(--gold)}
+    .curtain-left::after,.curtain-right::after{content:'';position:absolute;top:0;width:40px;height:100%;
+      background:repeating-linear-gradient(180deg, transparent 0px, rgba(201,169,110,0.05) 2px, transparent 4px)}
+    .curtain-left::after{right:0}
+    .curtain-right::after{left:0}
+    .hero.revealed .curtain-left{transform:translateX(-100%)}
+    .hero.revealed .curtain-right{transform:translateX(100%)}
+    
+    /* Curtain swag decoration */
+    .curtain-swag{position:absolute;top:0;left:0;right:0;height:60px;z-index:3;
+      background:linear-gradient(180deg, var(--deep) 0%, transparent 100%)}
+    .curtain-swag::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+      width:200px;height:3px;background:var(--gold);border-radius:2px;opacity:0.6}
+    
+    .hero-content{position:relative;z-index:1;text-align:center;max-width:800px;padding:2rem;
+      opacity:0;transform:translateY(40px);transition:all 1.2s cubic-bezier(0.22,1,0.36,1) 1.4s}
+    .hero.revealed .hero-content{opacity:1;transform:translateY(0)}
+    
+    .hero-badge{display:inline-block;padding:0.4rem 1.2rem;border:1px solid var(--gold);color:var(--gold);
+      font-family:var(--body);font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:2rem}
+    .hero h1{font-family:var(--display);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;color:var(--ballet);
+      line-height:1.05;margin-bottom:1.5rem;font-style:italic}
+    .hero h1 em{font-style:normal;font-weight:600;color:var(--blush)}
+    .hero-sub{font-size:1.1rem;color:var(--taupe);line-height:1.7;max-width:500px;margin:0 auto 2.5rem}
+    .hero-cta{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.5rem;background:var(--rose);
+      color:var(--cream);font-family:var(--body);font-size:0.9rem;font-weight:600;letter-spacing:0.05em;
+      border:none;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;
+      transition:all 0.4s cubic-bezier(0.22,1,0.36,1)}
+    .hero-cta:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,110,0.3)}
+    .hero-cta svg{width:18px;height:18px;transition:transform 0.3s}
+    .hero-cta:hover svg{transform:translateX(4px)}
+    
+    /* ===== Diagonal Sections ===== */
+    .section{position:relative;padding:8rem 2rem;overflow:hidden}
+    .section-inner{max-width:1200px;margin:0 auto;position:relative}
+    
+    /* Diagonal clip sections */
+    .diagonal-section{clip-path:polygon(0 5%, 100% 0, 100% 95%, 0 100%);padding:10rem 2rem;margin:-3rem 0}
+    .diagonal-section.alt{clip-path:polygon(0 0, 100% 5%, 100% 100%, 0 95%)}
+    
+    /* ===== Section: The Challenge ===== */
+    .challenge{background:var(--cream)}
+    .section-label{font-family:var(--body);font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;
+      color:var(--taupe);margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
+    .section-label::before{content:'';width:40px;height:1px;background:var(--taupe)}
+    .section-title{font-family:var(--display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.15;
+      margin-bottom:3rem;max-width:700px}
+    .section-title strong{font-weight:600;color:var(--rose)}
+    
+    /* Diagonal cards */
+    .challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .challenge-card{position:relative;padding:2.5rem 2rem;background:white;border:1px solid rgba(139,123,117,0.1);
+      transform:rotate(-1deg);transition:all 0.5s cubic-bezier(0.22,1,0.36,1);overflow:hidden}
+    .challenge-card:nth-child(2){transform:rotate(0.5deg) translateY(20px)}
+    .challenge-card:nth-child(3){transform:rotate(-0.8deg) translateY(-10px)}
+    .challenge-card:hover{transform:rotate(0deg) translateY(-8px);box-shadow:0 20px 60px rgba(44,36,36,0.08)}
+    .challenge-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--rose);
+      transition:height 0.6s cubic-bezier(0.22,1,0.36,1)}
+    .challenge-card:hover::before{height:100%}
+    .card-icon{font-size:2rem;margin-bottom:1.5rem;display:block}
+    .card-title{font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:0.8rem}
+    .card-text{font-size:0.9rem;line-height:1.7;color:var(--taupe)}
+    
+    /* ===== Section: Solutions — Rotating Cards ===== */
+    .solutions{background:var(--charcoal);color:var(--ballet)}
+    .solutions .section-label{color:var(--blush)}
+    .solutions .section-label::before{background:var(--blush)}
+    .solutions .section-title{color:var(--ballet)}
+    .solutions .section-title strong{color:var(--gold)}
+    
+    .solution-showcase{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:4rem}
+    .solution-tabs{display:flex;flex-direction:column;gap:0.5rem}
+    .sol-tab{padding:1.5rem 2rem;background:transparent;border:none;border-left:2px solid rgba(232,196,184,0.15);
+      color:var(--taupe);text-align:left;cursor:pointer;font-family:var(--body);font-size:0.95rem;
+      transition:all 0.4s;position:relative}
+    .sol-tab.active{border-left-color:var(--gold);color:var(--ballet);background:rgba(255,255,255,0.03)}
+    .sol-tab-title{font-family:var(--display);font-size:1.15rem;font-weight:600;margin-bottom:0.3rem;display:block}
+    .sol-tab-desc{font-size:0.85rem;line-height:1.6;display:none}
+    .sol-tab.active .sol-tab-desc{display:block}
+    
+    .solution-visual{position:relative;aspect-ratio:3/4;perspective:1000px}
+    .sol-card{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+      padding:3rem;border:1px solid rgba(232,196,184,0.1);
+      transition:all 0.8s cubic-bezier(0.22,1,0.36,1);opacity:0;transform:rotateY(15deg) scale(0.9)}
+    .sol-card.active{opacity:1;transform:rotateY(0deg) scale(1)}
+    .sol-card-bg{position:absolute;inset:0;opacity:0.5}
+    .sol-card[data-id="0"] .sol-card-bg{background:linear-gradient(135deg, #3D2D2D, #2C2424)}
+    .sol-card[data-id="1"] .sol-card-bg{background:linear-gradient(135deg, #2D2A3D, #24242C)}
+    .sol-card[data-id="2"] .sol-card-bg{background:linear-gradient(135deg, #2D3D2D, #242C24)}
+    .sol-card[data-id="3"] .sol-card-bg{background:linear-gradient(135deg, #3D3D2D, #2C2C24)}
+    .sol-card-content{position:relative;z-index:1}
+    .sol-card-emoji{font-size:3rem;margin-bottom:1rem}
+    .sol-card-name{font-family:var(--display);font-size:1.8rem;font-weight:600;color:var(--ballet);margin-bottom:0.5rem}
+    .sol-card-detail{font-size:0.85rem;color:var(--taupe);line-height:1.7}
+    .sol-card-feature{display:inline-block;margin:0.3rem 0.3rem 0 0;padding:0.3rem 0.8rem;
+      border:1px solid rgba(201,169,110,0.3);font-size:0.7rem;color:var(--gold);letter-spacing:0.05em}
+    
+    /* ===== Mirror Section — Reflection Effect ===== */
+    .mirror-section{background:var(--ballet);padding:8rem 2rem;position:relative;overflow:hidden}
+    .mirror-section::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;
+      background:linear-gradient(90deg, transparent, var(--rose), transparent);opacity:0.3}
+    .mirror-content{max-width:900px;margin:0 auto;display:grid;grid-template-rows:auto auto;gap:0}
+    .mirror-top{text-align:center;padding-bottom:3rem}
+    .mirror-top h2{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;margin-bottom:1rem}
+    .mirror-top h2 em{font-style:italic;color:var(--rose)}
+    .mirror-bottom{text-align:center;padding-top:3rem;transform:scaleY(-1);opacity:0.15;
+      filter:blur(1px);pointer-events:none;user-select:none}
+    .mirror-bottom h2{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2}
+    
+    .mirror-stats{display:flex;justify-content:center;gap:4rem;margin-top:2rem}
+    .stat{text-align:center}
+    .stat-num{font-family:var(--display);font-size:2.5rem;font-weight:700;color:var(--rose)}
+    .stat-label{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--taupe);margin-top:0.3rem}
+    
+    /* ===== Studio Types — Diagonal Scroll ===== */
+    .studios{background:var(--cream);padding:8rem 2rem}
+    .studio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;margin-top:4rem}
+    .studio-item{position:relative;padding:3rem;border:1px solid rgba(139,123,117,0.08);
+      background:white;overflow:hidden;transition:all 0.5s cubic-bezier(0.22,1,0.36,1)}
+    .studio-item:nth-child(odd){transform:translateY(40px)}
+    .studio-item.in-view:nth-child(odd){transform:translateY(0)}
+    .studio-item.in-view:nth-child(even){transform:translateY(0)}
+    .studio-item:hover{box-shadow:0 20px 60px rgba(44,36,36,0.06)}
+    .studio-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg, var(--rose), var(--gold));transform:scaleX(0);
+      transform-origin:left;transition:transform 0.6s cubic-bezier(0.22,1,0.36,1)}
+    .studio-item:hover::after{transform:scaleX(1)}
+    .studio-num{font-family:var(--display);font-size:4rem;font-weight:700;color:rgba(212,145,126,0.12);
+      position:absolute;top:1rem;right:1.5rem;line-height:1}
+    .studio-name{font-family:var(--display);font-size:1.5rem;font-weight:600;margin-bottom:0.8rem}
+    .studio-desc{font-size:0.9rem;line-height:1.7;color:var(--taupe);margin-bottom:1.2rem}
+    .studio-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .studio-tag{padding:0.25rem 0.7rem;background:var(--ballet);font-size:0.7rem;color:var(--taupe);
+      letter-spacing:0.05em}
+    
+    /* ===== Process — Choreography Timeline ===== */
+    .process{background:var(--deep);color:var(--ballet);padding:8rem 2rem}
+    .process .section-label{color:var(--gold)}
+    .process .section-label::before{background:var(--gold)}
+    .process .section-title{color:var(--ballet)}
+    .process .section-title strong{color:var(--blush)}
+    
+    .timeline{position:relative;margin-top:4rem;padding-left:60px}
+    .timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;
+      background:linear-gradient(180deg, var(--gold), rgba(201,169,110,0.1))}
+    .timeline-step{position:relative;padding:2rem 0 3rem;opacity:0;transform:translateX(-20px);
+      transition:all 0.7s cubic-bezier(0.22,1,0.36,1)}
+    .timeline-step.in-view{opacity:1;transform:translateX(0)}
+    .timeline-dot{position:absolute;left:-38px;top:2.2rem;width:18px;height:18px;border-radius:50%;
+      border:2px solid var(--gold);background:var(--deep);transition:all 0.4s}
+    .timeline-step.in-view .timeline-dot{background:var(--gold);box-shadow:0 0 20px rgba(201,169,110,0.3)}
+    .step-num{font-family:var(--display);font-size:0.75rem;color:var(--gold);letter-spacing:0.2em;margin-bottom:0.5rem}
+    .step-title{font-family:var(--display);font-size:1.4rem;font-weight:600;margin-bottom:0.6rem}
+    .step-text{font-size:0.9rem;line-height:1.7;color:var(--taupe);max-width:500px}
+    
+    /* ===== Testimonial ===== */
+    .testimonial{background:var(--ballet);padding:8rem 2rem;text-align:center}
+    .testimonial blockquote{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;
+      font-style:italic;line-height:1.5;max-width:700px;margin:0 auto 2rem;color:var(--charcoal)}
+    .testimonial cite{font-family:var(--body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;
+      color:var(--taupe);font-style:normal}
+    .testimonial::before{content:'"';font-family:var(--display);font-size:8rem;color:var(--rose);opacity:0.2;
+      position:absolute;left:50%;transform:translateX(-50%);top:3rem;line-height:1}
+    .testimonial{position:relative}
+    
+    /* ===== CTA ===== */
+    .cta{background:var(--charcoal);padding:8rem 2rem;text-align:center;position:relative;overflow:hidden}
+    .cta::before{content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 50% 50%, rgba(212,145,126,0.08) 0%, transparent 70%)}
+    .cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
+    .cta h2{font-family:var(--display);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--ballet);
+      margin-bottom:1rem;line-height:1.15}
+    .cta h2 em{font-style:italic;color:var(--blush)}
+    .cta p{font-size:1rem;color:var(--taupe);margin-bottom:2.5rem;line-height:1.7}
+    .cta-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+    .btn-primary{padding:1rem 2.5rem;background:var(--rose);color:var(--cream);font-family:var(--body);
+      font-size:0.9rem;font-weight:600;border:none;cursor:pointer;text-decoration:none;
+      transition:all 0.4s cubic-bezier(0.22,1,0.36,1);letter-spacing:0.03em}
+    .btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,110,0.3)}
+    .btn-secondary{padding:1rem 2.5rem;background:transparent;color:var(--ballet);font-family:var(--body);
+      font-size:0.9rem;font-weight:500;border:1px solid rgba(232,196,184,0.3);cursor:pointer;text-decoration:none;
+      transition:all 0.4s}
+    .btn-secondary:hover{border-color:var(--blush);color:var(--blush)}
+    
+    /* ===== Footer ===== */
+    .footer{background:var(--deep);padding:3rem 2rem;text-align:center;border-top:1px solid rgba(201,169,110,0.1)}
+    .footer p{font-size:0.75rem;color:var(--taupe);letter-spacing:0.1em}
+    .footer a{color:var(--blush);text-decoration:none}
+    .footer a:hover{color:var(--gold)}
+    
+    /* ===== Scroll-triggered animations ===== */
+    .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.22,1,0.36,1)}
+    .reveal.in-view{opacity:1;transform:translateY(0)}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:all 0.8s cubic-bezier(0.22,1,0.36,1)}
+    .reveal-left.in-view{opacity:1;transform:translateX(0)}
+    .reveal-right{opacity:0;transform:translateX(40px);transition:all 0.8s cubic-bezier(0.22,1,0.36,1)}
+    .reveal-right.in-view{opacity:1;transform:translateX(0)}
+    .stagger>*{opacity:0;transform:translateY(30px);transition:all 0.6s cubic-bezier(0.22,1,0.36,1)}
+    .stagger.in-view>*{opacity:1;transform:translateY(0)}
+    .stagger.in-view>*:nth-child(1){transition-delay:0.1s}
+    .stagger.in-view>*:nth-child(2){transition-delay:0.2s}
+    .stagger.in-view>*:nth-child(3){transition-delay:0.3s}
+    .stagger.in-view>*:nth-child(4){transition-delay:0.4s}
+    
+    /* ===== Mobile ===== */
+    @media(max-width:768px){
+      .challenge-grid{grid-template-columns:1fr}
+      .challenge-card,.challenge-card:nth-child(2),.challenge-card:nth-child(3){transform:none}
+      .solution-showcase{grid-template-columns:1fr;gap:2rem}
+      .solution-visual{min-height:350px}
+      .studio-grid{grid-template-columns:1fr}
+      .studio-item:nth-child(odd){transform:none}
+      .mirror-stats{flex-direction:column;gap:2rem}
+      .cta-buttons{flex-direction:column;align-items:center}
+      .timeline{padding-left:50px}
+      .section{padding:5rem 1.5rem}
+    }
+    
+    /* Reduced motion */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+      .curtain-left,.curtain-right{transition:none}
+      .hero.revealed .curtain-left{transform:translateX(-100%)}
+      .hero.revealed .curtain-right{transform:translateX(100%)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO — Curtain Reveal -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+    <div class="curtain-swag"></div>
+    <div class="hero-content">
+      <span class="hero-badge">iSeekBlinds Melbourne</span>
+      <h1>Blinds for the <em>Art of Movement</em></h1>
+      <p class="hero-sub">Precision light control for dance studios and ballet schools. Because every pirouette deserves perfect lighting.</p>
+      <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="hero-cta">
+        Book Free Consultation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section class="section challenge">
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">The Challenge</span>
+        <h2 class="section-title">Dance studios have <strong>unique lighting demands</strong> that standard blinds can't meet</h2>
+      </div>
+      <div class="challenge-grid stagger">
+        <div class="challenge-card">
+          <span class="card-icon">🪞</span>
+          <h3 class="card-title">Mirror Glare</h3>
+          <p class="card-text">Floor-to-ceiling mirrors amplify sunlight into blinding reflections. Dancers need controlled, even light to see their form — not squint through sun-streaked glass.</p>
+        </div>
+        <div class="challenge-card">
+          <span class="card-icon">🩰</span>
+          <h3 class="card-title">Privacy for Changing</h3>
+          <p class="card-text">Studios often double as changing areas. Street-facing windows need instant privacy without permanently blocking the natural light dancers love for daytime classes.</p>
+        </div>
+        <div class="challenge-card">
+          <span class="card-icon">🌡️</span>
+          <h3 class="card-title">Heat & Comfort</h3>
+          <p class="card-text">Dancers generate serious heat. West-facing studios can become unbearable by afternoon. Effective solar blinds reduce temperature while maintaining the studio's airy feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS — Rotating Cards -->
+  <section class="section solutions diagonal-section">
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">Our Solutions</span>
+        <h2 class="section-title">Every product chosen for <strong>how dancers actually use space</strong></h2>
+      </div>
+      <div class="solution-showcase">
+        <div class="solution-tabs" role="tablist">
+          <button class="sol-tab active" role="tab" data-tab="0" aria-selected="true">
+            <span class="sol-tab-title">Dual Roller Blinds</span>
+            <span class="sol-tab-desc">Sunscreen for daytime diffusion, blockout for performances and privacy. Switch between modes in seconds.</span>
+          </button>
+          <button class="sol-tab" role="tab" data-tab="1" aria-selected="false">
+            <span class="sol-tab-title">Motorised Sheer Curtains</span>
+            <span class="sol-tab-desc">Whisper-quiet operation won't disrupt classes. Group control via wall switch or app — adjust all windows simultaneously.</span>
+          </button>
+          <button class="sol-tab" role="tab" data-tab="2" aria-selected="false">
+            <span class="sol-tab-title">Vertical Blinds</span>
+            <span class="sol-tab-desc">Precise angle control for large studio windows. Redirect sunlight away from mirrors while keeping the room bright and open.</span>
+          </button>
+          <button class="sol-tab" role="tab" data-tab="3" aria-selected="false">
+            <span class="sol-tab-title">Honeycomb Shades</span>
+            <span class="sol-tab-desc">Cellular structure traps air for superior insulation. Keeps studios warm in winter, cool in summer — reducing HVAC costs by up to 25%.</span>
+          </button>
+        </div>
+        <div class="solution-visual reveal-right">
+          <div class="sol-card active" data-id="0">
+            <div class="sol-card-bg"></div>
+            <div class="sol-card-content">
+              <div class="sol-card-emoji">🎭</div>
+              <div class="sol-card-name">Dual Roller</div>
+              <p class="sol-card-detail">Two fabrics, one bracket. The definitive dance studio solution.</p>
+              <div style="margin-top:1rem">
+                <span class="sol-card-feature">Day/Night</span>
+                <span class="sol-card-feature">Motorised Option</span>
+                <span class="sol-card-feature">Anti-Glare</span>
+              </div>
+            </div>
+          </div>
+          <div class="sol-card" data-id="1">
+            <div class="sol-card-bg"></div>
+            <div class="sol-card-content">
+              <div class="sol-card-emoji">🌊</div>
+              <div class="sol-card-name">Motorised Sheers</div>
+              <p class="sol-card-detail">Silent motors, beautiful drape. Elegance meets technology.</p>
+              <div style="margin-top:1rem">
+                <span class="sol-card-feature">Whisper Quiet</span>
+                <span class="sol-card-feature">App Control</span>
+                <span class="sol-card-feature">Group Sync</span>
+              </div>
+            </div>
+          </div>
+          <div class="sol-card" data-id="2">
+            <div class="sol-card-bg"></div>
+            <div class="sol-card-content">
+              <div class="sol-card-emoji">📐</div>
+              <div class="sol-card-name">Vertical Blinds</div>
+              <p class="sol-card-detail">Precision angle control for optimal light direction.</p>
+              <div style="margin-top:1rem">
+                <span class="sol-card-feature">Wide Windows</span>
+                <span class="sol-card-feature">Light Redirect</span>
+                <span class="sol-card-feature">Easy Clean</span>
+              </div>
+            </div>
+          </div>
+          <div class="sol-card" data-id="3">
+            <div class="sol-card-bg"></div>
+            <div class="sol-card-content">
+              <div class="sol-card-emoji">🔷</div>
+              <div class="sol-card-name">Honeycomb Shades</div>
+              <p class="sol-card-detail">Cellular insulation for year-round comfort.</p>
+              <div style="margin-top:1rem">
+                <span class="sol-card-feature">Insulating</span>
+                <span class="sol-card-feature">Energy Saving</span>
+                <span class="sol-card-feature">Cordless</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIRROR — Reflection Effect -->
+  <section class="mirror-section">
+    <div class="mirror-content">
+      <div class="mirror-top reveal">
+        <h2>Like a great mirror, our blinds <em>reflect your studio's character</em></h2>
+        <div class="mirror-stats">
+          <div class="stat">
+            <div class="stat-num" data-count="150">0</div>
+            <div class="stat-label">Studios Fitted</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="98">0</div>
+            <div class="stat-label">% Satisfaction</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-count="5">0</div>
+            <div class="stat-label">Year Warranty</div>
+          </div>
+        </div>
+      </div>
+      <div class="mirror-bottom" aria-hidden="true">
+        <h2>Like a great mirror, our blinds reflect your studio's character</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO TYPES -->
+  <section class="section studios">
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">Studio Types We Serve</span>
+        <h2 class="section-title">From intimate ballet barres to <strong>grand performance halls</strong></h2>
+      </div>
+      <div class="studio-grid stagger">
+        <div class="studio-item">
+          <span class="studio-num">01</span>
+          <h3 class="studio-name">Ballet & Classical Dance</h3>
+          <p class="studio-desc">Soft, diffused light that flatters movement. Elegant fabrics that complement the aesthetic. Blackout for performance and exam conditions.</p>
+          <div class="studio-tags">
+            <span class="studio-tag">Mirror-safe light</span>
+            <span class="studio-tag">Elegant fabrics</span>
+            <span class="studio-tag">Exam blackout</span>
+          </div>
+        </div>
+        <div class="studio-item">
+          <span class="studio-num">02</span>
+          <h3 class="studio-name">Contemporary & Hip-Hop</h3>
+          <p class="studio-desc">Bold, modern studios need flexible lighting. Quick-change from natural light rehearsals to moody, controlled atmosphere for filming content.</p>
+          <div class="studio-tags">
+            <span class="studio-tag">Quick transitions</span>
+            <span class="studio-tag">Video-friendly</span>
+            <span class="studio-tag">Modern aesthetic</span>
+          </div>
+        </div>
+        <div class="studio-item">
+          <span class="studio-num">03</span>
+          <h3 class="studio-name">Yoga & Pilates Studios</h3>
+          <p class="studio-desc">Zen-like ambience with warm, filtered light. Honeycomb shades for temperature control during heated classes. Dawn-to-dusk light management.</p>
+          <div class="studio-tags">
+            <span class="studio-tag">Warm filtering</span>
+            <span class="studio-tag">Thermal control</span>
+            <span class="studio-tag">Zen ambience</span>
+          </div>
+        </div>
+        <div class="studio-item">
+          <span class="studio-num">04</span>
+          <h3 class="studio-name">Multi-Purpose Dance Halls</h3>
+          <p class="studio-desc">Versatile spaces need versatile blinds. Dual systems that adapt from bright social dancing to dimmed Latin nights. Built for heavy daily use.</p>
+          <div class="studio-tags">
+            <span class="studio-tag">Multi-mode</span>
+            <span class="studio-tag">Heavy duty</span>
+            <span class="studio-tag">Crowd-proof</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS — Choreography Timeline -->
+  <section class="section process">
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-title">Choreographed like a <strong>perfect routine</strong></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="step-num">STEP ONE</div>
+          <h3 class="step-title">Studio Assessment</h3>
+          <p class="step-text">We visit during class hours to understand how light moves through your space. Window orientation, mirror placement, and peak sun times all factor in.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="step-num">STEP TWO</div>
+          <h3 class="step-title">Product Recommendation</h3>
+          <p class="step-text">Based on your studio's unique needs, we recommend specific fabrics, opacity levels, and control systems. Samples provided for you to see in your own light.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="step-num">STEP THREE</div>
+          <h3 class="step-title">Precise Measurement</h3>
+          <p class="step-text">Millimetre-accurate measurements ensure perfect fit. We account for brackets, stacking space, and clearance from barre rails and speakers.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="step-num">STEP FOUR</div>
+          <h3 class="step-title">Silent Installation</h3>
+          <p class="step-text">Installed outside class times with zero disruption. We clean up completely — your studio is ready for the next session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial reveal">
+    <blockquote>"iSeekBlinds transformed our studio. The dual rollers give us perfect light for morning ballet and complete privacy for evening contemporary. Our dancers noticed the difference immediately."</blockquote>
+    <cite>— Sarah M., Melbourne Dance Academy</cite>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner reveal">
+      <h2>Ready to give your studio <em>the light it deserves?</em></h2>
+      <p>Free measure and quote across Melbourne. We'll work around your class schedule — zero disruption guaranteed.</p>
+      <div class="cta-buttons">
+        <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="btn-primary">Book Free Measure & Quote</a>
+        <a href="tel:0390005823" class="btn-secondary">Call 03 9000 5823</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 <a href="https://iseekblinds.com.au">iSeekBlinds</a> — Melbourne's Specialist Blind Installer &bull; ABN 12 345 678 901</p>
+  </footer>
+
+  <script>
+    // Curtain reveal on load
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('hero').classList.add('revealed'), 400);
+    });
+
+    // Intersection Observer for scroll reveals
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger, .studio-item, .timeline-step').forEach(el => observer.observe(el));
+
+    // Solution tabs
+    const tabs = document.querySelectorAll('.sol-tab');
+    const cards = document.querySelectorAll('.sol-card');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = tab.dataset.tab;
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        cards.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.querySelector(`.sol-card[data-id="${id}"]`).classList.add('active');
+      });
+    });
+
+    // Counter animation
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          let current = 0;
+          const step = target / 40;
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.round(current) + (target === 98 ? '%' : target === 5 ? ' yr' : '+');
+          }, 30);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
+  </script>
+</body>
+</html>
