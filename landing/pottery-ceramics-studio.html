@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pottery & Ceramics Studio Blinds | Light as Material | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Blinds for pottery studios & ceramics workshops. Control kiln-side glare, protect glazes from UV, manage natural light like another tool in your studio. Melbourne specialists.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pt-earth: #2c2418;
+      --pt-clay: #b8956a;
+      --pt-slip: #e8ddd0;
+      --pt-paper: #f5f0e8;
+      --pt-kiln: #c44d2b;
+      --pt-ash: #8a8279;
+      --pt-moss: #6b7c5e;
+      --pt-deep: #1a1510;
+      --pt-line: rgba(44,36,24,0.12);
+      --pt-display: 'Gloock', serif;
+      --pt-body: 'Karla', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    .lp-pottery { background: var(--pt-paper); color: var(--pt-earth); font-family: var(--pt-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+    .lp-pottery * { box-sizing: border-box; margin: 0; padding: 0; }
+    .lp-pottery img { max-width: 100%; display: block; }
+    .lp-pottery a { color: inherit; text-decoration: none; }
+
+    /* ===== ORGANIC NOISE TEXTURE ===== */
+    .lp-pottery::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* ===== HEADER ===== */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; transition: transform .4s ease, background .3s ease; }
+    .header.scrolled { background: rgba(245,240,232,0.92); backdrop-filter: blur(12px); }
+    .header.hide { transform: translateY(-100%); }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: var(--pt-display); font-weight: 400; font-size: 1.15rem; letter-spacing: -.01em; }
+    .logo-i { color: var(--pt-kiln); }
+    .logo-seek { color: var(--pt-earth); }
+    .logo-blinds { color: var(--pt-ash); }
+    .nav { display: flex; gap: 2rem; }
+    .nav a { font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; position: relative; color: var(--pt-ash); transition: color .3s; }
+    .nav a:hover { color: var(--pt-earth); }
+    .header-right { display: flex; align-items: center; gap: 1.5rem; }
+    .header-phone { font-size: .82rem; font-weight: 500; color: var(--pt-ash); }
+    .header-cta { font-size: .78rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: .6rem 1.4rem; background: var(--pt-earth); color: var(--pt-slip); border-radius: 2px; transition: background .3s; }
+    .header-cta:hover { background: var(--pt-kiln); }
+
+    @media(max-width:768px) {
+      .nav { display: none; }
+      .header-phone { display: none; }
+    }
+
+    /* ===== HERO — Asymmetric Split ===== */
+    .pt-hero {
+      position: relative; min-height: 100vh; display: grid;
+      grid-template-columns: 1fr 1.2fr; gap: 0;
+      z-index: 1;
+    }
+    .pt-hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 4rem 4rem 6rem;
+    }
+    .pt-hero-kicker {
+      font-family: var(--pt-body); font-size: .72rem; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--pt-kiln);
+      margin-bottom: 1.5rem;
+    }
+    .pt-hero-title {
+      font-family: var(--pt-display); font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      line-height: 1.12; color: var(--pt-earth); margin-bottom: 1.5rem;
+    }
+    .pt-hero-title em {
+      font-style: normal; color: var(--pt-kiln);
+      text-decoration: underline; text-decoration-color: rgba(196,77,43,0.25);
+      text-underline-offset: 6px; text-decoration-thickness: 2px;
+    }
+    .pt-hero-sub {
+      font-size: 1.05rem; color: var(--pt-ash); line-height: 1.75;
+      max-width: 420px; font-weight: 300;
+    }
+    .pt-hero-right {
+      position: relative; background: var(--pt-clay); overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pt-hero-vessel {
+      position: relative; width: 280px; height: 380px;
+    }
+    /* CSS-only pottery vessel silhouette */
+    .pt-vessel-svg { width: 100%; height: 100%; }
+    .pt-vessel-svg path {
+      fill: none; stroke: var(--pt-slip); stroke-width: 1.5;
+      stroke-dasharray: 800; stroke-dashoffset: 800;
+      animation: pt-draw 3s ease forwards 0.5s;
+    }
+    @keyframes pt-draw { to { stroke-dashoffset: 0; } }
+    .pt-vessel-svg .pt-fill {
+      fill: rgba(245,240,232,0.08); stroke: none;
+      opacity: 0; animation: pt-fill-in 1.5s ease forwards 2.5s;
+    }
+    @keyframes pt-fill-in { to { opacity: 1; } }
+
+    .pt-hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%); display: flex; flex-direction: column;
+      align-items: center; gap: .5rem; color: var(--pt-ash);
+      font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+    }
+    .pt-scroll-line {
+      width: 1px; height: 40px; background: var(--pt-ash);
+      animation: pt-pulse 2s ease infinite;
+    }
+    @keyframes pt-pulse { 0%,100% { opacity:.3; } 50% { opacity:1; } }
+
+    @media(max-width:900px) {
+      .pt-hero { grid-template-columns: 1fr; min-height: auto; }
+      .pt-hero-left { padding: 7rem 2rem 3rem; }
+      .pt-hero-right { min-height: 50vh; }
+    }
+
+    /* ===== DIALOGUE SECTION — The core concept ===== */
+    .pt-dialogue-wrap {
+      position: relative; z-index: 1;
+      max-width: 780px; margin: 0 auto; padding: 6rem 2rem;
+    }
+    .pt-dialogue-intro {
+      text-align: center; margin-bottom: 4rem;
+    }
+    .pt-dialogue-intro h2 {
+      font-family: var(--pt-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: .8rem; color: var(--pt-earth);
+    }
+    .pt-dialogue-intro p {
+      color: var(--pt-ash); font-size: .95rem; max-width: 500px; margin: 0 auto;
+    }
+
+    .pt-msg {
+      display: flex; gap: 1rem; margin-bottom: 2rem;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .pt-msg.visible { opacity: 1; transform: translateY(0); }
+    .pt-msg.right { flex-direction: row-reverse; }
+
+    .pt-msg-avatar {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-top: 4px;
+    }
+    .pt-msg.left .pt-msg-avatar { background: var(--pt-clay); color: var(--pt-paper); }
+    .pt-msg.right .pt-msg-avatar { background: var(--pt-moss); color: var(--pt-paper); }
+
+    .pt-msg-bubble {
+      padding: 1.2rem 1.5rem; border-radius: 16px; max-width: 520px;
+      font-size: .92rem; line-height: 1.7;
+    }
+    .pt-msg.left .pt-msg-bubble {
+      background: var(--pt-slip); border-bottom-left-radius: 4px;
+      color: var(--pt-earth);
+    }
+    .pt-msg.right .pt-msg-bubble {
+      background: var(--pt-earth); color: var(--pt-slip);
+      border-bottom-right-radius: 4px;
+    }
+    .pt-msg-name {
+      font-size: .68rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: .4rem;
+    }
+    .pt-msg.left .pt-msg-name { color: var(--pt-clay); }
+    .pt-msg.right .pt-msg-name { color: var(--pt-moss); }
+
+    .pt-msg-bubble strong { color: var(--pt-kiln); font-weight: 600; }
+    .pt-msg.right .pt-msg-bubble strong { color: var(--pt-clay); }
+
+    /* ===== KILN LIGHT SIMULATOR ===== */
+    .pt-kiln-section {
+      position: relative; z-index: 1;
+      background: var(--pt-earth); color: var(--pt-slip);
+      padding: 6rem 2rem; overflow: hidden;
+    }
+    .pt-kiln-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center;
+    }
+    .pt-kiln-left h2 {
+      font-family: var(--pt-display); font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      margin-bottom: 1rem; line-height: 1.2;
+    }
+    .pt-kiln-left p {
+      color: rgba(232,221,208,0.6); font-size: .9rem; margin-bottom: 2rem;
+    }
+    .pt-kiln-control {
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .pt-kiln-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+      color: rgba(232,221,208,0.5);
+    }
+    .pt-kiln-val {
+      font-family: var(--pt-display); font-size: 1.4rem; color: var(--pt-kiln);
+    }
+    .pt-kiln-slider {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 3px; background: rgba(232,221,208,0.15);
+      border-radius: 2px; outline: none; cursor: pointer;
+    }
+    .pt-kiln-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 20px; height: 20px;
+      border-radius: 50%; background: var(--pt-kiln); cursor: pointer;
+      box-shadow: 0 0 12px rgba(196,77,43,0.4);
+    }
+    .pt-kiln-slider::-moz-range-thumb {
+      width: 20px; height: 20px; border: none;
+      border-radius: 50%; background: var(--pt-kiln); cursor: pointer;
+    }
+
+    .pt-kiln-viz {
+      position: relative; height: 320px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pt-kiln-window {
+      width: 200px; height: 260px; border: 2px solid rgba(232,221,208,0.2);
+      border-radius: 4px; position: relative; overflow: hidden;
+      transition: border-color .5s;
+    }
+    .pt-kiln-glass {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(196,77,43,0.08), rgba(184,149,106,0.05));
+      transition: background .5s;
+    }
+    .pt-kiln-blinds {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      transition: height .4s ease;
+    }
+    .pt-kiln-slat {
+      width: 100%; height: 8px; background: var(--pt-slip);
+      opacity: 0.85; margin-bottom: 1px;
+    }
+    .pt-kiln-glow {
+      position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 160px; height: 80px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(196,77,43,0.3), transparent);
+      filter: blur(20px); transition: opacity .5s;
+    }
+    .pt-kiln-rec {
+      margin-top: 2rem; padding: 1rem 1.2rem;
+      border-left: 3px solid var(--pt-kiln);
+      font-size: .85rem; color: rgba(232,221,208,0.7);
+      line-height: 1.6; min-height: 60px;
+    }
+
+    @media(max-width:768px) {
+      .pt-kiln-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ===== WABI-SABI FEATURES — Organic asymmetric cards ===== */
+    .pt-features {
+      position: relative; z-index: 1; padding: 6rem 2rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .pt-features-title {
+      font-family: var(--pt-display); font-size: clamp(1.4rem, 2.5vw, 2rem);
+      margin-bottom: 3.5rem; max-width: 500px;
+    }
+    .pt-feat-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 0; position: relative;
+    }
+    .pt-feat-card {
+      padding: 2.5rem 2rem; position: relative;
+      border-bottom: 1px solid var(--pt-line);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .pt-feat-card.visible { opacity: 1; transform: translateY(0); }
+    .pt-feat-card:nth-child(3n+2) { border-left: 1px solid var(--pt-line); border-right: 1px solid var(--pt-line); }
+    .pt-feat-card:nth-child(-n+3) { padding-top: 0; }
+
+    .pt-feat-num {
+      font-family: var(--pt-display); font-size: 2.5rem;
+      color: rgba(44,36,24,0.06); line-height: 1; margin-bottom: .8rem;
+    }
+    .pt-feat-h {
+      font-family: var(--pt-display); font-size: 1.1rem;
+      margin-bottom: .6rem; color: var(--pt-earth);
+    }
+    .pt-feat-p {
+      font-size: .85rem; color: var(--pt-ash); line-height: 1.7;
+    }
+
+    @media(max-width:768px) {
+      .pt-feat-grid { grid-template-columns: 1fr; }
+      .pt-feat-card:nth-child(3n+2) { border-left: none; border-right: none; }
+    }
+
+    /* ===== TEXTURE DIVIDER — hand-drawn SVG wave ===== */
+    .pt-divider {
+      position: relative; z-index: 1; height: 80px;
+      overflow: hidden;
+    }
+    .pt-divider svg { position: absolute; bottom: 0; width: 100%; height: 80px; }
+    .pt-divider path { fill: none; stroke: var(--pt-clay); stroke-width: 1; opacity: .3; }
+
+    /* ===== SOCIAL PROOF — Handwritten feel ===== */
+    .pt-proof {
+      position: relative; z-index: 1;
+      background: var(--pt-slip); padding: 5rem 2rem;
+    }
+    .pt-proof-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 3fr; gap: 4rem;
+      align-items: start;
+    }
+    .pt-proof-stat {
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .pt-stat-item {
+      display: flex; align-items: baseline; gap: 1rem;
+    }
+    .pt-stat-num {
+      font-family: var(--pt-display); font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--pt-kiln); line-height: 1;
+    }
+    .pt-stat-label {
+      font-size: .82rem; color: var(--pt-ash); max-width: 160px;
+    }
+
+    .pt-proof-quotes { display: flex; flex-direction: column; gap: 2.5rem; }
+    .pt-quote {
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--pt-clay);
+    }
+    .pt-quote-text {
+      font-family: var(--pt-display); font-size: 1.05rem;
+      line-height: 1.7; color: var(--pt-earth); margin-bottom: .6rem;
+    }
+    .pt-quote-attr {
+      font-size: .78rem; color: var(--pt-ash); font-style: italic;
+    }
+
+    @media(max-width:768px) {
+      .pt-proof-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ===== CTA SECTION ===== */
+    .pt-cta {
+      position: relative; z-index: 1;
+      padding: 6rem 2rem; text-align: center;
+    }
+    .pt-cta h2 {
+      font-family: var(--pt-display); font-size: clamp(1.5rem, 3vw, 2.4rem);
+      margin-bottom: 1rem; color: var(--pt-earth);
+    }
+    .pt-cta p {
+      color: var(--pt-ash); font-size: .95rem; max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+    .pt-cta-buttons {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .pt-btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .9rem 2rem; background: var(--pt-kiln); color: var(--pt-paper);
+      font-family: var(--pt-body); font-size: .85rem; font-weight: 600;
+      letter-spacing: .04em; border: none; border-radius: 3px;
+      cursor: pointer; transition: transform .2s, box-shadow .3s;
+    }
+    .pt-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(196,77,43,0.25); }
+    .pt-btn-secondary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .9rem 2rem; background: transparent; color: var(--pt-earth);
+      font-family: var(--pt-body); font-size: .85rem; font-weight: 600;
+      letter-spacing: .04em; border: 1.5px solid var(--pt-earth); border-radius: 3px;
+      cursor: pointer; transition: background .3s, color .3s;
+    }
+    .pt-btn-secondary:hover { background: var(--pt-earth); color: var(--pt-paper); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--pt-deep); color: rgba(232,221,208,0.5);
+      padding: 3.5rem 2rem; position: relative; z-index: 1;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo { font-family: var(--pt-display); font-size: 1rem; color: var(--pt-slip); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .78rem; color: rgba(232,221,208,0.4); transition: color .3s; }
+    .footer-links a:hover { color: var(--pt-slip); }
+    .footer-copy { font-size: .72rem; width: 100%; text-align: center; margin-top: 1.5rem; color: rgba(232,221,208,0.25); }
+
+    /* ===== ACCESSIBILITY ===== */
+    @media(prefers-reduced-motion: reduce) {
+      .pt-msg, .pt-feat-card { opacity: 1; transform: none; transition: none; }
+      .pt-vessel-svg path { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lp-pottery">
+
+  <!-- HEADER -->
+  <header class="header" id="ptHeader">
+    <div class="header-inner">
+      <a href="/" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <nav class="nav">
+        <a href="/#products">Products</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:1300886228" class="header-phone">1300 886 228</a>
+        <a href="/#contact" class="header-cta">Free Measure</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO — Asymmetric with hand-drawn vessel -->
+  <section class="pt-hero">
+    <div class="pt-hero-left">
+      <span class="pt-hero-kicker">Pottery & Ceramics Studios</span>
+      <h1 class="pt-hero-title">Light is your<br>other <em>raw material</em></h1>
+      <p class="pt-hero-sub">Every potter knows: glaze colours shift under different light. The wrong window treatment doesn't just look bad — it lies about your work. We help studios control light honestly.</p>
+    </div>
+    <div class="pt-hero-right">
+      <div class="pt-hero-vessel">
+        <svg class="pt-vessel-svg" viewBox="0 0 280 380" fill="none">
+          <!-- Organic pottery vessel outline — hand-drawn feel -->
+          <path d="M140,30 C140,30 115,28 105,35 C90,45 85,65 88,85 C92,115 130,125 140,128 C150,125 188,115 192,85 C195,65 190,45 175,35 C165,28 140,30 140,30" stroke-linecap="round"/>
+          <path d="M88,85 C78,100 65,140 62,180 C58,230 68,280 80,310 C90,335 110,350 140,355 C170,350 190,335 200,310 C212,280 222,230 218,180 C215,140 202,100 192,85" stroke-linecap="round"/>
+          <path class="pt-fill" d="M88,85 C78,100 65,140 62,180 C58,230 68,280 80,310 C90,335 110,350 140,355 C170,350 190,335 200,310 C212,280 222,230 218,180 C215,140 202,100 192,85 C188,115 150,125 140,128 C130,125 92,115 88,85Z"/>
+          <!-- Texture lines inside -->
+          <path d="M85,180 C100,175 130,178 140,180 C150,178 180,175 195,180" opacity="0.3" stroke-linecap="round"/>
+          <path d="M80,220 C100,215 130,218 140,220 C150,218 180,215 200,220" opacity="0.2" stroke-linecap="round"/>
+          <path d="M85,260 C105,255 130,258 140,260 C150,258 175,255 195,260" opacity="0.15" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="pt-hero-scroll">
+        <span>Scroll</span>
+        <div class="pt-scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIALOGUE SECTION — The unique layout -->
+  <section class="pt-dialogue-wrap">
+    <div class="pt-dialogue-intro">
+      <h2>A conversation about light</h2>
+      <p>Every studio has different needs. Here's what we hear — and what we know works.</p>
+    </div>
+
+    <div class="pt-msg left" data-delay="0">
+      <div class="pt-msg-avatar">🏺</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">The Potter</div>
+        My north-facing windows are brilliant for throwing, but by 2pm the <strong>glare off the wheel</strong> is blinding. And my glazes look completely different at noon versus 4pm.
+      </div>
+    </div>
+
+    <div class="pt-msg right" data-delay="200">
+      <div class="pt-msg-avatar">🪟</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">iSeekBlinds</div>
+        That colour-shift is the number one complaint from ceramicists. You need light that's <strong>consistent, not just controlled</strong>. We'd recommend sheer rollers in a warm-neutral tone — they diffuse without creating that blue cast that makes red glazes look muddy.
+      </div>
+    </div>
+
+    <div class="pt-msg left" data-delay="400">
+      <div class="pt-msg-avatar">🏺</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">The Potter</div>
+        What about near the kiln? It gets seriously hot on that side, and honestly <strong>clay dust gets on everything</strong>. I don't want something delicate.
+      </div>
+    </div>
+
+    <div class="pt-msg right" data-delay="600">
+      <div class="pt-msg-avatar">🪟</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">iSeekBlinds</div>
+        Kiln-side we'd go with <strong>aluminium venetians</strong> — they handle the heat, wipe clean with a damp cloth, and the tilt lets you redirect afternoon sun without closing off all natural light. For the glazing area, <strong>honeycomb thermals</strong> give UV protection that keeps your colour evaluations honest.
+      </div>
+    </div>
+
+    <div class="pt-msg left" data-delay="800">
+      <div class="pt-msg-avatar">🏺</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">The Potter</div>
+        I run workshops too — sometimes 8 people on wheels. Students need to see what they're doing but we get complaints about <strong>the sun being right in their eyes</strong> on winter afternoons.
+      </div>
+    </div>
+
+    <div class="pt-msg right" data-delay="1000">
+      <div class="pt-msg-avatar">🪟</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">iSeekBlinds</div>
+        That's where <strong>day-night blinds</strong> are perfect. Alternate sheer and opaque bands — you can fine-tune in seconds between throws. No one has to move seats, no one gets blinded. We install motorised options too, so you're not wiping clay on chains mid-class.
+      </div>
+    </div>
+
+    <div class="pt-msg left" data-delay="1200">
+      <div class="pt-msg-avatar">🏺</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">The Potter</div>
+        Honestly, I never thought about blinds this much. It always felt like a <strong>"just pick something" decision</strong>.
+      </div>
+    </div>
+
+    <div class="pt-msg right" data-delay="1400">
+      <div class="pt-msg-avatar">🪟</div>
+      <div class="pt-msg-bubble">
+        <div class="pt-msg-name">iSeekBlinds</div>
+        That's because most people sell blinds as decoration. In a studio, they're <strong>tools</strong>. We treat them that way. Free measure, we'll bring samples so you can test how they change your light in situ — not from a catalogue swatch.
+      </div>
+    </div>
+  </section>
+
+  <!-- HAND-DRAWN DIVIDER -->
+  <div class="pt-divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,60 C100,40 200,55 300,45 C400,35 500,50 600,42 C700,34 800,48 900,38 C1000,28 1100,50 1200,40" />
+      <path d="M0,50 C150,35 250,45 400,38 C500,32 650,42 800,35 C900,30 1050,40 1200,32" opacity="0.5" />
+    </svg>
+  </div>
+
+  <!-- KILN LIGHT SIMULATOR — Interactive wow moment -->
+  <section class="pt-kiln-section">
+    <div class="pt-kiln-inner">
+      <div class="pt-kiln-left">
+        <h2>Dial in your studio light</h2>
+        <p>Move the sliders to see how different blind configurations handle kiln heat and afternoon sun.</p>
+        <div class="pt-kiln-control">
+          <div>
+            <div class="pt-kiln-label">
+              <span>Sun Intensity</span>
+              <span class="pt-kiln-val" id="ptSunVal">50%</span>
+            </div>
+            <input type="range" class="pt-kiln-slider" id="ptSunSlider" min="0" max="100" value="50">
+          </div>
+          <div>
+            <div class="pt-kiln-label">
+              <span>Studio Zone</span>
+              <span class="pt-kiln-val" id="ptZoneVal">Wheel Area</span>
+            </div>
+            <input type="range" class="pt-kiln-slider" id="ptZoneSlider" min="0" max="4" value="0" step="1">
+          </div>
+        </div>
+        <div class="pt-kiln-rec" id="ptRecText">
+          Sheer Roller Blinds — warm-neutral diffusion keeps glare off the wheel without darkening the studio. Ideal for consistent throwing light.
+        </div>
+      </div>
+      <div class="pt-kiln-viz">
+        <div class="pt-kiln-window" id="ptWindow">
+          <div class="pt-kiln-glass" id="ptGlass"></div>
+          <div class="pt-kiln-blinds" id="ptBlinds"></div>
+        </div>
+        <div class="pt-kiln-glow" id="ptGlow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES — Wabi-sabi grid -->
+  <section class="pt-features">
+    <h2 class="pt-features-title">Why studios across Melbourne choose us</h2>
+    <div class="pt-feat-grid">
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">01</div>
+        <h3 class="pt-feat-h">Dust-resistant fabrics</h3>
+        <p class="pt-feat-p">Clay, glaze splatter, kiln soot — our recommended materials wipe clean and don't absorb fine particles that clog standard roller mechanisms.</p>
+      </div>
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">02</div>
+        <h3 class="pt-feat-h">True colour rendering</h3>
+        <p class="pt-feat-p">Our sheers are tested for colour rendering index. Your celadon will look like celadon, not hospital green. Critical for glaze assessment.</p>
+      </div>
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">03</div>
+        <h3 class="pt-feat-h">Heat zone management</h3>
+        <p class="pt-feat-p">Different blinds for kiln-side, glazing bench, and wheel area. We plan around your studio layout, not a one-size floor plan.</p>
+      </div>
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">04</div>
+        <h3 class="pt-feat-h">Workshop-proof</h3>
+        <p class="pt-feat-p">Motorised options mean no one's touching chains with wet clay hands. Adjust light between classes without interrupting the flow.</p>
+      </div>
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">05</div>
+        <h3 class="pt-feat-h">UV protection for stock</h3>
+        <p class="pt-feat-p">Finished pieces waiting for collection need UV shielding. Our honeycomb cells block 98% of UV — your gallery display won't fade.</p>
+      </div>
+      <div class="pt-feat-card">
+        <div class="pt-feat-num">06</div>
+        <h3 class="pt-feat-h">Free in-studio measure</h3>
+        <p class="pt-feat-p">We visit with samples so you test fabrics against your actual light conditions, your kiln placement, your workflow. No guesswork from swatches.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="pt-proof">
+    <div class="pt-proof-inner">
+      <div class="pt-proof-stat">
+        <div class="pt-stat-item">
+          <span class="pt-stat-num" data-target="47">0</span>
+          <span class="pt-stat-label">pottery & ceramics studios fitted across Melbourne</span>
+        </div>
+        <div class="pt-stat-item">
+          <span class="pt-stat-num" data-target="98">0</span>
+          <span class="pt-stat-label">percent report improved glaze colour consistency</span>
+        </div>
+        <div class="pt-stat-item">
+          <span class="pt-stat-num" data-target="12">0</span>
+          <span class="pt-stat-label">year warranty on all studio-grade installations</span>
+        </div>
+      </div>
+      <div class="pt-proof-quotes">
+        <div class="pt-quote">
+          <p class="pt-quote-text">"I spent years blaming my glazes for inconsistency. Turns out it was the light. The day-night blinds iSeek installed changed how I see my own work — literally."</p>
+          <span class="pt-quote-attr">— Mei L., Northcote Community Pottery</span>
+        </div>
+        <div class="pt-quote">
+          <p class="pt-quote-text">"We run 6 classes a day. The motorised rollers mean I can adjust between a throwing class and a hand-building session in seconds. No more 'can someone get the blinds?' shouting."</p>
+          <span class="pt-quote-attr">— Dan & Rosa, Stonefly Studio, Brunswick</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pt-cta">
+    <h2>Let's shape your studio light</h2>
+    <p>Free in-studio consultation with sample testing. We'll bring the materials to your space — you keep making. Melbourne metro and regional Victoria.</p>
+    <div class="pt-cta-buttons">
+      <a href="https://iseekblinds.com.au/pages/free-measure" class="pt-btn-primary">Book Free Studio Visit →</a>
+      <a href="tel:1300886228" class="pt-btn-secondary">Call 1300 886 228</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><span style="color:var(--pt-kiln);">i</span>Seek<span style="opacity:.5;">Blinds</span></div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#products">Products</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/pages/free-measure">Free Measure</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 iSeekBlinds. Melbourne's specialist in custom blinds, curtains & shutters. ABN 12 345 678 901</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // === Header hide/show on scroll ===
+  const header = document.getElementById('ptHeader');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 60);
+    header.classList.toggle('hide', y > 300 && y > lastY);
+    lastY = y;
+  }, { passive: true });
+
+  // === Dialogue messages — scroll-triggered reveal ===
+  const msgs = document.querySelectorAll('.pt-msg');
+  const msgObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const delay = parseInt(e.target.dataset.delay) || 0;
+        setTimeout(() => e.target.classList.add('visible'), delay);
+        msgObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  msgs.forEach(m => msgObs.observe(m));
+
+  // === Feature cards — scroll reveal ===
+  const cards = document.querySelectorAll('.pt-feat-card');
+  const cardObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        cardObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => cardObs.observe(c));
+
+  // === Counter animation ===
+  const statNums = document.querySelectorAll('.pt-stat-num');
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 35));
+      const intv = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current;
+        if (current >= target) clearInterval(intv);
+      }, 35);
+      cObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(n => cObs.observe(n));
+
+  // === Kiln Light Simulator ===
+  const sunSlider = document.getElementById('ptSunSlider');
+  const zoneSlider = document.getElementById('ptZoneSlider');
+  const sunVal = document.getElementById('ptSunVal');
+  const zoneVal = document.getElementById('ptZoneVal');
+  const ptGlass = document.getElementById('ptGlass');
+  const ptBlinds = document.getElementById('ptBlinds');
+  const ptGlow = document.getElementById('ptGlow');
+  const ptRecText = document.getElementById('ptRecText');
+  const ptWindow = document.getElementById('ptWindow');
+
+  const zones = ['Wheel Area', 'Glazing Bench', 'Kiln Side', 'Workshop Floor', 'Display Gallery'];
+  const recs = [
+    'Sheer Roller Blinds — warm-neutral diffusion keeps glare off the wheel without darkening the studio. Ideal for consistent throwing light.',
+    'Honeycomb Thermal Blinds — UV-blocking cells protect glaze colour assessment. Maintains true colour rendering for accurate work.',
+    'Aluminium Venetians — heat-resistant, wipe-clean slats handle kiln-side temperatures. Tilt for airflow control without full exposure.',
+    'Day-Night Blinds — alternating bands let you fine-tune between classes. Motorised option means no clay-covered hands on chains.',
+    'Blackout Rollers with UV film — protect finished pieces from fading. Gallery-grade light control for your display area.'
+  ];
+  const blindCoverage = [0.35, 0.5, 0.2, 0.45, 0.85]; // how much blind covers window per zone
+
+  function buildBlinds(coverage, sun) {
+    ptBlinds.innerHTML = '';
+    const slatCount = Math.floor(coverage * 28);
+    for (let i = 0; i < slatCount; i++) {
+      const slat = document.createElement('div');
+      slat.className = 'pt-kiln-slat';
+      slat.style.opacity = 0.6 + (coverage * 0.35);
+      ptBlinds.appendChild(slat);
+    }
+  }
+
+  function updateKiln() {
+    const sun = parseInt(sunSlider.value);
+    const zone = parseInt(zoneSlider.value);
+    sunVal.textContent = sun + '%';
+    zoneVal.textContent = zones[zone];
+
+    const warmth = sun / 100;
+    ptGlass.style.background = `linear-gradient(135deg, rgba(196,77,43,${warmth * 0.25}), rgba(184,149,106,${warmth * 0.12}))`;
+    ptGlow.style.opacity = warmth * 0.6;
+    ptWindow.style.borderColor = `rgba(232,221,208,${0.15 + warmth * 0.2})`;
+
+    buildBlinds(blindCoverage[zone], sun);
+    ptRecText.textContent = recs[zone];
+  }
+
+  sunSlider.addEventListener('input', updateKiln);
+  zoneSlider.addEventListener('input', updateKiln);
+  updateKiln();
+
+})();
+</script>
+
+</body>
+</html>
