@@ -41,18 +41,16 @@ function buildConfiguratorHTML(config, state) {
     <div class="configurator-layout">
       <!-- Preview Panel -->
       <div class="cfg-preview-panel">
-        <div class="cfg-preview-window">
-          <div class="cfg-preview-frame">
-            <div class="cfg-preview-wall">
-              <div class="cfg-preview-blind" id="cfgPreviewBlind"></div>
-            </div>
-            <div class="cfg-preview-label">
-              <span class="cfg-preview-dims" id="cfgPreviewDims">${state.width}mm × ${state.drop}mm</span>
-              <br><span id="cfgPreviewDesc">${config.types[0].name}</span>
-            </div>
+        <div class="cfg-preview-container">
+          <div class="cfg-preview-product" id="cfgPreviewProduct">
+            <img src="${config.productImage || ''}" alt="${config.productName || 'Product'} Preview" class="cfg-preview-img" id="cfgPreviewImg">
+            <div class="cfg-color-overlay" id="cfgColorOverlay"></div>
+          </div>
+          <div class="cfg-preview-label">
+            <span class="cfg-preview-dims" id="cfgPreviewDims">${state.width}mm × ${state.drop}mm</span>
+            <br><span id="cfgPreviewDesc">${config.types[0].name}</span>
           </div>
         </div>
-        ${config.productImage ? `<img src="${config.productImage}" alt="${config.productName}" class="cfg-preview-image" loading="lazy">` : ''}
       </div>
 
       <!-- Options Panel -->
@@ -324,18 +322,21 @@ function updatePrice(config, state, container) {
 function updatePreview(config, state, container) {
   const type = config.types[state.selectedType];
   const color = type.colors[state.selectedColor];
-  const blind = container.querySelector('#cfgPreviewBlind');
+  const overlay = container.querySelector('#cfgColorOverlay');
   const dims = container.querySelector('#cfgPreviewDims');
   const desc = container.querySelector('#cfgPreviewDesc');
 
-  // Update color
-  blind.style.setProperty('--preview-color', color.hex);
-  blind.style.background = color.hex;
+  // Update overlay color
+  overlay.style.backgroundColor = color.hex;
 
-  // Update aspect ratio based on width/drop
-  const ratio = state.width / state.drop;
-  blind.style.setProperty('--preview-ratio', ratio);
-  blind.style.aspectRatio = `${state.width} / ${state.drop}`;
+  // Calculate overlay opacity based on color lightness
+  // Light colors (like white) → low opacity; dark colors → 0.55
+  const r = parseInt(color.hex.slice(1, 3), 16);
+  const g = parseInt(color.hex.slice(3, 5), 16);
+  const b = parseInt(color.hex.slice(5, 7), 16);
+  const lightness = (r + g + b) / (3 * 255); // 0 = black, 1 = white
+  const opacity = lightness > 0.9 ? 0.05 : (0.55 - lightness * 0.3);
+  overlay.style.opacity = Math.max(0, Math.min(0.6, opacity));
 
   // Update text
   dims.textContent = `${state.width}mm × ${state.drop}mm`;
