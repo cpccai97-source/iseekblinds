@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container Home & Modular Living Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for shipping container homes, modular builds & prefab living. Compact, moisture-resistant solutions engineered for non-standard windows. Free measure & quote in Melbourne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === CONTAINER HOME — INDUSTRIAL BLUEPRINT === */
+    :root {
+      --bp-navy: #0B1628;
+      --bp-dark: #0E1E36;
+      --bp-grid: rgba(64,140,210,0.08);
+      --bp-line: rgba(64,140,210,0.25);
+      --bp-accent: #3DBBF0;
+      --bp-warm: #F2994A;
+      --bp-steel: #C0C9D6;
+      --bp-text: #E2E8F0;
+      --bp-muted: #7B8CA3;
+      --bp-surface: rgba(14,30,54,0.85);
+      --bp-border: rgba(61,187,240,0.15);
+      --font-display: 'Darker Grotesque', sans-serif;
+      --font-body: 'Hanken Grotesk', sans-serif;
+    }
+
+    .lp-container {
+      background: var(--bp-navy);
+      color: var(--bp-text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Blueprint grid background */
+    .lp-container::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--bp-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bp-grid) 1px, transparent 1px),
+        linear-gradient(var(--bp-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bp-line) 1px, transparent 1px);
+      background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .lp-container > * { position: relative; z-index: 1; }
+
+    /* === HERO — Technical drawing style === */
+    .ch-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 0;
+      padding: 0;
+    }
+
+    .ch-hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 8%;
+    }
+
+    .ch-hero-tag {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--bp-accent);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ch-hero-tag::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--bp-accent);
+    }
+
+    .ch-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.92;
+      color: #fff;
+      margin: 0 0 32px;
+      letter-spacing: -2px;
+    }
+    .ch-hero h1 em {
+      font-style: normal;
+      color: var(--bp-accent);
+      position: relative;
+    }
+    .ch-hero h1 em::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--bp-warm);
+      transform: scaleX(0);
+      animation: drawLine 1.2s 0.8s ease forwards;
+    }
+
+    .ch-hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--bp-muted);
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .ch-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      border: 1.5px solid var(--bp-accent);
+      color: var(--bp-accent);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .ch-hero-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--bp-accent);
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+      z-index: 0;
+    }
+    .ch-hero-cta:hover::before { transform: translateY(0); }
+    .ch-hero-cta:hover { color: var(--bp-navy); }
+    .ch-hero-cta span { position: relative; z-index: 1; }
+
+    /* Blueprint diagram side */
+    .ch-hero-visual {
+      position: relative;
+      background: var(--bp-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ch-blueprint-box {
+      width: 72%;
+      aspect-ratio: 1.4;
+      border: 1.5px solid var(--bp-line);
+      position: relative;
+      animation: fadeInDraw 1.5s ease forwards;
+    }
+
+    .ch-blueprint-box::before,
+    .ch-blueprint-box::after {
+      content: '';
+      position: absolute;
+      background: var(--bp-accent);
+    }
+    .ch-blueprint-box::before {
+      width: 60%;
+      height: 70%;
+      top: 15%;
+      left: 20%;
+      border: 1px dashed var(--bp-accent);
+      background: transparent;
+      opacity: 0.5;
+    }
+    .ch-blueprint-box::after {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      top: -4px;
+      right: -4px;
+      animation: pulse 2s infinite;
+    }
+
+    .bp-dimension {
+      position: absolute;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: var(--bp-accent);
+      opacity: 0.7;
+    }
+    .bp-dim-top { top: -24px; left: 50%; transform: translateX(-50%); }
+    .bp-dim-right { right: -50px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+
+    .bp-label {
+      position: absolute;
+      background: rgba(61,187,240,0.1);
+      border: 1px solid rgba(61,187,240,0.2);
+      padding: 6px 14px;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--bp-accent);
+    }
+    .bp-label-window { bottom: 20%; left: 28%; }
+    .bp-label-blind { top: 22%; right: 15%; }
+
+    /* Corner markers */
+    .bp-corner {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+    }
+    .bp-corner::before, .bp-corner::after {
+      content: '';
+      position: absolute;
+      background: var(--bp-warm);
+    }
+    .bp-corner::before { width: 100%; height: 1.5px; }
+    .bp-corner::after { width: 1.5px; height: 100%; }
+    .bp-c-tl { top: -1px; left: -1px; }
+    .bp-c-tr { top: -1px; right: -1px; }
+    .bp-c-tr::after { right: 0; }
+    .bp-c-bl { bottom: -1px; left: -1px; }
+    .bp-c-bl::before { bottom: 0; }
+    .bp-c-br { bottom: -1px; right: -1px; }
+    .bp-c-br::before { bottom: 0; }
+    .bp-c-br::after { right: 0; }
+
+    /* === SECTION HEADERS === */
+    .ch-section {
+      padding: 100px 8%;
+    }
+    .ch-section-tag {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--bp-warm);
+      margin-bottom: 16px;
+    }
+    .ch-section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      color: #fff;
+      margin: 0 0 20px;
+      letter-spacing: -1px;
+    }
+    .ch-section-sub {
+      font-size: 1rem;
+      color: var(--bp-muted);
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    /* === CONFIGURATOR === */
+    .ch-config {
+      background: var(--bp-dark);
+      border-top: 1px solid var(--bp-border);
+      border-bottom: 1px solid var(--bp-border);
+      padding: 100px 8%;
+    }
+
+    .ch-config-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 40px auto 0;
+    }
+
+    /* Steps sidebar */
+    .ch-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: sticky;
+      top: 120px;
+    }
+
+    .ch-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      border-left: 2px solid var(--bp-border);
+      padding-left: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .ch-step::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 24px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--bp-muted);
+      background: var(--bp-dark);
+      transition: all 0.3s ease;
+    }
+    .ch-step.active {
+      border-left-color: var(--bp-accent);
+    }
+    .ch-step.active::before {
+      border-color: var(--bp-accent);
+      background: var(--bp-accent);
+      box-shadow: 0 0 12px rgba(61,187,240,0.4);
+    }
+    .ch-step-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--bp-muted);
+      transition: color 0.3s;
+      min-width: 30px;
+    }
+    .ch-step.active .ch-step-num { color: var(--bp-accent); }
+    .ch-step-info h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--bp-steel);
+      margin: 0 0 4px;
+      transition: color 0.3s;
+    }
+    .ch-step.active .ch-step-info h4 { color: #fff; }
+    .ch-step-info p {
+      font-size: 0.78rem;
+      color: var(--bp-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Config panels */
+    .ch-panel {
+      display: none;
+      animation: panelIn 0.5s ease forwards;
+    }
+    .ch-panel.active { display: block; }
+
+    .ch-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .ch-option {
+      background: var(--bp-surface);
+      border: 1.5px solid var(--bp-border);
+      padding: 28px 24px;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
+      position: relative;
+      overflow: hidden;
+    }
+    .ch-option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--bp-accent);
+      transition: height 0.35s ease;
+    }
+    .ch-option:hover {
+      border-color: rgba(61,187,240,0.35);
+      transform: translateY(-3px);
+    }
+    .ch-option:hover::before { height: 100%; }
+    .ch-option.selected {
+      border-color: var(--bp-accent);
+      background: rgba(61,187,240,0.06);
+    }
+    .ch-option.selected::before { height: 100%; }
+    .ch-option.selected::after {
+      content: '✓';
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      color: var(--bp-accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .ch-option-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .ch-option h5 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+    .ch-option p {
+      font-size: 0.8rem;
+      color: var(--bp-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .ch-nav-btns {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .ch-nav-btn {
+      padding: 14px 32px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .ch-nav-prev {
+      background: transparent;
+      border: 1px solid var(--bp-border);
+      color: var(--bp-muted);
+    }
+    .ch-nav-prev:hover { border-color: var(--bp-steel); color: var(--bp-steel); }
+    .ch-nav-next {
+      background: var(--bp-accent);
+      color: var(--bp-navy);
+    }
+    .ch-nav-next:hover { background: #5CCBF7; }
+
+    /* Result panel */
+    .ch-result {
+      background: linear-gradient(135deg, rgba(61,187,240,0.08), rgba(242,153,74,0.05));
+      border: 1.5px solid var(--bp-accent);
+      padding: 40px;
+    }
+    .ch-result h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+    .ch-result-tag {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bp-warm);
+      margin-bottom: 24px;
+      display: block;
+    }
+    .ch-result-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .ch-result-spec {
+      padding: 16px;
+      background: rgba(11,22,40,0.6);
+      border: 1px solid var(--bp-border);
+    }
+    .ch-result-spec label {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bp-muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .ch-result-spec span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--bp-accent);
+    }
+
+    /* === CHALLENGES SECTION — Asymmetric cards === */
+    .ch-challenges {
+      padding: 100px 8%;
+    }
+    .ch-challenge-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 48px auto 0;
+    }
+    .ch-challenge-card {
+      padding: 40px;
+      border: 1px solid var(--bp-border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+    .ch-challenge-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(61,187,240,0.3);
+    }
+    .ch-challenge-card:nth-child(1) {
+      grid-row: span 2;
+      background: linear-gradient(160deg, rgba(61,187,240,0.04), transparent);
+    }
+    .ch-challenge-card:nth-child(2) {
+      background: linear-gradient(160deg, rgba(242,153,74,0.04), transparent);
+    }
+    .ch-challenge-card:nth-child(3) {
+      background: linear-gradient(160deg, rgba(192,201,214,0.04), transparent);
+    }
+
+    .ch-challenge-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 4rem;
+      color: rgba(61,187,240,0.1);
+      position: absolute;
+      top: -8px;
+      right: 16px;
+      line-height: 1;
+    }
+    .ch-challenge-card h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #fff;
+      margin: 0 0 12px;
+    }
+    .ch-challenge-card p {
+      font-size: 0.88rem;
+      color: var(--bp-muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .ch-challenge-solution {
+      margin-top: 20px;
+      padding: 16px;
+      background: rgba(61,187,240,0.06);
+      border-left: 3px solid var(--bp-accent);
+    }
+    .ch-challenge-solution strong {
+      color: var(--bp-accent);
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .ch-challenge-solution span {
+      font-size: 0.83rem;
+      color: var(--bp-steel);
+      line-height: 1.55;
+    }
+
+    /* === PRODUCTS SHOWCASE — Diagonal floating cards === */
+    .ch-products {
+      background: var(--bp-dark);
+      border-top: 1px solid var(--bp-border);
+      padding: 100px 8%;
+      position: relative;
+      overflow: hidden;
+    }
+    .ch-products::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61,187,240,0.04), transparent 70%);
+      pointer-events: none;
+    }
+
+    .ch-product-track {
+      display: flex;
+      gap: 28px;
+      margin-top: 48px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ch-product-track::-webkit-scrollbar { height: 4px; }
+    .ch-product-track::-webkit-scrollbar-track { background: var(--bp-navy); }
+    .ch-product-track::-webkit-scrollbar-thumb { background: var(--bp-accent); border-radius: 2px; }
+
+    .ch-product-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: var(--bp-surface);
+      border: 1px solid var(--bp-border);
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    .ch-product-card:hover {
+      transform: translateY(-6px) rotate(-0.5deg);
+      border-color: var(--bp-accent);
+    }
+    .ch-product-card:nth-child(even):hover {
+      transform: translateY(-6px) rotate(0.5deg);
+    }
+
+    .ch-product-visual {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ch-product-visual-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      transition: transform 0.6s ease;
+    }
+    .ch-product-card:hover .ch-product-visual-inner {
+      transform: scale(1.08);
+    }
+
+    .ch-product-info {
+      padding: 24px;
+    }
+    .ch-product-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid var(--bp-border);
+      color: var(--bp-accent);
+      margin-bottom: 12px;
+    }
+    .ch-product-card h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+    .ch-product-card p {
+      font-size: 0.82rem;
+      color: var(--bp-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .ch-product-specs {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--bp-border);
+    }
+    .ch-product-spec-item {
+      font-size: 0.68rem;
+      color: var(--bp-steel);
+      letter-spacing: 0.5px;
+    }
+    .ch-product-spec-item b {
+      display: block;
+      color: var(--bp-accent);
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+    }
+
+    /* === STATS BAR — Industrial gauges === */
+    .ch-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--bp-border);
+      border-bottom: 1px solid var(--bp-border);
+    }
+    .ch-stat {
+      padding: 48px 32px;
+      text-align: center;
+      border-right: 1px solid var(--bp-border);
+      position: relative;
+    }
+    .ch-stat:last-child { border-right: none; }
+    .ch-stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      color: var(--bp-accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .ch-stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bp-muted);
+    }
+    .ch-stat::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--bp-warm);
+      opacity: 0.5;
+    }
+
+    /* === FAQ — Blueprint annotation style === */
+    .ch-faq { padding: 100px 8%; }
+    .ch-faq-list {
+      max-width: 800px;
+      margin: 48px auto 0;
+    }
+    .ch-faq-item {
+      border: 1px solid var(--bp-border);
+      margin-bottom: 12px;
+      transition: border-color 0.3s;
+    }
+    .ch-faq-item:hover { border-color: rgba(61,187,240,0.3); }
+    .ch-faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 28px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      width: 100%;
+      color: var(--bp-steel);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: left;
+      transition: color 0.3s;
+    }
+    .ch-faq-q:hover { color: #fff; }
+    .ch-faq-q .ch-faq-toggle {
+      font-size: 1.4rem;
+      color: var(--bp-accent);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .ch-faq-item.open .ch-faq-toggle { transform: rotate(45deg); }
+    .ch-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .ch-faq-item.open .ch-faq-a {
+      max-height: 300px;
+      padding: 0 28px 22px;
+    }
+    .ch-faq-a p {
+      font-size: 0.88rem;
+      color: var(--bp-muted);
+      line-height: 1.7;
+      margin: 0;
+      border-left: 2px solid var(--bp-warm);
+      padding-left: 16px;
+    }
+
+    /* === CTA === */
+    .ch-cta {
+      padding: 120px 8%;
+      text-align: center;
+      position: relative;
+    }
+    .ch-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61,187,240,0.06), transparent 70%);
+      pointer-events: none;
+    }
+    .ch-cta h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      color: #fff;
+      margin: 0 0 16px;
+      letter-spacing: -1px;
+    }
+    .ch-cta p {
+      font-size: 1rem;
+      color: var(--bp-muted);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+    .ch-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bp-accent);
+      color: var(--bp-navy);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+      position: relative;
+    }
+    .ch-cta-btn:hover {
+      background: #5CCBF7;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(61,187,240,0.25);
+    }
+
+    /* === ANIMATIONS === */
+    @keyframes drawLine {
+      to { transform: scaleX(1); }
+    }
+    @keyframes fadeInDraw {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ch-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.23,1,0.32,1);
+    }
+    .ch-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .ch-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .ch-hero-text {
+        padding: 100px 6% 60px;
+      }
+      .ch-hero-visual {
+        height: 50vh;
+        min-height: 300px;
+      }
+      .ch-config-grid {
+        grid-template-columns: 1fr;
+      }
+      .ch-steps {
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        position: static;
+        border-bottom: 1px solid var(--bp-border);
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+      }
+      .ch-step {
+        border-left: none;
+        border-bottom: 2px solid var(--bp-border);
+        padding: 12px 16px;
+        flex-shrink: 0;
+      }
+      .ch-step.active { border-bottom-color: var(--bp-accent); }
+      .ch-step::before { display: none; }
+      .ch-step-info p { display: none; }
+      .ch-challenge-grid {
+        grid-template-columns: 1fr;
+      }
+      .ch-challenge-card:nth-child(1) { grid-row: auto; }
+      .ch-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ch-stat:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 600px) {
+      .ch-hero h1 { font-size: 2.8rem; }
+      .ch-options { grid-template-columns: 1fr; }
+      .ch-stats { grid-template-columns: 1fr; }
+      .ch-stat { border-right: none; border-bottom: 1px solid var(--bp-border); }
+      .ch-product-card { flex: 0 0 85vw; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER from main site -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">iSeekBlinds</a>
+    <nav class="main-nav">
+      <a href="/blinds.html">Blinds</a>
+      <a href="/curtains.html">Curtains</a>
+      <a href="/shutters.html">Shutters</a>
+      <a href="/motorised.html">Motorised</a>
+      <a href="/landing/">Guides</a>
+    </nav>
+    <a href="/contact.html" class="header-cta">Free Quote</a>
+  </div>
+</header>
+
+<main class="lp-container">
+
+  <!-- HERO -->
+  <section class="ch-hero">
+    <div class="ch-hero-text">
+      <div class="ch-hero-tag">Engineered for modular living</div>
+      <h1>Blinds for <em>Container</em> Homes</h1>
+      <p class="ch-hero-desc">Shipping containers weren't designed for living — but your blinds can be. Custom-engineered window furnishings for non-standard openings, steel frames, and compact spaces that refuse to compromise on style.</p>
+      <a href="#configurator" class="ch-hero-cta"><span>Find Your Solution →</span></a>
+    </div>
+    <div class="ch-hero-visual">
+      <div class="ch-blueprint-box">
+        <div class="bp-corner bp-c-tl"></div>
+        <div class="bp-corner bp-c-tr"></div>
+        <div class="bp-corner bp-c-bl"></div>
+        <div class="bp-corner bp-c-br"></div>
+        <span class="bp-dimension bp-dim-top">2438 mm</span>
+        <span class="bp-dimension bp-dim-right">2591 mm</span>
+        <span class="bp-label bp-label-window">Window Opening</span>
+        <span class="bp-label bp-label-blind">Blind System</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section class="ch-challenges ch-section">
+    <div class="ch-section-tag ch-reveal">The Container Problem</div>
+    <h2 class="ch-section-title ch-reveal">Why Off-the-Shelf<br>Doesn't Work</h2>
+    <p class="ch-section-sub ch-reveal">Container homes break every convention window furnishings were designed for. Here's what we solve.</p>
+
+    <div class="ch-challenge-grid">
+      <div class="ch-challenge-card ch-reveal">
+        <span class="ch-challenge-num">01</span>
+        <h4>Steel Frame Mounting</h4>
+        <p>Standard brackets assume timber. Container walls are corrugated steel — 1.6mm Corten that laughs at self-tapping screws. Every mounting point needs to be pre-drilled with hardened steel fixings.</p>
+        <div class="ch-challenge-solution">
+          <strong>Our solution</strong>
+          <span>Custom magnetic and clamp-mount bracket systems designed for corrugated steel profiles. No drilling required for most installations.</span>
+        </div>
+      </div>
+      <div class="ch-challenge-card ch-reveal">
+        <span class="ch-challenge-num">02</span>
+        <h4>Non-Standard Openings</h4>
+        <p>Container windows are cut to order. No two are alike. Standard sizes don't exist in this world — every blind must be made to measure, down to the millimetre.</p>
+        <div class="ch-challenge-solution">
+          <strong>Our solution</strong>
+          <span>Precision digital measurement with laser templating for any opening shape or size.</span>
+        </div>
+      </div>
+      <div class="ch-challenge-card ch-reveal">
+        <span class="ch-challenge-num">03</span>
+        <h4>Condensation & Heat</h4>
+        <p>Steel walls create thermal bridging nightmares. Condensation, extreme heat gain, and cold spots make fabric selection critical — the wrong material won't survive a Melbourne winter.</p>
+        <div class="ch-challenge-solution">
+          <strong>Our solution</strong>
+          <span>Moisture-resistant, mould-proof fabrics with thermal-backed options to combat condensation and regulate temperature.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIGURATOR -->
+  <section class="ch-config" id="configurator">
+    <div class="ch-section-tag ch-reveal">Interactive Tool</div>
+    <h2 class="ch-section-title ch-reveal">Find Your Container<br>Blind Solution</h2>
+    <p class="ch-section-sub ch-reveal">Answer a few questions. We'll recommend the perfect blind system for your build.</p>
+
+    <div class="ch-config-grid">
+      <ul class="ch-steps">
+        <li class="ch-step active" data-step="1">
+          <span class="ch-step-num">01</span>
+          <div class="ch-step-info">
+            <h4>Container Type</h4>
+            <p>What's your build?</p>
+          </div>
+        </li>
+        <li class="ch-step" data-step="2">
+          <span class="ch-step-num">02</span>
+          <div class="ch-step-info">
+            <h4>Window Style</h4>
+            <p>How are openings cut?</p>
+          </div>
+        </li>
+        <li class="ch-step" data-step="3">
+          <span class="ch-step-num">03</span>
+          <div class="ch-step-info">
+            <h4>Priority</h4>
+            <p>What matters most?</p>
+          </div>
+        </li>
+        <li class="ch-step" data-step="4">
+          <span class="ch-step-num">04</span>
+          <div class="ch-step-info">
+            <h4>Your Result</h4>
+            <p>Tailored recommendation</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ch-panels">
+        <!-- Step 1 -->
+        <div class="ch-panel active" data-panel="1">
+          <div class="ch-options">
+            <div class="ch-option" data-value="single-20ft" onclick="selectOption(this)">
+              <span class="ch-option-icon">📦</span>
+              <h5>Single 20ft</h5>
+              <p>Studio or micro-living. Compact but clever — every centimetre counts.</p>
+            </div>
+            <div class="ch-option" data-value="single-40ft" onclick="selectOption(this)">
+              <span class="ch-option-icon">🏗️</span>
+              <h5>Single 40ft</h5>
+              <p>One-bedroom or open-plan. More room to play with natural light.</p>
+            </div>
+            <div class="ch-option" data-value="multi-stack" onclick="selectOption(this)">
+              <span class="ch-option-icon">🏢</span>
+              <h5>Multi-Stack / Joined</h5>
+              <p>Multiple containers combined. Full home with varied window sizes.</p>
+            </div>
+            <div class="ch-option" data-value="prefab-modular" onclick="selectOption(this)">
+              <span class="ch-option-icon">🏠</span>
+              <h5>Prefab / Modular</h5>
+              <p>Factory-built modules. Often has more standard window openings.</p>
+            </div>
+          </div>
+          <div class="ch-nav-btns">
+            <button class="ch-nav-btn ch-nav-next" onclick="nextStep()">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="ch-panel" data-panel="2">
+          <div class="ch-options">
+            <div class="ch-option" data-value="standard-rect" onclick="selectOption(this)">
+              <span class="ch-option-icon">▬</span>
+              <h5>Standard Rectangle</h5>
+              <p>Cut-out rectangle with aluminium frame insert. Most common approach.</p>
+            </div>
+            <div class="ch-option" data-value="porthole" onclick="selectOption(this)">
+              <span class="ch-option-icon">⭕</span>
+              <h5>Porthole / Round</h5>
+              <p>Circular or oval windows for industrial aesthetic or ventilation.</p>
+            </div>
+            <div class="ch-option" data-value="full-wall" onclick="selectOption(this)">
+              <span class="ch-option-icon">⬜</span>
+              <h5>Full-Wall Glass</h5>
+              <p>Entire end wall replaced with glass. Maximum light and view.</p>
+            </div>
+            <div class="ch-option" data-value="skylight" onclick="selectOption(this)">
+              <span class="ch-option-icon">☀️</span>
+              <h5>Roof Skylight</h5>
+              <p>Roof-mounted skylights cut into the container ceiling.</p>
+            </div>
+          </div>
+          <div class="ch-nav-btns">
+            <button class="ch-nav-btn ch-nav-prev" onclick="prevStep()">← Back</button>
+            <button class="ch-nav-btn ch-nav-next" onclick="nextStep()">Next Step →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="ch-panel" data-panel="3">
+          <div class="ch-options">
+            <div class="ch-option" data-value="thermal" onclick="selectOption(this)">
+              <span class="ch-option-icon">🌡️</span>
+              <h5>Thermal Control</h5>
+              <p>Insulation & condensation management. Keep it cool in summer, warm in winter.</p>
+            </div>
+            <div class="ch-option" data-value="privacy" onclick="selectOption(this)">
+              <span class="ch-option-icon">🔒</span>
+              <h5>Privacy</h5>
+              <p>Close-quartered living means neighbours are near. Block the view, keep the light.</p>
+            </div>
+            <div class="ch-option" data-value="blackout" onclick="selectOption(this)">
+              <span class="ch-option-icon">🌙</span>
+              <h5>Total Blackout</h5>
+              <p>Bedroom-grade darkness. Essential for shift workers and light-sensitive sleepers.</p>
+            </div>
+            <div class="ch-option" data-value="style" onclick="selectOption(this)">
+              <span class="ch-option-icon">✨</span>
+              <h5>Design & Aesthetics</h5>
+              <p>Make the industrial beautiful. Blinds as a design statement, not an afterthought.</p>
+            </div>
+          </div>
+          <div class="ch-nav-btns">
+            <button class="ch-nav-btn ch-nav-prev" onclick="prevStep()">← Back</button>
+            <button class="ch-nav-btn ch-nav-next" onclick="showResult()">See My Solution →</button>
+          </div>
+        </div>
+
+        <!-- Step 4 — Result -->
+        <div class="ch-panel" data-panel="4">
+          <div class="ch-result" id="configResult">
+            <span class="ch-result-tag">Recommended for your build</span>
+            <h3 id="resultTitle">Thermal Roller Blinds</h3>
+            <div class="ch-result-specs">
+              <div class="ch-result-spec">
+                <label>Mounting</label>
+                <span id="resultMount">Magnetic Clamp</span>
+              </div>
+              <div class="ch-result-spec">
+                <label>Fabric</label>
+                <span id="resultFabric">Thermal-Backed PVC</span>
+              </div>
+              <div class="ch-result-spec">
+                <label>Best For</label>
+                <span id="resultBest">Temperature regulation</span>
+              </div>
+              <div class="ch-result-spec">
+                <label>Price Range</label>
+                <span id="resultPrice">$180 – $420</span>
+              </div>
+            </div>
+            <p style="font-size:0.88rem;color:var(--bp-muted);line-height:1.65;margin:0 0 24px;">Based on your selections, this system will handle the unique thermal and spatial challenges of your container build. We'll fine-tune everything during the free on-site measure.</p>
+            <a href="/contact.html" class="ch-cta-btn" style="display:inline-flex;">Book Free Measure →</a>
+          </div>
+          <div class="ch-nav-btns">
+            <button class="ch-nav-btn ch-nav-prev" onclick="resetConfig()">← Start Over</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="ch-products ch-section">
+    <div class="ch-section-tag ch-reveal">Tested & Proven</div>
+    <h2 class="ch-section-title ch-reveal">Products That Survive<br>Container Life</h2>
+    <p class="ch-section-sub ch-reveal">Every product we recommend for container homes has been tested in real Australian conditions — heat, cold, moisture, and tight spaces.</p>
+
+    <div class="ch-product-track">
+      <div class="ch-product-card ch-reveal">
+        <div class="ch-product-visual" style="background:linear-gradient(135deg,#0E1E36,#1A3052);">
+          <div class="ch-product-visual-inner">🪟</div>
+        </div>
+        <div class="ch-product-info">
+          <span class="ch-product-badge">Most Popular</span>
+          <h4>Roller Blinds</h4>
+          <p>Minimal stack height. Perfect for shallow container window reveals. Available in blockout, sunscreen, and thermal-backed fabrics.</p>
+          <div class="ch-product-specs">
+            <div class="ch-product-spec-item"><b>15mm</b>Min gap</div>
+            <div class="ch-product-spec-item"><b>3m</b>Max width</div>
+            <div class="ch-product-spec-item"><b>$120+</b>From</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-product-card ch-reveal">
+        <div class="ch-product-visual" style="background:linear-gradient(135deg,#1A2940,#243B5C);">
+          <div class="ch-product-visual-inner">🫧</div>
+        </div>
+        <div class="ch-product-info">
+          <span class="ch-product-badge">Best insulation</span>
+          <h4>Honeycomb / Cellular</h4>
+          <p>Trapped air pockets create an insulating barrier against steel-wall thermal bridging. The R-value champion.</p>
+          <div class="ch-product-specs">
+            <div class="ch-product-spec-item"><b>R-2.1</b>Insulation</div>
+            <div class="ch-product-spec-item"><b>Anti-mould</b>Fabric</div>
+            <div class="ch-product-spec-item"><b>$190+</b>From</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-product-card ch-reveal">
+        <div class="ch-product-visual" style="background:linear-gradient(135deg,#12253E,#1E3A5C);">
+          <div class="ch-product-visual-inner">📐</div>
+        </div>
+        <div class="ch-product-info">
+          <span class="ch-product-badge">Full-wall glass</span>
+          <h4>Panel Glide</h4>
+          <p>For containers with full-end glass walls. Sleek vertical panels slide along a track system — modern, minimal, functional.</p>
+          <div class="ch-product-specs">
+            <div class="ch-product-spec-item"><b>5+</b>Panels</div>
+            <div class="ch-product-spec-item"><b>6m</b>Max span</div>
+            <div class="ch-product-spec-item"><b>$280+</b>From</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-product-card ch-reveal">
+        <div class="ch-product-visual" style="background:linear-gradient(135deg,#0F2035,#1B3555);">
+          <div class="ch-product-visual-inner">🔧</div>
+        </div>
+        <div class="ch-product-info">
+          <span class="ch-product-badge">Zero drilling</span>
+          <h4>Magnetic Mount Venetians</h4>
+          <p>Aluminium venetians with rare-earth magnetic brackets. Snap on, snap off. No holes in your steel walls.</p>
+          <div class="ch-product-specs">
+            <div class="ch-product-spec-item"><b>25mm</b>Slat width</div>
+            <div class="ch-product-spec-item"><b>Magnetic</b>Fix</div>
+            <div class="ch-product-spec-item"><b>$140+</b>From</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-product-card ch-reveal">
+        <div class="ch-product-visual" style="background:linear-gradient(135deg,#0D1C32,#192F4E);">
+          <div class="ch-product-visual-inner">⭕</div>
+        </div>
+        <div class="ch-product-info">
+          <span class="ch-product-badge">Specialty</span>
+          <h4>Porthole Blinds</h4>
+          <p>Custom circular or oval shapes cut to fit non-standard openings. Fabric tension system eliminates sagging.</p>
+          <div class="ch-product-specs">
+            <div class="ch-product-spec-item"><b>Any</b>Shape</div>
+            <div class="ch-product-spec-item"><b>Custom</b>Template</div>
+            <div class="ch-product-spec-item"><b>$220+</b>From</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="ch-stats">
+    <div class="ch-stat ch-reveal">
+      <div class="ch-stat-num">200+</div>
+      <div class="ch-stat-label">Container Homes Fitted</div>
+    </div>
+    <div class="ch-stat ch-reveal">
+      <div class="ch-stat-num">0</div>
+      <div class="ch-stat-label">Drill Holes Required</div>
+    </div>
+    <div class="ch-stat ch-reveal">
+      <div class="ch-stat-num">48hr</div>
+      <div class="ch-stat-label">Average Turnaround</div>
+    </div>
+    <div class="ch-stat ch-reveal">
+      <div class="ch-stat-num">5yr</div>
+      <div class="ch-stat-label">Warranty on All Systems</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="ch-faq ch-section">
+    <div class="ch-section-tag ch-reveal">Common Questions</div>
+    <h2 class="ch-section-title ch-reveal">Container Home<br>Blinds FAQ</h2>
+
+    <div class="ch-faq-list">
+      <div class="ch-faq-item ch-reveal">
+        <button class="ch-faq-q" onclick="toggleFaq(this)">
+          Can you mount blinds without drilling into steel walls?
+          <span class="ch-faq-toggle">+</span>
+        </button>
+        <div class="ch-faq-a">
+          <p>Absolutely. Our magnetic clamp bracket systems attach directly to corrugated steel profiles using rare-earth magnets rated to 15kg holding force. They're adjustable, removable, and leave zero marks. For heavier systems like panel glides, we use structural clamps that grip the corrugation ridges.</p>
+        </div>
+      </div>
+      <div class="ch-faq-item ch-reveal">
+        <button class="ch-faq-q" onclick="toggleFaq(this)">
+          Will condensation damage the blinds?
+          <span class="ch-faq-toggle">+</span>
+        </button>
+        <div class="ch-faq-a">
+          <p>Not with the right fabric selection. We exclusively recommend moisture-resistant, mould-proof materials for container installations. Honeycomb blinds are particularly effective because they create an air barrier that reduces condensation formation on the cold steel surface behind them.</p>
+        </div>
+      </div>
+      <div class="ch-faq-item ch-reveal">
+        <button class="ch-faq-q" onclick="toggleFaq(this)">
+          What about irregular or non-rectangular window shapes?
+          <span class="ch-faq-toggle">+</span>
+        </button>
+        <div class="ch-faq-a">
+          <p>Container builds often have custom-cut openings that aren't perfectly square. We use laser templating to capture the exact shape of your opening, then manufacture blinds to match within 1mm tolerance. Portholes, trapezoids, and angled cuts — we've done them all.</p>
+        </div>
+      </div>
+      <div class="ch-faq-item ch-reveal">
+        <button class="ch-faq-q" onclick="toggleFaq(this)">
+          Do you service container homes outside Melbourne metro?
+          <span class="ch-faq-toggle">+</span>
+        </button>
+        <div class="ch-faq-a">
+          <p>We cover Melbourne metro and surrounds including the Mornington Peninsula, Bellarine, and Yarra Ranges. For rural container builds beyond our service area, we offer a detailed self-measure kit with video guidance, and we'll ship your custom blinds direct with installation instructions.</p>
+        </div>
+      </div>
+      <div class="ch-faq-item ch-reveal">
+        <button class="ch-faq-q" onclick="toggleFaq(this)">
+          How much should I budget for blinds in a container home?
+          <span class="ch-faq-toggle">+</span>
+        </button>
+        <div class="ch-faq-a">
+          <p>A single 20ft container typically has 3-5 windows and runs $600–$1,500 depending on blind type and fabric. Multi-stack builds with 10+ windows usually fall in the $2,000–$5,000 range. We offer package pricing for whole-home container projects — ask about our builder rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ch-cta">
+    <h2 class="ch-reveal">Your Container.<br>Our Expertise.</h2>
+    <p class="ch-reveal">Book a free on-site measure and we'll bring sample fabrics, bracket options, and a no-obligation quote tailored to your build.</p>
+    <a href="/contact.html" class="ch-cta-btn ch-reveal">Get Free Quote →</a>
+  </section>
+
+</main>
+
+<!-- FOOTER from main site -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">iSeekBlinds</a>
+      <p>Premium blinds, curtains & shutters in Melbourne. Free measure & quote.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="/blinds.html">Blinds</a>
+        <a href="/curtains.html">Curtains</a>
+        <a href="/shutters.html">Shutters</a>
+        <a href="/motorised.html">Motorised</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/landing/">Guides</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. Melbourne, Australia.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Configurator logic
+  let currentStep = 1;
+  const selections = {};
+
+  function selectOption(el) {
+    el.parentElement.querySelectorAll('.ch-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    selections[`step${currentStep}`] = el.dataset.value;
+  }
+
+  function goToStep(n) {
+    currentStep = n;
+    document.querySelectorAll('.ch-step').forEach(s => s.classList.toggle('active', parseInt(s.dataset.step) === n));
+    document.querySelectorAll('.ch-panel').forEach(p => {
+      p.classList.remove('active');
+      if (parseInt(p.dataset.panel) === n) p.classList.add('active');
+    });
+  }
+
+  function nextStep() {
+    if (currentStep < 4) goToStep(currentStep + 1);
+  }
+  function prevStep() {
+    if (currentStep > 1) goToStep(currentStep - 1);
+  }
+
+  function showResult() {
+    const priority = selections.step3 || 'thermal';
+    const windowType = selections.step2 || 'standard-rect';
+
+    const recs = {
+      thermal: { title: 'Honeycomb Cellular Blinds', mount: 'Magnetic Clamp', fabric: 'Double-Cell Insulated', best: 'Temperature regulation', price: '$190 – $480' },
+      privacy: { title: 'Day-Night Roller Blinds', mount: 'Steel Bracket', fabric: 'Dual Sunscreen + Blockout', best: 'Light control + privacy', price: '$160 – $390' },
+      blackout: { title: 'Blockout Roller Blinds', mount: 'Magnetic Clamp', fabric: 'PVC-Backed Blockout', best: 'Total darkness', price: '$140 – $360' },
+      style: { title: 'Sheer Panel Glide', mount: 'Ceiling Track', fabric: 'Linen-Look Translucent', best: 'Design statement', price: '$280 – $550' }
+    };
+
+    if (windowType === 'porthole') {
+      recs[priority] = { title: 'Custom Porthole Blinds', mount: 'Tension Frame', fabric: 'Circular-Cut ' + (recs[priority]?.fabric || 'Blockout'), best: recs[priority]?.best || 'Full coverage', price: '$220 – $480' };
+    }
+    if (windowType === 'full-wall') {
+      recs[priority].title = 'Panel Glide System';
+      recs[priority].mount = 'Ceiling Track';
+      recs[priority].price = '$380 – $680';
+    }
+
+    const rec = recs[priority] || recs.thermal;
+    document.getElementById('resultTitle').textContent = rec.title;
+    document.getElementById('resultMount').textContent = rec.mount;
+    document.getElementById('resultFabric').textContent = rec.fabric;
+    document.getElementById('resultBest').textContent = rec.best;
+    document.getElementById('resultPrice').textContent = rec.price;
+
+    goToStep(4);
+  }
+
+  function resetConfig() {
+    Object.keys(selections).forEach(k => delete selections[k]);
+    document.querySelectorAll('.ch-option').forEach(o => o.classList.remove('selected'));
+    goToStep(1);
+  }
+
+  // Step clicks
+  document.querySelectorAll('.ch-step').forEach(step => {
+    step.addEventListener('click', () => {
+      const n = parseInt(step.dataset.step);
+      if (n <= currentStep || n === currentStep + 1) goToStep(n);
+    });
+  });
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.ch-faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.ch-reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
