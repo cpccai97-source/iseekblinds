@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Kitchen Window Blinds & Splashback Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Blinds and shutters designed for open-plan kitchens. Grease-resistant, moisture-proof, easy-clean window treatments for Melbourne homes. PVC shutters, aluminium venetians, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 杂志排版 MAGAZINE EDITORIAL THEME === */
+    :root {
+      --mag-cream: #faf7f2;
+      --mag-warm: #f5efe6;
+      --mag-paper: #fffdf8;
+      --mag-ink: #1a1a1a;
+      --mag-ink-light: #3a3a3a;
+      --mag-muted: #7a7268;
+      --mag-accent: #c4553a;
+      --mag-accent-dark: #a84430;
+      --mag-gold: #b8956a;
+      --mag-rule: #d4cdc2;
+      --mag-rule-dark: #8a8278;
+    }
+
+    .lp-open-kitchen {
+      background: var(--mag-cream);
+      color: var(--mag-ink);
+      font-family: 'Source Sans 3', sans-serif;
+    }
+
+    .lp-open-kitchen .header { background: rgba(250,247,242,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--mag-rule); }
+    .lp-open-kitchen .footer { background: var(--mag-ink); }
+
+    /* Editorial Typography */
+    .ok-serif { font-family: 'Playfair Display', serif; }
+    .ok-display { font-family: 'Cormorant Garamond', serif; }
+
+    /* Hero — magazine cover style */
+    .ok-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      overflow: hidden;
+    }
+
+    .ok-hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 64px 80px;
+      background: var(--mag-paper);
+      position: relative;
+    }
+
+    .ok-hero-content::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      bottom: 10%;
+      width: 1px;
+      background: var(--mag-rule);
+    }
+
+    .ok-hero-issue {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--mag-muted);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--mag-rule);
+    }
+
+    .ok-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: var(--mag-ink);
+    }
+
+    .ok-hero h1 em {
+      font-style: italic;
+      color: var(--mag-accent);
+    }
+
+    .ok-hero-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--mag-muted);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 420px;
+    }
+
+    .ok-hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ok-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: var(--mag-accent);
+      color: #fff;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .ok-btn-primary:hover {
+      background: var(--mag-accent-dark);
+    }
+
+    .ok-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border: 1px solid var(--mag-ink);
+      color: var(--mag-ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .ok-btn-outline:hover {
+      background: var(--mag-ink);
+      color: var(--mag-paper);
+    }
+
+    .ok-hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ok-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ok-hero-image-caption {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 16px;
+    }
+
+    /* Section base */
+    .ok-section {
+      padding: 100px 24px;
+      position: relative;
+    }
+
+    .ok-section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ok-section-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--mag-accent);
+      margin-bottom: 16px;
+    }
+
+    .ok-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--mag-ink);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .ok-section-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--mag-muted);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .ok-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--mag-accent);
+      margin: 0 0 48px;
+    }
+
+    /* Challenges — editorial 3-col */
+    .ok-challenges {
+      background: var(--mag-paper);
+      border-top: 1px solid var(--mag-rule);
+      border-bottom: 1px solid var(--mag-rule);
+    }
+
+    .ok-challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .ok-challenge {
+      padding: 48px 40px;
+      border-right: 1px solid var(--mag-rule);
+      position: relative;
+    }
+
+    .ok-challenge:last-child { border-right: none; }
+
+    .ok-challenge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(196,85,58,0.12);
+      position: absolute;
+      top: 20px;
+      right: 24px;
+    }
+
+    .ok-challenge-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .ok-challenge h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .ok-challenge p {
+      font-size: 0.95rem;
+      color: var(--mag-ink-light);
+      line-height: 1.8;
+    }
+
+    /* Products — asymmetric magazine grid */
+    .ok-products-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .ok-products-grid.reverse {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .ok-product-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ok-product-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .ok-product-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .ok-product-img-caption {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--mag-muted);
+      margin-top: 12px;
+    }
+
+    .ok-product-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ok-product-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .ok-product-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--mag-accent);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .ok-product-text p {
+      font-size: 1rem;
+      color: var(--mag-ink-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .ok-product-features {
+      list-style: none;
+      padding: 0;
+      border-top: 1px solid var(--mag-rule);
+      padding-top: 16px;
+    }
+
+    .ok-product-features li {
+      font-size: 0.9rem;
+      color: var(--mag-ink-light);
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ok-product-features li::before {
+      content: '—';
+      color: var(--mag-accent);
+      font-weight: 600;
+    }
+
+    /* Pull quote */
+    .ok-pullquote {
+      border-top: 2px solid var(--mag-ink);
+      border-bottom: 1px solid var(--mag-rule);
+      padding: 48px 0;
+      margin: 64px 0;
+      text-align: center;
+    }
+
+    .ok-pullquote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--mag-ink);
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+
+    .ok-pullquote cite {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--mag-muted);
+      font-style: normal;
+    }
+
+    /* Style gallery — mosaic */
+    .ok-gallery {
+      background: var(--mag-warm);
+    }
+
+    .ok-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+
+    .ok-gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ok-gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .ok-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .ok-gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .ok-gallery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 12px;
+    }
+
+    /* Splashback section — two column editorial */
+    .ok-splash {
+      background: var(--mag-paper);
+      border-top: 1px solid var(--mag-rule);
+    }
+
+    .ok-splash-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .ok-splash-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .ok-splash-text p {
+      font-size: 1rem;
+      color: var(--mag-ink-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .ok-splash-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    /* Integration section */
+    .ok-integration-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .ok-integration-card {
+      padding: 40px 32px;
+      border: 1px solid var(--mag-rule);
+      background: var(--mag-paper);
+      transition: all 0.3s ease;
+    }
+
+    .ok-integration-card:hover {
+      border-color: var(--mag-accent);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    .ok-integration-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .ok-integration-card p {
+      font-size: 0.9rem;
+      color: var(--mag-ink-light);
+      line-height: 1.7;
+    }
+
+    .ok-integration-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* CTA */
+    .ok-cta {
+      background: var(--mag-ink);
+      color: var(--mag-cream);
+      text-align: center;
+    }
+
+    .ok-cta .ok-section-label { color: var(--mag-gold); }
+
+    .ok-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--mag-cream);
+      margin-bottom: 16px;
+    }
+
+    .ok-cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(250,247,242,0.6);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .ok-cta .ok-btn-primary {
+      background: var(--mag-gold);
+      color: var(--mag-ink);
+    }
+
+    .ok-cta .ok-btn-primary:hover {
+      background: #d4a87a;
+    }
+
+    .ok-cta .ok-btn-outline {
+      border-color: rgba(250,247,242,0.3);
+      color: var(--mag-cream);
+    }
+
+    .ok-cta .ok-btn-outline:hover {
+      background: rgba(250,247,242,0.1);
+    }
+
+    /* Cross-links */
+    .ok-crosslinks {
+      background: var(--mag-warm);
+      padding: 80px 24px;
+      border-top: 1px solid var(--mag-rule);
+    }
+
+    .ok-crosslinks-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ok-crosslinks h3 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--mag-muted);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .ok-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .ok-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid var(--mag-rule);
+      color: var(--mag-ink-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      background: var(--mag-paper);
+    }
+
+    .ok-crosslink-item:hover {
+      border-color: var(--mag-accent);
+      color: var(--mag-accent);
+    }
+
+    .ok-crosslink-item span {
+      font-size: 0.7rem;
+      color: var(--mag-accent);
+    }
+
+    /* Scroll animations */
+    .ok-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .ok-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .ok-hero { grid-template-columns: 1fr; }
+      .ok-hero-content { padding: 100px 24px 48px; }
+      .ok-hero-content::after { display: none; }
+      .ok-hero-image { max-height: 50vh; }
+      .ok-challenges-grid { grid-template-columns: 1fr; }
+      .ok-challenge { border-right: none; border-bottom: 1px solid var(--mag-rule); }
+      .ok-challenge:last-child { border-bottom: none; }
+      .ok-products-grid, .ok-products-grid.reverse { grid-template-columns: 1fr; }
+      .ok-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .ok-gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+      .ok-splash-grid { grid-template-columns: 1fr; gap: 32px; }
+      .ok-integration-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="lp-open-kitchen">
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="ok-hero">
+    <div class="ok-hero-content ok-reveal">
+      <div class="ok-hero-issue">iSeekBlinds — Kitchen Solutions</div>
+      <h1>Kitchen Windows, <em>Beautifully</em> Solved</h1>
+      <p class="ok-hero-lead">Blinds and shutters engineered for the demands of open-plan kitchens — where style meets splash-proof practicality.</p>
+      <div class="ok-hero-btns">
+        <a href="../free-quote.html" class="ok-btn-primary">Get Free Quote</a>
+        <a href="tel:0400000000" class="ok-btn-outline">Call Us</a>
+      </div>
+    </div>
+    <div class="ok-hero-image">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80" alt="Modern open-plan kitchen with window treatments">
+      <span class="ok-hero-image-caption">Open-plan living, styled</span>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section class="ok-section ok-challenges">
+    <div class="ok-section-inner">
+      <div class="ok-reveal">
+        <div class="ok-section-label">The Challenge</div>
+        <h2 class="ok-section-title">Why Kitchen Windows Are Different</h2>
+        <div class="ok-divider"></div>
+      </div>
+      <div class="ok-challenges-grid ok-reveal">
+        <div class="ok-challenge">
+          <span class="ok-challenge-num">01</span>
+          <span class="ok-challenge-icon">💨</span>
+          <h3>Grease &amp; Cooking Splatter</h3>
+          <p>Airborne grease settles on fabrics and discolours them over time. Kitchen blinds need surfaces that wipe clean without staining or absorbing odours.</p>
+        </div>
+        <div class="ok-challenge">
+          <span class="ok-challenge-num">02</span>
+          <span class="ok-challenge-icon">💧</span>
+          <h3>Moisture &amp; Steam</h3>
+          <p>Boiling water, dishwashers, and sinks create constant humidity. Standard timber or fabric blinds can warp, sag, or grow mould in these conditions.</p>
+        </div>
+        <div class="ok-challenge">
+          <span class="ok-challenge-num">03</span>
+          <span class="ok-challenge-icon">☀️</span>
+          <h3>Heat &amp; UV Exposure</h3>
+          <p>North-facing kitchen windows cop intense afternoon sun. Overheating makes the kitchen uncomfortable and fades benchtops, cabinetry, and flooring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="ok-section">
+    <div class="ok-section-inner">
+      <div class="ok-reveal">
+        <div class="ok-section-label">Recommended</div>
+        <h2 class="ok-section-title">Products That Handle the Heat</h2>
+        <p class="ok-section-subtitle">Each recommended solution is tested for kitchen conditions — moisture, heat, grease, and heavy daily use.</p>
+      </div>
+
+      <div class="ok-products-grid ok-reveal">
+        <div class="ok-product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80" alt="PVC plantation shutters in modern kitchen">
+          <p class="ok-product-img-caption">PVC shutters, Brighton residence</p>
+        </div>
+        <div class="ok-product-text">
+          <div class="ok-product-tag">Editor's Pick</div>
+          <h3>PVC Plantation Shutters</h3>
+          <p>The gold standard for kitchen windows. Completely waterproof, immune to warping, and a simple wipe-down removes any grease or grime. Timeless aesthetic that suits heritage and modern kitchens alike.</p>
+          <ul class="ok-product-features">
+            <li>100% waterproof PVC construction</li>
+            <li>UV-stabilised — won't yellow</li>
+            <li>Adjustable louvres for light control</li>
+            <li>Available in 63mm, 89mm &amp; 114mm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ok-products-grid reverse ok-reveal">
+        <div class="ok-product-text">
+          <div class="ok-product-tag">Best Value</div>
+          <h3>Aluminium Venetian Blinds</h3>
+          <p>Lightweight, affordable, and impervious to moisture. Aluminium slats don't absorb grease and clean with a damp cloth. Perfect for rental kitchens and budget-conscious renovations.</p>
+          <ul class="ok-product-features">
+            <li>25mm or 50mm slat options</li>
+            <li>Rust-resistant aluminium alloy</li>
+            <li>200+ colour choices</li>
+            <li>Easy tilt mechanism for ventilation</li>
+          </ul>
+        </div>
+        <div class="ok-product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80" alt="Aluminium venetian blinds in kitchen">
+          <p class="ok-product-img-caption">Aluminium venetians, St Kilda apartment</p>
+        </div>
+      </div>
+
+      <div class="ok-products-grid ok-reveal">
+        <div class="ok-product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Easy-clean roller blinds in open kitchen">
+          <p class="ok-product-img-caption">Sunscreen rollers, Toorak home</p>
+        </div>
+        <div class="ok-product-text">
+          <div class="ok-product-tag">Modern Choice</div>
+          <h3>Easy-Clean Roller Blinds</h3>
+          <p>Specialist kitchen fabrics with PVC-coated or polyester weaves that resist staining. Sunscreen weaves maintain your garden view while blocking 95% of UV. Motorised options keep cords away from stovetops.</p>
+          <ul class="ok-product-features">
+            <li>PVC-coated easy-wipe fabric</li>
+            <li>Sunscreen, light-filter &amp; blockout</li>
+            <li>Motorised or chain-drive</li>
+            <li>Custom printed patterns available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="ok-section">
+    <div class="ok-section-inner">
+      <div class="ok-pullquote ok-reveal">
+        <blockquote>"We replaced our old timber venetians with PVC shutters and the difference is night and day — they look just as elegant but I can actually wipe them down after cooking."</blockquote>
+        <cite>— Sarah M., Hawthorn</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style Gallery -->
+  <section class="ok-section ok-gallery">
+    <div class="ok-section-inner">
+      <div class="ok-reveal">
+        <div class="ok-section-label">Gallery</div>
+        <h2 class="ok-section-title">Kitchen Styles We've Completed</h2>
+        <div class="ok-divider"></div>
+      </div>
+      <div class="ok-gallery-grid ok-reveal">
+        <div class="ok-gallery-item">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Contemporary kitchen with shutters">
+          <span class="ok-gallery-label">Contemporary</span>
+        </div>
+        <div class="ok-gallery-item">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80" alt="Hamptons-style kitchen blinds">
+          <span class="ok-gallery-label">Hamptons</span>
+        </div>
+        <div class="ok-gallery-item">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80" alt="Minimalist kitchen window treatment">
+          <span class="ok-gallery-label">Minimalist</span>
+        </div>
+        <div class="ok-gallery-item">
+          <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=400&q=80" alt="Industrial kitchen with roller blinds">
+          <span class="ok-gallery-label">Industrial</span>
+        </div>
+        <div class="ok-gallery-item">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80" alt="Scandinavian kitchen blinds">
+          <span class="ok-gallery-label">Scandinavian</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Splashback Window Solutions -->
+  <section class="ok-section ok-splash">
+    <div class="ok-section-inner">
+      <div class="ok-splash-grid ok-reveal">
+        <div class="ok-splash-text">
+          <div class="ok-section-label">Specialist</div>
+          <h3>Splashback Window Solutions</h3>
+          <p>Windows behind cooktops and sinks are the trickiest to cover. They're directly in the splash zone and need treatments that won't become grimy fire hazards.</p>
+          <p>We recommend frameless PVC shutters or aluminium venetians for these positions. Both sit flush to the window frame, leaving clearance for taps and hotplates, while providing full adjustability.</p>
+          <p>For windows above kitchen sinks, bottom-up roller blinds let you maintain privacy at eye level while keeping the top open for natural light and ventilation.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80" alt="Kitchen splashback window with blinds" class="ok-splash-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration with Living/Dining -->
+  <section class="ok-section">
+    <div class="ok-section-inner">
+      <div class="ok-reveal">
+        <div class="ok-section-label">Open Plan Living</div>
+        <h2 class="ok-section-title">Seamless Integration</h2>
+        <p class="ok-section-subtitle">Your kitchen doesn't exist in isolation — the window treatments need to harmonise with your dining and living areas.</p>
+      </div>
+      <div class="ok-integration-grid ok-reveal">
+        <div class="ok-integration-card">
+          <span class="ok-integration-icon">🎨</span>
+          <h3>Colour Coordination</h3>
+          <p>We match your kitchen blinds to the treatments in adjoining rooms — same fabric family, complementary colours, consistent hardware finishes throughout the open plan.</p>
+        </div>
+        <div class="ok-integration-card">
+          <span class="ok-integration-icon">📐</span>
+          <h3>Mixed Products, Unified Look</h3>
+          <p>Shutters in the kitchen, roller blinds in the dining, curtains in the living room — we specify matching colour temperatures and hardware so they read as one cohesive scheme.</p>
+        </div>
+        <div class="ok-integration-card">
+          <span class="ok-integration-icon">📱</span>
+          <h3>Motorised Harmony</h3>
+          <p>Control all zones from one app or voice command. Set kitchen blinds to open at sunrise and close during afternoon cooking heat — all synced with your living room schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ok-section ok-cta">
+    <div class="ok-section-inner ok-reveal">
+      <div class="ok-section-label">Let's Get Started</div>
+      <h2>Your Kitchen Deserves Better Blinds</h2>
+      <p>Book a free in-home consultation. We'll measure, recommend the right product for your kitchen, and provide a no-obligation quote.</p>
+      <div class="ok-hero-btns" style="justify-content: center;">
+        <a href="../free-quote.html" class="ok-btn-primary">Request Free Quote</a>
+        <a href="tel:0400000000" class="ok-btn-outline">Call 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="ok-crosslinks">
+    <div class="ok-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="ok-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="ok-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="ok-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="ok-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="ok-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="ok-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="ok-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="ok-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="ok-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="ok-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="ok-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="ok-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="ok-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="ok-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="ok-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="ok-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="ok-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="ok-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="ok-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="ok-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="ok-crosslink-item"><span>→</span> Elderly Accessible Blinds</a>
+        <a href="energy-efficient.html" class="ok-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="ok-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="ok-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="ok-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="ok-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="ok-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="ok-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="ok-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="ok-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="ok-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="ok-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="ok-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="ok-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="ok-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="ok-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="ok-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="ok-crosslink-item"><span>→</span> Office Partition Curtains</a>
+        <a href="outdoor-blinds.html" class="ok-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="ok-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="ok-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="ok-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="ok-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="ok-crosslink-item"><span>→</span> Restaurant &amp; Cafe Blinds</a>
+        <a href="retail-shopfront.html" class="ok-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="ok-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="ok-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="ok-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="ok-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="ok-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="ok-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="ok-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="ok-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="winter-insulation.html" class="ok-crosslink-item"><span>→</span> Winter Insulation Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('nav-open');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.ok-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

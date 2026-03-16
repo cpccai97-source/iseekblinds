@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office Partition Curtains & Room Divider Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Transform open-plan offices with partition curtains, track dividers, panel glides and roller blinds. Flexible workspace solutions for Melbourne businesses. Free quote available.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 科技未来感 TECH FUTURISTIC THEME === */
+    :root {
+      --tf-bg: #0a0e1a;
+      --tf-bg-alt: #0f1429;
+      --tf-surface: #141a2e;
+      --tf-surface-light: #1a2240;
+      --tf-cyan: #00e5ff;
+      --tf-blue: #2979ff;
+      --tf-electric: #448aff;
+      --tf-neon: #00e5ff;
+      --tf-purple: #7c4dff;
+      --tf-text: #e0e6f0;
+      --tf-text-muted: #8892a8;
+      --tf-border: rgba(0,229,255,0.15);
+      --tf-glow: 0 0 20px rgba(0,229,255,0.3);
+    }
+
+    .lp-office-partition {
+      background: var(--tf-bg);
+      color: var(--tf-text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lp-office-partition .header { background: rgba(10,14,26,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--tf-border); }
+    .lp-office-partition .footer { background: #060a14; }
+
+    /* Grid background pattern */
+    .tf-grid-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .op-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--tf-bg) 0%, var(--tf-bg-alt) 50%, #0d1225 100%);
+    }
+
+    .op-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .op-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(41,121,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .op-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .op-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--tf-cyan);
+      border: 1px solid var(--tf-border);
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      background: rgba(0,229,255,0.05);
+    }
+
+    .op-hero-tag::before {
+      content: '//';
+      opacity: 0.5;
+    }
+
+    .op-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    .op-hero h1 .highlight {
+      background: linear-gradient(135deg, var(--tf-cyan), var(--tf-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .op-hero-desc {
+      font-size: 1.15rem;
+      color: var(--tf-text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .op-hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .op-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--tf-cyan), var(--tf-blue));
+      color: var(--tf-bg);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+
+    .op-btn-primary:hover {
+      box-shadow: var(--tf-glow);
+      transform: translateY(-2px);
+    }
+
+    .op-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border: 1px solid var(--tf-border);
+      color: var(--tf-cyan);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .op-btn-outline:hover {
+      border-color: var(--tf-cyan);
+      background: rgba(0,229,255,0.05);
+    }
+
+    .op-hero-visual {
+      position: relative;
+    }
+
+    .op-hero-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 1px solid var(--tf-border);
+      filter: brightness(0.9);
+    }
+
+    .op-hero-img-frame {
+      position: relative;
+    }
+
+    .op-hero-img-frame::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 60%;
+      height: 60%;
+      border-top: 2px solid var(--tf-cyan);
+      border-right: 2px solid var(--tf-cyan);
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .op-hero-img-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: -8px;
+      width: 60%;
+      height: 60%;
+      border-bottom: 2px solid var(--tf-blue);
+      border-left: 2px solid var(--tf-blue);
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    /* Section base */
+    .op-section {
+      padding: 100px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .op-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .op-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--tf-cyan);
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .op-section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .op-section-subtitle {
+      font-size: 1.1rem;
+      color: var(--tf-text-muted);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    /* Benefits Section */
+    .op-benefits {
+      background: var(--tf-bg-alt);
+    }
+
+    .op-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .op-benefit-card {
+      background: var(--tf-surface);
+      border: 1px solid var(--tf-border);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .op-benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--tf-cyan), var(--tf-blue));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .op-benefit-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .op-benefit-card:hover {
+      border-color: rgba(0,229,255,0.3);
+      box-shadow: 0 0 30px rgba(0,229,255,0.08);
+      transform: translateY(-4px);
+    }
+
+    .op-benefit-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--tf-border);
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      background: rgba(0,229,255,0.05);
+      color: var(--tf-cyan);
+    }
+
+    .op-benefit-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .op-benefit-card p {
+      font-size: 0.95rem;
+      color: var(--tf-text-muted);
+      line-height: 1.7;
+    }
+
+    /* Products Section */
+    .op-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .op-product-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      background: var(--tf-surface);
+      border: 1px solid var(--tf-border);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .op-product-card:hover {
+      border-color: rgba(0,229,255,0.3);
+      box-shadow: 0 0 30px rgba(0,229,255,0.08);
+    }
+
+    .op-product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 200px;
+    }
+
+    .op-product-info {
+      padding: 32px;
+    }
+
+    .op-product-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .op-product-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--tf-cyan);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .op-product-info p {
+      font-size: 0.9rem;
+      color: var(--tf-text-muted);
+      line-height: 1.7;
+    }
+
+    .op-product-features {
+      list-style: none;
+      padding: 0;
+      margin-top: 16px;
+    }
+
+    .op-product-features li {
+      font-size: 0.85rem;
+      color: var(--tf-text-muted);
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .op-product-features li::before {
+      content: '▹';
+      color: var(--tf-cyan);
+      font-size: 0.7rem;
+    }
+
+    /* Use Cases */
+    .op-usecases {
+      background: var(--tf-bg-alt);
+    }
+
+    .op-usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .op-usecase {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+
+    .op-usecase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      filter: brightness(0.7);
+    }
+
+    .op-usecase:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.5);
+    }
+
+    .op-usecase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 24px;
+      background: linear-gradient(transparent, rgba(10,14,26,0.95));
+    }
+
+    .op-usecase-overlay h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .op-usecase-overlay p {
+      font-size: 0.85rem;
+      color: var(--tf-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Installation */
+    .op-install-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .op-install-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 1px solid var(--tf-border);
+    }
+
+    .op-install-steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: step;
+    }
+
+    .op-install-step {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(0,229,255,0.08);
+      align-items: flex-start;
+    }
+
+    .op-install-step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--tf-cyan);
+      border: 1px solid var(--tf-border);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .op-install-step h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .op-install-step p {
+      font-size: 0.9rem;
+      color: var(--tf-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Stats bar */
+    .op-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--tf-border);
+      border-bottom: 1px solid var(--tf-border);
+    }
+
+    .op-stat {
+      text-align: center;
+      padding: 48px 24px;
+      border-right: 1px solid var(--tf-border);
+    }
+
+    .op-stat:last-child { border-right: none; }
+
+    .op-stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--tf-cyan);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .op-stat-label {
+      font-size: 0.85rem;
+      color: var(--tf-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CTA */
+    .op-cta {
+      background: linear-gradient(135deg, var(--tf-surface) 0%, var(--tf-bg-alt) 100%);
+      text-align: center;
+      border-top: 1px solid var(--tf-border);
+      border-bottom: 1px solid var(--tf-border);
+    }
+
+    .op-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .op-cta p {
+      font-size: 1.1rem;
+      color: var(--tf-text-muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    /* Cross-links */
+    .op-crosslinks {
+      background: var(--tf-bg-alt);
+      padding: 80px 24px;
+    }
+
+    .op-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .op-crosslinks h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--tf-cyan);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .op-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .op-crosslink-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid var(--tf-border);
+      color: var(--tf-text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .op-crosslink-item:hover {
+      border-color: var(--tf-cyan);
+      color: var(--tf-cyan);
+      background: rgba(0,229,255,0.05);
+    }
+
+    .op-crosslink-item span {
+      font-size: 0.7rem;
+      color: var(--tf-cyan);
+    }
+
+    /* Scroll animations */
+    .op-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .op-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .op-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 100px 24px 60px;
+      }
+      .op-benefits-grid { grid-template-columns: 1fr; }
+      .op-products-grid { grid-template-columns: 1fr; }
+      .op-product-card { grid-template-columns: 1fr; }
+      .op-usecases-grid { grid-template-columns: repeat(2, 1fr); }
+      .op-install-grid { grid-template-columns: 1fr; }
+      .op-stats { grid-template-columns: repeat(2, 1fr); }
+      .op-stat { border-bottom: 1px solid var(--tf-border); }
+    }
+  </style>
+</head>
+<body class="lp-office-partition">
+  <div class="tf-grid-bg"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="op-hero">
+    <div class="op-hero-inner">
+      <div class="op-hero-content op-reveal">
+        <div class="op-hero-tag">Workspace Solutions</div>
+        <h1>Redefine Your <span class="highlight">Workspace</span></h1>
+        <p class="op-hero-desc">Partition curtains and room divider blinds that transform open-plan offices into flexible, productive environments. Acoustic control, visual privacy, instant reconfiguration.</p>
+        <div class="op-hero-btns">
+          <a href="../free-quote.html" class="op-btn-primary">Get Free Quote →</a>
+          <a href="tel:0400000000" class="op-btn-outline">Call 0400 000 000</a>
+        </div>
+      </div>
+      <div class="op-hero-visual op-reveal">
+        <div class="op-hero-img-frame">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Modern open-plan office with partition curtains" class="op-hero-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="op-stats op-reveal">
+    <div class="op-stat">
+      <span class="op-stat-num">500+</span>
+      <span class="op-stat-label">Offices Fitted</span>
+    </div>
+    <div class="op-stat">
+      <span class="op-stat-num">12dB</span>
+      <span class="op-stat-label">Noise Reduction</span>
+    </div>
+    <div class="op-stat">
+      <span class="op-stat-num">48hr</span>
+      <span class="op-stat-label">Fast Install</span>
+    </div>
+    <div class="op-stat">
+      <span class="op-stat-num">100%</span>
+      <span class="op-stat-label">Custom Made</span>
+    </div>
+  </div>
+
+  <!-- Benefits -->
+  <section class="op-section op-benefits">
+    <div class="op-section-inner">
+      <div class="op-reveal">
+        <div class="op-section-label">// Why Partition Curtains</div>
+        <h2 class="op-section-title">Benefits of Flexible Space Division</h2>
+        <p class="op-section-subtitle">Unlike fixed walls, curtain partitions give you the agility to reshape your workspace as your team evolves.</p>
+      </div>
+      <div class="op-benefits-grid">
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">⚡</div>
+          <h3>Instant Flexibility</h3>
+          <p>Reconfigure your office layout in seconds. Open up for all-hands meetings, divide for focused work pods, or create private zones on demand — no construction needed.</p>
+        </div>
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">🔇</div>
+          <h3>Acoustic Control</h3>
+          <p>Heavy-duty acoustic fabrics absorb ambient noise and reduce sound transmission by up to 12dB, helping teams concentrate without expensive soundproofing.</p>
+        </div>
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">🔒</div>
+          <h3>Visual Privacy</h3>
+          <p>Blockout and translucent options let you balance openness with privacy. Perfect for HR conversations, client calls, and sensitive work without permanent walls.</p>
+        </div>
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">💰</div>
+          <h3>Cost-Effective</h3>
+          <p>Fraction of the cost of plasterboard walls or glass partitions. No building permits, no structural changes, and fully portable if you relocate.</p>
+        </div>
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">🎨</div>
+          <h3>Brand Integration</h3>
+          <p>Custom printed fabrics with your logo, brand colours, or motivational graphics. Turn dividers into branding opportunities that reinforce your culture.</p>
+        </div>
+        <div class="op-benefit-card op-reveal">
+          <div class="op-benefit-icon">🌿</div>
+          <h3>Sustainable Choice</h3>
+          <p>Reusable, recyclable, and no construction waste. When your layout changes, simply re-track your curtains — nothing goes to landfill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Types -->
+  <section class="op-section">
+    <div class="op-section-inner">
+      <div class="op-reveal">
+        <div class="op-section-label">// Product Range</div>
+        <h2 class="op-section-title">Partition Solutions for Every Space</h2>
+        <p class="op-section-subtitle">From ceiling-mounted track systems to freestanding dividers, we have the right product for your office layout.</p>
+      </div>
+      <div class="op-products-grid">
+        <div class="op-product-card op-reveal">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Track curtain partition in office" class="op-product-img">
+          <div class="op-product-info">
+            <span class="op-product-tag">Most Popular</span>
+            <h3>Track Curtains</h3>
+            <p>Ceiling-mounted aluminium tracks with heavy-duty curtains. Smooth glide operation, curved or straight configurations.</p>
+            <ul class="op-product-features">
+              <li>Bendable tracks for L/U shapes</li>
+              <li>Acoustic & blockout fabrics</li>
+              <li>Motorised option available</li>
+              <li>Ceiling or wall mount</li>
+            </ul>
+          </div>
+        </div>
+        <div class="op-product-card op-reveal">
+          <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=400&q=80" alt="Vertical blinds as office divider" class="op-product-img">
+          <div class="op-product-info">
+            <span class="op-product-tag">Light Control</span>
+            <h3>Vertical Blinds</h3>
+            <p>Classic vertical slats that double as room dividers. Adjust light and visibility with a simple twist of the wand.</p>
+            <ul class="op-product-features">
+              <li>89mm or 127mm slat widths</li>
+              <li>Rotate for light control</li>
+              <li>Easy to clean & maintain</li>
+              <li>Commercial-grade fabrics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="op-product-card op-reveal">
+          <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=400&q=80" alt="Panel glide room divider" class="op-product-img">
+          <div class="op-product-info">
+            <span class="op-product-tag">Modern Aesthetic</span>
+            <h3>Panel Glides</h3>
+            <p>Sleek fabric panels that slide along a multi-channel track. Contemporary look with maximum coverage for large openings.</p>
+            <ul class="op-product-features">
+              <li>Panels up to 800mm wide</li>
+              <li>Stack left, right, or centre</li>
+              <li>Translucent & opaque options</li>
+              <li>Ideal for wide spans</li>
+            </ul>
+          </div>
+        </div>
+        <div class="op-product-card op-reveal">
+          <img src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?w=400&q=80" alt="Roller blind divider in coworking space" class="op-product-img">
+          <div class="op-product-info">
+            <span class="op-product-tag">Space Saver</span>
+            <h3>Roller Dividers</h3>
+            <p>Ceiling-recessed roller blinds that drop down when privacy is needed and disappear when open space is preferred.</p>
+            <ul class="op-product-features">
+              <li>Retractable design</li>
+              <li>Spring or motorised</li>
+              <li>Screen & blockout fabrics</li>
+              <li>Flush ceiling cassette</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="op-section op-usecases">
+    <div class="op-section-inner">
+      <div class="op-reveal">
+        <div class="op-section-label">// Applications</div>
+        <h2 class="op-section-title">Where Partition Curtains Work Best</h2>
+        <p class="op-section-subtitle">Every workspace has unique division needs. Here's how our clients use them.</p>
+      </div>
+      <div class="op-usecases-grid">
+        <div class="op-usecase op-reveal">
+          <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&q=80" alt="Meeting room with curtain divider">
+          <div class="op-usecase-overlay">
+            <h3>Meeting Rooms</h3>
+            <p>Create instant meeting spaces from open areas. Acoustic curtains ensure confidential discussions stay private.</p>
+          </div>
+        </div>
+        <div class="op-usecase op-reveal">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Hot-desking area with partition">
+          <div class="op-usecase-overlay">
+            <h3>Hot-Desking Zones</h3>
+            <p>Divide hot-desking areas into focused work pods. Expand or contract zones based on daily occupancy.</p>
+          </div>
+        </div>
+        <div class="op-usecase op-reveal">
+          <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600&q=80" alt="Co-working space partition">
+          <div class="op-usecase-overlay">
+            <h3>Co-Working Spaces</h3>
+            <p>Give tenants visual separation without losing the collaborative energy. Easy to reconfigure as members change.</p>
+          </div>
+        </div>
+        <div class="op-usecase op-reveal">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Healthcare partition curtain">
+          <div class="op-usecase-overlay">
+            <h3>Healthcare</h3>
+            <p>Patient privacy curtains for clinics, physio rooms, and recovery areas. Antimicrobial fabrics available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation -->
+  <section class="op-section">
+    <div class="op-section-inner">
+      <div class="op-install-grid">
+        <div class="op-reveal">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Office installation in progress" class="op-install-img">
+        </div>
+        <div class="op-reveal">
+          <div class="op-section-label">// Installation Process</div>
+          <h2 class="op-section-title">Professional Install, Minimal Disruption</h2>
+          <p class="op-section-subtitle">We work around your schedule to ensure zero downtime for your business.</p>
+          <ol class="op-install-steps">
+            <li class="op-install-step">
+              <div class="op-install-step-num">01</div>
+              <div>
+                <h4>Site Survey</h4>
+                <p>Our team measures your space, identifies mounting points, and discusses layout options with your facilities manager.</p>
+              </div>
+            </li>
+            <li class="op-install-step">
+              <div class="op-install-step-num">02</div>
+              <div>
+                <h4>Custom Fabrication</h4>
+                <p>Tracks and curtains are manufactured to your exact specifications — dimensions, fabric, colour, and operating system.</p>
+              </div>
+            </li>
+            <li class="op-install-step">
+              <div class="op-install-step-num">03</div>
+              <div>
+                <h4>After-Hours Install</h4>
+                <p>We install outside business hours so your team arrives to a transformed space with zero disruption.</p>
+              </div>
+            </li>
+            <li class="op-install-step">
+              <div class="op-install-step-num">04</div>
+              <div>
+                <h4>Handover & Training</h4>
+                <p>A quick walkthrough on operation, maintenance, and care. Plus a 5-year warranty on all tracks and hardware.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="op-section op-cta">
+    <div class="op-section-inner op-reveal">
+      <div class="op-section-label">// Get Started</div>
+      <h2>Ready to Transform Your Office?</h2>
+      <p>Book a free on-site consultation. We'll measure, advise, and quote — no obligation, no pressure.</p>
+      <div class="op-hero-btns" style="justify-content: center;">
+        <a href="../free-quote.html" class="op-btn-primary">Request Free Quote →</a>
+        <a href="tel:0400000000" class="op-btn-outline">Call 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="op-crosslinks">
+    <div class="op-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="op-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="op-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="op-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="op-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="op-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="op-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="op-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="op-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="op-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="op-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="op-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="op-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="op-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="op-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="op-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="op-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="op-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="op-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="op-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="eco-friendly.html" class="op-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="op-crosslink-item"><span>→</span> Elderly Accessible Blinds</a>
+        <a href="energy-efficient.html" class="op-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="op-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="op-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="op-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="op-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="op-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-office.html" class="op-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="op-crosslink-item"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="op-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="op-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="op-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="op-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="op-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="op-crosslink-item"><span>→</span> Minimalist Home Styling</a>
+        <a href="new-home-packages.html" class="op-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="op-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="open-kitchen.html" class="op-crosslink-item"><span>→</span> Open Kitchen Windows</a>
+        <a href="outdoor-blinds.html" class="op-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="op-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="op-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="op-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="op-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="op-crosslink-item"><span>→</span> Restaurant &amp; Cafe Blinds</a>
+        <a href="retail-shopfront.html" class="op-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="op-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="op-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="op-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="op-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="op-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="op-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="op-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="op-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="winter-insulation.html" class="op-crosslink-item"><span>→</span> Winter Insulation Blinds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('nav-open');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.op-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
