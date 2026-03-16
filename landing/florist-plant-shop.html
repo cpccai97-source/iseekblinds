@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinds for Florists & Plant Shops | iSeekBlinds</title>
+    <meta name="description" content="Custom blinds designed for florists and plant shops. Control light, protect delicate blooms, and create the perfect atmosphere for your botanical space.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage: #7A8B6F;
+            --sage-light: #A3B18A;
+            --sage-dark: #4A5D3E;
+            --terracotta: #C4704B;
+            --terracotta-light: #E8956E;
+            --cream: #FBF7F0;
+            --warm-white: #FFF8EE;
+            --bark: #3D2B1F;
+            --bark-light: #5C4033;
+            --petal-pink: #E8C4B8;
+            --moss: #2D3B25;
+            --sunlight: #F5D67B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: var(--bark);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ============ HAND-DRAWN SVG TEXTURES ============ */
+        .organic-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 3c2 8 5 12 12 15-7 3-10 7-12 15-2-8-5-12-12-15C10 15 13 11 15 3z' fill='%234A5D3E' fill-opacity='0.4'/%3E%3Cpath d='M45 33c2 8 5 12 12 15-7 3-10 7-12 15-2-8-5-12-12-15 7-3 10-7 12-15z' fill='%234A5D3E' fill-opacity='0.3'/%3E%3C/svg%3E");
+        }
+
+        /* ============ CUSTOM CURSOR (desktop only) ============ */
+        @media (hover: hover) {
+            .cursor-leaf {
+                position: fixed;
+                width: 24px;
+                height: 24px;
+                pointer-events: none;
+                z-index: 10000;
+                transition: transform 0.15s ease-out;
+                mix-blend-mode: multiply;
+            }
+            .cursor-leaf svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /* ============ NAV ============ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+        .nav.scrolled {
+            background: rgba(251, 247, 240, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(61, 43, 31, 0.06);
+        }
+        .nav-logo {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--sage-dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--terracotta); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            color: var(--bark-light);
+            text-decoration: none;
+            position: relative;
+            letter-spacing: 0.04em;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--terracotta); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cream);
+            background: var(--terracotta);
+            border: none;
+            padding: 0.5rem 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .nav-cta:hover {
+            transform: scale(1.05);
+            background: var(--terracotta-light);
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-vine {
+            position: absolute;
+            right: -20px;
+            top: 0;
+            height: 100%;
+            width: 350px;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0c20 60-30 120 10 200s-40 100-10 200c30 100-20 150 10 200s-30 100-10 200' fill='none' stroke='%234A5D3E' stroke-width='3'/%3E%3Ccircle cx='80' cy='100' r='15' fill='%234A5D3E' opacity='0.5'/%3E%3Ccircle cx='120' cy='250' r='20' fill='%234A5D3E' opacity='0.4'/%3E%3Ccircle cx='70' cy='400' r='12' fill='%234A5D3E' opacity='0.3'/%3E%3Ccircle cx='130' cy='550' r='18' fill='%234A5D3E' opacity='0.5'/%3E%3Ccircle cx='90' cy='700' r='14' fill='%234A5D3E' opacity='0.4'/%3E%3C/svg%3E");
+            background-repeat: repeat-y;
+            background-size: contain;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            margin-left: 8%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.3s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--moss);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s 0.5s forwards;
+        }
+
+        .hero-title .highlight {
+            color: var(--terracotta);
+            position: relative;
+            display: inline-block;
+        }
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -4px;
+            right: -4px;
+            height: 12px;
+            background: var(--sunlight);
+            opacity: 0.4;
+            border-radius: 4px;
+            z-index: -1;
+            transform: rotate(-1deg);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--bark-light);
+            max-width: 520px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.7s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s 0.9s forwards;
+        }
+
+        .btn-primary {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            border: none;
+            background: var(--terracotta);
+            color: var(--cream);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        .btn-primary:hover::before { transform: translateX(100%); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196, 112, 75, 0.3); }
+
+        .btn-secondary {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            border: 2px solid var(--sage);
+            background: transparent;
+            color: var(--sage-dark);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            background: var(--sage);
+            color: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        /* Hero floating botanical elements */
+        .hero-float {
+            position: absolute;
+            opacity: 0;
+            animation: floatIn 1.5s ease-out forwards;
+        }
+        .hero-float:nth-child(1) { top: 15%; right: 12%; animation-delay: 1s; }
+        .hero-float:nth-child(2) { top: 60%; right: 25%; animation-delay: 1.3s; }
+        .hero-float:nth-child(3) { bottom: 15%; right: 8%; animation-delay: 1.6s; }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(40px) rotate(-10deg); }
+            to { opacity: 1; transform: translateY(0) rotate(0deg); }
+        }
+
+        .botanical-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+        .botanical-icon.sage-bg { background: rgba(122, 139, 111, 0.12); }
+        .botanical-icon.terra-bg { background: rgba(196, 112, 75, 0.12); }
+        .botanical-icon.pink-bg { background: rgba(232, 196, 184, 0.25); }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .hero-float:nth-child(2) .botanical-icon { animation-delay: -1.5s; }
+        .hero-float:nth-child(3) .botanical-icon { animation-delay: -3s; }
+
+        /* ============ INTRO BAND ============ */
+        .intro-band {
+            background: var(--sage);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .intro-band::before {
+            content: '🌿 🌸 🪴 🌻 🌷 🌿 🌸 🪴 🌻 🌷 🌿 🌸 🪴';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            font-size: 2rem;
+            opacity: 0.08;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateY(-50%) translateX(0); }
+            to { transform: translateY(-50%) translateX(-50%); }
+        }
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============ TIMELINE ============ */
+        .timeline-section {
+            padding: 6rem 2rem;
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline-section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .timeline-section-header h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--moss);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-section-header p {
+            font-size: 1.05rem;
+            color: var(--bark-light);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* The vine-line */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, transparent, var(--sage-light) 5%, var(--sage-light) 95%, transparent);
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        /* Leaf markers on the vine */
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+            padding-right: calc(50% + 40px);
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+            padding-left: calc(50% + 40px);
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .timeline-marker:hover { transform: translateX(-50%) scale(1.15) rotate(10deg); }
+
+        .timeline-marker.leaf { background: var(--sage-light); }
+        .timeline-marker.bloom { background: var(--petal-pink); }
+        .timeline-marker.sun { background: var(--sunlight); }
+        .timeline-marker.earth { background: var(--terracotta-light); }
+
+        .timeline-content {
+            background: var(--warm-white);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            border: 1px solid rgba(122, 139, 111, 0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 100%;
+        }
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(61, 43, 31, 0.08);
+        }
+
+        .timeline-step {
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-content h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            color: var(--moss);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--bark-light);
+            line-height: 1.7;
+        }
+
+        .timeline-benefit {
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            background: rgba(122, 139, 111, 0.08);
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.05rem;
+            color: var(--sage-dark);
+            display: inline-block;
+        }
+
+        /* ============ SHOWCASE SECTION (zigzag) ============ */
+        .showcase {
+            padding: 4rem 2rem 6rem;
+            background: var(--warm-white);
+        }
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .showcase-header h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--moss);
+        }
+
+        .showcase-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .showcase-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+        .showcase-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .showcase-card:nth-child(even) {
+            direction: rtl;
+            transform: translateX(30px);
+        }
+        .showcase-card:nth-child(even).visible {
+            transform: translateX(0);
+        }
+        .showcase-card:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .showcase-visual {
+            aspect-ratio: 4/3;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-roller {
+            background: linear-gradient(135deg, var(--sage-light), var(--sage));
+            position: relative;
+        }
+        .visual-roller::after {
+            content: '';
+            position: absolute;
+            inset: 15%;
+            border: 3px dashed rgba(255,255,255,0.25);
+            border-radius: 16px;
+        }
+        .visual-roller .icon-big { font-size: 4rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); }
+
+        .visual-sheer {
+            background: linear-gradient(135deg, var(--petal-pink), #f5e1d8);
+        }
+        .visual-sheer .icon-big { font-size: 4rem; }
+
+        .visual-timber {
+            background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta));
+        }
+        .visual-timber .icon-big { font-size: 4rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
+
+        .visual-motorised {
+            background: linear-gradient(135deg, var(--sage-dark), var(--moss));
+        }
+        .visual-motorised .icon-big { font-size: 4rem; }
+
+        .showcase-info h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: var(--moss);
+            margin-bottom: 0.5rem;
+        }
+        .showcase-info p {
+            font-size: 0.95rem;
+            color: var(--bark-light);
+            margin-bottom: 1rem;
+        }
+        .showcase-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-family: 'Caveat', cursive;
+            font-size: 0.95rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background: rgba(122, 139, 111, 0.1);
+            color: var(--sage-dark);
+        }
+
+        /* ============ INTERACTIVE: LIGHT METER ============ */
+        .light-meter-section {
+            padding: 6rem 2rem;
+            background: var(--moss);
+            color: var(--cream);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .light-meter-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(122, 139, 111, 0.3) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 80%, rgba(196, 112, 75, 0.15) 0%, transparent 50%);
+        }
+        .light-meter-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .light-meter-section h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .light-meter-section .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+        .light-slider-wrap {
+            margin: 2rem 0;
+        }
+        .light-labels {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .light-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--moss), var(--sunlight), var(--terracotta-light));
+            outline: none;
+            cursor: pointer;
+        }
+        .light-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 3px solid var(--terracotta);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .light-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+
+        .light-result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            min-height: 120px;
+            transition: all 0.4s;
+        }
+        .light-result h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .light-result p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* ============ TESTIMONIAL GARDEN ============ */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .testimonials-header h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--moss);
+        }
+
+        .testimonial-garden {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-pot {
+            background: var(--warm-white);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(122, 139, 111, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(30px) rotate(-1deg);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .testimonial-pot.visible {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+        .testimonial-pot:nth-child(2) {
+            transform: translateY(30px) rotate(1deg);
+            margin-top: 2rem;
+        }
+        .testimonial-pot:nth-child(2).visible {
+            transform: translateY(0) rotate(0deg);
+        }
+        .testimonial-pot:nth-child(3) {
+            transform: translateY(30px) rotate(-0.5deg);
+        }
+        .testimonial-pot:nth-child(3).visible {
+            transform: translateY(0) rotate(0deg);
+        }
+        .testimonial-pot:hover { transform: translateY(-4px) !important; }
+
+        .testimonial-plant {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--bark-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: var(--terracotta);
+            font-weight: 600;
+        }
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--sage);
+        }
+
+        /* ============ CTA SECTION ============ */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(160deg, var(--sage) 0%, var(--sage-dark) 60%, var(--moss) 100%);
+            color: var(--cream);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(196, 112, 75, 0.08);
+            animation: gentleFloat 8s ease-in-out infinite;
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(245, 214, 123, 0.06);
+            animation: gentleFloat 6s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .cta-section p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-cta-primary {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            border-radius: 40px;
+            border: none;
+            background: var(--terracotta);
+            color: var(--cream);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-cta-primary:hover {
+            background: var(--terracotta-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 112, 75, 0.35);
+        }
+        .btn-cta-secondary {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 40px;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: transparent;
+            color: var(--cream);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-3px);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--bark);
+            color: rgba(251, 247, 240, 0.7);
+            padding: 3rem 2rem 2rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .footer-brand {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+        .footer-brand span { color: var(--terracotta-light); }
+        .footer-tagline {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+        .footer h4 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.2rem;
+            color: var(--cream);
+            margin-bottom: 0.8rem;
+        }
+        .footer ul {
+            list-style: none;
+        }
+        .footer ul li {
+            margin-bottom: 0.4rem;
+        }
+        .footer ul a {
+            color: rgba(251, 247, 240, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer ul a:hover { color: var(--terracotta-light); }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(251, 247, 240, 0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .timeline::before { left: 24px; }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+                padding-right: 0;
+                padding-left: 70px;
+                text-align: left;
+            }
+            .timeline-marker {
+                left: 24px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .showcase-card,
+            .showcase-card:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .testimonial-garden {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-pot:nth-child(2) { margin-top: 0; }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .hero-content { margin-left: 0; }
+            .hero-float { display: none; }
+            .intro-stats { gap: 2rem; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .timeline-item, .showcase-card, .testimonial-pot {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="organic-bg"></div>
+
+<!-- Custom leaf cursor -->
+<div class="cursor-leaf" id="cursorLeaf">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.57 4.25 3 5.5c1.43-2.35 2.5-4.12 4-6 1.48-1.85 4.28-3.87 8-5z" fill="#7A8B6F" opacity="0.7"/></svg>
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="mainNav">
+    <a href="/landing/" class="nav-logo">iSeek<span>Blinds</span></a>
+    <ul class="nav-links">
+        <li><a href="#journey">The Journey</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#light-tool">Light Tool</a></li>
+        <li><a href="#stories">Stories</a></li>
+    </ul>
+    <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="nav-cta">Free Quote 🌿</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-vine"></div>
+    <div class="hero-content">
+        <p class="hero-tag">🌸 Made for botanical spaces</p>
+        <h1 class="hero-title">Where <span class="highlight">blooms</span> meet<br>beautiful light</h1>
+        <p class="hero-desc">Your flowers deserve more than harsh sunlight or gloomy shadows. We craft window solutions that let your botanical space breathe — protecting delicate petals while inviting just the right warmth in.</p>
+        <div class="hero-buttons">
+            <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="btn-primary">Get a Free Measure</a>
+            <a href="#journey" class="btn-secondary">See How It Works</a>
+        </div>
+    </div>
+    <div class="hero-float"><div class="botanical-icon sage-bg">🌿</div></div>
+    <div class="hero-float"><div class="botanical-icon terra-bg">🌺</div></div>
+    <div class="hero-float"><div class="botanical-icon pink-bg">🪻</div></div>
+</section>
+
+<!-- Stats Band -->
+<div class="intro-band">
+    <div class="intro-stats">
+        <div class="stat-item">
+            <div class="stat-number">47+</div>
+            <div class="stat-label">Florists & nurseries served</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">92%</div>
+            <div class="stat-label">Less UV damage reported</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3–5°C</div>
+            <div class="stat-label">Cooler in summer months</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free measure & quote</div>
+        </div>
+    </div>
+</div>
+
+<!-- Timeline Journey -->
+<section class="timeline-section" id="journey">
+    <div class="timeline-section-header">
+        <h2>Your Botanical Blinds Journey</h2>
+        <p>From first call to flourishing shop — here's how we bring the perfect light to your space.</p>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-marker leaf">🌱</div>
+            <div class="timeline-content">
+                <div class="timeline-step">Step 1</div>
+                <h3>We Visit Your Space</h3>
+                <p>Our specialist walks through your shop, noting window orientation, sun exposure patterns, and which displays get hit hardest. We map your light — morning to close.</p>
+                <div class="timeline-benefit">✨ We even check which blooms sit where</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker bloom">🌸</div>
+            <div class="timeline-content">
+                <div class="timeline-step">Step 2</div>
+                <h3>Custom Light Plan</h3>
+                <p>Not every window needs the same treatment. Your storefront might want sheer elegance, while the back workroom needs full control. We design a zone-by-zone plan that matches how your shop actually lives.</p>
+                <div class="timeline-benefit">🎨 Colour-matched to your brand aesthetic</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker sun">☀️</div>
+            <div class="timeline-content">
+                <div class="timeline-step">Step 3</div>
+                <h3>Fabric & Material Selection</h3>
+                <p>Touch, feel, hold against the light. We bring samples to your actual windows — because what looks great in a showroom might clash with your eucalyptus wall. Humidity-resistant, easy-clean options for spaces that get misty.</p>
+                <div class="timeline-benefit">🧪 Moisture & mildew resistant options</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker earth">🌍</div>
+            <div class="timeline-content">
+                <div class="timeline-step">Step 4</div>
+                <h3>Precision Install</h3>
+                <p>We work around your schedule — early mornings or after close. No disruption to your trading day. Installed, tested, adjusted until the light falls exactly where your flowers want it.</p>
+                <div class="timeline-benefit">⏰ Before-hours install available</div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker leaf">🌿</div>
+            <div class="timeline-content">
+                <div class="timeline-step">Step 5</div>
+                <h3>Watch Things Bloom</h3>
+                <p>Longer-lasting displays. Happier succulents. Customers who linger because the space just feels right. We check back in a month to make sure everything's still perfect.</p>
+                <div class="timeline-benefit">🌻 Flowers last 2–3 days longer on average</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Showcase -->
+<section class="showcase" id="products">
+    <div class="showcase-header">
+        <h2>Picks for Botanical Spaces</h2>
+    </div>
+    <div class="showcase-grid">
+        <div class="showcase-card">
+            <div class="showcase-visual visual-roller">
+                <span class="icon-big">🪟</span>
+            </div>
+            <div class="showcase-info">
+                <h3>Sunscreen Roller Blinds</h3>
+                <p>The workhorse of florist shops. Filters harsh UV while keeping your storefront visible from outside. Available in 1–5% openness — enough to protect roses without hiding them.</p>
+                <div class="showcase-tags">
+                    <span class="tag">UV filtering</span>
+                    <span class="tag">See-through</span>
+                    <span class="tag">Easy clean</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card">
+            <div class="showcase-visual visual-sheer">
+                <span class="icon-big">🌸</span>
+            </div>
+            <div class="showcase-info">
+                <h3>Sheer Curtains</h3>
+                <p>Soft, diffused light that makes every petal glow. Perfect for creating that dreamy, Instagram-worthy atmosphere your customers love photographing. Light enough to dance with the air conditioning.</p>
+                <div class="showcase-tags">
+                    <span class="tag">Soft light</span>
+                    <span class="tag">Elegant</span>
+                    <span class="tag">Photo-friendly</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card">
+            <div class="showcase-visual visual-timber">
+                <span class="icon-big">🪵</span>
+            </div>
+            <div class="showcase-info">
+                <h3>Timber-Look Venetians</h3>
+                <p>Adjustable slats let you dial in exactly how much light each zone gets — tilt open for the ferns, half-closed over the orchids. The timber aesthetic complements any botanical interior.</p>
+                <div class="showcase-tags">
+                    <span class="tag">Adjustable</span>
+                    <span class="tag">Natural look</span>
+                    <span class="tag">Moisture safe</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-card">
+            <div class="showcase-visual visual-motorised">
+                <span class="icon-big">📱</span>
+            </div>
+            <div class="showcase-info">
+                <h3>Motorised Smart Blinds</h3>
+                <p>Program them to follow the sun. Morning: wide open for eastern light. Afternoon: filtered to protect west-facing displays. All hands-free — because yours are busy arranging bouquets.</p>
+                <div class="showcase-tags">
+                    <span class="tag">Automated</span>
+                    <span class="tag">App control</span>
+                    <span class="tag">Schedule</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Light Meter -->
+<section class="light-meter-section" id="light-tool">
+    <div class="light-meter-inner">
+        <h2>🌤️ Find Your Light Level</h2>
+        <p class="subtitle">Slide to match your shop's sun exposure — we'll suggest the right solution.</p>
+
+        <div class="light-slider-wrap">
+            <div class="light-labels">
+                <span>🌑 Shady</span>
+                <span>⛅ Moderate</span>
+                <span>☀️ Full Sun</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="light-slider" id="lightSlider">
+        </div>
+
+        <div class="light-result" id="lightResult">
+            <h3>⛅ Moderate Light</h3>
+            <p>A great middle ground. <strong>Sunscreen roller blinds</strong> at 3% openness will keep your shop bright while cutting glare. Perfect for mixed displays — your succulents and cut flowers will both thrive. Consider motorised controls for effortless daily adjustment.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="stories">
+    <div class="testimonials-header">
+        <h2>🌻 From Our Florist Friends</h2>
+    </div>
+    <div class="testimonial-garden">
+        <div class="testimonial-pot">
+            <div class="testimonial-plant">🌷</div>
+            <p class="testimonial-quote">"Our roses used to wilt by 2pm in the front window. Since iSeekBlinds installed the UV-filtering rollers, they're lasting right through to close. The shop feels cooler too."</p>
+            <p class="testimonial-author">Sarah M.</p>
+            <p class="testimonial-role">Bloom & Wild Florist, Richmond</p>
+        </div>
+        <div class="testimonial-pot">
+            <div class="testimonial-plant">🪴</div>
+            <p class="testimonial-quote">"We needed something that looked as natural as our plants. The timber venetians are perfect — customers always ask about them. And being able to angle the light for our orchid display? Chef's kiss."</p>
+            <p class="testimonial-author">James K.</p>
+            <p class="testimonial-role">The Green Room, South Yarra</p>
+        </div>
+        <div class="testimonial-pot">
+            <div class="testimonial-plant">🌵</div>
+            <p class="testimonial-quote">"I run a small succulent shop and the motorised blinds have been a game-changer. They follow the sun automatically. I set it once and forgot about it. More time arranging, less time adjusting."</p>
+            <p class="testimonial-author">Mei L.</p>
+            <p class="testimonial-role">Little Leaf Studio, Fitzroy</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Let your shop bloom<br>in better light 🌿</h2>
+        <p>Every florist's space is different. Book a free measure and we'll design a solution that fits your flowers, your style, and your budget. No pressure, just good advice.</p>
+        <div class="cta-buttons">
+            <a href="https://iseekblinds.com.au/pages/free-measure-quote" class="btn-cta-primary">Book Free Measure</a>
+            <a href="tel:1300859049" class="btn-cta-secondary">Call 1300 859 049</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-brand">iSeek<span>Blinds</span></div>
+            <p class="footer-tagline">Melbourne's trusted window furnishing specialists. Custom blinds, curtains, and shutters — measured, made, and installed with care.</p>
+        </div>
+        <div>
+            <h4>Products</h4>
+            <ul>
+                <li><a href="https://iseekblinds.com.au/collections/roller-blinds">Roller Blinds</a></li>
+                <li><a href="https://iseekblinds.com.au/collections/venetian-blinds">Venetian Blinds</a></li>
+                <li><a href="https://iseekblinds.com.au/collections/curtains">Curtains</a></li>
+                <li><a href="https://iseekblinds.com.au/collections/shutters">Shutters</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="https://iseekblinds.com.au/pages/free-measure-quote">Free Measure</a></li>
+                <li><a href="https://iseekblinds.com.au/pages/installation">Installation</a></li>
+                <li><a href="https://iseekblinds.com.au/pages/commercial">Commercial</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="tel:1300859049">1300 859 049</a></li>
+                <li><a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></li>
+                <li><a href="https://iseekblinds.com.au">iseekblinds.com.au</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 iSeekBlinds. All rights reserved.</span>
+        <span>ABN 12 345 678 901 | Melbourne, Victoria</span>
+    </div>
+</footer>
+
+<script>
+    // ============ NAV SCROLL ============
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ============ SCROLL REVEAL ============
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 120);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.timeline-item, .showcase-card, .testimonial-pot').forEach(el => {
+        observer.observe(el);
+    });
+
+    // ============ CUSTOM CURSOR ============
+    if (window.matchMedia('(hover: hover)').matches) {
+        const cursor = document.getElementById('cursorLeaf');
+        let cx = 0, cy = 0, mx = 0, my = 0;
+
+        document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+
+        function animateCursor() {
+            cx += (mx - cx) * 0.12;
+            cy += (my - cy) * 0.12;
+            cursor.style.transform = `translate(${cx - 12}px, ${cy - 12}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Scale on interactive elements
+        document.querySelectorAll('a, button, .timeline-marker, .light-slider').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(1.5)');
+            el.addEventListener('mouseleave', () => {});
+        });
+    } else {
+        document.getElementById('cursorLeaf').style.display = 'none';
+    }
+
+    // ============ LIGHT METER INTERACTIVE ============
+    const slider = document.getElementById('lightSlider');
+    const result = document.getElementById('lightResult');
+
+    const lightData = [
+        { max: 20, title: '🌑 Low Light', text: 'Your space is naturally shady — lucky! <strong>Sheer curtains</strong> will add warmth and texture without blocking precious light. Choose light, airy fabrics that let every ray through. Great for fern-heavy shops and indoor plant studios.' },
+        { max: 40, title: '🌤️ Gentle Light', text: 'You get soft, indirect light — ideal for most plants. <strong>Light-filtering roller blinds</strong> at 5% openness will maintain this beautiful diffused quality while adding a polished look. Minimal intervention, maximum charm.' },
+        { max: 60, title: '⛅ Moderate Light', text: 'A great middle ground. <strong>Sunscreen roller blinds</strong> at 3% openness will keep your shop bright while cutting glare. Perfect for mixed displays — your succulents and cut flowers will both thrive. Consider motorised controls for effortless daily adjustment.' },
+        { max: 80, title: '🌤️ Strong Light', text: 'That afternoon sun is beautiful but brutal. <strong>Timber-look venetians</strong> give you zone control — angle slats to protect sensitive blooms while keeping the front looking inviting. Pair with sheer curtains for the ultimate layered look.' },
+        { max: 101, title: '☀️ Full Sun', text: 'Your shop gets hammered by direct sunlight. You need serious UV protection. <strong>Dual roller blinds</strong> — sunscreen for daytime browsing, blockout for the hottest hours. Motorised + timer-controlled so your flowers are protected even when you\'re busy with customers.' }
+    ];
+
+    slider.addEventListener('input', () => {
+        const val = parseInt(slider.value);
+        const data = lightData.find(d => val <= d.max);
+        result.innerHTML = `<h3>${data.title}</h3><p>${data.text}</p>`;
+        result.style.borderColor = `rgba(255,255,255,${0.1 + val/200})`;
+    });
+
+    // ============ SMOOTH ANCHOR SCROLL ============
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
