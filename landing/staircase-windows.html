@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staircase & Hard-to-Reach Window Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Motorised blinds for staircase windows, skylights, vaulted ceilings & hard-to-reach areas in Melbourne. Smart solutions for high windows. Free professional assessment.">
+  <meta name="keywords" content="staircase window blinds Melbourne, hard to reach window blinds, motorised skylights blinds, vaulted ceiling window treatments, high window blinds, tall stairwell blinds, automated window coverings">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === STAIRCASE TECH FUTURISTIC THEME — 科技未来感 === */
+    :root {
+      --st-void: #08090d;
+      --st-dark: #0e1017;
+      --st-navy: #111827;
+      --st-panel: #151923;
+      --st-border: rgba(0, 212, 255, 0.1);
+      --st-cyan: #00d4ff;
+      --st-cyan-dim: rgba(0, 212, 255, 0.08);
+      --st-cyan-glow: rgba(0, 212, 255, 0.25);
+      --st-electric: #00e5ff;
+      --st-purple: #7c3aed;
+      --st-purple-dim: rgba(124, 58, 237, 0.1);
+      --st-text: #c8d6e5;
+      --st-text-muted: #6b7b8d;
+      --st-white: #f0f6ff;
+      --st-radius: 8px;
+      --st-radius-lg: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .st-futuristic {
+      background: var(--st-void);
+      color: var(--st-text);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .st-futuristic h1, .st-futuristic h2, .st-futuristic h3, .st-futuristic h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--st-white);
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .st-futuristic .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Grid background */
+    .st-grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header overrides for dark futuristic theme */
+    .st-futuristic .header {
+      background: rgba(8, 9, 13, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--st-border);
+    }
+    .st-futuristic .header .nav a,
+    .st-futuristic .header .header-phone {
+      color: var(--st-text);
+    }
+    .st-futuristic .header .nav a:hover {
+      color: var(--st-cyan);
+    }
+    .st-futuristic .header .btn-primary {
+      background: var(--st-cyan);
+      color: var(--st-void);
+      border: none;
+      border-radius: var(--st-radius);
+      font-weight: 600;
+    }
+    .st-futuristic .header .btn-primary:hover {
+      background: var(--st-electric);
+      box-shadow: 0 0 20px var(--st-cyan-glow);
+    }
+    .st-futuristic .mobile-menu-btn {
+      color: var(--st-cyan);
+    }
+
+    /* Animations */
+    @keyframes stFadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes stFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes stScaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes stGlow {
+      0%, 100% { box-shadow: 0 0 20px var(--st-cyan-dim), inset 0 0 20px var(--st-cyan-dim); }
+      50% { box-shadow: 0 0 40px var(--st-cyan-glow), inset 0 0 30px var(--st-cyan-dim); }
+    }
+    @keyframes stScanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
+    }
+    @keyframes stPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    @keyframes stNeonFlicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.6; }
+    }
+    @keyframes stDataStream {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 -200px; }
+    }
+
+    .st-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .st-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .st-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* === HERO === */
+    .st-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .st-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.2) saturate(0.3);
+    }
+    .st-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(8,9,13,0.95) 0%, rgba(17,24,39,0.7) 50%, rgba(8,9,13,0.9) 100%);
+    }
+    .st-hero-scanline {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--st-cyan-dim), transparent);
+      animation: stScanline 8s linear infinite;
+      z-index: 1;
+    }
+    .st-hero-glow-orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--st-cyan-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 20%;
+      right: 10%;
+      animation: stPulse 6s ease-in-out infinite;
+    }
+    .st-hero-glow-orb-2 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--st-purple-dim) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: 10%;
+      left: 5%;
+      animation: stPulse 8s ease-in-out infinite reverse;
+    }
+    .st-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      padding: 7rem 2rem 5rem;
+    }
+    .st-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid var(--st-cyan);
+      color: var(--st-cyan);
+      padding: 0.4rem 1.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: var(--st-radius);
+      margin-bottom: 2rem;
+      animation: stFadeIn 1s ease 0.3s both, stGlow 4s ease-in-out infinite;
+    }
+    .st-hero-tag .st-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--st-cyan);
+      border-radius: 50%;
+      animation: stPulse 2s ease-in-out infinite;
+    }
+    .st-hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+      animation: stFadeUp 1s ease 0.5s both;
+    }
+    .st-hero h1 .st-neon {
+      color: var(--st-cyan);
+      text-shadow: 0 0 30px var(--st-cyan-glow);
+      animation: stNeonFlicker 6s ease-in-out infinite;
+    }
+    .st-hero-line {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--st-cyan), var(--st-purple));
+      margin-bottom: 1.5rem;
+      animation: stFadeIn 1s ease 0.8s both;
+    }
+    .st-hero p {
+      font-size: 1.1rem;
+      color: var(--st-text-muted);
+      max-width: 550px;
+      margin-bottom: 2.5rem;
+      animation: stFadeUp 1s ease 1s both;
+    }
+    .st-hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: stFadeUp 1s ease 1.2s both;
+    }
+    .st-btn-neon {
+      display: inline-block;
+      background: var(--st-cyan);
+      color: var(--st-void);
+      padding: 1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--st-radius);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px var(--st-cyan-glow);
+    }
+    .st-btn-neon:hover {
+      background: var(--st-electric);
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px var(--st-cyan-glow);
+    }
+    .st-btn-ghost {
+      display: inline-block;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--st-cyan);
+      padding: 1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--st-radius);
+      transition: all 0.3s ease;
+    }
+    .st-btn-ghost:hover {
+      border-color: var(--st-cyan);
+      background: var(--st-cyan-dim);
+      transform: translateY(-3px);
+    }
+
+    /* === CHALLENGE SECTION === */
+    .st-challenge {
+      padding: 7rem 0;
+      position: relative;
+      background: var(--st-dark);
+    }
+    .st-challenge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--st-cyan-dim), transparent);
+    }
+    .st-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--st-cyan);
+      margin-bottom: 1rem;
+    }
+    .st-section-label::before {
+      content: '';
+      width: 12px;
+      height: 2px;
+      background: var(--st-cyan);
+    }
+    .st-challenge-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .st-challenge-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .st-challenge-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--st-text-muted);
+      font-size: 1.05rem;
+    }
+    .st-challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .st-challenge-card {
+      background: var(--st-panel);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .st-challenge-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--st-cyan), var(--st-purple));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .st-challenge-card:hover::before {
+      opacity: 1;
+    }
+    .st-challenge-card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.08);
+    }
+    .st-challenge-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      background: var(--st-cyan-dim);
+      border-radius: var(--st-radius);
+      border: 1px solid var(--st-border);
+    }
+    .st-challenge-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+    .st-challenge-card p {
+      color: var(--st-text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* === SMART SOLUTIONS === */
+    .st-solutions {
+      padding: 7rem 0;
+      position: relative;
+      background: var(--st-void);
+    }
+    .st-solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .st-solutions-visual {
+      position: relative;
+    }
+    .st-solutions-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--st-radius-lg);
+      border: 1px solid var(--st-border);
+      filter: brightness(0.8);
+    }
+    .st-solutions-hud {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(8, 9, 13, 0.85);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius);
+      padding: 1rem 1.2rem;
+      backdrop-filter: blur(10px);
+    }
+    .st-hud-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--st-cyan);
+      margin-bottom: 0.3rem;
+    }
+    .st-hud-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--st-white);
+    }
+    .st-solutions-stats {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .st-stat-chip {
+      background: rgba(8, 9, 13, 0.85);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius);
+      padding: 0.6rem 1rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .st-stat-chip .st-stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--st-cyan);
+      display: block;
+    }
+    .st-stat-chip .st-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--st-text-muted);
+    }
+    .st-solutions-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .st-solutions-content p {
+      color: var(--st-text-muted);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .st-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .st-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.06);
+    }
+    .st-feature-list li:last-child {
+      border-bottom: none;
+    }
+    .st-feature-dot {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      background: var(--st-cyan);
+      border-radius: 2px;
+      margin-top: 0.4rem;
+      box-shadow: 0 0 10px var(--st-cyan-glow);
+    }
+    .st-feature-list strong {
+      color: var(--st-white);
+    }
+
+    /* === SAFETY & CONVENIENCE === */
+    .st-safety {
+      padding: 7rem 0;
+      background: var(--st-dark);
+      position: relative;
+    }
+    .st-safety::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--st-border), transparent);
+    }
+    .st-safety-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .st-safety-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .st-safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .st-safety-card {
+      background: var(--st-panel);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius-lg);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    .st-safety-card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-4px);
+    }
+    .st-safety-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--st-cyan-dim);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .st-safety-card:hover .st-safety-num {
+      color: var(--st-cyan);
+      text-shadow: 0 0 20px var(--st-cyan-glow);
+    }
+    .st-safety-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .st-safety-card p {
+      color: var(--st-text-muted);
+      font-size: 0.92rem;
+    }
+
+    /* === PRODUCT RANGE === */
+    .st-products {
+      padding: 7rem 0;
+      background: var(--st-void);
+      position: relative;
+    }
+    .st-products-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .st-products-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .st-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .st-product-card {
+      background: var(--st-panel);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius-lg);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .st-product-card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 212, 255, 0.06);
+    }
+    .st-product-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .st-product-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: brightness(0.7);
+    }
+    .st-product-card:hover .st-product-img {
+      transform: scale(1.06);
+      filter: brightness(0.85);
+    }
+    .st-product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--st-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+    }
+    .st-product-body {
+      padding: 1.5rem;
+    }
+    .st-product-body h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+    .st-product-body p {
+      color: var(--st-text-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* === BEFORE/AFTER === */
+    .st-comparison {
+      padding: 7rem 0;
+      background: var(--st-dark);
+      position: relative;
+    }
+    .st-comparison::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--st-border), transparent);
+    }
+    .st-comparison-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .st-comparison-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .st-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .st-comparison-col {
+      background: var(--st-panel);
+      border: 1px solid var(--st-border);
+      border-radius: var(--st-radius-lg);
+      padding: 2rem;
+    }
+    .st-comparison-col.st-before {
+      border-color: rgba(255, 80, 80, 0.15);
+    }
+    .st-comparison-col.st-after {
+      border-color: rgba(0, 212, 255, 0.2);
+      box-shadow: 0 0 30px var(--st-cyan-dim);
+    }
+    .st-comparison-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--st-border);
+    }
+    .st-before .st-comparison-tag { color: #ff5050; }
+    .st-after .st-comparison-tag { color: var(--st-cyan); }
+    .st-comparison-list {
+      list-style: none;
+      padding: 0;
+    }
+    .st-comparison-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      font-size: 0.92rem;
+      color: var(--st-text);
+    }
+    .st-comparison-list .st-x { color: #ff5050; font-weight: 700; min-width: 18px; }
+    .st-comparison-list .st-check { color: var(--st-cyan); font-weight: 700; min-width: 18px; }
+    .st-comparison-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 300px;
+    }
+    .st-vs-badge {
+      width: 60px;
+      height: 60px;
+      background: var(--st-panel);
+      border: 2px solid var(--st-cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--st-cyan);
+      box-shadow: 0 0 20px var(--st-cyan-glow);
+    }
+
+    /* === CTA === */
+    .st-cta {
+      padding: 7rem 0;
+      background: var(--st-void);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .st-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--st-cyan-dim) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+    .st-cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .st-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .st-cta p {
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      color: var(--st-text-muted);
+      font-size: 1.05rem;
+    }
+    .st-cta-features {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .st-cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--st-text);
+    }
+    .st-cta-feature .st-dot-green {
+      width: 8px;
+      height: 8px;
+      background: #00ff88;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    }
+
+    /* === CROSS-LINKS === */
+    .st-crosslinks {
+      padding: 4rem 0;
+      background: var(--st-dark);
+      border-top: 1px solid var(--st-border);
+    }
+    .st-crosslinks h2 {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .st-crosslink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.4rem;
+    }
+    .st-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      color: var(--st-text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      border-radius: var(--st-radius);
+      transition: all 0.3s ease;
+    }
+    .st-crosslink-item:hover {
+      background: var(--st-cyan-dim);
+      color: var(--st-cyan);
+    }
+    .st-crosslink-item span {
+      color: var(--st-cyan);
+      font-weight: 600;
+    }
+
+    /* === FOOTER OVERRIDES === */
+    .st-futuristic .footer {
+      background: var(--st-void);
+      color: var(--st-text);
+      border-top: 1px solid var(--st-border);
+    }
+    .st-futuristic .footer a {
+      color: var(--st-text-muted);
+    }
+    .st-futuristic .footer a:hover {
+      color: var(--st-cyan);
+    }
+    .st-futuristic .footer h4 {
+      color: var(--st-white);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 968px) {
+      .st-challenge-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .st-solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .st-safety-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .st-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .st-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .st-comparison-vs {
+        min-height: auto;
+        padding: 1rem 0;
+      }
+    }
+    @media (max-width: 640px) {
+      .st-hero-content {
+        padding: 6rem 1rem 3rem;
+      }
+      .st-challenge-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .st-products-grid {
+        grid-template-columns: 1fr;
+      }
+      .st-hero-glow-orb, .st-hero-glow-orb-2 {
+        display: none;
+      }
+      .st-solutions-stats {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="st-futuristic">
+
+  <!-- Grid Background -->
+  <div class="st-grid-bg"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="st-hero">
+    <div class="st-hero-bg"></div>
+    <div class="st-hero-overlay"></div>
+    <div class="st-hero-scanline"></div>
+    <div class="st-hero-glow-orb"></div>
+    <div class="st-hero-glow-orb-2"></div>
+    <div class="container st-hero-content">
+      <span class="st-hero-tag"><span class="st-dot"></span> Smart Window Engineering</span>
+      <h1>Blinds for<br>Windows You<br><span class="st-neon">Can't Reach</span></h1>
+      <div class="st-hero-line"></div>
+      <p>Motorised solutions for staircase windows, skylights, vaulted ceilings, and every hard-to-access opening in your Melbourne home. Technology meets elegance.</p>
+      <div class="st-hero-ctas">
+        <a href="../free-quote.html" class="st-btn-neon">Free Assessment</a>
+        <a href="#solutions" class="st-btn-ghost">See Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Challenge -->
+  <section class="st-challenge">
+    <div class="container">
+      <div class="st-challenge-header st-animate">
+        <span class="st-section-label">The Problem</span>
+        <h2>Why High Windows Are<br>Australia's Blindspot</h2>
+        <p>Millions of Australian homes have windows that go untreated simply because they're too difficult or dangerous to access with traditional blinds.</p>
+      </div>
+      <div class="st-challenge-grid">
+        <div class="st-challenge-card st-animate">
+          <div class="st-challenge-icon">⚠️</div>
+          <h3>Safety Hazard</h3>
+          <p>Ladders on stairwells cause over 5,000 injuries annually in Australian homes. Manual blinds demand risky adjustments.</p>
+        </div>
+        <div class="st-challenge-card st-animate">
+          <div class="st-challenge-icon">☀️</div>
+          <h3>Heat & Glare</h3>
+          <p>Unshaded stairwell and skylight windows can raise indoor temps by 8–12°C. Energy bills skyrocket in summer.</p>
+        </div>
+        <div class="st-challenge-card st-animate">
+          <div class="st-challenge-icon">🌙</div>
+          <h3>No Light Control</h3>
+          <p>High windows flood spaces with light at all hours. Street lights at night, harsh sun at dawn — with zero ability to adjust.</p>
+        </div>
+        <div class="st-challenge-card st-animate">
+          <div class="st-challenge-icon">📐</div>
+          <h3>Awkward Shapes</h3>
+          <p>Angled stairwell glass, triangular gable windows, curved skylights — standard blinds simply don't fit these openings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart Motorised Solutions -->
+  <section class="st-solutions" id="solutions">
+    <div class="container">
+      <div class="st-solutions-grid">
+        <div class="st-solutions-visual st-animate">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Motorised blinds on tall staircase window" class="st-solutions-img">
+          <div class="st-solutions-hud">
+            <div class="st-hud-label st-mono">Max Height</div>
+            <div class="st-hud-value">12m+</div>
+          </div>
+          <div class="st-solutions-stats">
+            <div class="st-stat-chip">
+              <span class="st-stat-num">99%</span>
+              <span class="st-stat-label st-mono">Silent</span>
+            </div>
+            <div class="st-stat-chip">
+              <span class="st-stat-num">5yr</span>
+              <span class="st-stat-label st-mono">Warranty</span>
+            </div>
+          </div>
+        </div>
+        <div class="st-solutions-content st-animate">
+          <span class="st-section-label">The Solution</span>
+          <h2>Smart Motorised<br>Window Systems</h2>
+          <p>Our engineered motorised solutions eliminate the need to ever physically access your high windows. Control every blind from your phone, voice assistant, or automated schedule.</p>
+          <ul class="st-feature-list">
+            <li>
+              <div class="st-feature-dot"></div>
+              <div><strong>Somfy & Automate Motors</strong> — Premium whisper-quiet motors rated for 10+ years of daily operation. Battery or hardwired options.</div>
+            </li>
+            <li>
+              <div class="st-feature-dot"></div>
+              <div><strong>Smart Home Integration</strong> — Works with Google Home, Alexa, Apple HomeKit, and all major smart home ecosystems.</div>
+            </li>
+            <li>
+              <div class="st-feature-dot"></div>
+              <div><strong>Sun & Temperature Sensors</strong> — Automatic adjustment based on real-time light and heat. Your blinds respond before you even notice the glare.</div>
+            </li>
+            <li>
+              <div class="st-feature-dot"></div>
+              <div><strong>Custom Engineering</strong> — Angled rails, curved tracks, and bespoke brackets for the most unusual window shapes in stairwells and voids.</div>
+            </li>
+            <li>
+              <div class="st-feature-dot"></div>
+              <div><strong>Solar-Powered Option</strong> — No wiring needed. Our solar cells charge the motor battery — ideal for remote skylights where power isn't available.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety & Convenience -->
+  <section class="st-safety">
+    <div class="container">
+      <div class="st-safety-header st-animate">
+        <span class="st-section-label">Why Go Motorised</span>
+        <h2>Safety Meets Convenience</h2>
+      </div>
+      <div class="st-safety-grid">
+        <div class="st-safety-card st-animate">
+          <div class="st-safety-num">01</div>
+          <h3>Zero Ladder Risk</h3>
+          <p>Eliminate the most dangerous task in home maintenance. Our motorised blinds are operated entirely from ground level — by remote, app, or voice command.</p>
+        </div>
+        <div class="st-safety-card st-animate">
+          <div class="st-safety-num">02</div>
+          <h3>Child & Pet Safe</h3>
+          <p>No dangling cords or chains. Motorised blinds are the safest option for families — fully compliant with Australian child safety standards AS/NZS 13120.</p>
+        </div>
+        <div class="st-safety-card st-animate">
+          <div class="st-safety-num">03</div>
+          <h3>Set & Forget</h3>
+          <p>Programme daily schedules: open at sunrise, close at sunset. Sun sensors react automatically. Your hard-to-reach windows manage themselves year-round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Range -->
+  <section class="st-products">
+    <div class="container">
+      <div class="st-products-header st-animate">
+        <span class="st-section-label">Our Range</span>
+        <h2>Solutions for Every<br>Hard-to-Reach Window</h2>
+      </div>
+      <div class="st-products-grid">
+        <div class="st-product-card st-animate">
+          <div class="st-product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Motorised roller blinds for staircase" class="st-product-img">
+            <span class="st-product-badge st-mono">Best Seller</span>
+          </div>
+          <div class="st-product-body">
+            <h3>Motorised Roller Blinds</h3>
+            <p>Clean, minimal profiles perfect for modern staircases. Available in blockout, sunscreen, and translucent fabrics up to 3.6m wide.</p>
+          </div>
+        </div>
+        <div class="st-product-card st-animate">
+          <div class="st-product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Skylight honeycomb blinds" class="st-product-img">
+            <span class="st-product-badge st-mono">Energy Rated</span>
+          </div>
+          <div class="st-product-body">
+            <h3>Skylight Honeycomb</h3>
+            <p>Tensioned cellular blinds for roof-mounted skylights. Exceptional insulation with R-values up to 3.2. Available in skylight-specific tracks.</p>
+          </div>
+        </div>
+        <div class="st-product-card st-animate">
+          <div class="st-product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="Angled window blinds" class="st-product-img">
+            <span class="st-product-badge st-mono">Custom Cut</span>
+          </div>
+          <div class="st-product-body">
+            <h3>Shaped & Angled Blinds</h3>
+            <p>Triangular, trapezoidal, arched — we engineer custom blinds for non-standard stairwell windows that others say can't be done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Comparison -->
+  <section class="st-comparison">
+    <div class="container">
+      <div class="st-comparison-header st-animate">
+        <span class="st-section-label">The Difference</span>
+        <h2>Before &amp; After Motorisation</h2>
+      </div>
+      <div class="st-comparison-grid st-animate">
+        <div class="st-comparison-col st-before">
+          <div class="st-comparison-tag">// WITHOUT MOTORISED BLINDS</div>
+          <ul class="st-comparison-list">
+            <li><span class="st-x">✕</span> Dangerous ladder access required for every adjustment</li>
+            <li><span class="st-x">✕</span> Windows left bare — heat, glare, and UV damage year-round</li>
+            <li><span class="st-x">✕</span> No privacy in stairwells visible from street</li>
+            <li><span class="st-x">✕</span> Manual cords a child safety hazard</li>
+            <li><span class="st-x">✕</span> Professional cleaning access costs $200+ per visit</li>
+            <li><span class="st-x">✕</span> Energy loss through uninsulated glass</li>
+          </ul>
+        </div>
+        <div class="st-comparison-vs">
+          <div class="st-vs-badge">VS</div>
+        </div>
+        <div class="st-comparison-col st-after">
+          <div class="st-comparison-tag">// WITH iSEEKBLINDS MOTORISED</div>
+          <ul class="st-comparison-list">
+            <li><span class="st-check">✓</span> One-touch control from phone, remote, or voice</li>
+            <li><span class="st-check">✓</span> Automated sun tracking adjusts blinds throughout the day</li>
+            <li><span class="st-check">✓</span> Complete privacy at the press of a button</li>
+            <li><span class="st-check">✓</span> Cordless design — 100% child & pet safe</li>
+            <li><span class="st-check">✓</span> Self-maintaining with scheduled operation</li>
+            <li><span class="st-check">✓</span> Up to 40% reduction in heating/cooling costs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="st-cta">
+    <div class="container st-cta-inner st-animate">
+      <span class="st-section-label">Get Started</span>
+      <h2>Free Professional<br>Window Assessment</h2>
+      <p>Our engineers assess your staircase, skylight, or hard-to-reach windows and recommend the optimal motorised solution — at no cost.</p>
+      <div class="st-cta-features">
+        <div class="st-cta-feature"><span class="st-dot-green"></span> Free On-Site Visit</div>
+        <div class="st-cta-feature"><span class="st-dot-green"></span> Same-Week Booking</div>
+        <div class="st-cta-feature"><span class="st-dot-green"></span> No Obligation Quote</div>
+      </div>
+      <a href="../free-quote.html" class="st-btn-neon">Book Your Assessment</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="st-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="st-crosslink-grid">
+        <a href="acoustic-solutions.html" class="st-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="st-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="st-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="st-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="st-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="st-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="st-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="st-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="st-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="st-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="st-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="st-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="st-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="st-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="st-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="st-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="st-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="st-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="st-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="st-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="st-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="st-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="st-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="st-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="st-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="st-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="st-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="st-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html" class="st-crosslink-item"><span>→</span> Granny Flat</a>
+        <a href="heritage-homes.html" class="st-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="st-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="st-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="st-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="st-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="st-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="st-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="large-windows.html" class="st-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="st-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="st-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="st-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="st-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="st-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="st-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="st-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="st-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="st-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="st-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="st-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="st-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html" class="st-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="privacy-blinds.html" class="st-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="st-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="st-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="st-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="st-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="st-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="st-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="st-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="st-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="st-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="st-crosslink-item"><span>→</span> Spa &amp; Wellness Blinds</a>
+        <a href="summer-uv-protection.html" class="st-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="st-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="st-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="st-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="st-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="st-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.st-animate').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
