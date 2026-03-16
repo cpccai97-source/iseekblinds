@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Door & Patio Door Blinds | Melbourne | iSeekBlinds</title>
+  <meta name="description" content="Premium blinds, curtains and shutters for French doors, patio doors and sliding glass doors in Melbourne. Cordless child-safe options, expert fitting, free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.25);
+      --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+      --frost-bg: rgba(255, 255, 255, 0.55);
+      --frost-strong: rgba(255, 255, 255, 0.75);
+      --blue-deep: #0b1d3a;
+      --blue-mid: #1a3a6b;
+      --blue-soft: #4a7ec2;
+      --blue-sky: #7fb3e0;
+      --blue-ice: #c8e0f4;
+      --blue-pale: #e8f2fc;
+      --accent: #d4af37;
+      --text-dark: #1a1a2e;
+      --text-mid: #3a3a5e;
+      --text-light: #6b6b8d;
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .fd-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0b1d3a 0%, #1a3a6b 30%, #4a7ec2 60%, #7fb3e0 85%, #c8e0f4 100%);
+    }
+    .fd-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(200,224,244,0.3), transparent),
+        radial-gradient(ellipse 500px 500px at 80% 60%, rgba(74,126,194,0.25), transparent),
+        radial-gradient(circle 300px at 50% 80%, rgba(212,175,55,0.08), transparent);
+      pointer-events: none;
+    }
+    .fd-hero-glass {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 50px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: var(--glass-shadow);
+      text-align: center;
+    }
+    .fd-hero-badge {
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 50px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.4);
+      color: var(--accent);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .fd-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: #fff;
+      line-height: 1.15;
+      margin: 0 0 20px;
+    }
+    .fd-hero h1 em {
+      font-style: normal;
+      color: var(--blue-ice);
+    }
+    .fd-hero p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin: 0 0 32px;
+    }
+    .fd-hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .fd-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .fd-btn-primary {
+      background: var(--accent);
+      color: var(--blue-deep);
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+    }
+    .fd-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.5);
+    }
+    .fd-btn-ghost {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+    .fd-btn-ghost:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* floating glass orbs */
+    .fd-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: fd-float 8s ease-in-out infinite;
+    }
+    .fd-orb-1 { width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s; }
+    .fd-orb-2 { width: 140px; height: 140px; top: 60%; right: 8%; animation-delay: -3s; }
+    .fd-orb-3 { width: 100px; height: 100px; bottom: 15%; left: 15%; animation-delay: -5s; }
+    .fd-orb-4 { width: 80px; height: 80px; top: 20%; right: 20%; animation-delay: -2s; }
+    @keyframes fd-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+    /* ── SECTION COMMON ──────────────────────────── */
+    .fd-section {
+      padding: 100px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .fd-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .fd-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .fd-section-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--text-dark);
+      margin: 0 0 16px;
+    }
+    .fd-section-header p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── DOOR TYPES ──────────────────────────────── */
+    .fd-types { background: var(--blue-pale); }
+    .fd-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .fd-type-card {
+      background: var(--frost-strong);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(74,126,194,0.15);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(26,58,107,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .fd-type-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(26,58,107,0.12);
+    }
+    .fd-type-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--blue-soft), var(--blue-sky));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+    }
+    .fd-type-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--text-dark);
+      margin: 0 0 12px;
+    }
+    .fd-type-card p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── SOLUTIONS ────────────────────────────────── */
+    .fd-solutions { background: #fff; }
+    .fd-sol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .fd-sol-card {
+      display: flex;
+      gap: 24px;
+      background: var(--frost-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(74,126,194,0.1);
+      border-radius: 20px;
+      padding: 32px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .fd-sol-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(26,58,107,0.1);
+    }
+    .fd-sol-num {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .fd-sol-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin: 0 0 8px;
+    }
+    .fd-sol-card p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── BENEFITS ─────────────────────────────────── */
+    .fd-benefits {
+      background: linear-gradient(160deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+      color: #fff;
+    }
+    .fd-benefits .fd-section-header h2 { color: #fff; }
+    .fd-benefits .fd-section-header p { color: rgba(255,255,255,0.7); }
+    .fd-ben-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .fd-ben-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .fd-ben-card:hover { transform: translateY(-4px); }
+    .fd-ben-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+    .fd-ben-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      margin: 0 0 10px;
+    }
+    .fd-ben-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+
+    /* ── PROCESS ──────────────────────────────────── */
+    .fd-process { background: var(--blue-pale); }
+    .fd-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .fd-steps::before {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: 12.5%;
+      width: 75%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-soft), var(--blue-sky), var(--blue-soft));
+      z-index: 0;
+    }
+    .fd-step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .fd-step-circle {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--frost-strong);
+      backdrop-filter: blur(12px);
+      border: 2px solid var(--blue-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+    .fd-step h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin: 0 0 8px;
+    }
+    .fd-step p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── COMPARISON TABLE ─────────────────────────── */
+    .fd-compare { background: #fff; }
+    .fd-table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      background: var(--frost-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(74,126,194,0.12);
+      box-shadow: 0 4px 24px rgba(26,58,107,0.06);
+    }
+    .fd-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .fd-table thead th {
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-soft));
+      color: #fff;
+      padding: 18px 20px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .fd-table tbody td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(74,126,194,0.08);
+      color: var(--text-mid);
+    }
+    .fd-table tbody tr:last-child td { border-bottom: none; }
+    .fd-table tbody tr:hover { background: rgba(74,126,194,0.04); }
+    .fd-check { color: #27ae60; font-weight: 700; }
+    .fd-cross { color: #ccc; }
+
+    /* ── FAQ ──────────────────────────────────────── */
+    .fd-faq { background: var(--blue-pale); }
+    .fd-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .fd-faq-item {
+      background: var(--frost-strong);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(74,126,194,0.12);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .fd-faq-item:hover {
+      box-shadow: 0 4px 20px rgba(26,58,107,0.08);
+    }
+    .fd-faq-q {
+      padding: 22px 28px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
+      user-select: none;
+    }
+    .fd-faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--blue-soft);
+      transition: transform 0.3s;
+    }
+    .fd-faq-item.active .fd-faq-q::after {
+      transform: rotate(45deg);
+    }
+    .fd-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .fd-faq-item.active .fd-faq-a {
+      max-height: 300px;
+      padding: 0 28px 22px;
+    }
+    .fd-faq-a p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── CTA ──────────────────────────────────────── */
+    .fd-cta {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 50%, var(--blue-soft) 100%);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fd-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle 400px at 30% 50%, rgba(255,255,255,0.06), transparent);
+      pointer-events: none;
+    }
+    .fd-cta-glass {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 50px 40px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+    }
+    .fd-cta h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: #fff;
+      margin: 0 0 16px;
+    }
+    .fd-cta p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0 0 28px;
+    }
+
+    /* ── GALLERY STRIP ────────────────────────────── */
+    .fd-gallery { background: #fff; }
+    .fd-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .fd-gallery-item {
+      height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--blue-ice), var(--blue-pale));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      transition: transform 0.3s;
+      border: 1px solid rgba(74,126,194,0.1);
+    }
+    .fd-gallery-item:hover { transform: scale(1.04); }
+
+    /* ── CHILD SAFETY FEATURE ─────────────────────── */
+    .fd-safety { background: var(--blue-pale); }
+    .fd-safety-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .fd-safety-visual {
+      height: 400px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(200,224,244,0.6));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(74,126,194,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .fd-safety-content h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--text-dark);
+      margin: 0 0 16px;
+    }
+    .fd-safety-content p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+    .fd-safety-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .fd-safety-list li {
+      padding: 10px 0;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(74,126,194,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .fd-safety-list li::before {
+      content: '✓';
+      color: #27ae60;
+      font-weight: 700;
+    }
+
+    /* ── TESTIMONIALS ─────────────────────────────── */
+    .fd-testimonials { background: #fff; }
+    .fd-test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .fd-test-card {
+      background: var(--frost-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(74,126,194,0.1);
+      border-radius: 18px;
+      padding: 32px;
+    }
+    .fd-test-stars {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+    .fd-test-card blockquote {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0 0 16px;
+      font-style: italic;
+    }
+    .fd-test-card cite {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+    }
+
+    /* ── CROSSLINKS ───────────────────────────────── */
+    .fd-crosslinks {
+      background: var(--blue-pale);
+      padding: 80px 0;
+    }
+    .fd-crosslinks h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 0 0 40px;
+      color: var(--text-dark);
+    }
+    .fd-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 12px;
+    }
+    .fd-crosslinks-grid a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      background: var(--frost-strong);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(74,126,194,0.1);
+      border-radius: 10px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .fd-crosslinks-grid a:hover {
+      background: var(--blue-soft);
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    /* ── ANIMATIONS ───────────────────────────────── */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .fd-animate {
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fd-animate.fd-visible {
+      opacity: 1;
+      transform: none;
+    }
+    .fd-animate[data-anim="slideUp"] { transform: translateY(40px); }
+    .fd-animate[data-anim="scaleIn"] { transform: scale(0.9); }
+    .fd-animate[data-anim="fadeIn"] { transform: none; }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 1024px) {
+      .fd-ben-grid { grid-template-columns: repeat(2, 1fr); }
+      .fd-types-grid { grid-template-columns: repeat(2, 1fr); }
+      .fd-steps { grid-template-columns: repeat(2, 1fr); }
+      .fd-steps::before { display: none; }
+      .fd-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .fd-test-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .fd-hero-glass { margin: 0 16px; padding: 40px 24px; }
+      .fd-sol-grid { grid-template-columns: 1fr; }
+      .fd-safety-layout { grid-template-columns: 1fr; }
+      .fd-safety-visual { height: 260px; }
+      .fd-ben-grid { grid-template-columns: 1fr; }
+      .fd-types-grid { grid-template-columns: 1fr; }
+      .fd-steps { grid-template-columns: 1fr; }
+      .fd-gallery-grid { grid-template-columns: 1fr; }
+      .fd-cta-glass { margin: 0 16px; padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Guides →</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="fd-hero">
+    <div class="fd-orb fd-orb-1"></div>
+    <div class="fd-orb fd-orb-2"></div>
+    <div class="fd-orb fd-orb-3"></div>
+    <div class="fd-orb fd-orb-4"></div>
+    <div class="fd-hero-glass fd-animate" data-anim="scaleIn">
+      <div class="fd-hero-badge">Melbourne's Door Blinds Specialists</div>
+      <h1>Stunning Blinds for <em>French Doors &amp; Patio Doors</em></h1>
+      <p>Transform your French doors, patio doors and sliding glass doors with premium window furnishings. Expert fitting, cordless child-safe options, and a perfect finish every time.</p>
+      <div class="fd-hero-btns">
+        <a href="../free-quote.html" class="fd-btn fd-btn-primary">Get Free Quote →</a>
+        <a href="#solutions" class="fd-btn fd-btn-ghost">Explore Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOOR TYPES -->
+  <section class="fd-section fd-types">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>Door Types We Cover</h2>
+        <p>From classic hinged French doors to wide-span sliding panels, we have the perfect blind solution for every door style in your Melbourne home.</p>
+      </div>
+      <div class="fd-types-grid">
+        <div class="fd-type-card fd-animate" data-anim="slideUp">
+          <div class="fd-type-icon">🚪</div>
+          <h3>French Doors</h3>
+          <p>Classic hinged double doors that swing inward or outward. We offer slim-profile blinds that sit flush within the frame, allowing doors to open fully without obstruction. Perfect with roller blinds, curtains, or custom-fit plantation shutters.</p>
+        </div>
+        <div class="fd-type-card fd-animate" data-anim="slideUp">
+          <div class="fd-type-icon">🏠</div>
+          <h3>Patio Sliding Doors</h3>
+          <p>Wide-span sliding glass doors connecting indoor and outdoor living. We install vertical blinds, panel glide systems, and motorised rollers that stack neatly to one side, giving you uninterrupted access to your patio or deck.</p>
+        </div>
+        <div class="fd-type-card fd-animate" data-anim="slideUp">
+          <div class="fd-type-icon">🔲</div>
+          <h3>Stacking &amp; Bi-Fold Doors</h3>
+          <p>Multi-panel folding or stacking doors that create seamless indoor-outdoor flow. We design blinds that integrate with tracks, keeping profiles minimal while providing full coverage when you need privacy or shade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="fd-section fd-solutions">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>Blind Solutions for Your Doors</h2>
+        <p>Every door type demands a different approach. Here are our most popular solutions, each tailored for smooth operation and a flawless look.</p>
+      </div>
+      <div class="fd-sol-grid">
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">01</div>
+          <div>
+            <h3>Roller Blinds</h3>
+            <p>Slim-profile rollers mount neatly above your French doors or within the reveal of sliding doors. Choose blockout for bedrooms, sunscreen for living areas, or dual rollers for ultimate versatility. Cordless spring or motorised operation keeps the look clean and child-safe.</p>
+          </div>
+        </div>
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">02</div>
+          <div>
+            <h3>Sheer Curtains &amp; Drapes</h3>
+            <p>Full-length sheers frame your doors elegantly while filtering harsh sunlight. Pair with blockout curtains for a layered look. S-fold or pinch-pleat heading on a ceiling-mounted track keeps the profile sleek and doesn't interfere with door handles.</p>
+          </div>
+        </div>
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">03</div>
+          <div>
+            <h3>Plantation Shutters</h3>
+            <p>Hinged or bi-fold shutters mounted directly to the door frame — they swing with your French doors. Adjustable louvres let you control light and airflow precisely. Our basswood and PVC options suit every budget and style.</p>
+          </div>
+        </div>
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">04</div>
+          <div>
+            <h3>Panel Glide Systems</h3>
+            <p>Wide fabric panels that slide along a top track — perfect for covering large patio or sliding doors. Panels stack neatly behind each other, giving you full access. Available in blockout, light-filtering, and sunscreen fabrics.</p>
+          </div>
+        </div>
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">05</div>
+          <div>
+            <h3>Vertical Blinds</h3>
+            <p>Classic vertical louvres draw to one side for easy passage through sliding doors. Modern fabric options look far more refined than old-style PVC. Chainless bottom weights and wand control keep them child-safe and tangle-free.</p>
+          </div>
+        </div>
+        <div class="fd-sol-card fd-animate" data-anim="slideUp">
+          <div class="fd-sol-num">06</div>
+          <div>
+            <h3>Motorised Solutions</h3>
+            <p>One-touch or voice-activated blinds for your doors. Integrate with smart home systems (Google, Alexa, Apple HomeKit) to control light and privacy without lifting a finger. No cords, no chains — just effortless operation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="fd-section fd-benefits">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="fadeIn">
+        <h2>Why Choose iSeekBlinds for Door Blinds?</h2>
+        <p>We've fitted thousands of doors across Melbourne. Here's what sets us apart.</p>
+      </div>
+      <div class="fd-ben-grid">
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">🔒</div>
+          <h3>Privacy Control</h3>
+          <p>Full blockout to sheer filtering — dial in the exact level of privacy you need, day or night, without sacrificing natural light.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">☀️</div>
+          <h3>Light Management</h3>
+          <p>Reduce glare on screens, protect furniture from UV fading, and manage heat gain through large glass door panels.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">👶</div>
+          <h3>Child Safety</h3>
+          <p>All our door blinds are available in cordless, spring-operated, or motorised options — no dangling cords near high-traffic doorways.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">🎯</div>
+          <h3>Perfect Fit</h3>
+          <p>We precision-measure every door to the millimetre. No gaps, no drag, no interference with handles or latches.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">🛡️</div>
+          <h3>Energy Efficiency</h3>
+          <p>Honeycomb and dual-layer blinds trap air, insulating your glass doors against Melbourne's temperature swings.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">🎨</div>
+          <h3>Design Flexibility</h3>
+          <p>Hundreds of fabrics, colours, and textures to match any interior style — from coastal to industrial to Hamptons.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">⚡</div>
+          <h3>Smart Integration</h3>
+          <p>Motorised options connect to your existing smart home ecosystem for automated schedules and remote control.</p>
+        </div>
+        <div class="fd-ben-card fd-animate" data-anim="slideUp">
+          <div class="fd-ben-icon">✅</div>
+          <h3>5-Year Warranty</h3>
+          <p>Every installation backed by our comprehensive warranty covering mechanisms, fabrics, and fit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHILD SAFETY FEATURE -->
+  <section class="fd-section fd-safety">
+    <div class="fd-container">
+      <div class="fd-safety-layout">
+        <div class="fd-safety-visual fd-animate" data-anim="scaleIn">
+          👶🏠
+        </div>
+        <div class="fd-safety-content fd-animate" data-anim="slideUp">
+          <h2>Child-Safe &amp; Cordless Door Blinds</h2>
+          <p>French doors and patio doors are high-traffic zones — especially for little ones. That's why every solution we offer prioritises child safety without compromising on style or function.</p>
+          <p>Australian safety standards require all new blind installations to comply with cord-safety regulations. We go further:</p>
+          <ul class="fd-safety-list">
+            <li>Spring-assisted cordless roller blinds — lift and lower with a gentle push</li>
+            <li>Motorised operation via remote, wall switch, or smartphone app</li>
+            <li>Wand-operated verticals — no chains or cords at child height</li>
+            <li>Breakaway chain connectors on all remaining corded products</li>
+            <li>Integrated cord guides that pin cords flush to the wall</li>
+            <li>Plantation shutters with no cords at all — just tilt the louvres by hand</li>
+          </ul>
+          <a href="child-safety.html" class="fd-btn fd-btn-primary" style="background: var(--blue-soft); color: #fff;">Learn More About Child Safety →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="fd-section fd-process">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>How It Works</h2>
+        <p>From first contact to final installation — our simple four-step process makes it effortless.</p>
+      </div>
+      <div class="fd-steps">
+        <div class="fd-step fd-animate" data-anim="slideUp">
+          <div class="fd-step-circle">📞</div>
+          <h3>1. Free Consultation</h3>
+          <p>Call or book online. We'll discuss your door types, style preferences, and budget over the phone or at your home.</p>
+        </div>
+        <div class="fd-step fd-animate" data-anim="slideUp">
+          <div class="fd-step-circle">📐</div>
+          <h3>2. Measure &amp; Quote</h3>
+          <p>Our technician visits your home, takes precision measurements of every door, and presents a detailed no-obligation quote.</p>
+        </div>
+        <div class="fd-step fd-animate" data-anim="slideUp">
+          <div class="fd-step-circle">🎨</div>
+          <h3>3. Choose &amp; Order</h3>
+          <p>Browse our fabric library, compare options side-by-side, and lock in your choice. We order and manufacture to your exact specs.</p>
+        </div>
+        <div class="fd-step fd-animate" data-anim="slideUp">
+          <div class="fd-step-circle">🔧</div>
+          <h3>4. Expert Installation</h3>
+          <p>Our installers fit everything with care. We test operation, check alignment, and walk you through use and maintenance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="fd-section fd-compare">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>Which Solution Suits Your Doors?</h2>
+        <p>A quick comparison of our most popular door blind options to help you decide.</p>
+      </div>
+      <div class="fd-table-wrap fd-animate" data-anim="scaleIn">
+        <table class="fd-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Roller Blinds</th>
+              <th>Curtains</th>
+              <th>Shutters</th>
+              <th>Panel Glide</th>
+              <th>Verticals</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>French Doors</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-cross">—</span></td>
+            </tr>
+            <tr>
+              <td>Sliding Doors</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Bi-Fold Doors</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Full Blockout</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Cordless Option</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Motorisation</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Budget Friendly</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-cross">—</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Premium Look</td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-check">✓</span></td>
+              <td><span class="fd-cross">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="fd-section fd-gallery">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>French Door Blinds Gallery</h2>
+        <p>Get inspired by our recent installations across Melbourne homes.</p>
+      </div>
+      <div class="fd-gallery-grid">
+        <div class="fd-gallery-item fd-animate" data-anim="scaleIn">🚪</div>
+        <div class="fd-gallery-item fd-animate" data-anim="scaleIn">🏡</div>
+        <div class="fd-gallery-item fd-animate" data-anim="scaleIn">🪟</div>
+        <div class="fd-gallery-item fd-animate" data-anim="scaleIn">✨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="fd-section fd-testimonials">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>What Our Customers Say</h2>
+        <p>Real feedback from Melbourne homeowners who chose iSeekBlinds for their door furnishings.</p>
+      </div>
+      <div class="fd-test-grid">
+        <div class="fd-test-card fd-animate" data-anim="slideUp">
+          <div class="fd-test-stars">★★★★★</div>
+          <blockquote>"We had roller blinds installed on all four French doors in our Edwardian home. The slim profile means the doors swing freely and the cordless spring mechanism is brilliant — no cords near the kids."</blockquote>
+          <cite>— Sarah M., Hawthorn</cite>
+        </div>
+        <div class="fd-test-card fd-animate" data-anim="slideUp">
+          <div class="fd-test-stars">★★★★★</div>
+          <blockquote>"The panel glide system on our 4-metre patio door is a game-changer. The fabric stacks so neatly that we barely notice it's there when it's open. Fantastic light control when it's closed."</blockquote>
+          <cite>— David T., Brighton</cite>
+        </div>
+        <div class="fd-test-card fd-animate" data-anim="slideUp">
+          <div class="fd-test-stars">★★★★★</div>
+          <blockquote>"We went with plantation shutters on our French doors and they look absolutely stunning. The louvres let us control light throughout the day and add real character to the room."</blockquote>
+          <cite>— Emily &amp; James, Malvern</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fd-section fd-faq">
+    <div class="fd-container">
+      <div class="fd-section-header fd-animate" data-anim="slideUp">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions about blinds for French doors, patio doors, and sliding glass doors.</p>
+      </div>
+      <div class="fd-faq-list">
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">Can I put blinds on French doors that open inward?</div>
+          <div class="fd-faq-a"><p>Yes! We use slim-profile roller blinds or plantation shutters that mount within the door frame. They sit flush against the glass so the door swings freely without catching. Magnetic hold-down brackets keep the blind in place when the door is tilted.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">What's the best blind for large sliding patio doors?</div>
+          <div class="fd-faq-a"><p>Panel glide systems and motorised roller blinds are our top recommendations. Panel glides cover spans up to 6 metres and stack neatly to one side. Motorised rollers give you one-touch operation — ideal for wide, heavy-coverage situations.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">Are your door blinds child-safe?</div>
+          <div class="fd-faq-a"><p>Absolutely. All our door blind products comply with Australian child safety standards. We offer cordless spring operation, motorised systems, and wand-controlled verticals. No dangling cords or chains near high-traffic doorways.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">Can I motorise my French door blinds?</div>
+          <div class="fd-faq-a"><p>Yes. We install rechargeable battery-powered motors (no wiring needed) or hardwired motors for new builds. They work with Google Home, Alexa, Apple HomeKit, and most home automation systems. Set schedules or control via your phone.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">How much do French door blinds cost?</div>
+          <div class="fd-faq-a"><p>Pricing depends on the product type, fabric choice, and door size. Roller blinds start from around $180 per door panel, panel glides from $350 per set, and plantation shutters from $450 per door. We provide free, no-obligation quotes with exact pricing.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">Do you offer blinds for bi-fold doors?</div>
+          <div class="fd-faq-a"><p>Yes — roller blinds and curtains work brilliantly with bi-fold doors. We mount above the opening so the blinds sit independently of the door panels. When the bi-folds are stacked open, the blinds retract out of sight. See our <a href="bifold-door-blinds.html">bi-fold door blinds</a> page for details.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">How long does installation take?</div>
+          <div class="fd-faq-a"><p>Typically 2–4 weeks from measure to installation. The measure and quote appointment takes about 30 minutes, and installation day is usually 1–3 hours depending on the number of doors. We work around your schedule.</p></div>
+        </div>
+        <div class="fd-faq-item fd-animate" data-anim="slideUp">
+          <div class="fd-faq-q">Can you match blinds to my existing window treatments?</div>
+          <div class="fd-faq-a"><p>Absolutely. We carry hundreds of fabrics and can match or complement your existing roller blinds, curtains, or shutters. Bring a photo or swatch to your consultation and we'll find the perfect match.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fd-cta">
+    <div class="fd-container">
+      <div class="fd-cta-glass fd-animate" data-anim="scaleIn">
+        <h2>Ready to Transform Your Doors?</h2>
+        <p>Book a free in-home measure and quote. Our experts will help you choose the perfect blinds for every door in your home — no obligation, no pressure.</p>
+        <div class="fd-hero-btns">
+          <a href="../free-quote.html" class="fd-btn fd-btn-primary">Book Free Measure &amp; Quote →</a>
+          <a href="tel:0400000000" class="fd-btn fd-btn-ghost">📞 0400 000 000</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSSLINKS -->
+  <section class="fd-crosslinks">
+    <div class="fd-container">
+      <h2>Explore More Solutions</h2>
+      <div class="fd-crosslinks-grid">
+        <a href="acoustic-solutions.html"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="bushfire-safe-blinds.html"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="elderly-accessible.html"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html"><span>→</span> Granny Flat Blinds</a>
+        <a href="gym-fitness-centre.html"><span>→</span> Gym &amp; Fitness Centre</a>
+        <a href="hamptons-style.html"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="high-rise-glare.html"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html"><span>→</span> Home Office</a>
+        <a href="home-renovation.html"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="japandi-zen-style.html"><span>→</span> Japandi Zen Style</a>
+        <a href="large-windows.html"><span>→</span> Large Windows</a>
+        <a href="laundry-utility-room.html"><span>→</span> Laundry &amp; Utility Room</a>
+        <a href="layered-treatments.html"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html"><span>→</span> Melbourne Service Areas</a>
+        <a href="mid-century-modern.html"><span>→</span> Mid-Century Modern</a>
+        <a href="minimalist-styling.html"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html"><span>→</span> Motorised Blinds</a>
+        <a href="new-home-packages.html"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html"><span>→</span> Property Styling</a>
+        <a href="rental-property.html"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html"><span>→</span> Staircase Windows</a>
+        <a href="summer-uv-protection.html"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fd-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fd-animate').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.fd-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.fd-faq-item.active').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+</body>
+</html>

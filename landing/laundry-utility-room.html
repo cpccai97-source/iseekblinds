@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry & Utility Room Blinds | Moisture Resistant | iSeekBlinds</title>
+  <meta name="description" content="Moisture-resistant blinds for laundry rooms and utility areas in Melbourne. Splash-proof, easy-clean aluminium venetians, PVC verticals, and waterproof rollers. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <style>
+    :root {
+      --teal: #00897b;
+      --teal-dark: #00695c;
+      --teal-deep: #004d40;
+      --teal-light: #4db6ac;
+      --teal-pale: #e0f2f1;
+      --coral: #ff6f61;
+      --coral-dark: #e55a4f;
+      --coral-light: #ff8a80;
+      --orange: #ff9800;
+      --orange-light: #ffb74d;
+      --yellow: #ffd54f;
+      --navy: #1a2332;
+      --white: #ffffff;
+      --off-white: #fafbfc;
+      --text-dark: #1a2332;
+      --text-mid: #4a5568;
+      --text-light: #718096;
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .lu-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 40%, var(--teal-light) 70%, var(--coral) 100%);
+    }
+    .lu-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px),
+        repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,111,97,0.05) 60px, rgba(255,111,97,0.05) 120px);
+      pointer-events: none;
+    }
+    /* geometric floating shapes */
+    .lu-shape {
+      position: absolute;
+      opacity: 0.12;
+      z-index: 0;
+    }
+    .lu-shape-1 {
+      width: 300px; height: 300px;
+      background: var(--coral);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      top: -50px; right: -60px;
+      animation: lu-morph 12s ease-in-out infinite;
+    }
+    .lu-shape-2 {
+      width: 200px; height: 200px;
+      background: var(--orange);
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      bottom: 10%; left: 5%;
+      animation: lu-spin 20s linear infinite;
+    }
+    .lu-shape-3 {
+      width: 160px; height: 160px;
+      background: var(--yellow);
+      border-radius: 50%;
+      top: 30%; left: 10%;
+      animation: lu-bounce 6s ease-in-out infinite;
+    }
+    .lu-shape-4 {
+      width: 120px; height: 120px;
+      background: var(--teal-light);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      top: 15%; right: 20%;
+      animation: lu-spin 15s linear infinite reverse;
+    }
+    @keyframes lu-morph {
+      0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    }
+    @keyframes lu-spin { to { transform: rotate(360deg); } }
+    @keyframes lu-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+
+    .lu-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .lu-hero-badge {
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 50px;
+      background: var(--coral);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(255,111,97,0.4);
+    }
+    .lu-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin: 0 0 20px;
+    }
+    .lu-hero h1 span {
+      color: var(--yellow);
+    }
+    .lu-hero p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin: 0 0 36px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .lu-hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .lu-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .lu-btn-primary {
+      background: var(--coral);
+      color: var(--white);
+      box-shadow: 0 6px 24px rgba(255,111,97,0.4);
+    }
+    .lu-btn-primary:hover {
+      background: var(--coral-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(255,111,97,0.5);
+    }
+    .lu-btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .lu-btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--white);
+    }
+
+    /* ── SECTION COMMON ──────────────────────────── */
+    .lu-section {
+      padding: 100px 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    .lu-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .lu-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .lu-section-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--text-dark);
+      margin: 0 0 16px;
+    }
+    .lu-section-header p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── WHY MOISTURE-RESISTANT ───────────────────── */
+    .lu-why {
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .lu-why::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: var(--teal-pale);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+    .lu-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .lu-why-card {
+      padding: 40px 28px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .lu-why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+    .lu-why-card:nth-child(1) { background: #e0f2f1; }
+    .lu-why-card:nth-child(1)::before { background: var(--teal); }
+    .lu-why-card:nth-child(2) { background: #fbe9e7; }
+    .lu-why-card:nth-child(2)::before { background: var(--coral); }
+    .lu-why-card:nth-child(3) { background: #fff3e0; }
+    .lu-why-card:nth-child(3)::before { background: var(--orange); }
+    .lu-why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .lu-why-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+    }
+    .lu-why-card:nth-child(1) .lu-why-icon { background: var(--teal); color: #fff; }
+    .lu-why-card:nth-child(2) .lu-why-icon { background: var(--coral); color: #fff; }
+    .lu-why-card:nth-child(3) .lu-why-icon { background: var(--orange); color: #fff; }
+    .lu-why-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      margin: 0 0 12px;
+    }
+    .lu-why-card p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── PRODUCTS ─────────────────────────────────── */
+    .lu-products { background: var(--white); }
+    .lu-prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .lu-prod-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .lu-prod-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(0,137,123,0.15);
+      transform: translateY(-4px);
+    }
+    .lu-prod-visual {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+    }
+    .lu-prod-card:nth-child(1) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    }
+    .lu-prod-card:nth-child(2) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--coral), var(--orange));
+    }
+    .lu-prod-card:nth-child(3) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    }
+    .lu-prod-card:nth-child(4) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+    }
+    .lu-prod-card:nth-child(5) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--coral-dark), var(--coral));
+    }
+    .lu-prod-card:nth-child(6) .lu-prod-visual {
+      background: linear-gradient(135deg, var(--teal-light), #80cbc4);
+    }
+    .lu-prod-body {
+      padding: 28px 24px;
+    }
+    .lu-prod-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .lu-prod-card:nth-child(odd) .lu-prod-tag {
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+    }
+    .lu-prod-card:nth-child(even) .lu-prod-tag {
+      background: #fbe9e7;
+      color: var(--coral-dark);
+    }
+    .lu-prod-body h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+      margin: 0 0 10px;
+    }
+    .lu-prod-body p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .lu-prod-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .lu-prod-features li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lu-prod-features li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* ── BENEFITS BANNER ──────────────────────────── */
+    .lu-banner {
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 50%, var(--coral) 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .lu-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent, transparent 100px,
+        rgba(255,255,255,0.03) 100px,
+        rgba(255,255,255,0.03) 200px
+      );
+    }
+    .lu-banner-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .lu-banner-item {
+      text-align: center;
+      color: var(--white);
+    }
+    .lu-banner-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--yellow);
+    }
+    .lu-banner-label {
+      font-size: 0.92rem;
+      opacity: 0.85;
+    }
+
+    /* ── FEATURES SPLIT ──────────────────────────── */
+    .lu-features { background: var(--off-white); }
+    .lu-feat-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .lu-feat-layout.lu-reversed { direction: rtl; }
+    .lu-feat-layout.lu-reversed > * { direction: ltr; }
+    .lu-feat-visual {
+      height: 380px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+    .lu-feat-visual-1 {
+      background: linear-gradient(135deg, var(--teal-pale), #b2dfdb);
+      border: 3px solid var(--teal-light);
+    }
+    .lu-feat-visual-2 {
+      background: linear-gradient(135deg, #fbe9e7, #ffccbc);
+      border: 3px solid var(--coral-light);
+    }
+    .lu-feat-content h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      color: var(--text-dark);
+      margin: 0 0 16px;
+    }
+    .lu-feat-content p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+    .lu-feat-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+    .lu-feat-list li {
+      padding: 10px 0;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lu-feat-list li::before {
+      content: '●';
+      color: var(--coral);
+      font-size: 0.7rem;
+    }
+
+    /* ── PROCESS ──────────────────────────────────── */
+    .lu-process { background: var(--white); }
+    .lu-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .lu-step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .lu-step::after {
+      content: '→';
+      position: absolute;
+      right: -12px;
+      top: 36px;
+      font-size: 1.5rem;
+      color: var(--teal-light);
+      font-weight: 700;
+    }
+    .lu-step:last-child::after { display: none; }
+    .lu-step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--white);
+    }
+    .lu-step:nth-child(1) .lu-step-num { background: var(--teal); }
+    .lu-step:nth-child(2) .lu-step-num { background: var(--coral); }
+    .lu-step:nth-child(3) .lu-step-num { background: var(--orange); }
+    .lu-step:nth-child(4) .lu-step-num { background: var(--teal-dark); }
+    .lu-step h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin: 0 0 8px;
+    }
+    .lu-step p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── TIPS ─────────────────────────────────────── */
+    .lu-tips {
+      background: var(--teal-pale);
+      position: relative;
+    }
+    .lu-tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .lu-tip-card {
+      display: flex;
+      gap: 20px;
+      padding: 28px;
+      border-radius: 16px;
+      background: var(--white);
+      border-left: 4px solid;
+      transition: transform 0.3s;
+    }
+    .lu-tip-card:hover { transform: translateX(6px); }
+    .lu-tip-card:nth-child(1) { border-color: var(--teal); }
+    .lu-tip-card:nth-child(2) { border-color: var(--coral); }
+    .lu-tip-card:nth-child(3) { border-color: var(--orange); }
+    .lu-tip-card:nth-child(4) { border-color: var(--yellow); }
+    .lu-tip-card:nth-child(5) { border-color: var(--teal-light); }
+    .lu-tip-card:nth-child(6) { border-color: var(--coral-light); }
+    .lu-tip-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .lu-tip-card:nth-child(1) .lu-tip-icon { background: var(--teal-pale); }
+    .lu-tip-card:nth-child(2) .lu-tip-icon { background: #fbe9e7; }
+    .lu-tip-card:nth-child(3) .lu-tip-icon { background: #fff3e0; }
+    .lu-tip-card:nth-child(4) .lu-tip-icon { background: #fffde7; }
+    .lu-tip-card:nth-child(5) .lu-tip-icon { background: #e0f2f1; }
+    .lu-tip-card:nth-child(6) .lu-tip-icon { background: #fce4ec; }
+    .lu-tip-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 0 0 6px;
+    }
+    .lu-tip-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── COMPARISON ───────────────────────────────── */
+    .lu-compare { background: var(--white); }
+    .lu-table-wrap {
+      overflow-x: auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .lu-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .lu-table thead th {
+      padding: 18px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .lu-table thead th:nth-child(1) { background: var(--teal-deep); border-radius: 18px 0 0 0; }
+    .lu-table thead th:nth-child(2) { background: var(--teal); }
+    .lu-table thead th:nth-child(3) { background: var(--coral); }
+    .lu-table thead th:nth-child(4) { background: var(--orange); }
+    .lu-table thead th:nth-child(5) { background: var(--teal-dark); border-radius: 0 18px 0 0; }
+    .lu-table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #edf2f7;
+      color: var(--text-mid);
+    }
+    .lu-table tbody tr:last-child td { border-bottom: none; }
+    .lu-table tbody tr:hover { background: var(--teal-pale); }
+    .lu-check { color: var(--teal); font-weight: 700; }
+    .lu-cross { color: #ccc; }
+
+    /* ── FAQ ──────────────────────────────────────── */
+    .lu-faq { background: var(--off-white); }
+    .lu-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .lu-faq-item {
+      margin-bottom: 16px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #e2e8f0;
+      transition: border-color 0.3s;
+    }
+    .lu-faq-item:hover { border-color: var(--teal-light); }
+    .lu-faq-item.active { border-color: var(--teal); }
+    .lu-faq-q {
+      padding: 20px 28px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
+      background: var(--white);
+      user-select: none;
+    }
+    .lu-faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--coral);
+      font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .lu-faq-item.active .lu-faq-q::after { transform: rotate(45deg); }
+    .lu-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      background: var(--white);
+    }
+    .lu-faq-item.active .lu-faq-a {
+      max-height: 300px;
+      padding: 0 28px 20px;
+    }
+    .lu-faq-a p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── CTA ──────────────────────────────────────── */
+    .lu-cta {
+      background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 40%, var(--coral) 100%);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .lu-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-conic-gradient(rgba(255,255,255,0.02) 0% 25%, transparent 0% 50%) 50% / 80px 80px;
+    }
+    .lu-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .lu-cta h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      margin: 0 0 16px;
+    }
+    .lu-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0 0 32px;
+    }
+
+    /* ── TESTIMONIALS ─────────────────────────────── */
+    .lu-testimonials { background: var(--white); }
+    .lu-test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .lu-test-card {
+      padding: 32px;
+      border-radius: 18px;
+      border: 2px solid #e2e8f0;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .lu-test-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 6px 24px rgba(0,137,123,0.1);
+    }
+    .lu-test-stars {
+      color: var(--orange);
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+    .lu-test-card blockquote {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0 0 16px;
+      font-style: italic;
+    }
+    .lu-test-card cite {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    /* ── CROSSLINKS ───────────────────────────────── */
+    .lu-crosslinks {
+      background: var(--teal-pale);
+      padding: 80px 0;
+    }
+    .lu-crosslinks h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 0 0 40px;
+      color: var(--text-dark);
+    }
+    .lu-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 12px;
+    }
+    .lu-crosslinks-grid a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .lu-crosslinks-grid a:hover {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+      transform: translateX(4px);
+    }
+
+    /* ── ANIMATIONS ───────────────────────────────── */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .lu-animate {
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .lu-animate.lu-visible {
+      opacity: 1;
+      transform: none;
+    }
+    .lu-animate[data-anim="slideUp"] { transform: translateY(40px); }
+    .lu-animate[data-anim="scaleIn"] { transform: scale(0.9); }
+    .lu-animate[data-anim="fadeIn"] { transform: none; }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 1024px) {
+      .lu-why-grid { grid-template-columns: 1fr; }
+      .lu-prod-grid { grid-template-columns: repeat(2, 1fr); }
+      .lu-banner-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .lu-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .lu-step::after { display: none; }
+      .lu-test-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .lu-hero-content { padding: 0 16px; }
+      .lu-feat-layout, .lu-feat-layout.lu-reversed { grid-template-columns: 1fr; direction: ltr; }
+      .lu-feat-visual { height: 240px; }
+      .lu-prod-grid { grid-template-columns: 1fr; }
+      .lu-tips-grid { grid-template-columns: 1fr; }
+      .lu-steps { grid-template-columns: 1fr; }
+      .lu-banner-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Guides →</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="lu-hero">
+    <div class="lu-shape lu-shape-1"></div>
+    <div class="lu-shape lu-shape-2"></div>
+    <div class="lu-shape lu-shape-3"></div>
+    <div class="lu-shape lu-shape-4"></div>
+    <div class="lu-hero-content lu-animate" data-anim="scaleIn">
+      <div class="lu-hero-badge">Moisture-Proof &amp; Built Tough</div>
+      <h1>Laundry &amp; Utility Room <span>Blinds</span></h1>
+      <p>Splash-proof, steam-resistant, and easy to clean. Purpose-built window furnishings for Melbourne's hardest-working rooms.</p>
+      <div class="lu-hero-btns">
+        <a href="../free-quote.html" class="lu-btn lu-btn-primary">Get Free Quote →</a>
+        <a href="#products" class="lu-btn lu-btn-outline">See Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MOISTURE-RESISTANT -->
+  <section class="lu-section lu-why">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Why Your Laundry Needs Special Blinds</h2>
+        <p>Standard blinds warp, stain, and grow mould in wet environments. Our moisture-resistant range is engineered for humidity, splashes, and steam.</p>
+      </div>
+      <div class="lu-why-grid">
+        <div class="lu-why-card lu-animate" data-anim="slideUp">
+          <div class="lu-why-icon">💧</div>
+          <h3>Moisture Resistance</h3>
+          <p>Aluminium, PVC, and polyester materials that won't absorb water, warp, or develop mildew — even in rooms that see daily washing cycles and heavy steam from dryers.</p>
+        </div>
+        <div class="lu-why-card lu-animate" data-anim="slideUp">
+          <div class="lu-why-icon">🧹</div>
+          <h3>Easy-Clean Surfaces</h3>
+          <p>A quick wipe with a damp cloth is all it takes. No dry-cleaning, no delicate hand-washing. These blinds are designed for rooms where splashes and detergent spray are part of daily life.</p>
+        </div>
+        <div class="lu-why-card lu-animate" data-anim="slideUp">
+          <div class="lu-why-icon">🌬️</div>
+          <h3>Ventilation Friendly</h3>
+          <p>Louvred and slatted designs let air flow freely while still providing privacy. Proper airflow helps reduce condensation and keeps your laundry fresh and dry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="lu-section lu-products">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Our Laundry Room Blind Range</h2>
+        <p>Six proven products that handle humidity, heat, and daily wear without missing a beat.</p>
+      </div>
+      <div class="lu-prod-grid">
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">🪟</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Best Seller</span>
+            <h3>Aluminium Venetian Blinds</h3>
+            <p>The go-to choice for laundry rooms. Lightweight aluminium slats resist moisture, won't rust or warp, and tilt to control light and airflow with precision.</p>
+            <ul class="lu-prod-features">
+              <li>25mm or 50mm slat widths</li>
+              <li>100% moisture-proof aluminium</li>
+              <li>Wand or cord tilt operation</li>
+              <li>Wide colour range including whites and metallics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">📏</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Popular</span>
+            <h3>PVC Vertical Blinds</h3>
+            <p>Wide louvres draw to one side for full window access. PVC material is completely waterproof, wipes clean in seconds, and won't sag or stretch in humid conditions.</p>
+            <ul class="lu-prod-features">
+              <li>89mm or 127mm louvre widths</li>
+              <li>Waterproof PVC construction</li>
+              <li>Wand control (child-safe)</li>
+              <li>Ideal for wide laundry windows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">🔄</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Premium</span>
+            <h3>Moisture-Proof Roller Blinds</h3>
+            <p>Polyester or PVC-coated roller fabrics that repel water and resist mould. Available in blockout, light-filtering, and sunscreen options for any laundry layout.</p>
+            <ul class="lu-prod-features">
+              <li>PVC-coated polyester fabric</li>
+              <li>Mould and mildew resistant</li>
+              <li>Spring or chain operation</li>
+              <li>Blockout or light-filtering</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">🏠</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Stylish</span>
+            <h3>PVC Plantation Shutters</h3>
+            <p>For laundries that double as living spaces, PVC shutters bring a premium look with zero moisture worries. Adjustable louvres give you light, privacy, and airflow in one.</p>
+            <ul class="lu-prod-features">
+              <li>Solid PVC — won't absorb water</li>
+              <li>Adjustable louvre blades</li>
+              <li>No cords, completely child-safe</li>
+              <li>Suits both windows and doors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">🌊</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Budget</span>
+            <h3>Cafe-Style Half Blinds</h3>
+            <p>Cover just the lower half of the window for privacy while letting light flood in from above. Perfect for laundry windows that face neighbours or side passages.</p>
+            <ul class="lu-prod-features">
+              <li>Covers bottom half only</li>
+              <li>Maximum natural light</li>
+              <li>Available in venetian or roller</li>
+              <li>Great for tight budgets</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lu-prod-card lu-animate" data-anim="slideUp">
+          <div class="lu-prod-visual">⚡</div>
+          <div class="lu-prod-body">
+            <span class="lu-prod-tag">Smart</span>
+            <h3>Motorised Moisture-Proof</h3>
+            <p>Hands full of laundry? Operate your blinds with voice commands or your phone. Our motorised options are fully sealed against moisture and work with smart home systems.</p>
+            <ul class="lu-prod-features">
+              <li>Google Home, Alexa, HomeKit compatible</li>
+              <li>Sealed motor housing</li>
+              <li>Rechargeable battery or hardwired</li>
+              <li>Set automated schedules</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BANNER -->
+  <section class="lu-banner">
+    <div class="lu-container">
+      <div class="lu-banner-grid">
+        <div class="lu-banner-item lu-animate" data-anim="scaleIn">
+          <div class="lu-banner-num">2,500+</div>
+          <div class="lu-banner-label">Laundry blinds installed across Melbourne</div>
+        </div>
+        <div class="lu-banner-item lu-animate" data-anim="scaleIn">
+          <div class="lu-banner-num">100%</div>
+          <div class="lu-banner-label">Moisture-resistant materials guaranteed</div>
+        </div>
+        <div class="lu-banner-item lu-animate" data-anim="scaleIn">
+          <div class="lu-banner-num">5yr</div>
+          <div class="lu-banner-label">Warranty on all products</div>
+        </div>
+        <div class="lu-banner-item lu-animate" data-anim="scaleIn">
+          <div class="lu-banner-num">Free</div>
+          <div class="lu-banner-label">In-home measure &amp; quote</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SPLIT 1 -->
+  <section class="lu-section lu-features">
+    <div class="lu-container">
+      <div class="lu-feat-layout lu-animate" data-anim="fadeIn">
+        <div class="lu-feat-visual lu-feat-visual-1">💧🧺</div>
+        <div class="lu-feat-content">
+          <h2>Built to Handle Steam &amp; Splashes</h2>
+          <p>Your laundry is a wet zone. Between the washing machine, dryer, and laundry tub, moisture is constant. Standard fabric blinds absorb that moisture, leading to mould, discolouration, and sagging.</p>
+          <p>Our laundry range uses materials specifically chosen for wet environments:</p>
+          <ul class="lu-feat-list">
+            <li>Aluminium slats that never rust, warp, or absorb water</li>
+            <li>PVC louvres that stay rigid in high humidity</li>
+            <li>Polyester rollers with waterproof coatings that repel splashes</li>
+            <li>Stainless steel components in all mechanisms to prevent corrosion</li>
+            <li>Anti-microbial treatments available to prevent mould growth</li>
+          </ul>
+          <a href="../free-quote.html" class="lu-btn lu-btn-primary">Get Expert Advice →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SPLIT 2 -->
+  <section class="lu-section lu-features" style="background: var(--white);">
+    <div class="lu-container">
+      <div class="lu-feat-layout lu-reversed lu-animate" data-anim="fadeIn">
+        <div class="lu-feat-visual lu-feat-visual-2">🌤️🏡</div>
+        <div class="lu-feat-content">
+          <h2>Privacy Without Sacrificing Light</h2>
+          <p>Laundry windows often face side passages, neighbours, or laneways. You need privacy, but you also need light to spot stains and sort colours accurately.</p>
+          <p>Our slatted blinds give you both:</p>
+          <ul class="lu-feat-list">
+            <li>Tilt aluminium venetians to block sightlines while letting light through</li>
+            <li>Light-filtering roller fabrics soften glare without darkening the room</li>
+            <li>PVC shutters adjust louvres for precise control throughout the day</li>
+            <li>Cafe-style options let light flood in from the top half</li>
+            <li>Frosted/textured roller fabrics for complete obscurity when needed</li>
+          </ul>
+          <a href="privacy-blinds.html" class="lu-btn lu-btn-primary" style="background: var(--teal);">Learn About Privacy Blinds →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="lu-section lu-process">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Simple 4-Step Process</h2>
+        <p>From your first call to a perfectly fitted laundry — here's how it works.</p>
+      </div>
+      <div class="lu-steps">
+        <div class="lu-step lu-animate" data-anim="slideUp">
+          <div class="lu-step-num">1</div>
+          <h3>Book a Consult</h3>
+          <p>Call or fill out our online form. Tell us about your laundry setup, window sizes, and any specific needs like ventilation or privacy.</p>
+        </div>
+        <div class="lu-step lu-animate" data-anim="slideUp">
+          <div class="lu-step-num">2</div>
+          <h3>Free Measure</h3>
+          <p>Our technician visits, measures your windows precisely, assesses moisture levels, and recommends the best products for your space.</p>
+        </div>
+        <div class="lu-step lu-animate" data-anim="slideUp">
+          <div class="lu-step-num">3</div>
+          <h3>Choose &amp; Order</h3>
+          <p>Pick from our curated laundry-safe range. We'll show you samples, discuss colours and operation types, and lock in your order.</p>
+        </div>
+        <div class="lu-step lu-animate" data-anim="slideUp">
+          <div class="lu-step-num">4</div>
+          <h3>Install &amp; Enjoy</h3>
+          <p>Professional installation, typically within 2-3 weeks. We test everything, show you how to operate and maintain your new blinds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="lu-section lu-tips">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Expert Tips for Laundry Blinds</h2>
+        <p>Advice from our installers who've fitted thousands of wet-area blinds across Melbourne.</p>
+      </div>
+      <div class="lu-tips-grid">
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">💨</div>
+          <div>
+            <h3>Prioritise Ventilation</h3>
+            <p>Choose louvred or slatted blinds that let air circulate. Good airflow reduces condensation on windows and walls, preventing long-term mould issues.</p>
+          </div>
+        </div>
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">🚫</div>
+          <div>
+            <h3>Avoid Fabric Blinds</h3>
+            <p>Standard fabric roman blinds and curtains absorb moisture and become breeding grounds for mould. Stick to aluminium, PVC, or coated polyester.</p>
+          </div>
+        </div>
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">🧽</div>
+          <div>
+            <h3>Wipe Down Monthly</h3>
+            <p>Even moisture-resistant blinds benefit from a monthly wipe with warm soapy water. This prevents soap residue and lint buildup from the washing cycle.</p>
+          </div>
+        </div>
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">📏</div>
+          <div>
+            <h3>Inside Mount Where Possible</h3>
+            <p>Inside-mount blinds sit within the window recess, keeping them away from the tub and washing machine. This reduces splash exposure and keeps the look neat.</p>
+          </div>
+        </div>
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">🎨</div>
+          <div>
+            <h3>Go Light on Colour</h3>
+            <p>White or light-coloured slats show less water spotting and lint dust. They also reflect more light into what's usually a small room.</p>
+          </div>
+        </div>
+        <div class="lu-tip-card lu-animate" data-anim="slideUp">
+          <div class="lu-tip-icon">🔒</div>
+          <div>
+            <h3>Check Safety Compliance</h3>
+            <p>If your laundry doubles as a kids' play area or connects to outdoor space, choose cordless or wand-operated blinds for child safety compliance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="lu-section lu-compare">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Product Comparison</h2>
+        <p>A quick look at which blind type suits your laundry best.</p>
+      </div>
+      <div class="lu-table-wrap lu-animate" data-anim="scaleIn">
+        <table class="lu-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Aluminium Venetian</th>
+              <th>PVC Vertical</th>
+              <th>Moisture Roller</th>
+              <th>PVC Shutters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Waterproof</td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Airflow Control</td>
+              <td><span class="lu-check">✓ Excellent</span></td>
+              <td><span class="lu-check">✓ Good</span></td>
+              <td><span class="lu-cross">— Limited</span></td>
+              <td><span class="lu-check">✓ Excellent</span></td>
+            </tr>
+            <tr>
+              <td>Light Control</td>
+              <td><span class="lu-check">✓ Excellent</span></td>
+              <td><span class="lu-check">✓ Good</span></td>
+              <td><span class="lu-check">✓ Good</span></td>
+              <td><span class="lu-check">✓ Excellent</span></td>
+            </tr>
+            <tr>
+              <td>Easy Clean</td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Child-Safe Cordless</td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓ Wand</span></td>
+              <td><span class="lu-check">✓ Spring</span></td>
+              <td><span class="lu-check">✓ No cords</span></td>
+            </tr>
+            <tr>
+              <td>Motorisation</td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-cross">—</span></td>
+            </tr>
+            <tr>
+              <td>Budget Range</td>
+              <td>$$</td>
+              <td>$$</td>
+              <td>$$</td>
+              <td>$$$$</td>
+            </tr>
+            <tr>
+              <td>Premium Look</td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-cross">—</span></td>
+              <td><span class="lu-check">✓</span></td>
+              <td><span class="lu-check">✓ Best</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="lu-section lu-testimonials">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Laundry Blind Reviews</h2>
+        <p>What Melbourne homeowners say about their new laundry blinds.</p>
+      </div>
+      <div class="lu-test-grid">
+        <div class="lu-test-card lu-animate" data-anim="slideUp">
+          <div class="lu-test-stars">★★★★★</div>
+          <blockquote>"Our laundry venetians have survived two years of daily washing cycles without a single spot of rust. The slats still tilt smoothly and wipe clean in seconds. Couldn't be happier."</blockquote>
+          <cite>— Michelle R., Essendon</cite>
+        </div>
+        <div class="lu-test-card lu-animate" data-anim="slideUp">
+          <div class="lu-test-stars">★★★★★</div>
+          <blockquote>"We had PVC shutters put in the combined laundry/bathroom and they look absolutely premium. No moisture issues at all, and the louvres let me air out the room without losing privacy."</blockquote>
+          <cite>— Ryan K., South Yarra</cite>
+        </div>
+        <div class="lu-test-card lu-animate" data-anim="slideUp">
+          <div class="lu-test-stars">★★★★★</div>
+          <blockquote>"Smart roller blinds in the laundry — sounds silly but it's a game-changer. My hands are always full of washing, so voice control to open the blinds is genuinely useful every single day."</blockquote>
+          <cite>— Priya S., Glen Waverley</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="lu-section lu-faq">
+    <div class="lu-container">
+      <div class="lu-section-header lu-animate" data-anim="slideUp">
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions about blinds for laundry and utility rooms.</p>
+      </div>
+      <div class="lu-faq-list">
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">What's the best blind for a steamy laundry?</div>
+          <div class="lu-faq-a"><p>Aluminium venetian blinds are the number-one choice. The metal slats are completely impervious to steam and moisture, they let air circulate between slats when tilted open, and they're easy to wipe down. PVC verticals are a close second for larger windows.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">Can I use timber venetians in my laundry?</div>
+          <div class="lu-faq-a"><p>We don't recommend real timber in wet areas — wood absorbs moisture, swells, and can warp over time. If you want the timber look, we offer PVC faux-wood venetians that look identical but handle moisture without any issues.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">How do I clean laundry blinds?</div>
+          <div class="lu-faq-a"><p>Aluminium and PVC blinds just need a wipe with warm soapy water and a soft cloth. For roller blinds, spot-clean with a damp cloth. We recommend a thorough clean once a month to prevent detergent residue and lint buildup.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">Will my blinds go mouldy in a humid laundry?</div>
+          <div class="lu-faq-a"><p>Not with our moisture-resistant range. Aluminium and PVC materials don't support mould growth. Our polyester roller fabrics are treated with anti-microbial coatings. The key is good ventilation — keep your blinds tilted open when not in use to allow air circulation.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">Are laundry blinds child-safe?</div>
+          <div class="lu-faq-a"><p>All our products comply with Australian child safety standards. We offer cordless venetians, wand-operated verticals, spring-assisted rollers, and PVC shutters with no cords at all. If your laundry connects to play areas, we'll recommend the safest option for your setup.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">How much do laundry room blinds cost?</div>
+          <div class="lu-faq-a"><p>Aluminium venetians start from around $95 per window, PVC verticals from $120, moisture-proof rollers from $140, and PVC shutters from $350. Final pricing depends on window size and product choice — we'll give you an exact quote during the free measure visit.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">Can you install blinds above a laundry tub?</div>
+          <div class="lu-faq-a"><p>Absolutely. We use stainless steel brackets and mount blinds inside the window recess where possible to keep them above the splash zone. For windows directly above tubs, we recommend aluminium venetians or PVC verticals that handle direct water contact.</p></div>
+        </div>
+        <div class="lu-faq-item lu-animate" data-anim="slideUp">
+          <div class="lu-faq-q">Do you service combined laundry-bathrooms?</div>
+          <div class="lu-faq-a"><p>Yes — many Melbourne homes have combined laundry-bathroom spaces. The same moisture-resistant products work perfectly. We'll assess the layout and recommend a consistent look across both functions of the room.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lu-cta">
+    <div class="lu-container">
+      <div class="lu-cta-inner lu-animate" data-anim="scaleIn">
+        <h2>Ready to Upgrade Your Laundry?</h2>
+        <p>Book a free in-home measure and quote. We'll recommend the perfect moisture-resistant blinds for your laundry, utility room, or wet area — no obligation.</p>
+        <div class="lu-hero-btns">
+          <a href="../free-quote.html" class="lu-btn lu-btn-primary">Book Free Measure &amp; Quote →</a>
+          <a href="tel:0400000000" class="lu-btn lu-btn-outline">📞 0400 000 000</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSSLINKS -->
+  <section class="lu-crosslinks">
+    <div class="lu-container">
+      <h2>Explore More Solutions</h2>
+      <div class="lu-crosslinks-grid">
+        <a href="acoustic-solutions.html"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html"><span>→</span> Blinds vs Curtains Guide</a>
+        <a href="bushfire-safe-blinds.html"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html"><span>→</span> Eco-Friendly Blinds</a>
+        <a href="elderly-accessible.html"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html"><span>→</span> Free Samples</a>
+        <a href="french-door-blinds.html"><span>→</span> French &amp; Patio Door Blinds</a>
+        <a href="granny-flat-blinds.html"><span>→</span> Granny Flat Blinds</a>
+        <a href="gym-fitness-centre.html"><span>→</span> Gym &amp; Fitness Centre</a>
+        <a href="hamptons-style.html"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html"><span>→</span> Heritage &amp; Period Homes</a>
+        <a href="high-rise-glare.html"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html"><span>→</span> Home Office</a>
+        <a href="home-renovation.html"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="japandi-zen-style.html"><span>→</span> Japandi Zen Style</a>
+        <a href="large-windows.html"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html"><span>→</span> Melbourne Service Areas</a>
+        <a href="mid-century-modern.html"><span>→</span> Mid-Century Modern</a>
+        <a href="minimalist-styling.html"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html"><span>→</span> Motorised Blinds</a>
+        <a href="new-home-packages.html"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html"><span>→</span> Property Styling</a>
+        <a href="rental-property.html"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html"><span>→</span> Staircase Windows</a>
+        <a href="summer-uv-protection.html"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('lu-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.lu-animate').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.lu-faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.lu-faq-item.active').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+</body>
+</html>
