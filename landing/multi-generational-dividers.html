@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Generational Living Dividers | iSeekBlinds</title>
+<meta name="description" content="Flexible room divider blinds for multi-generational homes. Create privacy zones for every generation without permanent walls. Custom solutions across Australia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --concrete:#e8e4df;
+  --steel:#3a3a3c;
+  --charcoal:#1d1d1f;
+  --warmgrey:#b8b2a8;
+  --terracotta:#c4604a;
+  --terracotta-light:#d9785f;
+  --sage:#7a8c6e;
+  --sage-light:#96a888;
+  --sand:#f5f0e8;
+  --cream:#faf7f2;
+  --bone:#ede8e0;
+  --ink:#0d0d0d;
+  --glass:rgba(255,255,255,0.06);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Crimson Pro',Georgia,serif;
+  color:var(--charcoal);
+  background:var(--cream);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5,h6,.heading{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+/* ── GRAIN OVERLAY ── */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.025;pointer-events:none;z-index:9999;
+}
+/* ── HEADER ── */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 40px;
+  background:rgba(250,247,242,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.site-header.scrolled{
+  padding:14px 40px;
+  background:rgba(250,247,242,0.95);
+}
+.logo{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-weight:700;font-size:1.3rem;
+  color:var(--charcoal);text-decoration:none;
+  letter-spacing:-0.03em;
+}
+.logo span{color:var(--terracotta)}
+.header-nav{display:flex;gap:32px;align-items:center}
+.header-nav a{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.85rem;font-weight:500;
+  color:var(--steel);text-decoration:none;
+  letter-spacing:0.02em;text-transform:uppercase;
+  position:relative;transition:color 0.3s;
+}
+.header-nav a::after{
+  content:'';position:absolute;bottom:-2px;left:0;
+  width:0;height:1.5px;background:var(--terracotta);
+  transition:width 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.header-nav a:hover{color:var(--charcoal)}
+.header-nav a:hover::after{width:100%}
+.header-cta{
+  background:var(--charcoal)!important;color:var(--cream)!important;
+  padding:10px 24px!important;border-radius:0!important;
+  transition:background 0.3s!important;
+}
+.header-cta:hover{background:var(--terracotta)!important}
+.header-cta::after{display:none!important}
+
+/* ── HERO: ANGULAR SPLIT ── */
+.hero{
+  min-height:100vh;display:grid;
+  grid-template-columns:1fr 1fr;
+  padding-top:80px;position:relative;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 60px 80px 80px;
+  background:var(--charcoal);color:var(--cream);
+  clip-path:polygon(0 0,100% 0,88% 100%,0 100%);
+  position:relative;z-index:2;
+}
+.hero-left::before{
+  content:'';position:absolute;
+  top:60px;left:60px;width:120px;height:4px;
+  background:var(--terracotta);
+}
+.hero-tag{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.15em;
+  color:var(--terracotta);margin-bottom:24px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-tag::before{
+  content:'';width:40px;height:1.5px;background:var(--terracotta);
+}
+.hero h1{
+  font-size:clamp(2.5rem,5vw,4.2rem);
+  line-height:1.05;margin-bottom:28px;
+  max-width:560px;
+}
+.hero h1 em{
+  font-style:normal;color:var(--terracotta);
+  position:relative;
+}
+.hero h1 em::after{
+  content:'';position:absolute;bottom:2px;left:0;right:0;
+  height:3px;background:var(--terracotta-light);opacity:0.4;
+}
+.hero-desc{
+  font-size:1.15rem;line-height:1.7;
+  color:var(--warmgrey);max-width:440px;
+  margin-bottom:40px;font-weight:300;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.9rem;font-weight:600;
+  padding:16px 36px;border:none;cursor:pointer;
+  background:var(--terracotta);color:#fff;
+  text-transform:uppercase;letter-spacing:0.08em;
+  position:relative;overflow:hidden;
+  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-primary:hover{background:var(--terracotta-light);transform:translateY(-2px)}
+.btn-secondary{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.9rem;font-weight:600;
+  padding:16px 36px;border:2px solid var(--warmgrey);
+  background:transparent;color:var(--cream);cursor:pointer;
+  text-transform:uppercase;letter-spacing:0.08em;
+  transition:all 0.3s;
+}
+.btn-secondary:hover{border-color:var(--cream);background:rgba(255,255,255,0.05)}
+
+.hero-right{
+  position:relative;overflow:hidden;
+  background:var(--bone);
+}
+.hero-visual{
+  position:absolute;inset:0;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+  gap:3px;padding:3px;
+}
+.hero-block{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-block:nth-child(1){background:var(--sage);clip-path:polygon(0 0,100% 0,100% 100%,12% 100%)}
+.hero-block:nth-child(2){background:var(--concrete);clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+.hero-block:nth-child(3){background:var(--terracotta);opacity:0.2;clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+.hero-block:nth-child(4){background:var(--warmgrey);clip-path:polygon(0 0,88% 0,100% 100%,0 100%)}
+.hero-block-label{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.2em;
+  color:rgba(255,255,255,0.8);
+  writing-mode:vertical-rl;text-orientation:mixed;
+  position:absolute;right:16px;bottom:20px;
+}
+.hero-block:nth-child(4) .hero-block-label{color:var(--charcoal);opacity:0.5}
+
+/* ARCHITECTURAL LINE DECORATIONS */
+.arch-line{
+  position:absolute;background:var(--terracotta);opacity:0.15;
+}
+.hero-right .arch-line.h1{top:25%;left:0;right:0;height:1px}
+.hero-right .arch-line.h2{top:65%;left:0;right:0;height:1px}
+.hero-right .arch-line.v1{top:0;bottom:0;left:40%;width:1px}
+
+/* ── STATS BAR ── */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(0,0,0,0.08);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.stat-item{
+  padding:40px;text-align:center;
+  border-right:1px solid rgba(0,0,0,0.08);
+  position:relative;
+}
+.stat-item:last-child{border-right:none}
+.stat-number{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:clamp(2rem,3vw,3rem);font-weight:700;
+  color:var(--terracotta);margin-bottom:4px;
+  letter-spacing:-0.03em;
+}
+.stat-label{
+  font-size:0.85rem;color:var(--steel);
+  font-weight:400;letter-spacing:0.02em;
+}
+.stat-item::before{
+  content:'';position:absolute;top:0;left:50%;
+  width:1px;height:12px;background:var(--terracotta);
+  transform:translateX(-50%);
+}
+
+/* ── SPLIT SCREEN: STICKY LEFT + SCROLLING RIGHT ── */
+.split-section{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+.split-sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  background:var(--charcoal);color:var(--cream);
+  padding:60px;overflow:hidden;
+}
+.split-sticky-inner{
+  max-width:420px;width:100%;
+  transition:all 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.split-sticky .section-label{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.2em;
+  color:var(--terracotta);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.split-sticky .section-label::before{
+  content:'';width:30px;height:1.5px;background:var(--terracotta);
+}
+.split-sticky h2{
+  font-size:clamp(2rem,3vw,3.2rem);
+  margin-bottom:20px;
+}
+.split-sticky p{
+  color:var(--warmgrey);font-size:1.05rem;
+  line-height:1.7;font-weight:300;
+}
+/* Architectural grid pattern on sticky panel */
+.split-sticky::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.split-sticky .corner-mark{
+  position:absolute;width:40px;height:40px;
+  border:1.5px solid rgba(196,96,74,0.3);
+}
+.split-sticky .corner-mark.tl{top:40px;left:40px;border-right:none;border-bottom:none}
+.split-sticky .corner-mark.br{bottom:40px;right:40px;border-left:none;border-top:none}
+
+.split-scroll{background:var(--cream)}
+.zone-card{
+  min-height:50vh;padding:80px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  position:relative;
+  opacity:0;transform:translateY(40px);
+  transition:all 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.zone-card.visible{opacity:1;transform:translateY(0)}
+.zone-card::before{
+  content:attr(data-zone);
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:clamp(5rem,10vw,8rem);font-weight:700;
+  color:rgba(0,0,0,0.03);
+  position:absolute;right:40px;top:40px;
+  line-height:1;letter-spacing:-0.05em;
+}
+.zone-icon{
+  width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--charcoal);color:var(--cream);
+  font-size:1.4rem;margin-bottom:24px;
+  clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
+}
+.zone-card h3{
+  font-size:1.6rem;margin-bottom:12px;
+  color:var(--charcoal);
+}
+.zone-card .zone-desc{
+  font-size:1.05rem;line-height:1.7;
+  color:var(--steel);max-width:460px;
+  margin-bottom:24px;font-weight:300;
+}
+.zone-features{
+  display:flex;flex-wrap:wrap;gap:8px;
+}
+.zone-feat{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.75rem;font-weight:500;
+  padding:6px 14px;
+  background:var(--bone);color:var(--steel);
+  text-transform:uppercase;letter-spacing:0.06em;
+  border-left:2px solid var(--terracotta);
+}
+
+/* ── INTERACTIVE FLOOR PLAN ── */
+.floorplan-section{
+  padding:120px 80px;position:relative;
+  background:var(--sand);
+}
+.floorplan-section .section-label{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.2em;
+  color:var(--terracotta);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.floorplan-section .section-label::before{
+  content:'';width:30px;height:1.5px;background:var(--terracotta);
+}
+.floorplan-section h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  margin-bottom:16px;max-width:600px;
+}
+.floorplan-section>p{
+  font-size:1.05rem;color:var(--steel);
+  max-width:500px;margin-bottom:60px;font-weight:300;
+}
+.floorplan-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  grid-template-rows:auto;
+  gap:40px;
+  max-width:1100px;
+}
+.floorplan-controls{
+  display:flex;flex-direction:column;gap:8px;
+}
+.fp-btn{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.85rem;font-weight:600;
+  padding:18px 24px;border:none;cursor:pointer;
+  background:var(--cream);color:var(--steel);
+  text-align:left;position:relative;
+  border-left:3px solid transparent;
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.fp-btn:hover{background:var(--bone);color:var(--charcoal)}
+.fp-btn.active{
+  background:var(--charcoal);color:var(--cream);
+  border-left-color:var(--terracotta);
+}
+.fp-btn .fp-btn-sub{
+  display:block;font-family:'Crimson Pro',serif;
+  font-size:0.8rem;font-weight:300;
+  margin-top:4px;opacity:0.6;
+}
+
+.floorplan-display{
+  background:var(--cream);padding:40px;
+  position:relative;min-height:400px;
+  border:1px solid rgba(0,0,0,0.06);
+}
+/* Blueprint grid */
+.floorplan-display::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;
+}
+.fp-room{
+  display:none;flex-direction:column;gap:20px;
+  position:relative;z-index:1;
+  animation:fpFadeIn 0.5s ease;
+}
+.fp-room.active{display:flex}
+@keyframes fpFadeIn{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fp-room-header{
+  display:flex;align-items:baseline;gap:16px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.fp-room-header h3{
+  font-size:1.5rem;color:var(--charcoal);
+}
+.fp-room-header span{
+  font-size:0.8rem;color:var(--warmgrey);
+  font-weight:300;
+}
+.fp-recs{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.fp-rec{
+  padding:24px;background:var(--sand);
+  border-left:3px solid var(--sage);
+  transition:all 0.3s;
+}
+.fp-rec:hover{
+  transform:translateX(4px);
+  border-left-color:var(--terracotta);
+}
+.fp-rec h4{
+  font-size:0.95rem;margin-bottom:8px;color:var(--charcoal);
+}
+.fp-rec p{
+  font-size:0.9rem;color:var(--steel);
+  line-height:1.6;font-weight:300;
+}
+.fp-rec .fp-price{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--terracotta);margin-top:12px;
+  display:block;
+}
+.fp-room-tip{
+  padding:20px 24px;
+  background:var(--charcoal);color:var(--cream);
+  display:flex;gap:16px;align-items:flex-start;
+  clip-path:polygon(0 0,100% 0,98% 100%,2% 100%);
+}
+.fp-room-tip .tip-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.fp-room-tip p{font-size:0.9rem;line-height:1.6;font-weight:300;color:var(--warmgrey)}
+.fp-room-tip strong{color:var(--cream);font-weight:500}
+
+/* ── TESTIMONIAL STRIP ── */
+.testimonial-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+.testimonial-item{
+  padding:60px 40px;
+  border-right:1px solid rgba(0,0,0,0.08);
+  position:relative;
+}
+.testimonial-item:last-child{border-right:none}
+.testimonial-item::before{
+  content:'"';
+  font-family:'Crimson Pro',serif;
+  font-size:6rem;font-weight:300;
+  color:var(--terracotta);opacity:0.15;
+  position:absolute;top:20px;left:30px;line-height:1;
+}
+.testimonial-item blockquote{
+  font-size:1.05rem;line-height:1.7;
+  color:var(--steel);font-style:italic;
+  font-weight:300;margin-bottom:20px;
+}
+.testimonial-author{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.85rem;font-weight:600;
+  color:var(--charcoal);
+}
+.testimonial-meta{
+  font-size:0.8rem;color:var(--warmgrey);
+  font-weight:300;margin-top:2px;
+}
+
+/* ── PROCESS STEPS: DIAGONAL ── */
+.process-section{
+  padding:120px 80px;
+  background:var(--charcoal);color:var(--cream);
+  position:relative;overflow:hidden;
+}
+.process-section::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.process-section .section-label{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.2em;
+  color:var(--terracotta);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+  position:relative;z-index:1;
+}
+.process-section .section-label::before{
+  content:'';width:30px;height:1.5px;background:var(--terracotta);
+}
+.process-section h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  margin-bottom:60px;max-width:500px;
+  position:relative;z-index:1;
+}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;position:relative;z-index:1;
+}
+.process-step{
+  padding:40px 30px;
+  border-right:1px solid rgba(255,255,255,0.06);
+  position:relative;
+  transition:all 0.4s;
+}
+.process-step:last-child{border-right:none}
+.process-step:hover{background:rgba(255,255,255,0.03)}
+.step-num{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:3.5rem;font-weight:700;
+  color:var(--terracotta);opacity:0.3;
+  line-height:1;margin-bottom:20px;
+  letter-spacing:-0.05em;
+}
+.process-step h4{
+  font-size:1.1rem;margin-bottom:12px;
+  letter-spacing:-0.01em;
+}
+.process-step p{
+  font-size:0.95rem;line-height:1.6;
+  color:var(--warmgrey);font-weight:300;
+}
+/* Diagonal connector line */
+.process-steps::before{
+  content:'';position:absolute;
+  top:60px;left:12.5%;right:12.5%;
+  height:1px;
+  background:linear-gradient(90deg,var(--terracotta) 0%,rgba(196,96,74,0.1) 100%);
+}
+
+/* ── CTA SECTION ── */
+.cta-section{
+  padding:120px 80px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;position:relative;
+}
+.cta-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-right:80px;
+}
+.cta-left h2{
+  font-size:clamp(2rem,3.5vw,3rem);
+  margin-bottom:20px;
+}
+.cta-left p{
+  font-size:1.05rem;color:var(--steel);
+  max-width:420px;margin-bottom:40px;
+  font-weight:300;line-height:1.7;
+}
+.cta-form{
+  display:flex;flex-direction:column;gap:16px;
+  max-width:400px;
+}
+.cta-input{
+  font-family:'Crimson Pro',serif;
+  font-size:1rem;padding:16px 20px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:var(--cream);color:var(--charcoal);
+  outline:none;transition:border-color 0.3s;
+}
+.cta-input:focus{border-color:var(--terracotta)}
+.cta-input::placeholder{color:var(--warmgrey)}
+.cta-submit{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.9rem;font-weight:700;
+  padding:18px 36px;border:none;cursor:pointer;
+  background:var(--charcoal);color:var(--cream);
+  text-transform:uppercase;letter-spacing:0.1em;
+  transition:all 0.3s;align-self:flex-start;
+}
+.cta-submit:hover{background:var(--terracotta)}
+.cta-right{
+  background:var(--bone);
+  display:flex;align-items:center;justify-content:center;
+  padding:60px;position:relative;overflow:hidden;
+}
+.cta-right::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,var(--sage) 0%,transparent 50%),
+    linear-gradient(225deg,var(--terracotta) 0%,transparent 40%);
+  opacity:0.08;
+}
+.cta-visual{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  max-width:300px;position:relative;z-index:1;
+}
+.cta-box{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.15em;
+  transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.cta-box:nth-child(1){background:var(--charcoal);color:var(--cream);clip-path:polygon(0 0,100% 0,100% 100%,8% 100%)}
+.cta-box:nth-child(2){background:var(--terracotta);color:#fff;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.cta-box:nth-child(3){background:var(--sage);color:#fff;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}
+.cta-box:nth-child(4){background:var(--warmgrey);color:var(--charcoal);clip-path:polygon(0 0,92% 0,100% 100%,0 100%)}
+.cta-box:hover{transform:scale(1.05)}
+
+/* ── FOOTER ── */
+.site-footer{
+  padding:60px 80px 40px;
+  background:var(--ink);color:var(--warmgrey);
+  display:grid;grid-template-columns:1fr auto;
+  gap:40px;align-items:end;
+}
+.footer-brand{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--cream);margin-bottom:8px;
+}
+.footer-brand span{color:var(--terracotta)}
+.footer-copy{font-size:0.85rem;font-weight:300}
+.footer-links{display:flex;gap:24px}
+.footer-links a{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:0.8rem;color:var(--warmgrey);
+  text-decoration:none;text-transform:uppercase;
+  letter-spacing:0.08em;transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--cream)}
+
+/* ── STAGGERED LOAD ANIMATION ── */
+.load-reveal{
+  opacity:0;transform:translateY(30px);
+  transition:all 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.load-reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{clip-path:none;padding:100px 40px 60px}
+  .hero-right{height:40vh}
+  .split-section{grid-template-columns:1fr;min-height:auto}
+  .split-sticky{position:relative;height:auto;min-height:50vh;padding:60px 40px}
+  .floorplan-grid{grid-template-columns:1fr}
+  .floorplan-controls{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:8px}
+  .fp-btn{white-space:nowrap;padding:12px 18px}
+  .fp-recs{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr;gap:0}
+  .process-steps::before{display:none}
+  .cta-section{grid-template-columns:1fr}
+  .cta-right{min-height:300px}
+  .stats-bar{grid-template-columns:1fr 1fr}
+  .testimonial-strip{grid-template-columns:1fr}
+  .site-footer{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:640px){
+  .site-header{padding:16px 20px}
+  .header-nav{gap:16px}
+  .header-nav a:not(.header-cta){display:none}
+  .hero-left{padding:80px 24px 48px}
+  .hero h1{font-size:2rem}
+  .stats-bar{grid-template-columns:1fr}
+  .split-sticky{padding:48px 24px}
+  .zone-card{padding:48px 24px}
+  .floorplan-section{padding:60px 24px}
+  .process-section{padding:60px 24px}
+  .process-steps{grid-template-columns:1fr}
+  .cta-section{padding:60px 24px}
+  .cta-left{padding-right:0}
+  .site-footer{padding:40px 24px 30px}
+}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <a href="/index.html" class="logo">iSeek<span>Blinds</span></a>
+  <nav class="header-nav">
+    <a href="#zones">Zones</a>
+    <a href="#planner">Planner</a>
+    <a href="#process">How It Works</a>
+    <a href="/landing/free-samples.html" class="header-cta">Free Samples</a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Multi-Generational Living</div>
+    <h1>One home.<br>Three generations.<br><em>Zero compromise.</em></h1>
+    <p class="hero-desc">When grandparents, parents, and kids share a roof, privacy isn't a luxury—it's survival. Our flexible divider blinds create distinct living zones without the cost or commitment of walls.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})">Plan Your Zones</button>
+      <button class="btn-secondary" onclick="window.location.href='/landing/free-samples.html'">Request Samples</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-block"><span class="hero-block-label">Grandparents</span></div>
+      <div class="hero-block"><span class="hero-block-label">Shared</span></div>
+      <div class="hero-block"><span class="hero-block-label">Kids</span></div>
+      <div class="hero-block"><span class="hero-block-label">Parents</span></div>
+    </div>
+    <div class="arch-line h1"></div>
+    <div class="arch-line h2"></div>
+    <div class="arch-line v1"></div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═══ -->
+<section class="stats-bar">
+  <div class="stat-item load-reveal">
+    <div class="stat-number">47%</div>
+    <div class="stat-label">of Aussie homes are multi-gen by 2026</div>
+  </div>
+  <div class="stat-item load-reveal">
+    <div class="stat-number">$0</div>
+    <div class="stat-label">building permits required</div>
+  </div>
+  <div class="stat-item load-reveal">
+    <div class="stat-number">1 day</div>
+    <div class="stat-label">typical installation time</div>
+  </div>
+  <div class="stat-item load-reveal">
+    <div class="stat-number">85%</div>
+    <div class="stat-label">noise reduction with acoustic options</div>
+  </div>
+</section>
+
+<!-- ═══ SPLIT SCREEN: STICKY LEFT + SCROLLING ZONES ═══ -->
+<section class="split-section" id="zones">
+  <div class="split-sticky">
+    <div class="corner-mark tl"></div>
+    <div class="corner-mark br"></div>
+    <div class="split-sticky-inner">
+      <div class="section-label">Living Zones</div>
+      <h2>Every generation deserves their own corner</h2>
+      <p>We've designed solutions for the five most common conflict zones in multi-generational homes. Each zone uses different materials, opacities, and operating methods to match how that space actually gets used.</p>
+    </div>
+  </div>
+  <div class="split-scroll">
+    <div class="zone-card" data-zone="01">
+      <div class="zone-icon">🛋️</div>
+      <h3>The Great Room Divide</h3>
+      <p class="zone-desc">Split open-plan living without killing the light. Ceiling-mounted panel glides create flexible boundaries—open for Sunday roast, closed when grandpa wants cricket and the kids want Bluey.</p>
+      <div class="zone-features">
+        <span class="zone-feat">Panel Glide</span>
+        <span class="zone-feat">Ceiling Track</span>
+        <span class="zone-feat">Light Filtering</span>
+        <span class="zone-feat">Motorised Option</span>
+      </div>
+    </div>
+    <div class="zone-card" data-zone="02">
+      <div class="zone-icon">🔇</div>
+      <h3>The Quiet Retreat</h3>
+      <p class="zone-desc">Grandparents need rest. Kids don't understand volume. Acoustic divider curtains with triple-layer fabric cut noise by up to 85%—turning a granny flat conversion into genuine sanctuary.</p>
+      <div class="zone-features">
+        <span class="zone-feat">Acoustic Fabric</span>
+        <span class="zone-feat">Triple Layer</span>
+        <span class="zone-feat">Blackout</span>
+        <span class="zone-feat">Easy-Pull Track</span>
+      </div>
+    </div>
+    <div class="zone-card" data-zone="03">
+      <div class="zone-icon">💻</div>
+      <h3>The Work-From-Home Zone</h3>
+      <p class="zone-desc">Video calls don't mix with toddler chaos. Vertical blinds on curved tracks wrap around desk areas, creating an instant office that disappears at 5pm. Professional backdrop included.</p>
+      <div class="zone-features">
+        <span class="zone-feat">Curved Track</span>
+        <span class="zone-feat">Vertical Blind</span>
+        <span class="zone-feat">Privacy Fabric</span>
+        <span class="zone-feat">Video-Call Ready</span>
+      </div>
+    </div>
+    <div class="zone-card" data-zone="04">
+      <div class="zone-icon">🧒</div>
+      <h3>The Kids' Territory</h3>
+      <p class="zone-desc">Shared bedrooms need personal space too. Ceiling-to-floor room divider blinds with child-safe cordless operation let siblings claim their own half—without drywall drama.</p>
+      <div class="zone-features">
+        <span class="zone-feat">Cordless</span>
+        <span class="zone-feat">Child Safe</span>
+        <span class="zone-feat">Washable</span>
+        <span class="zone-feat">Fun Patterns</span>
+      </div>
+    </div>
+    <div class="zone-card" data-zone="05">
+      <div class="zone-icon">🍳</div>
+      <h3>The Kitchen Boundary</h3>
+      <p class="zone-desc">Open kitchens are great for cooking—less great when cooking smells reach every corner of the house. Retractable screen dividers contain aromas while keeping the chef connected.</p>
+      <div class="zone-features">
+        <span class="zone-feat">Retractable Screen</span>
+        <span class="zone-feat">Odour Resistant</span>
+        <span class="zone-feat">Wipe Clean</span>
+        <span class="zone-feat">Transparent Options</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTERACTIVE FLOOR PLANNER ═══ -->
+<section class="floorplan-section" id="planner">
+  <div class="section-label">Interactive Planner</div>
+  <h2>Pick your layout, get your plan</h2>
+  <p>Select the home type closest to yours. We'll show you which divider solutions work best for each room.</p>
+
+  <div class="floorplan-grid">
+    <div class="floorplan-controls">
+      <button class="fp-btn active" onclick="showRoom('classic')" data-room="classic">
+        Classic 4-Bedroom
+        <span class="fp-btn-sub">Most common layout</span>
+      </button>
+      <button class="fp-btn" onclick="showRoom('granny')" data-room="granny">
+        House + Granny Flat
+        <span class="fp-btn-sub">Separate dwelling conversion</span>
+      </button>
+      <button class="fp-btn" onclick="showRoom('townhouse')" data-room="townhouse">
+        Townhouse / Duplex
+        <span class="fp-btn-sub">Multi-level shared wall</span>
+      </button>
+      <button class="fp-btn" onclick="showRoom('openplan')" data-room="openplan">
+        Open-Plan Modern
+        <span class="fp-btn-sub">Minimal walls, maximum flex</span>
+      </button>
+    </div>
+
+    <div class="floorplan-display">
+      <!-- Classic -->
+      <div class="fp-room active" id="room-classic">
+        <div class="fp-room-header">
+          <h3>Classic 4-Bedroom</h3>
+          <span>3–4 divider zones recommended</span>
+        </div>
+        <div class="fp-recs">
+          <div class="fp-rec">
+            <h4>Living ↔ Dining Divide</h4>
+            <p>Panel glide system on ceiling track. Translucent fabric keeps light flowing while giving visual separation.</p>
+            <span class="fp-price">From $890</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Master Bedroom Partition</h4>
+            <p>Acoustic curtain track creates a private zone when converting master to shared grandparent space.</p>
+            <span class="fp-price">From $650</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Kids' Room Halving</h4>
+            <p>Cordless roller blind on ceiling mount. Each child gets their own wall and window side.</p>
+            <span class="fp-price">From $420</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Study Nook Enclosure</h4>
+            <p>Curved-track vertical blinds wrap a desk area into an instant home office.</p>
+            <span class="fp-price">From $580</span>
+          </div>
+        </div>
+        <div class="fp-room-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Pro tip:</strong> In classic layouts, ceiling-mounted tracks are invisible and don't require any wall modification—perfect for renters or heritage homes.</p>
+        </div>
+      </div>
+
+      <!-- Granny Flat -->
+      <div class="fp-room" id="room-granny">
+        <div class="fp-room-header">
+          <h3>House + Granny Flat</h3>
+          <span>2–3 divider zones recommended</span>
+        </div>
+        <div class="fp-recs">
+          <div class="fp-rec">
+            <h4>Connecting Corridor Screen</h4>
+            <p>Retractable screen creates a sound and visual break between main house and granny flat entry.</p>
+            <span class="fp-price">From $720</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Studio Apartment Divider</h4>
+            <p>Floor-to-ceiling panel blind separates sleeping from living in compact granny flat layouts.</p>
+            <span class="fp-price">From $560</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Shared Patio Boundary</h4>
+            <p>Outdoor-rated bistro blinds define patio zones while keeping weather protection.</p>
+            <span class="fp-price">From $480</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Kitchen Pass-Through</h4>
+            <p>Pull-down screen for the connecting window between kitchens—open for meals, closed for independence.</p>
+            <span class="fp-price">From $340</span>
+          </div>
+        </div>
+        <div class="fp-room-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Pro tip:</strong> For granny flat conversions, acoustic-rated fabrics make the biggest difference. Our triple-weave options block 85% of sound transfer.</p>
+        </div>
+      </div>
+
+      <!-- Townhouse -->
+      <div class="fp-room" id="room-townhouse">
+        <div class="fp-room-header">
+          <h3>Townhouse / Duplex</h3>
+          <span>2–3 divider zones recommended</span>
+        </div>
+        <div class="fp-recs">
+          <div class="fp-rec">
+            <h4>Stairwell Privacy Screen</h4>
+            <p>Retractable blind at stairwell creates floor-level privacy between generations on different levels.</p>
+            <span class="fp-price">From $380</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Open Kitchen Separator</h4>
+            <p>Ceiling-suspended panel system divides kitchen from living without blocking the stairs sightline.</p>
+            <span class="fp-price">From $760</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Landing Study Enclosure</h4>
+            <p>Convert a landing or nook into a private study with wrap-around curtain track—no renovation needed.</p>
+            <span class="fp-price">From $490</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Balcony Wind Shield</h4>
+            <p>Clear PVC blinds on upper balconies create usable outdoor space without blocking views.</p>
+            <span class="fp-price">From $550</span>
+          </div>
+        </div>
+        <div class="fp-room-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Pro tip:</strong> In multi-level homes, motorised blinds with a single remote let elderly family members manage their privacy without climbing stairs.</p>
+        </div>
+      </div>
+
+      <!-- Open Plan -->
+      <div class="fp-room" id="room-openplan">
+        <div class="fp-room-header">
+          <h3>Open-Plan Modern</h3>
+          <span>4–6 divider zones recommended</span>
+        </div>
+        <div class="fp-recs">
+          <div class="fp-rec">
+            <h4>Living Zone Grid</h4>
+            <p>Intersecting panel glide tracks create a flexible grid—open 2+ zones for entertaining, close all for privacy.</p>
+            <span class="fp-price">From $1,400</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Bedroom Pod</h4>
+            <p>Four-sided curtain track creates a bedroom "pod" in open loft spaces. Blackout + acoustic combo.</p>
+            <span class="fp-price">From $980</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Rumpus Room Boundary</h4>
+            <p>Heavy-duty roller blind drops from ceiling to create a sound-dampened play zone for kids.</p>
+            <span class="fp-price">From $720</span>
+          </div>
+          <div class="fp-rec">
+            <h4>Dining Alcove</h4>
+            <p>Sheer curtain on curved track wraps the dining table—intimate dinners without rebuilding the floor plan.</p>
+            <span class="fp-price">From $540</span>
+          </div>
+        </div>
+        <div class="fp-room-tip">
+          <span class="tip-icon">💡</span>
+          <p><strong>Pro tip:</strong> Open-plan homes benefit most from motorised systems with scene control—one tap sets "Movie Night," "Quiet Time," or "Party Mode" configurations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonial-strip">
+  <div class="testimonial-item load-reveal">
+    <blockquote>"Mum moved in last year and we dreaded losing our lounge room. The panel glide divider is genius—she has her space, we have ours, and Sunday lunch happens in between."</blockquote>
+    <div class="testimonial-author">Sarah K.</div>
+    <div class="testimonial-meta">Glen Waverley, VIC — Panel Glide Dividers</div>
+  </div>
+  <div class="testimonial-item load-reveal">
+    <blockquote>"Three generations, one townhouse. The acoustic curtains between floors changed everything. My father-in-law actually sleeps through the night now despite two toddlers upstairs."</blockquote>
+    <div class="testimonial-author">David & Mei L.</div>
+    <div class="testimonial-meta">Box Hill, VIC — Acoustic Divider Curtains</div>
+  </div>
+  <div class="testimonial-item load-reveal">
+    <blockquote>"I work from home in a granny flat conversion. The curved-track blinds around my desk make video calls possible—clients have no idea there's a kitchen 2 metres behind me."</blockquote>
+    <div class="testimonial-author">James T.</div>
+    <div class="testimonial-meta">Doncaster, VIC — Curved Track Verticals</div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="process-section" id="process">
+  <div class="section-label">How It Works</div>
+  <h2>From chaos to zoned calm in four steps</h2>
+  <div class="process-steps">
+    <div class="process-step load-reveal">
+      <div class="step-num">01</div>
+      <h4>Share Your Floor Plan</h4>
+      <p>Upload a sketch or photo. No architectural drawings needed—a napkin drawing works fine.</p>
+    </div>
+    <div class="process-step load-reveal">
+      <div class="step-num">02</div>
+      <h4>Zone Consultation</h4>
+      <p>Our multi-gen specialist visits to understand each generation's needs—light, noise, independence, safety.</p>
+    </div>
+    <div class="process-step load-reveal">
+      <div class="step-num">03</div>
+      <h4>Custom Proposal</h4>
+      <p>Receive a zoning plan with fabric samples, track layouts, and transparent pricing. No hidden costs.</p>
+    </div>
+    <div class="process-step load-reveal">
+      <div class="step-num">04</div>
+      <h4>Install & Adjust</h4>
+      <p>Professional installation in one day. We stay until every generation has tested their new boundaries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="cta-left">
+    <h2>Ready to give everyone their own space?</h2>
+    <p>Tell us about your household. We'll design a divider plan that keeps the peace—and the family together.</p>
+    <form class="cta-form" onsubmit="event.preventDefault();this.querySelector('.cta-submit').textContent='We\'ll be in touch ✓';this.querySelector('.cta-submit').style.background='var(--sage)'">
+      <input type="text" class="cta-input" placeholder="Your name" required>
+      <input type="email" class="cta-input" placeholder="Email address" required>
+      <input type="tel" class="cta-input" placeholder="Phone (optional)">
+      <select class="cta-input" style="font-family:'Crimson Pro',serif;cursor:pointer">
+        <option value="">How many generations at home?</option>
+        <option>2 generations (parents + grandparent)</option>
+        <option>2 generations (parents + adult child)</option>
+        <option>3 generations</option>
+        <option>4+ generations</option>
+      </select>
+      <button type="submit" class="cta-submit">Get My Zone Plan →</button>
+    </form>
+  </div>
+  <div class="cta-right">
+    <div class="cta-visual">
+      <div class="cta-box">Privacy</div>
+      <div class="cta-box">Light</div>
+      <div class="cta-box">Sound</div>
+      <div class="cta-box">Flex</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div>
+    <div class="footer-brand">iSeek<span>Blinds</span></div>
+    <div class="footer-copy">© 2026 iSeekBlinds. Melbourne's multi-generational blinds specialists.</div>
+  </div>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/landing/">All Solutions</a>
+    <a href="/landing/free-samples.html">Samples</a>
+  </div>
+</footer>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+  lastScroll = window.scrollY;
+}, {passive:true});
+
+// Intersection Observer for scroll reveals
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.load-reveal, .zone-card').forEach(el => observer.observe(el));
+
+// Floor plan tab switcher
+function showRoom(id) {
+  document.querySelectorAll('.fp-room').forEach(r => r.classList.remove('active'));
+  document.querySelectorAll('.fp-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('room-' + id).classList.add('active');
+  document.querySelector('[data-room="' + id + '"]').classList.add('active');
+}
+
+// Parallax on hero blocks
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const blocks = document.querySelectorAll('.hero-block');
+  if (scrolled < window.innerHeight) {
+    blocks.forEach((b, i) => {
+      const speed = [0.02, -0.015, 0.025, -0.01][i];
+      b.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  }
+}, {passive:true});
+
+// Stat counter animation
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const num = entry.target.querySelector('.stat-number');
+      const text = num.textContent;
+      const match = text.match(/(\d+)/);
+      if (match) {
+        const target = parseInt(match[1]);
+        const prefix = text.substring(0, text.indexOf(match[1]));
+        const suffix = text.substring(text.indexOf(match[1]) + match[1].length);
+        let current = 0;
+        const increment = Math.ceil(target / 40);
+        const timer = setInterval(() => {
+          current = Math.min(current + increment, target);
+          num.textContent = prefix + current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, 30);
+      }
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.5});
+
+document.querySelectorAll('.stat-item').forEach(el => statObserver.observe(el));
+</script>
+</body>
+</html>
