@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget-Friendly Window Treatments Melbourne | iSeekBlinds</title>
+  <meta name="description" content="Affordable blinds and window treatments in Melbourne. Budget packages from $49/window. Payment plans available. Quality blinds that won't break the bank.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .bf-page {
+      --coral: #FF6B6B;
+      --teal: #2EC4B6;
+      --navy: #1A1A2E;
+      --white: #FFFFFF;
+      --coral-light: #FFE8E8;
+      --teal-light: #E8FAF8;
+      font-family: 'Sora', sans-serif;
+      color: var(--navy);
+    }
+    .bf-page h1, .bf-page h2, .bf-page h3 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Hero */
+    .bf-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .bf-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: var(--coral);
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: bf-pulse 8s ease-in-out infinite;
+    }
+    .bf-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: var(--teal);
+      border-radius: 50%;
+      opacity: 0.12;
+      animation: bf-pulse 8s ease-in-out infinite 4s;
+    }
+    @keyframes bf-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    .bf-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .bf-hero-text {
+      color: var(--white);
+    }
+    .bf-hero-badge {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      padding: 8px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .bf-hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .bf-hero-text h1 span {
+      color: var(--coral);
+    }
+    .bf-hero-text p {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .bf-hero-price {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .bf-hero-price .price-from {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+    .bf-hero-price .price-amount {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--teal);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .bf-hero-price .price-unit {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+    .bf-hero-visual {
+      position: relative;
+    }
+    .bf-hero-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid var(--teal);
+    }
+    .bf-hero-shapes {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+      background: var(--coral);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .bf-hero-shapes-2 {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      width: 80px;
+      height: 80px;
+      background: var(--teal);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+    .bf-btn-coral {
+      display: inline-block;
+      background: var(--coral);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid var(--coral);
+    }
+    .bf-btn-coral:hover {
+      background: transparent;
+      color: var(--coral);
+      transform: translateY(-2px);
+    }
+    .bf-btn-teal {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid var(--teal);
+    }
+    .bf-btn-teal:hover {
+      background: transparent;
+      color: var(--teal);
+      transform: translateY(-2px);
+    }
+    .bf-btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid var(--teal);
+      margin-left: 16px;
+    }
+    .bf-btn-outline:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    /* Packages Section */
+    .bf-packages {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .bf-section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .bf-section-title h2 {
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .bf-section-title h2 span {
+      color: var(--coral);
+    }
+    .bf-section-title p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .bf-package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .bf-package-card {
+      background: var(--white);
+      border: 2px solid #eee;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .bf-package-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .bf-package-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(46,196,182,0.15);
+    }
+    .bf-package-card.featured {
+      border-color: var(--coral);
+      background: linear-gradient(135deg, var(--coral-light) 0%, var(--white) 100%);
+    }
+    .bf-package-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--coral);
+      color: var(--white);
+      padding: 6px 24px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .bf-package-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+    .bf-package-card:nth-child(1) .bf-package-icon { background: var(--teal-light); }
+    .bf-package-card:nth-child(2) .bf-package-icon { background: var(--coral-light); }
+    .bf-package-card:nth-child(3) .bf-package-icon { background: var(--teal-light); }
+    .bf-package-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .bf-package-desc {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .bf-package-price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .bf-package-price sup {
+      font-size: 1.2rem;
+      top: -1.2em;
+    }
+    .bf-package-per {
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+    .bf-package-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .bf-package-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bf-package-features li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* Comparison Table */
+    .bf-compare {
+      padding: 100px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+    .bf-compare .bf-section-title h2 {
+      color: var(--white);
+    }
+    .bf-compare .bf-section-title p {
+      color: rgba(255,255,255,0.7);
+    }
+    .bf-compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .bf-compare-table.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+    .bf-compare-table thead th {
+      background: var(--coral);
+      padding: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .bf-compare-table thead th:first-child {
+      text-align: left;
+    }
+    .bf-compare-table tbody td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .bf-compare-table tbody td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+    .bf-compare-table tbody tr:nth-child(even) {
+      background: rgba(255,255,255,0.03);
+    }
+    .bf-compare-table .check { color: var(--teal); font-size: 1.3rem; }
+    .bf-compare-table .cross { color: var(--coral); opacity: 0.5; }
+    .bf-compare-table .highlight-col {
+      background: rgba(46,196,182,0.1);
+    }
+
+    /* Smart Savings */
+    .bf-savings {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .bf-savings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .bf-savings-card {
+      display: flex;
+      gap: 24px;
+      padding: 30px;
+      border-radius: 16px;
+      background: #f8f9fa;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    .bf-savings-card.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .bf-savings-card:hover {
+      background: var(--teal-light);
+      transform: translateX(8px);
+    }
+    .bf-savings-number {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      background: var(--coral);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .bf-savings-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .bf-savings-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Payment Plans */
+    .bf-payment {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--teal-light) 0%, var(--coral-light) 100%);
+    }
+    .bf-payment-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .bf-payment-visual {
+      position: relative;
+    }
+    .bf-payment-img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .bf-payment-badge {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 30px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .bf-payment-badge .amount {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--teal);
+    }
+    .bf-payment-badge .period {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .bf-payment-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .bf-payment-content h2 span {
+      color: var(--coral);
+    }
+    .bf-payment-content > p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .bf-payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .bf-payment-option {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    .bf-payment-option:hover {
+      border-color: var(--teal);
+    }
+    .bf-payment-option-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--navy);
+      color: var(--teal);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .bf-payment-option h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .bf-payment-option p {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    /* Gallery */
+    .bf-gallery {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .bf-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 250px 250px;
+      gap: 16px;
+    }
+    .bf-gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    .bf-gallery-item.visible {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.5s ease;
+    }
+    .bf-gallery-item:nth-child(1) { grid-column: span 2; }
+    .bf-gallery-item:nth-child(4) { grid-column: span 2; }
+    .bf-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .bf-gallery-item:hover img { transform: scale(1.08); }
+    .bf-gallery-item::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .bf-cta {
+      padding: 100px 0;
+      background: var(--navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bf-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--coral), var(--teal), var(--coral));
+    }
+    .bf-cta h2 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .bf-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .bf-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Animations */
+    @keyframes bf-fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .bf-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .bf-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .bf-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .bf-hero-text h1 { font-size: 2.5rem; }
+      .bf-package-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .bf-payment-inner { grid-template-columns: 1fr; }
+      .bf-gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .bf-hero { min-height: auto; padding: 120px 0 60px; }
+      .bf-hero-text h1 { font-size: 2rem; }
+      .bf-hero-price .price-amount { font-size: 2.8rem; }
+      .bf-savings-grid { grid-template-columns: 1fr; }
+      .bf-compare-table { font-size: 0.85rem; }
+      .bf-compare-table thead th, .bf-compare-table tbody td { padding: 12px 10px; }
+      .bf-gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .bf-gallery-item:nth-child(1), .bf-gallery-item:nth-child(4) { grid-column: span 1; }
+      .bf-cta h2 { font-size: 2rem; }
+      .bf-btn-outline { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="bf-page">
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Guides →</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bf-hero">
+    <div class="container bf-hero-inner">
+      <div class="bf-hero-text">
+        <span class="bf-hero-badge">Melbourne's Best Value</span>
+        <h1>Beautiful Blinds<br><span>Without the Big Price Tag</span></h1>
+        <p>Quality window treatments shouldn't cost a fortune. Our budget-friendly packages give Melbourne homeowners stylish blinds, professional installation, and peace of mind — starting at just $49 per window.</p>
+        <div class="bf-hero-price">
+          <span class="price-from">From</span>
+          <span class="price-amount">$49</span>
+          <span class="price-unit">per window</span>
+        </div>
+        <div>
+          <a href="../free-quote.html" class="bf-btn-coral">Get Free Quote</a>
+          <a href="#packages" class="bf-btn-outline">View Packages ↓</a>
+        </div>
+      </div>
+      <div class="bf-hero-visual">
+        <div class="bf-hero-shapes"></div>
+        <div class="bf-hero-shapes-2"></div>
+        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80" alt="Affordable stylish blinds in modern Melbourne home" class="bf-hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="bf-packages" id="packages">
+    <div class="container">
+      <div class="bf-section-title bf-animate">
+        <h2>Budget Packages <span>That Deliver</span></h2>
+        <p>Three tiers designed for every budget. All include free measure, professional fitting, and our 5-year warranty.</p>
+      </div>
+      <div class="bf-package-grid">
+        <div class="bf-package-card">
+          <div class="bf-package-icon">🏠</div>
+          <div class="bf-package-name">Starter</div>
+          <div class="bf-package-desc">Perfect for renters & single rooms</div>
+          <div class="bf-package-price"><sup>$</sup>49</div>
+          <div class="bf-package-per">per window (min 3 windows)</div>
+          <ul class="bf-package-features">
+            <li>Roller blinds in 12 colours</li>
+            <li>Light-filtering fabric</li>
+            <li>Standard chain operation</li>
+            <li>Free professional measure</li>
+            <li>Professional installation</li>
+          </ul>
+          <a href="../free-quote.html" class="bf-btn-teal">Choose Starter</a>
+        </div>
+        <div class="bf-package-card featured">
+          <div class="bf-package-icon">⭐</div>
+          <div class="bf-package-name">Whole Home</div>
+          <div class="bf-package-desc">Best value for 8+ windows</div>
+          <div class="bf-package-price"><sup>$</sup>79</div>
+          <div class="bf-package-per">per window (min 8 windows)</div>
+          <ul class="bf-package-features">
+            <li>Roller or venetian blinds</li>
+            <li>Blockout or sunscreen options</li>
+            <li>40+ colour choices</li>
+            <li>Free in-home design consult</li>
+            <li>Professional installation</li>
+            <li>5-year extended warranty</li>
+          </ul>
+          <a href="../free-quote.html" class="bf-btn-coral">Choose Whole Home</a>
+        </div>
+        <div class="bf-package-card">
+          <div class="bf-package-icon">💎</div>
+          <div class="bf-package-name">Smart Saver</div>
+          <div class="bf-package-desc">Premium look, budget price</div>
+          <div class="bf-package-price"><sup>$</sup>119</div>
+          <div class="bf-package-per">per window (min 5 windows)</div>
+          <ul class="bf-package-features">
+            <li>Honeycomb or dual rollers</li>
+            <li>Energy-efficient fabrics</li>
+            <li>Cordless or motorised upgrade</li>
+            <li>Full design consultation</li>
+            <li>Professional installation</li>
+            <li>7-year warranty</li>
+          </ul>
+          <a href="../free-quote.html" class="bf-btn-teal">Choose Smart Saver</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="bf-compare">
+    <div class="container">
+      <div class="bf-section-title bf-animate">
+        <h2>How We Stack Up</h2>
+        <p>See how iSeekBlinds compares to other options — we deliver quality without the premium markup.</p>
+      </div>
+      <table class="bf-compare-table bf-animate">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>DIY Chain Store</th>
+            <th class="highlight-col">iSeekBlinds</th>
+            <th>Premium Retailer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price per window</td>
+            <td>$30–$60</td>
+            <td class="highlight-col"><strong>$49–$119</strong></td>
+            <td>$200–$500+</td>
+          </tr>
+          <tr>
+            <td>Professional measure</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span> Free</td>
+            <td><span class="check">✓</span> Often $50+</td>
+          </tr>
+          <tr>
+            <td>Professional installation</td>
+            <td><span class="cross">✗</span> DIY only</td>
+            <td class="highlight-col"><span class="check">✓</span> Included</td>
+            <td><span class="check">✓</span> Extra charge</td>
+          </tr>
+          <tr>
+            <td>Custom-made to fit</td>
+            <td><span class="cross">✗</span> Standard sizes</td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Warranty</td>
+            <td>1 year</td>
+            <td class="highlight-col"><strong>5–7 years</strong></td>
+            <td>3–5 years</td>
+          </tr>
+          <tr>
+            <td>Payment plans</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span> Interest-free</td>
+            <td>Varies</td>
+          </tr>
+          <tr>
+            <td>Melbourne-based service</td>
+            <td>N/A</td>
+            <td class="highlight-col"><span class="check">✓</span> Local team</td>
+            <td>Varies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Smart Savings Tips -->
+  <section class="bf-savings">
+    <div class="container">
+      <div class="bf-section-title bf-animate">
+        <h2>6 Smart Ways to <span>Save on Blinds</span></h2>
+        <p>Our budget experts share insider tips to maximise your dollar without sacrificing style.</p>
+      </div>
+      <div class="bf-savings-grid">
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">1</div>
+          <div>
+            <h3>Bundle More Windows</h3>
+            <p>Our per-window price drops significantly when you order 8+ windows together. A whole-home order can save you up to 35% compared to doing rooms one at a time.</p>
+          </div>
+        </div>
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">2</div>
+          <div>
+            <h3>Mix Blockout & Sunscreen</h3>
+            <p>Use blockout in bedrooms where you need it, and lighter sunscreen fabrics in living areas. No need for premium blockout everywhere — save where it makes sense.</p>
+          </div>
+        </div>
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">3</div>
+          <div>
+            <h3>Choose Roller Blinds</h3>
+            <p>Roller blinds offer the best price-to-performance ratio. Clean, modern looks starting from just $49 per window — and they suit virtually every room.</p>
+          </div>
+        </div>
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">4</div>
+          <div>
+            <h3>Go Cordless, Skip Motorised</h3>
+            <p>Cordless spring-operated blinds give you a sleek, child-safe finish at a fraction of motorised pricing. Reserve motorised only for hard-to-reach windows.</p>
+          </div>
+        </div>
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">5</div>
+          <div>
+            <h3>Neutral Colours Last Longer</h3>
+            <p>White, grey, and linen tones won't date with trends. You'll save on replacements down the road and they'll match if you redecorate later.</p>
+          </div>
+        </div>
+        <div class="bf-savings-card">
+          <div class="bf-savings-number">6</div>
+          <div>
+            <h3>Take Advantage of Seasonal Sales</h3>
+            <p>We run major promotions in autumn and after EOFY. Sign up for our mailing list or <a href="seasonal-sale.html" style="color: var(--coral);">check current offers</a> to time your purchase right.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Plans -->
+  <section class="bf-payment">
+    <div class="container bf-payment-inner">
+      <div class="bf-payment-visual bf-animate">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern Melbourne home with budget-friendly blinds" class="bf-payment-img">
+        <div class="bf-payment-badge">
+          <div class="amount">$12/wk</div>
+          <div class="period">Interest-free for 12 months</div>
+        </div>
+      </div>
+      <div class="bf-payment-content bf-animate">
+        <h2>Flexible <span>Payment Plans</span></h2>
+        <p>Don't let upfront costs hold you back. We partner with trusted buy-now-pay-later services so you can enjoy beautiful blinds today and pay at your pace — interest-free.</p>
+        <div class="bf-payment-options">
+          <div class="bf-payment-option">
+            <div class="bf-payment-option-icon">💳</div>
+            <div>
+              <h4>Interest-Free Finance</h4>
+              <p>6, 12, or 24 month terms available on orders over $500</p>
+            </div>
+          </div>
+          <div class="bf-payment-option">
+            <div class="bf-payment-option-icon">📱</div>
+            <div>
+              <h4>Afterpay & Zip</h4>
+              <p>Split into 4 fortnightly payments — no interest, no fuss</p>
+            </div>
+          </div>
+          <div class="bf-payment-option">
+            <div class="bf-payment-option-icon">🏦</div>
+            <div>
+              <h4>Direct Deposit Discount</h4>
+              <p>Save an extra 3% when you pay by bank transfer</p>
+            </div>
+          </div>
+        </div>
+        <a href="../free-quote.html" class="bf-btn-coral">Get a Quote with Payment Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="bf-gallery">
+    <div class="container">
+      <div class="bf-section-title bf-animate">
+        <h2>Budget Doesn't Mean <span>Boring</span></h2>
+        <p>Real installations from our budget range — proof that affordable blinds can look absolutely stunning.</p>
+      </div>
+      <div class="bf-gallery-grid">
+        <div class="bf-gallery-item" data-label="Roller Blinds · $49/window">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Budget roller blinds in Melbourne living room">
+        </div>
+        <div class="bf-gallery-item" data-label="Venetian · $69/window">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Affordable venetian blinds">
+        </div>
+        <div class="bf-gallery-item" data-label="Sunscreen · $59/window">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Sunscreen blinds budget option">
+        </div>
+        <div class="bf-gallery-item" data-label="Whole Home · $79/window">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Whole home budget blind package">
+        </div>
+        <div class="bf-gallery-item" data-label="Honeycomb · $99/window">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Budget honeycomb blinds">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bf-cta">
+    <div class="container bf-animate">
+      <h2>Ready to Save on<br>Quality Blinds?</h2>
+      <p>Book a free measure and quote today. No obligation, no pressure — just honest pricing from Melbourne's most affordable blind specialists.</p>
+      <div class="bf-cta-buttons">
+        <a href="../free-quote.html" class="bf-btn-coral">Book Free Measure & Quote</a>
+        <a href="tel:0400000000" class="bf-btn-teal">Call 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="crosslinks-section" style="padding: 60px 0; background: #f5f5f5;">
+    <div class="container">
+      <h2 style="text-align:center; font-family: DM Serif Display, serif; margin-bottom: 32px;">Explore More Solutions</h2>
+      <div class="crosslinks-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px;">
+        <a href="acoustic-solutions.html" class="cm-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="cm-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="cm-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="cm-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="cm-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="cm-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html" class="cm-crosslink-item"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html" class="cm-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="cm-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="cm-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="cm-crosslink-item"><span>→</span> Bushfire-Safe Blinds</a>
+        <a href="care-maintenance.html" class="cm-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="cm-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="cm-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="cm-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="cm-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="cm-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="cm-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="cm-crosslink-item"><span>→</span> Day &amp; Night Blinds</a>
+        <a href="design-inspiration.html" class="cm-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="cm-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="cm-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="cm-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="cm-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="cm-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="cm-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="cm-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="cm-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="cm-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="french-door-blinds.html" class="cm-crosslink-item"><span>→</span> French &amp; Patio Door Blinds</a>
+        <a href="granny-flat-blinds.html" class="cm-crosslink-item"><span>→</span> Granny Flat Blinds</a>
+        <a href="gym-fitness-centre.html" class="cm-crosslink-item"><span>→</span> Gym &amp; Fitness Centre</a>
+        <a href="hamptons-style.html" class="cm-crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="cm-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="cm-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="cm-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="cm-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="cm-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="cm-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="cm-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="large-windows.html" class="cm-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="laundry-utility-room.html" class="cm-crosslink-item"><span>→</span> Laundry &amp; Utility Room</a>
+        <a href="layered-treatments.html" class="cm-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="cm-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="cm-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="cm-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="cm-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="mid-century-modern.html" class="cm-crosslink-item"><span>→</span> Mid-Century Modern</a>
+        <a href="minimalist-styling.html" class="cm-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html" class="cm-crosslink-item"><span>→</span> Motorised Blinds</a>
+        <a href="new-home-packages.html" class="cm-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="cm-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="cm-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="cm-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="cm-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="cm-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="plantation-shutters-guide.html" class="cm-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html" class="cm-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html" class="cm-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="cm-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="cm-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="cm-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="cm-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="cm-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="cm-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="cm-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="cm-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="cm-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="cm-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+        <a href="split-level-home.html" class="cm-crosslink-item"><span>→</span> Split-Level &amp; Double Storey</a>
+        <a href="split-level-home.html" class="cm-crosslink-item"><span>→</span> Split-Level &amp; Double Storey</a>
+        <a href="staircase-windows.html" class="cm-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
+        <a href="summer-uv-protection.html" class="cm-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="cm-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="cm-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="cm-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="cm-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="cm-crosslink-item"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html" class="cm-crosslink-item"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // IntersectionObserver for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.bf-package-card, .bf-savings-card, .bf-gallery-item, .bf-compare-table, .bf-animate').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.nav');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+      menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+    });
+  }
+</script>
+</body>
+</html>

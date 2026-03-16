@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split-Level & Double Storey Home Blinds Melbourne | iSeekBlinds</title>
+  <meta name="description" content="Specialist blinds for split-level and double storey homes in Melbourne. Motorised solutions for high windows, stairwell blinds, and consistent styling across all levels.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .sl-page {
+      --charcoal: #2D3436;
+      --gold: #FDCB6E;
+      --grey: #636E72;
+      --white: #FFFFFF;
+      --charcoal-light: #3d4447;
+      --gold-light: #FFF8E7;
+      --gold-dark: #E8B84A;
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--charcoal);
+    }
+    .sl-page h1, .sl-page h2, .sl-page h3, .sl-page h4 {
+      font-family: 'Archivo', sans-serif;
+    }
+    .sl-geo-line {
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      margin-bottom: 20px;
+    }
+    .sl-geo-line.center { margin: 0 auto 20px; }
+
+    /* ── HERO ── */
+    .sl-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: var(--charcoal);
+      overflow: hidden;
+    }
+    .sl-hero-bg {
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80') center/cover;
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .sl-hero-bg-overlay {
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, var(--charcoal) 0%, rgba(45,52,54,0.35) 60%, transparent 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .sl-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 580px;
+    }
+    .sl-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .sl-hero-tag::before {
+      content: '';
+      width: 40px; height: 2px;
+      background: var(--gold);
+    }
+    .sl-hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 24px;
+      font-weight: 800;
+    }
+    .sl-hero-content h1 span {
+      color: var(--gold);
+      display: block;
+    }
+    .sl-hero-content > p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .sl-hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .sl-hero-stat h3 {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .sl-hero-stat p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+    }
+
+    /* Buttons */
+    .sl-btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .sl-btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .sl-btn-outline-w {
+      display: inline-block;
+      color: var(--white);
+      padding: 16px 36px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s;
+      margin-left: 16px;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .sl-btn-outline-w:hover { border-color: var(--gold); color: var(--gold); }
+    .sl-btn-charcoal {
+      display: inline-block;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .sl-btn-charcoal:hover { background: var(--charcoal-light); transform: translateY(-2px); }
+
+    /* ── CHALLENGES ── */
+    .sl-challenges {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .sl-section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .sl-section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+    .sl-section-title h2 span { color: var(--gold-dark); }
+    .sl-section-title p {
+      color: var(--grey);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sl-challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .sl-challenge-card {
+      background: #f8f9fa;
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .sl-challenge-card.visible { opacity: 1; transform: translateY(0); }
+    .sl-challenge-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .sl-challenge-card:hover::before { transform: scaleX(1); }
+    .sl-challenge-card:hover { background: var(--gold-light); }
+    .sl-challenge-icon {
+      width: 56px; height: 56px;
+      background: var(--charcoal);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    }
+    .sl-challenge-card h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 700; }
+    .sl-challenge-card p { color: var(--grey); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ── LEVELS ── */
+    .sl-levels {
+      padding: 100px 0;
+      background: var(--charcoal);
+      color: var(--white);
+    }
+    .sl-levels .sl-section-title h2 { color: var(--white); }
+    .sl-levels .sl-section-title p { color: rgba(255,255,255,0.6); }
+    .sl-level-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .sl-level-row.visible { opacity: 1; transform: translateY(0); }
+    .sl-level-row:last-child { margin-bottom: 0; }
+    .sl-level-row.reverse { direction: rtl; }
+    .sl-level-row.reverse > * { direction: ltr; }
+    .sl-level-img-wrap {
+      position: relative;
+    }
+    .sl-level-img {
+      width: 100%; height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+    .sl-level-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 100%; height: 100%;
+      border: 3px solid var(--gold);
+      z-index: -1;
+    }
+    .sl-level-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .sl-level-content h3 { font-size: 1.8rem; margin-bottom: 16px; font-weight: 800; }
+    .sl-level-content > p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 20px; }
+    .sl-level-features { list-style: none; padding: 0; }
+    .sl-level-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+    }
+    .sl-level-features li::before { content: '▸'; color: var(--gold); font-weight: 700; }
+
+    /* ── MOTORISED ── */
+    .sl-motorised {
+      padding: 100px 0;
+      background: var(--gold-light);
+    }
+    .sl-motorised-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .sl-motorised-content h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; }
+    .sl-motorised-content h2 span { color: var(--gold-dark); }
+    .sl-motorised-content > p { color: var(--grey); line-height: 1.7; margin-bottom: 30px; }
+    .sl-motor-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .sl-motor-feature {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+    }
+    .sl-motor-feature-icon { font-size: 1.5rem; min-width: 30px; }
+    .sl-motor-feature h4 { font-size: 0.95rem; margin-bottom: 4px; font-weight: 700; }
+    .sl-motor-feature p { color: var(--grey); font-size: 0.85rem; line-height: 1.5; }
+    .sl-motorised-visual { position: relative; }
+    .sl-motorised-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+    .sl-motorised-overlay {
+      position: absolute;
+      top: 30px; left: 30px;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 24px;
+      max-width: 200px;
+    }
+    .sl-motorised-overlay h4 {
+      color: var(--gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .sl-motorised-overlay p { font-size: 0.85rem; line-height: 1.5; opacity: 0.8; }
+
+    /* ── PROCESS ── */
+    .sl-process { padding: 100px 0; background: var(--white); }
+    .sl-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .sl-process-grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 12.5%; width: 75%;
+      height: 2px;
+      background: var(--gold);
+    }
+    .sl-process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    .sl-process-step.visible { opacity: 1; transform: translateY(0); }
+    .sl-process-num {
+      width: 80px; height: 80px;
+      background: var(--charcoal);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: 'Archivo', sans-serif;
+      margin: 0 auto 20px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .sl-process-step h3 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 700; }
+    .sl-process-step p { color: var(--grey); font-size: 0.9rem; line-height: 1.5; }
+
+    /* ── TESTIMONIAL ── */
+    .sl-testimonial { padding: 80px 0; background: var(--charcoal); }
+    .sl-testimonial-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .sl-testimonial-img { width: 100%; height: 320px; object-fit: cover; display: block; }
+    .sl-testimonial-content { color: var(--white); }
+    .sl-testimonial-content blockquote {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 24px;
+      padding-left: 30px;
+      border-left: 3px solid var(--gold);
+    }
+    .sl-testimonial-author h4 { color: var(--gold); font-size: 1rem; margin-bottom: 4px; }
+    .sl-testimonial-author p { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+    /* ── CTA ── */
+    .sl-cta {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--charcoal) 50%, var(--charcoal-light) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sl-cta::before, .sl-cta::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border: 2px solid rgba(253,203,110,0.1);
+      transform: rotate(45deg);
+    }
+    .sl-cta::before { top: -100px; left: -100px; }
+    .sl-cta::after { bottom: -100px; right: -100px; }
+    .sl-cta h2 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      font-weight: 800;
+      position: relative; z-index: 1;
+    }
+    .sl-cta h2 span { color: var(--gold); }
+    .sl-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      position: relative; z-index: 1;
+    }
+    .sl-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+
+    /* ── ANIMATE ── */
+    .sl-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .sl-animate.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .sl-hero-bg, .sl-hero-bg-overlay { display: none; }
+      .sl-hero { background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%); padding: 140px 0 80px; }
+      .sl-hero-content { max-width: 100%; }
+      .sl-challenges-grid { grid-template-columns: 1fr 1fr; }
+      .sl-level-row, .sl-level-row.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .sl-motorised-inner { grid-template-columns: 1fr; }
+      .sl-process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .sl-process-grid::before { display: none; }
+      .sl-testimonial-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .sl-hero { padding: 120px 0 60px; }
+      .sl-hero-content h1 { font-size: 2.2rem; }
+      .sl-hero-stats { flex-direction: column; gap: 20px; }
+      .sl-challenges-grid { grid-template-columns: 1fr; }
+      .sl-motor-features { grid-template-columns: 1fr; }
+      .sl-process-grid { grid-template-columns: 1fr; }
+      .sl-cta h2 { font-size: 2rem; }
+      .sl-btn-outline-w { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="sl-page">
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+        <a href="budget-friendly.html" class="cm-crosslink-item"><span>→</span> Budget-Friendly Blinds</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+            <a href="index.html" style="grid-column: 1/-1; text-align:center; font-weight:600; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px;">View All Guides →</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="sl-hero">
+    <div class="sl-hero-bg"></div>
+    <div class="sl-hero-bg-overlay"></div>
+    <div class="container">
+      <div class="sl-hero-content">
+        <div class="sl-hero-tag">Multi-Level Specialists</div>
+        <h1>Blinds for Every Level<br><span>of Your Home</span></h1>
+        <p>Split-level and double storey homes present unique challenges — towering stairwell windows, inconsistent light across floors, and hard-to-reach spots. We solve them all with precision-fitted, motorised-ready window treatments that look cohesive from top to bottom.</p>
+        <div class="sl-hero-stats">
+          <div class="sl-hero-stat">
+            <h3>500+</h3>
+            <p>Multi-level homes fitted</p>
+          </div>
+          <div class="sl-hero-stat">
+            <h3>5m+</h3>
+            <p>High windows — no problem</p>
+          </div>
+          <div class="sl-hero-stat">
+            <h3>100%</h3>
+            <p>Consistent styling guarantee</p>
+          </div>
+        </div>
+        <a href="../free-quote.html" class="sl-btn-gold">Get Free Quote</a>
+        <a href="#challenges" class="sl-btn-outline-w">See Solutions ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section class="sl-challenges" id="challenges">
+    <div class="container">
+      <div class="sl-section-title sl-animate">
+        <div class="sl-geo-line center"></div>
+        <h2>The Multi-Level <span>Challenge</span></h2>
+        <p>Standard blind installers often struggle with split-level homes. Here's what makes them tricky — and why we specialise in solving these exact problems.</p>
+      </div>
+      <div class="sl-challenges-grid">
+        <div class="sl-challenge-card">
+          <div class="sl-challenge-icon">📐</div>
+          <h3>Varying Ceiling Heights</h3>
+          <p>Different levels mean different window sizes. Each floor needs individually measured and custom-fitted treatments that still look cohesive from the street and inside.</p>
+        </div>
+        <div class="sl-challenge-card">
+          <div class="sl-challenge-icon">🪜</div>
+          <h3>Hard-to-Reach Windows</h3>
+          <p>Stairwell feature windows, double-height voids, and mezzanine glass are impossible to operate manually. Motorisation is essential, not optional, for these spaces.</p>
+        </div>
+        <div class="sl-challenge-card">
+          <div class="sl-challenge-icon">☀️</div>
+          <h3>Uneven Light Exposure</h3>
+          <p>Upper floors receive far more direct sun, while lower levels often stay darker. Different opacity fabrics per level are key — but they must still look unified throughout.</p>
+        </div>
+        <div class="sl-challenge-card">
+          <div class="sl-challenge-icon">🔧</div>
+          <h3>Complex Installation</h3>
+          <p>Scaffolding, specialised brackets, and safety equipment are required for high-window installations. Our team brings everything — you don't need to arrange a thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions by Level -->
+  <section class="sl-levels">
+    <div class="container">
+      <div class="sl-section-title sl-animate">
+        <div class="sl-geo-line center"></div>
+        <h2>Solutions for <span>Every Level</span></h2>
+        <p>Tailored approaches for each zone of your multi-storey Melbourne home, designed to work beautifully together.</p>
+      </div>
+
+      <!-- Ground Floor -->
+      <div class="sl-level-row">
+        <div class="sl-level-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80" alt="Ground floor living room with roller blinds" class="sl-level-img">
+        </div>
+        <div class="sl-level-content">
+          <span class="sl-level-tag">Ground Floor</span>
+          <h3>Living &amp; Entry Level</h3>
+          <p>Your ground floor sets the tone for the entire home. We match fabrics across living, dining, and kitchen areas for seamless visual flow — with privacy and style in equal measure for street-facing windows.</p>
+          <ul class="sl-level-features">
+            <li>Dual roller blinds for flexible light control</li>
+            <li>Privacy sunscreen for street-facing windows</li>
+            <li>Moisture-resistant options for kitchen areas</li>
+            <li>Consistent fabric colour across open-plan spaces</li>
+            <li>Child-safe cordless operation throughout</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Upper Floor -->
+      <div class="sl-level-row reverse">
+        <div class="sl-level-img-wrap">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="Upper floor bedroom with blockout blinds" class="sl-level-img">
+        </div>
+        <div class="sl-level-content">
+          <span class="sl-level-tag">Upper Floor</span>
+          <h3>Bedrooms &amp; Retreat</h3>
+          <p>Upper levels need superior blockout for quality sleep, plus strong UV protection — they receive the most direct sun exposure year-round. Honeycomb cellular blinds are our top recommendation for thermal performance and energy savings on upper floors.</p>
+          <ul class="sl-level-features">
+            <li>Full blockout for bedrooms and nurseries</li>
+            <li>Honeycomb blinds for thermal insulation</li>
+            <li>Motorised operation for convenience</li>
+            <li>Coordinated fabrics matching lower levels</li>
+            <li>Cordless spring systems — no dangling cords</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stairwell -->
+      <div class="sl-level-row">
+        <div class="sl-level-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Stairwell with motorised high window blinds" class="sl-level-img">
+        </div>
+        <div class="sl-level-content">
+          <span class="sl-level-tag">Stairwell &amp; Void</span>
+          <h3>High Windows &amp; Feature Glass</h3>
+          <p>The signature challenge of multi-level homes. Our motorised solutions handle windows up to 5 metres high — operated via remote, wall switch, or smartphone app. No ladders. No stress. No compromise on style.</p>
+          <ul class="sl-level-features">
+            <li>Motorised blinds for windows up to 5m high</li>
+            <li>Smart home integration (Alexa, Google, HomeKit)</li>
+            <li>Automated timer schedules for sunrise/sunset</li>
+            <li>Professional scaffolding installation included</li>
+            <li>Battery or hardwired motor options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motorised Solutions -->
+  <section class="sl-motorised">
+    <div class="container sl-motorised-inner">
+      <div class="sl-motorised-content sl-animate">
+        <div class="sl-geo-line"></div>
+        <h2>Motorised: The <span>Smart Choice</span><br>for Multi-Level Homes</h2>
+        <p>For split-level properties, motorisation isn't a luxury — it's a practical necessity. Control every blind in your home from your phone, set schedules by floor, and never worry about reaching that stairwell window again.</p>
+        <div class="sl-motor-features">
+          <div class="sl-motor-feature">
+            <div class="sl-motor-feature-icon">📱</div>
+            <div>
+              <h4>App Control</h4>
+              <p>Operate all floors from one app. Group blinds by room or level for instant control.</p>
+            </div>
+          </div>
+          <div class="sl-motor-feature">
+            <div class="sl-motor-feature-icon">⏰</div>
+            <div>
+              <h4>Auto Schedules</h4>
+              <p>Different timings per level — upstairs blockout at 7pm, living area at sunset.</p>
+            </div>
+          </div>
+          <div class="sl-motor-feature">
+            <div class="sl-motor-feature-icon">🔋</div>
+            <div>
+              <h4>Battery or Hardwired</h4>
+              <p>Rechargeable battery motors for retrofits. Hardwired for new builds and renovations.</p>
+            </div>
+          </div>
+          <div class="sl-motor-feature">
+            <div class="sl-motor-feature-icon">🏠</div>
+            <div>
+              <h4>Smart Home Ready</h4>
+              <p>Compatible with Alexa, Google Home, Apple HomeKit, and IFTTT automation.</p>
+            </div>
+          </div>
+        </div>
+        <a href="motorised-blinds.html" class="sl-btn-charcoal">Explore All Motorised Options →</a>
+      </div>
+      <div class="sl-motorised-visual sl-animate">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Motorised blinds controlled by smartphone in Melbourne home" class="sl-motorised-img">
+        <div class="sl-motorised-overlay">
+          <h4>Energy Saving</h4>
+          <p>Automated sun-tracking schedules can cut cooling and heating costs by up to 25%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="sl-process">
+    <div class="container">
+      <div class="sl-section-title sl-animate">
+        <div class="sl-geo-line center"></div>
+        <h2>Our Multi-Level <span>Process</span></h2>
+        <p>A methodical, floor-by-floor approach to getting every window right — from first visit to final installation.</p>
+      </div>
+      <div class="sl-process-grid">
+        <div class="sl-process-step">
+          <div class="sl-process-num">01</div>
+          <h3>Level-by-Level Survey</h3>
+          <p>We measure every window on every floor, noting ceiling heights, light exposure, access challenges, and motorisation requirements.</p>
+        </div>
+        <div class="sl-process-step">
+          <div class="sl-process-num">02</div>
+          <h3>Unified Design Plan</h3>
+          <p>A cohesive design scheme that adapts fabric type and opacity per level, while keeping a consistent colour palette and visual style throughout.</p>
+        </div>
+        <div class="sl-process-step">
+          <div class="sl-process-num">03</div>
+          <h3>Custom Manufacturing</h3>
+          <p>Every blind is made to exact measurements in our Melbourne facility. Motorised systems are pre-programmed and tested before delivery.</p>
+        </div>
+        <div class="sl-process-step">
+          <div class="sl-process-num">04</div>
+          <h3>Professional Install</h3>
+          <p>Our team arrives with scaffolding and safety equipment. High windows, stairwells, voids — all completed in a single efficient visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="sl-testimonial">
+    <div class="container sl-testimonial-inner sl-animate">
+      <div>
+        <img src="https://images.unsplash.com/photo-1600573472591-ee6981cf81d6?w=800&q=80" alt="Beautiful double storey Melbourne home with new blinds" class="sl-testimonial-img">
+      </div>
+      <div class="sl-testimonial-content">
+        <blockquote>"We had three other companies tell us our stairwell window was 'too difficult.' iSeekBlinds came out, measured it, and installed a beautiful motorised roller blind we control from our phones. Every level of our home looks perfect and completely coordinated — couldn't be happier."</blockquote>
+        <div class="sl-testimonial-author">
+          <div>
+            <h4>Sarah &amp; David M.</h4>
+            <p>Double storey home, Glen Waverley VIC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sl-cta">
+    <div class="container sl-animate">
+      <h2>Multi-Level Home?<br><span>We've Got Every Floor Covered.</span></h2>
+      <p>Book a free in-home consultation. We'll survey every level, solve the tricky windows, and present a complete coordinated quote — no obligation, no pressure.</p>
+      <div class="sl-cta-buttons">
+        <a href="../free-quote.html" class="sl-btn-gold">Book Free Consultation</a>
+        <a href="tel:0400000000" class="sl-btn-outline-w">Call 0400 000 000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="crosslinks-section" style="padding: 60px 0; background: #f5f5f5;">
+    <div class="container">
+      <h2 style="text-align:center; font-family: DM Serif Display, serif; margin-bottom: 32px;">Explore More Solutions</h2>
+      <div class="crosslinks-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px;">
+        <a href="acoustic-solutions.html" class="cm-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="cm-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="cm-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="cm-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="cm-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="cm-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html" class="cm-crosslink-item"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html" class="cm-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="cm-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="cm-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="budget-friendly.html" class="cm-crosslink-item"><span>→</span> Budget-Friendly Blinds</a>
+        <a href="budget-friendly.html" class="cm-crosslink-item"><span>→</span> Budget-Friendly Blinds</a>
+        <a href="bushfire-safe-blinds.html" class="cm-crosslink-item"><span>→</span> Bushfire-Safe Blinds</a>
+        <a href="care-maintenance.html" class="cm-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="cm-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="cm-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="cm-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="cm-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="cm-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="cm-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="cm-crosslink-item"><span>→</span> Day &amp; Night Blinds</a>
+        <a href="design-inspiration.html" class="cm-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="cm-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="cm-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="cm-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="cm-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="cm-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="cm-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="cm-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="cm-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="cm-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="french-door-blinds.html" class="cm-crosslink-item"><span>→</span> French &amp; Patio Door Blinds</a>
+        <a href="granny-flat-blinds.html" class="cm-crosslink-item"><span>→</span> Granny Flat Blinds</a>
+        <a href="gym-fitness-centre.html" class="cm-crosslink-item"><span>→</span> Gym &amp; Fitness Centre</a>
+        <a href="hamptons-style.html" class="cm-crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="cm-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="cm-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="cm-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="cm-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="cm-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="cm-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="cm-crosslink-item"><span>→</span> Hospitality &amp; Short-Stay</a>
+        <a href="large-windows.html" class="cm-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="laundry-utility-room.html" class="cm-crosslink-item"><span>→</span> Laundry &amp; Utility Room</a>
+        <a href="layered-treatments.html" class="cm-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="cm-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="cm-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="cm-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="cm-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="mid-century-modern.html" class="cm-crosslink-item"><span>→</span> Mid-Century Modern</a>
+        <a href="minimalist-styling.html" class="cm-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html" class="cm-crosslink-item"><span>→</span> Motorised Blinds</a>
+        <a href="new-home-packages.html" class="cm-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="cm-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="cm-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="cm-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="cm-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="cm-crosslink-item"><span>→</span> Pet-Friendly Blinds</a>
+        <a href="plantation-shutters-guide.html" class="cm-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html" class="cm-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html" class="cm-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="cm-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="cm-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="cm-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="cm-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="cm-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="cm-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="cm-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="cm-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="cm-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="cm-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html" class="cm-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
+        <a href="summer-uv-protection.html" class="cm-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="cm-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="cm-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="cm-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="cm-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="cm-crosslink-item"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html" class="cm-crosslink-item"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // IntersectionObserver for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 120);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.sl-challenge-card, .sl-level-row, .sl-process-step, .sl-animate, .sl-testimonial-inner'
+  ).forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.nav');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+      menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+    });
+  }
+</script>
+</body>
+</html>
