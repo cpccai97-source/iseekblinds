@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climbing Gym & Bouldering Centre Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for climbing gyms, bouldering centres & indoor rock walls in Melbourne. Anti-glare, impact-resistant, motorised solutions for high-ceiling athletic spaces. Free consultation.">
+  <meta name="keywords" content="climbing gym blinds Melbourne, bouldering centre blinds, rock climbing gym window treatments, high ceiling blinds gym, impact resistant blinds, anti-glare climbing wall blinds, motorised gym blinds Melbourne">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === CLIMBING GYM — Chalk & Rock Route Map === */
+    :root {
+      --cg-stone: #2b2520;
+      --cg-chalk: #f0ebe3;
+      --cg-hold-orange: #e86830;
+      --cg-hold-teal: #2a9d8f;
+      --cg-hold-yellow: #e9c46a;
+      --cg-hold-blue: #264653;
+      --cg-dust: rgba(240,235,227,0.06);
+      --cg-text: #f0ebe3;
+      --cg-text-dim: #9a928a;
+      --cg-surface: #362f29;
+      --cg-border: rgba(240,235,227,0.1);
+    }
+
+    .lp-cg { background: var(--cg-stone); color: var(--cg-text); font-family: 'Rubik', sans-serif; overflow-x: hidden; }
+    .lp-cg * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Chalk dust grain overlay */
+    .lp-cg::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: overlay;
+    }
+
+    /* Loading */
+    .cg-loader {
+      position: fixed; inset: 0; z-index: 10000;
+      background: var(--cg-stone);
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      transition: opacity 0.6s ease, visibility 0.6s;
+    }
+    .cg-loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .cg-loader-hold {
+      width: 60px; height: 60px;
+      border-radius: 30% 50% 40% 60%;
+      background: var(--cg-hold-orange);
+      animation: cg-pulse 0.8s ease-in-out infinite alternate;
+    }
+    .cg-loader-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--cg-text-dim);
+      margin-top: 20px;
+    }
+    @keyframes cg-pulse {
+      from { transform: scale(1) rotate(0deg); }
+      to { transform: scale(1.15) rotate(8deg); }
+    }
+
+    /* Header */
+    .cg-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: linear-gradient(180deg, rgba(43,37,32,0.95) 0%, transparent 100%);
+      transition: transform 0.4s ease;
+    }
+    .cg-header.hide { transform: translateY(-100%); }
+    .cg-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cg-chalk);
+    }
+    .cg-logo span { color: var(--cg-hold-orange); }
+    .cg-header-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: 10px 28px;
+      border: 2px solid var(--cg-hold-orange);
+      color: var(--cg-hold-orange);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .cg-header-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--cg-hold-orange);
+      transform: translateX(-101%);
+      transition: transform 0.35s ease;
+    }
+    .cg-header-cta:hover { color: var(--cg-stone); }
+    .cg-header-cta:hover::before { transform: translateX(0); }
+    .cg-header-cta span { position: relative; z-index: 1; }
+
+    /* Route line — vertical SVG on the left */
+    .cg-route {
+      position: fixed;
+      left: 40px;
+      top: 0;
+      width: 60px;
+      height: 100vh;
+      z-index: 50;
+      pointer-events: none;
+    }
+    .cg-route svg { width: 100%; height: 100%; }
+    .cg-route-line {
+      stroke: var(--cg-hold-orange);
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.1s linear;
+    }
+    .cg-route-dot {
+      fill: var(--cg-hold-orange);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .cg-route-dot.active { opacity: 1; }
+
+    /* Hero */
+    .cg-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 120px 80px 140px;
+      position: relative;
+    }
+    .cg-hero-grade {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(8rem, 20vw, 18rem);
+      line-height: 0.85;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(240,235,227,0.12);
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+    }
+    .cg-hero-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--cg-hold-orange);
+      margin-bottom: 24px;
+    }
+    .cg-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--cg-chalk);
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+    .cg-hero h1 em {
+      font-style: normal;
+      color: var(--cg-hold-orange);
+      display: block;
+    }
+    .cg-hero-sub {
+      font-size: 1.15rem;
+      color: var(--cg-text-dim);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .cg-hero-stats {
+      display: flex;
+      gap: 60px;
+    }
+    .cg-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      color: var(--cg-chalk);
+    }
+    .cg-stat-label {
+      font-size: 0.8rem;
+      color: var(--cg-text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Scroll indicator */
+    .cg-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 140px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--cg-text-dim);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .cg-scroll-line {
+      width: 40px; height: 2px;
+      background: var(--cg-hold-orange);
+      animation: cg-scroll-bob 1.5s ease-in-out infinite;
+    }
+    @keyframes cg-scroll-bob {
+      0%, 100% { transform: scaleX(1); transform-origin: left; }
+      50% { transform: scaleX(0.5); transform-origin: left; }
+    }
+
+    /* Section shared */
+    .cg-section {
+      padding: 100px 120px 100px 140px;
+      position: relative;
+    }
+    .cg-section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--cg-hold-orange);
+      margin-bottom: 16px;
+    }
+    .cg-section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--cg-chalk);
+      margin-bottom: 32px;
+    }
+
+    /* Challenge holds — problem cards styled as climbing holds */
+    .cg-challenges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .cg-hold-card {
+      background: var(--cg-surface);
+      border: 1px solid var(--cg-border);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(60px);
+      opacity: 0;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
+    }
+    .cg-hold-card.visible { transform: translateY(0); opacity: 1; }
+    .cg-hold-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 0;
+      transition: height 0.5s ease 0.3s;
+    }
+    .cg-hold-card.visible::before { height: 100%; }
+    .cg-hold-card:nth-child(1)::before { background: var(--cg-hold-orange); }
+    .cg-hold-card:nth-child(2)::before { background: var(--cg-hold-teal); }
+    .cg-hold-card:nth-child(3)::before { background: var(--cg-hold-yellow); }
+    .cg-hold-card:nth-child(4)::before { background: var(--cg-hold-blue); }
+    .cg-hold-card:nth-child(5)::before { background: var(--cg-hold-orange); }
+    .cg-hold-card:nth-child(6)::before { background: var(--cg-hold-teal); }
+    .cg-hold-card-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .cg-hold-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cg-chalk);
+      margin-bottom: 12px;
+    }
+    .cg-hold-card p {
+      font-size: 0.92rem;
+      color: var(--cg-text-dim);
+      line-height: 1.65;
+    }
+
+    /* Interactive Height Calculator */
+    .cg-calculator {
+      background: var(--cg-surface);
+      border: 1px solid var(--cg-border);
+      padding: 48px;
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .cg-calc-controls label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cg-text-dim);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+    .cg-calc-controls label:first-child { margin-top: 0; }
+    .cg-calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--cg-hold-orange) 0%, var(--cg-hold-orange) var(--val, 50%), rgba(240,235,227,0.1) var(--val, 50%));
+      outline: none;
+      border-radius: 0;
+    }
+    .cg-calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px; height: 22px;
+      background: var(--cg-hold-orange);
+      border-radius: 30% 50% 40% 60%;
+      cursor: grab;
+      border: 3px solid var(--cg-stone);
+    }
+    .cg-calc-slider::-moz-range-thumb {
+      width: 22px; height: 22px;
+      background: var(--cg-hold-orange);
+      border-radius: 30% 50% 40% 60%;
+      cursor: grab;
+      border: 3px solid var(--cg-stone);
+    }
+    .cg-calc-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--cg-chalk);
+      margin-top: 8px;
+    }
+    .cg-calc-result {
+      text-align: center;
+    }
+    .cg-calc-wall {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+      background: linear-gradient(180deg, rgba(240,235,227,0.05) 0%, rgba(240,235,227,0.02) 100%);
+      border: 1px solid var(--cg-border);
+      transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+    .cg-calc-wall-holds {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .cg-calc-wall-hold {
+      position: absolute;
+      width: 16px; height: 16px;
+      border-radius: 30% 50% 40% 60%;
+      opacity: 0.4;
+    }
+    .cg-calc-rec {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: rgba(232,104,48,0.1);
+      border-left: 3px solid var(--cg-hold-orange);
+    }
+    .cg-calc-rec-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cg-hold-orange);
+      margin-bottom: 6px;
+    }
+    .cg-calc-rec-text {
+      font-size: 0.9rem;
+      color: var(--cg-text-dim);
+      line-height: 1.6;
+    }
+
+    /* Zone selector */
+    .cg-zones {
+      margin-top: 48px;
+    }
+    .cg-zone-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--cg-border);
+      margin-bottom: 40px;
+      overflow-x: auto;
+    }
+    .cg-zone-tab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      color: var(--cg-text-dim);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+    .cg-zone-tab:hover { color: var(--cg-chalk); }
+    .cg-zone-tab.active {
+      color: var(--cg-hold-orange);
+      border-bottom-color: var(--cg-hold-orange);
+    }
+    .cg-zone-panel {
+      display: none;
+      animation: cg-fadeUp 0.5s ease;
+    }
+    .cg-zone-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    @keyframes cg-fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cg-zone-info h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: var(--cg-chalk);
+      margin-bottom: 16px;
+    }
+    .cg-zone-info p {
+      font-size: 0.95rem;
+      color: var(--cg-text-dim);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .cg-zone-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cg-zone-spec {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cg-border);
+      font-size: 0.85rem;
+    }
+    .cg-zone-spec-label { color: var(--cg-text-dim); }
+    .cg-zone-spec-value {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: var(--cg-chalk);
+    }
+    .cg-zone-products {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cg-zone-product {
+      background: rgba(240,235,227,0.04);
+      border: 1px solid var(--cg-border);
+      padding: 24px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .cg-zone-product:hover {
+      border-color: var(--cg-hold-orange);
+      transform: translateX(8px);
+    }
+    .cg-zone-product h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      color: var(--cg-chalk);
+      margin-bottom: 8px;
+    }
+    .cg-zone-product p {
+      font-size: 0.85rem;
+      color: var(--cg-text-dim);
+      line-height: 1.6;
+    }
+    .cg-zone-product-tag {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-top: 10px;
+    }
+    .cg-zone-product-tag.best {
+      background: rgba(232,104,48,0.15);
+      color: var(--cg-hold-orange);
+    }
+    .cg-zone-product-tag.alt {
+      background: rgba(42,157,143,0.15);
+      color: var(--cg-hold-teal);
+    }
+
+    /* Products horizontal scroll */
+    .cg-products-scroll {
+      margin-top: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cg-products-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 0 20px 0;
+      scrollbar-width: none;
+    }
+    .cg-products-track::-webkit-scrollbar { display: none; }
+    .cg-product-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: var(--cg-surface);
+      border: 1px solid var(--cg-border);
+      padding: 36px 28px;
+      position: relative;
+      transition: transform 0.4s ease, border-color 0.3s ease;
+    }
+    .cg-product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cg-hold-orange);
+    }
+    .cg-product-grade {
+      position: absolute;
+      top: 16px; right: 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      padding: 4px 10px;
+      border: 1px solid var(--cg-hold-teal);
+      color: var(--cg-hold-teal);
+    }
+    .cg-product-icon {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .cg-product-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cg-chalk);
+      margin-bottom: 12px;
+    }
+    .cg-product-card p {
+      font-size: 0.88rem;
+      color: var(--cg-text-dim);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .cg-product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .cg-product-spec {
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: rgba(240,235,227,0.06);
+      color: var(--cg-text-dim);
+    }
+    .cg-scroll-arrows {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
+    .cg-scroll-arrow {
+      width: 44px; height: 44px;
+      border: 1px solid var(--cg-border);
+      background: none;
+      color: var(--cg-chalk);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center; justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .cg-scroll-arrow:hover {
+      background: var(--cg-hold-orange);
+      border-color: var(--cg-hold-orange);
+      color: var(--cg-stone);
+    }
+
+    /* Stats marquee */
+    .cg-marquee {
+      overflow: hidden;
+      padding: 24px 0;
+      border-top: 1px solid var(--cg-border);
+      border-bottom: 1px solid var(--cg-border);
+      margin: 0;
+    }
+    .cg-marquee-inner {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      animation: cg-marquee 30s linear infinite;
+    }
+    @keyframes cg-marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .cg-marquee-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--cg-text-dim);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cg-marquee-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--cg-hold-orange);
+      flex-shrink: 0;
+    }
+
+    /* Testimonials — climber beta style */
+    .cg-betas {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .cg-beta {
+      padding: 36px;
+      border: 1px solid var(--cg-border);
+      position: relative;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cg-beta.visible { transform: translateY(0); opacity: 1; }
+    .cg-beta-grade {
+      position: absolute;
+      top: -12px; left: 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      background: var(--cg-stone);
+    }
+    .cg-beta blockquote {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--cg-text);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .cg-beta-author {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cg-hold-orange);
+    }
+    .cg-beta-role {
+      font-size: 0.8rem;
+      color: var(--cg-text-dim);
+      margin-top: 2px;
+    }
+
+    /* Process — route steps */
+    .cg-route-steps {
+      margin-top: 48px;
+      position: relative;
+      padding-left: 40px;
+    }
+    .cg-route-steps::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--cg-border);
+    }
+    .cg-route-step {
+      position: relative;
+      padding: 0 0 60px 40px;
+      transform: translateX(-20px);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cg-route-step.visible { transform: translateX(0); opacity: 1; }
+    .cg-route-step::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 4px;
+      width: 26px; height: 26px;
+      border-radius: 30% 50% 40% 60%;
+      border: 2px solid var(--cg-hold-orange);
+      background: var(--cg-stone);
+      transition: background 0.4s ease;
+    }
+    .cg-route-step.visible::before {
+      background: var(--cg-hold-orange);
+    }
+    .cg-route-step-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cg-hold-orange);
+      margin-bottom: 8px;
+    }
+    .cg-route-step h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: var(--cg-chalk);
+      margin-bottom: 10px;
+    }
+    .cg-route-step p {
+      font-size: 0.92rem;
+      color: var(--cg-text-dim);
+      line-height: 1.65;
+      max-width: 500px;
+    }
+
+    /* CTA */
+    .cg-cta-section {
+      padding: 120px 120px 120px 140px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cg-cta-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--cg-hold-orange) 0%, #c44d20 100%);
+      opacity: 0.08;
+    }
+    .cg-cta-content {
+      position: relative;
+      max-width: 600px;
+    }
+    .cg-cta-content h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--cg-chalk);
+      margin-bottom: 20px;
+    }
+    .cg-cta-content p {
+      font-size: 1.05rem;
+      color: var(--cg-text-dim);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .cg-cta-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cg-btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      background: var(--cg-hold-orange);
+      color: var(--cg-stone);
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: 2px solid var(--cg-hold-orange);
+    }
+    .cg-btn-primary:hover {
+      background: transparent;
+      color: var(--cg-hold-orange);
+    }
+    .cg-btn-secondary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      background: none;
+      color: var(--cg-chalk);
+      text-decoration: none;
+      display: inline-block;
+      border: 2px solid var(--cg-border);
+      transition: all 0.3s ease;
+    }
+    .cg-btn-secondary:hover {
+      border-color: var(--cg-chalk);
+    }
+
+    /* Footer */
+    .cg-footer {
+      padding: 40px 120px 40px 140px;
+      border-top: 1px solid var(--cg-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .cg-footer-text {
+      font-size: 0.8rem;
+      color: var(--cg-text-dim);
+    }
+    .cg-footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .cg-footer-links a {
+      font-size: 0.8rem;
+      color: var(--cg-text-dim);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .cg-footer-links a:hover { color: var(--cg-hold-orange); }
+
+    /* Counters */
+    .cg-counter { font-variant-numeric: tabular-nums; }
+
+    /* Chalk cursor */
+    .cg-cursor {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--cg-hold-orange);
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      transition: width 0.3s, height 0.3s, border-radius 0.3s, border-color 0.3s;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+    }
+    .cg-cursor.hover {
+      width: 50px; height: 50px;
+      border-color: var(--cg-chalk);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .cg-route { display: none; }
+      .cg-hero { padding: 100px 32px 60px; }
+      .cg-section { padding: 80px 32px; }
+      .cg-cta-section { padding: 80px 32px; }
+      .cg-footer { padding: 40px 32px; }
+      .cg-challenges { grid-template-columns: 1fr 1fr; }
+      .cg-calculator { grid-template-columns: 1fr; }
+      .cg-zone-panel.active { grid-template-columns: 1fr; }
+      .cg-betas { grid-template-columns: 1fr; }
+      .cg-hero-grade { display: none; }
+      .cg-cursor { display: none; }
+    }
+    @media (max-width: 640px) {
+      .cg-challenges { grid-template-columns: 1fr; }
+      .cg-hero-stats { flex-direction: column; gap: 24px; }
+      .cg-header { padding: 16px 20px; }
+      .cg-product-card { flex: 0 0 280px; }
+      .cg-cta-buttons { flex-direction: column; }
+      .cg-btn-primary, .cg-btn-secondary { text-align: center; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="lp-cg">
+
+  <!-- Loader -->
+  <div class="cg-loader" id="cgLoader">
+    <div class="cg-loader-hold"></div>
+    <div class="cg-loader-text">Setting Route…</div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cg-cursor" id="cgCursor"></div>
+
+  <!-- Header -->
+  <header class="cg-header" id="cgHeader">
+    <div class="cg-logo">iSeek<span>Blinds</span></div>
+    <a href="https://iseekblinds.com.au/quote" class="cg-header-cta"><span>Get a Quote</span></a>
+  </header>
+
+  <!-- Hero -->
+  <section class="cg-hero" data-cg-section="0">
+    <div class="cg-hero-grade">V7</div>
+    <div class="cg-hero-tag">Climbing Gym & Bouldering Centre</div>
+    <h1>Conquer Glare.<br><em>Own the Wall.</em></h1>
+    <p class="cg-hero-sub">Custom window treatments engineered for Melbourne's climbing gyms. Anti-glare protection, impact resistance, and motorised control for spaces where every hold matters.</p>
+    <div class="cg-hero-stats">
+      <div>
+        <div class="cg-stat-num cg-counter" data-target="15">0</div>
+        <div class="cg-stat-label">Metre Max Height</div>
+      </div>
+      <div>
+        <div class="cg-stat-num cg-counter" data-target="97">0</div>
+        <div class="cg-stat-label">% Glare Reduction</div>
+      </div>
+      <div>
+        <div class="cg-stat-num cg-counter" data-target="50">0</div>
+        <div class="cg-stat-label">+ Gyms Fitted</div>
+      </div>
+    </div>
+    <div class="cg-scroll-hint">
+      <div class="cg-scroll-line"></div>
+      Scroll to ascend
+    </div>
+  </section>
+
+  <!-- Stats Marquee -->
+  <div class="cg-marquee">
+    <div class="cg-marquee-inner">
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Impact-Resistant Fabrics</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>High-Ceiling Specialists</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Motorised & Manual Options</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Anti-Glare Coatings</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Melbourne-Wide Installation</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Free Site Assessment</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Commercial Grade Materials</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>5-Year Warranty</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Impact-Resistant Fabrics</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>High-Ceiling Specialists</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Motorised & Manual Options</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Anti-Glare Coatings</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Melbourne-Wide Installation</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Free Site Assessment</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>Commercial Grade Materials</div>
+      <div class="cg-marquee-item"><div class="cg-marquee-dot"></div>5-Year Warranty</div>
+    </div>
+  </div>
+
+  <!-- Challenges Section -->
+  <section class="cg-section" data-cg-section="1">
+    <div class="cg-section-tag">The Problem</div>
+    <h2>Why Standard Blinds<br>Fail Climbing Gyms</h2>
+    <div class="cg-challenges">
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">☀️</span>
+        <h3>Blinding Glare on the Wall</h3>
+        <p>Direct sunlight creates dangerous hot spots on climbing surfaces. Climbers lose depth perception and miss holds. Standard blinds can't handle the massive window spans typical in converted warehouses.</p>
+      </div>
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">📏</span>
+        <h3>Extreme Heights</h3>
+        <p>10-15 metre ceilings with floor-to-ceiling glass. Regular blinds don't reach. Specialist mounting, motorised operation, and commercial-grade hardware are non-negotiable.</p>
+      </div>
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">💥</span>
+        <h3>Impact & Chalk Dust</h3>
+        <p>Flying chalk, swinging ropes, wayward heel hooks. Your window treatments need to withstand the kinetic energy of an active climbing gym without tearing or staining.</p>
+      </div>
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">🌡️</span>
+        <h3>Temperature Extremes</h3>
+        <p>Warehouse-style venues overheat in summer and freeze in winter. The right blinds act as thermal barriers, keeping climbing conditions comfortable year-round.</p>
+      </div>
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">🔇</span>
+        <h3>Acoustic Echo</h3>
+        <p>Hard surfaces + high ceilings = unbearable echo. Heavy-duty fabric blinds absorb sound, reducing the din so climbers can hear spotters and communicate safely.</p>
+      </div>
+      <div class="cg-hold-card">
+        <span class="cg-hold-card-icon">⚡</span>
+        <h3>Comp Lighting Control</h3>
+        <p>Bouldering competitions need precise, dramatic lighting. Motorised blackout blinds let you kill ambient light instantly for comp-grade atmospherics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Height Calculator -->
+  <section class="cg-section" data-cg-section="2">
+    <div class="cg-section-tag">Interactive Tool</div>
+    <h2>Wall Height<br>Calculator</h2>
+    <p style="color: var(--cg-text-dim); max-width: 500px; line-height: 1.7;">Adjust your climbing wall height and window count to get a tailored blind recommendation for your gym.</p>
+
+    <div class="cg-calculator">
+      <div class="cg-calc-controls">
+        <label>Wall Height</label>
+        <input type="range" class="cg-calc-slider" id="cgHeight" min="4" max="18" value="10" step="1">
+        <div class="cg-calc-value"><span id="cgHeightVal">10</span>m</div>
+
+        <label>Window Count</label>
+        <input type="range" class="cg-calc-slider" id="cgWindows" min="1" max="20" value="6" step="1">
+        <div class="cg-calc-value"><span id="cgWindowsVal">6</span> windows</div>
+
+        <label>Primary Use</label>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+          <button class="cg-zone-tab cg-use-btn active" data-use="bouldering" style="padding: 10px 16px; border: 1px solid var(--cg-border); font-size: 0.75rem;">Bouldering</button>
+          <button class="cg-zone-tab cg-use-btn" data-use="rope" style="padding: 10px 16px; border: 1px solid var(--cg-border); font-size: 0.75rem;">Rope Climbing</button>
+          <button class="cg-zone-tab cg-use-btn" data-use="mixed" style="padding: 10px 16px; border: 1px solid var(--cg-border); font-size: 0.75rem;">Mixed Use</button>
+        </div>
+
+        <div class="cg-calc-rec" id="cgRec">
+          <div class="cg-calc-rec-title" id="cgRecTitle">Recommended: Motorised Roller Blinds</div>
+          <div class="cg-calc-rec-text" id="cgRecText">For 10m walls with 6 windows, we recommend motorised roller blinds with commercial-grade anti-glare fabric. Estimated budget: $4,800–$7,200.</div>
+        </div>
+      </div>
+
+      <div class="cg-calc-result">
+        <div class="cg-calc-wall" id="cgWall" style="height: 300px;">
+          <div class="cg-calc-wall-holds" id="cgWallHolds"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gym Zone Selector -->
+  <section class="cg-section" data-cg-section="3">
+    <div class="cg-section-tag">Zone-by-Zone Solutions</div>
+    <h2>Every Zone.<br>Custom Fitted.</h2>
+
+    <div class="cg-zones">
+      <div class="cg-zone-tabs">
+        <button class="cg-zone-tab active" data-zone="boulder">Bouldering Cave</button>
+        <button class="cg-zone-tab" data-zone="lead">Lead Walls</button>
+        <button class="cg-zone-tab" data-zone="training">Training Area</button>
+        <button class="cg-zone-tab" data-zone="cafe">Café & Lounge</button>
+        <button class="cg-zone-tab" data-zone="comp">Comp Wall</button>
+      </div>
+
+      <div class="cg-zone-panel active" data-zone-panel="boulder">
+        <div class="cg-zone-info">
+          <h3>Bouldering Cave</h3>
+          <p>The heart of every climbing gym. Low-to-mid height walls (3–5m) with crash pads below. Needs controlled ambient light to reduce glare on overhangs and volumes without making the space feel dark or oppressive.</p>
+          <div class="cg-zone-specs">
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Typical Height</span><span class="cg-zone-spec-value">3–5m</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Light Control</span><span class="cg-zone-spec-value">Moderate Filtering</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Impact Risk</span><span class="cg-zone-spec-value">High</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Operation</span><span class="cg-zone-spec-value">Manual / Chain</span></div>
+          </div>
+        </div>
+        <div class="cg-zone-products">
+          <div class="cg-zone-product">
+            <h4>Heavy-Duty Sunscreen Roller</h4>
+            <p>5% openness factor fabric filters harsh sunlight while maintaining visibility. Impact-resistant bottom bar, wipeable surface for chalk dust. Chain-operated for easy daily adjustment.</p>
+            <span class="cg-zone-product-tag best">Best Match</span>
+          </div>
+          <div class="cg-zone-product">
+            <h4>Panel Glide System</h4>
+            <p>Wide-span coverage for floor-to-ceiling glass walls. Slide panels to control exactly where light enters. Ideal for bouldering caves with large window runs.</p>
+            <span class="cg-zone-product-tag alt">Alternative</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-zone-panel" data-zone-panel="lead">
+        <div class="cg-zone-info">
+          <h3>Lead & Top-Rope Walls</h3>
+          <p>The tallest section — 10-18m vertical and overhanging faces. Windows here are often at extreme heights. Motorised operation is essential. Blackout capability prevents sun-blinding climbers at the top of routes.</p>
+          <div class="cg-zone-specs">
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Typical Height</span><span class="cg-zone-spec-value">10–18m</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Light Control</span><span class="cg-zone-spec-value">Full Blackout</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Impact Risk</span><span class="cg-zone-spec-value">Medium</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Operation</span><span class="cg-zone-spec-value">Motorised (Essential)</span></div>
+          </div>
+        </div>
+        <div class="cg-zone-products">
+          <div class="cg-zone-product">
+            <h4>Motorised Commercial Blackout Roller</h4>
+            <p>Heavy-duty motor handles up to 18m drops. Blockout fabric eliminates glare at height. Remote or app-controlled — adjust from the ground, not a ladder.</p>
+            <span class="cg-zone-product-tag best">Best Match</span>
+          </div>
+          <div class="cg-zone-product">
+            <h4>Motorised Dual Roller (Day/Night)</h4>
+            <p>Two fabrics on one bracket — sunscreen for daytime sessions, blackout for comps and evening events. Switch modes without changing blinds.</p>
+            <span class="cg-zone-product-tag alt">Premium Pick</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-zone-panel" data-zone-panel="training">
+        <div class="cg-zone-info">
+          <h3>Training & Hangboard Area</h3>
+          <p>Focused training zones need consistent lighting — no shifting sun patches. These areas often have smaller windows but still need UV protection for rubber equipment and crash pads.</p>
+          <div class="cg-zone-specs">
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Typical Height</span><span class="cg-zone-spec-value">3–4m</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Light Control</span><span class="cg-zone-spec-value">UV Filtering</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Impact Risk</span><span class="cg-zone-spec-value">Low</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Operation</span><span class="cg-zone-spec-value">Manual / Spring</span></div>
+          </div>
+        </div>
+        <div class="cg-zone-products">
+          <div class="cg-zone-product">
+            <h4>UV-Block Sunscreen Roller</h4>
+            <p>99% UV rejection protects rubber training equipment and crash pads from degradation. Consistent diffused light for campus boards and system walls.</p>
+            <span class="cg-zone-product-tag best">Best Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-zone-panel" data-zone-panel="cafe">
+        <div class="cg-zone-info">
+          <h3>Café & Spectator Lounge</h3>
+          <p>The social hub. Parents watch kids climb, climbers refuel. Needs a balance of view preservation and comfort — reduce glare on screens and tables while keeping the atmosphere bright and welcoming.</p>
+          <div class="cg-zone-specs">
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Typical Height</span><span class="cg-zone-spec-value">3–4m</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Light Control</span><span class="cg-zone-spec-value">Light Filtering</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Impact Risk</span><span class="cg-zone-spec-value">Minimal</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Operation</span><span class="cg-zone-spec-value">Motorised / Chain</span></div>
+          </div>
+        </div>
+        <div class="cg-zone-products">
+          <div class="cg-zone-product">
+            <h4>Sheer & Sunscreen Double Roller</h4>
+            <p>Light-filtering sheer layer maintains bright café vibes. Sunscreen layer drops for afternoon glare. Elegant dual operation suits the public-facing zone.</p>
+            <span class="cg-zone-product-tag best">Best Match</span>
+          </div>
+          <div class="cg-zone-product">
+            <h4>Vertical Blinds</h4>
+            <p>Adjustable vane angle for precise light direction. Easy to maintain in food-service areas. Commercial-grade fabrics resist stains and moisture.</p>
+            <span class="cg-zone-product-tag alt">Alternative</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-zone-panel" data-zone-panel="comp">
+        <div class="cg-zone-info">
+          <h3>Competition Wall</h3>
+          <p>When it's comp day, the wall is the stage. Total blackout capability lets you control the lighting narrative — spotlights on the route, darkness everywhere else. Motorised for instant scene changes between rounds.</p>
+          <div class="cg-zone-specs">
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Typical Height</span><span class="cg-zone-spec-value">5–15m</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Light Control</span><span class="cg-zone-spec-value">Total Blackout</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Impact Risk</span><span class="cg-zone-spec-value">Medium</span></div>
+            <div class="cg-zone-spec"><span class="cg-zone-spec-label">Operation</span><span class="cg-zone-spec-value">Motorised + Scene Control</span></div>
+          </div>
+        </div>
+        <div class="cg-zone-products">
+          <div class="cg-zone-product">
+            <h4>Motorised Blackout Roller + Scene Integration</h4>
+            <p>Pairs with your gym's lighting rig. One button: blinds close, house lights dim, comp spots hit the wall. Full theatrical control for boulder rounds, lead finals, and speed comps.</p>
+            <span class="cg-zone-product-tag best">Best Match</span>
+          </div>
+          <div class="cg-zone-product">
+            <h4>Heavy-Duty External Awnings</h4>
+            <p>Block heat and light before it hits the glass. Reduces cooling costs during all-day comp events. Retractable for post-comp natural light.</p>
+            <span class="cg-zone-product-tag alt">Outdoor Addition</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Horizontal Scroll -->
+  <section class="cg-section" data-cg-section="4">
+    <div class="cg-section-tag">Product Range</div>
+    <h2>Built for the Send</h2>
+    <div class="cg-products-scroll">
+      <div class="cg-products-track" id="cgProductsTrack">
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V1–V3</span>
+          <span class="cg-product-icon">🪟</span>
+          <h3>Commercial Sunscreen Roller</h3>
+          <p>5% openness factor. Anti-glare coating. Wipeable surface resists chalk dust. Chain or spring operated. Up to 6m widths.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">Anti-Glare</span>
+            <span class="cg-product-spec">UV 99%</span>
+            <span class="cg-product-spec">Chalk-Proof</span>
+          </div>
+        </div>
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V4–V6</span>
+          <span class="cg-product-icon">⬛</span>
+          <h3>Motorised Blackout Roller</h3>
+          <p>100% blockout fabric. Somfy or Automate motors. Remote + app control. Handles drops up to 18m. Comp-ready scene integration.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">Blackout</span>
+            <span class="cg-product-spec">Motorised</span>
+            <span class="cg-product-spec">18m Drop</span>
+          </div>
+        </div>
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V5–V7</span>
+          <span class="cg-product-icon">🔲</span>
+          <h3>Panel Glide System</h3>
+          <p>Wide-span coverage up to 8m. Sliding fabric panels on ceiling track. Mix sunscreen and blockout panels in one system.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">Wide Span</span>
+            <span class="cg-product-spec">Modular</span>
+            <span class="cg-product-spec">Mixed Fabrics</span>
+          </div>
+        </div>
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V6–V8</span>
+          <span class="cg-product-icon">🏗️</span>
+          <h3>External Awning System</h3>
+          <p>Stop heat before it hits the glass. Folding-arm or straight-drop options. Wind sensors auto-retract in storms. Massive heat reduction.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">External</span>
+            <span class="cg-product-spec">Wind Sensor</span>
+            <span class="cg-product-spec">Heat Block</span>
+          </div>
+        </div>
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V7–V9</span>
+          <span class="cg-product-icon">🎯</span>
+          <h3>Dual Day/Night Roller</h3>
+          <p>Two fabrics on one bracket. Sunscreen for daytime, blackout for comps. Switch modes in seconds. Motorised recommended for high installs.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">Dual Fabric</span>
+            <span class="cg-product-spec">Day & Night</span>
+            <span class="cg-product-spec">Scene-Ready</span>
+          </div>
+        </div>
+        <div class="cg-product-card">
+          <span class="cg-product-grade">V8+</span>
+          <span class="cg-product-icon">🎵</span>
+          <h3>Acoustic Honeycomb</h3>
+          <p>Double-cell construction absorbs sound. Reduces gym echo by up to 40%. Thermal insulation bonus. Available in blackout and translucent.</p>
+          <div class="cg-product-specs">
+            <span class="cg-product-spec">Sound Absorb</span>
+            <span class="cg-product-spec">Thermal</span>
+            <span class="cg-product-spec">Honeycomb</span>
+          </div>
+        </div>
+      </div>
+      <div class="cg-scroll-arrows">
+        <button class="cg-scroll-arrow" id="cgScrollLeft">←</button>
+        <button class="cg-scroll-arrow" id="cgScrollRight">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials — Beta Spray -->
+  <section class="cg-section" data-cg-section="5">
+    <div class="cg-section-tag">Beta Spray</div>
+    <h2>What Gym Owners Say</h2>
+    <div class="cg-betas">
+      <div class="cg-beta">
+        <div class="cg-beta-grade">⭐⭐⭐⭐⭐</div>
+        <blockquote>"We tried three different companies before iSeekBlinds. They were the only ones who understood that our 14m lead wall needed motorised blackout — not some off-the-shelf roller. The comp lighting is now unreal."</blockquote>
+        <div class="cg-beta-author">Mark T.</div>
+        <div class="cg-beta-role">Owner, Summit Bouldering — Collingwood</div>
+      </div>
+      <div class="cg-beta">
+        <div class="cg-beta-grade">⭐⭐⭐⭐⭐</div>
+        <blockquote>"The chalk dust was destroying our old curtains within months. iSeekBlinds installed wipeable sunscreen rollers across our entire cave — 18 months in and they still look brand new. Total game changer."</blockquote>
+        <div class="cg-beta-author">Sarah K.</div>
+        <div class="cg-beta-role">Manager, Bloc Climbing — Northcote</div>
+      </div>
+      <div class="cg-beta">
+        <div class="cg-beta-grade">⭐⭐⭐⭐⭐</div>
+        <blockquote>"Our west-facing wall was basically unusable after 3pm in summer. Now our members can climb all day without squinting. The temperature dropped noticeably too — our A/C bills went down 20%."</blockquote>
+        <div class="cg-beta-author">James L.</div>
+        <div class="cg-beta-role">Co-founder, Crux Climbing — Brunswick</div>
+      </div>
+      <div class="cg-beta">
+        <div class="cg-beta-grade">⭐⭐⭐⭐⭐</div>
+        <blockquote>"We run youth programs and parent viewing is essential. The dual rollers in our café zone are perfect — parents can watch without the screen glare, and we can black out the comp wall independently."</blockquote>
+        <div class="cg-beta-author">Lisa M.</div>
+        <div class="cg-beta-role">Director, Urban Ascent — South Melbourne</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process — Route Steps -->
+  <section class="cg-section" data-cg-section="6">
+    <div class="cg-section-tag">The Route</div>
+    <h2>From First Contact<br>to Top-Out</h2>
+    <div class="cg-route-steps">
+      <div class="cg-route-step">
+        <div class="cg-route-step-num">Move 01</div>
+        <h3>Free Site Assessment</h3>
+        <p>We visit your gym, measure every window, assess wall heights, identify glare hotspots, and understand your comp/training schedule. No cost, no obligation.</p>
+      </div>
+      <div class="cg-route-step">
+        <div class="cg-route-step-num">Move 02</div>
+        <h3>Custom Design & Quote</h3>
+        <p>Zone-by-zone recommendations with fabric samples, motorisation options, and a transparent quote. We'll show you exactly what goes where and why.</p>
+      </div>
+      <div class="cg-route-step">
+        <div class="cg-route-step-num">Move 03</div>
+        <h3>Manufacture</h3>
+        <p>Everything made to your exact specs. Commercial-grade components, impact-resistant fabrics, and motors rated for continuous heavy use. 3–4 week turnaround.</p>
+      </div>
+      <div class="cg-route-step">
+        <div class="cg-route-step-num">Move 04</div>
+        <h3>Professional Installation</h3>
+        <p>Our team handles the high-access work — cherry pickers, scaffolding, whatever it takes. We install around your operating hours to minimise gym downtime.</p>
+      </div>
+      <div class="cg-route-step">
+        <div class="cg-route-step-num">Move 05</div>
+        <h3>Top-Out & Support</h3>
+        <p>Full handover with staff training on motorised systems. 5-year warranty on all products. Ongoing maintenance and adjustment service whenever you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cg-cta-section" data-cg-section="7">
+    <div class="cg-cta-bg"></div>
+    <div class="cg-cta-content">
+      <h2>Ready to<br>Send It?</h2>
+      <p>Get a free site assessment for your climbing gym. We'll map every window, measure every wall, and design a solution that makes your gym safer, cooler, and comp-ready.</p>
+      <div class="cg-cta-buttons">
+        <a href="https://iseekblinds.com.au/quote" class="cg-btn-primary">Free Quote</a>
+        <a href="tel:1300123456" class="cg-btn-secondary">Call 1300 123 456</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cg-footer">
+    <div class="cg-footer-text">© 2026 iSeekBlinds Melbourne — Climbing Gym & Commercial Specialists</div>
+    <div class="cg-footer-links">
+      <a href="https://iseekblinds.com.au">Home</a>
+      <a href="https://iseekblinds.com.au/landing/">All Solutions</a>
+      <a href="https://iseekblinds.com.au/quote">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    /* === Climbing Gym Landing Page JS === */
+    (function() {
+      'use strict';
+
+      // Loader
+      window.addEventListener('load', () => {
+        setTimeout(() => document.getElementById('cgLoader').classList.add('done'), 600);
+      });
+
+      // Custom Cursor
+      const cursor = document.getElementById('cgCursor');
+      let cx = 0, cy = 0, mx = 0, my = 0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      function animCursor() {
+        cx += (mx - cx) * 0.12;
+        cy += (my - cy) * 0.12;
+        cursor.style.left = cx + 'px';
+        cursor.style.top = cy + 'px';
+        requestAnimationFrame(animCursor);
+      }
+      animCursor();
+      document.querySelectorAll('a, button, .cg-zone-tab, .cg-product-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+
+      // Auto-hide header
+      let lastScroll = 0;
+      const header = document.getElementById('cgHeader');
+      window.addEventListener('scroll', () => {
+        const st = window.scrollY;
+        header.classList.toggle('hide', st > lastScroll && st > 100);
+        lastScroll = st;
+      }, { passive: true });
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('.cg-hold-card, .cg-beta, .cg-route-step');
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(el => revealObs.observe(el));
+
+      // Counter animation
+      const counters = document.querySelectorAll('.cg-counter');
+      const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target);
+            let current = 0;
+            const step = target / 40;
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(timer); }
+              el.textContent = Math.round(current);
+            }, 30);
+            counterObs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => counterObs.observe(el));
+
+      // Height Calculator
+      const heightSlider = document.getElementById('cgHeight');
+      const windowsSlider = document.getElementById('cgWindows');
+      const heightVal = document.getElementById('cgHeightVal');
+      const windowsVal = document.getElementById('cgWindowsVal');
+      const recTitle = document.getElementById('cgRecTitle');
+      const recText = document.getElementById('cgRecText');
+      const wall = document.getElementById('cgWall');
+      const wallHolds = document.getElementById('cgWallHolds');
+      let currentUse = 'bouldering';
+
+      function updateSliderBg(slider) {
+        const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+        slider.style.setProperty('--val', pct + '%');
+      }
+
+      function generateHolds() {
+        wallHolds.innerHTML = '';
+        const count = parseInt(windowsSlider.value) * 3;
+        const colors = ['var(--cg-hold-orange)', 'var(--cg-hold-teal)', 'var(--cg-hold-yellow)', 'var(--cg-hold-blue)'];
+        for (let i = 0; i < count; i++) {
+          const hold = document.createElement('div');
+          hold.className = 'cg-calc-wall-hold';
+          hold.style.left = (10 + Math.random() * 75) + '%';
+          hold.style.top = (5 + Math.random() * 85) + '%';
+          hold.style.background = colors[Math.floor(Math.random() * colors.length)];
+          hold.style.width = (12 + Math.random() * 12) + 'px';
+          hold.style.height = (12 + Math.random() * 12) + 'px';
+          wallHolds.appendChild(hold);
+        }
+      }
+
+      function updateCalc() {
+        const h = parseInt(heightSlider.value);
+        const w = parseInt(windowsSlider.value);
+        heightVal.textContent = h;
+        windowsVal.textContent = w;
+        updateSliderBg(heightSlider);
+        updateSliderBg(windowsSlider);
+
+        // Visual wall height
+        const wallH = 150 + (h - 4) * 15;
+        wall.style.height = wallH + 'px';
+        generateHolds();
+
+        // Recommendation logic
+        let product, text, budgetLow, budgetHigh;
+        if (h >= 10) {
+          product = 'Motorised Blackout Roller';
+          budgetLow = w * 800;
+          budgetHigh = w * 1200;
+          text = `For ${h}m walls with ${w} windows, motorised blackout rollers are essential. Remote/app controlled, commercial-grade motors rated for continuous use.`;
+        } else if (h >= 6) {
+          if (currentUse === 'bouldering') {
+            product = 'Heavy-Duty Sunscreen Roller';
+            budgetLow = w * 400;
+            budgetHigh = w * 650;
+            text = `For ${h}m bouldering walls with ${w} windows, sunscreen rollers with anti-glare coating provide the ideal balance of light control and visibility.`;
+          } else {
+            product = 'Motorised Sunscreen Roller';
+            budgetLow = w * 600;
+            budgetHigh = w * 900;
+            text = `For ${h}m ${currentUse === 'rope' ? 'rope' : 'mixed-use'} walls with ${w} windows, motorised sunscreen rollers give you flexible daily control.`;
+          }
+        } else {
+          product = 'Commercial Sunscreen Roller';
+          budgetLow = w * 300;
+          budgetHigh = w * 500;
+          text = `For ${h}m walls with ${w} windows, standard commercial sunscreen rollers are cost-effective and durable. Chain-operated for easy adjustment.`;
+        }
+
+        recTitle.textContent = 'Recommended: ' + product;
+        recText.textContent = text + ` Estimated budget: $${budgetLow.toLocaleString()}–$${budgetHigh.toLocaleString()}.`;
+      }
+
+      heightSlider.addEventListener('input', updateCalc);
+      windowsSlider.addEventListener('input', updateCalc);
+
+      document.querySelectorAll('.cg-use-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cg-use-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentUse = btn.dataset.use;
+          updateCalc();
+        });
+      });
+
+      updateCalc();
+
+      // Zone tabs
+      document.querySelectorAll('.cg-zone-tabs .cg-zone-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const zone = tab.dataset.zone;
+          document.querySelectorAll('.cg-zone-tabs .cg-zone-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.cg-zone-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          document.querySelector(`[data-zone-panel="${zone}"]`).classList.add('active');
+        });
+      });
+
+      // Product scroll arrows
+      const track = document.getElementById('cgProductsTrack');
+      document.getElementById('cgScrollLeft').addEventListener('click', () => {
+        track.scrollBy({ left: -344, behavior: 'smooth' });
+      });
+      document.getElementById('cgScrollRight').addEventListener('click', () => {
+        track.scrollBy({ left: 344, behavior: 'smooth' });
+      });
+
+    })();
+  </script>
+</body>
+</html>
