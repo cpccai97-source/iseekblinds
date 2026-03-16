@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walk-In Wardrobe & Dressing Room Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Elevate your walk-in wardrobe and dressing room with blinds that protect fabrics from UV damage while adding luxury. Sheer, blockout & motorised options. Free measure & quote Melbourne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--charcoal:#1C1C1E;
+--champagne:#C9A96E;
+--champagne-light:#E8D5B0;
+--blush:#F2E8E1;
+--cream:#FAF7F2;
+--white:#FFFDF9;
+--warm-grey:#8A8480;
+--deep:#0D0D0E;
+--serif:'Cormorant Garamond',Georgia,serif;
+--sans:'Outfit',Helvetica,sans-serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);color:var(--charcoal);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* PRELOADER */
+.preload{position:fixed;inset:0;z-index:10000;background:var(--charcoal);display:flex;align-items:center;justify-content:center;transition:opacity .8s cubic-bezier(.25,.1,.25,1),visibility .8s}
+.preload.done{opacity:0;visibility:hidden;pointer-events:none}
+.preload-inner{text-align:center}
+.preload-word{font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);font-weight:300;font-style:italic;color:var(--champagne);letter-spacing:.15em;opacity:0;animation:fadeWord 1.2s .3s ease forwards}
+@keyframes fadeWord{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+.preload-line{width:60px;height:1px;background:var(--champagne);margin:1rem auto 0;transform:scaleX(0);animation:scaleLine .8s .6s ease forwards}
+@keyframes scaleLine{to{transform:scaleX(1)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:9000;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;transition:opacity .3s}
+.nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--white);text-decoration:none;letter-spacing:.05em}
+.nav-logo em{font-style:italic;font-weight:300}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--white);text-decoration:none;font-family:var(--sans);font-size:.7rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--champagne);transition:width .3s ease}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--champagne)!important;color:var(--charcoal)!important;padding:.5rem 1.4rem!important;font-weight:500!important;letter-spacing:.12em!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{opacity:.85}
+
+/* HERO — FULL VIEWPORT EDITORIAL */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{background:var(--charcoal);display:flex;flex-direction:column;justify-content:center;padding:8rem 5vw 4rem 4vw;position:relative}
+.hero-left::after{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,var(--champagne),transparent)}
+.hero-issue{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--champagne);margin-bottom:3rem;opacity:0;animation:slideUp .8s 1.2s ease forwards}
+.hero-title{font-family:var(--serif);font-size:clamp(3rem,6.5vw,6rem);font-weight:300;line-height:.95;color:var(--white);letter-spacing:-.02em;margin-bottom:2rem;opacity:0;animation:slideUp .8s 1.4s ease forwards}
+.hero-title strong{font-weight:700;display:block;color:var(--champagne)}
+.hero-title em{font-style:italic;font-weight:300}
+.hero-subtitle{font-family:var(--sans);font-size:.85rem;font-weight:200;line-height:1.8;color:rgba(255,255,255,.5);max-width:380px;margin-bottom:2.5rem;opacity:0;animation:slideUp .8s 1.6s ease forwards}
+.hero-cta{display:inline-flex;align-items:center;gap:1rem;text-decoration:none;color:var(--champagne);font-family:var(--sans);font-size:.72rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;padding-bottom:.5rem;border-bottom:1px solid rgba(201,169,110,.3);transition:border-color .3s;opacity:0;animation:slideUp .8s 1.8s ease forwards}
+.hero-cta:hover{border-color:var(--champagne)}
+.hero-cta svg{width:16px;height:16px;stroke:var(--champagne);transition:transform .3s}
+.hero-cta:hover svg{transform:translateX(4px)}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-right{background:var(--blush);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-visual{width:100%;height:100%;position:relative}
+/* CSS-only wardrobe + window illustration */
+.wardrobe-scene{position:absolute;inset:10%;display:flex;align-items:center;justify-content:center}
+.wr-room{width:100%;max-width:420px;aspect-ratio:4/5;position:relative;background:linear-gradient(180deg,var(--cream) 0%,#EDE7DF 100%);border:1px solid rgba(28,28,30,.08);overflow:hidden}
+.wr-floor{position:absolute;bottom:0;left:0;right:0;height:18%;background:linear-gradient(135deg,#D4C4B0 0%,#C9B99A 100%)}
+.wr-floor::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:rgba(0,0,0,.1)}
+.wr-window{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:45%;aspect-ratio:3/4;border:2px solid var(--charcoal);background:linear-gradient(160deg,#D6E8F0 0%,#B8D4E3 40%,#E8F0F4 70%,#C4DCE8 100%);overflow:hidden}
+.wr-window::before{content:'';position:absolute;top:0;left:50%;width:2px;height:100%;background:var(--charcoal);transform:translateX(-1px)}
+.wr-blind{position:absolute;top:0;left:0;right:0;background:repeating-linear-gradient(180deg,var(--champagne-light) 0px,var(--champagne-light) 6px,rgba(201,169,110,.2) 6px,rgba(201,169,110,.2) 7px);height:0%;animation:blindDrop 1.5s 2s ease forwards;overflow:hidden}
+.wr-blind::after{content:'';position:absolute;bottom:0;left:0;right:0;height:8px;background:var(--champagne);border-radius:0 0 2px 2px}
+@keyframes blindDrop{0%{height:0%}60%{height:65%}80%{height:58%}100%{height:62%}}
+.wr-closet{position:absolute;bottom:18%;width:28%;height:55%;background:var(--charcoal);opacity:.06}
+.wr-closet.left{left:4%}
+.wr-closet.right{right:4%}
+.wr-closet::before{content:'';position:absolute;top:50%;left:50%;width:3px;height:20px;background:var(--champagne);border-radius:2px;transform:translate(-50%,-50%)}
+.wr-hanger{position:absolute;width:24px;height:2px;background:var(--warm-grey);top:20%}
+.wr-hanger::before{content:'';position:absolute;top:-6px;left:50%;width:8px;height:8px;border:1.5px solid var(--warm-grey);border-radius:50%;transform:translateX(-50%)}
+.wr-garment{position:absolute;top:22%;width:18px;height:30px;border-radius:0 0 4px 4px;opacity:.12}
+.wr-shelf{position:absolute;left:6%;right:6%;height:1px;background:rgba(28,28,30,.06)}
+
+/* UV BADGE */
+.uv-badge{position:absolute;top:8%;right:8%;background:var(--champagne);color:var(--charcoal);font-family:var(--sans);font-size:.55rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:.5rem 1rem;opacity:0;animation:fadeIn .6s 2.5s ease forwards}
+@keyframes fadeIn{to{opacity:1}}
+
+/* EDITORIAL DIVIDER */
+.editorial-divider{padding:2rem 4vw;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(28,28,30,.08);border-bottom:1px solid rgba(28,28,30,.08);background:var(--white)}
+.editorial-divider span{font-family:var(--sans);font-size:.55rem;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--warm-grey)}
+.editorial-divider .dot{width:4px;height:4px;border-radius:50%;background:var(--champagne)}
+
+/* SECTION — THE COLLECTION (LOOKBOOK GRID) */
+.lookbook{padding:6rem 4vw;background:var(--white)}
+.lookbook-header{text-align:center;margin-bottom:5rem}
+.lookbook-header .kicker{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.4em;text-transform:uppercase;color:var(--champagne);margin-bottom:1rem}
+.lookbook-header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;letter-spacing:.03em;line-height:1.1}
+.lookbook-header h2 em{font-style:italic}
+.lookbook-header p{font-family:var(--sans);font-size:.82rem;font-weight:200;color:var(--warm-grey);max-width:500px;margin:1.5rem auto 0;line-height:1.8}
+
+.lookbook-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;gap:1.5rem;max-width:1200px;margin:0 auto}
+.look-card{position:relative;overflow:hidden;cursor:pointer;background:var(--blush);border:1px solid rgba(28,28,30,.04)}
+.look-card:nth-child(1){grid-column:1/2;grid-row:1/3;aspect-ratio:3/5}
+.look-card:nth-child(2){grid-column:2/3;aspect-ratio:4/3}
+.look-card:nth-child(3){grid-column:3/4;aspect-ratio:4/3}
+.look-card:nth-child(4){grid-column:2/4;aspect-ratio:16/7}
+
+.look-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;transition:transform .5s cubic-bezier(.25,.1,.25,1)}
+.look-card:hover .look-inner{transform:translateY(-4px)}
+.look-num{position:absolute;top:1.2rem;left:1.5rem;font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(28,28,30,.06);line-height:1}
+.look-type{font-family:var(--sans);font-size:.55rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne);margin-bottom:.5rem}
+.look-name{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.look-desc{font-family:var(--sans);font-size:.75rem;font-weight:200;line-height:1.6;color:var(--warm-grey);max-width:280px}
+
+/* Pattern overlays for each card */
+.look-card:nth-child(1) .look-bg{position:absolute;inset:0;background:linear-gradient(170deg,var(--blush) 0%,#E8DDD4 100%);opacity:1}
+.look-card:nth-child(1) .look-bg::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 30px,rgba(201,169,110,.06) 30px,rgba(201,169,110,.06) 31px)}
+.look-card:nth-child(2) .look-bg{position:absolute;inset:0;background:linear-gradient(135deg,#E8E3DC 0%,var(--cream) 100%)}
+.look-card:nth-child(2) .look-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(201,169,110,.08) 0%,transparent 50%)}
+.look-card:nth-child(3) .look-bg{position:absolute;inset:0;background:var(--charcoal)}
+.look-card:nth-child(3) .look-inner{color:var(--white)}
+.look-card:nth-child(3) .look-name{color:var(--white)}
+.look-card:nth-child(3) .look-desc{color:rgba(255,255,255,.5)}
+.look-card:nth-child(3) .look-num{color:rgba(255,255,255,.06)}
+.look-card:nth-child(4) .look-bg{position:absolute;inset:0;background:linear-gradient(90deg,var(--blush) 0%,#E2D9CF 50%,var(--blush) 100%)}
+.look-card:nth-child(4) .look-bg::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0px,transparent 80px,rgba(28,28,30,.03) 80px,rgba(28,28,30,.03) 81px)}
+
+/* WHY UV SECTION — MAGAZINE SPREAD */
+.spread{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;border-top:1px solid rgba(28,28,30,.08)}
+.spread-image{background:var(--charcoal);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:4rem}
+.spread-image .big-number{font-family:var(--serif);font-size:clamp(8rem,18vw,14rem);font-weight:700;color:rgba(255,255,255,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1;white-space:nowrap}
+.uv-diagram{position:relative;width:200px;height:260px}
+.uv-sun{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,#F4D03F 30%,rgba(244,208,63,.3) 70%,transparent 100%);position:absolute;top:0;right:0;animation:pulse 3s ease infinite}
+@keyframes pulse{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+.uv-ray{position:absolute;top:50px;right:25px;width:2px;height:150px;background:linear-gradient(to bottom,rgba(244,208,63,.6),rgba(244,208,63,0));transform:rotate(25deg);transform-origin:top center}
+.uv-ray:nth-child(2){right:40px;height:130px;transform:rotate(15deg);opacity:.5}
+.uv-ray:nth-child(3){right:10px;height:140px;transform:rotate(35deg);opacity:.4}
+.uv-fabric{position:absolute;bottom:0;left:0;width:120px;height:80px;background:repeating-linear-gradient(45deg,var(--champagne-light) 0px,var(--champagne-light) 10px,var(--champagne) 10px,var(--champagne) 11px);border-radius:4px;opacity:.7}
+.uv-fabric::after{content:'⚠';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1.5rem;opacity:.4}
+.uv-shield{position:absolute;top:60px;right:50px;width:4px;height:120px;background:rgba(201,169,110,.4);border-radius:2px;transform:rotate(25deg);transform-origin:top center}
+.uv-shield::before{content:'BLOCKED';font-family:var(--sans);font-size:.45rem;letter-spacing:.2em;color:var(--champagne);position:absolute;top:50%;left:12px;transform:rotate(-25deg);white-space:nowrap}
+
+.spread-text{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:5rem 4vw 5rem 3vw}
+.spread-text .kicker{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--champagne);margin-bottom:1.5rem}
+.spread-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.15;margin-bottom:1.5rem;letter-spacing:.01em}
+.spread-text h2 strong{font-weight:700}
+.spread-text .body{font-family:var(--sans);font-size:.82rem;font-weight:200;line-height:1.9;color:var(--warm-grey);margin-bottom:2rem}
+.stat-row{display:flex;gap:2.5rem;margin-top:1.5rem}
+.stat{text-align:left}
+.stat-val{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--champagne);line-height:1}
+.stat-label{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:var(--warm-grey);margin-top:.4rem}
+
+/* HORIZONTAL SCROLL — INSPIRATION RUNWAY */
+.runway{padding:6rem 0 4rem;background:var(--white);border-top:1px solid rgba(28,28,30,.06);overflow:hidden}
+.runway-header{padding:0 4vw;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.runway-header h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:300}
+.runway-header h2 em{font-style:italic}
+.runway-scroll-hint{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.25em;text-transform:uppercase;color:var(--warm-grey);display:flex;align-items:center;gap:.5rem}
+.runway-scroll-hint::after{content:'→';font-size:.8rem;animation:hintSlide 1.5s ease infinite}
+@keyframes hintSlide{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+
+.runway-track{display:flex;gap:1.5rem;padding:0 4vw;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.runway-track::-webkit-scrollbar{display:none}
+.runway-track:active{cursor:grabbing}
+.runway-card{min-width:300px;max-width:300px;scroll-snap-align:start;flex-shrink:0;position:relative;background:var(--cream);border:1px solid rgba(28,28,30,.04);overflow:hidden;transition:transform .3s ease}
+.runway-card:hover{transform:translateY(-4px)}
+.runway-card-visual{height:240px;position:relative;overflow:hidden}
+.runway-card-text{padding:1.5rem}
+.runway-card-tag{font-family:var(--sans);font-size:.5rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne);margin-bottom:.5rem}
+.runway-card-title{font-family:var(--serif);font-size:1.15rem;font-weight:600;line-height:1.3;margin-bottom:.4rem}
+.runway-card-desc{font-family:var(--sans);font-size:.72rem;font-weight:200;line-height:1.7;color:var(--warm-grey)}
+
+/* Card visual patterns */
+.rv-sheer{background:linear-gradient(180deg,rgba(255,253,249,.9) 0%,rgba(232,213,176,.15) 100%);position:relative}
+.rv-sheer::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 4px,rgba(201,169,110,.04) 4px,rgba(201,169,110,.04) 5px)}
+.rv-sheer::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60%;height:60%;border:1.5px solid rgba(28,28,30,.1);background:linear-gradient(135deg,rgba(182,210,224,.2),rgba(200,220,232,.1))}
+.rv-blockout{background:var(--charcoal);position:relative}
+.rv-blockout::after{content:'';position:absolute;inset:15%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.02) 0px,rgba(255,255,255,.02) 8px,transparent 8px,transparent 9px)}
+.rv-motor{background:linear-gradient(135deg,var(--blush) 0%,#DDD4C8 100%);position:relative;display:flex;align-items:center;justify-content:center}
+.rv-motor::before{content:'';position:absolute;top:50%;left:50%;width:50px;height:50px;border:2px solid rgba(201,169,110,.3);border-radius:50%;transform:translate(-50%,-50%)}
+.rv-motor::after{content:'';position:absolute;top:50%;left:50%;width:20px;height:20px;border:2px solid var(--champagne);border-radius:50%;transform:translate(-50%,-50%)}
+.rv-cellular{background:linear-gradient(180deg,var(--cream) 0%,#E8E0D6 100%);position:relative}
+.rv-cellular::after{content:'';position:absolute;inset:20%;background:repeating-linear-gradient(0deg,rgba(201,169,110,.08) 0px,rgba(201,169,110,.08) 18px,rgba(201,169,110,.15) 18px,rgba(201,169,110,.15) 19px,rgba(201,169,110,.04) 19px,rgba(201,169,110,.04) 36px)}
+.rv-roman{background:linear-gradient(160deg,#E8DDD4 0%,var(--blush) 100%);position:relative}
+.rv-roman::after{content:'';position:absolute;bottom:20%;left:15%;right:15%;height:40%;background:repeating-linear-gradient(0deg,transparent 0px,transparent 25px,rgba(28,28,30,.04) 25px,rgba(28,28,30,.04) 26px);border-bottom:2px solid rgba(201,169,110,.2)}
+
+/* FEATURES — STAGGERED EDITORIAL */
+.features{padding:6rem 4vw;background:var(--cream);border-top:1px solid rgba(28,28,30,.06)}
+.features-title{text-align:center;font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:300;margin-bottom:4rem;letter-spacing:.02em}
+.features-title em{font-style:italic}
+.feature-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto 4rem;align-items:center}
+.feature-row:nth-child(even){direction:rtl}
+.feature-row:nth-child(even)>*{direction:ltr}
+.feature-visual{aspect-ratio:4/3;position:relative;overflow:hidden}
+.feature-content{padding:1rem 0}
+.feature-num{font-family:var(--serif);font-size:5rem;font-weight:300;color:rgba(28,28,30,.04);line-height:1;margin-bottom:-1rem;position:relative;z-index:0}
+.feature-content h3{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-bottom:.8rem;line-height:1.2;position:relative;z-index:1}
+.feature-content p{font-family:var(--sans);font-size:.8rem;font-weight:200;line-height:1.8;color:var(--warm-grey)}
+
+/* Feature visual patterns */
+.fv-uv{background:linear-gradient(135deg,var(--blush) 0%,#F5E6D0 100%);display:flex;align-items:center;justify-content:center}
+.fv-uv::before{content:'☀';font-size:3rem;opacity:.15;position:absolute;top:15%;right:15%}
+.fv-uv::after{content:'';position:absolute;inset:20%;border:1px dashed rgba(201,169,110,.3);border-radius:50%}
+.fv-privacy{background:var(--charcoal);display:flex;align-items:center;justify-content:center;position:relative}
+.fv-privacy::before{content:'';position:absolute;inset:15%;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 6px,transparent 6px,transparent 7px)}
+.fv-privacy::after{content:'✦';color:rgba(201,169,110,.15);font-size:4rem;position:absolute}
+.fv-light{background:linear-gradient(180deg,#F8F4ED 0%,var(--champagne-light) 100%);position:relative}
+.fv-light::before{content:'';position:absolute;top:0;left:30%;width:40%;height:100%;background:linear-gradient(180deg,rgba(255,255,255,.6) 0%,transparent 80%)}
+.fv-light::after{content:'';position:absolute;bottom:10%;left:20%;right:20%;height:2px;background:var(--champagne);opacity:.3}
+.fv-style{background:linear-gradient(150deg,#E8E0D6 0%,var(--cream) 50%,#DDD5CA 100%);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;padding:15%}
+.fv-style-swatch{border:1px solid rgba(28,28,30,.05)}
+.fv-style-swatch:nth-child(1){background:var(--charcoal)}
+.fv-style-swatch:nth-child(2){background:var(--champagne)}
+.fv-style-swatch:nth-child(3){background:var(--blush)}
+.fv-style-swatch:nth-child(4){background:var(--cream)}
+
+/* QUOTE PULL */
+.pullquote{padding:6rem 4vw;background:var(--charcoal);text-align:center;position:relative;overflow:hidden}
+.pullquote::before{content:'"';font-family:var(--serif);font-size:20rem;font-weight:700;color:rgba(201,169,110,.04);position:absolute;top:-3rem;left:50%;transform:translateX(-50%);line-height:1}
+.pullquote blockquote{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2.2rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.5;max-width:700px;margin:0 auto;position:relative;z-index:1}
+.pullquote cite{display:block;margin-top:2rem;font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne);font-style:normal}
+
+/* CTA SECTION */
+.cta-section{display:grid;grid-template-columns:1fr 1fr;min-height:50vh}
+.cta-left{background:var(--blush);display:flex;flex-direction:column;justify-content:center;padding:5rem 4vw}
+.cta-left h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem}
+.cta-left h2 strong{font-weight:700;color:var(--champagne)}
+.cta-left p{font-family:var(--sans);font-size:.82rem;font-weight:200;line-height:1.8;color:var(--warm-grey);max-width:400px;margin-bottom:2rem}
+.cta-btn{display:inline-flex;align-items:center;gap:.8rem;background:var(--charcoal);color:var(--white);text-decoration:none;font-family:var(--sans);font-size:.72rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.5rem;transition:background .3s,transform .2s}
+.cta-btn:hover{background:var(--champagne);color:var(--charcoal);transform:translateY(-2px)}
+.cta-right{background:var(--charcoal);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cta-pattern{position:absolute;inset:0;opacity:.04}
+.cta-pattern::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(rgba(255,255,255,.5) 0% 25%,transparent 0% 50%) 0 0 / 40px 40px}
+.cta-info{position:relative;z-index:1;text-align:center;color:var(--white)}
+.cta-info .phone{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:600;color:var(--champagne);margin-bottom:.5rem}
+.cta-info .hours{font-family:var(--sans);font-size:.7rem;font-weight:200;letter-spacing:.15em;color:rgba(255,255,255,.4)}
+.cta-info .service-list{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.cta-info .service-list li{font-family:var(--sans);font-size:.7rem;font-weight:300;letter-spacing:.1em;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:.5rem;justify-content:center}
+.cta-info .service-list li::before{content:'✦';color:var(--champagne);font-size:.5rem}
+
+/* FOOTER */
+footer{padding:3rem 4vw;background:var(--deep);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer .foot-brand{font-family:var(--serif);font-size:.9rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.05em}
+footer .foot-brand em{font-style:italic;font-weight:300}
+footer .foot-links{display:flex;gap:2rem}
+footer .foot-links a{color:rgba(255,255,255,.25);font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+footer .foot-links a:hover{color:var(--champagne)}
+footer .foot-copy{font-family:var(--sans);font-size:.55rem;font-weight:200;color:rgba(255,255,255,.15);letter-spacing:.1em}
+
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:7rem 2rem 3rem}
+  .hero-right{min-height:60vh}
+  .lookbook-grid{grid-template-columns:1fr;gap:1rem}
+  .look-card:nth-child(1),.look-card:nth-child(2),.look-card:nth-child(3),.look-card:nth-child(4){grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+  .spread{grid-template-columns:1fr}
+  .spread-image{min-height:50vh}
+  .feature-row,.feature-row:nth-child(even){grid-template-columns:1fr;direction:ltr}
+  .feature-row>*{direction:ltr}
+  .feature-visual{aspect-ratio:16/9}
+  .cta-section{grid-template-columns:1fr}
+  .cta-right{min-height:40vh}
+  nav{padding:1rem 1.5rem}
+  .nav-links{gap:1rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .stat-row{flex-direction:column;gap:1.5rem}
+  .runway-card{min-width:260px;max-width:260px}
+}
+@media(max-width:600px){
+  .hero-left{padding:6rem 1.5rem 2.5rem}
+  .hero-title{font-size:2.5rem}
+  .lookbook,.features,.runway{padding:4rem 1.5rem}
+  .pullquote{padding:4rem 1.5rem}
+  .cta-left{padding:3rem 1.5rem}
+  footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}
+  footer .foot-links{flex-wrap:wrap;justify-content:center;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preload" id="preloader">
+  <div class="preload-inner">
+    <div class="preload-word">Atelier</div>
+    <div class="preload-line"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://iseekblinds.com.au" class="nav-logo">iSeek<em>Blinds</em></a>
+  <div class="nav-links">
+    <a href="#collection">Collection</a>
+    <a href="#why">Why Blinds</a>
+    <a href="#inspiration">Inspiration</a>
+    <a href="https://iseekblinds.com.au/pages/contact-us" class="nav-cta">Free Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-issue">iSeekBlinds — Dressing Room Edit</div>
+    <h1 class="hero-title">
+      <em>Dress Your</em><br>
+      <strong>Windows</strong><br>
+      <em>Like You Dress</em><br>
+      Yourself
+    </h1>
+    <p class="hero-subtitle">Your walk-in wardrobe deserves window treatments as considered as the collection inside. UV protection, privacy, and refined aesthetics — tailored to your space.</p>
+    <a href="https://iseekblinds.com.au/pages/contact-us" class="hero-cta">
+      Book Your Fitting
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="wardrobe-scene">
+        <div class="wr-room">
+          <div class="wr-floor"></div>
+          <div class="wr-closet left"></div>
+          <div class="wr-closet right"></div>
+          <div class="wr-window">
+            <div class="wr-blind"></div>
+          </div>
+          <div class="wr-shelf" style="top:25%;"></div>
+          <div class="wr-shelf" style="top:45%;"></div>
+          <div class="wr-shelf" style="top:65%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="uv-badge">UV Protected</div>
+  </div>
+</section>
+
+<!-- EDITORIAL DIVIDER -->
+<div class="editorial-divider">
+  <span>Melbourne's Blinds Atelier</span>
+  <span class="dot"></span>
+  <span>Walk-In Wardrobes & Dressing Rooms</span>
+  <span class="dot"></span>
+  <span>Free Measure & Quote</span>
+</div>
+
+<!-- LOOKBOOK / COLLECTION -->
+<section class="lookbook" id="collection">
+  <div class="lookbook-header reveal">
+    <div class="kicker">The Collection</div>
+    <h2>Curated Blinds for<br><em>Your Dressing Room</em></h2>
+    <p>Each type selected for the unique demands of walk-in wardrobes — from UV-blocking fabrics to whisper-quiet motorised systems that complement your morning routine.</p>
+  </div>
+  <div class="lookbook-grid">
+    <div class="look-card reveal">
+      <div class="look-bg"></div>
+      <div class="look-inner">
+        <div class="look-num">01</div>
+        <div class="look-type">Signature</div>
+        <div class="look-name">Sheer Elegance Rollers</div>
+        <div class="look-desc">Soft light diffusion that protects delicate fabrics while maintaining an airy, open feel. Perfect for north-facing wardrobes.</div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-bg"></div>
+      <div class="look-inner">
+        <div class="look-num">02</div>
+        <div class="look-type">Essential</div>
+        <div class="look-name">Blockout Rollers</div>
+        <div class="look-desc">Total UV elimination. Essential for wardrobes with designer pieces, leather goods, and sun-sensitive fabrics.</div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-bg"></div>
+      <div class="look-inner">
+        <div class="look-num">03</div>
+        <div class="look-type">Premium</div>
+        <div class="look-name">Motorised Day-Night</div>
+        <div class="look-desc">Dual fabric system — sheer by day, blockout by night. Voice-controlled via your smart home. The ultimate luxury.</div>
+      </div>
+    </div>
+    <div class="look-card reveal">
+      <div class="look-bg"></div>
+      <div class="look-inner">
+        <div class="look-num">04</div>
+        <div class="look-type">Bespoke</div>
+        <div class="look-name">Roman Blinds & Cellular Shades</div>
+        <div class="look-desc">Tailored fabric panels that add texture and warmth. Cellular honeycomb options provide insulation, keeping your wardrobe at optimal temperature year-round.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UV PROTECTION SPREAD -->
+<section class="spread" id="why">
+  <div class="spread-image">
+    <div class="big-number">UV</div>
+    <div class="uv-diagram">
+      <div class="uv-sun"></div>
+      <div class="uv-ray"></div>
+      <div class="uv-ray"></div>
+      <div class="uv-ray"></div>
+      <div class="uv-shield"></div>
+      <div class="uv-fabric"></div>
+    </div>
+  </div>
+  <div class="spread-text reveal">
+    <div class="kicker">The Case for Protection</div>
+    <h2>Your Wardrobe Is <strong>an Investment.</strong><br>Treat It Like One.</h2>
+    <div class="body">
+      Unfiltered sunlight fades fabrics, degrades leather, and yellows whites within months. A single season of Melbourne sun through an unprotected wardrobe window can cause irreversible damage to designer pieces. Our UV-blocking blinds filter up to 99% of harmful rays while still allowing you to see your collection in natural light.
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-val">99%</div>
+        <div class="stat-label">UV Blocked</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">5×</div>
+        <div class="stat-label">Longer Fabric Life</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">3°C</div>
+        <div class="stat-label">Cooler in Summer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZONTAL INSPIRATION RUNWAY -->
+<section class="runway" id="inspiration">
+  <div class="runway-header">
+    <h2>Inspiration <em>Runway</em></h2>
+    <div class="runway-scroll-hint">Scroll to explore</div>
+  </div>
+  <div class="runway-track" id="runwayTrack">
+    <div class="runway-card">
+      <div class="runway-card-visual rv-sheer"></div>
+      <div class="runway-card-text">
+        <div class="runway-card-tag">Light & Airy</div>
+        <div class="runway-card-title">The Minimalist Wardrobe</div>
+        <div class="runway-card-desc">White sheers, clean lines, letting architecture speak. For the capsule wardrobe devotee.</div>
+      </div>
+    </div>
+    <div class="runway-card">
+      <div class="runway-card-visual rv-blockout"></div>
+      <div class="runway-card-text">
+        <div class="runway-card-tag">Full Protection</div>
+        <div class="runway-card-title">The Collector's Vault</div>
+        <div class="runway-card-desc">Total blockout with charcoal fabrics. Museum-grade protection for irreplaceable pieces.</div>
+      </div>
+    </div>
+    <div class="runway-card">
+      <div class="runway-card-visual rv-motor"></div>
+      <div class="runway-card-text">
+        <div class="runway-card-tag">Smart Living</div>
+        <div class="runway-card-title">The Automated Suite</div>
+        <div class="runway-card-desc">Motorised blinds on timer schedules. Open with sunrise, close during peak UV — hands free.</div>
+      </div>
+    </div>
+    <div class="runway-card">
+      <div class="runway-card-visual rv-cellular"></div>
+      <div class="runway-card-text">
+        <div class="runway-card-tag">Climate Control</div>
+        <div class="runway-card-title">The Temperature-Perfect Room</div>
+        <div class="runway-card-desc">Cellular honeycomb shades trap air, insulating against heat and cold. Your fabrics stay pristine.</div>
+      </div>
+    </div>
+    <div class="runway-card">
+      <div class="runway-card-visual rv-roman"></div>
+      <div class="runway-card-text">
+        <div class="runway-card-tag">Timeless Elegance</div>
+        <div class="runway-card-title">The Couture Dressing Room</div>
+        <div class="runway-card-desc">Luxe Roman blinds in textured linens. Soft folds that echo the draped fabrics within.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2 class="features-title reveal"><em>Why</em> Your Dressing Room <em>Needs</em> Blinds</h2>
+  
+  <div class="feature-row reveal">
+    <div class="feature-visual fv-uv"></div>
+    <div class="feature-content">
+      <div class="feature-num">01</div>
+      <h3>UV Protection for Fabrics</h3>
+      <p>Melbourne's UV index regularly exceeds 11. Without protection, silk fades in weeks, leather dries and cracks, and vibrant colours wash out. Our blockout and UV-filtering fabrics guard your wardrobe like a conservation room.</p>
+    </div>
+  </div>
+  
+  <div class="feature-row reveal">
+    <div class="feature-visual fv-privacy"></div>
+    <div class="feature-content">
+      <div class="feature-num">02</div>
+      <h3>Privacy While Dressing</h3>
+      <p>Full privacy without sacrificing style. Choose from top-down bottom-up options that let in light from above while keeping the lower half completely private — ideal for ground-floor or street-facing dressing rooms.</p>
+    </div>
+  </div>
+  
+  <div class="feature-row reveal">
+    <div class="feature-visual fv-light"></div>
+    <div class="feature-content">
+      <div class="feature-num">03</div>
+      <h3>Perfect Dressing Light</h3>
+      <p>Harsh direct light distorts how colours look on you. Our sheer and light-filtering options diffuse sunlight evenly, creating the soft, true-colour illumination that stylists and photographers prefer.</p>
+    </div>
+  </div>
+  
+  <div class="feature-row reveal">
+    <div class="feature-visual fv-style">
+      <div class="fv-style-swatch"></div>
+      <div class="fv-style-swatch"></div>
+      <div class="fv-style-swatch"></div>
+      <div class="fv-style-swatch"></div>
+    </div>
+    <div class="feature-content">
+      <div class="feature-num">04</div>
+      <h3>Aesthetic Cohesion</h3>
+      <p>Your wardrobe is curated — your window treatments should be too. We colour-match from hundreds of fabrics to complement your cabinetry, flooring, and overall interior design scheme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULLQUOTE -->
+<div class="pullquote">
+  <blockquote class="reveal">
+    A well-dressed window is the finishing touch that transforms a walk-in wardrobe from a storage room into a sanctuary.
+  </blockquote>
+  <cite class="reveal">iSeekBlinds Design Team — Melbourne</cite>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-left reveal">
+    <h2>Ready to <strong>Elevate</strong><br>Your Space?</h2>
+    <p>Book a free in-home consultation. Our specialists visit your wardrobe, assess the light, and recommend the perfect solution — with free measure, quote, and professional installation.</p>
+    <a href="https://iseekblinds.com.au/pages/contact-us" class="cta-btn">
+      Book Free Consultation
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="cta-right">
+    <div class="cta-pattern"></div>
+    <div class="cta-info">
+      <div class="phone">1300 iSeek</div>
+      <div class="hours">Mon – Sat · 8am – 6pm</div>
+      <ul class="service-list">
+        <li>Free In-Home Measure</li>
+        <li>UV Assessment Included</li>
+        <li>Professional Installation</li>
+        <li>5-Year Warranty</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">iSeek<em>Blinds</em></div>
+  <div class="foot-links">
+    <a href="https://iseekblinds.com.au">Home</a>
+    <a href="https://iseekblinds.com.au/collections">Products</a>
+    <a href="https://iseekblinds.com.au/pages/contact-us">Contact</a>
+    <a href="https://iseekblinds.com.au/pages/free-samples">Free Samples</a>
+  </div>
+  <div class="foot-copy">© 2026 iSeekBlinds Melbourne. All rights reserved.</div>
+</footer>
+
+<script>
+// Preloader
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('preloader').classList.add('done'),1400);
+});
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(r=>observer.observe(r));
+
+// Runway drag scroll
+const track=document.getElementById('runwayTrack');
+let isDown=false,startX,scrollLeft;
+track.addEventListener('mousedown',e=>{isDown=true;track.style.cursor='grabbing';startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft});
+track.addEventListener('mouseleave',()=>{isDown=false;track.style.cursor='grab'});
+track.addEventListener('mouseup',()=>{isDown=false;track.style.cursor='grab'});
+track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5});
+</script>
+</body>
+</html>
