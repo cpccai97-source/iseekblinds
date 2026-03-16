@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Studio Light Control | Blinds for Creative Spaces | iSeekBlinds</title>
+  <meta name="description" content="Perfect light control for artists, painters, and creatives. Diffuse harsh glare, harness north light, and protect your work with precision blinds from iSeekBlinds Melbourne.">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1C1917;
+      --cream: #FAF7F2;
+      --warm: #D4A574;
+      --gold: #C8956C;
+      --shadow: rgba(28,25,23,0.08);
+      --light-beam: rgba(255,243,224,0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ═══ HEADER ═══ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      mix-blend-mode: difference;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo span { font-weight: 300; font-style: italic; }
+    .header-nav { display: flex; gap: 28px; align-items: center; }
+    .header-nav a {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .header-nav a:hover { opacity: 0.6; }
+    .header-cta {
+      padding: 8px 20px !important;
+      border: 1px solid rgba(255,255,255,0.4) !important;
+      transition: all 0.3s !important;
+    }
+    .header-cta:hover { background: rgba(255,255,255,0.1) !important; }
+
+    /* ═══ SCROLL SNAP SECTIONS ═══ */
+    .scene {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ═══ SCENE 1: DARKNESS → DAWN ═══ */
+    .scene--dawn {
+      background: var(--ink);
+      flex-direction: column;
+    }
+    .dawn-canvas {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .dawn-beam {
+      position: absolute;
+      top: -20%;
+      right: 15%;
+      width: 2px;
+      height: 140%;
+      background: linear-gradient(to bottom, transparent, var(--light-beam), transparent);
+      transform: rotate(15deg);
+      animation: beamPulse 8s ease-in-out infinite;
+      opacity: 0;
+    }
+    .dawn-beam:nth-child(2) {
+      right: 25%;
+      width: 1px;
+      animation-delay: 2s;
+      transform: rotate(12deg);
+    }
+    .dawn-beam:nth-child(3) {
+      right: 35%;
+      width: 3px;
+      animation-delay: 4s;
+      transform: rotate(18deg);
+    }
+    @keyframes beamPulse {
+      0%, 100% { opacity: 0; }
+      30%, 70% { opacity: 0.4; }
+    }
+
+    .dawn-title {
+      position: relative;
+      z-index: 2;
+      text-align: right;
+      padding-right: 10vw;
+      align-self: flex-end;
+      margin-bottom: 20vh;
+    }
+    .dawn-title h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 10vw, 9rem);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      opacity: 0;
+      animation: fadeSlideUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    }
+    .dawn-title h1 em {
+      font-style: italic;
+      font-weight: 900;
+      display: block;
+      color: var(--warm);
+    }
+    .dawn-scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      animation: pulseDown 2s ease-in-out infinite;
+    }
+    .dawn-scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: currentColor;
+      margin: 8px auto 0;
+      animation: growLine 2s ease-in-out infinite;
+    }
+    @keyframes pulseDown {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+    @keyframes growLine {
+      0%, 100% { height: 20px; opacity: 0.2; }
+      50% { height: 40px; opacity: 0.5; }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══ SCENE 2: HARSH LIGHT PROBLEM ═══ */
+    .scene--harsh {
+      background: #FFFBE8;
+      color: var(--ink);
+    }
+    .harsh-container {
+      position: relative;
+      width: 80vw;
+      max-width: 900px;
+      height: 70vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .harsh-left {
+      background: linear-gradient(135deg, #FFF9E0 0%, #FFFBE8 50%, #FFE8A0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .harsh-left::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 70% 30%, rgba(255,220,100,0.8) 0%, transparent 60%);
+      animation: harshGlare 6s ease-in-out infinite;
+    }
+    @keyframes harshGlare {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+    .harsh-canvas-frame {
+      width: 180px;
+      height: 240px;
+      border: 3px solid var(--ink);
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(145deg, #E8D5B8 0%, #D4B896 30%, #C9A87C 60%, #B8956A 100%);
+    }
+    .harsh-canvas-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, transparent 40%);
+      animation: washout 4s ease-in-out infinite;
+    }
+    @keyframes washout {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+    .harsh-canvas-icon {
+      width: 60px;
+      height: 60px;
+      border: 2px solid rgba(28,25,23,0.3);
+      border-radius: 50%;
+      position: relative;
+    }
+    .harsh-canvas-icon::before, .harsh-canvas-icon::after {
+      content: '';
+      position: absolute;
+      background: rgba(28,25,23,0.2);
+    }
+    .harsh-canvas-icon::before {
+      width: 30px; height: 3px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .harsh-canvas-icon::after {
+      width: 3px; height: 30px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .harsh-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 8%;
+      background: var(--cream);
+    }
+    .harsh-word {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      display: block;
+    }
+    .harsh-word--faded {
+      opacity: 0.15;
+      font-weight: 300;
+      font-style: italic;
+    }
+    .harsh-detail {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: rgba(28,25,23,0.5);
+      max-width: 260px;
+    }
+
+    /* ═══ SCENE 3: THE SOLUTION — DIFFUSION ═══ */
+    .scene--diffuse {
+      background: linear-gradient(180deg, #F5F0E8 0%, #EDE7DD 100%);
+      color: var(--ink);
+      flex-direction: column;
+    }
+    .diffuse-demo {
+      position: relative;
+      width: 70vw;
+      max-width: 700px;
+      height: 50vh;
+      border: 1px solid rgba(28,25,23,0.1);
+      overflow: hidden;
+      cursor: ew-resize;
+    }
+    .diffuse-side {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: none;
+    }
+    .diffuse-harsh {
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, #FFFBE8 0%, #FFE8A0 100%);
+    }
+    .diffuse-harsh::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(255,255,200,0.8));
+    }
+    .diffuse-soft {
+      right: 0;
+      width: 50%;
+      background: linear-gradient(180deg, #F2EDE5 0%, #EAE4DA 100%);
+      clip-path: inset(0 0 0 0);
+      z-index: 2;
+    }
+    .diffuse-soft::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(212,165,116,0.08) 0%, transparent 70%);
+    }
+    .diffuse-divider {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: var(--warm);
+      z-index: 5;
+      cursor: ew-resize;
+      transition: left 0.05s linear;
+    }
+    .diffuse-divider::before {
+      content: '⟵  DRAG  ⟶';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--warm);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+    .diffuse-label {
+      position: absolute;
+      bottom: 16px;
+      font-family: 'Fraunces', serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      z-index: 3;
+    }
+    .diffuse-label--harsh {
+      left: 16px;
+      color: rgba(28,25,23,0.3);
+    }
+    .diffuse-label--soft {
+      right: 16px;
+      color: var(--gold);
+    }
+    .diffuse-text-icon {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 5vw, 5rem);
+      font-weight: 300;
+      opacity: 0.15;
+      position: absolute;
+    }
+    .diffuse-harsh .diffuse-text-icon { color: var(--ink); left: 10%; top: 20%; }
+    .diffuse-soft .diffuse-text-icon { color: var(--ink); opacity: 0.4; right: 10%; top: 20%; }
+
+    .diffuse-caption {
+      margin-top: 32px;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-weight: 300;
+      text-align: center;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .diffuse-caption em {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* ═══ SCENE 4: LIGHT CONDITIONS CAROUSEL ═══ */
+    .scene--carousel {
+      background: var(--ink);
+      flex-direction: column;
+    }
+    .carousel-track {
+      display: flex;
+      width: 100vw;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 0;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-card {
+      flex: 0 0 80vw;
+      height: 65vh;
+      scroll-snap-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      margin: 0 2vw;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .carousel-card:first-child { margin-left: 10vw; }
+    .carousel-card:last-child { margin-right: 10vw; }
+
+    .card--dawn-light {
+      background: linear-gradient(180deg, #2C2438 0%, #5C4A6E 30%, #D4A574 70%, #F5C89A 100%);
+    }
+    .card--north-light {
+      background: linear-gradient(180deg, #E8E4DC 0%, #D8D2C8 50%, #C8C0B4 100%);
+    }
+    .card--golden-hour {
+      background: linear-gradient(160deg, #C8956C 0%, #E8B88A 40%, #F5D4A8 100%);
+    }
+    .card--overcast {
+      background: linear-gradient(180deg, #C5C0B8 0%, #D8D4CC 50%, #E5E0D8 100%);
+    }
+
+    .carousel-card-label {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .card--dawn-light .carousel-card-label { color: var(--cream); }
+    .card--north-light .carousel-card-label { color: var(--ink); }
+    .card--golden-hour .carousel-card-label { color: #5C3A1A; }
+    .card--overcast .carousel-card-label { color: #4A4640; }
+
+    .carousel-card-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+    .card--dawn-light .carousel-card-sub { color: var(--cream); }
+    .card--north-light .carousel-card-sub { color: var(--ink); }
+    .card--golden-hour .carousel-card-sub { color: #5C3A1A; }
+    .card--overcast .carousel-card-sub { color: #4A4640; }
+
+    .carousel-card-blinds {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid;
+      border-radius: 0;
+      opacity: 0.5;
+    }
+    .card--dawn-light .carousel-card-blinds { color: var(--cream); border-color: rgba(250,247,242,0.3); }
+    .card--north-light .carousel-card-blinds { color: var(--ink); border-color: rgba(28,25,23,0.2); }
+    .card--golden-hour .carousel-card-blinds { color: #5C3A1A; border-color: rgba(92,58,26,0.3); }
+    .card--overcast .carousel-card-blinds { color: #4A4640; border-color: rgba(74,70,64,0.3); }
+
+    /* Window shape decoration inside cards */
+    .carousel-window {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 180px;
+      border: 2px solid;
+      opacity: 0.2;
+    }
+    .carousel-window::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 2px;
+      height: 100%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+    .carousel-window::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+    }
+    /* Blinds slats animation */
+    .carousel-slats {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 116px;
+      height: 176px;
+      overflow: hidden;
+      opacity: 0.12;
+    }
+    .carousel-slat {
+      width: 100%;
+      height: 12px;
+      background: currentColor;
+      margin-bottom: 3px;
+      transform-origin: left center;
+      animation: slatTilt 6s ease-in-out infinite;
+    }
+    .carousel-slat:nth-child(odd) { animation-delay: -0.2s; }
+    @keyframes slatTilt {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.3); }
+    }
+
+    .carousel-hint {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.3;
+    }
+
+    /* ═══ SCENE 5: PRODUCT STRIP ═══ */
+    .scene--products {
+      background: var(--cream);
+      color: var(--ink);
+      flex-direction: column;
+      scroll-snap-align: start;
+      height: auto;
+      min-height: 100vh;
+      padding: 100px 0 80px;
+    }
+    .products-header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 0 20px;
+    }
+    .products-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .products-header h2 em {
+      font-weight: 900;
+      font-style: italic;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      gap: 2px;
+      width: 90vw;
+      max-width: 1100px;
+    }
+    .product-cell {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .product-cell:nth-child(2) { aspect-ratio: 3/3.5; }
+    .product-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-cell:hover .product-bg { transform: scale(1.05); }
+    .product-cell:nth-child(1) .product-bg {
+      background: linear-gradient(135deg, #E8E0D4 0%, #D4C8B8 100%);
+    }
+    .product-cell:nth-child(2) .product-bg {
+      background: linear-gradient(135deg, #DED4C4 0%, #C8B8A4 100%);
+    }
+    .product-cell:nth-child(3) .product-bg {
+      background: linear-gradient(135deg, #F0E8DC 0%, #E0D4C4 100%);
+    }
+    /* Abstract blind slat visuals */
+    .product-slats {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0.2;
+      transition: opacity 0.5s;
+    }
+    .product-cell:hover .product-slats { opacity: 0.35; }
+    .product-slat-line {
+      height: 2px;
+      background: var(--ink);
+      border-radius: 1px;
+    }
+    .product-cell:nth-child(1) .product-slat-line { width: 80px; }
+    .product-cell:nth-child(2) .product-slat-line { width: 120px; }
+    .product-cell:nth-child(3) .product-slat-line {
+      width: 60px;
+      background: var(--ink);
+      height: 1px;
+    }
+    .product-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(to top, rgba(28,25,23,0.6) 0%, transparent 100%);
+      color: var(--cream);
+    }
+    .product-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .product-desc {
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+    .product-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid rgba(250,247,242,0.3);
+    }
+
+    /* ═══ SCENE 6: ARTIST QUOTE ═══ */
+    .scene--quote {
+      background: var(--ink);
+      flex-direction: column;
+    }
+    .quote-container {
+      max-width: 700px;
+      padding: 0 40px;
+      text-align: center;
+    }
+    .quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 8rem;
+      line-height: 0.5;
+      color: var(--warm);
+      opacity: 0.3;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .quote-text {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      font-style: italic;
+    }
+    .quote-text strong {
+      font-weight: 700;
+      font-style: normal;
+      color: var(--warm);
+    }
+    .quote-author {
+      margin-top: 32px;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+    .quote-stars {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--warm);
+      letter-spacing: 4px;
+    }
+
+    /* ═══ SCENE 7: CTA ═══ */
+    .scene--cta {
+      background: linear-gradient(180deg, var(--ink) 0%, #2A2520 100%);
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cta-headline {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .cta-headline em {
+      font-weight: 300;
+      font-style: italic;
+      display: block;
+      color: var(--warm);
+      font-size: 0.6em;
+    }
+    .cta-sub {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-light {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      background: var(--cream);
+      color: var(--ink);
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-light:hover {
+      background: var(--warm);
+      color: var(--cream);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(250,247,242,0.25);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover {
+      border-color: var(--warm);
+      color: var(--warm);
+    }
+
+    /* Ambient light orb in CTA */
+    .cta-orb {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,165,116,0.15) 0%, transparent 70%);
+      pointer-events: none;
+      animation: orbFloat 10s ease-in-out infinite;
+    }
+    .cta-orb--1 { top: 10%; left: 10%; animation-delay: -3s; }
+    .cta-orb--2 { bottom: 10%; right: 10%; width: 200px; height: 200px; animation-delay: -7s; }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(20px, -30px); }
+      66% { transform: translate(-15px, 15px); }
+    }
+
+    /* ═══ FOOTER ═══ */
+    .site-footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(250,247,242,0.06);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+    .footer-brand span { font-weight: 300; font-style: italic; }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(250,247,242,0.3);
+      margin-top: 6px;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.7rem;
+      color: rgba(250,247,242,0.4);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--warm); }
+
+    /* ═══ SCROLL-TRIGGERED REVEALS ═══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══ GRAIN OVERLAY ═══ */
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 768px) {
+      html { scroll-snap-type: y proximity; }
+
+      .site-header { padding: 16px 20px; }
+      .header-nav a:not(.header-cta) { display: none; }
+
+      .dawn-title { padding-right: 6vw; margin-bottom: 15vh; }
+
+      .harsh-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 90vw;
+        height: 80vh;
+      }
+
+      .diffuse-demo { width: 90vw; height: 40vh; }
+
+      .carousel-card { flex: 0 0 85vw; height: 55vh; }
+      .carousel-card:first-child { margin-left: 7.5vw; }
+      .carousel-card:last-child { margin-right: 7.5vw; }
+
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+        width: 95vw;
+      }
+      .product-cell:nth-child(2) { aspect-ratio: 3/4; }
+
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .harsh-container { height: auto; min-height: 80vh; }
+    }
+
+    /* ═══ REDUCED MOTION ═══ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-snap-type: none; scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header" id="header">
+  <a href="/index.html" class="logo">iSeek<span>Blinds</span></a>
+  <nav class="header-nav">
+    <a href="#products">Products</a>
+    <a href="#light-conditions">Light</a>
+    <a href="#cta">Book</a>
+    <a href="/landing/free-samples.html" class="header-cta">Free Samples</a>
+  </nav>
+</header>
+
+<!-- ═══ SCENE 1: DARKNESS → DAWN ═══ -->
+<section class="scene scene--dawn">
+  <div class="dawn-canvas">
+    <div class="dawn-beam"></div>
+    <div class="dawn-beam"></div>
+    <div class="dawn-beam"></div>
+  </div>
+  <div class="dawn-title">
+    <h1>Control<br>the <em>light.</em></h1>
+  </div>
+  <div class="dawn-scroll-hint">Scroll to experience</div>
+</section>
+
+<!-- ═══ SCENE 2: THE PROBLEM ═══ -->
+<section class="scene scene--harsh">
+  <div class="harsh-container reveal">
+    <div class="harsh-left">
+      <div class="harsh-canvas-frame">
+        <div class="harsh-canvas-icon"></div>
+      </div>
+    </div>
+    <div class="harsh-right">
+      <span class="harsh-word">Glare</span>
+      <span class="harsh-word harsh-word--faded">washes out</span>
+      <span class="harsh-word">colour.</span>
+      <span class="harsh-word harsh-word--faded">kills detail.</span>
+      <span class="harsh-word">ruins</span>
+      <span class="harsh-word harsh-word--faded">everything.</span>
+      <p class="harsh-detail">Uncontrolled sunlight bleaches pigments, creates hotspots, and makes colour-matching impossible. Your studio deserves better than squinting and guessing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 3: DIFFUSION DEMO ═══ -->
+<section class="scene scene--diffuse">
+  <div class="diffuse-demo reveal" id="diffuseDemo">
+    <div class="diffuse-side diffuse-harsh">
+      <span class="diffuse-text-icon">☀️</span>
+      <span class="diffuse-label diffuse-label--harsh">Direct Sun</span>
+    </div>
+    <div class="diffuse-side diffuse-soft" id="diffuseSoft">
+      <span class="diffuse-text-icon">◐</span>
+      <span class="diffuse-label diffuse-label--soft">Diffused</span>
+    </div>
+    <div class="diffuse-divider" id="diffuseDivider"></div>
+  </div>
+  <p class="diffuse-caption reveal">Drag to see the difference.<br>This is what <em>the right blinds</em> do.</p>
+</section>
+
+<!-- ═══ SCENE 4: LIGHT CONDITIONS ═══ -->
+<section class="scene scene--carousel" id="light-conditions">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="carousel-card card--dawn-light">
+      <div class="carousel-window" style="color: rgba(250,247,242,0.4)"></div>
+      <div class="carousel-slats" style="color: rgba(250,247,242,1)">
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div>
+      </div>
+      <span class="carousel-card-blinds">Sheer Curtains</span>
+      <span class="carousel-card-label">Dawn</span>
+      <span class="carousel-card-sub">Soft, directional. Open sheers to catch the first light.</span>
+    </div>
+    <div class="carousel-card card--north-light">
+      <div class="carousel-window" style="color: rgba(28,25,23,0.3)"></div>
+      <div class="carousel-slats" style="color: var(--ink)">
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div>
+      </div>
+      <span class="carousel-card-blinds">Light Filtering Roller</span>
+      <span class="carousel-card-label">North Light</span>
+      <span class="carousel-card-sub">The gold standard. Consistent, cool, true colour.</span>
+    </div>
+    <div class="carousel-card card--golden-hour">
+      <div class="carousel-window" style="color: rgba(92,58,26,0.3)"></div>
+      <div class="carousel-slats" style="color: #5C3A1A">
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div>
+      </div>
+      <span class="carousel-card-blinds">Venetian Blinds</span>
+      <span class="carousel-card-label">Golden Hour</span>
+      <span class="carousel-card-sub">Warm, dramatic. Angle venetians to sculpt the glow.</span>
+    </div>
+    <div class="carousel-card card--overcast">
+      <div class="carousel-window" style="color: rgba(74,70,64,0.3)"></div>
+      <div class="carousel-slats" style="color: #4A4640">
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div><div class="carousel-slat"></div><div class="carousel-slat"></div>
+        <div class="carousel-slat"></div>
+      </div>
+      <span class="carousel-card-blinds">Day/Night Blinds</span>
+      <span class="carousel-card-label">Overcast</span>
+      <span class="carousel-card-sub">Even, flat. Full open for maximum natural diffusion.</span>
+    </div>
+  </div>
+  <div class="carousel-hint">← Swipe to explore light conditions →</div>
+</section>
+
+<!-- ═══ SCENE 5: PRODUCTS ═══ -->
+<section class="scene scene--products" id="products">
+  <div class="products-header reveal">
+    <h2>Crafted for<br><em>creative spaces</em></h2>
+  </div>
+  <div class="products-grid reveal">
+    <div class="product-cell">
+      <div class="product-bg"></div>
+      <div class="product-slats">
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Light Filtering Rollers</div>
+        <div class="product-desc">Diffuse harsh light into soft, even illumination. No hotspots, no shadows.</div>
+        <span class="product-tag">Best for north-facing studios</span>
+      </div>
+    </div>
+    <div class="product-cell">
+      <div class="product-bg"></div>
+      <div class="product-slats">
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Timber Venetians</div>
+        <div class="product-desc">Angle-adjustable slats let you sculpt light precisely. Direct, diffuse, or anything between.</div>
+        <span class="product-tag">Precise angle control</span>
+      </div>
+    </div>
+    <div class="product-cell">
+      <div class="product-bg"></div>
+      <div class="product-slats">
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+        <div class="product-slat-line"></div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Blockout + Sheer Combo</div>
+        <div class="product-desc">Complete darkness for photography sessions, soft glow for painting. Two-in-one.</div>
+        <span class="product-tag">Total versatility</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 6: TESTIMONIAL ═══ -->
+<section class="scene scene--quote">
+  <div class="quote-container reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">I spent years fighting with the light in my Fitzroy studio. The venetians changed everything — I can <strong>paint for six hours straight</strong> without the sun shifting my colour perception once.</p>
+    <div class="quote-author">Sarah K. — Oil painter, Fitzroy studio</div>
+    <div class="quote-stars">★ ★ ★ ★ ★</div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 7: CTA ═══ -->
+<section class="scene scene--cta" id="cta">
+  <div class="cta-orb cta-orb--1"></div>
+  <div class="cta-orb cta-orb--2"></div>
+  <div class="cta-headline reveal">
+    Your light.<br>Your rules.<em>Free studio consultation.</em>
+  </div>
+  <p class="cta-sub reveal">We visit your studio, assess your windows, and recommend the exact treatment for your work. No charge, no obligation.</p>
+  <div class="cta-buttons reveal">
+    <a href="/landing/free-samples.html" class="btn-light">Get Free Samples</a>
+    <a href="tel:1300000000" class="btn-outline">Call 1300 iSeekBlinds</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div>
+    <div class="footer-brand">iSeek<span>Blinds</span></div>
+    <div class="footer-copy">© 2026 iSeekBlinds. Melbourne's specialist in creative space blinds.</div>
+  </div>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/landing/">All Solutions</a>
+    <a href="/landing/free-samples.html">Samples</a>
+  </div>
+</footer>
+
+<script>
+// ═══ SCROLL REVEAL ═══
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => revealObs.observe(el));
+
+// ═══ HEADER SCROLL ═══
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.style.background = window.scrollY > 80 ? 'rgba(28,25,23,0.85)' : 'transparent';
+  header.style.backdropFilter = window.scrollY > 80 ? 'blur(12px)' : 'none';
+  header.style.webkitBackdropFilter = window.scrollY > 80 ? 'blur(12px)' : 'none';
+}, {passive: true});
+
+// ═══ DIFFUSION DRAG COMPARISON ═══
+const demo = document.getElementById('diffuseDemo');
+const divider = document.getElementById('diffuseDivider');
+const softSide = document.getElementById('diffuseSoft');
+let isDragging = false;
+
+function updateDivider(clientX) {
+  const rect = demo.getBoundingClientRect();
+  let pct = ((clientX - rect.left) / rect.width) * 100;
+  pct = Math.max(5, Math.min(95, pct));
+  divider.style.left = pct + '%';
+  softSide.style.width = (100 - pct) + '%';
+}
+
+divider.addEventListener('mousedown', () => isDragging = true);
+divider.addEventListener('touchstart', () => isDragging = true, {passive: true});
+document.addEventListener('mousemove', (e) => { if (isDragging) updateDivider(e.clientX); });
+document.addEventListener('touchmove', (e) => { if (isDragging) updateDivider(e.touches[0].clientX); }, {passive: true});
+document.addEventListener('mouseup', () => isDragging = false);
+document.addEventListener('touchend', () => isDragging = false);
+
+// Also allow click on demo area
+demo.addEventListener('click', (e) => updateDivider(e.clientX));
+</script>
+
+</body>
+</html>
