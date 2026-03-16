@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Studio Blinds | Control Light, Set the Mood | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for tattoo studios & body art parlours. Block UV to protect fresh ink, control glare for precision work, create the perfect moody atmosphere. Melbourne specialists.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tk-void: #0e0e0e;
+      --tk-coal: #1a1a1a;
+      --tk-smoke: #2a2a2a;
+      --tk-ash: #666;
+      --tk-bone: #d4cdc0;
+      --tk-cream: #f0e6d3;
+      --tk-paper: #e8dcc8;
+      --tk-crimson: #e0233e;
+      --tk-crimson-glow: #ff2d4a;
+      --tk-ink: #0d1b2a;
+      --tk-display: 'Archivo Black', sans-serif;
+      --tk-body: 'Instrument Sans', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    .lp-tattoo { background: var(--tk-void); color: var(--tk-cream); font-family: var(--tk-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.65; }
+    .lp-tattoo * { box-sizing: border-box; margin: 0; padding: 0; }
+    .lp-tattoo img { max-width: 100%; display: block; }
+    .lp-tattoo a { color: inherit; text-decoration: none; }
+
+    /* ===== GRAIN OVERLAY ===== */
+    .lp-tattoo::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.06'/%3E%3C/svg%3E");
+      background-size: 512px 512px;
+    }
+
+    /* ===== HEADER ===== */
+    .tk-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 1rem 2rem; background: rgba(14,14,14,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(224,35,62,0.15); transition: transform .4s ease; }
+    .tk-header.hide { transform: translateY(-100%); }
+    .tk-header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .tk-logo { font-family: var(--tk-display); font-size: 1.1rem; letter-spacing: -.01em; }
+    .tk-logo-i { color: var(--tk-crimson); }
+    .tk-logo-seek { color: var(--tk-cream); }
+    .tk-logo-blinds { color: var(--tk-ash); }
+    .tk-nav { display: flex; gap: 2rem; }
+    .tk-nav a { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tk-ash); transition: color .3s; }
+    .tk-nav a:hover { color: var(--tk-crimson); }
+    .tk-header-right { display: flex; align-items: center; gap: 1.5rem; }
+    .tk-header-phone { font-size: .82rem; font-weight: 500; color: var(--tk-ash); }
+    .tk-header-cta { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .55rem 1.3rem; background: var(--tk-crimson); color: #fff; border: none; cursor: pointer; transition: background .3s, transform .2s; }
+    .tk-header-cta:hover { background: var(--tk-crimson-glow); transform: scale(1.03); }
+
+    @media(max-width:768px) {
+      .tk-nav { display: none; }
+      .tk-header-phone { display: none; }
+    }
+
+    /* ===== TICKER TAPE ===== */
+    .tk-ticker { overflow: hidden; white-space: nowrap; background: var(--tk-crimson); color: #fff; font-family: var(--tk-display); font-size: .85rem; letter-spacing: .15em; text-transform: uppercase; padding: .6rem 0; position: relative; z-index: 10; }
+    .tk-ticker-inner { display: inline-flex; animation: tickerScroll 25s linear infinite; }
+    .tk-ticker-inner span { padding: 0 3rem; }
+    .tk-ticker-reverse .tk-ticker-inner { animation: tickerScrollReverse 30s linear infinite; }
+    .tk-ticker.tk-ticker-dark { background: var(--tk-coal); color: var(--tk-ash); font-size: .7rem; }
+    .tk-ticker.tk-ticker-outline { background: transparent; color: var(--tk-crimson); border-top: 2px solid var(--tk-crimson); border-bottom: 2px solid var(--tk-crimson); }
+
+    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes tickerScrollReverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+    /* ===== HERO — ZINE COLLAGE ===== */
+    .tk-hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; position: relative; z-index: 5; }
+    .tk-hero-bg { position: absolute; inset: 0; z-index: -1; }
+    .tk-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(14,14,14,0.95) 0%, rgba(14,14,14,0.7) 50%, rgba(224,35,62,0.15) 100%); }
+    .tk-hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; }
+
+    /* Torn paper strip */
+    .tk-torn-strip {
+      display: inline-block; background: var(--tk-cream); color: var(--tk-void); font-family: var(--tk-display);
+      font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; padding: .5rem 1.5rem;
+      transform: rotate(-2deg); margin-bottom: 1.5rem;
+      clip-path: polygon(0 0, 97% 2%, 100% 15%, 98% 85%, 100% 100%, 2% 98%, 0 88%, 1% 12%);
+    }
+    .tk-hero-title { font-family: var(--tk-display); font-size: clamp(3rem, 9vw, 7rem); line-height: .95; letter-spacing: -.02em; margin-bottom: 1rem; }
+    .tk-hero-title .tk-stroke { -webkit-text-stroke: 2px var(--tk-cream); color: transparent; }
+    .tk-hero-title .tk-accent { color: var(--tk-crimson); }
+    .tk-hero-sub { font-size: 1.1rem; max-width: 500px; color: var(--tk-bone); line-height: 1.7; margin-bottom: 2.5rem; font-weight: 400; }
+
+    /* Stamp CTA */
+    .tk-stamp { display: inline-flex; align-items: center; justify-content: center; width: 140px; height: 140px; border: 3px solid var(--tk-crimson); border-radius: 50%; font-family: var(--tk-display); font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; text-align: center; line-height: 1.4; color: var(--tk-crimson); transform: rotate(12deg); transition: all .4s ease; cursor: pointer; position: relative; }
+    .tk-stamp:hover { background: var(--tk-crimson); color: #fff; transform: rotate(0deg) scale(1.08); }
+    .tk-stamp::before { content: ''; position: absolute; inset: 6px; border: 1px dashed var(--tk-crimson); border-radius: 50%; transition: border-color .3s; }
+    .tk-stamp:hover::before { border-color: rgba(255,255,255,0.4); }
+
+    /* Floating rotated label */
+    .tk-float-label { position: absolute; font-family: var(--tk-display); font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: var(--tk-ash); writing-mode: vertical-rl; }
+    .tk-float-label.right { right: -1rem; top: 30%; transform: rotate(180deg); }
+
+    /* ===== SECTION GENERAL ===== */
+    .tk-section { position: relative; z-index: 5; padding: 5rem 2rem; }
+    .tk-section-inner { max-width: 1100px; margin: 0 auto; }
+
+    /* ===== COLLAGE GRID — WHY SECTION ===== */
+    .tk-why { background: var(--tk-coal); }
+    .tk-why-header { margin-bottom: 4rem; }
+    .tk-why-header h2 { font-family: var(--tk-display); font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; }
+    .tk-why-header h2 .tk-highlight { background: var(--tk-crimson); color: #fff; padding: 0 .4em; display: inline; }
+    .tk-collage { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+    .tk-card {
+      background: var(--tk-smoke); padding: 2rem; position: relative; overflow: hidden;
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .tk-card:hover { transform: translateY(-4px) rotate(0deg); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .tk-card:nth-child(1) { transform: rotate(-1deg); grid-row: span 2; }
+    .tk-card:nth-child(2) { transform: rotate(0.5deg); }
+    .tk-card:nth-child(3) { transform: rotate(-0.8deg); }
+    .tk-card:nth-child(4) { transform: rotate(1deg); grid-column: span 2; }
+    .tk-card-num { font-family: var(--tk-display); font-size: 4rem; color: var(--tk-crimson); opacity: .25; position: absolute; top: -0.5rem; right: 1rem; line-height: 1; }
+    .tk-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .tk-card h3 { font-family: var(--tk-display); font-size: 1.1rem; margin-bottom: .8rem; letter-spacing: -.01em; }
+    .tk-card p { font-size: .88rem; color: var(--tk-bone); line-height: 1.65; }
+    .tk-card-tag { display: inline-block; font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .25rem .6rem; background: var(--tk-crimson); color: #fff; margin-top: 1rem; }
+
+    @media(max-width:768px) {
+      .tk-collage { grid-template-columns: 1fr; }
+      .tk-card { transform: none !important; }
+      .tk-card:nth-child(1) { grid-row: auto; }
+      .tk-card:nth-child(4) { grid-column: auto; }
+    }
+
+    /* ===== PRODUCTS — MAGAZINE SPREAD ===== */
+    .tk-products { background: var(--tk-void); }
+    .tk-products-header { text-align: right; margin-bottom: 4rem; }
+    .tk-products-header h2 { font-family: var(--tk-display); font-size: clamp(2rem, 5vw, 3rem); }
+    .tk-products-header p { color: var(--tk-ash); font-size: .85rem; margin-top: .5rem; }
+    .tk-product-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; margin-bottom: 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    .tk-product-row:nth-child(even) { direction: rtl; }
+    .tk-product-row:nth-child(even) > * { direction: ltr; }
+    .tk-product-img { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--tk-coal); }
+    .tk-product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease, filter .6s ease; filter: grayscale(60%) contrast(1.1); }
+    .tk-product-row:hover .tk-product-img img { transform: scale(1.04); filter: grayscale(0%) contrast(1); }
+    .tk-product-info { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .tk-product-label { font-family: var(--tk-display); font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--tk-crimson); margin-bottom: .8rem; }
+    .tk-product-name { font-family: var(--tk-display); font-size: 1.6rem; line-height: 1.15; margin-bottom: 1rem; }
+    .tk-product-desc { font-size: .88rem; color: var(--tk-bone); line-height: 1.7; margin-bottom: 1.5rem; }
+    .tk-product-link { font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tk-crimson); display: inline-flex; align-items: center; gap: .5rem; transition: gap .3s; }
+    .tk-product-link:hover { gap: 1rem; }
+
+    @media(max-width:768px) {
+      .tk-product-row { grid-template-columns: 1fr; }
+      .tk-product-row:nth-child(even) { direction: ltr; }
+      .tk-product-info { padding: 2rem 1rem; }
+    }
+
+    /* ===== TESTIMONIAL — RIPPED PAPER ===== */
+    .tk-testimonial { background: var(--tk-cream); color: var(--tk-void); padding: 6rem 2rem; position: relative; }
+    .tk-testimonial::before {
+      content: ''; position: absolute; top: -30px; left: 0; right: 0; height: 60px;
+      background: var(--tk-void);
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 98% 55%, 95% 45%, 92% 60%, 88% 42%, 85% 58%, 80% 40%, 76% 55%, 72% 38%, 68% 52%, 64% 35%, 60% 50%, 55% 33%, 50% 48%, 45% 30%, 40% 45%, 35% 28%, 30% 42%, 25% 25%, 20% 40%, 15% 22%, 10% 38%, 5% 20%, 2% 35%, 0 18%);
+    }
+    .tk-testimonial::after {
+      content: ''; position: absolute; bottom: -30px; left: 0; right: 0; height: 60px; z-index: 10;
+      background: var(--tk-cream);
+      clip-path: polygon(0 60%, 3% 45%, 7% 62%, 12% 40%, 17% 58%, 22% 38%, 28% 55%, 33% 35%, 38% 52%, 44% 32%, 50% 50%, 56% 30%, 62% 48%, 68% 28%, 74% 45%, 80% 25%, 86% 42%, 92% 22%, 97% 40%, 100% 20%, 100% 100%, 0 100%);
+    }
+    .tk-testimonial-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .tk-testimonial blockquote { font-family: var(--tk-display); font-size: clamp(1.4rem, 3vw, 2.2rem); line-height: 1.35; margin-bottom: 2rem; position: relative; }
+    .tk-testimonial blockquote::before { content: '"'; font-size: 8rem; color: var(--tk-crimson); opacity: .2; position: absolute; top: -3rem; left: -1.5rem; font-family: Georgia, serif; line-height: 1; }
+    .tk-testimonial cite { font-style: normal; font-size: .85rem; font-weight: 600; color: var(--tk-ash); display: block; }
+    .tk-testimonial cite span { color: var(--tk-crimson); }
+
+    /* ===== PROCESS — STEPS WITH PUNK NUMBERS ===== */
+    .tk-process { background: var(--tk-coal); }
+    .tk-process-header h2 { font-family: var(--tk-display); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+    .tk-process-header p { color: var(--tk-ash); font-size: .9rem; margin-bottom: 4rem; max-width: 500px; }
+    .tk-steps { display: flex; gap: 0; }
+    .tk-step { flex: 1; padding: 2.5rem 2rem; border-right: 1px solid rgba(255,255,255,0.06); position: relative; transition: background .4s; }
+    .tk-step:last-child { border-right: none; }
+    .tk-step:hover { background: var(--tk-smoke); }
+    .tk-step-num { font-family: var(--tk-display); font-size: 5rem; line-height: 1; color: transparent; -webkit-text-stroke: 2px var(--tk-crimson); margin-bottom: 1.5rem; transition: all .4s; }
+    .tk-step:hover .tk-step-num { color: var(--tk-crimson); -webkit-text-stroke: 0; }
+    .tk-step h3 { font-family: var(--tk-display); font-size: .95rem; margin-bottom: .8rem; }
+    .tk-step p { font-size: .82rem; color: var(--tk-bone); line-height: 1.65; }
+
+    @media(max-width:768px) {
+      .tk-steps { flex-direction: column; }
+      .tk-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    }
+
+    /* ===== CTA — CROSSED OUT TEXT ===== */
+    .tk-cta-section { background: var(--tk-crimson); padding: 5rem 2rem; text-align: center; position: relative; z-index: 11; }
+    .tk-cta-section h2 { font-family: var(--tk-display); font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; line-height: 1.15; margin-bottom: .5rem; }
+    .tk-cta-section h2 .tk-cross { text-decoration: line-through; opacity: .5; }
+    .tk-cta-section p { font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; }
+    .tk-cta-btn { display: inline-block; font-family: var(--tk-display); font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; padding: 1rem 3rem; background: #fff; color: var(--tk-crimson); transition: all .3s; cursor: pointer; border: none; }
+    .tk-cta-btn:hover { background: var(--tk-void); color: #fff; transform: scale(1.04); }
+
+    /* ===== FAQ — ACCORDION ===== */
+    .tk-faq { background: var(--tk-void); }
+    .tk-faq-header h2 { font-family: var(--tk-display); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 3rem; }
+    .tk-faq-list { max-width: 800px; }
+    .tk-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .tk-faq-q { width: 100%; text-align: left; background: none; border: none; color: var(--tk-cream); font-family: var(--tk-body); font-size: .95rem; font-weight: 600; padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color .3s; }
+    .tk-faq-q:hover { color: var(--tk-crimson); }
+    .tk-faq-q .tk-faq-arrow { font-size: 1.2rem; transition: transform .3s; color: var(--tk-crimson); }
+    .tk-faq-q.open .tk-faq-arrow { transform: rotate(45deg); }
+    .tk-faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .4s ease; }
+    .tk-faq-a.open { max-height: 300px; padding-bottom: 1.5rem; }
+    .tk-faq-a p { font-size: .88rem; color: var(--tk-bone); line-height: 1.7; }
+
+    /* ===== FOOTER ===== */
+    .tk-footer { background: var(--tk-coal); padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 5; }
+    .tk-footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .tk-footer-logo { font-family: var(--tk-display); font-size: 1rem; }
+    .tk-footer-links { display: flex; gap: 1.5rem; }
+    .tk-footer-links a { font-size: .78rem; color: var(--tk-ash); transition: color .3s; }
+    .tk-footer-links a:hover { color: var(--tk-crimson); }
+    .tk-footer-copy { font-size: .72rem; color: var(--tk-ash); }
+
+    /* ===== ANIMATIONS ===== */
+    .tk-reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s ease, transform .7s ease; }
+    .tk-reveal.visible { opacity: 1; transform: translateY(0); }
+    .tk-reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .7s ease, transform .7s ease; }
+    .tk-reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .tk-reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .7s ease, transform .7s ease; }
+    .tk-reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Stagger */
+    .tk-stagger > *:nth-child(1) { transition-delay: 0s; }
+    .tk-stagger > *:nth-child(2) { transition-delay: .1s; }
+    .tk-stagger > *:nth-child(3) { transition-delay: .2s; }
+    .tk-stagger > *:nth-child(4) { transition-delay: .3s; }
+  </style>
+</head>
+<body>
+<div class="lp-tattoo">
+
+  <!-- Header -->
+  <header class="tk-header">
+    <div class="tk-header-inner">
+      <a href="../index.html" class="tk-logo">
+        <span class="tk-logo-i">i</span><span class="tk-logo-seek">Seek</span><span class="tk-logo-blinds">Blinds</span>
+      </a>
+      <nav class="tk-nav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Solutions</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="tk-header-right">
+        <a href="tel:0400000000" class="tk-header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="tk-header-cta">Free Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Ticker Tape #1 -->
+  <div class="tk-ticker" style="margin-top: 60px;">
+    <div class="tk-ticker-inner">
+      <span>UV Protection for Fresh Ink</span>
+      <span>✦</span>
+      <span>Glare-Free Precision Lighting</span>
+      <span>✦</span>
+      <span>Moody Atmosphere On Demand</span>
+      <span>✦</span>
+      <span>Client Privacy Guaranteed</span>
+      <span>✦</span>
+      <span>UV Protection for Fresh Ink</span>
+      <span>✦</span>
+      <span>Glare-Free Precision Lighting</span>
+      <span>✦</span>
+      <span>Moody Atmosphere On Demand</span>
+      <span>✦</span>
+      <span>Client Privacy Guaranteed</span>
+      <span>✦</span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="tk-hero">
+    <div class="tk-hero-bg">
+      <img src="https://images.unsplash.com/photo-1598371839696-5c5bb1c12015?w=1400&q=80" alt="Tattoo studio interior" style="width:100%;height:100%;object-fit:cover;filter:grayscale(70%) contrast(1.2) brightness(0.4);">
+    </div>
+    <div class="tk-hero-inner">
+      <div class="tk-torn-strip">Melbourne Tattoo Studio Specialists</div>
+      <h1 class="tk-hero-title tk-reveal">
+        YOUR INK.<br>
+        <span class="tk-stroke">YOUR LIGHT.</span><br>
+        <span class="tk-accent">YOUR RULES.</span>
+      </h1>
+      <p class="tk-hero-sub tk-reveal">Every line demands precision. Every shade needs control. Custom blinds that let you master natural light — so you can master the art.</p>
+      <div style="display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;">
+        <a href="../free-quote.html" class="tk-stamp tk-reveal">Free<br>Measure<br>& Quote</a>
+        <div class="tk-reveal" style="font-size:.82rem;color:var(--tk-ash);">
+          <div style="margin-bottom:.3rem;">✓ UV-blocking solutions</div>
+          <div style="margin-bottom:.3rem;">✓ Custom fit any window</div>
+          <div>✓ Professional installation</div>
+        </div>
+      </div>
+      <div class="tk-float-label right">EST. MELBOURNE</div>
+    </div>
+  </section>
+
+  <!-- Ticker #2 — reverse -->
+  <div class="tk-ticker tk-ticker-dark tk-ticker-reverse">
+    <div class="tk-ticker-inner">
+      <span>Roller Blinds</span>
+      <span>—</span>
+      <span>Blackout Blinds</span>
+      <span>—</span>
+      <span>Venetian Blinds</span>
+      <span>—</span>
+      <span>Motorised Solutions</span>
+      <span>—</span>
+      <span>Day-Night Blinds</span>
+      <span>—</span>
+      <span>Roller Blinds</span>
+      <span>—</span>
+      <span>Blackout Blinds</span>
+      <span>—</span>
+      <span>Venetian Blinds</span>
+      <span>—</span>
+      <span>Motorised Solutions</span>
+      <span>—</span>
+      <span>Day-Night Blinds</span>
+      <span>—</span>
+    </div>
+  </div>
+
+  <!-- Why Section — Collage Cards -->
+  <section class="tk-section tk-why">
+    <div class="tk-section-inner">
+      <div class="tk-why-header tk-reveal">
+        <h2>WHY YOUR STUDIO<br>NEEDS <span class="tk-highlight">BETTER BLINDS</span></h2>
+      </div>
+      <div class="tk-collage tk-stagger">
+        <div class="tk-card tk-reveal">
+          <span class="tk-card-num">01</span>
+          <div class="tk-card-icon">🛡️</div>
+          <h3>Protect Fresh Ink from UV</h3>
+          <p>UV rays are the enemy of fresh tattoos. Our blockout and UV-filtering blinds protect healing skin and prevent premature fading — keeping your work looking sharp for years, not weeks.</p>
+          <span class="tk-card-tag">UV Block 99%+</span>
+        </div>
+        <div class="tk-card tk-reveal">
+          <span class="tk-card-num">02</span>
+          <div class="tk-card-icon">💡</div>
+          <h3>Precision Light Control</h3>
+          <p>No more fighting sun glare mid-session. Dial in the exact light level you need for clean line work and smooth shading.</p>
+        </div>
+        <div class="tk-card tk-reveal">
+          <span class="tk-card-num">03</span>
+          <div class="tk-card-icon">🎭</div>
+          <h3>Set the Mood</h3>
+          <p>Your studio's vibe matters. Moody and dark? Bright and clinical? Switch it up with motorised blinds on a timer or remote.</p>
+        </div>
+        <div class="tk-card tk-reveal">
+          <span class="tk-card-num">04</span>
+          <div class="tk-card-icon">🔒</div>
+          <h3>Client Privacy & Street Appeal</h3>
+          <p>Frosted or opaque options let natural light in while keeping street-level foot traffic from gawking. Your clients relax, your shop looks premium from outside.</p>
+          <span class="tk-card-tag">Walk-in Friendly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker #3 — outline style -->
+  <div class="tk-ticker tk-ticker-outline">
+    <div class="tk-ticker-inner">
+      <span>PRECISION ✦ PRIVACY ✦ PROTECTION ✦ ATMOSPHERE</span>
+      <span>PRECISION ✦ PRIVACY ✦ PROTECTION ✦ ATMOSPHERE</span>
+      <span>PRECISION ✦ PRIVACY ✦ PROTECTION ✦ ATMOSPHERE</span>
+      <span>PRECISION ✦ PRIVACY ✦ PROTECTION ✦ ATMOSPHERE</span>
+    </div>
+  </div>
+
+  <!-- Products — Magazine Spread -->
+  <section class="tk-section tk-products">
+    <div class="tk-section-inner">
+      <div class="tk-products-header tk-reveal">
+        <h2>STUDIO-TESTED<br>SOLUTIONS</h2>
+        <p>Every product hand-picked for tattoo & body art environments</p>
+      </div>
+
+      <div class="tk-product-row tk-reveal">
+        <div class="tk-product-img">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80" alt="Blockout roller blinds in dark studio">
+        </div>
+        <div class="tk-product-info">
+          <span class="tk-product-label">Best Seller</span>
+          <h3 class="tk-product-name">Blockout Roller Blinds</h3>
+          <p class="tk-product-desc">Total darkness when you need it. Premium blockout fabric eliminates UV, controls temperature, and lets you create that signature moody studio atmosphere.</p>
+          <a href="../products/roller-blinds.html" class="tk-product-link">Explore Rollers <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="tk-product-row tk-reveal">
+        <div class="tk-product-img">
+          <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?w=800&q=80" alt="Venetian blinds with adjustable slats">
+        </div>
+        <div class="tk-product-info">
+          <span class="tk-product-label">Artist's Choice</span>
+          <h3 class="tk-product-name">Venetian Blinds</h3>
+          <p class="tk-product-desc">Tilt the slats to redirect light exactly where you need it. Perfect for stations near windows — control the angle, eliminate the glare, keep the ambient.</p>
+          <a href="../products/venetian-blinds.html" class="tk-product-link">Explore Venetians <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="tk-product-row tk-reveal">
+        <div class="tk-product-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Motorised blinds with remote control">
+        </div>
+        <div class="tk-product-info">
+          <span class="tk-product-label">Premium</span>
+          <h3 class="tk-product-name">Motorised Blinds</h3>
+          <p class="tk-product-desc">Hands are busy? Voice or remote control. Set scenes for different times of day or automate with timers. No touching, no interruption, no compromise.</p>
+          <a href="../products/motorised.html" class="tk-product-link">Explore Motorised <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="tk-product-row tk-reveal">
+        <div class="tk-product-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Day-night blinds dual fabric">
+        </div>
+        <div class="tk-product-info">
+          <span class="tk-product-label">Versatile</span>
+          <h3 class="tk-product-name">Day-Night Blinds</h3>
+          <p class="tk-product-desc">Dual-layer fabric alternates between sheer and opaque. Walk-ins can see in during business hours, full privacy during sessions. Two moods, one blind.</p>
+          <a href="day-night-blinds.html" class="tk-product-link">Explore Day-Night <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial — Ripped Paper -->
+  <section class="tk-testimonial">
+    <div class="tk-testimonial-inner tk-reveal">
+      <blockquote>We got blockout rollers for all six stations. The difference is night and day — literally. No more squinting, no more repositioning the chair. Best money we've spent on the studio besides the machines.</blockquote>
+      <cite>— Jake M. <span>✦</span> Ink & Iron Tattoo, Collingwood</cite>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="tk-section tk-process">
+    <div class="tk-section-inner">
+      <div class="tk-process-header tk-reveal">
+        <h2>HOW IT WORKS</h2>
+        <p>Four steps from bare windows to perfect studio lighting. We handle everything.</p>
+      </div>
+      <div class="tk-steps tk-stagger">
+        <div class="tk-step tk-reveal">
+          <div class="tk-step-num">01</div>
+          <h3>Free Measure</h3>
+          <p>We visit your studio, assess the windows, discuss your light control needs and aesthetic preferences. No obligation.</p>
+        </div>
+        <div class="tk-step tk-reveal">
+          <div class="tk-step-num">02</div>
+          <h3>Custom Design</h3>
+          <p>We recommend products and fabrics that match your studio's vibe — from industrial black to subtle textures. Free samples included.</p>
+        </div>
+        <div class="tk-step tk-reveal">
+          <div class="tk-step-num">03</div>
+          <h3>Manufacture</h3>
+          <p>Every blind is custom-made to your exact measurements. Australian quality, built to handle daily studio use.</p>
+        </div>
+        <div class="tk-step tk-reveal">
+          <div class="tk-step-num">04</div>
+          <h3>Install & Done</h3>
+          <p>Professional installation at a time that works for your schedule. We work around your bookings — zero disruption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tk-cta-section">
+    <h2 class="tk-reveal"><span class="tk-cross">Bad Lighting.</span> Better Blinds.</h2>
+    <p class="tk-reveal">Free measure & quote for Melbourne tattoo studios</p>
+    <a href="../free-quote.html" class="tk-cta-btn tk-reveal">Book Your Free Measure →</a>
+  </section>
+
+  <!-- FAQ -->
+  <section class="tk-section tk-faq">
+    <div class="tk-section-inner">
+      <div class="tk-faq-header tk-reveal">
+        <h2>QUESTIONS? ANSWERED.</h2>
+      </div>
+      <div class="tk-faq-list">
+        <div class="tk-faq-item tk-reveal">
+          <button class="tk-faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            Do blockout blinds actually block 100% of light?
+            <span class="tk-faq-arrow">+</span>
+          </button>
+          <div class="tk-faq-a">
+            <p>Our premium blockout fabrics block 99.9%+ of light. When properly installed with side channels, you get near-total darkness — ideal for creating that moody studio atmosphere or protecting fresh tattoos from UV exposure.</p>
+          </div>
+        </div>
+        <div class="tk-faq-item tk-reveal">
+          <button class="tk-faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            How do UV-blocking blinds protect fresh tattoos?
+            <span class="tk-faq-arrow">+</span>
+          </button>
+          <div class="tk-faq-a">
+            <p>UV radiation accelerates ink breakdown in fresh tattoos. Our UV-filtering blinds block harmful UVA and UVB rays while still allowing some natural light in, reducing the risk of premature fading during those critical first healing days post-session.</p>
+          </div>
+        </div>
+        <div class="tk-faq-item tk-reveal">
+          <button class="tk-faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            Can I control blinds without stopping mid-tattoo?
+            <span class="tk-faq-arrow">+</span>
+          </button>
+          <div class="tk-faq-a">
+            <p>Absolutely. Our motorised blinds work via remote control, wall switch, or voice assistant. Set automated schedules so the blinds adjust throughout the day — no hands required. Perfect when you're gloved up mid-session.</p>
+          </div>
+        </div>
+        <div class="tk-faq-item tk-reveal">
+          <button class="tk-faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            What about street-facing windows and walk-in visibility?
+            <span class="tk-faq-arrow">+</span>
+          </button>
+          <div class="tk-faq-a">
+            <p>Day-night blinds are perfect here: transparent mode lets potential clients see your studio during business hours, then switch to privacy mode during sessions. You can also use frosted or semi-opaque fabrics for a permanent balance of light and privacy.</p>
+          </div>
+        </div>
+        <div class="tk-faq-item tk-reveal">
+          <button class="tk-faq-q" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+            Do you work around studio schedules for installation?
+            <span class="tk-faq-arrow">+</span>
+          </button>
+          <div class="tk-faq-a">
+            <p>Always. We schedule installation during your quiet hours — early mornings, Mondays, or whenever works best. Most studio installs take 2-3 hours. Zero impact on your bookings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="tk-footer">
+    <div class="tk-footer-inner">
+      <div class="tk-footer-logo">
+        <span style="color:var(--tk-crimson)">i</span><span>Seek</span><span style="color:var(--tk-ash)">Blinds</span>
+      </div>
+      <div class="tk-footer-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Solutions</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../free-quote.html">Free Quote</a>
+      </div>
+      <div class="tk-footer-copy">© 2026 iSeekBlinds Melbourne. All rights reserved.</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// Scroll reveal
+const revealEls = document.querySelectorAll('.tk-reveal, .tk-reveal-left, .tk-reveal-right');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Header hide on scroll
+let lastY = 0;
+const header = document.querySelector('.tk-header');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 200 && y > lastY) header.classList.add('hide');
+  else header.classList.remove('hide');
+  lastY = y;
+}, { passive: true });
+</script>
+</body>
+</html>
