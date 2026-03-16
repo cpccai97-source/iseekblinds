@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Room & Recording Studio Acoustic Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Acoustic blinds and sound-absorbing window treatments for music rooms, recording studios, and listening spaces in Melbourne. Reduce reverb, control light, perfect your sound. Free acoustic consultation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    :root {
+      --sumi: #1a1a1a;
+      --sumi-deep: #0d0d0d;
+      --washi: #f5f0e8;
+      --washi-warm: #ebe3d5;
+      --bamboo: #c4a96a;
+      --bamboo-dim: #9e8a58;
+      --indigo: #2d3a5c;
+      --indigo-light: #4a5a80;
+      --stone: #7a7568;
+      --mist: #d1ccc3;
+      --sakura: #c9a0a0;
+      --text-dark: #2a2825;
+      --text-mid: #5c5750;
+      --text-light: #f5f0e8;
+    }
+
+    /* ===== BASE ===== */
+    .lp-acoustic {
+      background: var(--washi);
+      color: var(--text-dark);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Header overrides */
+    .lp-acoustic .header {
+      background: rgba(245,240,232,0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(26,26,26,0.06);
+    }
+    .lp-acoustic .top-bar {
+      background: var(--sumi);
+    }
+    .lp-acoustic .top-bar a { color: var(--bamboo); }
+    .lp-acoustic .footer {
+      background: var(--sumi-deep);
+      border-top: none;
+    }
+    .lp-acoustic .nav-cta {
+      background: var(--sumi) !important;
+      color: var(--washi) !important;
+      border: none !important;
+    }
+    .lp-acoustic .nav-cta:hover {
+      background: var(--indigo) !important;
+    }
+
+    /* ===== HERO — Zen Asymmetric ===== */
+    .zen-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .zen-hero__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 6vw 4rem 8vw;
+      position: relative;
+      z-index: 2;
+    }
+    .zen-hero__right {
+      background: var(--sumi);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Vertical Japanese text */
+    .zen-hero__vertical {
+      position: absolute;
+      right: 3vw;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      font-family: 'Cormorant Infant', serif;
+      font-size: clamp(0.75rem, 1vw, 1rem);
+      letter-spacing: 0.4em;
+      color: var(--stone);
+      opacity: 0;
+      transition: opacity 1.2s ease 0.8s;
+    }
+    .zen-hero__vertical.visible { opacity: 0.5; }
+
+    .zen-hero__tag {
+      font-family: 'Cormorant Infant', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--bamboo);
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .zen-hero__title {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--sumi);
+      margin: 0 0 2rem 0;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .zen-hero__title em {
+      font-style: italic;
+      color: var(--indigo);
+    }
+    .zen-hero__sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 28rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Sound wave visualization in right panel */
+    .soundwave-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .zen-hero__right-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--washi);
+    }
+    .db-display {
+      font-family: 'Zen Kaku Gothic New', monospace;
+      font-size: clamp(5rem, 12vw, 10rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--bamboo);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .db-display.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .db-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-top: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.8s ease 1.2s;
+    }
+    .db-label.visible { opacity: 0.6; }
+
+    /* Ink brush decorative line */
+    .ink-line {
+      width: 60px;
+      height: 2px;
+      background: var(--sumi);
+      margin: 2rem 0;
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ink-line.visible {
+      opacity: 0.3;
+      transform: scaleX(1);
+    }
+
+    /* ===== BENTO GRID SECTION ===== */
+    .bento-section {
+      padding: 6rem 6vw;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      font-family: 'Cormorant Infant', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--bamboo-dim);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--sumi);
+      margin: 0 0 3rem 0;
+      max-width: 600px;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(140px, auto);
+      gap: 1rem;
+    }
+
+    .bento-cell {
+      border-radius: 4px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-cell.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cell sizes — asymmetric bento */
+    .bento-cell--wide { grid-column: span 8; grid-row: span 2; }
+    .bento-cell--tall { grid-column: span 4; grid-row: span 3; }
+    .bento-cell--sq { grid-column: span 4; grid-row: span 2; }
+    .bento-cell--rect { grid-column: span 6; grid-row: span 2; }
+    .bento-cell--small { grid-column: span 3; grid-row: span 2; }
+    .bento-cell--full { grid-column: span 12; grid-row: span 2; }
+
+    /* Cell themes */
+    .bento-cell--dark {
+      background: var(--sumi);
+      color: var(--text-light);
+    }
+    .bento-cell--indigo {
+      background: var(--indigo);
+      color: var(--text-light);
+    }
+    .bento-cell--paper {
+      background: var(--washi-warm);
+      color: var(--text-dark);
+      border: 1px solid rgba(26,26,26,0.06);
+    }
+    .bento-cell--bamboo {
+      background: linear-gradient(135deg, var(--bamboo) 0%, var(--bamboo-dim) 100%);
+      color: var(--sumi-deep);
+    }
+    .bento-cell--stone {
+      background: var(--stone);
+      color: var(--washi);
+    }
+
+    .bento-cell__tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+    .bento-cell__title {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 400;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+    .bento-cell__text {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
+    /* Stat cell */
+    .bento-stat {
+      font-family: 'Cormorant Infant', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .bento-stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* ===== INTERACTIVE FREQUENCY VISUALIZER ===== */
+    .freq-section {
+      padding: 6rem 6vw;
+      background: var(--sumi);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+    }
+    .freq-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--bamboo), transparent);
+      opacity: 0.3;
+    }
+    .freq-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .freq-title {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .freq-sub {
+      color: var(--mist);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin-bottom: 3rem;
+    }
+
+    .freq-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 200px;
+      padding: 0 2rem;
+      margin-bottom: 2rem;
+    }
+    .freq-bar {
+      flex: 1;
+      background: var(--bamboo);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      min-height: 4px;
+    }
+    .freq-bar:hover {
+      background: var(--sakura);
+    }
+    .freq-bar::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .freq-bar:hover::after { opacity: 1; }
+
+    .freq-legend {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      margin-top: 3rem;
+    }
+    .freq-legend span {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .freq-toggle {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .freq-btn {
+      padding: 0.6rem 1.4rem;
+      border: 1px solid rgba(196,169,106,0.3);
+      background: transparent;
+      color: var(--washi);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .freq-btn:hover,
+    .freq-btn.active {
+      background: var(--bamboo);
+      color: var(--sumi-deep);
+      border-color: var(--bamboo);
+    }
+
+    /* ===== PRODUCT SHOWCASE — Floating cards ===== */
+    .products-section {
+      padding: 8rem 6vw;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .product-card {
+      position: relative;
+      border: 1px solid rgba(26,26,26,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--washi);
+      opacity: 0;
+      transform: translateY(50px) rotate(-1deg);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card.visible {
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+    }
+    .product-card:nth-child(2) {
+      transform: translateY(50px) rotate(0.5deg);
+      margin-top: 3rem;
+    }
+    .product-card:nth-child(2).visible {
+      transform: translateY(0) rotate(0);
+    }
+    .product-card:nth-child(3) {
+      transform: translateY(50px) rotate(-0.5deg);
+    }
+    .product-card:nth-child(3).visible {
+      transform: translateY(0) rotate(0);
+    }
+    .product-card__visual {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card__visual--honeycomb {
+      background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-light) 100%);
+    }
+    .product-card__visual--panel {
+      background: linear-gradient(135deg, var(--sumi) 0%, #2a2a2a 100%);
+    }
+    .product-card__visual--curtain {
+      background: linear-gradient(135deg, var(--bamboo-dim) 0%, var(--bamboo) 100%);
+    }
+
+    /* Product visual patterns */
+    .pattern-honeycomb {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 33% 33%, rgba(255,255,255,0.08) 12px, transparent 12px),
+        radial-gradient(circle at 66% 66%, rgba(255,255,255,0.05) 10px, transparent 10px);
+      background-size: 60px 60px;
+    }
+    .pattern-lines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 8px,
+        rgba(255,255,255,0.03) 8px,
+        rgba(255,255,255,0.03) 9px
+      );
+    }
+    .pattern-wave {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    }
+
+    .product-card__nrc {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'Zen Kaku Gothic New', monospace;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+    }
+    .product-card__nrc span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      display: block;
+      font-weight: 300;
+      opacity: 0.6;
+    }
+
+    .product-card__body {
+      padding: 1.8rem;
+    }
+    .product-card__name {
+      font-family: 'Cormorant Infant', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: var(--sumi);
+    }
+    .product-card__desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .product-card__features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .product-card__feat {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(26,26,26,0.1);
+      border-radius: 2px;
+      color: var(--text-mid);
+    }
+
+    /* Hover lift */
+    .product-card:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      transform: translateY(-4px) !important;
+    }
+
+    /* ===== TESTIMONIAL — Minimal quote ===== */
+    .quote-section {
+      padding: 8rem 6vw;
+      background: var(--washi-warm);
+      text-align: center;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: 'Cormorant Infant', serif;
+      font-size: 8rem;
+      line-height: 0.5;
+      color: var(--bamboo);
+      opacity: 0.2;
+      margin-bottom: 2rem;
+    }
+    .quote-text {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--sumi);
+    }
+    .quote-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 8rem 6vw;
+      background: var(--sumi);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::after {
+      content: '音';
+      position: absolute;
+      right: 5vw;
+      bottom: -4rem;
+      font-size: 20rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.015);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .cta-inner {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-title {
+      font-family: 'Cormorant Infant', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .cta-text {
+      font-size: 1rem;
+      color: var(--mist);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--bamboo);
+      color: var(--sumi-deep);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-primary:hover::before { left: 100%; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(196,169,106,0.3);
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border: 1px solid rgba(196,169,106,0.3);
+      color: var(--washi);
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--bamboo);
+      color: var(--bamboo);
+    }
+
+    /* ===== GRAIN OVERLAY ===== */
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .zen-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .zen-hero__left {
+        padding: 8rem 2rem 3rem;
+      }
+      .zen-hero__right {
+        min-height: 50vh;
+      }
+      .zen-hero__vertical { display: none; }
+      .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .bento-cell--wide { grid-column: span 6; }
+      .bento-cell--tall { grid-column: span 6; grid-row: span 2; }
+      .bento-cell--sq { grid-column: span 6; }
+      .bento-cell--rect { grid-column: span 6; }
+      .bento-cell--small { grid-column: span 3; }
+      .bento-cell--full { grid-column: span 6; }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-card:nth-child(2) { margin-top: 0; }
+      .freq-bars { height: 120px; }
+    }
+
+    @media (max-width: 600px) {
+      .bento-cell--small { grid-column: span 6; }
+      .bento-section, .products-section { padding: 4rem 1.2rem; }
+      .freq-section { padding: 4rem 1.2rem; }
+      .cta-section { padding: 4rem 1.2rem; }
+      .quote-section { padding: 4rem 1.2rem; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="lp-acoustic">
+  <div class="grain"></div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html" class="logo">iSeekBlinds</a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../products.html">Products</a>
+          <a href="../gallery.html">Gallery</a>
+          <a href="index.html">Ideas</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../free-measure.html" class="nav-cta">Free Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="zen-hero">
+    <div class="zen-hero__left">
+      <div class="zen-hero__tag reveal">Sound · Light · Silence</div>
+      <div class="ink-line" id="inkLine"></div>
+      <h1 class="zen-hero__title reveal">Where <em>sound</em><br>meets stillness</h1>
+      <p class="zen-hero__sub reveal">Acoustic window treatments designed for musicians, producers, and anyone who believes silence is not the absence of sound — it's the presence of intention.</p>
+      <div class="zen-hero__vertical" id="verticalText">音と光の調和</div>
+    </div>
+    <div class="zen-hero__right">
+      <canvas class="soundwave-canvas" id="soundwaveCanvas"></canvas>
+      <div class="zen-hero__right-text">
+        <div class="db-display" id="dbDisplay">-32</div>
+        <div class="db-label" id="dbLabel">dB reduction achievable</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENTO GRID: Why Acoustic Matters ===== -->
+  <section class="bento-section">
+    <div class="section-tag reveal">The Problem</div>
+    <h2 class="section-title reveal">Your windows are the weakest<br>link in your sound chain</h2>
+
+    <div class="bento-grid">
+      <!-- Cell 1: Wide dark — main message -->
+      <div class="bento-cell bento-cell--wide bento-cell--dark" style="transition-delay: 0.1s">
+        <div class="bento-cell__tag">The reality</div>
+        <div class="bento-cell__title">Standard glass transmits 75% of external noise directly into your space</div>
+        <div class="bento-cell__text" style="margin-top: 1rem;">Even a perfectly treated room with $50,000 of acoustic panels is compromised by untreated windows. The glass vibrates, conducts, and resonates — undoing your careful work.</div>
+      </div>
+
+      <!-- Cell 2: Tall stat -->
+      <div class="bento-cell bento-cell--tall bento-cell--bamboo" style="transition-delay: 0.2s; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div class="bento-stat">73%</div>
+        <div class="bento-stat-label">of home studios report<br>window noise bleed</div>
+      </div>
+
+      <!-- Cell 3: Square paper -->
+      <div class="bento-cell bento-cell--sq bento-cell--paper" style="transition-delay: 0.15s">
+        <div class="bento-cell__tag">Reflection</div>
+        <div class="bento-cell__title">Glass creates flutter echo</div>
+        <div class="bento-cell__text">Hard, flat window surfaces bounce sound back into the room, creating standing waves and flutter echoes that muddy your mix.</div>
+      </div>
+
+      <!-- Cell 4: Square indigo -->
+      <div class="bento-cell bento-cell--sq bento-cell--indigo" style="transition-delay: 0.25s">
+        <div class="bento-cell__tag">Light vs Sound</div>
+        <div class="bento-cell__title">The dual dilemma</div>
+        <div class="bento-cell__text">Musicians need darkness for focus and recording, but also natural light for wellbeing. Our blinds solve both — without compromise.</div>
+      </div>
+
+      <!-- Cell 5: Small stat -->
+      <div class="bento-cell bento-cell--small bento-cell--dark" style="transition-delay: 0.3s; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div class="bento-stat" style="font-size: clamp(2.5rem,5vw,4rem);">STC 45+</div>
+        <div class="bento-stat-label">Sound Transmission<br>Class Rating</div>
+      </div>
+
+      <!-- Cell 6: Small stone -->
+      <div class="bento-cell bento-cell--small bento-cell--stone" style="transition-delay: 0.35s; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div class="bento-stat" style="font-size: clamp(2.5rem,5vw,4rem);">NRC .85</div>
+        <div class="bento-stat-label">Noise Reduction<br>Coefficient</div>
+      </div>
+
+      <!-- Cell 7: Rect paper -->
+      <div class="bento-cell bento-cell--rect bento-cell--paper" style="transition-delay: 0.2s">
+        <div class="bento-cell__tag">Frequency range</div>
+        <div class="bento-cell__title">Effective across the full spectrum</div>
+        <div class="bento-cell__text">From 125Hz bass rumble to 4000Hz high-frequency bleed, our acoustic treatments absorb consistently across the ranges that matter for music.</div>
+      </div>
+
+      <!-- Cell 8: Small bamboo -->
+      <div class="bento-cell bento-cell--small bento-cell--bamboo" style="transition-delay: 0.4s; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div class="bento-stat" style="font-size: clamp(2rem,4vw,3rem);">100%</div>
+        <div class="bento-stat-label">Blackout<br>Capability</div>
+      </div>
+
+      <!-- Cell 9: Small dark -->
+      <div class="bento-cell bento-cell--small bento-cell--dark" style="transition-delay: 0.45s; display:flex; flex-direction:column; justify-content:center;">
+        <div class="bento-cell__tag">Custom fit</div>
+        <div class="bento-cell__title">Every window is different</div>
+        <div class="bento-cell__text">Made to measure, sealed edges, no gaps.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE FREQUENCY SECTION ===== -->
+  <section class="freq-section">
+    <div class="freq-inner">
+      <div class="section-tag reveal" style="color: var(--bamboo);">Interactive</div>
+      <h2 class="freq-title reveal">See how our blinds perform</h2>
+      <p class="freq-sub reveal">Toggle between blind types to see absorption performance across frequency bands. Higher bars = more sound absorbed.</p>
+
+      <div class="freq-bars" id="freqBars"></div>
+      <div class="freq-legend">
+        <span>125 Hz</span>
+        <span>250 Hz</span>
+        <span>500 Hz</span>
+        <span>1000 Hz</span>
+        <span>2000 Hz</span>
+        <span>4000 Hz</span>
+      </div>
+
+      <div class="freq-toggle">
+        <button class="freq-btn active" data-type="honeycomb">Honeycomb Cellular</button>
+        <button class="freq-btn" data-type="panel">Acoustic Panel Blinds</button>
+        <button class="freq-btn" data-type="curtain">Heavy Acoustic Curtains</button>
+        <button class="freq-btn" data-type="standard">Standard Roller (comparison)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT SHOWCASE ===== -->
+  <section class="products-section">
+    <div class="section-tag reveal">Solutions</div>
+    <h2 class="section-title reveal">Three paths to silence</h2>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card__visual product-card__visual--honeycomb">
+          <div class="pattern-honeycomb"></div>
+          <div class="product-card__nrc">0.85<span>NRC rating</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Honeycomb Cellular</h3>
+          <p class="product-card__desc">Double-cell construction traps air in hexagonal pockets, creating a natural sound barrier. The gold standard for studio windows — absorbs mid and high frequencies while the sealed edges block bass leakage.</p>
+          <div class="product-card__features">
+            <span class="product-card__feat">Double Cell</span>
+            <span class="product-card__feat">100% Blackout</span>
+            <span class="product-card__feat">Thermal</span>
+            <span class="product-card__feat">Sealed Edges</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__visual product-card__visual--panel">
+          <div class="pattern-lines"></div>
+          <div class="product-card__nrc">0.75<span>NRC rating</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Acoustic Panel Blinds</h3>
+          <p class="product-card__desc">Rigid panels with acoustic foam core, wrapped in fabric. Mount flush to the window frame for a clean, professional look. Ideal for control rooms where aesthetics matter as much as acoustics.</p>
+          <div class="product-card__features">
+            <span class="product-card__feat">Foam Core</span>
+            <span class="product-card__feat">Fabric Wrap</span>
+            <span class="product-card__feat">Flush Mount</span>
+            <span class="product-card__feat">Removable</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__visual product-card__visual--curtain">
+          <div class="pattern-wave"></div>
+          <div class="product-card__nrc">0.70<span>NRC rating</span></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">Heavy Acoustic Curtains</h3>
+          <p class="product-card__desc">Multi-layered curtains with mass-loaded vinyl core. Draw them closed for recording, open for natural light during breaks. The most flexible option for rooms that serve dual purposes.</p>
+          <div class="product-card__features">
+            <span class="product-card__feat">MLV Core</span>
+            <span class="product-card__feat">Triple Layer</span>
+            <span class="product-card__feat">Adjustable</span>
+            <span class="product-card__feat">Washable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="quote-section">
+    <div class="quote-mark reveal">"</div>
+    <blockquote class="quote-text reveal">I spent months treating my walls and ceiling, then realised the window was letting in more noise than everything else combined. The honeycomb blinds from iSeekBlinds dropped my room noise floor by 12dB. That's massive.</blockquote>
+    <div class="quote-author reveal">Marcus T. — Home Producer, Brunswick</div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="section-tag reveal" style="color: var(--bamboo);">Next Step</div>
+      <h2 class="cta-title reveal">Free acoustic<br>window assessment</h2>
+      <p class="cta-text reveal">We'll visit your space, measure your windows, assess your acoustic needs, and recommend the right treatment. No obligation, no pressure — just expertise from people who understand sound.</p>
+      <div class="cta-buttons reveal">
+        <a href="../free-measure.html" class="btn-primary">Book Free Assessment</a>
+        <a href="../contact.html" class="btn-secondary">Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>iSeekBlinds</h4>
+          <p>Melbourne's trusted window furnishing specialists. Quality blinds, shutters, and curtains with free measure and quote.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="../products.html">All Products</a></li>
+            <li><a href="../roller-blinds.html">Roller Blinds</a></li>
+            <li><a href="../venetian-blinds.html">Venetian Blinds</a></li>
+            <li><a href="../curtains.html">Curtains</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../gallery.html">Gallery</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../free-measure.html">Free Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>📞 1300 iSeek</p>
+          <p>✉️ info@iseekblinds.com.au</p>
+          <p>📍 Melbourne, VIC</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== SCROLL REVEAL =====
+    const revealEls = document.querySelectorAll('.reveal, .bento-cell, .product-card, .ink-line, .zen-hero__vertical, .db-display, .db-label');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ===== SOUNDWAVE CANVAS =====
+    const canvas = document.getElementById('soundwaveCanvas');
+    const ctx = canvas.getContext('2d');
+    let animFrame;
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let phase = 0;
+    function drawWave() {
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // Multiple sine waves with different frequencies
+      const waves = [
+        { amp: 30, freq: 0.008, speed: 0.015, color: 'rgba(196,169,106,0.08)' },
+        { amp: 20, freq: 0.012, speed: 0.02, color: 'rgba(196,169,106,0.05)' },
+        { amp: 15, freq: 0.018, speed: 0.01, color: 'rgba(196,169,106,0.04)' },
+        { amp: 40, freq: 0.005, speed: 0.008, color: 'rgba(45,58,92,0.1)' },
+      ];
+
+      waves.forEach(wave => {
+        ctx.beginPath();
+        ctx.moveTo(0, h / 2);
+        for (let x = 0; x < w; x++) {
+          const y = h / 2 + Math.sin(x * wave.freq + phase * wave.speed * 60) * wave.amp;
+          ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = wave.color;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      });
+
+      // Subtle vertical bars (waveform feel)
+      for (let x = 0; x < w; x += 6) {
+        const barH = Math.abs(Math.sin(x * 0.01 + phase * 0.8)) * 60 + 5;
+        const alpha = 0.02 + Math.abs(Math.sin(x * 0.007 + phase * 0.5)) * 0.03;
+        ctx.fillStyle = `rgba(196,169,106,${alpha})`;
+        ctx.fillRect(x, h / 2 - barH / 2, 2, barH);
+      }
+
+      phase += 0.016;
+      animFrame = requestAnimationFrame(drawWave);
+    }
+    drawWave();
+
+    // ===== FREQUENCY BARS =====
+    const freqData = {
+      honeycomb: [0.45, 0.65, 0.85, 0.90, 0.88, 0.82],
+      panel:     [0.35, 0.55, 0.75, 0.80, 0.78, 0.70],
+      curtain:   [0.25, 0.45, 0.70, 0.75, 0.72, 0.65],
+      standard:  [0.10, 0.15, 0.20, 0.22, 0.18, 0.15],
+    };
+    const freqLabels = ['125Hz', '250Hz', '500Hz', '1kHz', '2kHz', '4kHz'];
+    const barsContainer = document.getElementById('freqBars');
+
+    // Create bars
+    freqLabels.forEach((label, i) => {
+      const bar = document.createElement('div');
+      bar.className = 'freq-bar';
+      bar.setAttribute('data-label', label);
+      bar.style.height = '4px';
+      barsContainer.appendChild(bar);
+    });
+
+    function updateBars(type) {
+      const data = freqData[type];
+      const bars = barsContainer.querySelectorAll('.freq-bar');
+      bars.forEach((bar, i) => {
+        bar.style.height = (data[i] * 100) + '%';
+      });
+    }
+
+    // Init
+    updateBars('honeycomb');
+
+    // Toggle buttons
+    document.querySelectorAll('.freq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updateBars(btn.dataset.type);
+      });
+    });
+
+    // ===== dB COUNTER ANIMATION =====
+    const dbEl = document.getElementById('dbDisplay');
+    let dbAnimated = false;
+    const dbObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !dbAnimated) {
+          dbAnimated = true;
+          let val = 0;
+          const target = -32;
+          const step = () => {
+            val -= 1;
+            dbEl.textContent = val;
+            if (val > target) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+      });
+    }, { threshold: 0.5 });
+    dbObs.observe(dbEl);
+  </script>
+</body>
+</html>
