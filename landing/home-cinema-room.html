@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Cinema Blinds | Total Blackout for the Perfect Screen | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Purpose-built blackout blinds for home cinemas and media rooms. Zero light leakage, acoustic dampening, motorised control. Melbourne specialists with Australia-wide delivery.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hc-black: #0a0a0a;
+      --hc-deep: #111111;
+      --hc-charcoal: #1a1a1a;
+      --hc-amber: #e8a448;
+      --hc-amber-dim: #c4863a;
+      --hc-cream: #f0ebe3;
+      --hc-velvet: #8b2020;
+      --hc-smoke: #2a2a2a;
+      --hc-silver: #888888;
+      --hc-font-display: 'Bebas Neue', sans-serif;
+      --hc-font-body: 'Libre Baskerville', Georgia, serif;
+    }
+
+    .lp-hc { background: var(--hc-black); color: var(--hc-cream); font-family: var(--hc-font-body); overflow-x: hidden; }
+    .lp-hc * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== HEADER OVERRIDES ===== */
+    .lp-hc .header { background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--hc-smoke); position: fixed; top: 0; left: 0; right: 0; z-index: 300; backdrop-filter: blur(12px); transition: transform 0.4s ease; }
+    .lp-hc .header.hc-hidden { transform: translateY(-100%); }
+    .lp-hc .header .logo-i { color: var(--hc-amber); }
+    .lp-hc .header .logo-seek, .lp-hc .header .logo-blinds { color: var(--hc-cream); }
+    .lp-hc .header .nav a { color: var(--hc-silver); font-family: var(--hc-font-body); font-size: 0.75rem; letter-spacing: 0.04em; }
+    .lp-hc .header .nav a:hover { color: var(--hc-amber); }
+    .lp-hc .header .header-phone { color: var(--hc-amber); font-family: var(--hc-font-body); font-weight: 400; font-size: 0.8rem; }
+    .lp-hc .header .btn-primary { background: var(--hc-amber); color: var(--hc-black); border: none; font-family: var(--hc-font-display); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 0; padding: 10px 24px; }
+    .lp-hc .header .btn-primary:hover { background: var(--hc-cream); }
+
+    /* ===== LOADING CURTAIN ===== */
+    .hc-curtain {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hc-curtain-left, .hc-curtain-right {
+      position: absolute; top: 0; bottom: 0; width: 50%;
+      background: var(--hc-velvet);
+      background-image: repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 6px);
+      transition: transform 1.4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .hc-curtain-left { left: 0; transform-origin: left; }
+    .hc-curtain-right { right: 0; transform-origin: right; }
+    .hc-curtain.hc-open .hc-curtain-left { transform: translateX(-100%); }
+    .hc-curtain.hc-open .hc-curtain-right { transform: translateX(100%); }
+    .hc-curtain-text {
+      position: relative; z-index: 2;
+      font-family: var(--hc-font-display);
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      letter-spacing: 0.3em;
+      color: var(--hc-amber);
+      text-transform: uppercase;
+      opacity: 1;
+      transition: opacity 0.6s ease 0.2s;
+    }
+    .hc-curtain.hc-open .hc-curtain-text { opacity: 0; transition-delay: 0s; }
+
+    /* ===== FILM GRAIN ===== */
+    .hc-grain {
+      position: fixed; inset: 0; pointer-events: none; z-index: 250;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    /* ===== CUSTOM CURSOR — SPOTLIGHT ===== */
+    .hc-cursor {
+      position: fixed; width: 40px; height: 40px;
+      border: 2px solid var(--hc-amber);
+      border-radius: 50%;
+      pointer-events: none; z-index: 280;
+      transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.1s;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+    }
+    .hc-cursor.hc-cursor-hover { width: 60px; height: 60px; border-color: var(--hc-cream); }
+    @media (hover: none) { .hc-cursor { display: none; } }
+
+    /* ===== WIDESCREEN FRAME ===== */
+    .hc-frame {
+      position: relative;
+      aspect-ratio: 2.39 / 1;
+      overflow: hidden;
+      background: var(--hc-black);
+      border: 2px solid var(--hc-smoke);
+    }
+    .hc-frame::before, .hc-frame::after {
+      content: ''; position: absolute; left: 0; right: 0; height: 8%; z-index: 2;
+      background: var(--hc-black);
+    }
+    .hc-frame::before { top: 0; }
+    .hc-frame::after { bottom: 0; }
+
+    /* ===== HERO — CINEMATIC OPENING ===== */
+    .hc-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 140px 40px 80px;
+      text-align: center;
+    }
+    .hc-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(232,164,72,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hc-hero-tagline {
+      font-family: var(--hc-font-body);
+      font-style: italic;
+      font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+      color: var(--hc-amber);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      opacity: 0; transform: translateY(20px);
+      animation: hcFadeUp 1s ease forwards 1.8s;
+    }
+    .hc-hero-title {
+      font-family: var(--hc-font-display);
+      font-size: clamp(4rem, 12vw, 11rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      color: var(--hc-cream);
+      text-transform: uppercase;
+      position: relative;
+      opacity: 0; transform: translateY(40px);
+      animation: hcFadeUp 1.2s ease forwards 2.1s;
+    }
+    .hc-hero-title span {
+      display: block;
+      font-size: 0.35em;
+      letter-spacing: 0.35em;
+      color: var(--hc-amber);
+      margin-top: 12px;
+    }
+    .hc-hero-line {
+      width: 60px; height: 1px;
+      background: var(--hc-amber);
+      margin: 40px auto 30px;
+      opacity: 0; transform: scaleX(0);
+      animation: hcLineGrow 0.8s ease forwards 2.6s;
+    }
+    .hc-hero-sub {
+      font-family: var(--hc-font-body);
+      font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+      line-height: 1.8;
+      color: var(--hc-silver);
+      max-width: 540px;
+      opacity: 0; transform: translateY(20px);
+      animation: hcFadeUp 1s ease forwards 2.9s;
+    }
+    .hc-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: hcFadeUp 1s ease forwards 3.4s;
+    }
+    .hc-scroll-hint span {
+      font-family: var(--hc-font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--hc-silver);
+      text-transform: uppercase;
+    }
+    .hc-scroll-arrow {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--hc-amber), transparent);
+      animation: hcPulseDown 2s ease infinite 3.8s;
+    }
+
+    @keyframes hcFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes hcLineGrow {
+      to { opacity: 1; transform: scaleX(1); }
+    }
+    @keyframes hcPulseDown {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.5); }
+    }
+
+    /* ===== SCENE SECTIONS — VISUAL-FIRST ===== */
+    .hc-scene {
+      position: relative;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    /* Scene 1: The Problem — Light Leaks */
+    .hc-scene-light {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 40px;
+      position: relative;
+    }
+    .hc-scene-light::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 30% 80% at 0% 50%, rgba(255,255,255,0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 20% 60% at 100% 30%, rgba(255,255,255,0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 20% at 60% 0%, rgba(255,255,255,0.025) 0%, transparent 50%);
+      pointer-events: none;
+      animation: hcLightLeak 8s ease-in-out infinite alternate;
+    }
+    @keyframes hcLightLeak {
+      0% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+    .hc-leak-content {
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hc-leak-visual {
+      width: 280px; height: 280px;
+      position: relative;
+      border: 1px solid var(--hc-smoke);
+    }
+    .hc-leak-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--hc-charcoal);
+    }
+    .hc-leak-ray {
+      position: absolute;
+      background: linear-gradient(90deg, rgba(255,255,200,0.3), transparent);
+      height: 2px;
+      transform-origin: left center;
+      animation: hcRayFlicker 4s ease-in-out infinite alternate;
+    }
+    .hc-leak-ray:nth-child(1) { top: 20%; left: 0; width: 90%; transform: rotate(5deg); animation-delay: 0s; }
+    .hc-leak-ray:nth-child(2) { top: 40%; left: 0; width: 70%; transform: rotate(-3deg); animation-delay: 1s; }
+    .hc-leak-ray:nth-child(3) { top: 65%; left: 0; width: 85%; transform: rotate(2deg); animation-delay: 0.5s; }
+    .hc-leak-ray:nth-child(4) { top: 80%; left: 0; width: 60%; transform: rotate(-6deg); animation-delay: 1.5s; }
+    @keyframes hcRayFlicker {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+    .hc-leak-text h2 {
+      font-family: var(--hc-font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .hc-leak-text h2 em {
+      font-family: var(--hc-font-body);
+      font-style: italic;
+      font-size: 0.5em;
+      color: var(--hc-amber);
+      display: block;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+    .hc-leak-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--hc-silver);
+      max-width: 380px;
+    }
+
+    /* Scene 2: Cinematic Film Reel — Horizontal Scroll */
+    .hc-reel-section {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hc-reel-label {
+      font-family: var(--hc-font-display);
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.4em;
+      color: var(--hc-amber);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hc-reel-heading {
+      font-family: var(--hc-font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 60px;
+    }
+    .hc-reel-track {
+      display: flex;
+      gap: 0;
+      animation: hcReelScroll 40s linear infinite;
+      width: max-content;
+    }
+    .hc-reel-frame {
+      flex-shrink: 0;
+      width: 420px;
+      position: relative;
+      border-left: 3px solid var(--hc-smoke);
+    }
+    .hc-reel-frame-inner {
+      aspect-ratio: 16/9;
+      background: var(--hc-charcoal);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hc-reel-frame-inner::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(10,10,10,0.8));
+      z-index: 2;
+    }
+    .hc-reel-icon {
+      font-size: 3.5rem;
+      filter: grayscale(0.3);
+      position: relative; z-index: 1;
+    }
+    .hc-reel-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 16px 20px;
+      z-index: 3;
+    }
+    .hc-reel-caption h3 {
+      font-family: var(--hc-font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      color: var(--hc-cream);
+      margin-bottom: 4px;
+    }
+    .hc-reel-caption p {
+      font-size: 0.75rem;
+      color: var(--hc-silver);
+      line-height: 1.5;
+    }
+    .hc-sprocket {
+      height: 24px;
+      background: var(--hc-deep);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+    }
+    .hc-sprocket-hole {
+      width: 14px; height: 10px;
+      border-radius: 2px;
+      background: var(--hc-black);
+      border: 1px solid var(--hc-smoke);
+      flex-shrink: 0;
+      margin: 0 16px;
+    }
+    @keyframes hcReelScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Scene 3: The Specs — Floating Cards */
+    .hc-specs {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px;
+      position: relative;
+    }
+    .hc-specs::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(232,164,72,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hc-specs-label {
+      font-family: var(--hc-font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--hc-amber);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hc-specs-title {
+      font-family: var(--hc-font-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      letter-spacing: 0.05em;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .hc-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .hc-spec-card {
+      background: var(--hc-deep);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), background 0.4s;
+      cursor: default;
+    }
+    .hc-spec-card:hover {
+      transform: translateY(-4px);
+      background: var(--hc-charcoal);
+    }
+    .hc-spec-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--hc-amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
+    }
+    .hc-spec-card:hover::before { transform: scaleX(1); }
+    .hc-spec-num {
+      font-family: var(--hc-font-display);
+      font-size: 3.5rem;
+      color: var(--hc-amber);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .hc-spec-unit {
+      font-family: var(--hc-font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--hc-silver);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hc-spec-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--hc-silver);
+    }
+    .hc-spec-card.hc-spec-wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .hc-spec-vis {
+      height: 120px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      padding-bottom: 4px;
+    }
+    .hc-spec-bar {
+      flex: 1;
+      background: var(--hc-smoke);
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      transition: height 1.2s cubic-bezier(0.23,1,0.32,1);
+    }
+    .hc-spec-bar.hc-active { background: var(--hc-amber); }
+
+    /* Scene 4: Products Showcase — Asymmetric Offset */
+    .hc-products {
+      padding: 120px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hc-products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 80px;
+      gap: 40px;
+    }
+    .hc-products-title {
+      font-family: var(--hc-font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .hc-products-sub {
+      font-size: 0.85rem;
+      color: var(--hc-silver);
+      max-width: 300px;
+      text-align: right;
+      line-height: 1.7;
+    }
+    .hc-product-row {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+    .hc-product-row:nth-child(even) {
+      grid-template-columns: 0.7fr 1.3fr;
+    }
+    .hc-product-card {
+      background: var(--hc-deep);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+    }
+    .hc-product-card:hover { transform: scale(0.98); }
+    .hc-product-visual {
+      aspect-ratio: 16/9;
+      background: var(--hc-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hc-product-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, var(--hc-deep) 0%, transparent 50%);
+    }
+    .hc-product-emoji {
+      font-size: 4rem;
+      position: relative; z-index: 1;
+    }
+    .hc-product-info {
+      padding: 32px;
+    }
+    .hc-product-name {
+      font-family: var(--hc-font-display);
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .hc-product-detail {
+      font-size: 0.8rem;
+      color: var(--hc-silver);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .hc-product-tag {
+      display: inline-block;
+      font-family: var(--hc-font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      padding: 6px 14px;
+      border: 1px solid var(--hc-amber);
+      color: var(--hc-amber);
+      text-transform: uppercase;
+    }
+    .hc-product-meta {
+      background: var(--hc-deep);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+    .hc-product-meta-stat {
+      margin-bottom: 24px;
+    }
+    .hc-product-meta-stat:last-child { margin-bottom: 0; }
+    .hc-product-meta-val {
+      font-family: var(--hc-font-display);
+      font-size: 2.2rem;
+      color: var(--hc-amber);
+      line-height: 1;
+    }
+    .hc-product-meta-label {
+      font-size: 0.7rem;
+      color: var(--hc-silver);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* Scene 5: Immersive Before/After — Light Toggle */
+    .hc-toggle-section {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px;
+      position: relative;
+    }
+    .hc-toggle-label {
+      font-family: var(--hc-font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--hc-amber);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .hc-toggle-screen {
+      max-width: 800px;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--hc-charcoal);
+      border: 1px solid var(--hc-smoke);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.4s;
+    }
+    .hc-toggle-screen:hover { border-color: var(--hc-amber); }
+    .hc-toggle-layer {
+      position: absolute; inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease;
+    }
+    .hc-toggle-layer-bright {
+      background: 
+        radial-gradient(ellipse 30% 80% at 5% 50%, rgba(255,255,200,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 20% 60% at 95% 30%, rgba(255,255,200,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 30% at 50% 0%, rgba(255,255,200,0.08) 0%, transparent 50%),
+        var(--hc-charcoal);
+    }
+    .hc-toggle-layer-dark {
+      background: var(--hc-black);
+      opacity: 0;
+    }
+    .hc-toggle-screen.hc-dark .hc-toggle-layer-dark { opacity: 1; }
+    .hc-toggle-screen.hc-dark .hc-toggle-layer-bright { opacity: 0; }
+    .hc-toggle-screen-inner {
+      width: 60%;
+      aspect-ratio: 16/9;
+      border: 2px solid var(--hc-smoke);
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.8s, border-color 0.8s;
+    }
+    .hc-toggle-screen.hc-dark .hc-toggle-screen-inner {
+      border-color: var(--hc-amber-dim);
+      box-shadow: 0 0 80px rgba(232,164,72,0.15), 0 0 200px rgba(232,164,72,0.05);
+    }
+    .hc-toggle-screen-text {
+      font-family: var(--hc-font-display);
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      letter-spacing: 0.15em;
+      color: var(--hc-silver);
+      transition: color 0.8s;
+    }
+    .hc-toggle-screen.hc-dark .hc-toggle-screen-text { color: var(--hc-cream); }
+    .hc-toggle-hint {
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--hc-silver);
+      font-style: italic;
+      transition: opacity 0.4s;
+    }
+    .hc-toggle-hint span {
+      color: var(--hc-amber);
+      font-style: normal;
+    }
+    .hc-toggle-meter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .hc-toggle-meter-label {
+      font-family: var(--hc-font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--hc-silver);
+      text-transform: uppercase;
+      width: 80px;
+    }
+    .hc-toggle-meter-bar {
+      flex: 1;
+      max-width: 300px;
+      height: 4px;
+      background: var(--hc-smoke);
+      position: relative;
+      overflow: hidden;
+    }
+    .hc-toggle-meter-fill {
+      height: 100%;
+      background: var(--hc-amber);
+      transition: width 0.8s cubic-bezier(0.23,1,0.32,1);
+      width: 85%;
+    }
+    .hc-toggle-screen.hc-dark ~ .hc-toggle-meter .hc-toggle-meter-fill { width: 2%; }
+    .hc-toggle-meter-val {
+      font-family: var(--hc-font-display);
+      font-size: 0.9rem;
+      color: var(--hc-amber);
+      width: 50px;
+      text-align: right;
+      transition: color 0.4s;
+    }
+
+    /* Scene 6: Testimonial — Single Cinematic Quote */
+    .hc-quote {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px;
+      position: relative;
+      text-align: center;
+    }
+    .hc-quote::before {
+      content: '"';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      font-family: var(--hc-font-body);
+      font-size: clamp(15rem, 30vw, 25rem);
+      color: rgba(232,164,72,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hc-quote-text {
+      font-family: var(--hc-font-body);
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+      line-height: 1.8;
+      max-width: 700px;
+      color: var(--hc-cream);
+      position: relative; z-index: 1;
+    }
+    .hc-quote-author {
+      margin-top: 32px;
+      font-family: var(--hc-font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--hc-amber);
+      text-transform: uppercase;
+    }
+    .hc-quote-role {
+      font-family: var(--hc-font-body);
+      font-size: 0.75rem;
+      color: var(--hc-silver);
+      margin-top: 4px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-style: italic;
+    }
+
+    /* Scene 7: CTA — Final Act */
+    .hc-cta {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px;
+      position: relative;
+      text-align: center;
+    }
+    .hc-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 60%, rgba(232,164,72,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hc-cta-title {
+      font-family: var(--hc-font-display);
+      font-size: clamp(3rem, 8vw, 7rem);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      position: relative; z-index: 1;
+    }
+    .hc-cta-title span {
+      color: var(--hc-amber);
+    }
+    .hc-cta-sub {
+      font-size: 0.95rem;
+      color: var(--hc-silver);
+      max-width: 480px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+      position: relative; z-index: 1;
+    }
+    .hc-cta-buttons {
+      display: flex; gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .hc-btn {
+      display: inline-block;
+      font-family: var(--hc-font-display);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    .hc-btn-primary {
+      background: var(--hc-amber);
+      color: var(--hc-black);
+    }
+    .hc-btn-primary:hover {
+      background: var(--hc-cream);
+      transform: translateY(-2px);
+    }
+    .hc-btn-ghost {
+      background: transparent;
+      color: var(--hc-cream);
+      border: 1px solid var(--hc-smoke);
+    }
+    .hc-btn-ghost:hover {
+      border-color: var(--hc-amber);
+      color: var(--hc-amber);
+      transform: translateY(-2px);
+    }
+    .hc-cta-trust {
+      margin-top: 40px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hc-cta-trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hc-cta-trust-val {
+      font-family: var(--hc-font-display);
+      font-size: 1.5rem;
+      color: var(--hc-amber);
+    }
+    .hc-cta-trust-label {
+      font-size: 0.65rem;
+      color: var(--hc-silver);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== FOOTER OVERRIDES ===== */
+    .lp-hc .footer { background: var(--hc-black); border-top: 1px solid var(--hc-smoke); color: var(--hc-silver); }
+    .lp-hc .footer h4 { color: var(--hc-amber); font-family: var(--hc-font-display); letter-spacing: 0.1em; }
+    .lp-hc .footer a { color: var(--hc-silver); }
+    .lp-hc .footer a:hover { color: var(--hc-amber); }
+    .lp-hc .footer-bottom { background: var(--hc-deep); color: var(--hc-silver); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .hc-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23,1,0.32,1);
+    }
+    .hc-reveal.hc-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hc-reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23,1,0.32,1); }
+    .hc-reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23,1,0.32,1); }
+    .hc-reveal-left.hc-visible, .hc-reveal-right.hc-visible { opacity: 1; transform: translateX(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hc-hero { padding: 120px 24px 80px; }
+      .hc-leak-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hc-leak-visual { width: 200px; height: 200px; margin: 0 auto; }
+      .hc-leak-text p { max-width: 100%; }
+      .hc-specs-grid { grid-template-columns: 1fr; }
+      .hc-spec-card.hc-spec-wide { grid-column: span 1; grid-template-columns: 1fr; }
+      .hc-product-row, .hc-product-row:nth-child(even) { grid-template-columns: 1fr; }
+      .hc-products-header { flex-direction: column; align-items: flex-start; }
+      .hc-products-sub { text-align: left; }
+      .hc-reel-frame { width: 300px; }
+      .hc-toggle-screen-inner { width: 80%; }
+      .hc-cta-buttons { flex-direction: column; }
+      .hc-btn { width: 100%; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .hc-curtain { display: none; }
+    }
+  </style>
+</head>
+<body class="lp-hc">
+
+<!-- Loading Curtain -->
+<div class="hc-curtain" id="hcCurtain">
+  <div class="hc-curtain-left"></div>
+  <div class="hc-curtain-right"></div>
+  <div class="hc-curtain-text">Now Showing</div>
+</div>
+
+<!-- Custom Cursor -->
+<div class="hc-cursor" id="hcCursor"></div>
+
+<!-- Film Grain Overlay -->
+<div class="hc-grain"></div>
+
+<header class="header" id="hcHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html#products">Products</a>
+      <a href="../landing/">Solutions</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+      <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+    </div>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ===== HERO — CINEMATIC OPENING ===== -->
+<section class="hc-hero">
+  <div class="hc-hero-tagline">iSeekBlinds Melbourne presents</div>
+  <h1 class="hc-hero-title">
+    HOME<br>CINEMA
+    <span>Total Blackout Blinds for the Perfect Picture</span>
+  </h1>
+  <div class="hc-hero-line"></div>
+  <p class="hc-hero-sub">
+    Every great screening starts with darkness. We engineer complete light elimination so your projector delivers cinema-grade contrast from the first frame to the credits.
+  </p>
+  <div class="hc-scroll-hint">
+    <span>Scroll to Begin</span>
+    <div class="hc-scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ===== SCENE 1: THE PROBLEM — LIGHT LEAKS ===== -->
+<section class="hc-scene hc-scene-light">
+  <div class="hc-leak-content">
+    <div class="hc-leak-visual hc-reveal-left">
+      <div class="hc-leak-ray"></div>
+      <div class="hc-leak-ray"></div>
+      <div class="hc-leak-ray"></div>
+      <div class="hc-leak-ray"></div>
+    </div>
+    <div class="hc-leak-text hc-reveal-right">
+      <h2><em>The enemy of every screen</em>LIGHT<br>LEAKAGE</h2>
+      <p>Even a sliver of ambient light destroys contrast ratios, washes out colours, and turns your $10,000 projector into a $500 TV. Standard curtains aren't enough. You need purpose-built blackout engineered for zero light leakage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 2: FILM REEL — PRODUCT SHOWCASE ===== -->
+<section class="hc-reel-section">
+  <div class="hc-reel-label hc-reveal">Our Collection</div>
+  <h2 class="hc-reel-heading hc-reveal">THE LINEUP</h2>
+
+  <div class="hc-sprocket" aria-hidden="true">
+    <div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div>
+  </div>
+
+  <div style="overflow:hidden;">
+    <div class="hc-reel-track">
+      <!-- Original set -->
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎬</div>
+          <div class="hc-reel-caption">
+            <h3>Blockout Rollers</h3>
+            <p>100% light elimination. Side-channel sealed. The industry standard for serious cinemas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎭</div>
+          <div class="hc-reel-caption">
+            <h3>Velvet Curtains</h3>
+            <p>Triple-lined, floor-puddling luxury. Absorbs sound and light. The Hollywood choice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🏠</div>
+          <div class="hc-reel-caption">
+            <h3>Honeycomb Shades</h3>
+            <p>Double-cell blackout with thermal insulation. Quiet motors, whisper-close operation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">📽️</div>
+          <div class="hc-reel-caption">
+            <h3>Motorised Systems</h3>
+            <p>One-touch scene control. Sync blinds to your projector. Close before the trailers start.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎞️</div>
+          <div class="hc-reel-caption">
+            <h3>Side-Channel Tracks</h3>
+            <p>Precision aluminium rails eliminate edge gaps. No light sneaks past the frame.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🔇</div>
+          <div class="hc-reel-caption">
+            <h3>Acoustic Panels</h3>
+            <p>Blinds that double as sound treatment. Tame reflections, tighten the surround field.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎬</div>
+          <div class="hc-reel-caption">
+            <h3>Blockout Rollers</h3>
+            <p>100% light elimination. Side-channel sealed. The industry standard for serious cinemas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎭</div>
+          <div class="hc-reel-caption">
+            <h3>Velvet Curtains</h3>
+            <p>Triple-lined, floor-puddling luxury. Absorbs sound and light. The Hollywood choice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🏠</div>
+          <div class="hc-reel-caption">
+            <h3>Honeycomb Shades</h3>
+            <p>Double-cell blackout with thermal insulation. Quiet motors, whisper-close operation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">📽️</div>
+          <div class="hc-reel-caption">
+            <h3>Motorised Systems</h3>
+            <p>One-touch scene control. Sync blinds to your projector. Close before the trailers start.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🎞️</div>
+          <div class="hc-reel-caption">
+            <h3>Side-Channel Tracks</h3>
+            <p>Precision aluminium rails eliminate edge gaps. No light sneaks past the frame.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hc-reel-frame">
+        <div class="hc-reel-frame-inner">
+          <div class="hc-reel-icon">🔇</div>
+          <div class="hc-reel-caption">
+            <h3>Acoustic Panels</h3>
+            <p>Blinds that double as sound treatment. Tame reflections, tighten the surround field.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hc-sprocket" aria-hidden="true">
+    <div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div><div class="hc-sprocket-hole"></div>
+  </div>
+</section>
+
+<!-- ===== SCENE 3: PERFORMANCE SPECS ===== -->
+<section class="hc-specs">
+  <div class="hc-specs-label hc-reveal">Performance Data</div>
+  <h2 class="hc-specs-title hc-reveal">BY THE NUMBERS</h2>
+  <div class="hc-specs-grid">
+    <div class="hc-spec-card hc-reveal">
+      <div class="hc-spec-num" data-count="100">0</div>
+      <div class="hc-spec-unit">Percent</div>
+      <div class="hc-spec-desc">Light blockage with side-channel sealed roller systems. Zero leakage, zero compromise.</div>
+    </div>
+    <div class="hc-spec-card hc-reveal">
+      <div class="hc-spec-num" data-count="38">0</div>
+      <div class="hc-spec-unit">Decibels Reduced</div>
+      <div class="hc-spec-desc">Acoustic dampening with triple-lined velvet treatments. Your neighbours won't hear the explosions.</div>
+    </div>
+    <div class="hc-spec-card hc-reveal">
+      <div class="hc-spec-num" data-count="3">0</div>
+      <div class="hc-spec-unit">Second Close</div>
+      <div class="hc-spec-desc">Motorised systems go from fully open to total blackout in under three seconds. Quiet. Smooth.</div>
+    </div>
+    <div class="hc-spec-card hc-spec-wide hc-reveal">
+      <div>
+        <div class="hc-spec-num">ISP</div>
+        <div class="hc-spec-unit">Rated</div>
+        <div class="hc-spec-desc">All cinema blinds meet ISP (International Shade Performance) ratings for light control and thermal efficiency.</div>
+      </div>
+      <div class="hc-spec-vis">
+        <div class="hc-spec-bar" style="height: 30%;"></div>
+        <div class="hc-spec-bar" style="height: 50%;"></div>
+        <div class="hc-spec-bar" style="height: 45%;"></div>
+        <div class="hc-spec-bar hc-active" style="height: 95%;"></div>
+        <div class="hc-spec-bar" style="height: 60%;"></div>
+        <div class="hc-spec-bar" style="height: 40%;"></div>
+        <div class="hc-spec-bar hc-active" style="height: 88%;"></div>
+        <div class="hc-spec-bar" style="height: 35%;"></div>
+      </div>
+    </div>
+    <div class="hc-spec-card hc-reveal">
+      <div class="hc-spec-num">10<span style="font-size:0.5em;color:var(--hc-silver)">yr</span></div>
+      <div class="hc-spec-unit">Warranty</div>
+      <div class="hc-spec-desc">Every cinema-grade blind backed by our decade-long warranty. Motors, fabrics, and tracks included.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 4: FEATURED PRODUCTS ===== -->
+<section class="hc-products">
+  <div class="hc-products-header hc-reveal">
+    <h2 class="hc-products-title">FEATURED<br>SOLUTIONS</h2>
+    <p class="hc-products-sub">Each system engineered for the unique demands of dedicated viewing rooms and multi-use media spaces.</p>
+  </div>
+
+  <div class="hc-product-row hc-reveal">
+    <div class="hc-product-card">
+      <div class="hc-product-visual">
+        <div class="hc-product-emoji">🖤</div>
+      </div>
+      <div class="hc-product-info">
+        <h3 class="hc-product-name">CINEMA BLOCKOUT ROLLER</h3>
+        <p class="hc-product-detail">Our flagship cinema blind. Triple-coated fabric with aluminium side channels creates a light-sealed chamber. Available in matte black, charcoal, and midnight navy.</p>
+        <span class="hc-product-tag">Best Seller</span>
+      </div>
+    </div>
+    <div class="hc-product-meta">
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">100%</div>
+        <div class="hc-product-meta-label">Light Block</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">-28dB</div>
+        <div class="hc-product-meta-label">Sound Reduction</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">Silent</div>
+        <div class="hc-product-meta-label">Motor Operation</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hc-product-row hc-reveal">
+    <div class="hc-product-meta">
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">R3.2</div>
+        <div class="hc-product-meta-label">Thermal Rating</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">-38dB</div>
+        <div class="hc-product-meta-label">Sound Reduction</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">3 Layers</div>
+        <div class="hc-product-meta-label">Fabric Construction</div>
+      </div>
+    </div>
+    <div class="hc-product-card">
+      <div class="hc-product-visual">
+        <div class="hc-product-emoji">🎭</div>
+      </div>
+      <div class="hc-product-info">
+        <h3 class="hc-product-name">ACOUSTIC VELVET CURTAIN</h3>
+        <p class="hc-product-detail">Triple-lined velvet with acoustic wadding. Controls both light and sound for a true theatre experience. Floor-puddling lengths available.</p>
+        <span class="hc-product-tag">Premium Choice</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hc-product-row hc-reveal">
+    <div class="hc-product-card">
+      <div class="hc-product-visual">
+        <div class="hc-product-emoji">🏗️</div>
+      </div>
+      <div class="hc-product-info">
+        <h3 class="hc-product-name">HONEYCOMB BLACKOUT</h3>
+        <p class="hc-product-detail">Double-cell structure traps air for insulation while blocking 100% of light. Motorised with smart-home integration. Ideal for multi-use rooms.</p>
+        <span class="hc-product-tag">Smart Home Ready</span>
+      </div>
+    </div>
+    <div class="hc-product-meta">
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">R4.1</div>
+        <div class="hc-product-meta-label">Thermal Rating</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">Alexa</div>
+        <div class="hc-product-meta-label">Voice Control</div>
+      </div>
+      <div class="hc-product-meta-stat">
+        <div class="hc-product-meta-val">5,000+</div>
+        <div class="hc-product-meta-label">Cycle Life</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENE 5: INTERACTIVE LIGHT TOGGLE ===== -->
+<section class="hc-toggle-section">
+  <div class="hc-toggle-label hc-reveal">Interactive Demo</div>
+  <div class="hc-toggle-screen" id="hcToggle">
+    <div class="hc-toggle-layer hc-toggle-layer-bright">
+      <div class="hc-toggle-screen-inner">
+        <div class="hc-toggle-screen-text">WASHED OUT</div>
+      </div>
+    </div>
+    <div class="hc-toggle-layer hc-toggle-layer-dark">
+      <div class="hc-toggle-screen-inner">
+        <div class="hc-toggle-screen-text">CINEMA GRADE</div>
+      </div>
+    </div>
+  </div>
+  <div class="hc-toggle-hint hc-reveal"><span>Click</span> to toggle blinds</div>
+  <div class="hc-toggle-meter hc-reveal" id="hcMeter">
+    <div class="hc-toggle-meter-label">Ambient Light</div>
+    <div class="hc-toggle-meter-bar">
+      <div class="hc-toggle-meter-fill" id="hcMeterFill"></div>
+    </div>
+    <div class="hc-toggle-meter-val" id="hcMeterVal">850 lx</div>
+  </div>
+</section>
+
+<!-- ===== SCENE 6: TESTIMONIAL ===== -->
+<section class="hc-quote hc-reveal">
+  <p class="hc-quote-text">We spent months getting the projector, the screen, the sound system just right. The blinds were the final piece — and honestly, they made the biggest difference. The first time we closed them and hit play, it looked like a real cinema. Absolute darkness.</p>
+  <div class="hc-quote-author">David & Sarah M.</div>
+  <div class="hc-quote-role">Home cinema build, Toorak — 4K laser projector setup</div>
+</section>
+
+<!-- ===== SCENE 7: FINAL CTA ===== -->
+<section class="hc-cta">
+  <h2 class="hc-cta-title hc-reveal">ROLL THE<br><span>CREDITS</span></h2>
+  <p class="hc-cta-sub hc-reveal">Free in-home consultation. We measure your space, recommend the right system, and install it perfectly. Melbourne metro and surrounding areas.</p>
+  <div class="hc-cta-buttons hc-reveal">
+    <a href="../free-quote.html" class="hc-btn hc-btn-primary">Get a Free Quote</a>
+    <a href="tel:0400000000" class="hc-btn hc-btn-ghost">Call 0400 000 000</a>
+  </div>
+  <div class="hc-cta-trust hc-reveal">
+    <div class="hc-cta-trust-item">
+      <div class="hc-cta-trust-val">500+</div>
+      <div class="hc-cta-trust-label">Cinemas Fitted</div>
+    </div>
+    <div class="hc-cta-trust-item">
+      <div class="hc-cta-trust-val">10yr</div>
+      <div class="hc-cta-trust-label">Full Warranty</div>
+    </div>
+    <div class="hc-cta-trust-item">
+      <div class="hc-cta-trust-val">4.9★</div>
+      <div class="hc-cta-trust-label">Google Rating</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <p>Melbourne's trusted blinds & window furnishings specialists. Custom-made, professionally installed.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <a href="../products/roller-blinds.html">Roller Blinds</a>
+      <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+      <a href="../products/curtains-drapes.html">Curtains & Drapes</a>
+      <a href="../products/shutters.html">Plantation Shutters</a>
+      <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="tel:0400000000">0400 000 000</a>
+      <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a>
+      <p>Melbourne, Victoria<br>Australia</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== CURTAIN OPEN =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('hcCurtain').classList.add('hc-open');
+    setTimeout(() => {
+      document.getElementById('hcCurtain').style.pointerEvents = 'none';
+      setTimeout(() => { document.getElementById('hcCurtain').style.display = 'none'; }, 600);
+    }, 1400);
+  }, 800);
+});
+
+// ===== CUSTOM CURSOR =====
+const cursor = document.getElementById('hcCursor');
+let mx = 0, my = 0, cx = 0, cy = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animCursor() {
+  cx += (mx - cx) * 0.12;
+  cy += (my - cy) * 0.12;
+  cursor.style.left = cx + 'px';
+  cursor.style.top = cy + 'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a, button, .hc-toggle-screen, .hc-spec-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hc-cursor-hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hc-cursor-hover'));
+});
+
+// ===== HEADER HIDE ON SCROLL DOWN =====
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const header = document.getElementById('hcHeader');
+  if (st > lastScroll && st > 100) {
+    header.classList.add('hc-hidden');
+  } else {
+    header.classList.remove('hc-hidden');
+  }
+  lastScroll = st;
+}, { passive: true });
+
+// ===== SCROLL REVEAL =====
+const revealEls = document.querySelectorAll('.hc-reveal, .hc-reveal-left, .hc-reveal-right');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('hc-visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ===== COUNTER ANIMATION =====
+const counters = document.querySelectorAll('[data-count]');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.count);
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 40));
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(interval); }
+        el.textContent = current;
+      }, 30);
+      counterObs.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(el => counterObs.observe(el));
+
+// ===== LIGHT TOGGLE =====
+const toggle = document.getElementById('hcToggle');
+const meterFill = document.getElementById('hcMeterFill');
+const meterVal = document.getElementById('hcMeterVal');
+let isDark = false;
+toggle.addEventListener('click', () => {
+  isDark = !isDark;
+  toggle.classList.toggle('hc-dark', isDark);
+  meterFill.style.width = isDark ? '2%' : '85%';
+  meterVal.textContent = isDark ? '< 1 lx' : '850 lx';
+});
+
+// ===== MOBILE MENU =====
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+if (mobileBtn) {
+  mobileBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+  });
+}
+</script>
+</body>
+</html>
