@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nail Salon & Beauty Studio Blinds | iSeekBlinds</title>
+  <meta name="description" content="Beautiful, practical blinds for nail salons, beauty studios & spas. Control light, maintain privacy, and create the perfect ambience for your beauty business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* === CSS RESET + VARIABLES === */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ns-lavender: #D4B8E0;
+      --ns-pink: #F5C6D0;
+      --ns-mint: #B8E0D2;
+      --ns-cream: #FFF8F0;
+      --ns-charcoal: #3A3238;
+      --ns-peach: #F8D5B8;
+      --ns-rose: #E8A0B4;
+      --ns-lilac: #C4A8D8;
+      --ns-sage: #A8C8B0;
+      --ns-gold: #D4A86C;
+      --ns-warm-white: #FFFDF8;
+      --ns-text: #2E2630;
+      --ns-text-light: #6B5E70;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'Wix Madefor Text', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--ns-cream);
+      color: var(--ns-text);
+      overflow-x: hidden;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === LOADER === */
+    .ns-loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--ns-cream);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .ns-loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .ns-loader-icon {
+      width: 80px; height: 80px; position: relative;
+    }
+    .ns-loader-icon svg {
+      width: 100%; height: 100%;
+      animation: ns-draw 2s ease-in-out infinite;
+    }
+    @keyframes ns-draw {
+      0% { stroke-dashoffset: 300; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -300; }
+    }
+
+    /* === NOISE TEXTURE OVERLAY === */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    /* === HEADER === */
+    .ns-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: transform 0.4s ease, background 0.3s ease;
+    }
+    .ns-header.scrolled {
+      background: rgba(255, 248, 240, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 2px dashed var(--ns-lavender);
+    }
+    .ns-header.hide { transform: translateY(-100%); }
+    .ns-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--ns-charcoal);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .ns-logo span { color: var(--ns-rose); }
+    .ns-header-cta {
+      font-family: var(--font-body);
+      font-size: 0.9rem; font-weight: 600;
+      color: var(--ns-charcoal);
+      text-decoration: none;
+      padding: 10px 24px;
+      border: 2px solid var(--ns-charcoal);
+      border-radius: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .ns-header-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--ns-rose);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      border-radius: 40px;
+    }
+    .ns-header-cta:hover { color: white; border-color: var(--ns-rose); }
+    .ns-header-cta:hover::before { transform: translateY(0); }
+    .ns-header-cta em { position: relative; z-index: 1; font-style: normal; }
+
+    /* === ORGANIC SHAPES (SVG blobs) === */
+    .ns-blob {
+      position: absolute;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === WOBBLY BORDER UTILITY === */
+    .ns-wobbly {
+      border-radius: 60% 40% 50% 45% / 45% 55% 40% 60%;
+      transition: border-radius 0.8s ease;
+    }
+    .ns-wobbly:hover {
+      border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+    }
+
+    /* === HAND-DRAWN UNDERLINE === */
+    .ns-underline {
+      position: relative; display: inline-block;
+    }
+    .ns-underline::after {
+      content: '';
+      position: absolute; bottom: -4px; left: -4px; right: -4px;
+      height: 12px;
+      background: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8 Q30 2, 60 7 T120 5 T180 8 T198 6' stroke='%23E8A0B4' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+      background-size: 200px 12px;
+      opacity: 0.7;
+    }
+
+    /* === HERO SECTION === */
+    .ns-hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 120px 8vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ns-hero-deco {
+      position: absolute; top: -60px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse at center, var(--ns-lavender) 0%, transparent 70%);
+      border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%;
+      opacity: 0.3;
+      animation: ns-float 12s ease-in-out infinite;
+    }
+    .ns-hero-deco-2 {
+      position: absolute; bottom: -40px; left: 10%;
+      width: 350px; height: 350px;
+      background: radial-gradient(ellipse at center, var(--ns-peach) 0%, transparent 70%);
+      border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+      opacity: 0.25;
+      animation: ns-float 15s ease-in-out infinite reverse;
+    }
+    @keyframes ns-float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(20px, -15px) rotate(3deg); }
+      66% { transform: translate(-10px, 10px) rotate(-2deg); }
+    }
+    .ns-hero-tag {
+      font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--ns-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(20px);
+      animation: ns-fadeUp 0.8s ease 0.5s forwards;
+    }
+    .ns-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--ns-charcoal);
+      max-width: 800px;
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(30px);
+      animation: ns-fadeUp 0.9s ease 0.7s forwards;
+    }
+    .ns-hero h1 em {
+      font-style: italic;
+      color: var(--ns-rose);
+      font-weight: 300;
+    }
+    .ns-hero-sub {
+      font-size: 1.15rem;
+      color: var(--ns-text-light);
+      max-width: 520px;
+      margin-top: 28px;
+      line-height: 1.7;
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(20px);
+      animation: ns-fadeUp 0.8s ease 0.9s forwards;
+    }
+    .ns-hero-actions {
+      display: flex; gap: 16px; align-items: center;
+      margin-top: 40px;
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(20px);
+      animation: ns-fadeUp 0.8s ease 1.1s forwards;
+    }
+    .ns-btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem; font-weight: 600;
+      color: white;
+      background: var(--ns-charcoal);
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ns-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(58, 50, 56, 0.25);
+    }
+    .ns-btn-secondary {
+      font-family: var(--font-body);
+      font-size: 1rem; font-weight: 500;
+      color: var(--ns-text-light);
+      text-decoration: none;
+      padding: 14px 24px;
+      border: 2px dashed var(--ns-lavender);
+      border-radius: 50px;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+    .ns-btn-secondary:hover {
+      border-color: var(--ns-rose);
+      color: var(--ns-charcoal);
+    }
+    @keyframes ns-fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll hint doodle */
+    .ns-scroll-hint {
+      position: absolute; bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--ns-text-light);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      animation: ns-fadeUp 0.6s ease 1.5s forwards;
+    }
+    .ns-scroll-hint svg {
+      animation: ns-bounce 2s ease-in-out infinite;
+    }
+    @keyframes ns-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* === SECTION COMMON === */
+    .ns-section {
+      padding: 100px 8vw;
+      position: relative;
+    }
+    .ns-section-label {
+      font-family: var(--font-display);
+      font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--ns-lilac);
+      margin-bottom: 16px;
+    }
+    .ns-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ns-charcoal);
+      max-width: 700px;
+    }
+
+    /* === WHY SECTION — Organic Cards === */
+    .ns-why {
+      background: var(--ns-warm-white);
+    }
+    .ns-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .ns-why-card {
+      padding: 44px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+    .ns-why-card:hover { transform: translateY(-4px) rotate(-0.5deg); }
+    .ns-why-card:nth-child(1) {
+      background: var(--ns-lavender);
+      border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+      grid-row: span 2;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .ns-why-card:nth-child(2) {
+      background: var(--ns-peach);
+      border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+    }
+    .ns-why-card:nth-child(3) {
+      background: var(--ns-mint);
+      border-radius: 50% 50% 45% 55% / 45% 55% 50% 50%;
+    }
+    .ns-why-card:nth-child(4) {
+      background: var(--ns-pink);
+      border-radius: 55% 45% 60% 40% / 40% 60% 45% 55%;
+      grid-column: span 2;
+    }
+    .ns-why-icon {
+      width: 56px; height: 56px;
+      margin-bottom: 20px;
+    }
+    .ns-why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--ns-charcoal);
+      margin-bottom: 12px;
+    }
+    .ns-why-card p {
+      font-size: 0.95rem;
+      color: var(--ns-text);
+      line-height: 1.65;
+      opacity: 0.85;
+    }
+
+    /* === PRODUCTS SECTION — Staggered Organic Layout === */
+    .ns-products {
+      background: linear-gradient(180deg, var(--ns-cream) 0%, var(--ns-warm-white) 100%);
+    }
+    .ns-products-intro {
+      font-size: 1.1rem;
+      color: var(--ns-text-light);
+      max-width: 560px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+    .ns-product-list {
+      margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .ns-product-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .ns-product-item.visible {
+      opacity: 1; transform: translateY(0);
+    }
+    .ns-product-item:nth-child(even) { direction: rtl; }
+    .ns-product-item:nth-child(even) > * { direction: ltr; }
+    .ns-product-visual {
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+    }
+    .ns-product-visual-inner {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      transition: transform 0.6s ease;
+    }
+    .ns-product-item:hover .ns-product-visual-inner {
+      transform: scale(1.03) rotate(-1deg);
+    }
+    .ns-product-visual:nth-of-type(1) .ns-product-visual-inner {
+      background: var(--ns-lavender);
+      border-radius: 55% 45% 50% 50% / 50% 50% 55% 45%;
+    }
+    .ns-pv-1 {
+      background: var(--ns-lavender);
+      border-radius: 55% 45% 50% 50% / 50% 50% 55% 45%;
+    }
+    .ns-pv-2 {
+      background: var(--ns-mint);
+      border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+    }
+    .ns-pv-3 {
+      background: var(--ns-peach);
+      border-radius: 50% 50% 45% 55% / 45% 55% 50% 50%;
+    }
+    .ns-pv-4 {
+      background: var(--ns-pink);
+      border-radius: 60% 40% 55% 45% / 40% 60% 45% 55%;
+    }
+    .ns-product-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--ns-charcoal);
+      margin-bottom: 12px;
+    }
+    .ns-product-content p {
+      font-size: 0.95rem;
+      color: var(--ns-text-light);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .ns-product-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .ns-product-tag {
+      font-size: 0.78rem; font-weight: 600;
+      padding: 6px 14px;
+      border: 1.5px dashed var(--ns-lilac);
+      border-radius: 30px;
+      color: var(--ns-text-light);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .ns-product-tag:hover {
+      background: var(--ns-lilac);
+      color: white;
+    }
+
+    /* === AMBIENCE BUILDER — Interactive Section === */
+    .ns-ambience {
+      background: var(--ns-charcoal);
+      color: var(--ns-cream);
+      text-align: center;
+      padding: 100px 8vw 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ns-ambience::before {
+      content: '';
+      position: absolute; top: -2px; left: 0; right: 0; height: 60px;
+      background: url("data:image/svg+xml,%3Csvg width='1440' height='60' viewBox='0 0 1440 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 Q120 0 240 35 T480 20 T720 40 T960 15 T1200 35 T1440 25 V60 Z' fill='%23FFF8F0'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+    }
+    .ns-ambience::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0; height: 60px;
+      background: url("data:image/svg+xml,%3Csvg width='1440' height='60' viewBox='0 0 1440 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 Q120 50 240 25 T480 40 T720 15 T960 45 T1200 20 T1440 35 V0 Z' fill='%23FFF8F0'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+    }
+    .ns-ambience .ns-section-label { color: var(--ns-peach); }
+    .ns-ambience .ns-section-title {
+      color: var(--ns-cream);
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+    .ns-ambience-sub {
+      font-size: 1.05rem;
+      color: rgba(255, 248, 240, 0.65);
+      max-width: 500px;
+      margin: 0 auto 48px;
+    }
+    .ns-mood-picker {
+      display: flex; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .ns-mood-btn {
+      font-family: var(--font-body);
+      font-size: 0.9rem; font-weight: 600;
+      padding: 12px 24px;
+      border: 2px solid rgba(255, 248, 240, 0.2);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--ns-cream);
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+    .ns-mood-btn:hover, .ns-mood-btn.active {
+      border-color: var(--ns-peach);
+      background: rgba(248, 213, 184, 0.15);
+      transform: translateY(-2px);
+    }
+    .ns-mood-preview {
+      width: 100%; max-width: 700px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.8s ease, box-shadow 0.8s ease;
+    }
+    .ns-mood-preview[data-mood="soft"] {
+      background: linear-gradient(135deg, #F5D5E0 0%, #D4B8E0 50%, #B8E0D2 100%);
+      box-shadow: 0 20px 60px rgba(212, 184, 224, 0.3);
+    }
+    .ns-mood-preview[data-mood="bold"] {
+      background: linear-gradient(135deg, #E8A0B4 0%, #D4A86C 50%, #C4A8D8 100%);
+      box-shadow: 0 20px 60px rgba(232, 160, 180, 0.3);
+    }
+    .ns-mood-preview[data-mood="zen"] {
+      background: linear-gradient(135deg, #B8E0D2 0%, #A8C8B0 50%, #FFF8F0 100%);
+      box-shadow: 0 20px 60px rgba(184, 224, 210, 0.3);
+    }
+    .ns-mood-preview[data-mood="glam"] {
+      background: linear-gradient(135deg, #3A3238 0%, #D4A86C 40%, #E8A0B4 100%);
+      box-shadow: 0 20px 60px rgba(212, 168, 108, 0.3);
+    }
+    .ns-mood-label {
+      position: absolute; bottom: 24px; left: 24px;
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+    .ns-mood-preview.show-label .ns-mood-label {
+      opacity: 1; transform: translateY(0);
+    }
+    .ns-mood-blinds {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 0;
+      display: flex; gap: 2px;
+      transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    .ns-mood-preview.show-label .ns-mood-blinds { height: 40%; }
+    .ns-blind-slat {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(4px);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* === TESTIMONIAL — Hand-drawn quote === */
+    .ns-testimonial {
+      padding: 100px 8vw;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    .ns-testimonial-card {
+      max-width: 680px;
+      text-align: center;
+      position: relative;
+      padding: 60px 48px;
+    }
+    .ns-testimonial-card::before {
+      content: '';
+      position: absolute; inset: -20px;
+      border: 3px dashed var(--ns-lavender);
+      border-radius: 55% 45% 50% 50% / 50% 50% 55% 45%;
+      opacity: 0.4;
+      animation: ns-wobble-border 8s ease-in-out infinite;
+    }
+    @keyframes ns-wobble-border {
+      0%, 100% { border-radius: 55% 45% 50% 50% / 50% 50% 55% 45%; }
+      25% { border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%; }
+      50% { border-radius: 50% 50% 55% 45% / 45% 55% 50% 50%; }
+      75% { border-radius: 60% 40% 45% 55% / 50% 50% 45% 55%; }
+    }
+    .ns-quote-mark {
+      font-family: var(--font-display);
+      font-size: 6rem; font-weight: 900;
+      color: var(--ns-pink);
+      line-height: 0.5;
+      margin-bottom: 16px;
+      opacity: 0.6;
+    }
+    .ns-testimonial-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ns-charcoal);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .ns-testimonial-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ns-text-light);
+    }
+    .ns-testimonial-author span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.82rem;
+      margin-top: 4px;
+      color: var(--ns-lilac);
+    }
+
+    /* === PROCESS SECTION — Hand-drawn path === */
+    .ns-process {
+      background: var(--ns-warm-white);
+      padding: 100px 8vw 120px;
+    }
+    .ns-process-path {
+      margin-top: 64px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ns-process-line {
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 3px;
+      transform: translateX(-50%);
+    }
+    .ns-process-line svg {
+      width: 3px; height: 100%;
+    }
+    .ns-process-line-drawn {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      transition: stroke-dashoffset 2s ease;
+    }
+    .ns-process-line-drawn.drawn { stroke-dashoffset: 0; }
+    .ns-step {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+      align-items: center;
+      padding: 24px 0;
+    }
+    .ns-step:nth-child(odd) .ns-step-content { grid-column: 1; text-align: right; padding-right: 32px; }
+    .ns-step:nth-child(odd) .ns-step-empty { grid-column: 3; }
+    .ns-step:nth-child(even) .ns-step-content { grid-column: 3; text-align: left; padding-left: 32px; }
+    .ns-step:nth-child(even) .ns-step-empty { grid-column: 1; }
+    .ns-step-dot {
+      grid-column: 2;
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: white;
+      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+    .ns-step:hover .ns-step-dot { transform: scale(1.15) rotate(5deg); }
+    .ns-step:nth-child(1) .ns-step-dot { background: var(--ns-rose); }
+    .ns-step:nth-child(2) .ns-step-dot { background: var(--ns-lilac); }
+    .ns-step:nth-child(3) .ns-step-dot { background: var(--ns-sage); }
+    .ns-step:nth-child(4) .ns-step-dot { background: var(--ns-gold); }
+    .ns-step-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--ns-charcoal);
+      margin-bottom: 8px;
+    }
+    .ns-step-content p {
+      font-size: 0.92rem;
+      color: var(--ns-text-light);
+      line-height: 1.6;
+    }
+
+    /* === CTA SECTION === */
+    .ns-cta {
+      padding: 120px 8vw;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ns-cta-blob-1 {
+      position: absolute; top: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: var(--ns-lavender);
+      border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+      opacity: 0.15;
+      animation: ns-float 14s ease-in-out infinite;
+    }
+    .ns-cta-blob-2 {
+      position: absolute; bottom: -80px; right: -60px;
+      width: 300px; height: 300px;
+      background: var(--ns-peach);
+      border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+      opacity: 0.15;
+      animation: ns-float 11s ease-in-out infinite reverse;
+    }
+    .ns-cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--ns-charcoal);
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.1;
+      position: relative; z-index: 1;
+    }
+    .ns-cta-title em {
+      font-style: italic; font-weight: 300;
+      color: var(--ns-rose);
+    }
+    .ns-cta-sub {
+      font-size: 1.05rem;
+      color: var(--ns-text-light);
+      max-width: 440px;
+      margin: 0 auto 40px;
+      position: relative; z-index: 1;
+    }
+    .ns-cta .ns-btn-primary {
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      position: relative; z-index: 1;
+    }
+
+    /* === FOOTER === */
+    .ns-footer {
+      background: var(--ns-charcoal);
+      color: rgba(255, 248, 240, 0.6);
+      padding: 48px 8vw;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.85rem;
+    }
+    .ns-footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--ns-cream);
+    }
+    .ns-footer-logo span { color: var(--ns-rose); }
+    .ns-footer-links {
+      display: flex; gap: 24px;
+    }
+    .ns-footer-links a {
+      color: rgba(255, 248, 240, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .ns-footer-links a:hover { color: var(--ns-peach); }
+
+    /* === SCROLL REVEAL === */
+    .ns-reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .ns-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ns-reveal-delay-1 { transition-delay: 0.1s; }
+    .ns-reveal-delay-2 { transition-delay: 0.2s; }
+    .ns-reveal-delay-3 { transition-delay: 0.3s; }
+    .ns-reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* === DOODLE DECORATIONS === */
+    .ns-doodle {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.12;
+    }
+    .ns-doodle svg {
+      stroke: var(--ns-charcoal);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .ns-why-grid {
+        grid-template-columns: 1fr;
+      }
+      .ns-why-card:nth-child(1) { grid-row: auto; }
+      .ns-why-card:nth-child(4) { grid-column: auto; }
+      .ns-product-item,
+      .ns-product-item:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .ns-product-item:nth-child(even) > * { direction: ltr; }
+      .ns-step {
+        grid-template-columns: 52px 1fr;
+        gap: 16px;
+      }
+      .ns-step-content { grid-column: 2 !important; text-align: left !important; padding: 0 !important; }
+      .ns-step-empty { display: none; }
+      .ns-step-dot { grid-column: 1; }
+      .ns-process-line { left: 26px; }
+    }
+    @media (max-width: 600px) {
+      .ns-header { padding: 16px 20px; }
+      .ns-logo { font-size: 1.3rem; }
+      .ns-hero { padding: 100px 6vw 80px; }
+      .ns-section { padding: 72px 6vw; }
+      .ns-ambience { padding: 80px 6vw 100px; }
+      .ns-mood-picker { gap: 10px; }
+      .ns-mood-btn { font-size: 0.8rem; padding: 10px 18px; }
+      .ns-testimonial-card { padding: 40px 24px; }
+      .ns-testimonial-text { font-size: 1.2rem; }
+      .ns-footer {
+        flex-direction: column; gap: 20px; text-align: center;
+      }
+      .ns-hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="ns-loader" id="nsLoader">
+    <div class="ns-loader-icon">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 60 Q25 20 40 15 Q55 10 50 50 Q48 65 35 68 Q22 70 20 60Z" stroke="#E8A0B4" stroke-width="2.5" stroke-dasharray="300" stroke-dashoffset="0" style="animation: ns-draw 2s ease-in-out infinite;">
+        </path>
+        <path d="M30 55 Q35 30 45 28 Q52 26 48 48" stroke="#D4B8E0" stroke-width="2" stroke-dasharray="200" stroke-dashoffset="0" style="animation: ns-draw 2s ease-in-out infinite 0.3s;">
+        </path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="ns-header" id="nsHeader">
+    <a href="https://iseekblinds.com.au" class="ns-logo">iSeek<span>Blinds</span></a>
+    <a href="https://iseekblinds.com.au/quote" class="ns-header-cta"><em>Get a Quote</em></a>
+  </header>
+
+  <!-- HERO -->
+  <section class="ns-hero">
+    <div class="ns-hero-deco"></div>
+    <div class="ns-hero-deco-2"></div>
+    <p class="ns-hero-tag">Nail Salons & Beauty Studios</p>
+    <h1>Where <em>beauty</em> meets the perfect light</h1>
+    <p class="ns-hero-sub">Your clients come for precision and pampering. The right blinds set the mood, protect their skin from harsh UV, and give your studio that polished, Instagram-ready glow.</p>
+    <div class="ns-hero-actions">
+      <a href="https://iseekblinds.com.au/quote" class="ns-btn-primary">
+        <span>Free Consultation</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#products" class="ns-btn-secondary">Explore Solutions ↓</a>
+    </div>
+    <div class="ns-scroll-hint">
+      <span>SCROLL TO EXPLORE</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="ns-section ns-why">
+    <p class="ns-section-label ns-reveal">Why It Matters</p>
+    <h2 class="ns-section-title ns-reveal ns-reveal-delay-1">Blinds aren't décor.<br><span class="ns-underline">They're your secret weapon.</span></h2>
+    <div class="ns-why-grid">
+      <div class="ns-why-card ns-reveal ns-reveal-delay-1">
+        <div class="ns-why-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="20" stroke="#3A3238" stroke-width="2"/>
+            <path d="M28 14 Q32 28 28 42" stroke="#3A3238" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 22 Q28 26 40 22" stroke="#3A3238" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 34 Q28 30 40 34" stroke="#3A3238" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Flawless colour matching</h3>
+        <p>Gel polish, acrylics, lash tints — they all look different under harsh sunlight vs. your studio lights. Adjustable blinds keep your lighting consistent, so the colour your client picked is the colour they leave with.</p>
+      </div>
+      <div class="ns-why-card ns-reveal ns-reveal-delay-2">
+        <div class="ns-why-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="8" width="32" height="40" rx="4" stroke="#3A3238" stroke-width="2"/>
+            <path d="M20 20h16M20 28h12M20 36h8" stroke="#3A3238" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Privacy that pampers</h3>
+        <p>Waxing rooms, facial suites, intimate treatments — clients relax when they know nobody's peeking in. Frosted and sheer options offer privacy without boxing anyone in.</p>
+      </div>
+      <div class="ns-why-card ns-reveal ns-reveal-delay-3">
+        <div class="ns-why-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 8 L38 20 H18 Z" stroke="#3A3238" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M14 28 Q28 22 42 28 Q28 34 14 28Z" stroke="#3A3238" stroke-width="2"/>
+            <path d="M20 36 Q28 42 36 36" stroke="#3A3238" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Temperature control</h3>
+        <p>Product shelves hate heat. So do gel lamps, wax pots, and waiting clients. Cellular blinds create an insulating pocket that keeps your space cool in summer and cosy in winter — while cutting energy bills.</p>
+      </div>
+      <div class="ns-why-card ns-reveal ns-reveal-delay-4">
+        <div class="ns-why-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="10" stroke="#3A3238" stroke-width="2"/>
+            <path d="M28 12V8M28 48v-4M12 28H8M48 28h-4M17 17l-3-3M42 42l-3-3M17 39l-3 3M42 14l-3 3" stroke="#3A3238" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>The Instagram factor</h3>
+        <p>Soft, diffused natural light is the secret behind those viral nail-art reels. The right sheer blinds turn your workstation into a built-in ring light — no filters needed. Your work photographs better, and happy clients share it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="ns-section ns-products" id="products">
+    <p class="ns-section-label ns-reveal">Our Picks for You</p>
+    <h2 class="ns-section-title ns-reveal ns-reveal-delay-1">Blinds that <em style="font-family:var(--font-display);font-style:italic;font-weight:300;color:var(--ns-rose);">actually work</em> in a salon</h2>
+    <p class="ns-products-intro ns-reveal ns-reveal-delay-2">Not every blind survives acetone fumes, humid wax rooms, and daily client traffic. These do — and they look gorgeous doing it.</p>
+
+    <div class="ns-product-list">
+      <div class="ns-product-item">
+        <div class="ns-product-visual">
+          <div class="ns-product-visual-inner ns-pv-1">🪟</div>
+        </div>
+        <div class="ns-product-content">
+          <h3>Sheer Roller Blinds</h3>
+          <p>The salon MVP. They soften harsh sunlight into that dreamy, diffused glow that makes fresh nail art pop. Light enough to keep your space bright, opaque enough that passers-by aren't watching Mrs. Chen's pedicure.</p>
+          <div class="ns-product-tags">
+            <span class="ns-product-tag">UV filtering</span>
+            <span class="ns-product-tag">Light diffusion</span>
+            <span class="ns-product-tag">Easy clean</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ns-product-item">
+        <div class="ns-product-visual">
+          <div class="ns-product-visual-inner ns-pv-2">🌿</div>
+        </div>
+        <div class="ns-product-content">
+          <h3>Honeycomb / Cellular Blinds</h3>
+          <p>Trapped air pockets = insulation magic. Perfect for the wax room that's always too hot, or the nail bar right by the window. They muffle street noise too, which your clients doing their mindfulness-while-waiting will thank you for.</p>
+          <div class="ns-product-tags">
+            <span class="ns-product-tag">Insulating</span>
+            <span class="ns-product-tag">Noise reducing</span>
+            <span class="ns-product-tag">Cordless available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ns-product-item">
+        <div class="ns-product-visual">
+          <div class="ns-product-visual-inner ns-pv-3">✨</div>
+        </div>
+        <div class="ns-product-content">
+          <h3>Faux Wood Venetians</h3>
+          <p>Real timber hates moisture. Faux wood laughs at it. These handle the humidity from steamers and autoclaves without warping, and they give your space that premium boutique feel at half the price.</p>
+          <div class="ns-product-tags">
+            <span class="ns-product-tag">Moisture-proof</span>
+            <span class="ns-product-tag">Tilt control</span>
+            <span class="ns-product-tag">Premium look</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ns-product-item">
+        <div class="ns-product-visual">
+          <div class="ns-product-visual-inner ns-pv-4">🎀</div>
+        </div>
+        <div class="ns-product-content">
+          <h3>Dual Roller (Zebra) Blinds</h3>
+          <p>Two fabrics, one mechanism. Alternate between sheer and block-out with a simple adjustment. Open them up for the morning rush, dim them down for afternoon lash extensions. Your treatment rooms will never fight over the light again.</p>
+          <div class="ns-product-tags">
+            <span class="ns-product-tag">Day & night</span>
+            <span class="ns-product-tag">Versatile</span>
+            <span class="ns-product-tag">Modern look</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBIENCE BUILDER -->
+  <section class="ns-ambience" id="ambience">
+    <p class="ns-section-label ns-reveal">Interactive</p>
+    <h2 class="ns-section-title ns-reveal ns-reveal-delay-1">Set your salon's mood</h2>
+    <p class="ns-ambience-sub ns-reveal ns-reveal-delay-2">Tap a vibe below and see how different blind styles transform the same space.</p>
+
+    <div class="ns-mood-picker ns-reveal ns-reveal-delay-3">
+      <button class="ns-mood-btn active" data-mood="soft">☁️ Soft & Dreamy</button>
+      <button class="ns-mood-btn" data-mood="bold">💅 Bold & Vibrant</button>
+      <button class="ns-mood-btn" data-mood="zen">🌿 Zen & Natural</button>
+      <button class="ns-mood-btn" data-mood="glam">✨ Glam & Luxe</button>
+    </div>
+
+    <div class="ns-mood-preview show-label" data-mood="soft" id="moodPreview">
+      <div class="ns-mood-blinds">
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+        <div class="ns-blind-slat"></div>
+      </div>
+      <div class="ns-mood-label" id="moodLabel">Sheer rollers in blush pink — diffused, gentle, inviting</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="ns-testimonial">
+    <div class="ns-testimonial-card ns-reveal">
+      <div class="ns-quote-mark">"</div>
+      <p class="ns-testimonial-text">We tried three different blind companies before iSeekBlinds. They're the only ones who actually understood that a nail salon isn't just a shop — it's a vibe. The dual rollers transformed our space.</p>
+      <div class="ns-testimonial-author">
+        Lily Tran
+        <span>Owner, Luxe Nails Studio — Doncaster VIC</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="ns-process">
+    <p class="ns-section-label ns-reveal">How It Works</p>
+    <h2 class="ns-section-title ns-reveal ns-reveal-delay-1">Four steps to your <span class="ns-underline">dream salon</span></h2>
+
+    <div class="ns-process-path">
+      <div class="ns-process-line">
+        <svg width="3" height="100%" preserveAspectRatio="none">
+          <line x1="1.5" y1="0" x2="1.5" y2="100%" stroke="#D4B8E0" stroke-width="3" stroke-dasharray="8,8" class="ns-process-line-drawn" id="processLine"/>
+        </svg>
+      </div>
+
+      <div class="ns-step ns-reveal">
+        <div class="ns-step-content">
+          <h3>Free on-site consult</h3>
+          <p>We visit your salon, assess the windows, check the light, and chat about what you need. No obligation, no hard sell — just honest advice from someone who's fitted hundreds of beauty spaces.</p>
+        </div>
+        <div class="ns-step-dot">1</div>
+        <div class="ns-step-empty"></div>
+      </div>
+
+      <div class="ns-step ns-reveal">
+        <div class="ns-step-empty"></div>
+        <div class="ns-step-dot">2</div>
+        <div class="ns-step-content">
+          <h3>Custom samples & quote</h3>
+          <p>We'll bring fabric swatches so you can see them against your walls, chairs, and branding. You'll get a clear quote — no surprise costs, no mysterious "installation fees."</p>
+        </div>
+      </div>
+
+      <div class="ns-step ns-reveal">
+        <div class="ns-step-content">
+          <h3>Precision install</h3>
+          <p>We work around your bookings. Early mornings, Sundays, whatever keeps your business running. Clean install, no mess, no drilling dust on the gel polish display.</p>
+        </div>
+        <div class="ns-step-dot">3</div>
+        <div class="ns-step-empty"></div>
+      </div>
+
+      <div class="ns-step ns-reveal">
+        <div class="ns-step-empty"></div>
+        <div class="ns-step-dot">4</div>
+        <div class="ns-step-content">
+          <h3>Love it guarantee</h3>
+          <p>Five-year warranty on everything. If a mechanism jams or a fabric snags, we fix it. Your clients will see polished blinds for years — just like your nails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ns-cta">
+    <div class="ns-cta-blob-1"></div>
+    <div class="ns-cta-blob-2"></div>
+    <h2 class="ns-cta-title ns-reveal">Ready to give your salon the <em>glow-up</em> it deserves?</h2>
+    <p class="ns-cta-sub ns-reveal ns-reveal-delay-1">Free measure & quote across Melbourne. We'll bring samples that match your brand palette.</p>
+    <a href="https://iseekblinds.com.au/quote" class="ns-btn-primary ns-reveal ns-reveal-delay-2">
+      <span>Book Your Free Consult</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ns-footer">
+    <div class="ns-footer-logo">iSeek<span>Blinds</span></div>
+    <div class="ns-footer-text">© 2026 iSeekBlinds. Melbourne, Australia.</div>
+    <div class="ns-footer-links">
+      <a href="https://iseekblinds.com.au">Home</a>
+      <a href="https://iseekblinds.com.au/landing/">All Solutions</a>
+      <a href="https://iseekblinds.com.au/quote">Get a Quote</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // Loader
+      window.addEventListener('load', () => {
+        setTimeout(() => document.getElementById('nsLoader').classList.add('done'), 500);
+      });
+
+      // Header scroll behavior
+      const header = document.getElementById('nsHeader');
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        header.classList.toggle('scrolled', y > 80);
+        header.classList.toggle('hide', y > lastScroll && y > 300);
+        lastScroll = y;
+      }, { passive: true });
+
+      // Scroll reveal (IntersectionObserver)
+      const reveals = document.querySelectorAll('.ns-reveal, .ns-product-item');
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revealObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => revealObs.observe(el));
+
+      // Process line draw
+      const processLine = document.getElementById('processLine');
+      if (processLine) {
+        const lineObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) processLine.classList.add('drawn');
+          });
+        }, { threshold: 0.1 });
+        lineObs.observe(processLine.closest('.ns-process-path'));
+      }
+
+      // Mood picker interaction
+      const moodBtns = document.querySelectorAll('.ns-mood-btn');
+      const moodPreview = document.getElementById('moodPreview');
+      const moodLabel = document.getElementById('moodLabel');
+      const moodTexts = {
+        soft: 'Sheer rollers in blush pink — diffused, gentle, inviting',
+        bold: 'Dual zebra blinds in berry — playful stripes, statement energy',
+        zen: 'Honeycomb blinds in sage — natural light, calm atmosphere',
+        glam: 'Faux wood venetians in charcoal-gold — upscale, editorial chic'
+      };
+
+      moodBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          moodBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const mood = btn.dataset.mood;
+          moodPreview.classList.remove('show-label');
+          moodPreview.dataset.mood = mood;
+          setTimeout(() => {
+            moodLabel.textContent = moodTexts[mood];
+            moodPreview.classList.add('show-label');
+          }, 300);
+        });
+      });
+
+      // Wobbly hover on why cards — random border-radius on each hover
+      document.querySelectorAll('.ns-why-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          const r = () => 35 + Math.random() * 30;
+          card.style.borderRadius = `${r()}% ${r()}% ${r()}% ${r()}% / ${r()}% ${r()}% ${r()}% ${r()}%`;
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
