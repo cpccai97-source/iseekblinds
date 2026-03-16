@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Houseboat & Waterfront Blinds | iSeekBlinds Melbourne</title>
+<meta name="description" content="Specialist blinds for houseboats, waterfront homes & floating residences. Moisture-resistant, UV-blocking, and built for life on the water. Free consultation Melbourne-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--ocean:#0a2540;--wave:#1e6091;--seafoam:#a8dadc;--sand:#f4e8c1;
+--coral:#e07a5f;--foam:#fafeff;--deep:#061a2e;
+}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;color:var(--foam);background:var(--ocean);overflow-x:hidden}
+
+/* Scroll-snap sections */
+.chapter{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+
+/* Fluid blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;animation:blobFloat 12s ease-in-out infinite alternate}
+@keyframes blobFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.15)}100%{transform:translate(-20px,20px) scale(.9)}}
+
+/* ========== CHAPTER 0: HERO ========== */
+.hero{background:linear-gradient(160deg,var(--deep) 0%,var(--ocean) 40%,var(--wave) 100%);flex-direction:column;gap:2rem;padding:2rem}
+.hero .blob-1{width:500px;height:500px;background:radial-gradient(circle,var(--seafoam),transparent);top:-10%;right:-5%;animation-delay:0s}
+.hero .blob-2{width:400px;height:400px;background:radial-gradient(circle,var(--coral),transparent);bottom:-15%;left:10%;animation-delay:3s}
+.hero .blob-3{width:300px;height:300px;background:radial-gradient(circle,var(--wave),transparent);top:40%;left:-8%;animation-delay:6s}
+
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(168,218,220,.12);border:1px solid rgba(168,218,220,.25);border-radius:100px;padding:.5rem 1.2rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--seafoam);backdrop-filter:blur(8px);animation:fadeUp .8s .3s both}
+.hero-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,8vw,7rem);line-height:1;text-align:center;max-width:900px;animation:fadeUp 1s .5s both}
+.hero-title .accent{background:linear-gradient(135deg,var(--seafoam),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(1rem,2vw,1.35rem);font-weight:300;text-align:center;max-width:560px;opacity:.8;line-height:1.7;animation:fadeUp 1s .7s both}
+.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1s .9s both}
+.btn-primary{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;padding:1rem 2.5rem;border:none;border-radius:60px;background:linear-gradient(135deg,var(--coral),#c4553f);color:#fff;cursor:pointer;transition:transform .3s,box-shadow .3s;text-decoration:none}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 40px rgba(224,122,95,.35)}
+.btn-ghost{font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;padding:1rem 2.5rem;border:1.5px solid rgba(168,218,220,.4);border-radius:60px;background:transparent;color:var(--seafoam);cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-ghost:hover{background:rgba(168,218,220,.1);border-color:var(--seafoam)}
+
+/* Wave divider */
+.wave-divider{position:absolute;bottom:0;left:0;width:100%;overflow:hidden;line-height:0}
+.wave-divider svg{display:block;width:100%;height:80px}
+
+/* Scroll indicator */
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1s 1.2s both}
+.scroll-hint span{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;opacity:.5}
+.scroll-dot{width:24px;height:40px;border:2px solid rgba(168,218,220,.4);border-radius:12px;position:relative}
+.scroll-dot::after{content:'';width:4px;height:10px;background:var(--seafoam);border-radius:4px;position:absolute;top:6px;left:50%;transform:translateX(-50%);animation:scrollBounce 2s infinite}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:1}50%{transform:translateX(-50%) translateY(12px);opacity:.3}}
+
+/* ========== CHAPTER 1: THE CHALLENGE ========== */
+.ch-challenge{background:linear-gradient(180deg,var(--wave) 0%,var(--ocean) 100%);flex-direction:column;padding:4rem 2rem}
+.ch-challenge .blob-1{width:600px;height:600px;background:radial-gradient(circle,rgba(168,218,220,.4),transparent);top:10%;right:-15%;animation-delay:2s}
+
+.section-label{font-family:'Syne',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--seafoam);margin-bottom:1rem;opacity:0;transform:translateY(30px)}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);line-height:1.15;max-width:700px;text-align:center;margin-bottom:3rem;opacity:0;transform:translateY(30px)}
+
+.challenge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;width:100%;padding:0 1rem}
+.challenge-card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(168,218,220,.12);border-radius:20px;padding:2rem;position:relative;overflow:hidden;opacity:0;transform:translateY(40px);transition:transform .4s,box-shadow .4s}
+.challenge-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.challenge-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--seafoam),var(--coral));transform:scaleX(0);transform-origin:left;transition:transform .6s}
+.challenge-card:hover::before{transform:scaleX(1)}
+.challenge-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
+.challenge-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:.7rem}
+.challenge-card p{font-size:.9rem;line-height:1.65;opacity:.75;font-weight:300}
+
+/* ========== CHAPTER 2: SOLUTIONS ========== */
+.ch-solutions{background:var(--ocean);padding:4rem 2rem;flex-direction:column}
+.ch-solutions .blob-1{width:500px;height:500px;background:radial-gradient(circle,rgba(224,122,95,.3),transparent);bottom:5%;left:-10%;animation-delay:4s}
+.ch-solutions .blob-2{width:350px;height:350px;background:radial-gradient(circle,rgba(168,218,220,.25),transparent);top:15%;right:5%;animation-delay:1s}
+
+.solutions-wrap{display:flex;flex-direction:column;gap:4rem;max-width:1000px;width:100%}
+.solution-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;opacity:0;transform:translateX(-40px)}
+.solution-row:nth-child(even){direction:rtl}
+.solution-row:nth-child(even) > *{direction:ltr}
+.solution-visual{aspect-ratio:4/3;border-radius:24px;position:relative;overflow:hidden}
+.solution-visual .gradient-box{width:100%;height:100%;border-radius:24px}
+.sol-gradient-1{background:linear-gradient(135deg,#1a3a5c,var(--seafoam),#d4e7ed)}
+.sol-gradient-2{background:linear-gradient(135deg,var(--coral),#f4c1a8,var(--sand))}
+.sol-gradient-3{background:linear-gradient(135deg,var(--deep),var(--wave),var(--seafoam))}
+.solution-visual .float-tag{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:10px;padding:.5rem 1rem;font-size:.75rem;font-weight:500;letter-spacing:.05em}
+.solution-info h3{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:.8rem}
+.solution-info p{font-size:.95rem;line-height:1.7;opacity:.8;font-weight:300;margin-bottom:1.2rem}
+.solution-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.solution-tags span{background:rgba(168,218,220,.1);border:1px solid rgba(168,218,220,.2);border-radius:20px;padding:.35rem .9rem;font-size:.75rem;color:var(--seafoam)}
+
+/* ========== CHAPTER 3: INTERACTIVE MOISTURE METER ========== */
+.ch-interactive{background:linear-gradient(160deg,var(--ocean),var(--deep));padding:4rem 2rem;flex-direction:column;gap:2.5rem}
+.meter-container{max-width:600px;width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(168,218,220,.12);border-radius:24px;padding:2.5rem;backdrop-filter:blur(8px);opacity:0;transform:translateY(40px)}
+.meter-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}
+.meter-label-row h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem}
+.meter-value{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--seafoam)}
+.meter-track{width:100%;height:12px;background:rgba(255,255,255,.08);border-radius:6px;position:relative;margin-bottom:.8rem;cursor:pointer}
+.meter-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--seafoam),var(--coral));transition:width .4s;position:relative}
+.meter-fill::after{content:'';position:absolute;right:-8px;top:50%;transform:translateY(-50%);width:24px;height:24px;background:#fff;border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.meter-desc{font-size:.85rem;line-height:1.6;opacity:.7;font-weight:300;min-height:3rem}
+
+.recommendation-card{max-width:600px;width:100%;background:linear-gradient(135deg,rgba(224,122,95,.15),rgba(168,218,220,.1));border:1px solid rgba(224,122,95,.2);border-radius:20px;padding:2rem;text-align:center;opacity:0;transform:translateY(30px);transition:all .5s}
+.recommendation-card h4{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:.5rem}
+.recommendation-card p{font-size:.9rem;opacity:.8;font-weight:300}
+
+/* ========== CHAPTER 4: TESTIMONIALS ========== */
+.ch-testimonials{background:linear-gradient(180deg,var(--deep),var(--ocean));padding:4rem 2rem;flex-direction:column;gap:3rem}
+.testimonial-stack{display:flex;flex-direction:column;gap:1.5rem;max-width:700px;width:100%}
+.testimonial-bubble{padding:2rem;border-radius:20px;position:relative;opacity:0;transform:translateY(30px)}
+.testimonial-bubble:nth-child(odd){background:rgba(168,218,220,.08);border:1px solid rgba(168,218,220,.15);align-self:flex-start;margin-right:4rem;border-bottom-left-radius:4px}
+.testimonial-bubble:nth-child(even){background:rgba(224,122,95,.08);border:1px solid rgba(224,122,95,.15);align-self:flex-end;margin-left:4rem;border-bottom-right-radius:4px}
+.testimonial-bubble blockquote{font-size:.95rem;line-height:1.7;font-style:italic;font-weight:300;margin-bottom:.8rem}
+.testimonial-bubble .author{font-family:'Syne',sans-serif;font-weight:600;font-size:.8rem;color:var(--seafoam)}
+.testimonial-bubble .location{font-size:.75rem;opacity:.5;margin-top:.2rem}
+
+/* ========== CHAPTER 5: CTA ========== */
+.ch-cta{background:linear-gradient(160deg,var(--wave),var(--ocean),var(--deep));padding:4rem 2rem;flex-direction:column;gap:2rem;text-align:center}
+.ch-cta .blob-1{width:600px;height:600px;background:radial-gradient(circle,rgba(168,218,220,.2),transparent);top:-20%;left:30%;animation-delay:5s}
+.cta-big-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,5rem);line-height:1.1;max-width:700px;opacity:0;transform:translateY(30px)}
+.cta-subtitle{font-size:1.1rem;font-weight:300;opacity:.7;max-width:500px;line-height:1.7;opacity:0;transform:translateY(30px)}
+.cta-features{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;opacity:0;transform:translateY(30px)}
+.cta-feat{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:500}
+.cta-feat .check{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--seafoam),var(--coral));display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+
+/* ========== HEADER ========== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,backdrop-filter .4s}
+.site-header.scrolled{background:rgba(10,37,64,.85);backdrop-filter:blur(16px)}
+.header-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none}
+.header-logo span{color:var(--coral)}
+.header-nav{display:flex;gap:1.5rem;align-items:center}
+.header-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;transition:color .3s}
+.header-nav a:hover{color:#fff}
+.header-cta{font-family:'Syne',sans-serif;font-weight:600;font-size:.8rem;padding:.6rem 1.5rem;border:1px solid var(--coral);border-radius:40px;color:var(--coral);text-decoration:none;transition:all .3s}
+.header-cta:hover{background:var(--coral);color:#fff}
+
+/* ========== FOOTER ========== */
+.site-footer{background:var(--deep);padding:3rem 2rem;text-align:center;border-top:1px solid rgba(168,218,220,.08)}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:.8rem}
+.footer-logo span{color:var(--coral)}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;transition:color .3s}
+.footer-links a:hover{color:#fff}
+.footer-copy{font-size:.75rem;opacity:.35}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* ========== CHAPTER INDICATOR ========== */
+.chapter-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:12px}
+.chapter-dots .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(168,218,220,.4);background:transparent;cursor:pointer;transition:all .3s}
+.chapter-dots .dot.active{background:var(--seafoam);border-color:var(--seafoam);transform:scale(1.3)}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+  .solution-row{grid-template-columns:1fr;gap:1.5rem}
+  .solution-row:nth-child(even){direction:ltr}
+  .testimonial-bubble:nth-child(odd){margin-right:0}
+  .testimonial-bubble:nth-child(even){margin-left:0}
+  .challenge-grid{grid-template-columns:1fr}
+  .header-nav{display:none}
+  .chapter-dots{display:none}
+  .hero-title{font-size:clamp(2.2rem,10vw,4rem)}
+  .cta-features{flex-direction:column;align-items:center;gap:1rem}
+  .scroll-hint{display:none}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-snap-type:none;scroll-behavior:auto}
+}
+
+/* Water ripple on click */
+.ripple{position:fixed;width:0;height:0;border-radius:50%;background:radial-gradient(circle,rgba(168,218,220,.25),transparent);pointer-events:none;z-index:9999;animation:rippleOut .8s ease-out forwards}
+@keyframes rippleOut{to{width:300px;height:300px;margin-left:-150px;margin-top:-150px;opacity:0}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="/iseekblinds/" class="header-logo">iSeek<span>Blinds</span></a>
+  <nav class="header-nav">
+    <a href="/iseekblinds/#products">Products</a>
+    <a href="/iseekblinds/#gallery">Gallery</a>
+    <a href="/iseekblinds/landing/">Solutions</a>
+    <a href="/iseekblinds/#contact" class="header-cta">Free Quote</a>
+  </nav>
+</header>
+
+<!-- CHAPTER DOTS -->
+<div class="chapter-dots" id="chapterDots">
+  <div class="dot active" data-ch="0"></div>
+  <div class="dot" data-ch="1"></div>
+  <div class="dot" data-ch="2"></div>
+  <div class="dot" data-ch="3"></div>
+  <div class="dot" data-ch="4"></div>
+  <div class="dot" data-ch="5"></div>
+</div>
+
+<!-- CHAPTER 0: HERO -->
+<section class="chapter hero" data-chapter="0">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-badge">🌊 Specialist Marine & Waterfront Solutions</div>
+  <h1 class="hero-title">Blinds Built for <span class="accent">Life on the Water</span></h1>
+  <p class="hero-sub">Where saltwater breezes meet sunrise views — window furnishings engineered to thrive in Australia's most demanding coastal environments.</p>
+  <div class="hero-cta-row">
+    <a href="#contact" class="btn-primary">Get Your Free Quote</a>
+    <a href="#solutions" class="btn-ghost">Explore Solutions</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-dot"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- CHAPTER 1: THE CHALLENGE -->
+<section class="chapter ch-challenge" data-chapter="1">
+  <div class="blob blob-1"></div>
+  <div class="section-label reveal">The Challenge</div>
+  <h2 class="section-title reveal">Water Living Demands <br>Extraordinary Blinds</h2>
+  <div class="challenge-grid">
+    <div class="challenge-card reveal">
+      <span class="challenge-icon">🧂</span>
+      <h3>Salt Corrosion</h3>
+      <p>Standard aluminium and steel components rust within months. Our marine-grade fittings use 316 stainless steel and anodised aluminium — the same spec used on ocean vessels.</p>
+    </div>
+    <div class="challenge-card reveal">
+      <span class="challenge-icon">💧</span>
+      <h3>Constant Humidity</h3>
+      <p>Condensation warps timber slats and breeds mould in fabric. We use moisture-wicking synthetics and PVC composites that laugh at 95% humidity days.</p>
+    </div>
+    <div class="challenge-card reveal">
+      <span class="challenge-icon">☀️</span>
+      <h3>Relentless UV</h3>
+      <p>Water reflection doubles UV intensity. Our fabrics block up to 99% of UV rays while preserving your harbour panorama — because nobody moves waterside to stare at walls.</p>
+    </div>
+    <div class="challenge-card reveal">
+      <span class="challenge-icon">📐</span>
+      <h3>Non-Standard Windows</h3>
+      <p>Porthole shapes, curved glass, sliding hatches — boats and waterfront builds rarely have standard openings. Every one of our installs is custom-measured and fabricated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2: SOLUTIONS -->
+<section class="chapter ch-solutions" data-chapter="2" id="solutions">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="section-label reveal">Our Solutions</div>
+  <h2 class="section-title reveal">Engineered for Every <br>Waterfront Scenario</h2>
+  <div class="solutions-wrap">
+    <div class="solution-row reveal-left">
+      <div class="solution-visual">
+        <div class="gradient-box sol-gradient-1"></div>
+        <div class="float-tag">⚓ Most Popular</div>
+      </div>
+      <div class="solution-info">
+        <h3>Marine-Grade Roller Blinds</h3>
+        <p>Polyester mesh with PVC coating repels salt spray while filtering light beautifully. Spring-loaded cassette systems stay put even when the deck rolls — no dangling cords, no safety worries.</p>
+        <div class="solution-tags">
+          <span>Salt-resistant</span>
+          <span>Cord-free</span>
+          <span>UV 98%</span>
+        </div>
+      </div>
+    </div>
+    <div class="solution-row reveal-left">
+      <div class="solution-visual">
+        <div class="gradient-box sol-gradient-2"></div>
+        <div class="float-tag">🏠 Waterfront Homes</div>
+      </div>
+      <div class="solution-info">
+        <h3>Coastal Shutters</h3>
+        <p>Aluminium plantation shutters with marine powder-coat finish. They won't warp, peel, or discolour — even directly facing the bay. Adjustable louvres let you control the breeze without sacrificing the view.</p>
+        <div class="solution-tags">
+          <span>Aluminium core</span>
+          <span>Powder-coated</span>
+          <span>Cyclone-rated</span>
+        </div>
+      </div>
+    </div>
+    <div class="solution-row reveal-left">
+      <div class="solution-visual">
+        <div class="gradient-box sol-gradient-3"></div>
+        <div class="float-tag">🚤 Boats & Yachts</div>
+      </div>
+      <div class="solution-info">
+        <h3>Pleated Marine Blinds</h3>
+        <p>Honeycomb cells insulate the cabin from summer heat and winter chill. Magnetic side channels keep them flush to odd-shaped windows — no drilling into the hull. Available in blackout for overnight berths.</p>
+        <div class="solution-tags">
+          <span>No-drill install</span>
+          <span>Thermal insulation</span>
+          <span>Blackout option</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3: INTERACTIVE MOISTURE METER -->
+<section class="chapter ch-interactive" data-chapter="3">
+  <div class="section-label reveal">Interactive Tool</div>
+  <h2 class="section-title reveal">How Wet Is Your Environment?</h2>
+  <div class="meter-container reveal" id="moistureMeter">
+    <div class="meter-label-row">
+      <h3>Moisture Exposure Level</h3>
+      <div class="meter-value" id="meterValue">50%</div>
+    </div>
+    <div class="meter-track" id="meterTrack">
+      <div class="meter-fill" id="meterFill" style="width:50%"></div>
+    </div>
+    <p class="meter-desc" id="meterDesc">Moderate exposure — typical for homes within 500m of the waterline. Standard coastal blinds will perform well.</p>
+  </div>
+  <div class="recommendation-card" id="recoCard">
+    <h4 id="recoTitle">🎯 Recommended: Coastal Roller Blinds</h4>
+    <p id="recoText">Great balance of UV protection, airflow control, and moisture resistance. Ideal for balconies and living areas facing the water.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 4: TESTIMONIALS -->
+<section class="chapter ch-testimonials" data-chapter="4">
+  <div class="section-label reveal">Real Stories</div>
+  <h2 class="section-title reveal">From the Waterfront Community</h2>
+  <div class="testimonial-stack">
+    <div class="testimonial-bubble reveal">
+      <blockquote>"We went through three sets of timber venetians before finding iSeekBlinds. Their marine rollers have been up for two years on our houseboat in Docklands — not a spot of rust, not a hint of mould."</blockquote>
+      <div class="author">— Mark & Jenna T.</div>
+      <div class="location">Docklands Marina, Melbourne</div>
+    </div>
+    <div class="testimonial-bubble reveal">
+      <blockquote>"The team measured our curved porthole windows on a Tuesday. By Friday, we had perfect-fit honeycomb blinds that actually keep the cabin cool in January. Absolute legends."</blockquote>
+      <div class="author">— Captain Dave R.</div>
+      <div class="location">Sandringham Yacht Club</div>
+    </div>
+    <div class="testimonial-bubble reveal">
+      <blockquote>"Our Williamstown apartment cops horizontal salt spray six months a year. The aluminium shutters still look showroom-fresh after three winters. Worth every cent."</blockquote>
+      <div class="author">— Sophie L.</div>
+      <div class="location">Williamstown Waterfront</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5: CTA -->
+<section class="chapter ch-cta" data-chapter="5" id="contact">
+  <div class="blob blob-1"></div>
+  <h2 class="cta-big-title reveal">Your View Deserves Better Than Ordinary Blinds</h2>
+  <p class="cta-subtitle reveal">Free on-site consultation for all waterfront properties and vessels in the Melbourne metro area. We bring samples to your dock.</p>
+  <div class="cta-features reveal">
+    <div class="cta-feat"><span class="check">✓</span> Free waterfront assessment</div>
+    <div class="cta-feat"><span class="check">✓</span> 5-year marine warranty</div>
+    <div class="cta-feat"><span class="check">✓</span> Boat & yacht specialists</div>
+  </div>
+  <div class="hero-cta-row reveal" style="margin-top:1rem">
+    <a href="tel:1300123456" class="btn-primary">Call 1300 iSeek</a>
+    <a href="/iseekblinds/#contact" class="btn-ghost">Request a Callback</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">iSeek<span>Blinds</span></div>
+  <div class="footer-links">
+    <a href="/iseekblinds/">Home</a>
+    <a href="/iseekblinds/#products">Products</a>
+    <a href="/iseekblinds/landing/">All Solutions</a>
+    <a href="/iseekblinds/#gallery">Gallery</a>
+    <a href="/iseekblinds/#contact">Contact</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 iSeekBlinds Melbourne. All rights reserved. ABN 12 345 678 901</div>
+</footer>
+
+<script>
+/* ===== Scroll reveal ===== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 120);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, .reveal-left').forEach(el => io.observe(el));
+
+/* ===== Chapter dots ===== */
+const chapters = document.querySelectorAll('.chapter');
+const dots = document.querySelectorAll('.chapter-dots .dot');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const idx = +e.target.dataset.chapter;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+  });
+}, { threshold: 0.5 });
+chapters.forEach(ch => cio.observe(ch));
+dots.forEach(d => d.addEventListener('click', () => {
+  chapters[+d.dataset.ch]?.scrollIntoView({ behavior: 'smooth' });
+}));
+
+/* ===== Header scroll state ===== */
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+/* ===== Moisture Meter Interactive ===== */
+const meterTrack = document.getElementById('meterTrack');
+const meterFill = document.getElementById('meterFill');
+const meterValue = document.getElementById('meterValue');
+const meterDesc = document.getElementById('meterDesc');
+const recoTitle = document.getElementById('recoTitle');
+const recoText = document.getElementById('recoText');
+const recoCard = document.getElementById('recoCard');
+
+const levels = [
+  { max: 25, desc: "Low exposure — suburban home, not directly waterfront. Standard blinds may work, but coastal options last 3× longer.", title: "🎯 Recommended: Premium Roller Blinds", text: "A step up from standard, with UV-stabilised fabric and rust-proof brackets. Great value protection." },
+  { max: 50, desc: "Moderate exposure — typical for homes within 500m of the waterline. Standard coastal blinds will perform well.", title: "🎯 Recommended: Coastal Roller Blinds", text: "Great balance of UV protection, airflow control, and moisture resistance. Ideal for balconies and living areas." },
+  { max: 75, desc: "High exposure — beachfront property or marina berth. You need marine-grade everything.", title: "🎯 Recommended: Marine-Grade Shutters", text: "Aluminium plantation shutters with marine powder-coat. Built to withstand direct salt spray year-round." },
+  { max: 100, desc: "Extreme — houseboat, yacht, or structure literally on the water. Only specialist marine blinds will survive.", title: "🎯 Recommended: Pleated Marine System", text: "No-drill magnetic honeycomb blinds with 316 stainless fittings. Designed for vessels and floating homes." }
+];
+
+function updateMeter(pct) {
+  pct = Math.max(0, Math.min(100, pct));
+  meterFill.style.width = pct + '%';
+  meterValue.textContent = Math.round(pct) + '%';
+  const level = levels.find(l => pct <= l.max) || levels[3];
+  meterDesc.textContent = level.desc;
+  recoTitle.textContent = level.title;
+  recoText.textContent = level.text;
+  // Color shift
+  const hue = 180 - pct * 1.2;
+  recoCard.style.borderColor = `hsla(${hue}, 60%, 55%, 0.3)`;
+}
+
+let dragging = false;
+function getMeterPct(e) {
+  const rect = meterTrack.getBoundingClientRect();
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  return ((clientX - rect.left) / rect.width) * 100;
+}
+meterTrack.addEventListener('mousedown', e => { dragging = true; updateMeter(getMeterPct(e)); });
+meterTrack.addEventListener('touchstart', e => { dragging = true; updateMeter(getMeterPct(e)); }, { passive: true });
+window.addEventListener('mousemove', e => { if (dragging) updateMeter(getMeterPct(e)); });
+window.addEventListener('touchmove', e => { if (dragging) updateMeter(getMeterPct(e)); }, { passive: true });
+window.addEventListener('mouseup', () => dragging = false);
+window.addEventListener('touchend', () => dragging = false);
+
+/* ===== Click ripple effect (water) ===== */
+document.addEventListener('click', e => {
+  const ripple = document.createElement('div');
+  ripple.className = 'ripple';
+  ripple.style.left = e.clientX + 'px';
+  ripple.style.top = e.clientY + 'px';
+  document.body.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 900);
+});
+</script>
+</body>
+</html>
