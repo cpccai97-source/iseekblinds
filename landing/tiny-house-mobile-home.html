@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny House & Mobile Home Blinds | Compact Living Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Custom blinds for tiny houses, mobile homes, caravans & compact living spaces in Melbourne. Space-saving, lightweight window solutions that maximise every centimetre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+  <style>
+    /* === WARM NATURAL — TINY HOUSE === */
+    :root {
+      --clay: #B5651D;
+      --clay-light: #D4915E;
+      --sage: #8A9A5B;
+      --sage-dark: #6B7D3E;
+      --cream: #FDF6EC;
+      --warm-white: #FAF3E8;
+      --bark: #3D2B1F;
+      --bark-light: #5C4033;
+      --sand: #E8D5B7;
+      --terracotta: #C86B3A;
+      --linen: #F2E8D8;
+      --charcoal: #2E2E2E;
+      --text: #3D2B1F;
+      --text-muted: #7A6B5D;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* === ORGANIC BACKGROUND PATTERN === */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B5651D' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* === NAV === */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(253, 246, 236, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(61, 43, 31, 0.08);
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      padding: 14px 40px;
+      box-shadow: 0 4px 30px rgba(61, 43, 31, 0.06);
+    }
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--bark);
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--clay); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.3s;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--clay); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--clay);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .nav-cta:hover {
+      background: var(--bark);
+      transform: translateY(-1px);
+    }
+
+    /* === HERO — SPLIT ASYMMETRIC === */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 60px 80px 8vw;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: var(--sage);
+    }
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--bark);
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--clay);
+      position: relative;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: rgba(181, 101, 29, 0.15);
+      z-index: -1;
+    }
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.7s forwards;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s 0.9s forwards;
+    }
+    .btn-warm {
+      padding: 14px 32px;
+      background: var(--clay);
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-warm:hover {
+      background: var(--bark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(181, 101, 29, 0.25);
+    }
+    .btn-outline-warm {
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--bark);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid var(--bark);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-outline-warm:hover {
+      background: var(--bark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Right — Collage of organic shapes */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      opacity: 0;
+      animation: fadeIn 1.2s 0.6s forwards;
+    }
+    .hero-collage {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 3/4;
+    }
+    .collage-shape {
+      position: absolute;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(61, 43, 31, 0.12);
+    }
+    .collage-shape-1 {
+      top: 0;
+      left: 0;
+      width: 65%;
+      height: 55%;
+      border-radius: 0 0 80px 0;
+      background: linear-gradient(135deg, var(--sand), var(--linen));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .collage-shape-2 {
+      top: 8%;
+      right: 0;
+      width: 42%;
+      height: 38%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage), var(--sage-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .collage-shape-3 {
+      bottom: 0;
+      right: 5%;
+      width: 60%;
+      height: 50%;
+      border-radius: 80px 0 0 0;
+      background: linear-gradient(135deg, var(--clay-light), var(--terracotta));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .collage-icon {
+      font-size: 3rem;
+      opacity: 0.7;
+    }
+    .collage-label {
+      position: absolute;
+      background: rgba(255,255,255,0.92);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--bark);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      white-space: nowrap;
+    }
+    .collage-label-1 { bottom: 10px; right: 10px; }
+    .collage-label-2 { bottom: -12px; left: 50%; transform: translateX(-50%); }
+    .collage-label-3 { top: 10px; left: 10px; }
+
+    /* Floating leaf decoration */
+    .leaf-float {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.15;
+      animation: leafDrift 8s infinite ease-in-out;
+    }
+    .leaf-1 { top: 20%; right: 15%; animation-delay: 0s; }
+    .leaf-2 { bottom: 25%; left: 10%; animation-delay: 3s; font-size: 1.5rem; }
+    .leaf-3 { top: 60%; right: 5%; animation-delay: 5s; font-size: 1.2rem; }
+    @keyframes leafDrift {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-15px) rotate(8deg); }
+      66% { transform: translateY(10px) rotate(-5deg); }
+    }
+
+    /* === STATS STRIP === */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--bark);
+      position: relative;
+      z-index: 2;
+    }
+    .stat-item {
+      padding: 40px 30px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(181,101,29,0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .stat-item:hover::before { opacity: 1; }
+    .stat-number {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--clay-light);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    /* === ALTERNATING SECTIONS === */
+    .alt-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .alt-section:nth-child(even) {
+      background: var(--warm-white);
+    }
+    .alt-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .alt-section:nth-child(even) .alt-inner {
+      direction: rtl;
+    }
+    .alt-section:nth-child(even) .alt-inner > * {
+      direction: ltr;
+    }
+
+    /* Visual side */
+    .alt-visual {
+      position: relative;
+    }
+    .alt-img-frame {
+      position: relative;
+      border-radius: 16px 80px 16px 16px;
+      overflow: hidden;
+      background: var(--sand);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .alt-section:nth-child(even) .alt-img-frame {
+      border-radius: 80px 16px 16px 16px;
+    }
+    .alt-img-frame .placeholder-scene {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 30px;
+    }
+    .placeholder-scene .scene-icon {
+      font-size: 4rem;
+      filter: grayscale(30%);
+    }
+    .placeholder-scene .scene-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .alt-accent {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--sage);
+      opacity: 0.15;
+      bottom: -30px;
+      right: -30px;
+      z-index: -1;
+    }
+    .alt-section:nth-child(even) .alt-accent {
+      left: -30px;
+      right: auto;
+      background: var(--clay);
+    }
+
+    /* Content side */
+    .alt-content {
+      position: relative;
+    }
+    .alt-overline {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .alt-overline::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--sage);
+      opacity: 0.4;
+      max-width: 60px;
+    }
+    .alt-content h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--bark);
+      margin-bottom: 20px;
+    }
+    .alt-content h2 span { color: var(--clay); }
+    .alt-content p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    /* Feature tags */
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(138, 154, 91, 0.1);
+      border: 1px solid rgba(138, 154, 91, 0.2);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--sage-dark);
+      transition: all 0.3s;
+    }
+    .feature-tag:hover {
+      background: var(--sage);
+      color: #fff;
+      border-color: var(--sage);
+      transform: translateY(-2px);
+    }
+
+    /* === SPACE CALCULATOR SECTION === */
+    .calc-section {
+      padding: 100px 0;
+      background: var(--bark);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .calc-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(181, 101, 29, 0.08);
+    }
+    .calc-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .calc-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .calc-header h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .calc-header p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+    }
+    .calc-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 50px;
+      backdrop-filter: blur(10px);
+    }
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .calc-field select,
+    .calc-field input {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+    }
+    .calc-field select:focus,
+    .calc-field input:focus {
+      border-color: var(--clay-light);
+    }
+    .calc-field select option { background: var(--bark); }
+    .calc-result {
+      text-align: center;
+      padding: 30px;
+      background: rgba(181,101,29,0.15);
+      border-radius: 12px;
+      margin-top: 10px;
+      display: none;
+    }
+    .calc-result.visible { display: block; animation: fadeUp 0.5s forwards; }
+    .calc-result-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .calc-result-price {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--clay-light);
+    }
+    .calc-result-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 8px;
+    }
+    .calc-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: var(--clay);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 20px;
+    }
+    .calc-btn:hover {
+      background: var(--clay-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(181, 101, 29, 0.3);
+    }
+
+    /* === PRODUCT SHOWCASE CAROUSEL === */
+    .products-section {
+      padding: 100px 0;
+      background: var(--cream);
+      position: relative;
+      z-index: 1;
+    }
+    .products-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      padding: 0 40px;
+    }
+    .products-header h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--bark);
+      margin-bottom: 12px;
+    }
+    .products-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .products-track {
+      display: flex;
+      gap: 30px;
+      padding: 0 40px 40px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .products-track::-webkit-scrollbar { display: none; }
+    .product-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s;
+      position: relative;
+      border: 1px solid rgba(61,43,31,0.06);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(61, 43, 31, 0.12);
+    }
+    .product-card-img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, #fff);
+    }
+    .product-card:nth-child(1) .product-card-img { background: linear-gradient(135deg, #E8D5B7, #F2E8D8); }
+    .product-card:nth-child(2) .product-card-img { background: linear-gradient(135deg, #D4E5D0, #E8F0E4); }
+    .product-card:nth-child(3) .product-card-img { background: linear-gradient(135deg, #E0D4C4, #EDE4D8); }
+    .product-card:nth-child(4) .product-card-img { background: linear-gradient(135deg, #D5C4B0, #E8DDD0); }
+    .product-card:nth-child(5) .product-card-img { background: linear-gradient(135deg, #C4D4C0, #D8E4D4); }
+    .product-card-body {
+      padding: 24px;
+    }
+    .product-card-body h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--bark);
+      margin-bottom: 8px;
+    }
+    .product-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .product-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 50px;
+    }
+    .badge-popular {
+      background: rgba(181,101,29,0.1);
+      color: var(--clay);
+    }
+    .badge-eco {
+      background: rgba(138,154,91,0.15);
+      color: var(--sage-dark);
+    }
+    .badge-new {
+      background: rgba(61,43,31,0.08);
+      color: var(--bark-light);
+    }
+
+    /* === TESTIMONIAL MARQUEE === */
+    .testimonial-section {
+      padding: 80px 0;
+      background: var(--linen);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      text-align: center;
+      color: var(--bark);
+      margin-bottom: 50px;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 30px;
+      animation: marqueeScroll 40s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testi-card {
+      flex: 0 0 380px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      border: 1px solid rgba(61,43,31,0.06);
+    }
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-family: 'Lora', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--sand);
+    }
+    .testi-stars {
+      color: var(--clay);
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .testi-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .testi-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--bark);
+    }
+    .testi-location {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* === CTA SECTION === */
+    .cta-section {
+      padding: 120px 40px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .cta-inner h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--bark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .cta-inner p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-deco-1, .cta-deco-2 {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+    .cta-deco-1 {
+      width: 300px;
+      height: 300px;
+      background: var(--sage);
+      top: -100px;
+      left: -100px;
+    }
+    .cta-deco-2 {
+      width: 200px;
+      height: 200px;
+      background: var(--clay);
+      bottom: -50px;
+      right: -50px;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: var(--bark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 40px 30px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-brand h3 span { color: var(--clay-light); }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-col h4 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--clay-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* === SCROLL REVEAL === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* === MOBILE === */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-left {
+        padding: 120px 30px 50px;
+      }
+      .hero-right {
+        padding: 20px 30px 60px;
+      }
+      .stats-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stat-item { padding: 28px 20px; }
+      .alt-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .alt-section:nth-child(even) .alt-inner { direction: ltr; }
+      .calc-card { padding: 30px 20px; }
+      .calc-row { grid-template-columns: 1fr; }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      .product-card { flex: 0 0 280px; }
+    }
+    @media (max-width: 600px) {
+      .stats-strip { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .cta-actions { flex-direction: column; align-items: center; }
+    }
+
+    /* === HOVER SURPRISE: ORGANIC BLOB MORPH ON SECTION HEADINGS === */
+    .alt-content h2 {
+      position: relative;
+      display: inline-block;
+    }
+    .alt-content h2::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: var(--sage);
+      opacity: 0;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      top: -10px;
+      left: -25px;
+      z-index: -1;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .alt-content h2:hover::before {
+      opacity: 0.12;
+      width: 80px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50%;
+      transform: rotate(45deg);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .marquee-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav id="mainNav">
+    <a href="/index.html" class="nav-logo">iSeek<span>Blinds</span></a>
+    <ul class="nav-links">
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#calculator">Estimate</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <a href="/free-measure.html" class="nav-cta">Free Measure →</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Compact Living Specialists</div>
+      <h1>Small space. <em>Big impact.</em><br>Blinds for tiny homes.</h1>
+      <p class="hero-desc">Living tiny doesn't mean compromising on style or comfort. We've fitted hundreds of tiny houses, mobile homes, caravans and granny flats across Melbourne — with blinds built precisely for spaces where every centimetre counts.</p>
+      <div class="hero-actions">
+        <button class="btn-warm" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Get an Estimate</button>
+        <button class="btn-outline-warm" onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">Explore Solutions</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-collage">
+        <div class="collage-shape collage-shape-1">
+          <div class="placeholder-scene">
+            <span class="scene-icon">🏠</span>
+          </div>
+          <span class="collage-label collage-label-1">Tiny House</span>
+        </div>
+        <div class="collage-shape collage-shape-2">
+          <div class="placeholder-scene">
+            <span class="scene-icon">🚐</span>
+          </div>
+          <span class="collage-label collage-label-2">Mobile</span>
+        </div>
+        <div class="collage-shape collage-shape-3">
+          <div class="placeholder-scene">
+            <span class="scene-icon">☀️</span>
+          </div>
+          <span class="collage-label collage-label-3">Light Control</span>
+        </div>
+      </div>
+      <span class="leaf-float leaf-1">🌿</span>
+      <span class="leaf-float leaf-2">🍃</span>
+      <span class="leaf-float leaf-3">🌱</span>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Tiny Homes Fitted</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.9★</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Custom Made</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+
+  <!-- Alternating Sections -->
+  <div id="solutions">
+
+    <!-- Section 1: Why Tiny Homes Are Different -->
+    <section class="alt-section">
+      <div class="alt-inner">
+        <div class="alt-visual reveal-left">
+          <div class="alt-img-frame" style="background: linear-gradient(135deg, #E8D5B7 0%, #D4C4A8 100%);">
+            <div class="placeholder-scene">
+              <span class="scene-icon">📐</span>
+              <span class="scene-label">Precision Fit</span>
+            </div>
+          </div>
+          <div class="alt-accent"></div>
+        </div>
+        <div class="alt-content reveal-right">
+          <div class="alt-overline">The Challenge</div>
+          <h2>Standard blinds don't fit <span>non-standard windows</span></h2>
+          <p>Tiny houses and mobile homes come with windows that break every rule — narrower frames, unusual heights, loft angles, curved corners. Off-the-shelf blinds leave gaps, look awkward, and waste precious space. We measure to the millimetre and build each blind specifically for your home.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">🔧 Custom Sizing</span>
+            <span class="feature-tag">📏 mm-Precise</span>
+            <span class="feature-tag">🏗️ Lightweight Rails</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Space-Saving Solutions -->
+    <section class="alt-section">
+      <div class="alt-inner">
+        <div class="alt-visual reveal-right">
+          <div class="alt-img-frame" style="background: linear-gradient(135deg, #D4E5D0 0%, #C2D8BC 100%);">
+            <div class="placeholder-scene">
+              <span class="scene-icon">🪟</span>
+              <span class="scene-label">Space-Saving Design</span>
+            </div>
+          </div>
+          <div class="alt-accent"></div>
+        </div>
+        <div class="alt-content reveal-left">
+          <div class="alt-overline">Space Savers</div>
+          <h2>Blinds that <span>disappear</span> when you don't need them</h2>
+          <p>In a tiny home, every centimetre of wall and window real estate matters. Our honeycomb blinds stack to just 40mm. Our rollers tuck into compact 28mm cassettes. No dangling cords, no bulky headrails — just clean, minimal lines that let your space breathe.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">🐝 Ultra-Compact Stack</span>
+            <span class="feature-tag">🔇 Cordless Operation</span>
+            <span class="feature-tag">⚡ Motorised Option</span>
+            <span class="feature-tag">🧹 Easy Clean</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Insulation & Energy -->
+    <section class="alt-section">
+      <div class="alt-inner">
+        <div class="alt-visual reveal-left">
+          <div class="alt-img-frame" style="background: linear-gradient(135deg, #E0D4C4 0%, #D0C0A8 100%);">
+            <div class="placeholder-scene">
+              <span class="scene-icon">🌡️</span>
+              <span class="scene-label">Temperature Control</span>
+            </div>
+          </div>
+          <div class="alt-accent"></div>
+        </div>
+        <div class="alt-content reveal-right">
+          <div class="alt-overline">Energy Smart</div>
+          <h2>Insulation matters more when <span>every watt counts</span></h2>
+          <p>Small spaces heat up fast in summer and lose warmth quickly in winter. Our double-cell honeycomb blinds create an insulating air pocket that can reduce heat loss by up to 50%. For off-grid tiny homes, that's not a luxury — it's the difference between comfort and a space heater running all night.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">🧊 Summer Cool</span>
+            <span class="feature-tag">🔥 Winter Warm</span>
+            <span class="feature-tag">💡 50% Heat Reduction</span>
+            <span class="feature-tag">🔋 Off-Grid Friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Loft & Angle Windows -->
+    <section class="alt-section">
+      <div class="alt-inner">
+        <div class="alt-visual reveal-right">
+          <div class="alt-img-frame" style="background: linear-gradient(135deg, #C4D4C0 0%, #B4C8AC 100%);">
+            <div class="placeholder-scene">
+              <span class="scene-icon">🔺</span>
+              <span class="scene-label">Angle-Fit Blinds</span>
+            </div>
+          </div>
+          <div class="alt-accent"></div>
+        </div>
+        <div class="alt-content reveal-left">
+          <div class="alt-overline">Tricky Windows</div>
+          <h2>Lofts, skylights & angles — <span>we've seen it all</span></h2>
+          <p>That triangular loft window? The skylight over your sleeping platform? The sliding barn door that needs a privacy screen? We've solved every weird window configuration a tiny house can throw at us. Specialty brackets, tension systems, magnetic catches — whatever it takes to make it work beautifully.</p>
+          <div class="feature-tags">
+            <span class="feature-tag">🔺 Triangular Fits</span>
+            <span class="feature-tag">🌤️ Skylight Systems</span>
+            <span class="feature-tag">🧲 Magnetic Mounts</span>
+            <span class="feature-tag">🚪 Sliding Panels</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Space Calculator -->
+  <section class="calc-section" id="calculator">
+    <div class="calc-inner">
+      <div class="calc-header reveal">
+        <h2>Quick Estimate Calculator</h2>
+        <p>Get a ballpark figure for your tiny home blinds. No commitment, no spam.</p>
+      </div>
+      <div class="calc-card reveal">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Home Type</label>
+            <select id="homeType">
+              <option value="">Select your home type...</option>
+              <option value="tiny">Tiny House on Wheels</option>
+              <option value="mobile">Mobile / Manufactured Home</option>
+              <option value="caravan">Caravan / RV</option>
+              <option value="granny">Granny Flat / ADU</option>
+              <option value="container">Shipping Container Home</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Number of Windows</label>
+            <select id="windowCount">
+              <option value="">How many windows?</option>
+              <option value="1-3">1 – 3 windows</option>
+              <option value="4-6">4 – 6 windows</option>
+              <option value="7-10">7 – 10 windows</option>
+              <option value="11+">11+ windows</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Blind Type</label>
+            <select id="blindType">
+              <option value="">Choose a style...</option>
+              <option value="roller">Roller Blinds</option>
+              <option value="honeycomb">Honeycomb / Cellular</option>
+              <option value="venetian">Venetian Blinds</option>
+              <option value="shutters">Plantation Shutters</option>
+              <option value="curtains">Curtains / Drapes</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Priority Feature</label>
+            <select id="featurePriority">
+              <option value="">What matters most?</option>
+              <option value="privacy">Maximum Privacy</option>
+              <option value="light">Light Filtering</option>
+              <option value="blackout">Full Blackout</option>
+              <option value="insulation">Insulation / Energy</option>
+              <option value="style">Style & Aesthetics</option>
+            </select>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calculateEstimate()">Get My Estimate →</button>
+        <div class="calc-result" id="calcResult">
+          <div class="calc-result-label">Estimated Range</div>
+          <div class="calc-result-price" id="calcPrice">$380 – $720</div>
+          <div class="calc-result-note">Includes measure, supply & install. Final price after free in-home consultation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Carousel -->
+  <section class="products-section" id="products">
+    <div class="products-header reveal">
+      <h2>Best Sellers for Small Spaces</h2>
+      <p>Curated picks that our tiny home customers love most. Scroll to explore →</p>
+    </div>
+    <div class="products-track">
+      <div class="product-card">
+        <div class="product-card-img">🐝</div>
+        <div class="product-card-body">
+          <span class="product-badge badge-popular">Most Popular</span>
+          <h3>Honeycomb Cellular</h3>
+          <p>Ultra-compact 40mm stack. Double-cell design traps air for insulation. Perfect for off-grid tiny homes where energy efficiency is everything.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🎯</div>
+        <div class="product-card-body">
+          <span class="product-badge badge-eco">Eco Choice</span>
+          <h3>Compact Roller</h3>
+          <p>28mm cassette, blockout or sunscreen fabric. Clean minimal lines that virtually disappear when rolled up. Available in 200+ colours.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🪵</div>
+        <div class="product-card-body">
+          <span class="product-badge badge-new">New</span>
+          <h3>Slim Venetian</h3>
+          <p>25mm slats in timber or aluminium. Tilt for precise light control without taking up wall space. Ideal for kitchen and bathroom windows.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🌗</div>
+        <div class="product-card-body">
+          <h3>Day/Night Duo</h3>
+          <p>Alternating sheer and opaque bands. One blind does the job of two — filter light during the day, full privacy at night.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">📱</div>
+        <div class="product-card-body">
+          <h3>Motorised Smart</h3>
+          <p>Voice-controlled via Alexa or Google Home. Solar-powered option means no wiring needed — perfect for tiny house simplicity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Marquee -->
+  <section class="testimonial-section" id="reviews">
+    <h2 class="reveal">What Tiny Home Owners Say</h2>
+    <div class="marquee-track">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We built a 7m tiny house on wheels and dreaded the window situation. iSeekBlinds measured everything on-site and the honeycomb blinds fit like they were part of the original build. Absolute game changer for our winter heating bills.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-name">Sarah & Tom</div>
+            <div class="testi-location">THOW, Healesville</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Living in a converted bus, nothing is standard. These guys didn't flinch — measured 14 oddly-shaped windows and delivered perfectly fitting rollers in under two weeks. The cordless design is so much safer with our toddler around.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-name">James K.</div>
+            <div class="testi-location">Bus Conversion, Daylesford</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our granny flat was an afterthought by the builder — weird window sizes, nothing matched. iSeekBlinds made it feel intentional. The day/night blinds in the bedroom are brilliant. Mum loves them.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩‍🦱</div>
+          <div>
+            <div class="testi-name">Lisa P.</div>
+            <div class="testi-location">Granny Flat, Brunswick</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Fitted out our Airbnb shipping container with motorised blinds. Guests constantly comment on how premium the space feels. Worth every cent — they've been bulletproof for over a year now.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">🧔</div>
+          <div>
+            <div class="testi-name">Marcus D.</div>
+            <div class="testi-location">Container Home, Mornington</div>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicated for seamless marquee -->
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We built a 7m tiny house on wheels and dreaded the window situation. iSeekBlinds measured everything on-site and the honeycomb blinds fit like they were part of the original build. Absolute game changer for our winter heating bills.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-name">Sarah & Tom</div>
+            <div class="testi-location">THOW, Healesville</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Living in a converted bus, nothing is standard. These guys didn't flinch — measured 14 oddly-shaped windows and delivered perfectly fitting rollers in under two weeks. The cordless design is so much safer with our toddler around.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👨</div>
+          <div>
+            <div class="testi-name">James K.</div>
+            <div class="testi-location">Bus Conversion, Daylesford</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our granny flat was an afterthought by the builder — weird window sizes, nothing matched. iSeekBlinds made it feel intentional. The day/night blinds in the bedroom are brilliant. Mum loves them.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩‍🦱</div>
+          <div>
+            <div class="testi-name">Lisa P.</div>
+            <div class="testi-location">Granny Flat, Brunswick</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Fitted out our Airbnb shipping container with motorised blinds. Guests constantly comment on how premium the space feels. Worth every cent — they've been bulletproof for over a year now.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">🧔</div>
+          <div>
+            <div class="testi-name">Marcus D.</div>
+            <div class="testi-location">Container Home, Mornington</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-deco-1"></div>
+    <div class="cta-deco-2"></div>
+    <div class="cta-inner">
+      <h2 class="reveal">Your small space deserves<br>a proper fit</h2>
+      <p class="reveal">Book a free in-home measure. We'll come to you — whether that's a suburban granny flat or a tiny house parked in the hills.</p>
+      <div class="cta-actions reveal">
+        <a href="/free-measure.html" class="btn-warm">Book Free Measure</a>
+        <a href="tel:0400000000" class="btn-outline-warm">📞 Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>iSeek<span>Blinds</span></h3>
+        <p>Melbourne's specialists in custom window furnishings for tiny houses, mobile homes, caravans, granny flats and compact living spaces. Every blind made to measure.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0400000000">📞 0400 000 000</a>
+        <a href="mailto:info@iseekblinds.com.au">📧 info@iseekblinds.com.au</a>
+        <a href="#">📍 Melbourne, VIC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      <p>Custom blinds for compact living since 2011</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Calculator
+    function calculateEstimate() {
+      const homeType = document.getElementById('homeType').value;
+      const windowCount = document.getElementById('windowCount').value;
+      const blindType = document.getElementById('blindType').value;
+
+      if (!homeType || !windowCount || !blindType) {
+        alert('Please fill in all fields to get an estimate.');
+        return;
+      }
+
+      // Base prices per window
+      const basePrices = {
+        roller: [120, 180],
+        honeycomb: [160, 240],
+        venetian: [130, 200],
+        shutters: [280, 450],
+        curtains: [180, 300]
+      };
+
+      // Window count multipliers
+      const windowMultipliers = {
+        '1-3': [2, 3],
+        '4-6': [4, 6],
+        '7-10': [7, 10],
+        '11+': [11, 14]
+      };
+
+      const [baseLow, baseHigh] = basePrices[blindType] || [150, 250];
+      const [countLow, countHigh] = windowMultipliers[windowCount] || [3, 6];
+
+      const low = baseLow * countLow;
+      const high = baseHigh * countHigh;
+
+      document.getElementById('calcPrice').textContent = `$${low.toLocaleString()} – $${high.toLocaleString()}`;
+
+      const result = document.getElementById('calcResult');
+      result.classList.add('visible');
+    }
+
+    // Stagger product cards on scroll
+    const productCards = document.querySelectorAll('.product-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, i * 100);
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    productCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      cardObserver.observe(card);
+    });
+  </script>
+</body>
+</html>
