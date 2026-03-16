@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mid-Century Modern Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Mid-century modern window treatments for Melbourne homes. Retro-inspired blinds, curtains & shutters that complement Eames, teak & organic curves. Mustard, olive & teal palettes. Free consultation.">
+  <meta name="keywords" content="mid-century modern blinds Melbourne, retro window treatments, MCM curtains, vintage blinds, 1950s style blinds, teak venetian blinds, atomic age window coverings, mid-century interior blinds">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === MID-CENTURY MODERN THEME — Retro Modern 复古现代 === */
+    :root {
+      --mcm-mustard: #d4a012;
+      --mcm-mustard-light: #e8c547;
+      --mcm-mustard-glow: rgba(212, 160, 18, 0.12);
+      --mcm-olive: #5c6b3c;
+      --mcm-olive-light: #8a9a68;
+      --mcm-burnt: #c2622d;
+      --mcm-burnt-light: #d98a5a;
+      --mcm-teal: #2a7b7b;
+      --mcm-teal-light: #4da8a8;
+      --mcm-cream: #faf6ee;
+      --mcm-warm: #f5efe3;
+      --mcm-walnut: #3d2b1f;
+      --mcm-walnut-light: #6b5344;
+      --mcm-text: #2d2418;
+      --mcm-text-soft: #6b5e52;
+      --mcm-bg: #faf8f3;
+      --mcm-white: #fffdf8;
+      --mcm-radius: 0px;
+      --mcm-radius-sm: 0px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .mcm-page {
+      background: var(--mcm-bg);
+      color: var(--mcm-text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    .mcm-page h1, .mcm-page h2, .mcm-page h3, .mcm-page h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--mcm-text);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .mcm-page .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header overrides */
+    .mcm-page .header {
+      background: rgba(250, 248, 243, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--mcm-mustard);
+    }
+    .mcm-page .header .nav a { color: var(--mcm-text); font-weight: 500; }
+    .mcm-page .header .nav a:hover { color: var(--mcm-mustard); }
+    .mcm-page .header .btn-primary {
+      background: var(--mcm-mustard);
+      color: var(--mcm-walnut);
+      border: none;
+      border-radius: 0;
+      font-weight: 700;
+    }
+    .mcm-page .header .btn-primary:hover { background: var(--mcm-mustard-light); }
+    .mcm-page .mobile-menu-btn { color: var(--mcm-walnut); }
+
+    /* Animations */
+    @keyframes mcmSlideUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes mcmFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes mcmStarburst {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes mcmDiamondPulse {
+      0%, 100% { transform: rotate(45deg) scale(1); }
+      50% { transform: rotate(45deg) scale(1.08); }
+    }
+
+    .mcm-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mcm-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === HERO === */
+    .mcm-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--mcm-walnut);
+    }
+    .mcm-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.35) saturate(0.8);
+    }
+    .mcm-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(61,43,31,0.85) 0%, rgba(212,160,18,0.15) 50%, rgba(42,123,123,0.2) 100%);
+    }
+    /* Retro geometric decorations */
+    .mcm-hero-diamond {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(212, 160, 18, 0.3);
+      transform: rotate(45deg);
+      top: 15%;
+      right: 12%;
+      animation: mcmDiamondPulse 5s ease-in-out infinite;
+    }
+    .mcm-hero-diamond-2 {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(194, 98, 45, 0.2);
+      transform: rotate(45deg);
+      bottom: 20%;
+      right: 25%;
+      animation: mcmDiamondPulse 7s ease-in-out infinite reverse;
+    }
+    .mcm-hero-line {
+      position: absolute;
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--mcm-mustard), transparent);
+      top: 30%;
+      right: 5%;
+      transform: rotate(-15deg);
+    }
+    .mcm-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 8rem 2rem 5rem;
+    }
+    .mcm-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(212, 160, 18, 0.15);
+      border: 1px solid rgba(212, 160, 18, 0.4);
+      color: var(--mcm-mustard-light);
+      padding: 0.5rem 1.8rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: mcmFadeIn 1s ease 0.3s both;
+    }
+    .mcm-hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      animation: mcmSlideUp 1s ease 0.5s both;
+      color: var(--mcm-cream);
+    }
+    .mcm-hero h1 em {
+      font-style: italic;
+      color: var(--mcm-mustard);
+    }
+    .mcm-hero-accent {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      animation: mcmFadeIn 1s ease 0.8s both;
+    }
+    .mcm-hero-accent-line {
+      width: 50px;
+      height: 3px;
+      background: var(--mcm-mustard);
+    }
+    .mcm-hero-accent-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--mcm-burnt);
+      transform: rotate(45deg);
+    }
+    .mcm-hero p {
+      font-size: 1.1rem;
+      color: rgba(250, 246, 238, 0.8);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      animation: mcmSlideUp 1s ease 1s both;
+    }
+    .mcm-hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: mcmSlideUp 1s ease 1.2s both;
+    }
+    .mcm-btn-primary {
+      display: inline-block;
+      background: var(--mcm-mustard);
+      color: var(--mcm-walnut);
+      padding: 1.1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(212, 160, 18, 0.3);
+    }
+    .mcm-btn-primary:hover {
+      background: var(--mcm-mustard-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(212, 160, 18, 0.4);
+    }
+    .mcm-btn-secondary {
+      display: inline-block;
+      border: 2px solid var(--mcm-mustard);
+      color: var(--mcm-mustard-light);
+      padding: 1rem 2.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.4s ease;
+    }
+    .mcm-btn-secondary:hover {
+      background: var(--mcm-mustard);
+      color: var(--mcm-walnut);
+      transform: translateY(-3px);
+    }
+
+    /* === ERA SECTION === */
+    .mcm-era {
+      padding: 7rem 0;
+      background: var(--mcm-white);
+      position: relative;
+    }
+    .mcm-era::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mcm-mustard), var(--mcm-teal), var(--mcm-burnt), var(--mcm-olive));
+    }
+    .mcm-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mcm-teal);
+      margin-bottom: 1rem;
+    }
+    .mcm-section-label::before, .mcm-section-label::after {
+      content: '◆';
+      font-size: 0.5rem;
+      color: var(--mcm-mustard);
+    }
+    .mcm-era-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .mcm-era-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .mcm-era-header p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--mcm-text-soft);
+      font-size: 1.05rem;
+    }
+    .mcm-era-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .mcm-era-card {
+      background: var(--mcm-cream);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      border-bottom: 4px solid transparent;
+      position: relative;
+    }
+    .mcm-era-card:nth-child(1) { border-bottom-color: var(--mcm-mustard); }
+    .mcm-era-card:nth-child(2) { border-bottom-color: var(--mcm-teal); }
+    .mcm-era-card:nth-child(3) { border-bottom-color: var(--mcm-burnt); }
+    .mcm-era-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(45, 36, 24, 0.08);
+    }
+    .mcm-era-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      background: var(--mcm-mustard-glow);
+      transform: rotate(45deg);
+    }
+    .mcm-era-icon span {
+      transform: rotate(-45deg);
+      display: block;
+    }
+    .mcm-era-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .mcm-era-card p {
+      color: var(--mcm-text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* === PRODUCT RANGE === */
+    .mcm-range {
+      padding: 7rem 0;
+      background: var(--mcm-bg);
+    }
+    .mcm-range-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .mcm-range-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+    .mcm-range-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    .mcm-range-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: var(--mcm-white);
+      padding: 2rem;
+      transition: all 0.4s ease;
+      border-left: 4px solid var(--mcm-mustard);
+    }
+    .mcm-range-item:nth-child(2) { border-left-color: var(--mcm-olive); }
+    .mcm-range-item:nth-child(3) { border-left-color: var(--mcm-teal); }
+    .mcm-range-item:nth-child(4) { border-left-color: var(--mcm-burnt); }
+    .mcm-range-item:hover {
+      box-shadow: 0 12px 40px rgba(45, 36, 24, 0.08);
+      transform: translateY(-4px);
+    }
+    .mcm-range-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    .mcm-range-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+      color: var(--mcm-walnut);
+    }
+    .mcm-range-item p {
+      color: var(--mcm-text-soft);
+      font-size: 0.92rem;
+    }
+    .mcm-range-tag {
+      display: inline-block;
+      background: var(--mcm-mustard-glow);
+      color: var(--mcm-walnut);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      margin-top: 0.8rem;
+      border-left: 3px solid var(--mcm-mustard);
+    }
+
+    /* === STYLE GUIDE === */
+    .mcm-styleguide {
+      padding: 7rem 0;
+      background: var(--mcm-white);
+      position: relative;
+    }
+    .mcm-styleguide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .mcm-styleguide-img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .mcm-styleguide-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .mcm-styleguide-img-wrapper:hover .mcm-styleguide-img {
+      transform: scale(1.04);
+    }
+    .mcm-styleguide-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 140px;
+      height: 140px;
+      background: var(--mcm-mustard);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mcm-walnut);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.3;
+      padding: 1rem;
+      transform: rotate(45deg);
+      box-shadow: 0 8px 30px rgba(212, 160, 18, 0.3);
+    }
+    .mcm-styleguide-badge span {
+      transform: rotate(-45deg);
+      display: block;
+    }
+    .mcm-styleguide-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+    }
+    .mcm-styleguide-content p {
+      color: var(--mcm-text-soft);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .mcm-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .mcm-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(212, 160, 18, 0.12);
+    }
+    .mcm-checklist li:last-child { border-bottom: none; }
+    .mcm-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--mcm-mustard);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mcm-walnut);
+      font-size: 0.75rem;
+      font-weight: 700;
+      transform: rotate(45deg);
+      margin-top: 0.1rem;
+    }
+    .mcm-check span {
+      transform: rotate(-45deg);
+    }
+
+    /* === GALLERY === */
+    .mcm-gallery {
+      padding: 7rem 0;
+      background: var(--mcm-bg);
+    }
+    .mcm-gallery-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .mcm-gallery-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 0.8rem;
+    }
+    .mcm-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .mcm-gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .mcm-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mcm-gallery-item:hover img { transform: scale(1.08); }
+    .mcm-gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 1.2rem 1.2rem;
+      background: linear-gradient(transparent, rgba(45, 36, 24, 0.85));
+      color: var(--mcm-cream);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .mcm-gallery-item:hover .mcm-gallery-caption { transform: translateY(0); }
+
+    /* === FAQ === */
+    .mcm-faq {
+      padding: 7rem 0;
+      background: var(--mcm-white);
+    }
+    .mcm-faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .mcm-faq-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.8rem;
+    }
+    .mcm-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .mcm-faq-item {
+      border-bottom: 1px solid rgba(212, 160, 18, 0.15);
+      padding: 1.8rem 0;
+    }
+    .mcm-faq-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      color: var(--mcm-walnut);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .mcm-faq-item h3::before {
+      content: '◆';
+      color: var(--mcm-mustard);
+      font-size: 0.6rem;
+    }
+    .mcm-faq-item p {
+      color: var(--mcm-text-soft);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      padding-left: 1.6rem;
+    }
+
+    /* === TESTIMONIAL === */
+    .mcm-testimonial {
+      padding: 6rem 0;
+      background: var(--mcm-walnut);
+      color: var(--mcm-cream);
+      text-align: center;
+      position: relative;
+    }
+    .mcm-testimonial::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mcm-mustard), var(--mcm-teal), var(--mcm-burnt), var(--mcm-olive));
+    }
+    .mcm-testimonial blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .mcm-testimonial cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      font-family: 'Inter', sans-serif;
+    }
+    .mcm-testimonial cite strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      opacity: 1;
+      color: var(--mcm-mustard-light);
+    }
+
+    /* === CTA === */
+    .mcm-cta {
+      padding: 7rem 0;
+      background: var(--mcm-cream);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mcm-cta::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 2px solid rgba(212, 160, 18, 0.08);
+      transform: rotate(45deg);
+      top: -250px;
+      left: -100px;
+    }
+    .mcm-cta::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid rgba(42, 123, 123, 0.06);
+      transform: rotate(45deg);
+      bottom: -150px;
+      right: -50px;
+    }
+    .mcm-cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .mcm-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .mcm-cta p {
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      color: var(--mcm-text-soft);
+      font-size: 1.05rem;
+    }
+
+    /* === CROSS-LINKS === */
+    .mcm-crosslinks {
+      padding: 4rem 0;
+      background: var(--mcm-white);
+      border-top: 3px solid var(--mcm-mustard);
+    }
+    .mcm-crosslinks h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .mcm-crosslink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .mcm-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      color: var(--mcm-text-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .mcm-crosslink-item:hover {
+      background: var(--mcm-mustard-glow);
+      color: var(--mcm-walnut);
+    }
+    .mcm-crosslink-item span { color: var(--mcm-mustard); font-weight: 600; }
+
+    /* === FOOTER OVERRIDES === */
+    .mcm-page .footer {
+      background: var(--mcm-walnut);
+      color: var(--mcm-warm);
+    }
+    .mcm-page .footer a { color: var(--mcm-warm); }
+    .mcm-page .footer a:hover { color: var(--mcm-mustard-light); }
+    .mcm-page .footer h4 { color: var(--mcm-cream); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 968px) {
+      .mcm-era-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .mcm-range-items { grid-template-columns: 1fr; }
+      .mcm-styleguide-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .mcm-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .mcm-hero-content { padding: 6rem 1rem 3rem; }
+      .mcm-range-item { grid-template-columns: 1fr; }
+      .mcm-range-img { aspect-ratio: 16/9; }
+      .mcm-gallery-grid { grid-template-columns: 1fr; }
+      .mcm-hero-diamond, .mcm-hero-diamond-2, .mcm-hero-line { display: none; }
+      .mcm-styleguide-badge { width: 100px; height: 100px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body class="mcm-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mcm-hero">
+    <div class="mcm-hero-bg"></div>
+    <div class="mcm-hero-overlay"></div>
+    <div class="mcm-hero-diamond"></div>
+    <div class="mcm-hero-diamond-2"></div>
+    <div class="mcm-hero-line"></div>
+    <div class="container mcm-hero-content">
+      <span class="mcm-hero-tag">◆ Mid-Century Modern Specialists ◆</span>
+      <h1>Atomic Age<br>Meets <em>Modern<br>Elegance</em></h1>
+      <div class="mcm-hero-accent">
+        <div class="mcm-hero-accent-line"></div>
+        <div class="mcm-hero-accent-dot"></div>
+        <div class="mcm-hero-accent-line"></div>
+      </div>
+      <p>Window treatments that honour the clean lines, organic curves, and bold palettes of mid-century modern design. Crafted for Melbourne's retro-inspired homes.</p>
+      <div class="mcm-hero-ctas">
+        <a href="../free-quote.html" class="mcm-btn-primary">Free Consultation</a>
+        <a href="#range" class="mcm-btn-secondary">Explore Our Range</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why MCM Needs Specific Treatments -->
+  <section class="mcm-era">
+    <div class="container">
+      <div class="mcm-era-header mcm-animate">
+        <span class="mcm-section-label">The Design Challenge</span>
+        <h2>Why Mid-Century Modern Homes<br>Need Considered Window Treatments</h2>
+        <p>The sweeping glass walls, clerestory windows, and open-plan layouts that define MCM architecture demand window treatments that enhance — never compete with — the design.</p>
+      </div>
+      <div class="mcm-era-grid">
+        <div class="mcm-era-card mcm-animate">
+          <div class="mcm-era-icon"><span>🏠</span></div>
+          <h3>Expansive Glazing</h3>
+          <p>Floor-to-ceiling windows and sliding glass doors were MCM hallmarks. Generic curtains overwhelm these proportions. Our slim-profile systems preserve the architectural intent while managing glare and heat.</p>
+        </div>
+        <div class="mcm-era-card mcm-animate">
+          <div class="mcm-era-icon"><span>🎨</span></div>
+          <h3>Period-Correct Palettes</h3>
+          <p>Mustard, avocado, teak, burnt orange — the MCM colour story is distinctive. We carry fabrics in authentic retro tones alongside modern neutrals that complement vintage furniture without clashing.</p>
+        </div>
+        <div class="mcm-era-card mcm-animate">
+          <div class="mcm-era-icon"><span>✨</span></div>
+          <h3>Clean Lines Are Sacred</h3>
+          <p>Fussy swags, heavy valances, and ornate hardware have no place here. Our minimalist tracks, cassette rollers, and frameless shutters maintain the uncluttered geometry MCM demands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Range -->
+  <section class="mcm-range" id="range">
+    <div class="container">
+      <div class="mcm-range-header mcm-animate">
+        <span class="mcm-section-label">Our Range</span>
+        <h2>Curated for Mid-Century Interiors</h2>
+      </div>
+      <div class="mcm-range-items">
+        <div class="mcm-range-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Venetian blinds in mid-century home" class="mcm-range-img">
+          <div>
+            <h3>Timber Venetian Blinds</h3>
+            <p>Basswood and cedar Venetians in walnut, teak, and natural finishes. The quintessential MCM window treatment — adjustable light control with warm, organic texture that pairs perfectly with Eames and Knoll furniture.</p>
+            <span class="mcm-range-tag">★ MCM Essential</span>
+          </div>
+        </div>
+        <div class="mcm-range-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=400&q=80" alt="Sheer curtains modern home" class="mcm-range-img">
+          <div>
+            <h3>Minimal Roller Blinds</h3>
+            <p>Ultra-slim cassette rollers in textured weaves — linen, jute, and grasscloth. Disappear completely when raised, maintaining clean sightlines. Available in mustard, olive, and warm grey tones.</p>
+            <span class="mcm-range-tag">Low Profile</span>
+          </div>
+        </div>
+        <div class="mcm-range-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80" alt="Panel glide blinds" class="mcm-range-img">
+          <div>
+            <h3>Panel Glide Systems</h3>
+            <p>Wide fabric panels that slide on sleek tracks — ideal for MCM's signature floor-to-ceiling glass walls. Geometric and organic prints available in period-correct colourways for a statement feature.</p>
+            <span class="mcm-range-tag">Statement Feature</span>
+          </div>
+        </div>
+        <div class="mcm-range-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Plantation shutters modern" class="mcm-range-img">
+          <div>
+            <h3>Frameless Shutters</h3>
+            <p>Clean-lined plantation shutters with hidden hinges and no visible frame — pure geometry. Our wide-blade options in white and natural timber complement the horizontal emphasis of MCM facades.</p>
+            <span class="mcm-range-tag">Architectural Grade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Guide -->
+  <section class="mcm-styleguide">
+    <div class="container">
+      <div class="mcm-styleguide-grid">
+        <div class="mcm-styleguide-img-wrapper mcm-animate">
+          <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80" alt="Mid-century modern living room" class="mcm-styleguide-img">
+          <div class="mcm-styleguide-badge"><span>Retro<br>Meets<br>Modern</span></div>
+        </div>
+        <div class="mcm-styleguide-content mcm-animate">
+          <span class="mcm-section-label">Style Guide</span>
+          <h2>Pairing Blinds with<br>MCM Design Elements</h2>
+          <p>Mid-century modern is all about balance — form meets function, organic meets geometric, retro meets timeless. Our design consultants understand these principles intimately.</p>
+          <ul class="mcm-checklist">
+            <li>
+              <span class="mcm-check"><span>✓</span></span>
+              <div><strong>Teak &amp; Walnut Matching</strong> — We carry 12 timber-tone fabrics that pair with original MCM furniture finishes, from Danish oiled teak to American black walnut.</div>
+            </li>
+            <li>
+              <span class="mcm-check"><span>✓</span></span>
+              <div><strong>Period Colour Expertise</strong> — Authentic 1950s–70s palettes: mustard gold, avocado green, burnt sienna, cerulean blue. We know which tones are period-correct vs. pastiche.</div>
+            </li>
+            <li>
+              <span class="mcm-check"><span>✓</span></span>
+              <div><strong>Proportion-Sensitive Installation</strong> — MCM architecture uses horizontal lines to ground spaces. We install treatments that reinforce this horizontality, never fight it.</div>
+            </li>
+            <li>
+              <span class="mcm-check"><span>✓</span></span>
+              <div><strong>Hardware as Jewellery</strong> — Brushed brass rods, matte black tracks, tapered-leg brackets — our MCM hardware range is designed like the furniture it accompanies.</div>
+            </li>
+            <li>
+              <span class="mcm-check"><span>✓</span></span>
+              <div><strong>Heritage &amp; New-Build Expertise</strong> — Whether you're restoring a 1960s Robin Boyd original or building a new MCM-inspired home, we understand both contexts.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="mcm-gallery" id="gallery">
+    <div class="container">
+      <div class="mcm-gallery-header mcm-animate">
+        <span class="mcm-section-label">Our Work</span>
+        <h2>Mid-Century Homes We've Styled</h2>
+      </div>
+      <div class="mcm-gallery-grid">
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80" alt="MCM living room with timber venetians">
+          <div class="mcm-gallery-caption">Timber Venetians — Ivanhoe</div>
+        </div>
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Retro lounge with roller blinds">
+          <div class="mcm-gallery-caption">Roller Blinds — Beaumaris</div>
+        </div>
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Open plan MCM kitchen">
+          <div class="mcm-gallery-caption">Panel Glides — Doncaster</div>
+        </div>
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="MCM bedroom with shutters">
+          <div class="mcm-gallery-caption">Shutters — Kew</div>
+        </div>
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=600&q=80" alt="MCM study with blinds">
+          <div class="mcm-gallery-caption">Textured Rollers — Hawthorn</div>
+        </div>
+        <div class="mcm-gallery-item mcm-animate">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&q=80" alt="MCM dining room">
+          <div class="mcm-gallery-caption">Timber Venetians — Brighton</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mcm-faq">
+    <div class="container">
+      <div class="mcm-faq-header mcm-animate">
+        <span class="mcm-section-label">Common Questions</span>
+        <h2>Mid-Century Modern Blinds FAQ</h2>
+      </div>
+      <div class="mcm-faq-list">
+        <div class="mcm-faq-item mcm-animate">
+          <h3>What blinds look best in a mid-century modern home?</h3>
+          <p>Timber Venetian blinds are the gold standard for MCM interiors — they echo the natural timber used in furniture and joinery. Slim roller blinds in textured weaves and panel glides for large glass walls are also excellent period-appropriate choices. Avoid anything fussy: ruffled curtains, heavy drapes, or ornate pelmets are out.</p>
+        </div>
+        <div class="mcm-faq-item mcm-animate">
+          <h3>What colours suit mid-century modern windows?</h3>
+          <p>Authentic MCM palettes include mustard/golden yellow, olive/avocado green, burnt orange/sienna, teal/cerulean blue, and warm neutrals (cream, tan, walnut). Modern interpretations often pair these accent colours with white or grey for a fresher look. We carry fabric samples in all these tones.</p>
+        </div>
+        <div class="mcm-faq-item mcm-animate">
+          <h3>Can you match my vintage teak furniture?</h3>
+          <p>Absolutely. We carry 12+ timber-tone finishes specifically curated for MCM homes, ranging from light Danish oak to deep American walnut. Our consultants bring samples to match against your existing furniture, cabinetry, and flooring on-site.</p>
+        </div>
+        <div class="mcm-faq-item mcm-animate">
+          <h3>Do you work with heritage-listed MCM homes?</h3>
+          <p>Yes. We've fitted window treatments in several heritage-overlay homes across Melbourne's inner east. We understand the requirements around reversible installations, period-appropriate materials, and council approval processes. Our mounting methods are non-destructive where required.</p>
+        </div>
+        <div class="mcm-faq-item mcm-animate">
+          <h3>What about the large glass walls typical in MCM architecture?</h3>
+          <p>MCM homes are famous for their expansive glazing. We recommend panel glide systems for sliding doors (up to 6m wide), motorised roller blinds for clerestory windows, and Venetians for standard openings. All systems use slim-profile hardware that doesn't interfere with the architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="mcm-testimonial">
+    <div class="container mcm-animate">
+      <blockquote>"We spent two years restoring our 1962 home in Beaumaris and the windows were the final piece. iSeekBlinds understood exactly what we needed — the timber Venetians they installed look like they've always been there. Period-perfect colour matching and beautifully clean installation."</blockquote>
+      <cite>
+        <strong>Tom &amp; Sarah Henderson</strong>
+        1962 MCM Restoration · Beaumaris
+      </cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mcm-cta">
+    <div class="container mcm-cta-inner mcm-animate">
+      <span class="mcm-section-label">Let's Begin</span>
+      <h2>Ready to Complete Your<br>Mid-Century Vision?</h2>
+      <p>Book a free in-home consultation. Our MCM design specialists bring curated samples in period-correct colours and timber tones to match your space perfectly.</p>
+      <a href="../free-quote.html" class="mcm-btn-primary">Book Your Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="mcm-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="mcm-crosslink-grid">
+        <a href="acoustic-solutions.html" class="mcm-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="mcm-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="mcm-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="mcm-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="mcm-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="mcm-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html" class="mcm-crosslink-item"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html" class="mcm-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="mcm-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="mcm-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="mcm-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="mcm-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="mcm-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="mcm-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="mcm-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="mcm-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="mcm-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="mcm-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="mcm-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="mcm-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="mcm-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="mcm-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="mcm-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="mcm-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="mcm-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="mcm-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="mcm-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="mcm-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="mcm-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html" class="mcm-crosslink-item"><span>→</span> Granny Flat</a>
+        <a href="gym-fitness-centre.html" class="mcm-crosslink-item"><span>→</span> Gym &amp; Fitness Centre ✨</a>
+        <a href="hamptons-style.html" class="mcm-crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="mcm-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="mcm-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="mcm-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="mcm-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="mcm-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="mcm-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="mcm-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="japandi-zen-style.html" class="mcm-crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
+        <a href="large-windows.html" class="mcm-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="mcm-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="mcm-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="mcm-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="mcm-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="mcm-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="mcm-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html" class="mcm-crosslink-item"><span>→</span> Motorised Blinds Guide</a>
+        <a href="new-home-packages.html" class="mcm-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="mcm-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="mcm-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="mcm-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="mcm-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="mcm-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html" class="mcm-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html" class="mcm-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html" class="mcm-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="mcm-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="mcm-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="mcm-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="mcm-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="mcm-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="mcm-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="mcm-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="mcm-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="mcm-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="mcm-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html" class="mcm-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
+        <a href="summer-uv-protection.html" class="mcm-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="mcm-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="mcm-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="mcm-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="mcm-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="mcm-crosslink-item"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html" class="mcm-crosslink-item"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.mcm-animate').forEach(el => { observer.observe(el); });
+
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

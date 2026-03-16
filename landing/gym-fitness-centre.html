@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Gym & Fitness Centre Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="High-performance window treatments for commercial gyms, fitness centres, CrossFit boxes & Pilates studios in Melbourne. UV protection, glare reduction, moisture-resistant blinds. Free consultation.">
+  <meta name="keywords" content="gym blinds Melbourne, fitness centre blinds, CrossFit box blinds, commercial gym window treatments, Pilates studio blinds, sports facility blinds, moisture resistant blinds gym, UV protection gym windows">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GYM FITNESS THEME — Tech Futuristic 科技未来感 === */
+    :root {
+      --gym-dark: #0a0e17;
+      --gym-dark-2: #111827;
+      --gym-dark-3: #1a2035;
+      --gym-neon-blue: #00d4ff;
+      --gym-neon-blue-glow: rgba(0, 212, 255, 0.15);
+      --gym-neon-blue-dim: rgba(0, 212, 255, 0.6);
+      --gym-lime: #39ff14;
+      --gym-lime-glow: rgba(57, 255, 20, 0.12);
+      --gym-lime-dim: rgba(57, 255, 20, 0.6);
+      --gym-white: #e8edf5;
+      --gym-grey: #8892a4;
+      --gym-text: #c8d0e0;
+      --gym-text-soft: #7a8499;
+      --gym-grid: rgba(0, 212, 255, 0.04);
+      --gym-border: rgba(0, 212, 255, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .gym-page {
+      background: var(--gym-dark);
+      color: var(--gym-text);
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.75;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .gym-page h1, .gym-page h2, .gym-page h3, .gym-page h4 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--gym-white);
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .gym-page .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header overrides */
+    .gym-page .header {
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gym-border);
+    }
+    .gym-page .header .nav a { color: var(--gym-text); font-family: 'Rajdhani', sans-serif; font-weight: 600; }
+    .gym-page .header .nav a:hover { color: var(--gym-neon-blue); }
+    .gym-page .header .btn-primary {
+      background: var(--gym-neon-blue);
+      color: var(--gym-dark);
+      border: none;
+      border-radius: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+    }
+    .gym-page .header .btn-primary:hover { background: var(--gym-lime); }
+    .gym-page .mobile-menu-btn { color: var(--gym-neon-blue); }
+
+    /* Animations */
+    @keyframes gymGlitch {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-2px); }
+      40% { transform: translateX(2px); }
+      60% { transform: translateX(-1px); }
+      80% { transform: translateX(1px); }
+    }
+    @keyframes gymPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    @keyframes gymScanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
+    }
+    @keyframes gymNeonFlicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.6; }
+    }
+    @keyframes gymGridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
+    }
+
+    .gym-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gym-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Grid background utility */
+    .gym-grid-bg {
+      background-image:
+        linear-gradient(var(--gym-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gym-grid) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gymGridMove 8s linear infinite;
+    }
+
+    /* === HERO === */
+    .gym-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--gym-dark);
+    }
+    .gym-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.2) saturate(0.3);
+    }
+    .gym-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,14,23,0.95) 0%, rgba(0,212,255,0.08) 50%, rgba(57,255,20,0.05) 100%);
+    }
+    .gym-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .gym-hero-scanline {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.15), transparent);
+      animation: gymScanline 6s linear infinite;
+    }
+    /* Geometric accents */
+    .gym-hero-hex {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgba(0, 212, 255, 0.1);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      top: 15%;
+      right: 10%;
+      animation: gymPulse 4s ease-in-out infinite;
+    }
+    .gym-hero-hex-2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(57, 255, 20, 0.03);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      bottom: 25%;
+      right: 20%;
+      animation: gymPulse 5s ease-in-out infinite reverse;
+    }
+    .gym-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      padding: 8rem 2rem 5rem;
+    }
+    .gym-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      border: 1px solid var(--gym-neon-blue);
+      color: var(--gym-neon-blue);
+      padding: 0.5rem 1.8rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 2rem;
+      animation: gymNeonFlicker 3s ease-in-out infinite;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.15), inset 0 0 15px rgba(0, 212, 255, 0.05);
+    }
+    .gym-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      color: var(--gym-white);
+    }
+    .gym-hero h1 .gym-neon {
+      color: var(--gym-neon-blue);
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+    }
+    .gym-hero h1 .gym-lime-text {
+      color: var(--gym-lime);
+      text-shadow: 0 0 20px rgba(57, 255, 20, 0.5), 0 0 40px rgba(57, 255, 20, 0.2);
+    }
+    .gym-hero-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .gym-hero-bar-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gym-neon-blue);
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+    }
+    .gym-hero-bar-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gym-lime);
+      box-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+    }
+    .gym-hero p {
+      font-size: 1.15rem;
+      color: var(--gym-text);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+    .gym-hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .gym-btn-primary {
+      display: inline-block;
+      background: var(--gym-neon-blue);
+      color: var(--gym-dark);
+      padding: 1.1rem 2.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 4px 20px rgba(0, 212, 255, 0.2);
+    }
+    .gym-btn-primary:hover {
+      background: var(--gym-lime);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.4), 0 8px 30px rgba(57, 255, 20, 0.2);
+    }
+    .gym-btn-secondary {
+      display: inline-block;
+      border: 1px solid var(--gym-neon-blue);
+      color: var(--gym-neon-blue);
+      padding: 1rem 2.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.4s ease;
+    }
+    .gym-btn-secondary:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    }
+
+    /* === STATS BAR === */
+    .gym-stats {
+      padding: 3rem 0;
+      background: var(--gym-dark-2);
+      border-top: 1px solid var(--gym-border);
+      border-bottom: 1px solid var(--gym-border);
+    }
+    .gym-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .gym-stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gym-neon-blue);
+      text-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .gym-stat-number.lime { color: var(--gym-lime); text-shadow: 0 0 15px rgba(57, 255, 20, 0.3); }
+    .gym-stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gym-text-soft);
+    }
+
+    /* === WHY SECTION === */
+    .gym-why {
+      padding: 7rem 0;
+      background: var(--gym-dark);
+      position: relative;
+    }
+    .gym-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gym-neon-blue);
+      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .gym-section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--gym-neon-blue);
+      box-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+    }
+    .gym-why-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .gym-why-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .gym-why-header p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--gym-text-soft);
+      font-size: 1.1rem;
+    }
+    .gym-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .gym-why-card {
+      background: var(--gym-dark-2);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid var(--gym-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .gym-why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gym-neon-blue), var(--gym-lime));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .gym-why-card:hover::before { transform: scaleX(1); }
+    .gym-why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+      border-color: rgba(0, 212, 255, 0.25);
+    }
+    .gym-why-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      border: 1px solid var(--gym-border);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: var(--gym-neon-blue-glow);
+    }
+    .gym-why-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    .gym-why-card p {
+      color: var(--gym-text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* === PRODUCT RANGE === */
+    .gym-range {
+      padding: 7rem 0;
+      background: var(--gym-dark-2);
+    }
+    .gym-range-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .gym-range-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .gym-range-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+    .gym-range-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: var(--gym-dark-3);
+      padding: 2rem;
+      transition: all 0.4s ease;
+      border: 1px solid var(--gym-border);
+      position: relative;
+    }
+    .gym-range-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gym-neon-blue);
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+    .gym-range-item:nth-child(2)::after { background: var(--gym-lime); box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); }
+    .gym-range-item:nth-child(3)::after { background: var(--gym-neon-blue); }
+    .gym-range-item:nth-child(4)::after { background: var(--gym-lime); box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); }
+    .gym-range-item:hover {
+      box-shadow: 0 0 25px rgba(0, 212, 255, 0.06);
+      transform: translateY(-4px);
+      border-color: rgba(0, 212, 255, 0.25);
+    }
+    .gym-range-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      filter: saturate(0.8);
+      transition: filter 0.4s ease;
+    }
+    .gym-range-item:hover .gym-range-img { filter: saturate(1); }
+    .gym-range-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: var(--gym-neon-blue);
+      letter-spacing: 0.04em;
+    }
+    .gym-range-item:nth-child(2) h3, .gym-range-item:nth-child(4) h3 { color: var(--gym-lime); }
+    .gym-range-item p {
+      color: var(--gym-text-soft);
+      font-size: 0.92rem;
+    }
+    .gym-range-tag {
+      display: inline-block;
+      border: 1px solid var(--gym-neon-blue);
+      color: var(--gym-neon-blue);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      margin-top: 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* === VENUE TYPES === */
+    .gym-venues {
+      padding: 7rem 0;
+      background: var(--gym-dark);
+      position: relative;
+    }
+    .gym-venues-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .gym-venues-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gym-border);
+    }
+    .gym-venues-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      filter: saturate(0.7) brightness(0.8);
+      transition: all 0.6s ease;
+    }
+    .gym-venues-img-wrapper:hover .gym-venues-img {
+      filter: saturate(0.9) brightness(0.9);
+      transform: scale(1.04);
+    }
+    .gym-venues-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      background: rgba(10, 14, 23, 0.9);
+      border: 1px solid var(--gym-neon-blue);
+      color: var(--gym-neon-blue);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    }
+    .gym-venues-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+    .gym-venues-content p {
+      color: var(--gym-text-soft);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .gym-venues-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .gym-venues-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.06);
+    }
+    .gym-venues-list li:last-child { border-bottom: none; }
+    .gym-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--gym-neon-blue-glow);
+      border: 1px solid var(--gym-neon-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gym-neon-blue);
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    /* === GALLERY === */
+    .gym-gallery {
+      padding: 7rem 0;
+      background: var(--gym-dark-2);
+    }
+    .gym-gallery-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .gym-gallery-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 0.8rem;
+    }
+    .gym-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .gym-gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--gym-border);
+    }
+    .gym-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.6);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gym-gallery-item:hover img { transform: scale(1.08); filter: saturate(0.9); }
+    .gym-gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 1.2rem 1.2rem;
+      background: linear-gradient(transparent, rgba(10, 14, 23, 0.9));
+      color: var(--gym-neon-blue);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .gym-gallery-item:hover .gym-gallery-caption { transform: translateY(0); }
+
+    /* === FAQ === */
+    .gym-faq {
+      padding: 7rem 0;
+      background: var(--gym-dark);
+    }
+    .gym-faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .gym-faq-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 0.8rem;
+    }
+    .gym-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .gym-faq-item {
+      border-bottom: 1px solid var(--gym-border);
+      padding: 1.8rem 0;
+    }
+    .gym-faq-item h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      color: var(--gym-neon-blue);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .gym-faq-item h3::before {
+      content: '▸';
+      color: var(--gym-lime);
+      font-size: 0.8rem;
+    }
+    .gym-faq-item p {
+      color: var(--gym-text-soft);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      padding-left: 1.6rem;
+    }
+
+    /* === TESTIMONIAL === */
+    .gym-testimonial {
+      padding: 6rem 0;
+      background: var(--gym-dark-3);
+      text-align: center;
+      position: relative;
+      border-top: 1px solid var(--gym-border);
+      border-bottom: 1px solid var(--gym-border);
+    }
+    .gym-testimonial::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gym-neon-blue), var(--gym-lime), transparent);
+    }
+    .gym-testimonial blockquote {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--gym-text);
+    }
+    .gym-testimonial cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--gym-text-soft);
+    }
+    .gym-testimonial cite strong {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+      color: var(--gym-neon-blue);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* === CTA === */
+    .gym-cta {
+      padding: 7rem 0;
+      background: var(--gym-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gym-cta::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+      top: -100px;
+      left: -100px;
+    }
+    .gym-cta::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(57, 255, 20, 0.03) 0%, transparent 70%);
+      bottom: -100px;
+      right: -50px;
+    }
+    .gym-cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .gym-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .gym-cta h2 .gym-neon {
+      color: var(--gym-neon-blue);
+      text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    }
+    .gym-cta p {
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      color: var(--gym-text-soft);
+      font-size: 1.1rem;
+    }
+
+    /* === CROSS-LINKS === */
+    .gym-crosslinks {
+      padding: 4rem 0;
+      background: var(--gym-dark-2);
+      border-top: 1px solid var(--gym-border);
+    }
+    .gym-crosslinks h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.08em;
+    }
+    .gym-crosslink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .gym-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      color: var(--gym-text-soft);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .gym-crosslink-item:hover {
+      background: var(--gym-neon-blue-glow);
+      color: var(--gym-neon-blue);
+    }
+    .gym-crosslink-item span { color: var(--gym-neon-blue); font-weight: 600; }
+
+    /* === FOOTER OVERRIDES === */
+    .gym-page .footer {
+      background: #060810;
+      color: var(--gym-text-soft);
+      border-top: 1px solid var(--gym-border);
+    }
+    .gym-page .footer a { color: var(--gym-text-soft); }
+    .gym-page .footer a:hover { color: var(--gym-neon-blue); }
+    .gym-page .footer h4 { color: var(--gym-white); font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 0.08em; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 968px) {
+      .gym-why-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .gym-range-items { grid-template-columns: 1fr; }
+      .gym-venues-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gym-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gym-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 640px) {
+      .gym-hero-content { padding: 6rem 1rem 3rem; }
+      .gym-range-item { grid-template-columns: 1fr; }
+      .gym-range-img { aspect-ratio: 16/9; }
+      .gym-gallery-grid { grid-template-columns: 1fr; }
+      .gym-hero-hex, .gym-hero-hex-2 { display: none; }
+      .gym-stats-grid { grid-template-columns: 1fr 1fr; }
+      .gym-stat-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body class="gym-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="gym-hero">
+    <div class="gym-hero-bg"></div>
+    <div class="gym-hero-overlay"></div>
+    <div class="gym-hero-grid"></div>
+    <div class="gym-hero-scanline"></div>
+    <div class="gym-hero-hex"></div>
+    <div class="gym-hero-hex-2"></div>
+    <div class="container gym-hero-content">
+      <span class="gym-hero-tag">⚡ Commercial Fitness Specialists</span>
+      <h1>Built to <span class="gym-neon">Perform</span><br>Engineered to <span class="gym-lime-text">Last</span></h1>
+      <div class="gym-hero-bar">
+        <div class="gym-hero-bar-line"></div>
+        <div class="gym-hero-bar-dot"></div>
+        <div class="gym-hero-bar-line"></div>
+        <div class="gym-hero-bar-dot"></div>
+        <div class="gym-hero-bar-line"></div>
+      </div>
+      <p>High-performance window treatments engineered for Melbourne's toughest commercial environments. Gyms, fitness centres, CrossFit boxes, and Pilates studios — where durability meets design.</p>
+      <div class="gym-hero-ctas">
+        <a href="../free-quote.html" class="gym-btn-primary">Free Site Assessment</a>
+        <a href="#range" class="gym-btn-secondary">View Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="gym-stats">
+    <div class="container">
+      <div class="gym-stats-grid gym-animate">
+        <div>
+          <div class="gym-stat-number">150+</div>
+          <div class="gym-stat-label">Gyms Fitted</div>
+        </div>
+        <div>
+          <div class="gym-stat-number lime">99%</div>
+          <div class="gym-stat-label">UV Blocked</div>
+        </div>
+        <div>
+          <div class="gym-stat-number">5yr</div>
+          <div class="gym-stat-label">Commercial Warranty</div>
+        </div>
+        <div>
+          <div class="gym-stat-number lime">24hr</div>
+          <div class="gym-stat-label">Install Turnaround</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Section -->
+  <section class="gym-why gym-grid-bg">
+    <div class="container">
+      <div class="gym-why-header gym-animate">
+        <span class="gym-section-label">The Challenge</span>
+        <h2>Why Gyms Need<br>Specialist Blinds</h2>
+        <p>Standard residential blinds won't survive a week in a commercial fitness environment. Heat, moisture, UV exposure, and heavy use demand purpose-built solutions.</p>
+      </div>
+      <div class="gym-why-grid">
+        <div class="gym-why-card gym-animate">
+          <div class="gym-why-icon">☀️</div>
+          <h3>UV &amp; Glare Control</h3>
+          <p>Afternoon sun turns west-facing cardio zones into greenhouses. Our solar screen fabrics block up to 99% of UV while maintaining outward visibility, keeping members cool and equipment protected.</p>
+        </div>
+        <div class="gym-why-card gym-animate">
+          <div class="gym-why-icon">💧</div>
+          <h3>Moisture Resistant</h3>
+          <p>High humidity from showers, pools, and intense workouts destroys standard fabrics. Our PVC-free moisture-resistant range is mould-proof, wipe-clean, and rated for wet-zone installation.</p>
+        </div>
+        <div class="gym-why-card gym-animate">
+          <div class="gym-why-icon">🔧</div>
+          <h3>Commercial Durability</h3>
+          <p>Heavy-duty brackets, reinforced chains, and industrial-grade motors built for 50,000+ cycles. Our commercial systems are tested to withstand the high-frequency operation fitness centres demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Range -->
+  <section class="gym-range" id="range">
+    <div class="container">
+      <div class="gym-range-header gym-animate">
+        <span class="gym-section-label">Solutions</span>
+        <h2>Purpose-Built for<br>Fitness Environments</h2>
+      </div>
+      <div class="gym-range-items">
+        <div class="gym-range-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=80" alt="Commercial roller blinds in gym" class="gym-range-img">
+          <div>
+            <h3>Solar Screen Rollers</h3>
+            <p>5% openness factor screens that eliminate glare while maintaining street visibility. Available in widths up to 5m for large gym frontages. Motorised or manual with commercial-grade spring mechanisms.</p>
+            <span class="gym-range-tag">★ Most Popular</span>
+          </div>
+        </div>
+        <div class="gym-range-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&q=80" alt="Motorised blinds in fitness centre" class="gym-range-img">
+          <div>
+            <h3>Motorised Dual Systems</h3>
+            <p>Sheer for daytime training, blockout for evening classes and spin rooms. Smart scheduling via app or wall switch. Group-control up to 50 blinds simultaneously across your facility.</p>
+            <span class="gym-range-tag">Smart Control</span>
+          </div>
+        </div>
+        <div class="gym-range-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Vertical blinds commercial" class="gym-range-img">
+          <div>
+            <h3>Commercial Verticals</h3>
+            <p>Industrial-grade vertical blinds for large window runs. Anti-microbial fabrics rated for high-moisture environments. Low maintenance, easy to clean, and replaceable individual slats for longevity.</p>
+            <span class="gym-range-tag">Low Maintenance</span>
+          </div>
+        </div>
+        <div class="gym-range-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80" alt="Outdoor blinds gym" class="gym-range-img">
+          <div>
+            <h3>External Screens &amp; Awnings</h3>
+            <p>Stop heat before it hits the glass. External zip-track screens reduce solar heat gain by up to 90%. Wind-rated to 100km/h. Perfect for ground-floor gyms with large west-facing windows.</p>
+            <span class="gym-range-tag">Maximum Protection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue Types -->
+  <section class="gym-venues">
+    <div class="container">
+      <div class="gym-venues-grid">
+        <div class="gym-venues-img-wrapper gym-animate">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Modern gym interior" class="gym-venues-img">
+          <div class="gym-venues-badge">All Venue Types</div>
+        </div>
+        <div class="gym-venues-content gym-animate">
+          <span class="gym-section-label">Venue Expertise</span>
+          <h2>Every Fitness Space<br>Covered</h2>
+          <p>From boutique Pilates studios to 3,000m² 24/7 mega-gyms, we've engineered window solutions for every type of fitness environment across Melbourne.</p>
+          <ul class="gym-venues-list">
+            <li>
+              <span class="gym-check">✓</span>
+              <div><strong>Commercial Gyms &amp; 24/7 Centres</strong> — Large-format motorised systems with timer schedules. Automatic operation when no staff are present. Anti-vandal hardware.</div>
+            </li>
+            <li>
+              <span class="gym-check">✓</span>
+              <div><strong>CrossFit Boxes &amp; Functional Training</strong> — Industrial-grade blinds that withstand chalk dust, wall ball impacts, and high-velocity air circulation from open roller doors.</div>
+            </li>
+            <li>
+              <span class="gym-check">✓</span>
+              <div><strong>Pilates &amp; Barre Studios</strong> — Light-diffusing fabrics that eliminate mirror glare while maintaining the bright, welcoming atmosphere clients expect. Whisper-quiet motors.</div>
+            </li>
+            <li>
+              <span class="gym-check">✓</span>
+              <div><strong>Yoga &amp; Wellness Spaces</strong> — Dual roller systems for total light control. Sheer for morning flow, blockout for evening yin. Acoustic-enhancing honeycomb options available.</div>
+            </li>
+            <li>
+              <span class="gym-check">✓</span>
+              <div><strong>Swimming Pool &amp; Aquatic Centres</strong> — Chlorine-resistant, non-corrosive materials. Moisture-proof motors with IP44+ ratings. Designed for the harshest wet environments.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gym-gallery" id="gallery">
+    <div class="container">
+      <div class="gym-gallery-header gym-animate">
+        <span class="gym-section-label">Our Work</span>
+        <h2>Fitness Spaces We've Transformed</h2>
+      </div>
+      <div class="gym-gallery-grid">
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Large gym with solar blinds">
+          <div class="gym-gallery-caption">24/7 Gym — Richmond</div>
+        </div>
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="CrossFit box blinds">
+          <div class="gym-gallery-caption">CrossFit Box — Collingwood</div>
+        </div>
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Pilates studio blinds">
+          <div class="gym-gallery-caption">Pilates Studio — South Yarra</div>
+        </div>
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Functional training gym">
+          <div class="gym-gallery-caption">Functional Training — Prahran</div>
+        </div>
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&q=80" alt="Spin room with blockout blinds">
+          <div class="gym-gallery-caption">Spin Room — Brunswick</div>
+        </div>
+        <div class="gym-gallery-item gym-animate">
+          <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&q=80" alt="Boxing gym blinds">
+          <div class="gym-gallery-caption">Boxing Gym — Footscray</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="gym-faq">
+    <div class="container">
+      <div class="gym-faq-header gym-animate">
+        <span class="gym-section-label">FAQ</span>
+        <h2>Common Questions</h2>
+      </div>
+      <div class="gym-faq-list">
+        <div class="gym-faq-item gym-animate">
+          <h3>What blinds are best for a commercial gym?</h3>
+          <p>Solar screen roller blinds with 5% openness are the industry standard — they block 95% of UV and reduce glare while maintaining outward visibility. For spin rooms and yoga spaces that need total darkness, dual roller systems with blockout backing are ideal. We always recommend commercial-grade motors for venues with large windows.</p>
+        </div>
+        <div class="gym-faq-item gym-animate">
+          <h3>Can gym blinds handle moisture and sweat?</h3>
+          <p>Absolutely. Our commercial range uses PVC-free moisture-resistant fabrics rated for wet-zone installation. They're mould-proof, antibacterial, and can be wiped clean with standard gym sanitiser. For pool areas, we use chlorine-resistant materials with marine-grade hardware.</p>
+        </div>
+        <div class="gym-faq-item gym-animate">
+          <h3>How durable are commercial blinds compared to residential?</h3>
+          <p>Commercial systems use heavier brackets, reinforced chains, and motors rated for 50,000+ cycles (vs. 10,000 residential). Fabrics are selected for UV stability, tear resistance, and cleanability. Our commercial installations come with a 5-year warranty including parts and labour.</p>
+        </div>
+        <div class="gym-faq-item gym-animate">
+          <h3>Can blinds be scheduled to open and close automatically?</h3>
+          <p>Yes. Our smart motor systems support scheduled operation via app, wall switch, or building management integration. Program blinds to open at 5am and close at 10pm automatically — perfect for 24/7 gyms with minimal staff. Group control allows up to 50 blinds to operate simultaneously.</p>
+        </div>
+        <div class="gym-faq-item gym-animate">
+          <h3>Do you install during off-hours to minimise disruption?</h3>
+          <p>We offer before-hours (5–8am) and after-hours (8pm–midnight) installation for operating gyms. Most single-location installs are completed in one session. We coordinate with your class schedule to ensure zero disruption to members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="gym-testimonial">
+    <div class="container gym-animate">
+      <blockquote>"We operate three gym locations across Melbourne and iSeekBlinds fitted all of them. The motorised solar screens solved our afternoon glare problem completely — members used to avoid the west-facing cardio zone, now it's the most popular area. Installation was overnight with zero member impact."</blockquote>
+      <cite>
+        <strong>Jake Morrison</strong>
+        Operations Director, Apex Fitness · Richmond, South Yarra, Brunswick
+      </cite>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="gym-cta gym-grid-bg">
+    <div class="container gym-cta-inner gym-animate">
+      <span class="gym-section-label">Get Started</span>
+      <h2>Ready to <span class="gym-neon">Upgrade</span><br>Your Facility?</h2>
+      <p>Book a free on-site assessment. Our commercial specialists will survey your space, assess sun exposure, and recommend solutions tailored to your venue type and budget.</p>
+      <a href="../free-quote.html" class="gym-btn-primary">Book Free Site Assessment</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="gym-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <div class="gym-crosslink-grid">
+        <a href="acoustic-solutions.html" class="gym-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="gym-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="gym-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="gym-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="art-gallery-studio.html" class="gym-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+        <a href="bathroom-kitchen.html" class="gym-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bay-window-blinds.html" class="gym-crosslink-item"><span>→</span> Bay Window Blinds</a>
+        <a href="bedroom-blackout.html" class="gym-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="gym-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="gym-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="gym-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="gym-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="gym-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="gym-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="gym-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="gym-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="gym-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="gym-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="gym-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="gym-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="gym-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="gym-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="gym-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="gym-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="gym-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="gym-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="gym-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="gym-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="gym-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="granny-flat-blinds.html" class="gym-crosslink-item"><span>→</span> Granny Flat</a>
+        <a href="hamptons-style.html" class="gym-crosslink-item"><span>→</span> Hamptons Style</a>
+        <a href="heritage-homes.html" class="gym-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="gym-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="gym-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="gym-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="gym-crosslink-item"><span>→</span> Home Office</a>
+        <a href="home-renovation.html" class="gym-crosslink-item"><span>→</span> Home Renovation</a>
+        <a href="hospitality-blinds.html" class="gym-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="japandi-zen-style.html" class="gym-crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
+        <a href="large-windows.html" class="gym-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="gym-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="gym-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="gym-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="gym-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="gym-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="mid-century-modern.html" class="gym-crosslink-item"><span>→</span> Mid-Century Modern ✨</a>
+        <a href="minimalist-styling.html" class="gym-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="motorised-blinds.html" class="gym-crosslink-item"><span>→</span> Motorised Blinds Guide</a>
+        <a href="new-home-packages.html" class="gym-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="gym-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="gym-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="gym-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="gym-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="gym-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html" class="gym-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="pool-outdoor-entertaining.html" class="gym-crosslink-item"><span>→</span> Pool &amp; Outdoor Entertaining</a>
+        <a href="privacy-blinds.html" class="gym-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="gym-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="gym-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="gym-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="gym-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="gym-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="gym-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="gym-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="gym-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="gym-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="spa-wellness-blinds.html" class="gym-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+        <a href="staircase-windows.html" class="gym-crosslink-item"><span>→</span> Staircase &amp; Hard-to-Reach Windows</a>
+        <a href="summer-uv-protection.html" class="gym-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="gym-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="gym-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="gym-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="gym-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="gym-crosslink-item"><span>→</span> Winter Insulation</a>
+        <a href="yoga-meditation-room.html" class="gym-crosslink-item"><span>→</span> Yoga &amp; Meditation Room</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add('visible'); }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.gym-animate').forEach(el => { observer.observe(el); });
+
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
