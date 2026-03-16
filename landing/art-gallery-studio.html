@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery & Creative Studio Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Specialised window blinds and treatments for art galleries, creative studios, photography spaces and workshops in Melbourne. UV-filtering, light-control and glare-free solutions to protect artwork and inspire creativity.">
+  <meta name="keywords" content="art gallery blinds Melbourne, studio window treatments, UV protection blinds art, creative space curtains, photography studio blinds, workshop window solutions, gallery lighting control">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === FUTURISTIC TECH — 科技未来感 === */
+    :root {
+      --ag-void: #08090d;
+      --ag-deep: #0e1117;
+      --ag-surface: #161922;
+      --ag-border: rgba(99, 240, 255, 0.12);
+      --ag-cyan: #63f0ff;
+      --ag-cyan-glow: rgba(99, 240, 255, 0.25);
+      --ag-magenta: #e040fb;
+      --ag-magenta-glow: rgba(224, 64, 251, 0.2);
+      --ag-lime: #b2ff59;
+      --ag-white: #f0f4f8;
+      --ag-text: #b0bec5;
+      --ag-muted: #5a6a75;
+      --ag-grid: rgba(99, 240, 255, 0.04);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .lp-artgallery {
+      background: var(--ag-void);
+      color: var(--ag-text);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .lp-artgallery h1, .lp-artgallery h2, .lp-artgallery h3, .lp-artgallery h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--ag-white);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .lp-artgallery .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Grid background */
+    .ag-grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--ag-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ag-grid) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .ag-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .ag-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--ag-cyan-glow) 0%, transparent 70%);
+      top: -100px;
+      right: -150px;
+      animation: ag-pulse 8s ease-in-out infinite;
+    }
+
+    .ag-hero::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--ag-magenta-glow) 0%, transparent 70%);
+      bottom: -100px;
+      left: -150px;
+      animation: ag-pulse 8s ease-in-out 4s infinite;
+    }
+
+    @keyframes ag-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    .ag-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .ag-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--ag-border);
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--ag-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+      background: rgba(99, 240, 255, 0.05);
+      animation: ag-fadeIn 0.8s ease-out;
+    }
+
+    .ag-hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ag-cyan);
+      box-shadow: 0 0 10px var(--ag-cyan);
+      animation: ag-blink 2s infinite;
+    }
+
+    @keyframes ag-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .ag-hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      animation: ag-slideUp 0.8s ease-out 0.2s both;
+    }
+
+    .ag-hero h1 .ag-highlight {
+      background: linear-gradient(135deg, var(--ag-cyan), var(--ag-magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ag-hero p {
+      font-size: 1.15rem;
+      color: var(--ag-muted);
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      animation: ag-slideUp 0.8s ease-out 0.4s both;
+    }
+
+    .ag-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--ag-cyan), #40c4ff);
+      color: var(--ag-void);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 30px var(--ag-cyan-glow);
+      animation: ag-slideUp 0.8s ease-out 0.6s both;
+    }
+
+    .ag-hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px var(--ag-cyan-glow);
+    }
+
+    @keyframes ag-fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes ag-slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stats bar */
+    .ag-stats {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--ag-border);
+      border-bottom: 1px solid var(--ag-border);
+      background: var(--ag-deep);
+      padding: 3rem 0;
+    }
+
+    .ag-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .ag-stat-number {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ag-cyan);
+      text-shadow: 0 0 20px var(--ag-cyan-glow);
+    }
+
+    .ag-stat-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--ag-muted);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Solutions section */
+    .ag-solutions {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 0;
+    }
+
+    .ag-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .ag-section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .ag-section-header p {
+      color: var(--ag-muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .ag-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .ag-card {
+      position: relative;
+      background: var(--ag-surface);
+      border: 1px solid var(--ag-border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ag-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ag-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--ag-cyan), var(--ag-magenta));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .ag-card:hover {
+      border-color: var(--ag-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--ag-cyan-glow);
+    }
+
+    .ag-card:hover::before { opacity: 1; }
+
+    .ag-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      background: rgba(99, 240, 255, 0.08);
+      border: 1px solid var(--ag-border);
+    }
+
+    .ag-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .ag-card p {
+      font-size: 0.95rem;
+      color: var(--ag-muted);
+      line-height: 1.6;
+    }
+
+    /* Showcase section */
+    .ag-showcase {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 0;
+      background: var(--ag-deep);
+    }
+
+    .ag-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .ag-showcase-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .ag-showcase-text p {
+      color: var(--ag-text);
+      margin-bottom: 1rem;
+    }
+
+    .ag-showcase-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .ag-showcase-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--ag-border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .ag-showcase-list li::before {
+      content: '◈';
+      color: var(--ag-cyan);
+      font-size: 0.8rem;
+    }
+
+    .ag-showcase-visual {
+      position: relative;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--ag-border);
+    }
+
+    .ag-showcase-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) saturate(0.8);
+      transition: all 0.5s;
+    }
+
+    .ag-showcase-visual:hover img {
+      filter: brightness(0.8) saturate(1);
+      transform: scale(1.03);
+    }
+
+    .ag-showcase-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(99, 240, 255, 0.1), transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Spaces types */
+    .ag-spaces {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 0;
+    }
+
+    .ag-spaces-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .ag-space-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--ag-surface);
+      border: 1px solid var(--ag-border);
+      border-radius: 12px;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .ag-space-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ag-space-card:hover {
+      border-color: var(--ag-magenta);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .ag-space-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ag-magenta);
+      min-width: 60px;
+    }
+
+    .ag-space-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ag-space-card p {
+      font-size: 0.9rem;
+      color: var(--ag-muted);
+    }
+
+    /* CTA */
+    .ag-cta {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 0;
+      text-align: center;
+      background: var(--ag-deep);
+    }
+
+    .ag-cta-box {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+      border: 1px solid var(--ag-border);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(99, 240, 255, 0.03), rgba(224, 64, 251, 0.03));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ag-cta-box::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--ag-cyan), var(--ag-magenta), transparent);
+    }
+
+    .ag-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .ag-cta p {
+      color: var(--ag-muted);
+      margin-bottom: 2.5rem;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ag-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 3rem;
+      background: linear-gradient(135deg, var(--ag-magenta), #aa00ff);
+      color: var(--ag-white);
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 30px var(--ag-magenta-glow);
+    }
+
+    .ag-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px var(--ag-magenta-glow);
+    }
+
+    /* Cross-links */
+    .ag-crosslinks {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 0;
+      border-top: 1px solid var(--ag-border);
+    }
+
+    .ag-crosslinks h3 {
+      text-align: center;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: var(--ag-muted);
+      font-weight: 400;
+    }
+
+    .ag-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .ag-crosslink-item {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--ag-border);
+      border-radius: 100px;
+      color: var(--ag-text);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      background: var(--ag-surface);
+    }
+
+    .ag-crosslink-item:hover {
+      border-color: var(--ag-cyan);
+      color: var(--ag-cyan);
+      background: rgba(99, 240, 255, 0.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ag-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .ag-cards { grid-template-columns: 1fr; }
+      .ag-showcase-grid { grid-template-columns: 1fr; }
+      .ag-showcase-visual { height: 300px; }
+      .ag-spaces-grid { grid-template-columns: 1fr; }
+      .ag-cta-box { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="lp-artgallery">
+    <div class="ag-grid-bg"></div>
+
+    <!-- Hero -->
+    <section class="ag-hero">
+      <div class="ag-hero-content">
+        <div class="ag-hero-tag">Art & Studio Solutions</div>
+        <h1>Light Control for <span class="ag-highlight">Creative Spaces</span></h1>
+        <p>Precision window treatments designed for art galleries, photography studios, workshops and creative environments. Protect your art. Perfect your light.</p>
+        <a href="../free-quote.html" class="ag-hero-cta">Book Studio Consultation →</a>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="ag-stats">
+      <div class="container">
+        <div class="ag-stats-grid">
+          <div>
+            <span class="ag-stat-number">99%</span>
+            <span class="ag-stat-label">UV Blocked</span>
+          </div>
+          <div>
+            <span class="ag-stat-number">50+</span>
+            <span class="ag-stat-label">Galleries Fitted</span>
+          </div>
+          <div>
+            <span class="ag-stat-number">100%</span>
+            <span class="ag-stat-label">Glare Eliminated</span>
+          </div>
+          <div>
+            <span class="ag-stat-number">5yr</span>
+            <span class="ag-stat-label">Warranty</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Cards -->
+    <section class="ag-solutions">
+      <div class="container">
+        <div class="ag-section-header">
+          <h2>Engineered for Creativity</h2>
+          <p>Every creative space has unique lighting demands. We solve them all.</p>
+        </div>
+        <div class="ag-cards">
+          <div class="ag-card">
+            <div class="ag-card-icon">🎨</div>
+            <h3>UV Protection</h3>
+            <p>Block 99% of harmful UV rays to prevent fading, discolouration and degradation of paintings, photographs, sculptures and mixed-media works.</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-card-icon">💡</div>
+            <h3>Light Diffusion</h3>
+            <p>Transform harsh sunlight into soft, even illumination. Sheer and translucent fabrics create gallery-quality ambient light without hotspots.</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-card-icon">🌑</div>
+            <h3>Total Blackout</h3>
+            <p>Complete darkness on demand for photography studios, projection rooms and light-sensitive installations. Zero light leakage guaranteed.</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-card-icon">🎛️</div>
+            <h3>Motorised Control</h3>
+            <p>Programmable scenes via app, voice or wall switch. Set different lighting presets for exhibitions, open days and private viewings.</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-card-icon">🔇</div>
+            <h3>Acoustic Dampening</h3>
+            <p>Heavy-weave fabrics reduce echo and reverb in open gallery spaces, improving sound quality for events, talks and performances.</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-card-icon">🧊</div>
+            <h3>Climate Stability</h3>
+            <p>Honeycomb blinds create an insulating air pocket to stabilise temperature — critical for preserving temperature-sensitive artworks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="ag-showcase">
+      <div class="container">
+        <div class="ag-showcase-grid">
+          <div class="ag-showcase-text">
+            <h2>Why Galleries Trust iSeekBlinds</h2>
+            <p>From Fitzroy artist studios to South Yarra commercial galleries, we understand the intersection of aesthetics and function.</p>
+            <p>Our consultants work with curators, artists and architects to find solutions that complement — never compete with — the art.</p>
+            <ul class="ag-showcase-list">
+              <li>Custom colour matching to gallery walls</li>
+              <li>Discreet hardware that disappears into architecture</li>
+              <li>Fire-retardant fabrics for public spaces</li>
+              <li>Quiet motorised operation for exhibition hours</li>
+              <li>Heritage building compatible (no-drill options)</li>
+              <li>After-hours installation to avoid disruption</li>
+            </ul>
+          </div>
+          <div class="ag-showcase-visual">
+            <img src="https://images.unsplash.com/photo-1577720643272-265f09367456?w=800&q=80" alt="Modern art gallery interior with natural light" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Space Types -->
+    <section class="ag-spaces">
+      <div class="container">
+        <div class="ag-section-header">
+          <h2>Spaces We Specialise In</h2>
+          <p>Purpose-built solutions for every creative environment</p>
+        </div>
+        <div class="ag-spaces-grid">
+          <div class="ag-space-card">
+            <span class="ag-space-num">01</span>
+            <div>
+              <h3>Commercial Galleries</h3>
+              <p>UV-filtering roller blinds and motorised curtains for professional exhibition spaces with changing light needs.</p>
+            </div>
+          </div>
+          <div class="ag-space-card">
+            <span class="ag-space-num">02</span>
+            <div>
+              <h3>Photography Studios</h3>
+              <p>Total blackout solutions with rapid-deploy motorised blinds for controlled lighting environments.</p>
+            </div>
+          </div>
+          <div class="ag-space-card">
+            <span class="ag-space-num">03</span>
+            <div>
+              <h3>Artist Workshops</h3>
+              <p>North-facing light optimisation with adjustable venetians to control intensity without losing quality.</p>
+            </div>
+          </div>
+          <div class="ag-space-card">
+            <span class="ag-space-num">04</span>
+            <div>
+              <h3>Creative Co-Working</h3>
+              <p>Zone-able blinds for shared creative spaces — different light zones for different disciplines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ag-cta">
+      <div class="container">
+        <div class="ag-cta-box">
+          <h2>Let's Light Your Space Right</h2>
+          <p>Free on-site consultation for galleries and studios. We'll assess your light, your art and your architecture.</p>
+          <a href="../free-quote.html" class="ag-cta-btn">Request Studio Consultation →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="ag-crosslinks">
+      <div class="container">
+        <h3>Explore More Solutions</h3>
+        <div class="ag-crosslinks-grid">
+          <a href="acoustic-solutions.html" class="ag-crosslink-item">Acoustic Solutions</a>
+          <a href="allergy-friendly.html" class="ag-crosslink-item">Allergy-Friendly</a>
+          <a href="apartment-solutions.html" class="ag-crosslink-item">Apartments</a>
+          <a href="arched-specialty-windows.html" class="ag-crosslink-item">Arched Windows</a>
+          <a href="bathroom-kitchen.html" class="ag-crosslink-item">Bathroom & Kitchen</a>
+          <a href="bedroom-blackout.html" class="ag-crosslink-item">Bedroom Blackout</a>
+          <a href="bifold-door-blinds.html" class="ag-crosslink-item">Bi-Fold Doors</a>
+          <a href="blinds-vs-curtains.html" class="ag-crosslink-item">Blinds vs Curtains</a>
+          <a href="bushfire-safe-blinds.html" class="ag-crosslink-item">Bushfire Safe</a>
+          <a href="care-maintenance.html" class="ag-crosslink-item">Care & Maintenance</a>
+          <a href="child-safety.html" class="ag-crosslink-item">Child Safety</a>
+          <a href="coastal-home-blinds.html" class="ag-crosslink-item">Coastal Home</a>
+          <a href="colour-matching-guide.html" class="ag-crosslink-item">Colour Matching</a>
+          <a href="colour-trends-2026.html" class="ag-crosslink-item">Colour Trends 2026</a>
+          <a href="commercial-blinds.html" class="ag-crosslink-item">Commercial</a>
+          <a href="conservatory-sunroom.html" class="ag-crosslink-item">Conservatory</a>
+          <a href="day-night-blinds.html" class="ag-crosslink-item">Day-Night Blinds</a>
+          <a href="design-inspiration.html" class="ag-crosslink-item">Design Inspiration</a>
+          <a href="diy-installation-guide.html" class="ag-crosslink-item">DIY Installation</a>
+          <a href="diy-measuring-guide.html" class="ag-crosslink-item">DIY Measuring</a>
+          <a href="double-glazed-blinds.html" class="ag-crosslink-item">Double Glazed</a>
+          <a href="eco-friendly.html" class="ag-crosslink-item">Eco-Friendly</a>
+          <a href="elderly-accessible.html" class="ag-crosslink-item">Elderly Accessible</a>
+          <a href="energy-efficient.html" class="ag-crosslink-item">Energy Efficient</a>
+          <a href="fabric-encyclopedia.html" class="ag-crosslink-item">Fabric Encyclopedia</a>
+          <a href="festive-seasonal-styling.html" class="ag-crosslink-item">Festive Styling</a>
+          <a href="free-samples.html" class="ag-crosslink-item">Free Samples</a>
+          <a href="granny-flat-blinds.html" class="ag-crosslink-item">Granny Flat</a>
+          <a href="heritage-homes.html" class="ag-crosslink-item">Heritage Homes</a>
+          <a href="high-rise-glare.html" class="ag-crosslink-item">High-Rise Glare</a>
+          <a href="home-gym-blinds.html" class="ag-crosslink-item">Home Gym</a>
+          <a href="home-library-study.html" class="ag-crosslink-item">Home Library</a>
+          <a href="home-office.html" class="ag-crosslink-item">Home Office</a>
+          <a href="home-renovation.html" class="ag-crosslink-item">Home Renovation</a>
+          <a href="hospitality-blinds.html" class="ag-crosslink-item">Hospitality</a>
+          <a href="large-windows.html" class="ag-crosslink-item">Large Windows</a>
+          <a href="layered-treatments.html" class="ag-crosslink-item">Layered Treatments</a>
+          <a href="luxury-penthouse.html" class="ag-crosslink-item">Luxury Penthouse</a>
+          <a href="media-room.html" class="ag-crosslink-item">Media Room</a>
+          <a href="medical-clinic.html" class="ag-crosslink-item">Medical Clinic</a>
+          <a href="melbourne-service-areas.html" class="ag-crosslink-item">Melbourne Areas</a>
+          <a href="minimalist-styling.html" class="ag-crosslink-item">Minimalist</a>
+          <a href="new-home-packages.html" class="ag-crosslink-item">New Home</a>
+          <a href="nursery-safe.html" class="ag-crosslink-item">Nursery Safe</a>
+          <a href="office-partition.html" class="ag-crosslink-item">Office Partition</a>
+          <a href="open-kitchen.html" class="ag-crosslink-item">Open Kitchen</a>
+          <a href="outdoor-blinds.html" class="ag-crosslink-item">Outdoor</a>
+          <a href="pet-friendly.html" class="ag-crosslink-item">Pet-Friendly</a>
+          <a href="plantation-shutters-guide.html" class="ag-crosslink-item">Plantation Shutters</a>
+          <a href="privacy-blinds.html" class="ag-crosslink-item">Privacy Blinds</a>
+          <a href="property-styling.html" class="ag-crosslink-item">Property Styling</a>
+          <a href="rental-property.html" class="ag-crosslink-item">Rental Property</a>
+          <a href="restaurant-cafe.html" class="ag-crosslink-item">Restaurant & Cafe</a>
+          <a href="retail-shopfront.html" class="ag-crosslink-item">Retail Shopfront</a>
+          <a href="scandinavian-style.html" class="ag-crosslink-item">Scandinavian Style</a>
+          <a href="school-childcare.html" class="ag-crosslink-item">School & Childcare</a>
+          <a href="seasonal-sale.html" class="ag-crosslink-item">Seasonal Sale</a>
+          <a href="skylight-blinds.html" class="ag-crosslink-item">Skylight Blinds</a>
+          <a href="smart-home.html" class="ag-crosslink-item">Smart Home</a>
+          <a href="summer-uv-protection.html" class="ag-crosslink-item">Summer UV</a>
+          <a href="testimonials.html" class="ag-crosslink-item">Testimonials</a>
+          <a href="townhouse-strata.html" class="ag-crosslink-item">Townhouse & Strata</a>
+          <a href="warehouse-industrial-blinds.html" class="ag-crosslink-item">Warehouse & Industrial</a>
+          <a href="wine-entertainment-room.html" class="ag-crosslink-item">Wine & Entertainment</a>
+          <a href="winter-insulation.html" class="ag-crosslink-item">Winter Insulation</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), index * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.ag-card, .ag-space-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Granny Flat & Garage Conversion Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Affordable, stylish window blinds for granny flats, garage conversions, backyard studios and ADUs in Melbourne. Compact space solutions with full insulation and privacy.">
+  <meta name="keywords" content="granny flat blinds Melbourne, garage conversion window treatments, ADU blinds, backyard studio curtains, compact space blinds, secondary dwelling window furnishings">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === WARM NATURAL — 温暖自然风 === */
+    :root {
+      --gf-cream: #faf6f0;
+      --gf-sand: #f0e8d8;
+      --gf-warm: #e8d5b8;
+      --gf-terracotta: #c2704e;
+      --gf-terracotta-light: #d4896a;
+      --gf-terracotta-dark: #a85838;
+      --gf-forest: #3a5a40;
+      --gf-forest-light: #588157;
+      --gf-sage: #8fae87;
+      --gf-dark: #2d2418;
+      --gf-text: #4a3f35;
+      --gf-muted: #8a7e72;
+      --gf-white: #ffffff;
+      --gf-radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .lp-grannyflat {
+      background: var(--gf-cream);
+      color: var(--gf-text);
+      font-family: 'Nunito', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .lp-grannyflat h1, .lp-grannyflat h2, .lp-grannyflat h3, .lp-grannyflat h4 {
+      font-family: 'Lora', serif;
+      color: var(--gf-dark);
+      font-weight: 500;
+    }
+
+    .lp-grannyflat .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Organic blob shapes */
+    .gf-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero */
+    .gf-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--gf-cream) 0%, var(--gf-sand) 50%, var(--gf-warm) 100%);
+    }
+
+    .gf-hero .gf-blob-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(194, 112, 78, 0.15);
+      top: -100px;
+      right: -100px;
+    }
+
+    .gf-hero .gf-blob-2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(143, 174, 135, 0.2);
+      bottom: -80px;
+      left: -80px;
+    }
+
+    .gf-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gf-hero-text {
+      padding: 2rem 0;
+    }
+
+    .gf-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      background: var(--gf-white);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gf-forest);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+      animation: gf-fadeIn 0.6s ease-out;
+    }
+
+    .gf-hero-badge::before {
+      content: '🏡';
+    }
+
+    .gf-hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      animation: gf-slideUp 0.7s ease-out 0.15s both;
+    }
+
+    .gf-hero h1 .gf-highlight {
+      color: var(--gf-terracotta);
+      position: relative;
+    }
+
+    .gf-hero h1 .gf-highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: rgba(194, 112, 78, 0.2);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .gf-hero p {
+      font-size: 1.15rem;
+      color: var(--gf-muted);
+      max-width: 450px;
+      margin-bottom: 2rem;
+      animation: gf-slideUp 0.7s ease-out 0.3s both;
+    }
+
+    .gf-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: gf-slideUp 0.7s ease-out 0.45s both;
+    }
+
+    .gf-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--gf-terracotta);
+      color: var(--gf-white);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: var(--gf-radius);
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(194, 112, 78, 0.3);
+    }
+
+    .gf-btn-primary:hover {
+      background: var(--gf-terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(194, 112, 78, 0.4);
+    }
+
+    .gf-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--gf-dark);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid var(--gf-dark);
+      border-radius: var(--gf-radius);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .gf-btn-secondary:hover {
+      background: var(--gf-dark);
+      color: var(--gf-white);
+    }
+
+    .gf-hero-image {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      animation: gf-scaleIn 0.8s ease-out 0.3s both;
+    }
+
+    .gf-hero-image img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gf-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .gf-hero-float {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--gf-white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--gf-radius);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: gf-float 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes gf-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .gf-hero-float-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(143, 174, 135, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .gf-hero-float strong {
+      display: block;
+      color: var(--gf-dark);
+      font-size: 1.1rem;
+    }
+
+    .gf-hero-float span {
+      font-size: 0.85rem;
+      color: var(--gf-muted);
+    }
+
+    @keyframes gf-fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes gf-slideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gf-scaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Why section */
+    .gf-why {
+      padding: 6rem 0;
+      background: var(--gf-white);
+      position: relative;
+    }
+
+    .gf-section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .gf-section-header .gf-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gf-terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .gf-section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .gf-section-header p {
+      color: var(--gf-muted);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    .gf-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .gf-why-card {
+      padding: 2.5rem 2rem;
+      background: var(--gf-cream);
+      border-radius: var(--gf-radius);
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .gf-why-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gf-why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .gf-why-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gf-why-icon.icon-terra { background: rgba(194, 112, 78, 0.12); }
+    .gf-why-icon.icon-forest { background: rgba(58, 90, 64, 0.12); }
+    .gf-why-icon.icon-sage { background: rgba(143, 174, 135, 0.15); }
+
+    .gf-why-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gf-why-card p {
+      font-size: 0.95rem;
+      color: var(--gf-muted);
+      line-height: 1.7;
+    }
+
+    /* Packages */
+    .gf-packages {
+      padding: 6rem 0;
+      position: relative;
+      background: linear-gradient(180deg, var(--gf-cream) 0%, var(--gf-sand) 100%);
+    }
+
+    .gf-pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .gf-pkg-card {
+      background: var(--gf-white);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .gf-pkg-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gf-pkg-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .gf-pkg-popular {
+      border: 2px solid var(--gf-terracotta);
+    }
+
+    .gf-pkg-popular::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--gf-terracotta);
+      color: var(--gf-white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.5rem;
+    }
+
+    .gf-pkg-popular .gf-pkg-content { margin-top: 1rem; }
+
+    .gf-pkg-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gf-pkg-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gf-pkg-desc {
+      font-size: 0.9rem;
+      color: var(--gf-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .gf-pkg-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .gf-pkg-list li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .gf-pkg-list li::before {
+      content: '✓';
+      color: var(--gf-forest);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .gf-pkg-cta {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: var(--gf-radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    .gf-pkg-cta-primary {
+      background: var(--gf-terracotta);
+      color: var(--gf-white);
+    }
+
+    .gf-pkg-cta-primary:hover {
+      background: var(--gf-terracotta-dark);
+    }
+
+    .gf-pkg-cta-outline {
+      border: 2px solid var(--gf-dark);
+      color: var(--gf-dark);
+    }
+
+    .gf-pkg-cta-outline:hover {
+      background: var(--gf-dark);
+      color: var(--gf-white);
+    }
+
+    /* Tips section */
+    .gf-tips {
+      padding: 6rem 0;
+      background: var(--gf-white);
+    }
+
+    .gf-tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .gf-tips-visual {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .gf-tips-visual img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gf-tips-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .gf-tip-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .gf-tip-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(194, 112, 78, 0.1);
+      color: var(--gf-terracotta);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .gf-tip-item h4 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .gf-tip-item p {
+      font-size: 0.9rem;
+      color: var(--gf-muted);
+    }
+
+    /* CTA */
+    .gf-cta {
+      padding: 6rem 0;
+      background: linear-gradient(160deg, var(--gf-forest) 0%, var(--gf-forest-light) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gf-cta::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      top: -100px;
+      right: -100px;
+    }
+
+    .gf-cta h2 {
+      color: var(--gf-white);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .gf-cta p {
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    .gf-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.1rem 3rem;
+      background: var(--gf-white);
+      color: var(--gf-forest);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      border-radius: var(--gf-radius);
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .gf-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Cross-links */
+    .gf-crosslinks {
+      padding: 4rem 0;
+      background: var(--gf-cream);
+    }
+
+    .gf-crosslinks h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--gf-muted);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+    }
+
+    .gf-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    .gf-crosslink-item {
+      padding: 0.5rem 1.1rem;
+      background: var(--gf-white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 100px;
+      color: var(--gf-text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .gf-crosslink-item:hover {
+      border-color: var(--gf-terracotta);
+      color: var(--gf-terracotta);
+      box-shadow: 0 3px 10px rgba(194, 112, 78, 0.12);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gf-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gf-hero-image img { height: 350px; }
+      .gf-hero-float { display: none; }
+      .gf-why-grid { grid-template-columns: 1fr; }
+      .gf-pkg-grid { grid-template-columns: 1fr; }
+      .gf-tips-grid { grid-template-columns: 1fr; }
+      .gf-tips-visual img { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="lp-grannyflat">
+
+    <!-- Hero -->
+    <section class="gf-hero">
+      <div class="gf-blob gf-blob-1"></div>
+      <div class="gf-blob gf-blob-2"></div>
+      <div class="container">
+        <div class="gf-hero-grid">
+          <div class="gf-hero-text">
+            <div class="gf-hero-badge">Granny Flat & ADU Specialists</div>
+            <h1>Small Space, <span class="gf-highlight">Big Style</span></h1>
+            <p>Purpose-designed blinds and curtains for granny flats, garage conversions, backyard studios and secondary dwellings. Maximum impact in compact spaces.</p>
+            <div class="gf-hero-actions">
+              <a href="../free-quote.html" class="gf-btn-primary">Get Free Quote →</a>
+              <a href="free-samples.html" class="gf-btn-secondary">Order Samples</a>
+            </div>
+          </div>
+          <div class="gf-hero-image">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Modern compact living space with natural light and blinds" loading="lazy">
+            <div class="gf-hero-float">
+              <div class="gf-hero-float-icon">💰</div>
+              <div>
+                <strong>From $89/window</strong>
+                <span>Granny flat packages</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="gf-why">
+      <div class="container">
+        <div class="gf-section-header">
+          <span class="gf-eyebrow">Why iSeekBlinds for Small Spaces</span>
+          <h2>Designed for Compact Living</h2>
+          <p>Granny flats and conversions have unique challenges — we've solved them all.</p>
+        </div>
+        <div class="gf-why-grid">
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-terra">📐</div>
+            <h3>Space-Saving Designs</h3>
+            <p>Slim-profile roller blinds and ceiling-recessed curtain tracks that don't eat into your precious floor space. Every centimetre counts.</p>
+          </div>
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-forest">🌡️</div>
+            <h3>Climate Control</h3>
+            <p>Honeycomb blinds with insulating air pockets keep granny flats warm in winter, cool in summer — reducing energy costs by up to 40%.</p>
+          </div>
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-sage">🔒</div>
+            <h3>Total Privacy</h3>
+            <p>Dual-layer day-night blinds let you control exactly how much the outside world sees in. Essential for ground-level dwellings close to neighbours.</p>
+          </div>
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-terra">💡</div>
+            <h3>Light Maximisation</h3>
+            <p>Sheer and translucent options flood small rooms with natural light while filtering harsh UV. Makes compact spaces feel twice as big.</p>
+          </div>
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-forest">🔇</div>
+            <h3>Noise Reduction</h3>
+            <p>Heavy-weave curtains and acoustic blinds buffer street noise and household sounds — critical when the main house is just metres away.</p>
+          </div>
+          <div class="gf-why-card">
+            <div class="gf-why-icon icon-sage">🏗️</div>
+            <h3>Council Compliant</h3>
+            <p>We know Melbourne council requirements for secondary dwellings. Our fire-rated and safety-compliant products tick every box.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="gf-packages">
+      <div class="container">
+        <div class="gf-section-header">
+          <span class="gf-eyebrow">Granny Flat Packages</span>
+          <h2>Complete Window Solutions</h2>
+          <p>Bundle deals designed specifically for secondary dwellings. Everything measured, made and installed.</p>
+        </div>
+        <div class="gf-pkg-grid">
+          <div class="gf-pkg-card">
+            <div class="gf-pkg-content">
+              <div class="gf-pkg-icon">🏠</div>
+              <h3>Studio Package</h3>
+              <p class="gf-pkg-desc">1-2 room granny flat</p>
+              <ul class="gf-pkg-list">
+                <li>Up to 4 windows covered</li>
+                <li>Roller blinds (blockout or sunscreen)</li>
+                <li>Free professional measure</li>
+                <li>Professional installation included</li>
+                <li>5-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="gf-pkg-cta gf-pkg-cta-outline">Get Quote</a>
+            </div>
+          </div>
+          <div class="gf-pkg-card gf-pkg-popular">
+            <div class="gf-pkg-content">
+              <div class="gf-pkg-icon">🏡</div>
+              <h3>Full Flat Package</h3>
+              <p class="gf-pkg-desc">Complete granny flat fitout</p>
+              <ul class="gf-pkg-list">
+                <li>Up to 8 windows covered</li>
+                <li>Mix of roller blinds & curtains</li>
+                <li>Honeycomb blinds for bedrooms</li>
+                <li>Moisture-resistant for bathroom</li>
+                <li>Free professional measure</li>
+                <li>Professional installation included</li>
+                <li>5-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="gf-pkg-cta gf-pkg-cta-primary">Get Quote</a>
+            </div>
+          </div>
+          <div class="gf-pkg-card">
+            <div class="gf-pkg-content">
+              <div class="gf-pkg-icon">🔨</div>
+              <h3>Conversion Package</h3>
+              <p class="gf-pkg-desc">Garage or shed conversion</p>
+              <ul class="gf-pkg-list">
+                <li>Up to 6 windows + 1 large opening</li>
+                <li>Blackout options for bedrooms</li>
+                <li>Insulating honeycomb blinds</li>
+                <li>Sliding door panel blinds</li>
+                <li>Free professional measure</li>
+                <li>Professional installation included</li>
+                <li>5-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="gf-pkg-cta gf-pkg-cta-outline">Get Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section class="gf-tips">
+      <div class="container">
+        <div class="gf-tips-grid">
+          <div class="gf-tips-visual">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Cozy granny flat interior with warm natural light" loading="lazy">
+          </div>
+          <div class="gf-tips-content">
+            <h2>Expert Tips for Granny Flat Windows</h2>
+            <div class="gf-tip-item">
+              <span class="gf-tip-num">1</span>
+              <div>
+                <h4>Go Ceiling-Mounted</h4>
+                <p>Ceiling-recessed tracks make rooms feel taller and don't interfere with furniture placement below windows.</p>
+              </div>
+            </div>
+            <div class="gf-tip-item">
+              <span class="gf-tip-num">2</span>
+              <div>
+                <h4>Light Colours Expand</h4>
+                <p>White and neutral tones on blinds reflect light deeper into rooms, making them feel larger and airier.</p>
+              </div>
+            </div>
+            <div class="gf-tip-item">
+              <span class="gf-tip-num">3</span>
+              <div>
+                <h4>Double Up Strategically</h4>
+                <p>Pair a sheer with a blockout roller for bedrooms — daytime privacy plus nighttime darkness without bulk.</p>
+              </div>
+            </div>
+            <div class="gf-tip-item">
+              <span class="gf-tip-num">4</span>
+              <div>
+                <h4>Insulate the Weakest Link</h4>
+                <p>Windows lose 40% of heating/cooling. Honeycomb blinds act as a thermal blanket — pay for themselves in energy savings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="gf-cta">
+      <div class="container">
+        <h2>Ready to Fit Out Your Granny Flat?</h2>
+        <p>Free on-site measure & quote for all granny flats, garage conversions and backyard studios across Melbourne.</p>
+        <a href="../free-quote.html" class="gf-cta-btn">Book Free Measure →</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="gf-crosslinks">
+      <div class="container">
+        <h3>Explore More Solutions</h3>
+        <div class="gf-crosslinks-grid">
+          <a href="acoustic-solutions.html" class="gf-crosslink-item">Acoustic Solutions</a>
+          <a href="allergy-friendly.html" class="gf-crosslink-item">Allergy-Friendly</a>
+          <a href="apartment-solutions.html" class="gf-crosslink-item">Apartments</a>
+          <a href="arched-specialty-windows.html" class="gf-crosslink-item">Arched Windows</a>
+          <a href="art-gallery-studio.html" class="gf-crosslink-item">Art Gallery & Studio</a>
+          <a href="bathroom-kitchen.html" class="gf-crosslink-item">Bathroom & Kitchen</a>
+          <a href="bedroom-blackout.html" class="gf-crosslink-item">Bedroom Blackout</a>
+          <a href="bifold-door-blinds.html" class="gf-crosslink-item">Bi-Fold Doors</a>
+          <a href="blinds-vs-curtains.html" class="gf-crosslink-item">Blinds vs Curtains</a>
+          <a href="bushfire-safe-blinds.html" class="gf-crosslink-item">Bushfire Safe</a>
+          <a href="care-maintenance.html" class="gf-crosslink-item">Care & Maintenance</a>
+          <a href="child-safety.html" class="gf-crosslink-item">Child Safety</a>
+          <a href="coastal-home-blinds.html" class="gf-crosslink-item">Coastal Home</a>
+          <a href="colour-matching-guide.html" class="gf-crosslink-item">Colour Matching</a>
+          <a href="colour-trends-2026.html" class="gf-crosslink-item">Colour Trends 2026</a>
+          <a href="commercial-blinds.html" class="gf-crosslink-item">Commercial</a>
+          <a href="conservatory-sunroom.html" class="gf-crosslink-item">Conservatory</a>
+          <a href="day-night-blinds.html" class="gf-crosslink-item">Day-Night Blinds</a>
+          <a href="design-inspiration.html" class="gf-crosslink-item">Design Inspiration</a>
+          <a href="diy-installation-guide.html" class="gf-crosslink-item">DIY Installation</a>
+          <a href="diy-measuring-guide.html" class="gf-crosslink-item">DIY Measuring</a>
+          <a href="double-glazed-blinds.html" class="gf-crosslink-item">Double Glazed</a>
+          <a href="eco-friendly.html" class="gf-crosslink-item">Eco-Friendly</a>
+          <a href="elderly-accessible.html" class="gf-crosslink-item">Elderly Accessible</a>
+          <a href="energy-efficient.html" class="gf-crosslink-item">Energy Efficient</a>
+          <a href="fabric-encyclopedia.html" class="gf-crosslink-item">Fabric Encyclopedia</a>
+          <a href="festive-seasonal-styling.html" class="gf-crosslink-item">Festive Styling</a>
+          <a href="free-samples.html" class="gf-crosslink-item">Free Samples</a>
+          <a href="heritage-homes.html" class="gf-crosslink-item">Heritage Homes</a>
+          <a href="high-rise-glare.html" class="gf-crosslink-item">High-Rise Glare</a>
+          <a href="home-gym-blinds.html" class="gf-crosslink-item">Home Gym</a>
+          <a href="home-library-study.html" class="gf-crosslink-item">Home Library</a>
+          <a href="home-office.html" class="gf-crosslink-item">Home Office</a>
+          <a href="home-renovation.html" class="gf-crosslink-item">Home Renovation</a>
+          <a href="hospitality-blinds.html" class="gf-crosslink-item">Hospitality</a>
+          <a href="large-windows.html" class="gf-crosslink-item">Large Windows</a>
+          <a href="layered-treatments.html" class="gf-crosslink-item">Layered Treatments</a>
+          <a href="luxury-penthouse.html" class="gf-crosslink-item">Luxury Penthouse</a>
+          <a href="media-room.html" class="gf-crosslink-item">Media Room</a>
+          <a href="medical-clinic.html" class="gf-crosslink-item">Medical Clinic</a>
+          <a href="melbourne-service-areas.html" class="gf-crosslink-item">Melbourne Areas</a>
+          <a href="minimalist-styling.html" class="gf-crosslink-item">Minimalist</a>
+          <a href="new-home-packages.html" class="gf-crosslink-item">New Home</a>
+          <a href="nursery-safe.html" class="gf-crosslink-item">Nursery Safe</a>
+          <a href="office-partition.html" class="gf-crosslink-item">Office Partition</a>
+          <a href="open-kitchen.html" class="gf-crosslink-item">Open Kitchen</a>
+          <a href="outdoor-blinds.html" class="gf-crosslink-item">Outdoor</a>
+          <a href="pet-friendly.html" class="gf-crosslink-item">Pet-Friendly</a>
+          <a href="plantation-shutters-guide.html" class="gf-crosslink-item">Plantation Shutters</a>
+          <a href="privacy-blinds.html" class="gf-crosslink-item">Privacy Blinds</a>
+          <a href="property-styling.html" class="gf-crosslink-item">Property Styling</a>
+          <a href="rental-property.html" class="gf-crosslink-item">Rental Property</a>
+          <a href="restaurant-cafe.html" class="gf-crosslink-item">Restaurant & Cafe</a>
+          <a href="retail-shopfront.html" class="gf-crosslink-item">Retail Shopfront</a>
+          <a href="scandinavian-style.html" class="gf-crosslink-item">Scandinavian Style</a>
+          <a href="school-childcare.html" class="gf-crosslink-item">School & Childcare</a>
+          <a href="seasonal-sale.html" class="gf-crosslink-item">Seasonal Sale</a>
+          <a href="skylight-blinds.html" class="gf-crosslink-item">Skylight Blinds</a>
+          <a href="smart-home.html" class="gf-crosslink-item">Smart Home</a>
+          <a href="summer-uv-protection.html" class="gf-crosslink-item">Summer UV</a>
+          <a href="testimonials.html" class="gf-crosslink-item">Testimonials</a>
+          <a href="townhouse-strata.html" class="gf-crosslink-item">Townhouse & Strata</a>
+          <a href="warehouse-industrial-blinds.html" class="gf-crosslink-item">Warehouse & Industrial</a>
+          <a href="wine-entertainment-room.html" class="gf-crosslink-item">Wine & Entertainment</a>
+          <a href="winter-insulation.html" class="gf-crosslink-item">Winter Insulation</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.gf-why-card, .gf-pkg-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
