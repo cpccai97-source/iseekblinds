@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Room Blackout Blinds | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Total blackout blinds for gaming rooms & esports setups in Melbourne. Zero glare, motorised control, RGB-friendly dark environments. Custom fitted, free consultation.">
+  <meta name="keywords" content="gaming room blinds Melbourne, blackout blinds gaming, esports room blinds, gaming setup window treatment, zero glare blinds, motorised blackout blinds, dark room blinds gaming">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === GAMING ROOM BLACKOUT — Cyberpunk Neon === */
+    :root {
+      --gx-void: #0a0a0f;
+      --gx-panel: #12121a;
+      --gx-surface: #1a1a26;
+      --gx-border: rgba(0, 255, 200, 0.12);
+      --gx-cyan: #00ffc8;
+      --gx-cyan-dim: rgba(0, 255, 200, 0.15);
+      --gx-cyan-glow: rgba(0, 255, 200, 0.4);
+      --gx-magenta: #ff006e;
+      --gx-magenta-dim: rgba(255, 0, 110, 0.15);
+      --gx-magenta-glow: rgba(255, 0, 110, 0.4);
+      --gx-purple: #8b5cf6;
+      --gx-yellow: #fbbf24;
+      --gx-text: #e0e0e8;
+      --gx-text-dim: #7a7a8e;
+      --gx-text-bright: #ffffff;
+      --gx-scanline: rgba(0, 255, 200, 0.03);
+      --gx-radius: 2px;
+      --gx-radius-lg: 4px;
+    }
+
+    /* Reset for this page */
+    .lp-gx { background: var(--gx-void); color: var(--gx-text); font-family: 'Exo 2', sans-serif; }
+    .lp-gx * { box-sizing: border-box; }
+
+    /* Scanline overlay */
+    .lp-gx::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        var(--gx-scanline) 2px,
+        var(--gx-scanline) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    /* CRT vignette */
+    .lp-gx::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    /* Header override */
+    .lp-gx .header {
+      background: rgba(10, 10, 15, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gx-border);
+    }
+    .lp-gx .header .nav a { color: var(--gx-text-dim); font-family: 'Exo 2', sans-serif; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.15em; }
+    .lp-gx .header .nav a:hover { color: var(--gx-cyan); }
+    .lp-gx .header .header-phone { color: var(--gx-cyan); font-family: 'Orbitron', sans-serif; font-size: 0.75rem; }
+    .lp-gx .header .btn-primary { background: var(--gx-magenta); border: none; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--gx-radius); }
+    .lp-gx .header .btn-primary:hover { background: #e6005f; box-shadow: 0 0 20px var(--gx-magenta-glow); }
+
+    /* Typography */
+    .gx-display {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.05;
+    }
+    .gx-mono { font-family: 'Orbitron', sans-serif; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
+    .gx-body { font-family: 'Exo 2', sans-serif; font-weight: 400; line-height: 1.7; }
+
+    /* ============================
+       HERO — Full screen glitch
+    ============================ */
+    .gx-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .gx-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, var(--gx-magenta-dim) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, var(--gx-cyan-dim) 0%, transparent 50%),
+        var(--gx-void);
+    }
+    .gx-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--gx-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gx-border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.3;
+      perspective: 600px;
+      transform: rotateX(45deg);
+      transform-origin: center bottom;
+    }
+    .gx-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .gx-hero-text { }
+    .gx-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gx-cyan-dim);
+      border: 1px solid var(--gx-border);
+      padding: 6px 16px;
+      font-size: 0.7rem;
+      color: var(--gx-cyan);
+      margin-bottom: 32px;
+      border-radius: var(--gx-radius);
+    }
+    .gx-hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gx-cyan);
+      border-radius: 50%;
+      animation: gx-pulse 2s infinite;
+    }
+    @keyframes gx-pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 4px var(--gx-cyan); }
+      50% { opacity: 0.3; box-shadow: 0 0 2px var(--gx-cyan); }
+    }
+    .gx-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin: 0 0 24px;
+      color: var(--gx-text-bright);
+    }
+    .gx-hero h1 .gx-accent {
+      color: var(--gx-cyan);
+      text-shadow: 0 0 30px var(--gx-cyan-glow), 0 0 60px rgba(0,255,200,0.15);
+    }
+    .gx-hero-desc {
+      font-size: 1.05rem;
+      color: var(--gx-text-dim);
+      max-width: 480px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+    .gx-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .gx-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gx-cyan);
+      color: var(--gx-void);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      border-radius: var(--gx-radius);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .gx-btn-primary:hover {
+      box-shadow: 0 0 30px var(--gx-cyan-glow), 0 0 60px rgba(0,255,200,0.15);
+      transform: translateY(-2px);
+    }
+    .gx-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--gx-magenta);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: 1px solid var(--gx-magenta);
+      border-radius: var(--gx-radius);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .gx-btn-secondary:hover {
+      background: var(--gx-magenta-dim);
+      box-shadow: 0 0 20px var(--gx-magenta-glow);
+    }
+
+    /* Hero visual — monitor mockup */
+    .gx-hero-visual {
+      position: relative;
+    }
+    .gx-monitor {
+      background: var(--gx-panel);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/10;
+      box-shadow: 0 0 60px rgba(0,255,200,0.08), 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .gx-monitor-screen {
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1616588589676-62b3d4ff6e04?w=800&q=80') center/cover;
+      position: relative;
+    }
+    .gx-monitor-screen::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,255,200,0.1) 0%, transparent 50%, rgba(255,0,110,0.1) 100%);
+    }
+    .gx-monitor-stand {
+      width: 60px;
+      height: 30px;
+      background: var(--gx-surface);
+      margin: 0 auto;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    .gx-monitor-base {
+      width: 120px;
+      height: 6px;
+      background: var(--gx-surface);
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+    /* Floating stats around monitor */
+    .gx-float-stat {
+      position: absolute;
+      background: rgba(18, 18, 26, 0.9);
+      border: 1px solid var(--gx-border);
+      padding: 10px 16px;
+      border-radius: var(--gx-radius);
+      backdrop-filter: blur(10px);
+      animation: gx-float 6s ease-in-out infinite;
+    }
+    .gx-float-stat:nth-child(1) { top: -20px; right: -30px; animation-delay: 0s; }
+    .gx-float-stat:nth-child(2) { bottom: 40px; left: -40px; animation-delay: 2s; }
+    .gx-float-stat:nth-child(3) { top: 40%; right: -50px; animation-delay: 4s; }
+    .gx-float-stat .gx-float-val {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--gx-cyan);
+    }
+    .gx-float-stat .gx-float-label {
+      font-size: 0.65rem;
+      color: var(--gx-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    @keyframes gx-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ============================
+       SECTION — Why Blackout
+    ============================ */
+    .gx-section {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gx-section-header {
+      margin-bottom: 64px;
+    }
+    .gx-section-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      color: var(--gx-magenta);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .gx-section-tag::before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gx-magenta);
+    }
+    .gx-section-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--gx-text-bright);
+      margin: 0;
+    }
+
+    /* Problem cards — diagonal layout */
+    .gx-problems {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gx-border);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      overflow: hidden;
+    }
+    .gx-problem-card {
+      background: var(--gx-panel);
+      padding: 48px 32px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: default;
+    }
+    .gx-problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gx-cyan), var(--gx-magenta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gx-problem-card:hover::before { transform: scaleX(1); }
+    .gx-problem-card:hover {
+      background: var(--gx-surface);
+    }
+    .gx-problem-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .gx-problem-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gx-text-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 12px;
+    }
+    .gx-problem-card p {
+      font-size: 0.9rem;
+      color: var(--gx-text-dim);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ============================
+       CONFIGURATOR SECTION
+    ============================ */
+    .gx-configurator {
+      padding: 100px 40px;
+      background: var(--gx-panel);
+      border-top: 1px solid var(--gx-border);
+      border-bottom: 1px solid var(--gx-border);
+      position: relative;
+    }
+    .gx-configurator::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 30%, var(--gx-cyan-dim) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .gx-config-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .gx-config-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .gx-config-steps { }
+    .gx-step {
+      background: var(--gx-surface);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      padding: 28px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .gx-step.active {
+      border-color: var(--gx-cyan);
+      box-shadow: 0 0 20px rgba(0,255,200,0.08);
+    }
+    .gx-step-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .gx-step-num {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gx-void);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--gx-text-dim);
+      transition: all 0.3s;
+    }
+    .gx-step.active .gx-step-num {
+      background: var(--gx-cyan);
+      color: var(--gx-void);
+      border-color: var(--gx-cyan);
+    }
+    .gx-step-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gx-text-dim);
+    }
+    .gx-step.active .gx-step-label { color: var(--gx-text-bright); }
+    .gx-step-content {
+      display: none;
+      padding-top: 20px;
+    }
+    .gx-step.active .gx-step-content { display: block; }
+    .gx-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gx-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--gx-void);
+      border: 1px solid transparent;
+      border-radius: var(--gx-radius);
+      cursor: pointer;
+      transition: all 0.25s;
+      font-size: 0.85rem;
+      color: var(--gx-text);
+    }
+    .gx-option:hover {
+      border-color: var(--gx-border);
+      background: var(--gx-panel);
+    }
+    .gx-option.selected {
+      border-color: var(--gx-cyan);
+      background: var(--gx-cyan-dim);
+      color: var(--gx-text-bright);
+    }
+    .gx-option-dot {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--gx-text-dim);
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.25s;
+    }
+    .gx-option.selected .gx-option-dot {
+      border-color: var(--gx-cyan);
+    }
+    .gx-option.selected .gx-option-dot::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      background: var(--gx-cyan);
+      border-radius: 50%;
+    }
+
+    /* Config preview */
+    .gx-config-preview {
+      background: var(--gx-void);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .gx-preview-visual {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .gx-room-mockup {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 16/10;
+      background: var(--gx-surface);
+      border-radius: var(--gx-radius-lg);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gx-border);
+    }
+    .gx-room-window {
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      width: 70%;
+      height: 65%;
+      background: linear-gradient(180deg, #1a1a3e, #0d0d2b);
+      border: 2px solid var(--gx-text-dim);
+      overflow: hidden;
+    }
+    .gx-room-blind {
+      width: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        #1e1e32 0px,
+        #1e1e32 8px,
+        #15152a 8px,
+        #15152a 10px
+      );
+      transition: height 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .gx-room-desk {
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 25%;
+      background: #1a1a26;
+      border-top: 2px solid var(--gx-border);
+    }
+    .gx-room-monitor-sm {
+      position: absolute;
+      bottom: 26%;
+      left: 35%;
+      width: 30%;
+      height: 20%;
+      background: #0d0d1a;
+      border: 1px solid var(--gx-cyan);
+      border-radius: 2px;
+      box-shadow: 0 0 15px rgba(0,255,200,0.15);
+    }
+    .gx-room-monitor-sm::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: linear-gradient(135deg, rgba(0,255,200,0.1), rgba(255,0,110,0.05));
+    }
+    .gx-room-glow {
+      position: absolute;
+      bottom: 20%;
+      left: 20%;
+      width: 60%;
+      height: 30%;
+      background: radial-gradient(ellipse, rgba(0,255,200,0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Preview specs */
+    .gx-preview-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gx-spec {
+      background: var(--gx-surface);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .gx-spec-val {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gx-cyan);
+    }
+    .gx-spec-label {
+      font-size: 0.65rem;
+      color: var(--gx-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    /* ============================
+       PRODUCTS — Asymmetric grid
+    ============================ */
+    .gx-products-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .gx-products-grid > :nth-child(3) {
+      grid-column: 1 / -1;
+    }
+    .gx-product {
+      background: var(--gx-panel);
+      border: 1px solid var(--gx-border);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gx-product:hover {
+      border-color: var(--gx-cyan);
+    }
+    .gx-product-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7) saturate(0.8);
+      transition: all 0.5s;
+    }
+    .gx-product:hover .gx-product-img {
+      filter: brightness(0.9) saturate(1);
+    }
+    .gx-product-info {
+      padding: 28px 32px;
+    }
+    .gx-product-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gx-text-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 8px;
+    }
+    .gx-product-desc {
+      font-size: 0.85rem;
+      color: var(--gx-text-dim);
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+    .gx-product-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .gx-tag {
+      font-size: 0.65rem;
+      padding: 4px 10px;
+      background: var(--gx-cyan-dim);
+      color: var(--gx-cyan);
+      border-radius: var(--gx-radius);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .gx-tag.magenta {
+      background: var(--gx-magenta-dim);
+      color: var(--gx-magenta);
+    }
+
+    /* Full-width product */
+    .gx-product-wide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .gx-product-wide .gx-product-img {
+      height: 100%;
+      min-height: 300px;
+    }
+    .gx-product-wide .gx-product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 48px;
+    }
+
+    /* ============================
+       STATS BAR
+    ============================ */
+    .gx-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--gx-border);
+      border: 1px solid var(--gx-border);
+      margin: 0 40px;
+    }
+    .gx-stat-item {
+      background: var(--gx-void);
+      padding: 48px 32px;
+      text-align: center;
+      position: relative;
+    }
+    .gx-stat-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gx-cyan);
+      transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gx-stat-item:hover::after { width: 100%; }
+    .gx-stat-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gx-text-bright);
+      line-height: 1;
+    }
+    .gx-stat-unit {
+      color: var(--gx-cyan);
+      font-size: 1.5rem;
+    }
+    .gx-stat-desc {
+      font-size: 0.7rem;
+      color: var(--gx-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 12px;
+    }
+
+    /* ============================
+       SETUP GALLERY — Horizontal scroll
+    ============================ */
+    .gx-gallery-section {
+      padding: 100px 0;
+    }
+    .gx-gallery-header {
+      padding: 0 40px;
+      max-width: 1200px;
+      margin: 0 auto 48px;
+    }
+    .gx-gallery-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 40px 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gx-surface) transparent;
+    }
+    .gx-gallery-scroll::-webkit-scrollbar { height: 4px; }
+    .gx-gallery-scroll::-webkit-scrollbar-track { background: transparent; }
+    .gx-gallery-scroll::-webkit-scrollbar-thumb { background: var(--gx-surface); border-radius: 2px; }
+    .gx-gallery-card {
+      flex-shrink: 0;
+      width: 360px;
+      scroll-snap-align: start;
+      background: var(--gx-panel);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+    .gx-gallery-card:hover {
+      border-color: var(--gx-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .gx-gallery-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      filter: brightness(0.8);
+      transition: filter 0.4s;
+    }
+    .gx-gallery-card:hover .gx-gallery-img { filter: brightness(1); }
+    .gx-gallery-caption {
+      padding: 24px;
+    }
+    .gx-gallery-caption h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gx-text-bright);
+      margin: 0 0 6px;
+    }
+    .gx-gallery-caption p {
+      font-size: 0.8rem;
+      color: var(--gx-text-dim);
+      margin: 0;
+    }
+
+    /* ============================
+       TESTIMONIALS — Terminal style
+    ============================ */
+    .gx-testimonials {
+      padding: 100px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gx-terminal {
+      background: var(--gx-void);
+      border: 1px solid var(--gx-border);
+      border-radius: var(--gx-radius-lg);
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .gx-terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--gx-surface);
+      border-bottom: 1px solid var(--gx-border);
+    }
+    .gx-terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .gx-terminal-dot.red { background: #ff5f57; }
+    .gx-terminal-dot.yellow { background: #febc2e; }
+    .gx-terminal-dot.green { background: #28c840; }
+    .gx-terminal-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      color: var(--gx-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-left: 12px;
+    }
+    .gx-terminal-body {
+      padding: 32px;
+    }
+    .gx-review {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--gx-border);
+    }
+    .gx-review:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .gx-review-prompt {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      color: var(--gx-cyan);
+      margin-bottom: 8px;
+    }
+    .gx-review-text {
+      font-size: 0.95rem;
+      color: var(--gx-text);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      border-left: 2px solid var(--gx-border);
+    }
+    .gx-review-meta {
+      font-size: 0.75rem;
+      color: var(--gx-text-dim);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .gx-review-stars { color: var(--gx-yellow); }
+
+    /* ============================
+       CTA SECTION
+    ============================ */
+    .gx-cta {
+      padding: 120px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gx-cta-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, var(--gx-magenta-dim) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, var(--gx-cyan-dim) 0%, transparent 50%),
+        var(--gx-panel);
+    }
+    .gx-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .gx-cta h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--gx-text-bright);
+      margin: 0 0 20px;
+    }
+    .gx-cta p {
+      font-size: 1.1rem;
+      color: var(--gx-text-dim);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .gx-cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================
+       GLITCH TEXT ANIMATION
+    ============================ */
+    .gx-glitch {
+      position: relative;
+      display: inline-block;
+    }
+    .gx-glitch::before,
+    .gx-glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .gx-glitch::before {
+      color: var(--gx-cyan);
+      animation: gx-glitch-1 3s infinite linear alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    }
+    .gx-glitch::after {
+      color: var(--gx-magenta);
+      animation: gx-glitch-2 2s infinite linear alternate-reverse;
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    }
+    @keyframes gx-glitch-1 {
+      0% { transform: translate(0); }
+      20% { transform: translate(-3px, 2px); }
+      40% { transform: translate(3px, -1px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes gx-glitch-2 {
+      0% { transform: translate(0); }
+      25% { transform: translate(2px, -1px); }
+      50% { transform: translate(-2px, 2px); }
+      75% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    /* ============================
+       SCROLL REVEAL
+    ============================ */
+    .gx-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gx-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gx-reveal-delay-1 { transition-delay: 0.1s; }
+    .gx-reveal-delay-2 { transition-delay: 0.2s; }
+    .gx-reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ============================
+       FOOTER OVERRIDE
+    ============================ */
+    .lp-gx .footer {
+      background: #060608;
+      border-top: 1px solid var(--gx-border);
+      color: var(--gx-text-dim);
+    }
+    .lp-gx .footer a { color: var(--gx-text-dim); }
+    .lp-gx .footer a:hover { color: var(--gx-cyan); }
+    .lp-gx .footer h4 { color: var(--gx-text); }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 900px) {
+      .gx-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .gx-hero-visual { order: -1; }
+      .gx-problems { grid-template-columns: 1fr; }
+      .gx-config-layout { grid-template-columns: 1fr; }
+      .gx-products-grid { grid-template-columns: 1fr; }
+      .gx-product-wide { grid-template-columns: 1fr; }
+      .gx-stats-bar { grid-template-columns: repeat(2, 1fr); margin: 0 20px; }
+      .gx-preview-specs { grid-template-columns: repeat(2, 1fr); }
+      .gx-section { padding: 60px 20px; }
+      .gx-configurator { padding: 60px 20px; }
+      .gx-testimonials { padding: 60px 20px; }
+      .gx-cta { padding: 80px 20px; }
+      .gx-gallery-header { padding: 0 20px; }
+      .gx-gallery-scroll { padding: 0 20px 20px; }
+      .gx-gallery-card { width: 300px; }
+      .gx-hero { padding: 100px 0 60px; }
+      .gx-hero-inner { padding: 0 20px; }
+      .gx-stats-bar { gap: 1px; }
+      .gx-float-stat:nth-child(3) { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .gx-stats-bar { grid-template-columns: 1fr 1fr; }
+      .gx-hero h1 { font-size: 2rem; }
+      .gx-hero-actions { flex-direction: column; }
+      .gx-preview-specs { grid-template-columns: 1fr; }
+      .gx-cta-actions { flex-direction: column; align-items: center; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .gx-reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="lp-gx">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="gx-hero">
+    <div class="gx-hero-bg"></div>
+    <div class="gx-hero-grid"></div>
+    <div class="gx-hero-inner">
+      <div class="gx-hero-text">
+        <div class="gx-section-tag gx-mono">
+          <span class="gx-hero-tag"><span></span>Gaming & Esports</span>
+        </div>
+        <h1 class="gx-display">
+          <span class="gx-glitch" data-text="Zero Glare.">Zero Glare.</span><br>
+          <span class="gx-accent">Total Control.</span>
+        </h1>
+        <p class="gx-hero-desc gx-body">
+          Professional blackout blinds engineered for competitive gaming setups. Eliminate screen reflections, control ambient light, and create the perfect dark-room environment — motorised, silent, and built for your rig.
+        </p>
+        <div class="gx-hero-actions">
+          <a href="../free-quote.html" class="gx-btn-primary">Build Your Setup →</a>
+          <a href="#configurator" class="gx-btn-secondary">Configure Blinds</a>
+        </div>
+      </div>
+      <div class="gx-hero-visual">
+        <div class="gx-monitor">
+          <div class="gx-monitor-screen"></div>
+          <div class="gx-float-stat">
+            <div class="gx-float-val">100%</div>
+            <div class="gx-float-label">Light Block</div>
+          </div>
+          <div class="gx-float-stat">
+            <div class="gx-float-val">&lt;25dB</div>
+            <div class="gx-float-label">Motor Noise</div>
+          </div>
+          <div class="gx-float-stat">
+            <div class="gx-float-val">0.3s</div>
+            <div class="gx-float-label">Response</div>
+          </div>
+        </div>
+        <div class="gx-monitor-stand"></div>
+        <div class="gx-monitor-base"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Blackout Matters -->
+  <section class="gx-section">
+    <div class="gx-section-header gx-reveal">
+      <div class="gx-section-tag">Why blackout matters</div>
+      <h2 class="gx-section-title gx-display">Every Photon <span class="gx-accent">Counts</span></h2>
+    </div>
+    <div class="gx-problems gx-reveal gx-reveal-delay-1">
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">🎯</span>
+        <h3>Screen Glare</h3>
+        <p>Even minor reflections reduce contrast ratios by up to 40%. In competitive gaming, that's the difference between spotting an enemy or missing them entirely. True blackout eliminates every unwanted light source.</p>
+      </div>
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">😴</span>
+        <h3>Eye Fatigue</h3>
+        <p>Mismatched ambient light forces your pupils to constantly adjust, causing strain during long sessions. A properly dark room lets your eyes relax and focus on what matters — your screen.</p>
+      </div>
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">🎙️</span>
+        <h3>Stream Quality</h3>
+        <p>Inconsistent lighting ruins webcam footage and creates harsh shadows. Controlled darkness means your ring light or key light does all the work — clean, professional streaming every time.</p>
+      </div>
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">🌡️</span>
+        <h3>Heat Control</h3>
+        <p>Gaming rigs generate serious heat. Direct sunlight through windows can push room temps up 5-8°C. Blackout blinds reflect solar heat, keeping your setup and your GPU cooler.</p>
+      </div>
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">🔊</span>
+        <h3>Noise Reduction</h3>
+        <p>Heavy blackout fabrics absorb sound, reducing outside noise by up to 7dB. Fewer distractions during clutch moments. Your callouts stay clear, ambient noise stays out.</p>
+      </div>
+      <div class="gx-problem-card">
+        <span class="gx-problem-icon">🏠</span>
+        <h3>Dual Purpose</h3>
+        <p>When you're not gaming, motorised blinds open fully with one tap. Your room transforms back to a bright, liveable space in seconds. No permanent cave vibes required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="gx-stats-bar gx-reveal">
+    <div class="gx-stat-item">
+      <div class="gx-stat-num">100<span class="gx-stat-unit">%</span></div>
+      <div class="gx-stat-desc">Light Blockage</div>
+    </div>
+    <div class="gx-stat-item">
+      <div class="gx-stat-num">5<span class="gx-stat-unit">yr</span></div>
+      <div class="gx-stat-desc">Motor Warranty</div>
+    </div>
+    <div class="gx-stat-item">
+      <div class="gx-stat-num">24<span class="gx-stat-unit">hr</span></div>
+      <div class="gx-stat-desc">Quote Turnaround</div>
+    </div>
+    <div class="gx-stat-item">
+      <div class="gx-stat-num">500<span class="gx-stat-unit">+</span></div>
+      <div class="gx-stat-desc">Gaming Rooms Done</div>
+    </div>
+  </div>
+
+  <!-- Configurator -->
+  <section class="gx-configurator" id="configurator">
+    <div class="gx-config-inner">
+      <div class="gx-section-header gx-reveal">
+        <div class="gx-section-tag">Interactive</div>
+        <h2 class="gx-section-title gx-display">Build Your <span class="gx-accent">Setup</span></h2>
+        <p class="gx-body" style="color: var(--gx-text-dim); margin-top: 12px; max-width: 500px;">Choose your window type, blind style, and control method. Watch your setup come to life.</p>
+      </div>
+      <div class="gx-config-layout gx-reveal gx-reveal-delay-1">
+        <div class="gx-config-steps">
+          <!-- Step 1 -->
+          <div class="gx-step active" data-step="1">
+            <div class="gx-step-header">
+              <div class="gx-step-num">01</div>
+              <div class="gx-step-label">Window Type</div>
+            </div>
+            <div class="gx-step-content">
+              <div class="gx-options">
+                <div class="gx-option selected" data-val="standard">
+                  <div class="gx-option-dot"></div>
+                  <span>Standard Window (up to 2.4m)</span>
+                </div>
+                <div class="gx-option" data-val="large">
+                  <div class="gx-option-dot"></div>
+                  <span>Large / Floor-to-Ceiling</span>
+                </div>
+                <div class="gx-option" data-val="bay">
+                  <div class="gx-option-dot"></div>
+                  <span>Bay Window</span>
+                </div>
+                <div class="gx-option" data-val="skylight">
+                  <div class="gx-option-dot"></div>
+                  <span>Skylight / Roof Window</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="gx-step" data-step="2">
+            <div class="gx-step-header">
+              <div class="gx-step-num">02</div>
+              <div class="gx-step-label">Blind Style</div>
+            </div>
+            <div class="gx-step-content">
+              <div class="gx-options">
+                <div class="gx-option selected" data-val="roller">
+                  <div class="gx-option-dot"></div>
+                  <span>Blockout Roller Blinds</span>
+                </div>
+                <div class="gx-option" data-val="honeycomb">
+                  <div class="gx-option-dot"></div>
+                  <span>Honeycomb (Thermal + Blackout)</span>
+                </div>
+                <div class="gx-option" data-val="dual">
+                  <div class="gx-option-dot"></div>
+                  <span>Dual Roller (Day/Night)</span>
+                </div>
+                <div class="gx-option" data-val="curtain">
+                  <div class="gx-option-dot"></div>
+                  <span>Blackout Curtains</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="gx-step" data-step="3">
+            <div class="gx-step-header">
+              <div class="gx-step-num">03</div>
+              <div class="gx-step-label">Control Method</div>
+            </div>
+            <div class="gx-step-content">
+              <div class="gx-options">
+                <div class="gx-option selected" data-val="motorised">
+                  <div class="gx-option-dot"></div>
+                  <span>Motorised (App / Voice / Remote)</span>
+                </div>
+                <div class="gx-option" data-val="manual">
+                  <div class="gx-option-dot"></div>
+                  <span>Manual Chain/Cord-Free</span>
+                </div>
+                <div class="gx-option" data-val="smart">
+                  <div class="gx-option-dot"></div>
+                  <span>Smart Home (Alexa / Google / HomeKit)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview panel -->
+        <div class="gx-config-preview">
+          <div class="gx-preview-visual">
+            <div class="gx-room-mockup">
+              <div class="gx-room-window">
+                <div class="gx-room-blind" id="roomBlind" style="height: 85%;"></div>
+              </div>
+              <div class="gx-room-desk"></div>
+              <div class="gx-room-monitor-sm"></div>
+              <div class="gx-room-glow"></div>
+            </div>
+          </div>
+          <div class="gx-preview-specs">
+            <div class="gx-spec">
+              <div class="gx-spec-val" id="specBlock">100%</div>
+              <div class="gx-spec-label">Light Block</div>
+            </div>
+            <div class="gx-spec">
+              <div class="gx-spec-val" id="specThermal">R3.5</div>
+              <div class="gx-spec-label">Thermal Rating</div>
+            </div>
+            <div class="gx-spec">
+              <div class="gx-spec-val" id="specNoise">-5dB</div>
+              <div class="gx-spec-label">Noise Reduction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;" class="gx-reveal gx-reveal-delay-2">
+        <a href="../free-quote.html" class="gx-btn-primary">Get a Quote for This Setup →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="gx-section">
+    <div class="gx-section-header gx-reveal">
+      <div class="gx-section-tag">Recommended Gear</div>
+      <h2 class="gx-section-title gx-display">Top Picks for <span class="gx-accent">Gamers</span></h2>
+    </div>
+    <div class="gx-products-grid gx-reveal gx-reveal-delay-1">
+      <div class="gx-product">
+        <img class="gx-product-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Blackout roller blind in dark room" loading="lazy">
+        <div class="gx-product-info">
+          <h3 class="gx-product-name">Blockout Roller — Stealth Series</h3>
+          <p class="gx-product-desc">100% light-blocking fabric with side channels that eliminate light gaps. Available in matte black, charcoal, and midnight navy. Whisper-quiet motorised operation.</p>
+          <div class="gx-product-tags">
+            <span class="gx-tag">100% Blackout</span>
+            <span class="gx-tag">Motorised</span>
+            <span class="gx-tag magenta">Popular</span>
+          </div>
+        </div>
+      </div>
+      <div class="gx-product">
+        <img class="gx-product-img" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Honeycomb blackout blind" loading="lazy">
+        <div class="gx-product-info">
+          <h3 class="gx-product-name">Honeycomb — Thermal Shield</h3>
+          <p class="gx-product-desc">Double-cell construction traps air for insulation while blocking 100% of light. Keeps your gaming room cool in summer, warm in winter. Energy savings you'll actually notice.</p>
+          <div class="gx-product-tags">
+            <span class="gx-tag">Thermal</span>
+            <span class="gx-tag">Blackout</span>
+          </div>
+        </div>
+      </div>
+      <div class="gx-product gx-product-wide">
+        <img class="gx-product-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Dual roller blinds in modern room" loading="lazy">
+        <div class="gx-product-info">
+          <h3 class="gx-product-name">Dual Roller — Day/Night System</h3>
+          <p class="gx-product-desc">Two blinds, one bracket. A sheer for daytime diffusion and a full blockout for gaming sessions. Switch between modes instantly with independent motorised controls. The best of both worlds — your room doesn't have to be a permanent cave.</p>
+          <div class="gx-product-tags">
+            <span class="gx-tag">Dual Mode</span>
+            <span class="gx-tag">Motorised</span>
+            <span class="gx-tag">Smart Home</span>
+            <span class="gx-tag magenta">Best Value</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery — Setup Showcase -->
+  <section class="gx-gallery-section">
+    <div class="gx-gallery-header gx-reveal">
+      <div class="gx-section-tag">Showcase</div>
+      <h2 class="gx-section-title gx-display">Gaming Setups <span class="gx-accent">We've Built</span></h2>
+    </div>
+    <div class="gx-gallery-scroll">
+      <div class="gx-gallery-card">
+        <img class="gx-gallery-img" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500&q=80" alt="Esports setup with blackout blinds" loading="lazy">
+        <div class="gx-gallery-caption">
+          <h4>Esports Training Room</h4>
+          <p>Dual rollers, motorised, 6-window setup — Richmond</p>
+        </div>
+      </div>
+      <div class="gx-gallery-card">
+        <img class="gx-gallery-img" src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=500&q=80" alt="Streaming room setup" loading="lazy">
+        <div class="gx-gallery-caption">
+          <h4>Streamer's Studio</h4>
+          <p>Full blackout + acoustic honeycomb — South Yarra</p>
+        </div>
+      </div>
+      <div class="gx-gallery-card">
+        <img class="gx-gallery-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80" alt="Multi-monitor gaming room" loading="lazy">
+        <div class="gx-gallery-caption">
+          <h4>Triple Monitor Command Centre</h4>
+          <p>Side-channel rollers, zero light leak — Doncaster</p>
+        </div>
+      </div>
+      <div class="gx-gallery-card">
+        <img class="gx-gallery-img" src="https://images.unsplash.com/photo-1615680022647-99c397f5c0cd?w=500&q=80" alt="VR gaming room" loading="lazy">
+        <div class="gx-gallery-caption">
+          <h4>VR Room Build</h4>
+          <p>Ceiling-recessed motorised — Toorak</p>
+        </div>
+      </div>
+      <div class="gx-gallery-card">
+        <img class="gx-gallery-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80" alt="Home gaming setup" loading="lazy">
+        <div class="gx-gallery-caption">
+          <h4>Casual Home Setup</h4>
+          <p>Blockout curtains + sheer layer — Brunswick</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials — Terminal -->
+  <section class="gx-testimonials">
+    <div class="gx-section-header gx-reveal">
+      <div class="gx-section-tag">Player Reviews</div>
+      <h2 class="gx-section-title gx-display">What <span class="gx-accent">Gamers Say</span></h2>
+    </div>
+    <div class="gx-terminal gx-reveal gx-reveal-delay-1">
+      <div class="gx-terminal-bar">
+        <div class="gx-terminal-dot red"></div>
+        <div class="gx-terminal-dot yellow"></div>
+        <div class="gx-terminal-dot green"></div>
+        <div class="gx-terminal-title">reviews.log — iseekblinds gaming</div>
+      </div>
+      <div class="gx-terminal-body">
+        <div class="gx-review">
+          <div class="gx-review-prompt">$ cat review --user="Alex T." --location="Richmond"</div>
+          <div class="gx-review-text">"I can finally game during the day without wearing a hoodie over my head. The side channels are genius — literally zero light gets through. My Valorant rank went up two tiers. Coincidence? Maybe. But my eyes don't hurt anymore."</div>
+          <div class="gx-review-meta">
+            <span class="gx-review-stars">★★★★★</span>
+            <span>Blockout Roller + Motorised</span>
+          </div>
+        </div>
+        <div class="gx-review">
+          <div class="gx-review-prompt">$ cat review --user="Sarah K." --location="South Yarra"</div>
+          <div class="gx-review-text">"I stream 5 days a week and the lighting consistency is night and day (pun intended). My viewers noticed the difference immediately. The motorised control through Google Home means I can go dark mid-stream with a voice command."</div>
+          <div class="gx-review-meta">
+            <span class="gx-review-stars">★★★★★</span>
+            <span>Dual Roller + Smart Home</span>
+          </div>
+        </div>
+        <div class="gx-review">
+          <div class="gx-review-prompt">$ cat review --user="Marcus W." --location="Doncaster"</div>
+          <div class="gx-review-text">"Got the honeycomb blackout blinds for my VR room. The thermal insulation is a bonus I didn't expect — my room stays 4 degrees cooler. Install was quick, the team knew exactly what a gaming setup needs. Respect."</div>
+          <div class="gx-review-meta">
+            <span class="gx-review-stars">★★★★★</span>
+            <span>Honeycomb Thermal Shield</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="gx-cta">
+    <div class="gx-cta-bg"></div>
+    <div class="gx-cta-inner gx-reveal">
+      <div class="gx-section-tag" style="justify-content: center;">Level Up</div>
+      <h2 class="gx-display">Ready to <span class="gx-glitch" data-text="Upgrade?" style="color: var(--gx-cyan); text-shadow: 0 0 30px var(--gx-cyan-glow);">Upgrade?</span></h2>
+      <p class="gx-body">Free in-home consultation. We measure, advise, and install. You game. Melbourne-wide service, usually within 5 business days.</p>
+      <div class="gx-cta-actions">
+        <a href="../free-quote.html" class="gx-btn-primary">Get Free Quote →</a>
+        <a href="tel:0400000000" class="gx-btn-secondary">📞 Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // === SCROLL REVEAL ===
+    const revealEls = document.querySelectorAll('.gx-reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // === CONFIGURATOR ===
+    const steps = document.querySelectorAll('.gx-step');
+    const blind = document.getElementById('roomBlind');
+    const specBlock = document.getElementById('specBlock');
+    const specThermal = document.getElementById('specThermal');
+    const specNoise = document.getElementById('specNoise');
+
+    // Step click
+    steps.forEach(step => {
+      step.addEventListener('click', () => {
+        steps.forEach(s => s.classList.remove('active'));
+        step.classList.add('active');
+      });
+    });
+
+    // Option click
+    document.querySelectorAll('.gx-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const parent = opt.closest('.gx-options');
+        parent.querySelectorAll('.gx-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        updatePreview();
+      });
+    });
+
+    function updatePreview() {
+      const blindStyle = document.querySelector('.gx-step[data-step="2"] .gx-option.selected');
+      const val = blindStyle ? blindStyle.dataset.val : 'roller';
+
+      const specs = {
+        roller:    { block: '100%', thermal: 'R2.0', noise: '-5dB', height: '90%' },
+        honeycomb: { block: '100%', thermal: 'R3.5', noise: '-7dB', height: '85%' },
+        dual:      { block: '100%', thermal: 'R2.5', noise: '-4dB', height: '75%' },
+        curtain:   { block: '99.5%', thermal: 'R1.8', noise: '-6dB', height: '95%' }
+      };
+      const s = specs[val] || specs.roller;
+      specBlock.textContent = s.block;
+      specThermal.textContent = s.thermal;
+      specNoise.textContent = s.noise;
+      blind.style.height = s.height;
+    }
+
+    // Auto-advance steps on option click
+    document.querySelectorAll('.gx-step .gx-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const currentStep = opt.closest('.gx-step');
+        const currentNum = parseInt(currentStep.dataset.step);
+        setTimeout(() => {
+          const nextStep = document.querySelector(`.gx-step[data-step="${currentNum + 1}"]`);
+          if (nextStep) {
+            steps.forEach(s => s.classList.remove('active'));
+            nextStep.classList.add('active');
+          }
+        }, 400);
+      });
+    });
+  </script>
+
+</body>
+</html>
