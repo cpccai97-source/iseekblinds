@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outdoor Event & Marquee Shade Solutions | iSeekBlinds</title>
+<meta name="description" content="Professional shade and privacy solutions for outdoor events, marquees, and open-air venues. Custom blinds, screens, and covers for weddings, festivals, corporate events, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0d1b2a;
+  --dusk:#1b2d45;
+  --amber:#e8a838;
+  --terra:#c2694a;
+  --cream:#faf3e8;
+  --sage:#6b7c5e;
+  --gold:#d4a843;
+  --blush:#f0dcc8;
+  --ink:#1a1a1a;
+  --paper:#f7f1e6;
+  --col-gap:2.2rem;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ===== GRAIN OVERLAY ===== */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.025;
+}
+
+/* ===== LOADING SCREEN ===== */
+.loader{
+  position:fixed;inset:0;z-index:10000;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .8s ease,visibility .8s ease;
+}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-text{
+  font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,4vw,3rem);
+  color:var(--cream);letter-spacing:.05em;
+  animation:loaderPulse 1.5s ease-in-out infinite;
+}
+@keyframes loaderPulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ===== HEADER ===== */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1.2rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(13,27,42,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(232,168,56,.15);
+  transition:transform .4s ease;
+}
+.site-header.hide{transform:translateY(-100%)}
+.logo{
+  font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--cream);
+  display:flex;align-items:center;gap:.6rem;
+}
+.logo-accent{color:var(--amber)}
+.header-nav{display:flex;gap:1.8rem;align-items:center}
+.header-nav a{
+  color:var(--cream);font-size:.82rem;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  position:relative;padding-bottom:2px;
+}
+.header-nav a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
+  background:var(--amber);transition:width .3s ease;
+}
+.header-nav a:hover::after{width:100%}
+.header-cta{
+  background:var(--amber);color:var(--navy);padding:.55rem 1.2rem;
+  font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  border:none;cursor:pointer;transition:all .3s ease;
+}
+.header-cta:hover{background:var(--gold);transform:translateY(-1px)}
+
+/* ===== MASTHEAD (Editorial Hero) ===== */
+.masthead{
+  min-height:100vh;padding:8rem 2rem 4rem;
+  background:linear-gradient(170deg,var(--navy) 0%,var(--dusk) 55%,var(--terra) 100%);
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;
+  position:relative;overflow:hidden;
+}
+.masthead::before{
+  content:'';position:absolute;top:-20%;right:-10%;
+  width:60vw;height:60vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,168,56,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.masthead-left{padding-bottom:4rem;position:relative;z-index:2}
+.masthead-kicker{
+  font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.masthead-kicker::before{content:'';width:3rem;height:1px;background:var(--amber)}
+.masthead-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.8rem,6.5vw,5.5rem);
+  line-height:1.05;color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.masthead-title em{
+  font-style:italic;color:var(--amber);
+  display:inline-block;
+}
+.masthead-deck{
+  font-size:1.05rem;line-height:1.7;color:rgba(250,243,232,.7);
+  max-width:480px;margin-bottom:2.5rem;font-weight:300;
+}
+.masthead-stats{
+  display:flex;gap:2.5rem;border-top:1px solid rgba(250,243,232,.15);
+  padding-top:1.5rem;
+}
+.stat{text-align:left}
+.stat-num{
+  font-family:'DM Serif Display',serif;font-size:2rem;color:var(--amber);
+  display:block;
+}
+.stat-label{font-size:.7rem;color:rgba(250,243,232,.5);text-transform:uppercase;letter-spacing:.1em}
+
+.masthead-right{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;gap:1rem;
+  padding-bottom:2rem;
+}
+.hero-card{
+  background:rgba(250,243,232,.06);backdrop-filter:blur(8px);
+  border:1px solid rgba(250,243,232,.1);padding:1.8rem;
+  position:relative;overflow:hidden;
+  transition:transform .4s ease,border-color .4s ease;
+}
+.hero-card:hover{transform:translateX(-8px);border-color:rgba(232,168,56,.3)}
+.hero-card-num{
+  font-family:'DM Serif Display',serif;font-size:3.5rem;
+  color:rgba(232,168,56,.15);position:absolute;top:.5rem;right:1rem;
+  line-height:1;
+}
+.hero-card h3{
+  font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--cream);
+  margin-bottom:.4rem;
+}
+.hero-card p{font-size:.82rem;color:rgba(250,243,232,.5);line-height:1.5;font-weight:300}
+
+/* ===== EDITORIAL INTRO (Multi-Column) ===== */
+.editorial{
+  padding:5rem 2rem;
+  max-width:1200px;margin:0 auto;
+}
+.editorial-grid{
+  display:grid;
+  grid-template-columns:1fr 2px 1fr 2px 1fr;
+  gap:0;
+}
+.editorial-divider{background:var(--terra);opacity:.2}
+.editorial-col{padding:0 var(--col-gap)}
+.editorial-col:first-child{padding-left:0}
+.editorial-col:last-child{padding-right:0}
+.editorial-dropcap::first-letter{
+  font-family:'DM Serif Display',serif;
+  font-size:3.8rem;float:left;line-height:.85;
+  margin-right:.6rem;margin-top:.2rem;
+  color:var(--terra);
+}
+.editorial-col h2{
+  font-family:'DM Serif Display',serif;font-size:1.5rem;
+  margin-bottom:1rem;line-height:1.3;
+}
+.editorial-col p{
+  font-size:.88rem;line-height:1.75;color:rgba(26,26,26,.7);
+  margin-bottom:1rem;
+}
+.editorial-pull{
+  font-family:'DM Serif Display',serif;font-style:italic;
+  font-size:1.3rem;line-height:1.5;color:var(--terra);
+  border-left:3px solid var(--amber);padding-left:1.2rem;
+  margin:1.5rem 0;
+}
+
+/* ===== VENUE ZONE MAP (Interactive) ===== */
+.venue-map{
+  padding:5rem 2rem;background:var(--navy);position:relative;
+  overflow:hidden;
+}
+.venue-map::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(107,124,94,.15) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 30%,rgba(232,168,56,.08) 0%,transparent 50%);
+}
+.venue-map-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.venue-map-header{text-align:center;margin-bottom:3rem}
+.venue-map-header h2{
+  font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);
+  color:var(--cream);margin-bottom:.8rem;
+}
+.venue-map-header p{color:rgba(250,243,232,.5);font-size:.9rem;max-width:500px;margin:0 auto}
+
+/* Isometric venue map */
+.map-container{
+  display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,80px);
+  gap:8px;perspective:1200px;
+}
+.zone{
+  position:relative;cursor:pointer;
+  border:1px solid rgba(250,243,232,.08);
+  background:rgba(250,243,232,.03);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1rem;text-align:center;
+  transition:all .5s cubic-bezier(.23,1,.32,1);
+  overflow:hidden;
+}
+.zone::before{
+  content:'';position:absolute;inset:0;opacity:0;
+  transition:opacity .5s ease;
+}
+.zone:hover{
+  transform:scale(1.03);z-index:10;
+  border-color:var(--amber);
+  box-shadow:0 0 40px rgba(232,168,56,.15);
+}
+.zone:hover::before{opacity:1}
+.zone-icon{font-size:1.8rem;margin-bottom:.4rem;filter:grayscale(.3);transition:filter .3s ease}
+.zone:hover .zone-icon{filter:grayscale(0)}
+.zone-name{
+  font-family:'DM Serif Display',serif;font-size:.75rem;color:var(--cream);
+  line-height:1.2;
+}
+.zone-tag{
+  font-size:.55rem;color:var(--amber);text-transform:uppercase;
+  letter-spacing:.1em;margin-top:.3rem;opacity:0;
+  transition:opacity .3s ease;
+}
+.zone:hover .zone-tag{opacity:1}
+
+/* Zone positions on grid */
+.z-wedding{grid-column:1/5;grid-row:1/4;background:rgba(194,105,74,.08)}
+.z-wedding::before{background:linear-gradient(135deg,rgba(194,105,74,.15),transparent)}
+.z-corporate{grid-column:5/9;grid-row:1/3;background:rgba(27,45,69,.3)}
+.z-corporate::before{background:linear-gradient(135deg,rgba(27,45,69,.3),transparent)}
+.z-festival{grid-column:9/13;grid-row:1/5;background:rgba(232,168,56,.06)}
+.z-festival::before{background:linear-gradient(135deg,rgba(232,168,56,.12),transparent)}
+.z-garden{grid-column:1/4;grid-row:4/7;background:rgba(107,124,94,.1)}
+.z-garden::before{background:linear-gradient(135deg,rgba(107,124,94,.15),transparent)}
+.z-sport{grid-column:4/8;grid-row:3/6;background:rgba(212,168,67,.06)}
+.z-sport::before{background:linear-gradient(135deg,rgba(212,168,67,.1),transparent)}
+.z-market{grid-column:8/13;grid-row:5/8;background:rgba(240,220,200,.06)}
+.z-market::before{background:linear-gradient(135deg,rgba(240,220,200,.1),transparent)}
+.z-dining{grid-column:1/5;grid-row:7/9;background:rgba(194,105,74,.05)}
+.z-dining::before{background:linear-gradient(135deg,rgba(194,105,74,.1),transparent)}
+.z-pool{grid-column:5/9;grid-row:6/9;background:rgba(60,130,180,.08)}
+.z-pool::before{background:linear-gradient(135deg,rgba(60,130,180,.12),transparent)}
+
+/* Zone detail panel */
+.zone-detail{
+  position:fixed;top:0;right:-500px;width:min(480px,90vw);height:100vh;
+  background:var(--dusk);z-index:2000;
+  padding:3rem 2.5rem;overflow-y:auto;
+  transition:right .6s cubic-bezier(.23,1,.32,1);
+  border-left:2px solid rgba(232,168,56,.2);
+}
+.zone-detail.open{right:0}
+.zone-detail-close{
+  position:absolute;top:1.5rem;right:1.5rem;
+  background:none;border:1px solid rgba(250,243,232,.2);
+  color:var(--cream);width:36px;height:36px;cursor:pointer;
+  font-size:1.2rem;display:flex;align-items:center;justify-content:center;
+  transition:all .3s ease;
+}
+.zone-detail-close:hover{border-color:var(--amber);color:var(--amber)}
+.zone-detail h3{
+  font-family:'DM Serif Display',serif;font-size:1.8rem;
+  color:var(--cream);margin-bottom:.5rem;margin-top:1rem;
+}
+.zone-detail .zone-subtitle{
+  color:var(--amber);font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.15em;margin-bottom:1.5rem;
+}
+.zone-detail p{
+  color:rgba(250,243,232,.65);font-size:.9rem;line-height:1.7;
+  margin-bottom:1.2rem;
+}
+.zone-products{margin-top:1.5rem}
+.zone-product{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid rgba(250,243,232,.06);
+}
+.zone-product-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+}
+.zone-product h4{
+  font-family:'DM Serif Display',serif;font-size:1rem;color:var(--cream);
+}
+.zone-product span{font-size:.75rem;color:rgba(250,243,232,.4)}
+.zone-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1999;
+  opacity:0;visibility:hidden;transition:all .4s ease;
+}
+.zone-overlay.open{opacity:1;visibility:visible}
+
+/* ===== SOLUTIONS EDITORIAL SPREAD ===== */
+.solutions{
+  padding:5rem 2rem;max-width:1200px;margin:0 auto;
+}
+.solutions-header{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  margin-bottom:4rem;align-items:end;
+}
+.solutions-header h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;
+}
+.solutions-header p{
+  font-size:.9rem;line-height:1.7;color:rgba(26,26,26,.6);
+  border-top:2px solid var(--terra);padding-top:1.5rem;
+}
+
+.spread{
+  display:grid;gap:1.5rem;
+  margin-bottom:3rem;
+}
+.spread-a{grid-template-columns:2fr 1fr;grid-template-rows:auto auto}
+.spread-b{grid-template-columns:1fr 2fr}
+.spread-c{grid-template-columns:1fr 1fr 1fr}
+
+.spread-card{
+  border:1px solid rgba(26,26,26,.08);padding:2.5rem;
+  position:relative;overflow:hidden;
+  background:var(--cream);
+  transition:all .5s cubic-bezier(.23,1,.32,1);
+}
+.spread-card:hover{
+  border-color:var(--terra);
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(26,26,26,.08);
+}
+.spread-card.featured{
+  grid-row:1/3;background:var(--navy);color:var(--cream);
+  padding:3rem;
+}
+.spread-card.featured h3{color:var(--cream)}
+.spread-card.featured p{color:rgba(250,243,232,.6)}
+.spread-card.accent{background:var(--terra);color:var(--cream)}
+.spread-card.accent h3{color:var(--cream)}
+.spread-card.accent p{color:rgba(250,243,232,.8)}
+
+.spread-card-num{
+  font-family:'DM Serif Display',serif;font-size:4rem;
+  line-height:1;opacity:.08;position:absolute;top:1rem;right:1.5rem;
+}
+.spread-card h3{
+  font-family:'DM Serif Display',serif;font-size:1.3rem;
+  margin-bottom:.8rem;line-height:1.3;
+}
+.spread-card p{font-size:.85rem;line-height:1.7;color:rgba(26,26,26,.6)}
+.spread-card .card-icon{
+  font-size:2rem;margin-bottom:1rem;display:block;
+}
+
+/* ===== WEATHER CHALLENGE TICKER ===== */
+.ticker-wrap{
+  background:var(--ink);padding:1rem 0;overflow:hidden;
+  border-top:2px solid var(--amber);border-bottom:2px solid var(--amber);
+}
+.ticker{
+  display:flex;gap:3rem;animation:tickerScroll 25s linear infinite;
+  white-space:nowrap;
+}
+.ticker span{
+  font-family:'DM Serif Display',serif;font-size:1rem;
+  color:var(--cream);display:flex;align-items:center;gap:.8rem;
+}
+.ticker .sep{color:var(--amber);font-size:1.2rem}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== PROCESS TIMELINE ===== */
+.process{
+  padding:5rem 2rem;background:var(--blush);
+  position:relative;
+}
+.process-inner{max-width:1100px;margin:0 auto}
+.process h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4vw,2.8rem);text-align:center;
+  margin-bottom:3.5rem;
+}
+.process-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  position:relative;
+}
+.process-steps::before{
+  content:'';position:absolute;top:2.5rem;left:10%;right:10%;
+  height:2px;background:linear-gradient(90deg,transparent,var(--terra),var(--amber),var(--terra),transparent);
+}
+.process-step{
+  text-align:center;padding:0 .8rem;
+  position:relative;
+}
+.step-dot{
+  width:50px;height:50px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--terra);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1rem;position:relative;z-index:2;
+  font-family:'DM Serif Display',serif;font-size:1.1rem;
+  color:var(--terra);
+  transition:all .4s ease;
+}
+.process-step:hover .step-dot{
+  background:var(--terra);color:var(--cream);
+  transform:scale(1.15);
+}
+.process-step h4{
+  font-family:'DM Serif Display',serif;font-size:.95rem;
+  margin-bottom:.4rem;
+}
+.process-step p{font-size:.75rem;color:rgba(26,26,26,.5);line-height:1.5}
+
+/* ===== TESTIMONIALS (Editorial Style) ===== */
+.testimonials{
+  padding:5rem 2rem;max-width:1200px;margin:0 auto;
+}
+.testimonials h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,3.5vw,2.5rem);margin-bottom:3rem;
+  text-align:center;
+}
+.testi-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+}
+.testi-card{
+  padding:2.5rem;border:1px solid rgba(26,26,26,.08);
+  position:relative;
+  transition:all .4s ease;
+}
+.testi-card:nth-child(2){transform:translateY(2rem)}
+.testi-card:hover{
+  border-color:var(--terra);
+  box-shadow:0 12px 40px rgba(26,26,26,.06);
+}
+.testi-quote{
+  font-family:'DM Serif Display',serif;font-style:italic;
+  font-size:1.1rem;line-height:1.6;margin-bottom:1.5rem;
+  color:var(--ink);
+}
+.testi-quote::before{
+  content:'"';font-size:4rem;color:var(--amber);
+  line-height:0;vertical-align:bottom;margin-right:.2rem;
+  font-family:'DM Serif Display',serif;
+}
+.testi-author{
+  font-size:.8rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--terra);
+}
+.testi-role{font-size:.75rem;color:rgba(26,26,26,.4);margin-top:.2rem}
+
+/* ===== CTA SECTION ===== */
+.cta{
+  padding:6rem 2rem;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--dusk) 60%,var(--terra) 100%);
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;bottom:-30%;left:50%;transform:translateX(-50%);
+  width:80vw;height:80vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,168,56,.08) 0%,transparent 60%);
+}
+.cta h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,5vw,3.5rem);color:var(--cream);
+  margin-bottom:1rem;position:relative;z-index:2;
+}
+.cta p{
+  color:rgba(250,243,232,.6);font-size:1rem;
+  max-width:500px;margin:0 auto 2.5rem;position:relative;z-index:2;
+}
+.cta-buttons{
+  display:flex;gap:1rem;justify-content:center;
+  position:relative;z-index:2;flex-wrap:wrap;
+}
+.btn-primary{
+  background:var(--amber);color:var(--navy);
+  padding:.9rem 2.2rem;font-size:.85rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  transition:all .3s ease;
+}
+.btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,168,56,.3)}
+.btn-secondary{
+  background:transparent;color:var(--cream);
+  padding:.9rem 2.2rem;font-size:.85rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid rgba(250,243,232,.3);cursor:pointer;
+  transition:all .3s ease;
+}
+.btn-secondary:hover{border-color:var(--amber);color:var(--amber)}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:var(--ink);padding:3rem 2rem 1.5rem;
+  color:rgba(250,243,232,.4);
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;
+  padding-bottom:2rem;border-bottom:1px solid rgba(250,243,232,.06);
+}
+.footer-brand{
+  font-family:'DM Serif Display',serif;font-size:1.2rem;
+  color:var(--cream);margin-bottom:.8rem;
+}
+.footer-brand span{color:var(--amber)}
+.footer-desc{font-size:.8rem;line-height:1.6;max-width:300px}
+.footer-col h4{
+  font-size:.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.15em;color:var(--cream);margin-bottom:1rem;
+}
+.footer-col a{
+  display:block;font-size:.82rem;padding:.3rem 0;
+  transition:color .2s ease;
+}
+.footer-col a:hover{color:var(--amber)}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.72rem;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.23,1,.32,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.23,1,.32,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all .8s cubic-bezier(.23,1,.32,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor-dot{
+  position:fixed;width:8px;height:8px;border-radius:50%;
+  background:var(--amber);pointer-events:none;z-index:9998;
+  transition:transform .15s ease;mix-blend-mode:difference;
+}
+.cursor-ring{
+  position:fixed;width:36px;height:36px;border-radius:50%;
+  border:1.5px solid var(--amber);pointer-events:none;z-index:9997;
+  transition:transform .08s ease,width .3s ease,height .3s ease,border-color .3s ease;
+  mix-blend-mode:difference;
+}
+.cursor-ring.hover{width:56px;height:56px;border-color:var(--terra)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .masthead{grid-template-columns:1fr;min-height:auto;padding-top:7rem}
+  .masthead-right{display:none}
+  .editorial-grid{grid-template-columns:1fr;gap:2rem}
+  .editorial-divider{display:none;height:1px;width:100%}
+  .editorial-col{padding:0!important}
+  .map-container{
+    grid-template-columns:1fr 1fr;grid-template-rows:auto;
+  }
+  .z-wedding,.z-corporate,.z-festival,.z-garden,.z-sport,.z-market,.z-dining,.z-pool{
+    grid-column:auto;grid-row:auto;
+  }
+  .solutions-header{grid-template-columns:1fr;gap:1.5rem}
+  .spread-a,.spread-b{grid-template-columns:1fr}
+  .spread-card.featured{grid-row:auto}
+  .process-steps{grid-template-columns:1fr;gap:2rem}
+  .process-steps::before{display:none}
+  .testi-grid{grid-template-columns:1fr}
+  .testi-card:nth-child(2){transform:none}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .cursor-dot,.cursor-ring{display:none}
+}
+@media(max-width:640px){
+  .masthead{padding:6rem 1.2rem 2.5rem}
+  .masthead-stats{flex-direction:column;gap:1rem}
+  .header-nav{display:none}
+  .spread-c{grid-template-columns:1fr}
+  .cta-buttons{flex-direction:column;align-items:center}
+  .footer-inner{grid-template-columns:1fr}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <span class="loader-text">iSeek<span style="color:var(--amber)">Blinds</span> — Open Air</span>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <a href="https://iseekblinds.com.au" class="logo">
+    iSeek<span class="logo-accent">Blinds</span>
+  </a>
+  <nav class="header-nav">
+    <a href="#zones">Venue Zones</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#process">How It Works</a>
+    <a href="https://iseekblinds.com.au/contact" class="header-cta">Free Site Visit</a>
+  </nav>
+</header>
+
+<!-- MASTHEAD -->
+<section class="masthead">
+  <div class="masthead-left">
+    <div class="masthead-kicker reveal">Outdoor Event Solutions</div>
+    <h1 class="masthead-title reveal">
+      Shade That<br>
+      Makes the<br>
+      <em>Moment</em>
+    </h1>
+    <p class="masthead-deck reveal">
+      From intimate garden ceremonies to thousand-seat festivals, we engineer shade and privacy solutions that disappear into the atmosphere of your event — so your guests notice the magic, not the mechanics.
+    </p>
+    <div class="masthead-stats reveal">
+      <div class="stat">
+        <span class="stat-num" data-count="2400">0</span>
+        <span class="stat-label">Events Covered</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="98">0</span>
+        <span class="stat-label">% Client Satisfaction</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="15">0</span>
+        <span class="stat-label">Years Outdoors</span>
+      </div>
+    </div>
+  </div>
+  <div class="masthead-right">
+    <div class="hero-card reveal-right" style="transition-delay:.1s">
+      <span class="hero-card-num">01</span>
+      <h3>Weather-Proof Fabrics</h3>
+      <p>UV-stable, water-resistant textiles rated for Australian conditions. 5-year outdoor warranty.</p>
+    </div>
+    <div class="hero-card reveal-right" style="transition-delay:.25s">
+      <span class="hero-card-num">02</span>
+      <h3>Rapid Deploy Systems</h3>
+      <p>Modular blinds and screens that install in hours, not days. Perfect for hire companies and venues.</p>
+    </div>
+    <div class="hero-card reveal-right" style="transition-delay:.4s">
+      <span class="hero-card-num">03</span>
+      <h3>Custom Branding</h3>
+      <p>Print logos, patterns, or artwork directly on shade fabrics. Your event, your identity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL INTRO -->
+<section class="editorial reveal" id="editorial">
+  <div class="editorial-grid">
+    <div class="editorial-col">
+      <h2>Why Outdoor Events Fail</h2>
+      <p class="editorial-dropcap">Every outdoor event planner knows the sinking feeling: the forecast changes, the sun angle shifts, and suddenly your beautiful open-air setup becomes an endurance test. Guests squint through speeches. Dancers wilt under unshaded marquees. The photographer battles harsh shadows that ruin every frame.</p>
+      <p>The brutal truth is that most marquee shade solutions are afterthoughts — a white sheet thrown over a frame, billowing in the wind, looking like a field hospital more than a celebration.</p>
+    </div>
+    <div class="editorial-divider"></div>
+    <div class="editorial-col">
+      <div class="editorial-pull">"We lost three bookings in one summer because guests complained about the heat. That's $45,000 we'll never recover."</div>
+      <p>The Australian outdoor event market is worth $4.2 billion annually, yet shade infrastructure hasn't evolved since the 1990s. Venues still rely on the same PVC tarpaulins, the same wobbly poles, the same compromises.</p>
+      <p>We think that's absurd. You wouldn't use 30-year-old sound equipment or catering standards. Why accept 30-year-old shade?</p>
+    </div>
+    <div class="editorial-divider"></div>
+    <div class="editorial-col">
+      <h2>A Better Approach</h2>
+      <p>iSeekBlinds outdoor systems are engineered from the venue outward. We survey your space, model sun paths across seasons, map wind corridors, and design a shade system that works with your architecture — not against it.</p>
+      <p>The result: shade that enhances ambience rather than fighting it. Fabrics that filter light into a warm, flattering glow. Screens that block wind without blocking views. Systems that install fast and look premium from every angle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WEATHER TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+    <span>☀️ UV Protection up to 99%</span><span class="sep">◆</span>
+    <span>🌧️ Water-Resistant Fabrics</span><span class="sep">◆</span>
+    <span>💨 Wind-Rated to 65km/h</span><span class="sep">◆</span>
+    <span>🔥 BAL-29 Fire Rated Options</span><span class="sep">◆</span>
+    <span>🌡️ Reduce Under-Cover Temp by 12°C</span><span class="sep">◆</span>
+    <span>📐 Custom Sizes to 12m Span</span><span class="sep">◆</span>
+    <span>🎨 200+ Fabric Colours</span><span class="sep">◆</span>
+    <span>⚡ Install in Under 4 Hours</span><span class="sep">◆</span>
+    <!-- Duplicate for seamless loop -->
+    <span>☀️ UV Protection up to 99%</span><span class="sep">◆</span>
+    <span>🌧️ Water-Resistant Fabrics</span><span class="sep">◆</span>
+    <span>💨 Wind-Rated to 65km/h</span><span class="sep">◆</span>
+    <span>🔥 BAL-29 Fire Rated Options</span><span class="sep">◆</span>
+    <span>🌡️ Reduce Under-Cover Temp by 12°C</span><span class="sep">◆</span>
+    <span>📐 Custom Sizes to 12m Span</span><span class="sep">◆</span>
+    <span>🎨 200+ Fabric Colours</span><span class="sep">◆</span>
+    <span>⚡ Install in Under 4 Hours</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- VENUE ZONE MAP -->
+<section class="venue-map" id="zones">
+  <div class="venue-map-inner">
+    <div class="venue-map-header reveal">
+      <h2>Explore by Venue Zone</h2>
+      <p>Every event space has unique shade challenges. Click a zone to discover the right solution.</p>
+    </div>
+    <div class="map-container reveal">
+      <div class="zone z-wedding" data-zone="wedding" onclick="openZone('wedding')">
+        <span class="zone-icon">💒</span>
+        <span class="zone-name">Wedding &<br>Ceremony</span>
+        <span class="zone-tag">Elegant Shade</span>
+      </div>
+      <div class="zone z-corporate" data-zone="corporate" onclick="openZone('corporate')">
+        <span class="zone-icon">🏢</span>
+        <span class="zone-name">Corporate<br>Events</span>
+        <span class="zone-tag">Brand Integration</span>
+      </div>
+      <div class="zone z-festival" data-zone="festival" onclick="openZone('festival')">
+        <span class="zone-icon">🎪</span>
+        <span class="zone-name">Festivals &<br>Large Scale</span>
+        <span class="zone-tag">Max Coverage</span>
+      </div>
+      <div class="zone z-garden" data-zone="garden" onclick="openZone('garden')">
+        <span class="zone-icon">🌿</span>
+        <span class="zone-name">Garden<br>Parties</span>
+        <span class="zone-tag">Natural Blend</span>
+      </div>
+      <div class="zone z-sport" data-zone="sport" onclick="openZone('sport')">
+        <span class="zone-icon">🏟️</span>
+        <span class="zone-name">Sporting<br>Events</span>
+        <span class="zone-tag">Spectator Comfort</span>
+      </div>
+      <div class="zone z-market" data-zone="market" onclick="openZone('market')">
+        <span class="zone-icon">🛍️</span>
+        <span class="zone-name">Markets &<br>Pop-Ups</span>
+        <span class="zone-tag">Quick Deploy</span>
+      </div>
+      <div class="zone z-dining" data-zone="dining" onclick="openZone('dining')">
+        <span class="zone-icon">🍽️</span>
+        <span class="zone-name">Outdoor<br>Dining</span>
+        <span class="zone-tag">Ambience Control</span>
+      </div>
+      <div class="zone z-pool" data-zone="pool" onclick="openZone('pool')">
+        <span class="zone-icon">🏊</span>
+        <span class="zone-name">Pool &<br>Waterside</span>
+        <span class="zone-tag">Moisture Proof</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zone Detail Panel -->
+<div class="zone-overlay" id="zoneOverlay" onclick="closeZone()"></div>
+<div class="zone-detail" id="zoneDetail">
+  <button class="zone-detail-close" onclick="closeZone()">✕</button>
+  <div id="zoneContent"></div>
+</div>
+
+<!-- SOLUTIONS SPREAD -->
+<section class="solutions" id="solutions">
+  <div class="solutions-header reveal">
+    <h2>Engineered for the<br>Great Outdoors</h2>
+    <p>Every fabric, mechanism, and mounting system is purpose-built for Australian outdoor conditions — not indoor products forced outside.</p>
+  </div>
+
+  <div class="spread spread-a">
+    <div class="spread-card featured reveal-left">
+      <span class="card-icon">🛡️</span>
+      <span class="spread-card-num">01</span>
+      <h3>TensionMax™ Track System</h3>
+      <p>Our patented tensioned track keeps fabric taut in winds up to 65km/h. No flapping, no rattling, no embarrassing moments during the CEO's speech. The aluminium track anodises in 12 colours to match any structure, and the spring-loaded retention clips self-adjust as temperature changes expand and contract the fabric throughout the day.</p>
+    </div>
+    <div class="spread-card reveal" style="transition-delay:.1s">
+      <span class="card-icon">☀️</span>
+      <span class="spread-card-num">02</span>
+      <h3>Solar-Adaptive Mesh</h3>
+      <p>Our dual-layer mesh lets breeze through while blocking 96% of UV. Available in 5 opacity levels — from privacy screen to light filter.</p>
+    </div>
+    <div class="spread-card accent reveal" style="transition-delay:.2s">
+      <span class="card-icon">🎨</span>
+      <span class="spread-card-num">03</span>
+      <h3>Printed Shade Sails</h3>
+      <p>Full-colour digital print on shade fabric. Logos, patterns, art — anything you can design, we can shade with.</p>
+    </div>
+  </div>
+
+  <div class="spread spread-b">
+    <div class="spread-card reveal-left">
+      <span class="card-icon">🌧️</span>
+      <span class="spread-card-num">04</span>
+      <h3>StormShield Blinds</h3>
+      <p>PVC-coated polyester with welded seams. Waterproof rated, not water-resistant. When the forecast turns, your event keeps going.</p>
+    </div>
+    <div class="spread-card featured reveal-right">
+      <span class="card-icon">⚡</span>
+      <span class="spread-card-num">05</span>
+      <h3>QuickDeploy Modular System</h3>
+      <p>Designed for hire companies and repeat venues. Aluminium cassette systems that clip into pre-installed brackets in under 10 minutes per panel. No tools, no drilling, no damage. Between events, cassettes stack flat for transport. One ute carries coverage for a 200-seat venue. We've seen crews set up complete shade systems for a 500-guest wedding in 3.5 hours.</p>
+    </div>
+  </div>
+
+  <div class="spread spread-c">
+    <div class="spread-card reveal" style="transition-delay:0s">
+      <span class="card-icon">🔇</span>
+      <span class="spread-card-num">06</span>
+      <h3>Acoustic Screens</h3>
+      <p>Sound-dampening outdoor screens that reduce noise bleed between zones by up to 18dB.</p>
+    </div>
+    <div class="spread-card reveal" style="transition-delay:.12s">
+      <span class="card-icon">💡</span>
+      <span class="spread-card-num">07</span>
+      <h3>Integrated LED Rails</h3>
+      <p>Warm-white LED strips built into the blind cassette. Shade by day, ambient lighting by night.</p>
+    </div>
+    <div class="spread-card reveal" style="transition-delay:.24s">
+      <span class="card-icon">🌬️</span>
+      <span class="spread-card-num">08</span>
+      <h3>Misting Compatible</h3>
+      <p>Our track systems integrate with high-pressure misting lines for cooling that drops ambient temp by 10-15°C.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <h2 class="reveal">From First Call to First Event</h2>
+    <div class="process-steps">
+      <div class="process-step reveal" style="transition-delay:0s">
+        <div class="step-dot">1</div>
+        <h4>Site Survey</h4>
+        <p>We visit your venue, measure every angle, and map sun paths across seasons</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.1s">
+        <div class="step-dot">2</div>
+        <h4>Design</h4>
+        <p>3D renders show exactly how your shade system integrates with the space</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.2s">
+        <div class="step-dot">3</div>
+        <h4>Fabricate</h4>
+        <p>Australian-made to your exact specs. 3-4 week turnaround from approval</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.3s">
+        <div class="step-dot">4</div>
+        <h4>Install</h4>
+        <p>Professional install with minimal disruption. Most venues done in a single day</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.4s">
+        <div class="step-dot">5</div>
+        <h4>Support</h4>
+        <p>Ongoing maintenance, seasonal adjustments, and event-day standby available</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2 class="reveal">What Event Pros Say</h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal-left">
+      <p class="testi-quote">We run 40+ weddings a year from our garden estate. The iSeekBlinds system transformed our west-facing terrace from unusable after 2pm into our most requested ceremony spot. Brides literally cry when they see the light filtering through.</p>
+      <div class="testi-author">Sarah Chen</div>
+      <div class="testi-role">Director, Willowbrook Estate — Yarra Valley</div>
+    </div>
+    <div class="testi-card reveal-right">
+      <p class="testi-quote">We hired shade solutions for three years before going permanent with iSeekBlinds. The ROI was immediate — we saved $1,200 per event on hire costs and the quality difference is night and day. Guests actually comment on how good the shade looks.</p>
+      <div class="testi-author">Marcus Webb</div>
+      <div class="testi-role">Operations Manager, Melbourne Food & Wine Festival</div>
+    </div>
+    <div class="testi-card reveal-left">
+      <p class="testi-quote">The printed shade sails with our sponsors' branding were a game-changer. Instead of ugly banner stands, the branding is literally part of the architecture. Sponsors love it, and we can swap panels between events.</p>
+      <div class="testi-author">Priya Kapoor</div>
+      <div class="testi-role">Sponsorship Lead, Australian Open Fan Zone</div>
+    </div>
+    <div class="testi-card reveal-right">
+      <p class="testi-quote">The acoustic screens saved our festival layout. We had noise complaints from the chill-out zone about the main stage. Now both zones coexist perfectly. And they double as wind breaks on blustery days.</p>
+      <div class="testi-author">Jake Torres</div>
+      <div class="testi-role">Production Director, SummerSounds Festival</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2 class="reveal">Your Next Event,<br>Perfectly Shaded</h2>
+  <p class="reveal">Free site survey. No-obligation 3D renders. Real advice from people who've shaded 2,400+ events across Australia.</p>
+  <div class="cta-buttons reveal">
+    <button class="btn-primary" onclick="window.location.href='https://iseekblinds.com.au/contact'">Book Free Site Survey</button>
+    <button class="btn-secondary" onclick="window.location.href='tel:1300308308'">Call 1300 308 308</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">iSeek<span>Blinds</span></div>
+      <p class="footer-desc">Australia's specialist in outdoor shade and privacy solutions for events, venues, and commercial spaces. Melbourne-based, nationwide service.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <a href="#">Marquee Blinds</a>
+      <a href="#">Shade Sails</a>
+      <a href="#">Outdoor Screens</a>
+      <a href="#">Wind Breaks</a>
+      <a href="#">Acoustic Panels</a>
+    </div>
+    <div class="footer-col">
+      <h4>Venue Types</h4>
+      <a href="#">Weddings</a>
+      <a href="#">Corporate</a>
+      <a href="#">Festivals</a>
+      <a href="#">Restaurants</a>
+      <a href="#">Sports</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:1300308308">1300 308 308</a>
+      <a href="mailto:events@iseekblinds.com.au">events@iseekblinds.com.au</a>
+      <a href="https://iseekblinds.com.au/contact">Free Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 iSeekBlinds. All rights reserved. ABN 12 345 678 901</span>
+    <span>Melbourne · Sydney · Brisbane · Perth · Adelaide</span>
+  </div>
+</footer>
+
+<script>
+// ===== LOADER =====
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('done'),600);
+});
+
+// ===== CUSTOM CURSOR =====
+const dot=document.getElementById('cursorDot');
+const ring=document.getElementById('cursorRing');
+let mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;
+  dot.style.left=mx-4+'px';dot.style.top=my-4+'px';
+});
+function animCursor(){
+  cx+=(mx-cx)*.12;cy+=(my-cy)*.12;
+  ring.style.left=cx-18+'px';ring.style.top=cy-18+'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a,button,.zone').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+});
+
+// ===== HEADER HIDE ON SCROLL =====
+let lastScroll=0;
+window.addEventListener('scroll',()=>{
+  const cur=window.scrollY;
+  document.getElementById('header').classList.toggle('hide',cur>lastScroll&&cur>100);
+  lastScroll=cur;
+},{passive:true});
+
+// ===== SCROLL REVEAL =====
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
+
+// ===== COUNTER ANIMATION =====
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;const target=parseInt(el.dataset.count);
+      let current=0;const step=Math.ceil(target/60);
+      const timer=setInterval(()=>{
+        current+=step;if(current>=target){current=target;clearInterval(timer)}
+        el.textContent=current.toLocaleString()+(el.closest('.stat')?.querySelector('.stat-label')?.textContent.includes('%')?'%':'+');
+      },25);
+      counterObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
+
+// ===== ZONE DETAIL DATA =====
+const zoneData={
+  wedding:{
+    title:'Wedding & Ceremony Shade',
+    subtitle:'Elegant Solutions for Your Perfect Day',
+    desc:'Wedding shade isn\'t about blocking the sun — it\'s about sculpting light. Our fabric systems filter harsh Australian sun into a warm, flattering glow that photographers dream of and guests actually enjoy sitting under.',
+    desc2:'From intimate garden elopements to 300-seat marquee receptions, we design shade that enhances your styling rather than competing with it. Fabrics available in ivory, champagne, blush, sage, and custom-dyed to match your palette.',
+    products:[
+      {name:'Draped Ceiling Panels',detail:'Flowing fabric inserts for marquee ceilings',color:'#f0dcc8'},
+      {name:'Wind-Screen Walls',detail:'Transparent or tinted side panels',color:'#c2694a'},
+      {name:'Ceremony Canopy System',detail:'Freestanding shade structure, no marquee needed',color:'#d4a843'},
+      {name:'Reception Shade Sails',detail:'Architectural shade for outdoor dining areas',color:'#6b7c5e'},
+    ]
+  },
+  corporate:{
+    title:'Corporate Event Solutions',
+    subtitle:'Professional Shade with Brand Integration',
+    desc:'Corporate events demand shade that\'s functional, on-brand, and photogenic. Our systems integrate sponsor logos, corporate colours, and wayfinding directly into the shade infrastructure.',
+    desc2:'From product launches to annual conferences, we\'ve shaded events for ASX 100 companies who expect perfection. Modular systems mean your investment works across multiple events and venues.',
+    products:[
+      {name:'Branded Shade Sails',detail:'Full-colour digital print on UV-stable fabric',color:'#1b2d45'},
+      {name:'Executive Enclosures',detail:'VIP zones with privacy screens + AC compatibility',color:'#d4a843'},
+      {name:'Stage Wings',detail:'Side-of-stage shade and wind protection',color:'#c2694a'},
+      {name:'Registration Canopies',detail:'Queue shade with integrated signage rails',color:'#6b7c5e'},
+    ]
+  },
+  festival:{
+    title:'Festival & Large-Scale Coverage',
+    subtitle:'Maximum Shade for Maximum Crowds',
+    desc:'Festival shade needs to be tough, fast to deploy, and cover serious ground. Our modular cassette systems let crews cover a main-stage area in under 2 hours with minimal tools.',
+    desc2:'Rated for multi-day deployment in all weather. Fire-rated options available for BAL zones. Acoustic screening between stages reduces noise bleed without blocking sightlines.',
+    products:[
+      {name:'Mega-Span Shade Sails',detail:'Up to 12m spans, wind-rated to 65km/h',color:'#e8a838'},
+      {name:'Crowd Corridor Canopies',detail:'Walkway shade between stages and zones',color:'#1b2d45'},
+      {name:'Artist Compound Screens',detail:'Privacy + shade for backstage areas',color:'#c2694a'},
+      {name:'FOH & Bar Shade',detail:'Purpose-built for food and beverage zones',color:'#6b7c5e'},
+    ]
+  },
+  garden:{
+    title:'Garden Party Shade',
+    subtitle:'Natural, Elegant, Effortless',
+    desc:'Garden events need shade that feels organic — not industrial. Our botanical-toned fabrics and minimal hardware blend into garden settings while providing serious sun protection.',
+    desc2:'Freestanding systems that don\'t require permanent installation. Set up on the morning, take down that evening. No damage to lawns, gardens, or heritage structures.',
+    products:[
+      {name:'Parasol Cluster System',detail:'Grouped shade umbrellas with interlocking canopies',color:'#6b7c5e'},
+      {name:'Tree-Frame Sails',detail:'Shade sails anchored to existing trees (with bark protectors)',color:'#c2694a'},
+      {name:'Pergola Blinds',detail:'Retractable shade for existing garden structures',color:'#d4a843'},
+      {name:'Hedge-Line Screens',detail:'Privacy screens in garden-toned fabrics',color:'#0d1b2a'},
+    ]
+  },
+  sport:{
+    title:'Sporting Event Shade',
+    subtitle:'Comfort for Every Seat',
+    desc:'Spectator comfort directly impacts event reputation and repeat attendance. Our systems shade grandstands, hospitality tents, and player areas without obstructing sightlines.',
+    desc2:'From local cricket matches to national tournaments, we scale to fit. All systems meet relevant safety standards for public gathering spaces.',
+    products:[
+      {name:'Grandstand Canopies',detail:'Row-by-row retractable shade',color:'#e8a838'},
+      {name:'Players\' Dugout Blinds',detail:'Glare-free shade for benches and warm-up areas',color:'#1b2d45'},
+      {name:'Hospitality Suite Walls',detail:'Enclosed or semi-open VIP viewing areas',color:'#c2694a'},
+      {name:'Warm-Up Zone Screens',detail:'Privacy + UV protection for athlete prep areas',color:'#6b7c5e'},
+    ]
+  },
+  market:{
+    title:'Markets & Pop-Up Shade',
+    subtitle:'Deploy Fast, Look Premium',
+    desc:'Market stallholders need shade that\'s easy to transport, quick to set up, and tough enough for weekly use. Our pop-up cassette blinds clip to standard market frames in minutes.',
+    desc2:'Lightweight aluminium tracks and roll-up fabric cassettes fit in a car boot. One person can set up a complete stall shade system in under 15 minutes.',
+    products:[
+      {name:'Stall-Side Blinds',detail:'Clip-on side shade for standard 3x3m frames',color:'#d4a843'},
+      {name:'Canopy Extensions',detail:'Extend your coverage 1.5m beyond the frame',color:'#c2694a'},
+      {name:'Rear-Wall Privacy Screens',detail:'Keep stock areas hidden from customers',color:'#0d1b2a'},
+      {name:'Counter-Top Awnings',detail:'Small shade for display tables and counters',color:'#6b7c5e'},
+    ]
+  },
+  dining:{
+    title:'Outdoor Dining Shade',
+    subtitle:'Ambience Meets Function',
+    desc:'Outdoor dining shade isn\'t just about sun — it\'s about creating atmosphere. Our systems control light, wind, and privacy to turn a patio into a destination.',
+    desc2:'Council-compliant solutions for footpath dining. Heritage-sensitive options available. Retractable systems let you open up on beautiful days and close down when weather turns.',
+    products:[
+      {name:'Bistro Drop-Arm Awnings',detail:'Classic European-style retractable shade',color:'#c2694a'},
+      {name:'Privacy Screens',detail:'Frosted or tinted panels between dining zones',color:'#1b2d45'},
+      {name:'All-Weather Enclosures',detail:'Full zip-out walls for year-round dining',color:'#e8a838'},
+      {name:'Canopy with Heating Integration',detail:'Shade structure with gas heater mounting points',color:'#d4a843'},
+    ]
+  },
+  pool:{
+    title:'Pool & Waterside Shade',
+    subtitle:'Built for Wet Environments',
+    desc:'Pool areas are the harshest environment for shade products. Salt, chlorine, moisture, and constant UV exposure destroy standard fabrics in months. Our marine-grade range is built for it.',
+    desc2:'316 stainless steel hardware. Marine-grade polyester fabrics with antimicrobial treatment. Drainage channels prevent pooling. All components rated for permanent wet-zone installation.',
+    products:[
+      {name:'Pool Deck Shade Sails',detail:'Marine-grade with 316SS hardware',color:'#3c82b4'},
+      {name:'Cabana Blinds',detail:'Privacy + shade for pool cabanas',color:'#c2694a'},
+      {name:'Splash Zone Screens',detail:'Water-proof screens between pool and dining',color:'#e8a838'},
+      {name:'Spa Enclosure Blinds',detail:'Retractable walls for outdoor spa areas',color:'#6b7c5e'},
+    ]
+  }
+};
+
+function openZone(id){
+  const d=zoneData[id];if(!d)return;
+  let html=`<h3>${d.title}</h3>
+  <div class="zone-subtitle">${d.subtitle}</div>
+  <p>${d.desc}</p><p>${d.desc2}</p>
+  <div class="zone-products">`;
+  d.products.forEach(p=>{
+    html+=`<div class="zone-product">
+      <div class="zone-product-dot" style="background:${p.color}"></div>
+      <div><h4>${p.name}</h4><span>${p.detail}</span></div>
+    </div>`;
+  });
+  html+='</div>';
+  document.getElementById('zoneContent').innerHTML=html;
+  document.getElementById('zoneDetail').classList.add('open');
+  document.getElementById('zoneOverlay').classList.add('open');
+}
+function closeZone(){
+  document.getElementById('zoneDetail').classList.remove('open');
+  document.getElementById('zoneOverlay').classList.remove('open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeZone()});
+</script>
+</body>
+</html>
