@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passive House Blinds — Energy-Rated Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Maximise your passive house performance with certified energy-efficient blinds. Interactive R-value calculator, thermal bridging solutions & expert installation across Melbourne.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    /* ===== PASSIVE HOUSE BLINDS — Swiss Data Dashboard ===== */
+    :root {
+      --ph-black: #0c0c0c;
+      --ph-white: #f4f1ec;
+      --ph-red: #e63526;
+      --ph-blue: #1a56db;
+      --ph-green: #16803c;
+      --ph-gray: #6b6b6b;
+      --ph-light: #e8e4de;
+      --ph-dim: #9a9590;
+      --ph-grid: rgba(12,12,12,0.06);
+      --ph-font-display: 'Instrument Serif', Georgia, serif;
+      --ph-font-body: 'Space Grotesk', system-ui, sans-serif;
+    }
+    .lp-ph { background: var(--ph-white); color: var(--ph-black); font-family: var(--ph-font-body); overflow-x: hidden; }
+    .lp-ph *, .lp-ph *::before, .lp-ph *::after { box-sizing: border-box; }
+
+    /* Grid background */
+    .lp-ph .ph-grid-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--ph-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--ph-grid) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    /* Header */
+    .lp-ph .header { background: var(--ph-white); border-bottom: 2px solid var(--ph-black); position: sticky; top: 0; z-index: 100; }
+    .lp-ph .header .logo-i { color: var(--ph-red); }
+    .lp-ph .header .nav a { color: var(--ph-black); font-family: var(--ph-font-body); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+    .lp-ph .header .nav a:hover { color: var(--ph-red); }
+    .lp-ph .header .header-phone { color: var(--ph-black); font-family: var(--ph-font-body); font-weight: 600; font-size: 0.8rem; }
+    .lp-ph .header .btn-primary { background: var(--ph-red); border: none; font-family: var(--ph-font-body); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 0; }
+    .lp-ph .header .btn-primary:hover { background: #c42a1e; }
+
+    .ph-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
+
+    /* ===== HERO — Swiss poster style ===== */
+    .ph-hero {
+      padding: 120px 0 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      border-bottom: 2px solid var(--ph-black);
+    }
+    .ph-hero-left {}
+    .ph-hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+      color: var(--ph-red); margin-bottom: 32px;
+    }
+    .ph-hero-tag::before { content: ''; width: 40px; height: 2px; background: var(--ph-red); }
+    .ph-hero h1 {
+      font-family: var(--ph-font-display); font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.95; font-weight: 400; margin: 0 0 32px; letter-spacing: -0.02em;
+    }
+    .ph-hero h1 em { font-style: italic; color: var(--ph-red); }
+    .ph-hero-sub {
+      font-size: 1.05rem; line-height: 1.6; color: var(--ph-gray); max-width: 440px;
+    }
+    .ph-hero-right {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ph-black);
+      border: 2px solid var(--ph-black);
+    }
+    .ph-stat-card {
+      background: var(--ph-white); padding: 28px 24px;
+      display: flex; flex-direction: column; justify-content: space-between; min-height: 140px;
+    }
+    .ph-stat-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ph-dim); font-weight: 600;
+    }
+    .ph-stat-value {
+      font-family: var(--ph-font-display); font-size: 2.8rem; line-height: 1; margin-top: 12px;
+    }
+    .ph-stat-value .ph-unit { font-size: 0.9rem; font-family: var(--ph-font-body); color: var(--ph-dim); margin-left: 4px; }
+    .ph-stat-card:nth-child(1) .ph-stat-value { color: var(--ph-red); }
+    .ph-stat-card:nth-child(2) .ph-stat-value { color: var(--ph-blue); }
+    .ph-stat-card:nth-child(3) .ph-stat-value { color: var(--ph-green); }
+    .ph-stat-card:nth-child(4) .ph-stat-value { color: var(--ph-black); }
+
+    /* ===== TICKER ===== */
+    .ph-ticker {
+      background: var(--ph-black); color: var(--ph-white); padding: 14px 0; overflow: hidden; white-space: nowrap;
+    }
+    .ph-ticker-inner {
+      display: inline-block; animation: ph-ticker-scroll 30s linear infinite;
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500;
+    }
+    .ph-ticker-inner span { margin-right: 60px; }
+    .ph-ticker-inner .ph-ticker-dot { color: var(--ph-red); margin-right: 60px; }
+    @keyframes ph-ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ===== SECTION SYSTEM ===== */
+    .ph-section { padding: 100px 0; border-bottom: 1px solid rgba(12,12,12,0.1); }
+    .ph-section-num {
+      font-family: var(--ph-font-display); font-size: 5rem; line-height: 1; color: rgba(12,12,12,0.06);
+      font-style: italic; margin-bottom: -20px; position: relative; z-index: 0;
+    }
+    .ph-section-title {
+      font-family: var(--ph-font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.1; margin-bottom: 16px; font-weight: 400;
+    }
+    .ph-section-subtitle {
+      font-size: 0.95rem; color: var(--ph-gray); max-width: 560px; line-height: 1.6;
+    }
+
+    /* ===== R-VALUE CALCULATOR ===== */
+    .ph-calc {
+      display: grid; grid-template-columns: 380px 1fr; gap: 40px; margin-top: 60px;
+    }
+    .ph-calc-controls {
+      background: var(--ph-black); color: var(--ph-white); padding: 40px; display: flex; flex-direction: column; gap: 32px;
+    }
+    .ph-calc-group label {
+      display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ph-dim); margin-bottom: 12px; font-weight: 600;
+    }
+    .ph-calc-group select, .ph-calc-group input[type="range"] {
+      width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; padding: 12px 16px; font-family: var(--ph-font-body); font-size: 0.9rem; appearance: none; cursor: pointer;
+    }
+    .ph-calc-group select option { background: var(--ph-black); }
+    .ph-calc-group input[type="range"] {
+      -webkit-appearance: none; height: 4px; padding: 0; border: none; background: rgba(255,255,255,0.15); border-radius: 2px;
+    }
+    .ph-calc-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px; background: var(--ph-red); border-radius: 50%; cursor: pointer;
+    }
+    .ph-range-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--ph-dim); margin-top: 6px; }
+    .ph-calc-results {
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; background: rgba(12,12,12,0.08);
+      border: 2px solid var(--ph-black);
+    }
+    .ph-result-cell {
+      background: var(--ph-white); padding: 32px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .ph-result-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ph-dim); font-weight: 600; margin-bottom: 8px; }
+    .ph-result-num {
+      font-family: var(--ph-font-display); font-size: 3rem; line-height: 1;
+      transition: all 0.4s ease;
+    }
+    .ph-result-bar {
+      width: 100%; height: 6px; background: var(--ph-light); margin-top: 16px; position: relative; overflow: hidden;
+    }
+    .ph-result-bar-fill { height: 100%; transition: width 0.6s cubic-bezier(0.22,1,0.36,1), background 0.4s; }
+    .ph-result-note { font-size: 0.75rem; color: var(--ph-dim); margin-top: 8px; }
+
+    /* ===== THERMAL DIAGRAM ===== */
+    .ph-thermal {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 60px; border: 2px solid var(--ph-black);
+    }
+    .ph-thermal-side {
+      padding: 48px; position: relative;
+    }
+    .ph-thermal-side:first-child { border-right: 2px solid var(--ph-black); }
+    .ph-thermal-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 24px;
+    }
+    .ph-thermal-label.ph-red { color: var(--ph-red); }
+    .ph-thermal-label.ph-green { color: var(--ph-green); }
+    .ph-thermal-temp {
+      font-family: var(--ph-font-display); font-size: 6rem; line-height: 1; margin-bottom: 16px;
+    }
+    .ph-thermal-desc { font-size: 0.9rem; color: var(--ph-gray); line-height: 1.6; }
+    .ph-thermal-layers {
+      margin-top: 32px; display: flex; flex-direction: column; gap: 3px;
+    }
+    .ph-layer {
+      display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(12,12,12,0.03);
+      font-size: 0.8rem; position: relative; overflow: hidden;
+    }
+    .ph-layer::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    }
+    .ph-layer:nth-child(1)::before { background: var(--ph-red); }
+    .ph-layer:nth-child(2)::before { background: var(--ph-blue); }
+    .ph-layer:nth-child(3)::before { background: var(--ph-green); }
+    .ph-layer-name { font-weight: 600; min-width: 120px; }
+    .ph-layer-val { color: var(--ph-dim); }
+
+    /* ===== PRODUCT DATA TABLE ===== */
+    .ph-table-wrap { margin-top: 60px; overflow-x: auto; }
+    .ph-table {
+      width: 100%; border-collapse: collapse; border: 2px solid var(--ph-black);
+      font-size: 0.85rem;
+    }
+    .ph-table thead { background: var(--ph-black); color: var(--ph-white); }
+    .ph-table th {
+      padding: 16px 20px; text-align: left; font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.1em; font-weight: 600;
+    }
+    .ph-table td {
+      padding: 16px 20px; border-bottom: 1px solid var(--ph-light);
+    }
+    .ph-table tbody tr { transition: background 0.2s; cursor: pointer; }
+    .ph-table tbody tr:hover { background: rgba(12,12,12,0.03); }
+    .ph-table .ph-rating {
+      display: inline-flex; gap: 3px;
+    }
+    .ph-rating-dot {
+      width: 10px; height: 10px; border-radius: 50%; background: var(--ph-light);
+    }
+    .ph-rating-dot.active { background: var(--ph-green); }
+    .ph-rating-dot.mid { background: var(--ph-blue); }
+    .ph-table .ph-best-tag {
+      display: inline-block; background: var(--ph-green); color: #fff; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 8px; font-weight: 700;
+    }
+
+    /* ===== SCENARIO CARDS ===== */
+    .ph-scenarios {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px;
+      background: var(--ph-black); border: 2px solid var(--ph-black);
+    }
+    .ph-scenario {
+      background: var(--ph-white); padding: 40px 32px; position: relative; overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .ph-scenario:hover { background: #f0ece6; }
+    .ph-scenario-icon {
+      font-size: 2rem; margin-bottom: 20px; display: block;
+    }
+    .ph-scenario h3 {
+      font-family: var(--ph-font-display); font-size: 1.4rem; margin-bottom: 12px; font-weight: 400;
+    }
+    .ph-scenario p { font-size: 0.85rem; color: var(--ph-gray); line-height: 1.6; }
+    .ph-scenario-rec {
+      margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--ph-light);
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .ph-scenario-rec span { color: var(--ph-red); }
+
+    /* ===== SAVINGS COUNTER ===== */
+    .ph-savings {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 0; margin-top: 60px;
+      border: 2px solid var(--ph-black); min-height: 320px;
+    }
+    .ph-savings-left {
+      background: var(--ph-red); color: #fff; padding: 48px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .ph-savings-left .ph-savings-big {
+      font-family: var(--ph-font-display); font-size: 4.5rem; line-height: 1;
+    }
+    .ph-savings-left .ph-savings-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 12px; opacity: 0.85;
+    }
+    .ph-savings-right {
+      padding: 48px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .ph-savings-right h3 {
+      font-family: var(--ph-font-display); font-size: 1.8rem; margin-bottom: 16px; font-weight: 400;
+    }
+    .ph-savings-bars { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .ph-sbar-label { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; }
+    .ph-sbar { height: 8px; background: var(--ph-light); position: relative; }
+    .ph-sbar-fill { height: 100%; transition: width 1s cubic-bezier(0.22,1,0.36,1); }
+
+    /* ===== TESTIMONIALS ===== */
+    .ph-testimonials {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ph-black);
+      border: 2px solid var(--ph-black); margin-top: 60px;
+    }
+    .ph-testimonial {
+      background: var(--ph-white); padding: 40px;
+    }
+    .ph-testimonial-stars { color: var(--ph-red); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .ph-testimonial blockquote {
+      font-family: var(--ph-font-display); font-size: 1.15rem; line-height: 1.5; font-style: italic;
+      margin: 0 0 20px;
+    }
+    .ph-testimonial cite {
+      font-style: normal; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 600; color: var(--ph-dim);
+    }
+
+    /* ===== CTA ===== */
+    .ph-cta {
+      text-align: center; padding: 120px 40px;
+      background: var(--ph-black); color: var(--ph-white); position: relative; z-index: 1;
+    }
+    .ph-cta h2 {
+      font-family: var(--ph-font-display); font-size: clamp(2rem, 4.5vw, 3.5rem);
+      margin-bottom: 16px; font-weight: 400; line-height: 1.1;
+    }
+    .ph-cta p { color: var(--ph-dim); font-size: 1rem; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .ph-cta-btn {
+      display: inline-block; background: var(--ph-red); color: #fff; padding: 18px 48px;
+      text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+      font-weight: 700; position: relative; overflow: hidden; transition: background 0.3s;
+    }
+    .ph-cta-btn:hover { background: #c42a1e; }
+    .ph-cta-phone {
+      display: block; margin-top: 20px; color: var(--ph-dim); font-size: 0.85rem;
+    }
+    .ph-cta-phone a { color: var(--ph-white); text-decoration: none; font-weight: 600; }
+
+    /* ===== FOOTER ===== */
+    .lp-ph .footer { background: var(--ph-black); color: rgba(255,255,255,0.5); border-top: none; }
+    .lp-ph .footer a { color: rgba(255,255,255,0.5); }
+    .lp-ph .footer a:hover { color: var(--ph-red); }
+    .lp-ph .footer h4 { color: var(--ph-white); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .ph-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .ph-reveal.ph-visible { opacity: 1; transform: translateY(0); }
+    .ph-reveal-delay-1 { transition-delay: 0.1s; }
+    .ph-reveal-delay-2 { transition-delay: 0.2s; }
+    .ph-reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .ph-hero { grid-template-columns: 1fr; gap: 40px; padding: 80px 0 60px; }
+      .ph-calc { grid-template-columns: 1fr; }
+      .ph-thermal { grid-template-columns: 1fr; }
+      .ph-thermal-side:first-child { border-right: none; border-bottom: 2px solid var(--ph-black); }
+      .ph-scenarios { grid-template-columns: 1fr; }
+      .ph-savings { grid-template-columns: 1fr; }
+      .ph-testimonials { grid-template-columns: 1fr; }
+      .ph-table-wrap { margin-left: -20px; margin-right: -20px; padding: 0 20px; }
+      .ph-container { padding: 0 20px; }
+    }
+    @media (max-width: 600px) {
+      .ph-hero-right { grid-template-columns: 1fr; }
+      .ph-calc-results { grid-template-columns: 1fr; }
+      .ph-hero h1 { font-size: 2.6rem; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .ph-reveal { opacity: 1; transform: none; transition: none; }
+      .ph-ticker-inner { animation: none; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="lp-ph">
+  <div class="ph-grid-bg"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0493410484" class="header-phone">0493 410 484</a>
+        <a href="../contact.html" class="btn-primary">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="ph-section" style="border-bottom: 2px solid var(--ph-black);">
+    <div class="ph-container">
+      <div class="ph-hero">
+        <div class="ph-hero-left ph-reveal">
+          <div class="ph-hero-tag">Passive House Certified</div>
+          <h1>Blinds for<br><em>Zero-Energy</em><br>Homes</h1>
+          <p class="ph-hero-sub">Your passive house demands precision. Every element in the building envelope matters — including window treatments. We supply and install blinds engineered for airtight, thermally efficient homes across Melbourne.</p>
+        </div>
+        <div class="ph-hero-right ph-reveal ph-reveal-delay-1">
+          <div class="ph-stat-card">
+            <span class="ph-stat-label">Heating Reduction</span>
+            <div class="ph-stat-value" data-count="42">0<span class="ph-unit">%</span></div>
+          </div>
+          <div class="ph-stat-card">
+            <span class="ph-stat-label">R-Value Added</span>
+            <div class="ph-stat-value" data-count-decimal="0.68">0<span class="ph-unit">m²K/W</span></div>
+          </div>
+          <div class="ph-stat-card">
+            <span class="ph-stat-label">Solar Heat Gain Blocked</span>
+            <div class="ph-stat-value" data-count="87">0<span class="ph-unit">%</span></div>
+          </div>
+          <div class="ph-stat-card">
+            <span class="ph-stat-label">Melbourne Installs</span>
+            <div class="ph-stat-value" data-count="340">0<span class="ph-unit">+</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ph-ticker">
+    <div class="ph-ticker-inner">
+      <span>Thermal Bridging Prevention</span><span class="ph-ticker-dot">●</span>
+      <span>NatHERS 7+ Star Compatible</span><span class="ph-ticker-dot">●</span>
+      <span>Airtight Installation Methods</span><span class="ph-ticker-dot">●</span>
+      <span>Low U-Value Window Treatments</span><span class="ph-ticker-dot">●</span>
+      <span>SHGC Optimisation</span><span class="ph-ticker-dot">●</span>
+      <span>Condensation Risk Reduction</span><span class="ph-ticker-dot">●</span>
+      <span>Melbourne Passive House Specialists</span><span class="ph-ticker-dot">●</span>
+      <!-- duplicate for seamless loop -->
+      <span>Thermal Bridging Prevention</span><span class="ph-ticker-dot">●</span>
+      <span>NatHERS 7+ Star Compatible</span><span class="ph-ticker-dot">●</span>
+      <span>Airtight Installation Methods</span><span class="ph-ticker-dot">●</span>
+      <span>Low U-Value Window Treatments</span><span class="ph-ticker-dot">●</span>
+      <span>SHGC Optimisation</span><span class="ph-ticker-dot">●</span>
+      <span>Condensation Risk Reduction</span><span class="ph-ticker-dot">●</span>
+      <span>Melbourne Passive House Specialists</span><span class="ph-ticker-dot">●</span>
+    </div>
+  </div>
+
+  <!-- ===== 01 — R-VALUE CALCULATOR ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">01</div>
+        <h2 class="ph-section-title">R-Value Performance Calculator</h2>
+        <p class="ph-section-subtitle">Select your window type and blind configuration to see the thermal improvement. Real data based on Australian standards.</p>
+      </div>
+      <div class="ph-calc ph-reveal ph-reveal-delay-1">
+        <div class="ph-calc-controls">
+          <div class="ph-calc-group">
+            <label>Window Type</label>
+            <select id="phWindowType">
+              <option value="single">Single Glazed Aluminium</option>
+              <option value="double">Double Glazed Aluminium</option>
+              <option value="double-timber">Double Glazed Timber</option>
+              <option value="triple">Triple Glazed uPVC</option>
+            </select>
+          </div>
+          <div class="ph-calc-group">
+            <label>Blind Type</label>
+            <select id="phBlindType">
+              <option value="honeycomb-double">Honeycomb Double Cell</option>
+              <option value="honeycomb-single">Honeycomb Single Cell</option>
+              <option value="roller-blockout">Roller Blockout</option>
+              <option value="roller-screen">Roller Sunscreen</option>
+              <option value="roman">Roman Blind (Lined)</option>
+              <option value="curtain-thermal">Thermal Curtain (Lined)</option>
+            </select>
+          </div>
+          <div class="ph-calc-group">
+            <label>Window Area (m²): <strong id="phAreaVal">3.0</strong></label>
+            <input type="range" id="phArea" min="0.5" max="8" step="0.5" value="3">
+            <div class="ph-range-labels"><span>0.5 m²</span><span>8.0 m²</span></div>
+          </div>
+          <div class="ph-calc-group">
+            <label>Air Gap (mm): <strong id="phGapVal">25</strong></label>
+            <input type="range" id="phGap" min="10" max="60" step="5" value="25">
+            <div class="ph-range-labels"><span>10 mm</span><span>60 mm</span></div>
+          </div>
+        </div>
+        <div class="ph-calc-results">
+          <div class="ph-result-cell">
+            <div class="ph-result-label">Window Only R-Value</div>
+            <div class="ph-result-num" id="phRwindow" style="color:var(--ph-red);">0.17</div>
+            <div class="ph-result-bar"><div class="ph-result-bar-fill" id="phBarWindow" style="width:10%;background:var(--ph-red);"></div></div>
+          </div>
+          <div class="ph-result-cell">
+            <div class="ph-result-label">With Blind R-Value</div>
+            <div class="ph-result-num" id="phRtotal" style="color:var(--ph-green);">0.85</div>
+            <div class="ph-result-bar"><div class="ph-result-bar-fill" id="phBarTotal" style="width:50%;background:var(--ph-green);"></div></div>
+          </div>
+          <div class="ph-result-cell">
+            <div class="ph-result-label">Annual Heat Loss Prevented</div>
+            <div class="ph-result-num" id="phHeatSaved" style="color:var(--ph-blue);">824<span class="ph-unit" style="font-size:1.2rem;"> kWh</span></div>
+            <div class="ph-result-note">≈ $<span id="phDollarSaved">178</span> /year energy savings</div>
+          </div>
+          <div class="ph-result-cell">
+            <div class="ph-result-label">Improvement Factor</div>
+            <div class="ph-result-num" id="phImprove" style="color:var(--ph-black);">5.0×</div>
+            <div class="ph-result-note">thermal performance multiplier</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 — THERMAL COMPARISON ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">02</div>
+        <h2 class="ph-section-title">How Heat Escapes — With & Without Blinds</h2>
+        <p class="ph-section-subtitle">A Melbourne winter night. Outside: 4°C. Your passive house thermostat reads 21°C. Here's what happens at the window.</p>
+      </div>
+      <div class="ph-thermal ph-reveal ph-reveal-delay-1">
+        <div class="ph-thermal-side">
+          <div class="ph-thermal-label ph-red">❌ Without Blind</div>
+          <div class="ph-thermal-temp" style="color:var(--ph-red);">4.2°</div>
+          <p class="ph-thermal-desc">Internal glass surface temperature. Cold radiation causes discomfort up to 1.5m from the window. Condensation risk is high.</p>
+          <div class="ph-thermal-layers">
+            <div class="ph-layer"><span class="ph-layer-name">Glass Surface</span><span class="ph-layer-val">4.2°C — cold</span></div>
+            <div class="ph-layer"><span class="ph-layer-name">Air Near Window</span><span class="ph-layer-val">12°C — drafty</span></div>
+            <div class="ph-layer"><span class="ph-layer-name">Room Centre</span><span class="ph-layer-val">21°C — comfortable</span></div>
+          </div>
+        </div>
+        <div class="ph-thermal-side">
+          <div class="ph-thermal-label ph-green">✓ With Honeycomb Blind</div>
+          <div class="ph-thermal-temp" style="color:var(--ph-green);">16.8°</div>
+          <p class="ph-thermal-desc">Trapped air cells create insulation. The room-side surface stays warm. No cold radiation, no condensation, no discomfort zone.</p>
+          <div class="ph-thermal-layers">
+            <div class="ph-layer"><span class="ph-layer-name">Glass Surface</span><span class="ph-layer-val">4.2°C</span></div>
+            <div class="ph-layer"><span class="ph-layer-name">Blind Air Cell</span><span class="ph-layer-val">11°C — insulated</span></div>
+            <div class="ph-layer"><span class="ph-layer-name">Blind Room-Side</span><span class="ph-layer-val">16.8°C — warm</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 — PRODUCT DATA TABLE ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">03</div>
+        <h2 class="ph-section-title">Product Performance Data</h2>
+        <p class="ph-section-subtitle">Tested thermal values for every blind type we offer. Choose based on data, not guesswork.</p>
+      </div>
+      <div class="ph-table-wrap ph-reveal ph-reveal-delay-1">
+        <table class="ph-table">
+          <thead>
+            <tr>
+              <th>Blind Type</th>
+              <th>Added R-Value</th>
+              <th>SHGC Reduction</th>
+              <th>Insulation</th>
+              <th>Light Control</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Honeycomb Double Cell</strong> <span class="ph-best-tag">Top Pick</span></td>
+              <td>0.68 m²K/W</td>
+              <td>62%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span></div></td>
+              <td>Passive House primary</td>
+            </tr>
+            <tr>
+              <td><strong>Honeycomb Single Cell</strong></td>
+              <td>0.45 m²K/W</td>
+              <td>55%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span></div></td>
+              <td>Budget-friendly thermal</td>
+            </tr>
+            <tr>
+              <td><strong>Thermal Curtain (Lined)</strong></td>
+              <td>0.52 m²K/W</td>
+              <td>58%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span></div></td>
+              <td>Heritage passive retrofits</td>
+            </tr>
+            <tr>
+              <td><strong>Roller Blockout</strong></td>
+              <td>0.22 m²K/W</td>
+              <td>72%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span></div></td>
+              <td>Summer solar control</td>
+            </tr>
+            <tr>
+              <td><strong>Roman Blind (Lined)</strong></td>
+              <td>0.38 m²K/W</td>
+              <td>48%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span></div></td>
+              <td>Aesthetic + moderate thermal</td>
+            </tr>
+            <tr>
+              <td><strong>Roller Sunscreen (5%)</strong></td>
+              <td>0.12 m²K/W</td>
+              <td>45%</td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span></div></td>
+              <td><div class="ph-rating"><span class="ph-rating-dot active"></span><span class="ph-rating-dot active"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span><span class="ph-rating-dot"></span></div></td>
+              <td>View preservation + glare</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 — SCENARIOS ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">04</div>
+        <h2 class="ph-section-title">Your Passive House Scenario</h2>
+        <p class="ph-section-subtitle">Different builds need different solutions. Find your situation.</p>
+      </div>
+      <div class="ph-scenarios ph-reveal ph-reveal-delay-1">
+        <div class="ph-scenario">
+          <span class="ph-scenario-icon">🏗️</span>
+          <h3>New Build</h3>
+          <p>Working with your builder and energy assessor to meet NatHERS 7+ star rating. We coordinate installation timing to avoid damage to airtight membranes.</p>
+          <div class="ph-scenario-rec">Recommended → <span>Honeycomb Double Cell + Airtight Brackets</span></div>
+        </div>
+        <div class="ph-scenario">
+          <span class="ph-scenario-icon">🔄</span>
+          <h3>Retrofit Upgrade</h3>
+          <p>Existing home being upgraded to passive house standards. Adding high-performance blinds is the fastest thermal improvement per dollar spent on windows.</p>
+          <div class="ph-scenario-rec">Recommended → <span>Thermal Curtain + Honeycomb Combo</span></div>
+        </div>
+        <div class="ph-scenario">
+          <span class="ph-scenario-icon">🏢</span>
+          <h3>Commercial / Multi-Res</h3>
+          <p>Apartment complexes, offices, and aged care facilities pursuing Green Star or NABERS ratings. Bulk supply with consistent specification across all units.</p>
+          <div class="ph-scenario-rec">Recommended → <span>Motorised Honeycomb + Central Control</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 — SAVINGS ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">05</div>
+        <h2 class="ph-section-title">Real Energy Savings</h2>
+        <p class="ph-section-subtitle">Measured data from Melbourne passive house installations. Average 3-bedroom home with 18m² of glazing.</p>
+      </div>
+      <div class="ph-savings ph-reveal ph-reveal-delay-1">
+        <div class="ph-savings-left">
+          <div class="ph-savings-big">$<span class="ph-counter" data-target="1240">0</span></div>
+          <div class="ph-savings-label">Average Annual Savings</div>
+        </div>
+        <div class="ph-savings-right">
+          <h3>Where the savings come from</h3>
+          <div class="ph-savings-bars">
+            <div>
+              <div class="ph-sbar-label"><span>Winter Heating Reduction</span><span>42%</span></div>
+              <div class="ph-sbar"><div class="ph-sbar-fill" data-width="42" style="width:0;background:var(--ph-red);"></div></div>
+            </div>
+            <div>
+              <div class="ph-sbar-label"><span>Summer Cooling Reduction</span><span>35%</span></div>
+              <div class="ph-sbar"><div class="ph-sbar-fill" data-width="35" style="width:0;background:var(--ph-blue);"></div></div>
+            </div>
+            <div>
+              <div class="ph-sbar-label"><span>Condensation Damage Avoided</span><span>28%</span></div>
+              <div class="ph-sbar"><div class="ph-sbar-fill" data-width="28" style="width:0;background:var(--ph-green);"></div></div>
+            </div>
+            <div>
+              <div class="ph-sbar-label"><span>HVAC Runtime Reduction</span><span>38%</span></div>
+              <div class="ph-sbar"><div class="ph-sbar-fill" data-width="38" style="width:0;background:var(--ph-black);"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="ph-section">
+    <div class="ph-container">
+      <div class="ph-reveal">
+        <div class="ph-section-num">06</div>
+        <h2 class="ph-section-title">From Passive House Owners</h2>
+      </div>
+      <div class="ph-testimonials ph-reveal ph-reveal-delay-1">
+        <div class="ph-testimonial">
+          <div class="ph-testimonial-stars">★ ★ ★ ★ ★</div>
+          <blockquote>"Our energy assessor was sceptical that blinds would make a measurable difference. After installation, the NatHERS re-assessment jumped from 7.2 to 7.8 stars. The data speaks for itself."</blockquote>
+          <cite>— Michael T., Northcote Passive House</cite>
+        </div>
+        <div class="ph-testimonial">
+          <div class="ph-testimonial-stars">★ ★ ★ ★ ★</div>
+          <blockquote>"We'd been getting condensation on our triple-glazed windows every winter morning. iSeekBlinds recommended honeycomb blinds with specific air-gap sizing. Zero condensation since installation."</blockquote>
+          <cite>— Sarah & James, Coburg New Build</cite>
+        </div>
+        <div class="ph-testimonial">
+          <div class="ph-testimonial-stars">★ ★ ★ ★ ★</div>
+          <blockquote>"The thermal imaging before-and-after was incredible. What used to be bright orange hotspots on our windows are now barely visible. And our heating bill dropped noticeably."</blockquote>
+          <cite>— Dr. Angela W., Brunswick Retrofit</cite>
+        </div>
+        <div class="ph-testimonial">
+          <div class="ph-testimonial-stars">★ ★ ★ ★ ★</div>
+          <blockquote>"We manage 12 passive house apartments. iSeekBlinds handled the whole lot — consistent spec, motorised control, and they coordinated perfectly with our builder's timeline."</blockquote>
+          <cite>— Greenline Developments, Fitzroy</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="ph-cta">
+    <div class="ph-container">
+      <h2>Your Passive House<br>Deserves Precision</h2>
+      <p>Free thermal assessment and blind specification for your passive house project. We bring the data — you make the decision.</p>
+      <a href="../contact.html" class="ph-cta-btn">Book Free Assessment</a>
+      <span class="ph-cta-phone">Or call <a href="tel:0493410484">0493 410 484</a></span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>iSeekBlinds</h4>
+        <p>Melbourne's passive house blind specialists. Data-driven window treatments for energy-efficient homes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="energy-efficient.html">Energy Efficient</a>
+        <a href="smart-home.html">Smart Home</a>
+        <a href="double-glazed-blinds.html">Double Glazed</a>
+        <a href="honeycomb-blinds.html">Honeycomb Blinds</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0493410484">0493 410 484</a>
+        <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a>
+        <p>Melbourne, VIC</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 iSeekBlinds. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== SCROLL REVEAL ===== */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ph-visible'); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.ph-reveal').forEach(el => revealObserver.observe(el));
+
+    /* ===== COUNTER ANIMATION ===== */
+    function animateCounters() {
+      // Hero stat counters
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const target = parseInt(el.dataset.count);
+        const unit = el.querySelector('.ph-unit')?.outerHTML || '';
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 40));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(interval); }
+          el.innerHTML = current + unit;
+        }, 30);
+      });
+      document.querySelectorAll('[data-count-decimal]').forEach(el => {
+        const target = parseFloat(el.dataset.countDecimal);
+        const unit = el.querySelector('.ph-unit')?.outerHTML || '';
+        let current = 0;
+        const step = target / 40;
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(interval); }
+          el.innerHTML = current.toFixed(2) + unit;
+        }, 30);
+      });
+      // Savings counter
+      document.querySelectorAll('.ph-counter').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 50));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(interval); }
+          el.textContent = current.toLocaleString();
+        }, 25);
+      });
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animateCounters(); counterObserver.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    const heroRight = document.querySelector('.ph-hero-right');
+    if (heroRight) counterObserver.observe(heroRight);
+
+    /* ===== R-VALUE CALCULATOR ===== */
+    const windowRValues = { single: 0.17, double: 0.34, 'double-timber': 0.42, triple: 0.63 };
+    const blindRValues = {
+      'honeycomb-double': 0.68, 'honeycomb-single': 0.45, 'roller-blockout': 0.22,
+      'roller-screen': 0.12, roman: 0.38, 'curtain-thermal': 0.52
+    };
+    const gapMultipliers = { 10: 0.7, 15: 0.8, 20: 0.9, 25: 1.0, 30: 1.05, 35: 1.08, 40: 1.1, 45: 1.11, 50: 1.12, 55: 1.12, 60: 1.12 };
+
+    function updateCalc() {
+      const wType = document.getElementById('phWindowType').value;
+      const bType = document.getElementById('phBlindType').value;
+      const area = parseFloat(document.getElementById('phArea').value);
+      const gap = parseInt(document.getElementById('phGap').value);
+
+      document.getElementById('phAreaVal').textContent = area.toFixed(1);
+      document.getElementById('phGapVal').textContent = gap;
+
+      const wR = windowRValues[wType];
+      const bR = blindRValues[bType] * (gapMultipliers[gap] || 1);
+      const totalR = wR + bR;
+      const maxR = 1.5;
+
+      document.getElementById('phRwindow').innerHTML = wR.toFixed(2);
+      document.getElementById('phRtotal').innerHTML = totalR.toFixed(2);
+      document.getElementById('phBarWindow').style.width = (wR / maxR * 100) + '%';
+      document.getElementById('phBarTotal').style.width = (totalR / maxR * 100) + '%';
+
+      const heatSaved = Math.round((1 / wR - 1 / totalR) * area * 24 * 120 * 0.001 * 10);
+      const dollarSaved = Math.round(heatSaved * 0.22);
+      document.getElementById('phHeatSaved').innerHTML = heatSaved + '<span class="ph-unit" style="font-size:1.2rem;"> kWh</span>';
+      document.getElementById('phDollarSaved').textContent = dollarSaved;
+
+      const factor = (totalR / wR).toFixed(1);
+      document.getElementById('phImprove').textContent = factor + '×';
+    }
+
+    ['phWindowType', 'phBlindType', 'phArea', 'phGap'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateCalc);
+    });
+    updateCalc();
+
+    /* ===== SAVINGS BARS ===== */
+    const barsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.ph-sbar-fill').forEach(bar => {
+            const w = bar.dataset.width;
+            setTimeout(() => { bar.style.width = w + '%'; }, 200);
+          });
+          barsObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const savingsEl = document.querySelector('.ph-savings');
+    if (savingsEl) barsObserver.observe(savingsEl);
+
+    /* ===== SAVINGS COUNTER ===== */
+    const savingsCounterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.ph-counter').forEach(el => {
+            const target = parseInt(el.dataset.target);
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 50));
+            const interval = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(interval); }
+              el.textContent = current.toLocaleString();
+            }, 25);
+          });
+          savingsCounterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    if (savingsEl) savingsCounterObs.observe(savingsEl);
+  </script>
+</body>
+</html>
