@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamptons Style Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Create the perfect Hamptons-inspired home with plantation shutters, sheer curtains, and linen roman blinds. Melbourne's trusted window furnishing experts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === 极简白 MINIMALIST WHITE: Hamptons Style === */
+
+    .hs-hamptons {
+      background: #ffffff;
+      color: #2c3e50;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+    }
+
+    .hs-hamptons h1,
+    .hs-hamptons h2,
+    .hs-hamptons h3,
+    .hs-hamptons h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: #1a2a3a;
+    }
+
+    /* Hero */
+    .hs-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .hs-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80') center/cover no-repeat;
+      opacity: 0;
+      animation: hsFadeIn 1.5s ease forwards 0.3s;
+    }
+
+    .hs-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.3) 100%);
+      z-index: 1;
+    }
+
+    @keyframes hsFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes hsSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes hsLineGrow {
+      from { width: 0; }
+      to { width: 80px; }
+    }
+
+    .hs-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10rem 2rem 6rem;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hs-hero-content {
+      max-width: 640px;
+    }
+
+    .hs-hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #4a90a4;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: hsSlideUp 0.8s ease forwards 0.6s;
+    }
+
+    .hs-hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #1a2a3a;
+      opacity: 0;
+      animation: hsSlideUp 0.8s ease forwards 0.8s;
+    }
+
+    .hs-hero-content h1 em {
+      font-style: italic;
+      color: #4a90a4;
+    }
+
+    .hs-hero-line {
+      height: 1px;
+      background: #4a90a4;
+      margin-bottom: 1.5rem;
+      animation: hsLineGrow 1s ease forwards 1s;
+      width: 0;
+    }
+
+    .hs-hero-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #5a6a7a;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: hsSlideUp 0.8s ease forwards 1.2s;
+    }
+
+    .hs-hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: hsSlideUp 0.8s ease forwards 1.4s;
+    }
+
+    .hs-btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #1a2a3a;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      border: 1px solid #1a2a3a;
+    }
+
+    .hs-btn-primary:hover {
+      background: #4a90a4;
+      border-color: #4a90a4;
+    }
+
+    .hs-btn-outline {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: transparent;
+      color: #1a2a3a;
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid #c8d4dc;
+      transition: all 0.3s ease;
+    }
+
+    .hs-btn-outline:hover {
+      border-color: #4a90a4;
+      color: #4a90a4;
+    }
+
+    /* Section Common */
+    .hs-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hs-section-wide {
+      padding: 6rem 2rem;
+    }
+
+    .hs-section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .hs-section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .hs-section-header .hs-divider {
+      width: 60px;
+      height: 1px;
+      background: #4a90a4;
+      margin: 1.5rem auto;
+    }
+
+    .hs-section-header p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #6a7a8a;
+    }
+
+    /* Reveal animations */
+    .hs-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .hs-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* What is Hamptons section */
+    .hs-intro {
+      background: #fafcfe;
+      border-top: 1px solid #eef2f5;
+      border-bottom: 1px solid #eef2f5;
+    }
+
+    .hs-intro-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hs-intro-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hs-intro-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hs-intro-image::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      border: 1px solid #4a90a4;
+      z-index: -1;
+    }
+
+    .hs-intro-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hs-intro-text p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #5a6a7a;
+      margin-bottom: 1.2rem;
+    }
+
+    .hs-hallmarks {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+
+    .hs-hallmarks li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eef2f5;
+      font-size: 0.95rem;
+      color: #3a4a5a;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hs-hallmarks li::before {
+      content: '◆';
+      color: #4a90a4;
+      font-size: 0.6rem;
+    }
+
+    /* Key Products */
+    .hs-products {
+      background: #ffffff;
+    }
+
+    .hs-products-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .hs-product-card {
+      background: #ffffff;
+      border: 1px solid #eef2f5;
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .hs-product-card:hover {
+      box-shadow: 0 20px 60px rgba(26,42,58,0.08);
+      transform: translateY(-4px);
+    }
+
+    .hs-product-card-image {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .hs-product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hs-product-card:hover .hs-product-card-image img {
+      transform: scale(1.05);
+    }
+
+    .hs-product-card-body {
+      padding: 2rem;
+    }
+
+    .hs-product-card-body h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hs-product-card-body p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #6a7a8a;
+      margin-bottom: 1.2rem;
+    }
+
+    .hs-product-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hs-product-features li {
+      font-size: 0.85rem;
+      color: #4a5a6a;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #f5f7f9;
+    }
+
+    .hs-product-features li:last-child {
+      border-bottom: none;
+    }
+
+    .hs-product-link {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a90a4;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .hs-product-link:hover {
+      color: #1a2a3a;
+    }
+
+    /* Color Palette Strip */
+    .hs-palette {
+      background: #1a2a3a;
+      padding: 4rem 2rem;
+    }
+
+    .hs-palette-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hs-palette h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hs-palette p {
+      color: #8a9aaa;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .hs-swatches {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hs-swatch {
+      text-align: center;
+    }
+
+    .hs-swatch-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 0.8rem;
+      border: 3px solid rgba(255,255,255,0.1);
+    }
+
+    .hs-swatch-name {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8a9aaa;
+    }
+
+    /* Room by Room */
+    .hs-rooms {
+      background: #fafcfe;
+      border-top: 1px solid #eef2f5;
+    }
+
+    .hs-rooms-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    .hs-room-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      background: #ffffff;
+      border: 1px solid #eef2f5;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .hs-room-card:hover {
+      box-shadow: 0 12px 40px rgba(26,42,58,0.06);
+    }
+
+    .hs-room-card-image {
+      height: 100%;
+      min-height: 200px;
+    }
+
+    .hs-room-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hs-room-card-body {
+      padding: 1.8rem;
+    }
+
+    .hs-room-card-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hs-room-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #6a7a8a;
+      margin-bottom: 0.8rem;
+    }
+
+    .hs-room-rec {
+      font-size: 0.8rem;
+      color: #4a90a4;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Tips Section */
+    .hs-tips {
+      background: #ffffff;
+    }
+
+    .hs-tips-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .hs-tip {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border: 1px solid #eef2f5;
+      transition: all 0.3s ease;
+    }
+
+    .hs-tip:hover {
+      border-color: #4a90a4;
+    }
+
+    .hs-tip-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hs-tip h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .hs-tip p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #6a7a8a;
+    }
+
+    /* Testimonials */
+    .hs-testimonials {
+      background: #fafcfe;
+      border-top: 1px solid #eef2f5;
+      border-bottom: 1px solid #eef2f5;
+    }
+
+    .hs-testimonials-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    .hs-testimonial {
+      background: #ffffff;
+      padding: 2.5rem;
+      border: 1px solid #eef2f5;
+      position: relative;
+    }
+
+    .hs-testimonial::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #4a90a4;
+      opacity: 0.2;
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+
+    .hs-testimonial p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #5a6a7a;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .hs-testimonial-author {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #1a2a3a;
+      font-weight: 700;
+    }
+
+    /* Benefits */
+    .hs-benefits {
+      background: #ffffff;
+    }
+
+    .hs-benefits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .hs-benefit {
+      padding: 3rem 2.5rem;
+      border: 1px solid #eef2f5;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .hs-benefit:hover {
+      background: #fafcfe;
+    }
+
+    .hs-benefit-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #4a90a4;
+      opacity: 0.3;
+      margin-bottom: 1rem;
+    }
+
+    .hs-benefit h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hs-benefit p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #6a7a8a;
+    }
+
+    /* Gallery */
+    .hs-gallery {
+      background: #fafcfe;
+      border-top: 1px solid #eef2f5;
+    }
+
+    .hs-gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .hs-gallery-item {
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+
+    .hs-gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .hs-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hs-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* CTA */
+    .hs-cta {
+      background: #1a2a3a;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hs-cta h2 {
+      color: #ffffff;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .hs-cta p {
+      color: #8a9aaa;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hs-cta .hs-btn-primary {
+      background: #4a90a4;
+      border-color: #4a90a4;
+    }
+
+    .hs-cta .hs-btn-primary:hover {
+      background: #5ba8be;
+      border-color: #5ba8be;
+    }
+
+    /* FAQ */
+    .hs-faq {
+      background: #ffffff;
+    }
+
+    .hs-faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hs-faq-item {
+      border-bottom: 1px solid #eef2f5;
+      padding: 1.5rem 0;
+    }
+
+    .hs-faq-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hs-faq-item p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #6a7a8a;
+    }
+
+    /* Process */
+    .hs-process {
+      background: #fafcfe;
+      border-top: 1px solid #eef2f5;
+    }
+
+    .hs-process-steps {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .hs-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .hs-step::after {
+      content: '→';
+      position: absolute;
+      right: -1.2rem;
+      top: 1.5rem;
+      color: #c8d4dc;
+      font-size: 1.2rem;
+    }
+
+    .hs-step:last-child::after {
+      display: none;
+    }
+
+    .hs-step-num {
+      width: 48px;
+      height: 48px;
+      border: 1px solid #4a90a4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: 'Playfair Display', serif;
+      color: #4a90a4;
+      font-size: 1.1rem;
+    }
+
+    .hs-step h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hs-step p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #6a7a8a;
+    }
+
+    /* Cross-links */
+    .hs-crosslinks {
+      background: #fafcfe;
+      padding: 4rem 2rem;
+      border-top: 1px solid #eef2f5;
+    }
+
+    .hs-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hs-crosslinks h3 {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #1a2a3a;
+    }
+
+    .hs-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .hs-crosslink-item {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: #5a6a7a;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .hs-crosslink-item:hover {
+      color: #4a90a4;
+      border-bottom-color: #4a90a4;
+    }
+
+    .hs-crosslink-item span {
+      color: #4a90a4;
+      margin-right: 0.3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hs-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hs-products-grid { grid-template-columns: repeat(2, 1fr); }
+      .hs-rooms-grid { grid-template-columns: 1fr; }
+      .hs-tips-grid { grid-template-columns: repeat(2, 1fr); }
+      .hs-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .hs-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .hs-process-steps { grid-template-columns: repeat(2, 1fr); }
+      .hs-step::after { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hs-hero-inner { padding: 7rem 1.5rem 4rem; }
+      .hs-hero-cta { flex-direction: column; }
+      .hs-products-grid { grid-template-columns: 1fr; }
+      .hs-room-card { grid-template-columns: 1fr; }
+      .hs-room-card-image { height: 200px; }
+      .hs-tips-grid { grid-template-columns: 1fr; }
+      .hs-benefits-grid { grid-template-columns: 1fr; }
+      .hs-testimonials-grid { grid-template-columns: 1fr; }
+      .hs-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .hs-gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+      .hs-process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="hs-hamptons">
+
+    <!-- Hero -->
+    <section class="hs-hero">
+      <div class="hs-hero-inner">
+        <div class="hs-hero-content">
+          <span class="hs-hero-tag">Interior Design Collection</span>
+          <h1>The <em>Hamptons</em> Style Window Guide</h1>
+          <div class="hs-hero-line"></div>
+          <p>Bring the relaxed elegance of coastal living into your Melbourne home. Plantation shutters, billowing sheers, and linen roman blinds — the timeless Hamptons look starts at the window.</p>
+          <div class="hs-hero-cta">
+            <a href="../free-quote.html" class="hs-btn-primary">Get a Free Quote</a>
+            <a href="#products" class="hs-btn-outline">Explore Products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Hamptons Style -->
+    <section class="hs-section-wide hs-intro">
+      <div class="hs-intro-grid">
+        <div class="hs-intro-image hs-reveal">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Hamptons style living room with white plantation shutters">
+        </div>
+        <div class="hs-intro-text hs-reveal">
+          <h2>What is Hamptons Style?</h2>
+          <p>Originating from the affluent beachside communities of Long Island, New York, Hamptons style has become one of Australia's most beloved interior design movements. It's a look that perfectly suits our coastal lifestyle — breezy, light-filled, and effortlessly sophisticated.</p>
+          <p>At its core, Hamptons design is about creating spaces that feel relaxed yet refined. Think crisp white walls, natural timber floors, soft blue accents, and an abundance of natural light streaming through carefully dressed windows.</p>
+          <p>Window treatments are absolutely central to achieving an authentic Hamptons aesthetic. They control light, add texture, and serve as defining architectural features in the overall design scheme.</p>
+          <ul class="hs-hallmarks">
+            <li>White and neutral colour palettes with coastal blue accents</li>
+            <li>Natural materials — linen, cotton, timber, rattan</li>
+            <li>Light-filled rooms with layered window treatments</li>
+            <li>Symmetry and classic proportions in every detail</li>
+            <li>Relaxed elegance — never formal or stuffy</li>
+            <li>Indoor-outdoor flow that embraces the Australian climate</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Products -->
+    <section id="products" class="hs-section-wide hs-products">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>Essential Hamptons Window Treatments</h2>
+          <div class="hs-divider"></div>
+          <p>Three signature products define the Hamptons window. Each brings a different quality — and they work beautifully alone or layered together.</p>
+        </div>
+      </div>
+      <div class="hs-products-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div class="hs-product-card hs-reveal">
+          <div class="hs-product-card-image">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="White plantation shutters in Hamptons bedroom">
+          </div>
+          <div class="hs-product-card-body">
+            <h3>Plantation Shutters</h3>
+            <p>The undisputed hero of Hamptons style. Wide-louvred plantation shutters in crisp white provide unparalleled light control while adding architectural gravitas to any window. They're a permanent investment that transforms a room instantly.</p>
+            <ul class="hs-product-features">
+              <li>◆ 89mm or 114mm louvres for authentic look</li>
+              <li>◆ PVC or basswood options available</li>
+              <li>◆ Full privacy with adjustable light control</li>
+              <li>◆ Increases property value significantly</li>
+              <li>◆ Low maintenance — wipe clean finish</li>
+            </ul>
+            <a href="../products/plantation-shutters.html" class="hs-product-link">View Plantation Shutters →</a>
+          </div>
+        </div>
+        <div class="hs-product-card hs-reveal">
+          <div class="hs-product-card-image">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80" alt="Sheer white curtains flowing in breeze">
+          </div>
+          <div class="hs-product-card-body">
+            <h3>Sheer Curtains</h3>
+            <p>Nothing says coastal elegance like floor-length sheer curtains catching a gentle breeze. In the Hamptons palette, white or ivory sheers soften harsh light, add movement and romance, and create that iconic breezy atmosphere.</p>
+            <ul class="hs-product-features">
+              <li>◆ Linen-look or voile fabrics</li>
+              <li>◆ S-fold or pinch pleat heading styles</li>
+              <li>◆ Floor-length or puddled finish</li>
+              <li>◆ Layer over shutters or blinds</li>
+              <li>◆ UV filtering while maintaining views</li>
+            </ul>
+            <a href="../products/curtains.html" class="hs-product-link">View Curtains →</a>
+          </div>
+        </div>
+        <div class="hs-product-card hs-reveal">
+          <div class="hs-product-card-image">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Linen roman blinds in coastal living room">
+          </div>
+          <div class="hs-product-card-body">
+            <h3>Linen Roman Blinds</h3>
+            <p>For a softer, more tailored look, linen roman blinds in sandy beige or soft white provide the perfect Hamptons window treatment. They fold beautifully, add warmth and texture, and work wonderfully in kitchens and bathrooms.</p>
+            <ul class="hs-product-features">
+              <li>◆ Natural linen or linen-blend fabrics</li>
+              <li>◆ Flat fold or soft fold styles</li>
+              <li>◆ Neutral tones — ivory, natural, sand</li>
+              <li>◆ Optional blockout lining available</li>
+              <li>◆ Cordless and motorised options</li>
+            </ul>
+            <a href="../products/roller-blinds.html" class="hs-product-link">View Roman Blinds →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colour Palette -->
+    <section class="hs-palette">
+      <div class="hs-palette-inner hs-reveal">
+        <h2>The Hamptons Colour Palette</h2>
+        <p>A considered palette of whites, blues, and naturals creates the signature coastal warmth</p>
+        <div class="hs-swatches">
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #ffffff;"></div>
+            <span class="hs-swatch-name">Crisp White</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #f5f0e8;"></div>
+            <span class="hs-swatch-name">Linen</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #dcd3c5;"></div>
+            <span class="hs-swatch-name">Sandy Beige</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #4a90a4;"></div>
+            <span class="hs-swatch-name">Coastal Blue</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #6db3c7;"></div>
+            <span class="hs-swatch-name">Duck Egg</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #1a2a3a;"></div>
+            <span class="hs-swatch-name">Navy</span>
+          </div>
+          <div class="hs-swatch">
+            <div class="hs-swatch-circle" style="background: #8fa4a8;"></div>
+            <span class="hs-swatch-name">Sea Glass</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room by Room Guide -->
+    <section class="hs-section-wide hs-rooms">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>Room-by-Room Hamptons Guide</h2>
+          <div class="hs-divider"></div>
+          <p>Every room in a Hamptons home has its own character. Here's how to dress the windows in each space for that authentic coastal-luxe feel.</p>
+        </div>
+      </div>
+      <div class="hs-rooms-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=400&q=80" alt="Hamptons living room">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Living Room</h3>
+            <p>The hero space. Layer plantation shutters with floor-length white sheers for the ultimate Hamptons statement. Choose wide louvres (114mm) for a grander effect and let the sheers puddle slightly on the floor for relaxed elegance.</p>
+            <span class="hs-room-rec">Recommended: Shutters + Sheers</span>
+          </div>
+        </div>
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=400&q=80" alt="Hamptons bedroom">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Master Bedroom</h3>
+            <p>Combine sheer curtains with blockout roller blinds behind for the perfect Hamptons bedroom. The sheers create daytime ambience while the roller blinds ensure complete darkness for sleep. Choose S-fold sheers in white linen-look fabric.</p>
+            <span class="hs-room-rec">Recommended: Sheers + Blockout Rollers</span>
+          </div>
+        </div>
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Hamptons kitchen">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Kitchen</h3>
+            <p>Roman blinds in natural linen are the go-to for Hamptons kitchens. They sit neatly above the sink or rangehood, are easy to operate, and their soft folds add warmth to all-white cabinetry. Choose moisture-resistant fabrics for longevity.</p>
+            <span class="hs-room-rec">Recommended: Linen Roman Blinds</span>
+          </div>
+        </div>
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Hamptons bathroom">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Bathroom</h3>
+            <p>White PVC plantation shutters are perfect for bathrooms — they're waterproof, easy to clean, and look stunning. For a softer option, consider moisture-resistant roman blinds in a sandy linen. Either way, keep it white or neutral.</p>
+            <span class="hs-room-rec">Recommended: PVC Shutters or Roman Blinds</span>
+          </div>
+        </div>
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80" alt="Hamptons dining room">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Dining Room</h3>
+            <p>Floor-to-ceiling sheer curtains create an ethereal backdrop for entertaining. If the dining room has a garden view, keep the sheers lightweight to maintain that visual connection with outdoors — a hallmark of Hamptons design.</p>
+            <span class="hs-room-rec">Recommended: S-Fold Sheer Curtains</span>
+          </div>
+        </div>
+        <div class="hs-room-card hs-reveal">
+          <div class="hs-room-card-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Hamptons outdoor area">
+          </div>
+          <div class="hs-room-card-body">
+            <h3>Alfresco & Outdoor</h3>
+            <p>Extend the Hamptons look outdoors with white café blinds or outdoor roller blinds. PVC or mesh options protect against wind and rain while maintaining that open, airy feel. Perfect for Melbourne's changeable weather.</p>
+            <span class="hs-room-rec">Recommended: Outdoor Café Blinds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Styling Tips -->
+    <section class="hs-section-wide hs-tips">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>Hamptons Styling Tips</h2>
+          <div class="hs-divider"></div>
+          <p>Small details make the difference between "coastal-inspired" and authentic Hamptons style.</p>
+        </div>
+      </div>
+      <div class="hs-tips-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
+        <div class="hs-tip hs-reveal">
+          <div class="hs-tip-icon">◈</div>
+          <h4>Go Floor Length</h4>
+          <p>Curtains should always kiss the floor or puddle slightly. Never hang them above the sill — it breaks the elegant proportion that defines Hamptons interiors.</p>
+        </div>
+        <div class="hs-tip hs-reveal">
+          <div class="hs-tip-icon">◇</div>
+          <h4>Mount High & Wide</h4>
+          <p>Install curtain tracks well above the window frame and extend them 20–30cm each side. This creates the illusion of taller, wider windows — a classic designer trick.</p>
+        </div>
+        <div class="hs-tip hs-reveal">
+          <div class="hs-tip-icon">◆</div>
+          <h4>Layer Textures</h4>
+          <p>Combine hard (shutters) with soft (sheers) for depth. A flat surface plus a flowing fabric creates the visual tension that makes Hamptons rooms feel curated, not flat.</p>
+        </div>
+        <div class="hs-tip hs-reveal">
+          <div class="hs-tip-icon">○</div>
+          <h4>Keep Hardware Simple</h4>
+          <p>Brushed nickel or white curtain tracks that disappear. Avoid ornate rods — Hamptons style is about the fabric, not the fittings. Ceiling-mounted tracks are ideal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose iSeekBlinds -->
+    <section class="hs-section-wide hs-benefits">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>Why Choose iSeekBlinds for Your Hamptons Home</h2>
+          <div class="hs-divider"></div>
+        </div>
+      </div>
+      <div class="hs-benefits-grid" style="max-width: 1200px; margin: 0 auto;">
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">01</div>
+          <h3>Hamptons Specialists</h3>
+          <p>We've fitted hundreds of Hamptons-style homes across Melbourne. We understand the look, know the right products, and can advise on fabric, colour, and mounting to nail the aesthetic.</p>
+        </div>
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">02</div>
+          <h3>Premium Materials</h3>
+          <p>From genuine basswood shutters to quality linen-look sheers, we source only premium fabrics and materials. Your Hamptons window treatments will look beautiful for years to come.</p>
+        </div>
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">03</div>
+          <h3>Free In-Home Consultation</h3>
+          <p>Our designers come to you with fabric samples, colour swatches, and expert advice. We'll assess your windows, discuss your vision, and provide a detailed quote — all at no cost.</p>
+        </div>
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">04</div>
+          <h3>Custom Made to Measure</h3>
+          <p>Every product is custom manufactured to your exact window measurements. No off-the-shelf compromises — just perfectly fitted treatments that look tailored and intentional.</p>
+        </div>
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">05</div>
+          <h3>Professional Installation</h3>
+          <p>Our experienced installers ensure every shutter is level, every curtain hangs perfectly, and every blind operates smoothly. The finish is everything in Hamptons style.</p>
+        </div>
+        <div class="hs-benefit hs-reveal">
+          <div class="hs-benefit-number">06</div>
+          <h3>Melbourne-Wide Service</h3>
+          <p>From Brighton to the Mornington Peninsula, Toorak to the Bellarine — wherever your Hamptons dream home is in Melbourne, we'll come to you with our full consultation service.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="hs-section-wide hs-testimonials">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>What Our Clients Say</h2>
+          <div class="hs-divider"></div>
+        </div>
+      </div>
+      <div class="hs-testimonials-grid" style="padding: 0 2rem 4rem;">
+        <div class="hs-testimonial hs-reveal">
+          <p>We wanted a complete Hamptons transformation for our Sandringham home. iSeekBlinds installed plantation shutters throughout the ground floor and sheer curtains upstairs. The result is absolutely stunning — everyone comments on how the windows make the rooms.</p>
+          <span class="hs-testimonial-author">— Sarah M., Sandringham</span>
+        </div>
+        <div class="hs-testimonial hs-reveal">
+          <p>The team understood exactly what we were going for. They recommended the perfect linen roman blinds for our kitchen and matching sheers for the dining area. The quality of the fabrics is exceptional and the installation was flawless.</p>
+          <span class="hs-testimonial-author">— James &amp; Kate L., Brighton</span>
+        </div>
+        <div class="hs-testimonial hs-reveal">
+          <p>I'd been collecting Hamptons inspiration for months but was overwhelmed by choices. The in-home consultation was invaluable — they brought samples that worked perfectly with our existing decor and the pricing was very competitive.</p>
+          <span class="hs-testimonial-author">— Rachel T., Hampton</span>
+        </div>
+        <div class="hs-testimonial hs-reveal">
+          <p>Our investment property needed a refresh before sale. iSeekBlinds suggested white plantation shutters throughout — simple but transformative. The property sold within two weeks and the agent said the shutters were the first thing buyers noticed.</p>
+          <span class="hs-testimonial-author">— David P., Bentleigh</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="hs-section-wide hs-gallery">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>Hamptons Inspiration Gallery</h2>
+          <div class="hs-divider"></div>
+        </div>
+      </div>
+      <div class="hs-gallery-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
+        <div class="hs-gallery-item hs-reveal">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Hamptons living room with shutters">
+        </div>
+        <div class="hs-gallery-item hs-reveal">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80" alt="White sheer curtains">
+        </div>
+        <div class="hs-gallery-item hs-reveal">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80" alt="Coastal bedroom">
+        </div>
+        <div class="hs-gallery-item hs-reveal">
+          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=400&q=80" alt="Linen roman blinds">
+        </div>
+        <div class="hs-gallery-item hs-reveal">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80" alt="Kitchen with roman blinds">
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="hs-section-wide hs-process">
+      <div class="hs-section" style="padding-bottom: 0;">
+        <div class="hs-section-header">
+          <h2>How It Works</h2>
+          <div class="hs-divider"></div>
+          <p>From consultation to installation, we make achieving your Hamptons look effortless.</p>
+        </div>
+      </div>
+      <div class="hs-process-steps" style="padding: 0 2rem 4rem;">
+        <div class="hs-step hs-reveal">
+          <div class="hs-step-num">1</div>
+          <h4>Free Consultation</h4>
+          <p>We visit your home with fabric samples and colour swatches to discuss your Hamptons vision.</p>
+        </div>
+        <div class="hs-step hs-reveal">
+          <div class="hs-step-num">2</div>
+          <h4>Design & Quote</h4>
+          <p>We measure every window precisely and provide a detailed quote with product recommendations.</p>
+        </div>
+        <div class="hs-step hs-reveal">
+          <div class="hs-step-num">3</div>
+          <h4>Custom Manufacturing</h4>
+          <p>Your treatments are custom-made to exact measurements using premium materials.</p>
+        </div>
+        <div class="hs-step hs-reveal">
+          <div class="hs-step-num">4</div>
+          <h4>Professional Install</h4>
+          <p>Our team installs everything perfectly, leaving your home looking magazine-ready.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="hs-section hs-faq">
+      <div class="hs-section-header">
+        <h2>Frequently Asked Questions</h2>
+        <div class="hs-divider"></div>
+      </div>
+      <div class="hs-faq-list">
+        <div class="hs-faq-item hs-reveal">
+          <h4>What makes Hamptons style different from general coastal style?</h4>
+          <p>Hamptons style is more refined and structured than casual coastal. It emphasises symmetry, classic furniture silhouettes, and a specific white-blue-neutral colour palette. While coastal style can be eclectic and bohemian, Hamptons always maintains a sense of polished elegance.</p>
+        </div>
+        <div class="hs-faq-item hs-reveal">
+          <h4>Are plantation shutters worth the investment?</h4>
+          <p>Absolutely. Plantation shutters typically last 20+ years, require minimal maintenance, and add genuine value to your property. In Melbourne's market, real estate agents consistently rank shutters as one of the best window treatment investments for resale appeal.</p>
+        </div>
+        <div class="hs-faq-item hs-reveal">
+          <h4>Can I achieve the Hamptons look on a budget?</h4>
+          <p>Yes — start with sheer curtains, which provide the biggest visual impact for the lowest investment. You can add shutters room by room over time. PVC shutters are also more affordable than timber and look virtually identical once installed.</p>
+        </div>
+        <div class="hs-faq-item hs-reveal">
+          <h4>What louvre size should I choose for shutters?</h4>
+          <p>For an authentic Hamptons look, go with 89mm or 114mm louvres. The wider louvres are more contemporary and allow more light when open. We generally recommend 89mm for standard windows and 114mm for larger windows and feature walls.</p>
+        </div>
+        <div class="hs-faq-item hs-reveal">
+          <h4>Do you provide fabric samples before ordering?</h4>
+          <p>Of course. Our free in-home consultation includes a comprehensive selection of fabric samples and colour swatches. You can see and feel the materials in your own home, in your own lighting — the only way to truly judge how they'll look.</p>
+        </div>
+        <div class="hs-faq-item hs-reveal">
+          <h4>How long does it take from consultation to installation?</h4>
+          <p>Typically 3–5 weeks for most products. Plantation shutters may take 4–6 weeks as they're custom manufactured. We'll provide a clear timeline at your consultation so you can plan around your renovation schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hs-cta">
+      <div class="hs-reveal">
+        <h2>Ready to Create Your Hamptons Dream?</h2>
+        <p>Book a free in-home consultation and let our designers help you achieve the perfect Hamptons look for your Melbourne home. Fabric samples, expert advice, and a no-obligation quote.</p>
+        <a href="../free-quote.html" class="hs-btn-primary">Book Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="hs-crosslinks">
+      <div class="hs-crosslinks-inner">
+        <h3>Explore More Guides</h3>
+        <div class="hs-crosslinks-grid">
+          <a href="acoustic-solutions.html" class="hs-crosslink-item"><span>→</span> Acoustic Solutions</a>
+          <a href="allergy-friendly.html" class="hs-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+          <a href="apartment-solutions.html" class="hs-crosslink-item"><span>→</span> Apartment Solutions</a>
+          <a href="arched-specialty-windows.html" class="hs-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+          <a href="art-gallery-studio.html" class="hs-crosslink-item"><span>→</span> Art Gallery &amp; Studio</a>
+          <a href="bathroom-kitchen.html" class="hs-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+          <a href="bedroom-blackout.html" class="hs-crosslink-item"><span>→</span> Bedroom Blackout</a>
+          <a href="bifold-door-blinds.html" class="hs-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+          <a href="blinds-vs-curtains.html" class="hs-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+          <a href="bushfire-safe-blinds.html" class="hs-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+          <a href="care-maintenance.html" class="hs-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+          <a href="child-safety.html" class="hs-crosslink-item"><span>→</span> Child Safety</a>
+          <a href="coastal-home-blinds.html" class="hs-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+          <a href="colour-matching-guide.html" class="hs-crosslink-item"><span>→</span> Colour Matching Guide</a>
+          <a href="colour-trends-2026.html" class="hs-crosslink-item"><span>→</span> Colour Trends 2026</a>
+          <a href="commercial-blinds.html" class="hs-crosslink-item"><span>→</span> Commercial Blinds</a>
+          <a href="conservatory-sunroom.html" class="hs-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+          <a href="day-night-blinds.html" class="hs-crosslink-item"><span>→</span> Day Night Blinds</a>
+          <a href="design-inspiration.html" class="hs-crosslink-item"><span>→</span> Design Inspiration</a>
+          <a href="diy-installation-guide.html" class="hs-crosslink-item"><span>→</span> DIY Installation Guide</a>
+          <a href="diy-measuring-guide.html" class="hs-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+          <a href="double-glazed-blinds.html" class="hs-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+          <a href="eco-friendly.html" class="hs-crosslink-item"><span>→</span> Eco-Friendly</a>
+          <a href="elderly-accessible.html" class="hs-crosslink-item"><span>→</span> Elderly Accessible</a>
+          <a href="energy-efficient.html" class="hs-crosslink-item"><span>→</span> Energy Efficient</a>
+          <a href="fabric-encyclopedia.html" class="hs-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+          <a href="festive-seasonal-styling.html" class="hs-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+          <a href="free-samples.html" class="hs-crosslink-item"><span>→</span> Free Samples</a>
+          <a href="granny-flat-blinds.html" class="hs-crosslink-item"><span>→</span> Granny Flat Blinds</a>
+          <a href="heritage-homes.html" class="hs-crosslink-item"><span>→</span> Heritage Homes</a>
+          <a href="high-rise-glare.html" class="hs-crosslink-item"><span>→</span> High-Rise Glare</a>
+          <a href="home-gym-blinds.html" class="hs-crosslink-item"><span>→</span> Home Gym Blinds</a>
+          <a href="home-library-study.html" class="hs-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+          <a href="home-office.html" class="hs-crosslink-item"><span>→</span> Home Office</a>
+          <a href="home-renovation.html" class="hs-crosslink-item"><span>→</span> Home Renovation</a>
+          <a href="hospitality-blinds.html" class="hs-crosslink-item"><span>→</span> Hospitality Blinds</a>
+          <a href="japandi-zen-style.html" class="hs-crosslink-item"><span>→</span> Japandi &amp; Zen Style</a>
+          <a href="large-windows.html" class="hs-crosslink-item"><span>→</span> Large Windows</a>
+          <a href="layered-treatments.html" class="hs-crosslink-item"><span>→</span> Layered Treatments</a>
+          <a href="luxury-penthouse.html" class="hs-crosslink-item"><span>→</span> Luxury Penthouse</a>
+          <a href="media-room.html" class="hs-crosslink-item"><span>→</span> Media Room</a>
+          <a href="medical-clinic.html" class="hs-crosslink-item"><span>→</span> Medical Clinic</a>
+          <a href="melbourne-service-areas.html" class="hs-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+          <a href="minimalist-styling.html" class="hs-crosslink-item"><span>→</span> Minimalist Styling</a>
+          <a href="new-home-packages.html" class="hs-crosslink-item"><span>→</span> New Home Packages</a>
+          <a href="nursery-safe.html" class="hs-crosslink-item"><span>→</span> Nursery Safe</a>
+          <a href="office-partition.html" class="hs-crosslink-item"><span>→</span> Office Partition</a>
+          <a href="open-kitchen.html" class="hs-crosslink-item"><span>→</span> Open Kitchen</a>
+          <a href="outdoor-blinds.html" class="hs-crosslink-item"><span>→</span> Outdoor Blinds</a>
+          <a href="pet-friendly.html" class="hs-crosslink-item"><span>→</span> Pet-Friendly</a>
+          <a href="plantation-shutters-guide.html" class="hs-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+          <a href="privacy-blinds.html" class="hs-crosslink-item"><span>→</span> Privacy Blinds</a>
+          <a href="property-styling.html" class="hs-crosslink-item"><span>→</span> Property Styling</a>
+          <a href="rental-property.html" class="hs-crosslink-item"><span>→</span> Rental Property</a>
+          <a href="restaurant-cafe.html" class="hs-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+          <a href="retail-shopfront.html" class="hs-crosslink-item"><span>→</span> Retail Shopfront</a>
+          <a href="scandinavian-style.html" class="hs-crosslink-item"><span>→</span> Scandinavian Style</a>
+          <a href="school-childcare.html" class="hs-crosslink-item"><span>→</span> School &amp; Childcare</a>
+          <a href="seasonal-sale.html" class="hs-crosslink-item"><span>→</span> Seasonal Sale</a>
+          <a href="skylight-blinds.html" class="hs-crosslink-item"><span>→</span> Skylight Blinds</a>
+          <a href="smart-home.html" class="hs-crosslink-item"><span>→</span> Smart Home</a>
+          <a href="spa-wellness-blinds.html" class="hs-crosslink-item"><span>→</span> Spa &amp; Wellness</a>
+          <a href="staircase-windows.html" class="hs-crosslink-item"><span>→</span> Staircase Windows</a>
+          <a href="summer-uv-protection.html" class="hs-crosslink-item"><span>→</span> Summer UV Protection</a>
+          <a href="testimonials.html" class="hs-crosslink-item"><span>→</span> Testimonials</a>
+          <a href="townhouse-strata.html" class="hs-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+          <a href="warehouse-industrial-blinds.html" class="hs-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+          <a href="wine-entertainment-room.html" class="hs-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+          <a href="winter-insulation.html" class="hs-crosslink-item"><span>→</span> Winter Insulation</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hs-reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
