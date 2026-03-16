@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Library & Study Blinds | Reading Room Window Solutions | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Curated window treatments for home libraries, studies and reading rooms in Melbourne. Light-filtering sheers, UV-blocking blinds to protect books, and blackout options for focused work. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === LITERARY MODERN — WARM LIBRARY THEME === */
+    :root {
+      --lib-cream: #faf6f0;
+      --lib-warm: #f3ece2;
+      --lib-card: #ffffff;
+      --lib-dark: #1a1612;
+      --lib-text: #2c2520;
+      --lib-muted: #8a7e72;
+      --lib-accent: #8b5e34;
+      --lib-accent-light: #c4956a;
+      --lib-green: #4a6741;
+      --lib-green-light: #6b8f5e;
+      --lib-gold: #c9a34f;
+      --lib-border: rgba(139, 94, 52, 0.12);
+      --lib-gradient: linear-gradient(135deg, #8b5e34 0%, #c4956a 50%, #c9a34f 100%);
+      --lib-gradient-soft: linear-gradient(135deg, rgba(139,94,52,0.05), rgba(201,163,79,0.05));
+    }
+
+    .lp-library {
+      background: var(--lib-cream);
+      color: var(--lib-text);
+      font-family: 'Sora', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .lp-library .header { background: rgba(250, 246, 240, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--lib-border); }
+    .lp-library .header .logo-i { color: var(--lib-accent); }
+    .lp-library .footer { background: var(--lib-dark); color: var(--lib-cream); }
+
+    /* Hero — Elegant split */
+    .lib-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 20px 80px;
+      overflow: hidden;
+    }
+
+    .lib-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80') center/cover;
+      filter: brightness(0.3) sepia(0.3);
+    }
+
+    .lib-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,22,18,0.85) 0%, rgba(26,22,18,0.6) 50%, rgba(139,94,52,0.15) 100%);
+    }
+
+    .lib-hero-texture {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a34f' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .lib-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--lib-cream);
+    }
+
+    .lib-hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--lib-accent-light);
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .lib-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .lib-hero h1 em {
+      font-style: italic;
+      color: var(--lib-gold);
+    }
+
+    .lib-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(250, 246, 240, 0.65);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .lib-hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .lib-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lib-accent);
+      color: var(--lib-cream);
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .lib-btn-primary:hover {
+      background: var(--lib-accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(139, 94, 52, 0.25);
+    }
+
+    .lib-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--lib-cream);
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border: 1px solid rgba(250,246,240,0.25);
+      transition: all 0.3s;
+    }
+
+    .lib-btn-outline:hover {
+      border-color: var(--lib-gold);
+      color: var(--lib-gold);
+    }
+
+    .lib-btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--lib-accent);
+      color: var(--lib-cream);
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+
+    .lib-btn-dark:hover {
+      background: var(--lib-accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Quote Banner */
+    .lib-quote {
+      padding: 60px 20px;
+      background: var(--lib-dark);
+      text-align: center;
+    }
+
+    .lib-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-style: italic;
+      color: var(--lib-accent-light);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .lib-quote cite {
+      display: block;
+      font-family: 'Sora', sans-serif;
+      font-style: normal;
+      font-size: 0.8rem;
+      color: rgba(250,246,240,0.4);
+      margin-top: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Challenges Section */
+    .lib-challenges {
+      padding: 100px 20px;
+      background: var(--lib-cream);
+    }
+
+    .lib-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .lib-section-tag {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--lib-accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .lib-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--lib-dark);
+    }
+
+    .lib-section-sub {
+      color: var(--lib-muted);
+      max-width: 560px;
+      margin: 16px auto 0;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    .lib-challenges-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .lib-challenge-card {
+      background: var(--lib-card);
+      border: 1px solid var(--lib-border);
+      border-radius: 8px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .lib-challenge-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lib-challenge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(139, 94, 52, 0.08);
+    }
+
+    .lib-challenge-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .lib-challenge-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--lib-dark);
+      margin-bottom: 10px;
+    }
+
+    .lib-challenge-card p {
+      color: var(--lib-muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    /* Products Section */
+    .lib-products {
+      padding: 100px 20px;
+      background: var(--lib-warm);
+    }
+
+    .lib-products-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .lib-product-card {
+      background: var(--lib-card);
+      border: 1px solid var(--lib-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .lib-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lib-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(139, 94, 52, 0.1);
+    }
+
+    .lib-product-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .lib-product-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--lib-card), transparent);
+    }
+
+    .lib-product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(139, 94, 52, 0.9);
+      color: var(--lib-cream);
+      padding: 6px 14px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      z-index: 1;
+    }
+
+    .lib-product-body {
+      padding: 28px;
+    }
+
+    .lib-product-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--lib-dark);
+      margin-bottom: 10px;
+    }
+
+    .lib-product-body p {
+      color: var(--lib-muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .lib-product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lib-product-tag {
+      background: rgba(139, 94, 52, 0.06);
+      border: 1px solid rgba(139, 94, 52, 0.12);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--lib-accent);
+    }
+
+    /* Tips Section */
+    .lib-tips {
+      padding: 100px 20px;
+      background: var(--lib-cream);
+    }
+
+    .lib-tips-layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .lib-tips-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500;
+      color: var(--lib-dark);
+      margin-bottom: 20px;
+    }
+
+    .lib-tips-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .lib-tips-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--lib-border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .lib-tips-list li:last-child { border-bottom: none; }
+
+    .lib-tip-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--lib-accent-light);
+      line-height: 1;
+      min-width: 30px;
+    }
+
+    .lib-tip-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--lib-dark);
+      margin-bottom: 4px;
+    }
+
+    .lib-tip-content p {
+      font-size: 0.85rem;
+      color: var(--lib-muted);
+      line-height: 1.6;
+    }
+
+    .lib-tips-image {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      position: relative;
+    }
+
+    .lib-tips-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lib-tips-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--lib-border);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    /* Room Types */
+    .lib-rooms {
+      padding: 100px 20px;
+      background: var(--lib-dark);
+      color: var(--lib-cream);
+    }
+
+    .lib-rooms .lib-section-tag { color: var(--lib-gold); }
+    .lib-rooms .lib-section-title { color: var(--lib-cream); }
+    .lib-rooms .lib-section-sub { color: rgba(250,246,240,0.5); }
+
+    .lib-rooms-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .lib-room-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 32px;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .lib-room-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .lib-room-card:hover {
+      border-color: var(--lib-gold);
+      background: rgba(201, 163, 79, 0.05);
+    }
+
+    .lib-room-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--lib-gold);
+    }
+
+    .lib-room-card p {
+      font-size: 0.88rem;
+      color: rgba(250,246,240,0.55);
+      line-height: 1.7;
+    }
+
+    .lib-room-rec {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      color: var(--lib-accent-light);
+    }
+
+    .lib-room-rec strong {
+      color: var(--lib-cream);
+    }
+
+    /* CTA */
+    .lib-cta {
+      padding: 100px 20px;
+      background: var(--lib-gradient-soft);
+      text-align: center;
+      position: relative;
+    }
+
+    .lib-cta-content {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .lib-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--lib-dark);
+      margin-bottom: 16px;
+    }
+
+    .lib-cta p {
+      color: var(--lib-muted);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    /* Cross-links */
+    .lib-crosslinks {
+      background: var(--lib-warm);
+      padding: 80px 20px;
+      border-top: 1px solid var(--lib-border);
+    }
+
+    .lib-crosslinks h3 {
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 40px;
+      color: var(--lib-muted);
+    }
+
+    .lib-crosslinks-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .lib-crosslink {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--lib-card);
+      border: 1px solid var(--lib-border);
+      border-radius: 4px;
+      color: var(--lib-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .lib-crosslink:hover {
+      border-color: var(--lib-accent);
+      color: var(--lib-dark);
+      background: rgba(139, 94, 52, 0.04);
+    }
+
+    .lib-crosslink span { color: var(--lib-accent); opacity: 0.5; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .lib-challenges-grid { grid-template-columns: 1fr; }
+      .lib-products-grid { grid-template-columns: 1fr; }
+      .lib-tips-layout { grid-template-columns: 1fr; gap: 40px; }
+      .lib-tips-image { max-height: 400px; }
+      .lib-rooms-grid { grid-template-columns: 1fr; }
+      .lib-hero { padding: 100px 16px 60px; }
+    }
+  </style>
+</head>
+<body class="lp-library">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="lib-hero">
+    <div class="lib-hero-bg"></div>
+    <div class="lib-hero-overlay"></div>
+    <div class="lib-hero-texture"></div>
+    <div class="lib-hero-content">
+      <p class="lib-hero-eyebrow">For the Love of Reading</p>
+      <h1>
+        Home Library &<br><em>Study</em> Blinds
+      </h1>
+      <p class="lib-hero-sub">
+        Protect your collection. Perfect your light. Window treatments designed for the spaces where you think, read, and create.
+      </p>
+      <div class="lib-hero-ctas">
+        <a href="../free-quote.html" class="lib-btn-primary">Get Your Free Quote →</a>
+        <a href="#products" class="lib-btn-outline">View Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="lib-quote">
+    <blockquote>
+      "A room without books is like a body without a soul — and a library without proper light is a collection at risk."
+    </blockquote>
+    <cite>— The Art of Home Library Design</cite>
+  </section>
+
+  <!-- Challenges -->
+  <section class="lib-challenges">
+    <div class="lib-section-header">
+      <span class="lib-section-tag">The Challenge</span>
+      <h2 class="lib-section-title">Why Libraries Need Special Care</h2>
+      <p class="lib-section-sub">Books, artwork, and focused work all demand thoughtful light management.</p>
+    </div>
+    <div class="lib-challenges-grid">
+      <div class="lib-challenge-card">
+        <div class="lib-challenge-icon">☀️</div>
+        <h3>UV Damage</h3>
+        <p>Direct sunlight fades book spines, yellows pages, and degrades leather bindings. UV-filtering is essential for any book collection.</p>
+      </div>
+      <div class="lib-challenge-card">
+        <div class="lib-challenge-icon">💡</div>
+        <h3>Glare Control</h3>
+        <p>Reading and screen work require soft, diffused light — not harsh direct sun or complete darkness. Balance is everything.</p>
+      </div>
+      <div class="lib-challenge-card">
+        <div class="lib-challenge-icon">🌡️</div>
+        <h3>Climate Control</h3>
+        <p>Temperature and humidity fluctuations damage paper. Insulating blinds help maintain a stable, book-friendly environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="lib-products">
+    <div class="lib-section-header">
+      <span class="lib-section-tag">Our Recommendations</span>
+      <h2 class="lib-section-title">Curated for Your Collection</h2>
+      <p class="lib-section-sub">Each product chosen for its UV protection, light control, and aesthetic harmony with library spaces.</p>
+    </div>
+    <div class="lib-products-grid">
+      <div class="lib-product-card">
+        <div class="lib-product-img" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80');">
+          <span class="lib-product-badge">Most Popular</span>
+        </div>
+        <div class="lib-product-body">
+          <h3>Sheer & Blockout Curtains</h3>
+          <p>Layer sheers for soft diffused daylight reading with blockout drapes for when you need total darkness — or UV protection for your rarest editions.</p>
+          <div class="lib-product-features">
+            <span class="lib-product-tag">UV Filtering</span>
+            <span class="lib-product-tag">Layered Light</span>
+            <span class="lib-product-tag">Premium Fabrics</span>
+          </div>
+        </div>
+      </div>
+      <div class="lib-product-card">
+        <div class="lib-product-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80');">
+          <span class="lib-product-badge">Classic Choice</span>
+        </div>
+        <div class="lib-product-body">
+          <h3>Plantation Shutters</h3>
+          <p>Timeless and architecturally beautiful. Adjust louvres for precise light angles. Excellent UV blocking with the character that suits a traditional library.</p>
+          <div class="lib-product-features">
+            <span class="lib-product-tag">Adjustable Light</span>
+            <span class="lib-product-tag">Architectural Beauty</span>
+            <span class="lib-product-tag">Durable</span>
+          </div>
+        </div>
+      </div>
+      <div class="lib-product-card">
+        <div class="lib-product-img" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700&q=80');">
+          <span class="lib-product-badge">Energy Smart</span>
+        </div>
+        <div class="lib-product-body">
+          <h3>Honeycomb Blinds</h3>
+          <p>Superior insulation keeps your library at the ideal temperature and humidity. Available in UV-blocking fabrics that protect while diffusing light beautifully.</p>
+          <div class="lib-product-features">
+            <span class="lib-product-tag">Insulating</span>
+            <span class="lib-product-tag">UV Block</span>
+            <span class="lib-product-tag">Quiet Operation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="lib-tips">
+    <div class="lib-tips-layout">
+      <div class="lib-tips-text">
+        <span class="lib-section-tag">Expert Advice</span>
+        <h2>Designing Light for<br>Your Library</h2>
+        <ul class="lib-tips-list">
+          <li>
+            <span class="lib-tip-num">01</span>
+            <div class="lib-tip-content">
+              <h4>North-Facing = UV Protection Priority</h4>
+              <p>North-facing windows get the most sun in Melbourne. Use UV-blocking sunscreen blinds to shield your collection.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lib-tip-num">02</span>
+            <div class="lib-tip-content">
+              <h4>Layer for Flexibility</h4>
+              <p>Combine sheers with blockout curtains. Read by soft natural light during the day, protect completely when away.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lib-tip-num">03</span>
+            <div class="lib-tip-content">
+              <h4>Automate with Sensors</h4>
+              <p>Motorised blinds with light sensors can automatically close when UV levels spike — protection even when you're not home.</p>
+            </div>
+          </li>
+          <li>
+            <span class="lib-tip-num">04</span>
+            <div class="lib-tip-content">
+              <h4>Mind the Humidity</h4>
+              <p>Honeycomb blinds help regulate temperature, which in turn stabilises humidity — critical for paper preservation.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="lib-tips-image">
+        <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=600&q=80" alt="Library with natural light" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Room Types -->
+  <section class="lib-rooms">
+    <div class="lib-section-header">
+      <span class="lib-section-tag">Room by Room</span>
+      <h2 class="lib-section-title">Your Space, Your Solution</h2>
+      <p class="lib-section-sub">Different reading spaces need different approaches.</p>
+    </div>
+    <div class="lib-rooms-grid">
+      <div class="lib-room-card">
+        <h3>📚 Dedicated Home Library</h3>
+        <p>Floor-to-ceiling shelves, reading chairs, a world of knowledge. Maximum UV protection is non-negotiable.</p>
+        <div class="lib-room-rec"><strong>Recommended:</strong> Plantation shutters + UV-blocking roller behind</div>
+      </div>
+      <div class="lib-room-card">
+        <h3>📝 Home Study / Office</h3>
+        <p>Screen glare, video calls, focused work. You need control without darkness.</p>
+        <div class="lib-room-rec"><strong>Recommended:</strong> Sunscreen roller blinds (5% openness)</div>
+      </div>
+      <div class="lib-room-card">
+        <h3>🪑 Reading Nook</h3>
+        <p>A cosy window seat bathed in soft light. The perfect blend of warmth and clarity.</p>
+        <div class="lib-room-rec"><strong>Recommended:</strong> Sheer curtains + honeycomb blinds</div>
+      </div>
+      <div class="lib-room-card">
+        <h3>🎨 Art & Manuscript Room</h3>
+        <p>Rare books, artwork, documents that demand museum-grade UV protection.</p>
+        <div class="lib-room-rec"><strong>Recommended:</strong> Motorised dual roller (UV blockout + sheer)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lib-cta">
+    <div class="lib-cta-content">
+      <span class="lib-section-tag">Start Your Project</span>
+      <h2>Your Library Deserves<br>the Best Light</h2>
+      <p>Book a free in-home consultation. We'll assess your windows, your collection, and design the perfect light solution for your reading space.</p>
+      <a href="../free-quote.html" class="lib-btn-dark">Book Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="lib-crosslinks">
+    <h3>Explore More Solutions</h3>
+    <div class="lib-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="lib-crosslink"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="lib-crosslink"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="lib-crosslink"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="lib-crosslink"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="lib-crosslink"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="lib-crosslink"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="lib-crosslink"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="lib-crosslink"><span>→</span> Bushfire-Safe Blinds</a>
+        <a href="care-maintenance.html" class="lib-crosslink"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="lib-crosslink"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="lib-crosslink"><span>→</span> Coastal Home</a>
+        <a href="colour-matching-guide.html" class="lib-crosslink"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="lib-crosslink"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="lib-crosslink"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="lib-crosslink"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="lib-crosslink"><span>→</span> Day-Night Blinds</a>
+        <a href="design-inspiration.html" class="lib-crosslink"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="lib-crosslink"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="lib-crosslink"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="lib-crosslink"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="lib-crosslink"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="lib-crosslink"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="lib-crosslink"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="lib-crosslink"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="lib-crosslink"><span>→</span> Festive & Seasonal Styling</a>
+        <a href="free-samples.html" class="lib-crosslink"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="lib-crosslink"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="lib-crosslink"><span>→</span> High-Rise Glare</a>
+        <a href="home-gym-blinds.html" class="lib-crosslink"><span>→</span> Home Gym Blinds</a>
+        <a href="home-office.html" class="lib-crosslink"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="lib-crosslink"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="lib-crosslink"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="lib-crosslink"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="lib-crosslink"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="lib-crosslink"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="lib-crosslink"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="lib-crosslink"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="lib-crosslink"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="lib-crosslink"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="lib-crosslink"><span>→</span> Office Partition Curtains</a>
+        <a href="open-kitchen.html" class="lib-crosslink"><span>→</span> Open Kitchen Windows</a>
+        <a href="outdoor-blinds.html" class="lib-crosslink"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="lib-crosslink"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="lib-crosslink"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="lib-crosslink"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="lib-crosslink"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="lib-crosslink"><span>→</span> Restaurant & Cafe</a>
+        <a href="retail-shopfront.html" class="lib-crosslink"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="lib-crosslink"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="lib-crosslink"><span>→</span> School & Childcare</a>
+        <a href="seasonal-sale.html" class="lib-crosslink"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="lib-crosslink"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="lib-crosslink"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="lib-crosslink"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="lib-crosslink"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="lib-crosslink"><span>→</span> Warehouse & Industrial</a>
+        <a href="winter-insulation.html" class="lib-crosslink"><span>→</span> Winter Insulation</a>
+        <a href="luxury-penthouse.html" class="lib-crosslink"><span>→</span> Luxury Penthouse</a>
+        <a href="allergy-friendly.html" class="lib-crosslink"><span>→</span> Allergy-Friendly Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.lib-challenge-card, .lib-product-card, .lib-room-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bushfire-Safe & BAL-Rated Blinds | Fire-Resistant Window Coverings | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Bushfire-safe blinds and fire-rated window coverings for BAL-12 to BAL-FZ zones in Melbourne. AS 3959 compliant. Protect your home without compromising style. Free measure & quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === EMERGENCY TECH — FIRE SAFETY THEME === */
+    :root {
+      --fire-black: #0a0a0a;
+      --fire-dark: #141414;
+      --fire-surface: #1a1a1a;
+      --fire-card: #1e1e1e;
+      --fire-border: rgba(255, 60, 30, 0.12);
+      --fire-red: #ff3c1e;
+      --fire-orange: #ff6b35;
+      --fire-amber: #ffb347;
+      --fire-white: #f0f0f0;
+      --fire-gray: #888;
+      --fire-muted: #555;
+      --fire-gradient: linear-gradient(135deg, #ff3c1e 0%, #ff6b35 50%, #ffb347 100%);
+      --fire-gradient-dark: linear-gradient(135deg, rgba(255,60,30,0.15), rgba(255,107,53,0.05));
+      --fire-glow: 0 0 40px rgba(255, 60, 30, 0.15);
+    }
+
+    .lp-fire {
+      background: var(--fire-black);
+      color: var(--fire-white);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .lp-fire .header { background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--fire-border); }
+    .lp-fire .footer { background: #060606; }
+
+    /* Hero — Full-screen alert style */
+    .fire-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 20px 80px;
+      overflow: hidden;
+    }
+
+    .fire-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=1400&q=80') center/cover;
+      filter: brightness(0.15) contrast(1.3) saturate(0.8);
+    }
+
+    .fire-hero-scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,60,30,0.02) 2px, rgba(255,60,30,0.02) 4px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fire-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,60,30,0.12) 0%, transparent 60%),
+                  linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.9) 100%);
+      z-index: 1;
+    }
+
+    .fire-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .fire-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 60, 30, 0.12);
+      border: 1px solid rgba(255, 60, 30, 0.3);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--fire-orange);
+      margin-bottom: 30px;
+      animation: firePulse 3s ease-in-out infinite;
+    }
+
+    .fire-hero-badge::before {
+      content: '🔥';
+      font-size: 0.9rem;
+    }
+
+    @keyframes firePulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(255,60,30,0.1); }
+      50% { box-shadow: 0 0 40px rgba(255,60,30,0.25); }
+    }
+
+    .fire-hero h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .fire-hero h1 .fire-highlight {
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .fire-hero-sub {
+      font-size: 1.15rem;
+      color: var(--fire-gray);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .fire-hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .fire-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--fire-gradient);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .fire-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 60, 30, 0.3);
+    }
+
+    .fire-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--fire-white);
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s;
+    }
+
+    .fire-btn-outline:hover {
+      border-color: var(--fire-orange);
+      background: rgba(255, 107, 53, 0.08);
+    }
+
+    /* Warning Banner */
+    .fire-warning {
+      background: linear-gradient(90deg, var(--fire-dark), var(--fire-surface), var(--fire-dark));
+      border-top: 1px solid var(--fire-border);
+      border-bottom: 1px solid var(--fire-border);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .fire-warning-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .fire-warning-icon {
+      font-size: 1.8rem;
+      animation: warningFlash 2s ease-in-out infinite;
+    }
+
+    @keyframes warningFlash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .fire-warning p {
+      font-size: 0.9rem;
+      color: var(--fire-gray);
+      line-height: 1.6;
+    }
+
+    .fire-warning strong {
+      color: var(--fire-amber);
+    }
+
+    /* BAL Rating Section */
+    .fire-bal {
+      padding: 100px 20px;
+      background: var(--fire-dark);
+    }
+
+    .fire-section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .fire-section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--fire-orange);
+      margin-bottom: 16px;
+      padding: 6px 16px;
+      border: 1px solid rgba(255,107,53,0.3);
+      border-radius: 3px;
+    }
+
+    .fire-section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .fire-section-sub {
+      color: var(--fire-gray);
+      max-width: 600px;
+      margin: 16px auto 0;
+      line-height: 1.7;
+    }
+
+    .fire-bal-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .fire-bal-card {
+      background: var(--fire-card);
+      border: 1px solid var(--fire-border);
+      border-radius: 8px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fire-bal-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fire-bal-card:hover {
+      border-color: var(--fire-orange);
+      box-shadow: var(--fire-glow);
+      transform: translateY(-4px);
+    }
+
+    .fire-bal-level {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .fire-bal-desc {
+      font-size: 0.85rem;
+      color: var(--fire-gray);
+      line-height: 1.6;
+    }
+
+    .fire-bal-risk {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .fire-bal-risk.low { background: rgba(76, 175, 80, 0.15); color: #4caf50; }
+    .fire-bal-risk.medium { background: rgba(255, 179, 71, 0.15); color: var(--fire-amber); }
+    .fire-bal-risk.high { background: rgba(255, 107, 53, 0.15); color: var(--fire-orange); }
+    .fire-bal-risk.extreme { background: rgba(255, 60, 30, 0.15); color: var(--fire-red); }
+
+    /* Products Section */
+    .fire-products {
+      padding: 100px 20px;
+      background: var(--fire-black);
+    }
+
+    .fire-products-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .fire-product-card {
+      background: var(--fire-card);
+      border: 1px solid var(--fire-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fire-product-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fire-product-card:hover {
+      border-color: rgba(255, 107, 53, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .fire-product-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .fire-product-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, var(--fire-card), transparent);
+    }
+
+    .fire-product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 60, 30, 0.9);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 1;
+    }
+
+    .fire-product-body {
+      padding: 24px;
+    }
+
+    .fire-product-body h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .fire-product-body p {
+      color: var(--fire-gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .fire-product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .fire-product-tag {
+      background: rgba(255, 107, 53, 0.08);
+      border: 1px solid rgba(255, 107, 53, 0.15);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--fire-amber);
+    }
+
+    /* Stats Section */
+    .fire-stats {
+      padding: 80px 20px;
+      background: var(--fire-gradient-dark);
+      border-top: 1px solid var(--fire-border);
+      border-bottom: 1px solid var(--fire-border);
+    }
+
+    .fire-stats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .fire-stat-number {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--fire-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .fire-stat-label {
+      font-size: 0.8rem;
+      color: var(--fire-gray);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    /* Compliance Section */
+    .fire-compliance {
+      padding: 100px 20px;
+      background: var(--fire-dark);
+    }
+
+    .fire-compliance-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .fire-compliance-text h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .fire-compliance-text p {
+      color: var(--fire-gray);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .fire-compliance-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .fire-compliance-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .fire-compliance-list li::before {
+      content: '✓';
+      color: var(--fire-orange);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .fire-compliance-visual {
+      background: var(--fire-card);
+      border: 1px solid var(--fire-border);
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .fire-compliance-cert {
+      text-align: center;
+      padding: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .fire-compliance-cert:last-child {
+      border-bottom: none;
+    }
+
+    .fire-compliance-cert-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .fire-compliance-cert h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .fire-compliance-cert p {
+      font-size: 0.8rem;
+      color: var(--fire-muted);
+    }
+
+    /* FAQ Section */
+    .fire-faq {
+      padding: 100px 20px;
+      background: var(--fire-black);
+    }
+
+    .fire-faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .fire-faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .fire-faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fire-faq-item h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--fire-amber);
+    }
+
+    .fire-faq-item p {
+      color: var(--fire-gray);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* CTA Section */
+    .fire-cta {
+      padding: 100px 20px;
+      background: var(--fire-gradient-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fire-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,60,30,0.06) 0%, transparent 50%);
+      animation: ctaGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes ctaGlow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .fire-cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .fire-cta h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .fire-cta p {
+      color: var(--fire-gray);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* Cross-links */
+    .fire-crosslinks {
+      background: var(--fire-surface);
+      padding: 80px 20px;
+      border-top: 1px solid var(--fire-border);
+    }
+
+    .fire-crosslinks h3 {
+      font-family: 'Rajdhani', sans-serif;
+      text-align: center;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 40px;
+      color: var(--fire-gray);
+    }
+
+    .fire-crosslinks-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .fire-crosslink {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--fire-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      color: var(--fire-gray);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .fire-crosslink:hover {
+      border-color: var(--fire-orange);
+      color: var(--fire-white);
+      background: rgba(255, 107, 53, 0.08);
+    }
+
+    .fire-crosslink span { color: var(--fire-orange); opacity: 0.5; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .fire-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .fire-compliance-layout { grid-template-columns: 1fr; gap: 40px; }
+      .fire-products-grid { grid-template-columns: 1fr; }
+      .fire-bal-grid { grid-template-columns: repeat(2, 1fr); }
+      .fire-hero { padding: 100px 16px 60px; }
+    }
+
+    @media (max-width: 480px) {
+      .fire-bal-grid { grid-template-columns: 1fr; }
+      .fire-stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .fire-hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body class="lp-fire">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fire-hero">
+    <div class="fire-hero-bg"></div>
+    <div class="fire-hero-scanlines"></div>
+    <div class="fire-hero-gradient"></div>
+    <div class="fire-hero-content">
+      <div class="fire-hero-badge">AS 3959 Compliant Solutions</div>
+      <h1>
+        <span class="fire-highlight">Bushfire-Safe</span><br>
+        Window Coverings
+      </h1>
+      <p class="fire-hero-sub">
+        Protect your home in BAL-rated zones without compromising style. Fire-resistant blinds, shutters &amp; curtains tested to Australian standards.
+      </p>
+      <div class="fire-hero-ctas">
+        <a href="../free-quote.html" class="fire-btn-primary">Get BAL Assessment →</a>
+        <a href="#products" class="fire-btn-outline">View Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Banner -->
+  <section class="fire-warning">
+    <div class="fire-warning-inner">
+      <span class="fire-warning-icon">⚠️</span>
+      <p><strong>Building in a bushfire-prone area?</strong> Australian Standard AS 3959 requires specific window covering materials based on your BAL rating. We supply certified, compliant solutions for all zones.</p>
+    </div>
+  </section>
+
+  <!-- BAL Rating Section -->
+  <section class="fire-bal">
+    <div class="fire-section-header">
+      <div class="fire-section-tag">Understanding BAL Ratings</div>
+      <h2 class="fire-section-title">Which Zone Are You In?</h2>
+      <p class="fire-section-sub">The Bushfire Attack Level (BAL) determines what window coverings are permitted on your property.</p>
+    </div>
+    <div class="fire-bal-grid">
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–LOW</div>
+        <p class="fire-bal-desc">Minimal risk. Standard products with fire-retardant options available.</p>
+        <span class="fire-bal-risk low">Low Risk</span>
+      </div>
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–12.5</div>
+        <p class="fire-bal-desc">Ember attack. Fire-retardant fabrics recommended for all windows.</p>
+        <span class="fire-bal-risk medium">Moderate</span>
+      </div>
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–19</div>
+        <p class="fire-bal-desc">Increased exposure. Non-combustible materials required externally.</p>
+        <span class="fire-bal-risk medium">Moderate-High</span>
+      </div>
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–29</div>
+        <p class="fire-bal-desc">High radiant heat. Metal shutters & fire-rated internal blinds mandatory.</p>
+        <span class="fire-bal-risk high">High</span>
+      </div>
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–40</div>
+        <p class="fire-bal-desc">Very high risk. Full non-combustible external protection required.</p>
+        <span class="fire-bal-risk extreme">Very High</span>
+      </div>
+      <div class="fire-bal-card">
+        <div class="fire-bal-level">BAL–FZ</div>
+        <p class="fire-bal-desc">Flame Zone. Maximum protection with fire-rated shutters & screens.</p>
+        <span class="fire-bal-risk extreme">Extreme</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="fire-products">
+    <div class="fire-section-header">
+      <div class="fire-section-tag">Fire-Rated Products</div>
+      <h2 class="fire-section-title">Certified Protection, Beautiful Design</h2>
+      <p class="fire-section-sub">Every product is tested and certified to meet Australian bushfire standards.</p>
+    </div>
+    <div class="fire-products-grid">
+      <div class="fire-product-card">
+        <div class="fire-product-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80');">
+          <span class="fire-product-badge">BAL–FZ Rated</span>
+        </div>
+        <div class="fire-product-body">
+          <h3>Aluminium Bushfire Shutters</h3>
+          <p>Heavy-duty aluminium roller shutters providing maximum protection in flame zones. Motorised or manual operation with fire-rated guide rails.</p>
+          <div class="fire-product-features">
+            <span class="fire-product-tag">Non-Combustible</span>
+            <span class="fire-product-tag">Motorised Option</span>
+            <span class="fire-product-tag">BAL–FZ</span>
+          </div>
+        </div>
+      </div>
+      <div class="fire-product-card">
+        <div class="fire-product-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80');">
+          <span class="fire-product-badge">Fire Retardant</span>
+        </div>
+        <div class="fire-product-body">
+          <h3>Fire-Retardant Roller Blinds</h3>
+          <p>Interior roller blinds with fire-retardant treated fabrics. Available in blockout, sunscreen &amp; light-filtering. Stylish protection for lower BAL zones.</p>
+          <div class="fire-product-features">
+            <span class="fire-product-tag">FR Treated</span>
+            <span class="fire-product-tag">Multiple Styles</span>
+            <span class="fire-product-tag">BAL–29</span>
+          </div>
+        </div>
+      </div>
+      <div class="fire-product-card">
+        <div class="fire-product-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80');">
+          <span class="fire-product-badge">Metal Construction</span>
+        </div>
+        <div class="fire-product-body">
+          <h3>Metal Venetian Blinds</h3>
+          <p>Aluminium venetian blinds — inherently non-combustible. Precise light control with the safety of metal construction. Ideal for all BAL zones.</p>
+          <div class="fire-product-features">
+            <span class="fire-product-tag">Aluminium</span>
+            <span class="fire-product-tag">Light Control</span>
+            <span class="fire-product-tag">All BAL Zones</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="fire-stats">
+    <div class="fire-stats-grid">
+      <div>
+        <span class="fire-stat-number">500+</span>
+        <span class="fire-stat-label">BAL Zone Installs</span>
+      </div>
+      <div>
+        <span class="fire-stat-number">100%</span>
+        <span class="fire-stat-label">AS 3959 Compliant</span>
+      </div>
+      <div>
+        <span class="fire-stat-number">6</span>
+        <span class="fire-stat-label">BAL Zones Covered</span>
+      </div>
+      <div>
+        <span class="fire-stat-number">5yr</span>
+        <span class="fire-stat-label">Product Warranty</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="fire-compliance">
+    <div class="fire-compliance-layout">
+      <div class="fire-compliance-text">
+        <div class="fire-section-tag">Full Compliance</div>
+        <h2>We Handle the<br>Paperwork Too</h2>
+        <p>Navigating bushfire building regulations is complex. We work with your builder, architect or certifier to ensure your window coverings meet all requirements.</p>
+        <ul class="fire-compliance-list">
+          <li>BAL assessment & product recommendation</li>
+          <li>AS 3959-2018 compliance documentation</li>
+          <li>Product test certificates for building approval</li>
+          <li>Coordination with your builder or certifier</li>
+          <li>Post-installation compliance sign-off</li>
+        </ul>
+        <a href="../free-quote.html" class="fire-btn-primary">Request BAL Consultation →</a>
+      </div>
+      <div class="fire-compliance-visual">
+        <div class="fire-compliance-cert">
+          <div class="fire-compliance-cert-icon">🏗️</div>
+          <h4>AS 3959-2018</h4>
+          <p>Construction of buildings in bushfire-prone areas</p>
+        </div>
+        <div class="fire-compliance-cert">
+          <div class="fire-compliance-cert-icon">🧪</div>
+          <h4>AS 1530.2 Testing</h4>
+          <p>Fire propagation & flammability testing</p>
+        </div>
+        <div class="fire-compliance-cert">
+          <div class="fire-compliance-cert-icon">📋</div>
+          <h4>NCC Compliant</h4>
+          <p>National Construction Code requirements met</p>
+        </div>
+        <div class="fire-compliance-cert">
+          <div class="fire-compliance-cert-icon">✅</div>
+          <h4>Council Approved</h4>
+          <p>Documentation for building permit applications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fire-faq">
+    <div class="fire-section-header">
+      <div class="fire-section-tag">Common Questions</div>
+      <h2 class="fire-section-title">Bushfire Blinds FAQ</h2>
+    </div>
+    <div class="fire-faq-grid">
+      <div class="fire-faq-item">
+        <h3>How do I know my BAL rating?</h3>
+        <p>Your BAL rating is determined by a bushfire assessment based on your property's proximity to vegetation, slope, and fire danger index. Check with your local council or we can help arrange an assessment.</p>
+      </div>
+      <div class="fire-faq-item">
+        <h3>Can fire-rated blinds still look stylish?</h3>
+        <p>Absolutely. Our fire-retardant roller blinds come in a wide range of colours and textures. Metal venetians offer a sleek, modern look. Even our bushfire shutters have clean, contemporary profiles.</p>
+      </div>
+      <div class="fire-faq-item">
+        <h3>What's the difference between fire-retardant and non-combustible?</h3>
+        <p>Fire-retardant fabrics are treated to resist ignition and slow flame spread — suitable for lower BAL zones. Non-combustible materials (aluminium, steel) won't burn at all — required for BAL-40 and BAL-FZ.</p>
+      </div>
+      <div class="fire-faq-item">
+        <h3>Do you provide compliance certificates?</h3>
+        <p>Yes. Every installation comes with full product certification and test reports you can submit to your building certifier or council for approval.</p>
+      </div>
+      <div class="fire-faq-item">
+        <h3>Can existing blinds be retrofitted?</h3>
+        <p>In most cases, yes. We can replace non-compliant window coverings with fire-rated alternatives, often using existing brackets and fittings to minimise disruption.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fire-cta">
+    <div class="fire-cta-content">
+      <div class="fire-section-tag">Get Protected</div>
+      <h2>Don't Wait for<br>Fire Season</h2>
+      <p>Book a free consultation and BAL assessment. We'll recommend the right products for your zone and handle all compliance documentation.</p>
+      <a href="../free-quote.html" class="fire-btn-primary">Get Free BAL Consultation →</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="fire-crosslinks">
+    <h3>// Explore More Solutions</h3>
+    <div class="fire-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="fire-crosslink"><span>→</span> Acoustic Solutions</a>
+        <a href="apartment-solutions.html" class="fire-crosslink"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="fire-crosslink"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="fire-crosslink"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="fire-crosslink"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="fire-crosslink"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="fire-crosslink"><span>→</span> Blinds vs Curtains</a>
+        <a href="care-maintenance.html" class="fire-crosslink"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="fire-crosslink"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="fire-crosslink"><span>→</span> Coastal Home</a>
+        <a href="colour-matching-guide.html" class="fire-crosslink"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="fire-crosslink"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="fire-crosslink"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="fire-crosslink"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="fire-crosslink"><span>→</span> Day-Night Blinds</a>
+        <a href="design-inspiration.html" class="fire-crosslink"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="fire-crosslink"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="fire-crosslink"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="fire-crosslink"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="fire-crosslink"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="fire-crosslink"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="fire-crosslink"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="fire-crosslink"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="fire-crosslink"><span>→</span> Festive & Seasonal Styling</a>
+        <a href="free-samples.html" class="fire-crosslink"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="fire-crosslink"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="fire-crosslink"><span>→</span> High-Rise Glare</a>
+        <a href="home-gym-blinds.html" class="fire-crosslink"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="fire-crosslink"><span>→</span> Home Library & Study</a>
+        <a href="home-office.html" class="fire-crosslink"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="fire-crosslink"><span>→</span> Hospitality</a>
+        <a href="large-windows.html" class="fire-crosslink"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="fire-crosslink"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="fire-crosslink"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="fire-crosslink"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="fire-crosslink"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="fire-crosslink"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="fire-crosslink"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="fire-crosslink"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="fire-crosslink"><span>→</span> Office Partition Curtains</a>
+        <a href="open-kitchen.html" class="fire-crosslink"><span>→</span> Open Kitchen Windows</a>
+        <a href="outdoor-blinds.html" class="fire-crosslink"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="fire-crosslink"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="fire-crosslink"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="fire-crosslink"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="fire-crosslink"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="fire-crosslink"><span>→</span> Restaurant & Cafe</a>
+        <a href="retail-shopfront.html" class="fire-crosslink"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="fire-crosslink"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="fire-crosslink"><span>→</span> School & Childcare</a>
+        <a href="seasonal-sale.html" class="fire-crosslink"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="fire-crosslink"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="fire-crosslink"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="fire-crosslink"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="fire-crosslink"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="fire-crosslink"><span>→</span> Warehouse & Industrial</a>
+        <a href="winter-insulation.html" class="fire-crosslink"><span>→</span> Winter Insulation</a>
+        <a href="luxury-penthouse.html" class="fire-crosslink"><span>→</span> Luxury Penthouse</a>
+        <a href="allergy-friendly.html" class="fire-crosslink"><span>→</span> Allergy-Friendly Blinds</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fire-bal-card, .fire-product-card, .fire-faq-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        mobileBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>

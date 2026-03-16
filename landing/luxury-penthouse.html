@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Penthouse & High-End Window Treatments | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Bespoke window treatments for luxury penthouses, designer homes & high-end apartments in Melbourne. Premium fabrics, motorised solutions, floor-to-ceiling options. Complimentary design consultation.">
+  <meta name="keywords" content="luxury window treatments Melbourne, penthouse blinds, high-end curtains, bespoke window furnishings, motorised blinds luxury, designer home blinds, floor to ceiling curtains">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* === DARK LUXURY THEME — 暗黑奢华风 === */
+    :root {
+      --lx-black: #0a0a0a;
+      --lx-dark: #141414;
+      --lx-charcoal: #1c1c1c;
+      --lx-gold: #c9a84c;
+      --lx-gold-light: #e4cc7a;
+      --lx-gold-dim: rgba(201, 168, 76, 0.15);
+      --lx-cream: #f5f0e8;
+      --lx-white: #ffffff;
+      --lx-text: #d4d0c8;
+      --lx-text-muted: #8a8578;
+      --lx-radius: 2px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .lp-luxury {
+      background: var(--lx-black);
+      color: var(--lx-text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .lp-luxury h1, .lp-luxury h2, .lp-luxury h3, .lp-luxury h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--lx-cream);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .lp-luxury .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header overrides for dark theme */
+    .lp-luxury .header {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+    .lp-luxury .header .nav a,
+    .lp-luxury .header .header-phone {
+      color: var(--lx-text);
+    }
+    .lp-luxury .header .nav a:hover {
+      color: var(--lx-gold);
+    }
+    .lp-luxury .header .btn-primary {
+      background: var(--lx-gold);
+      color: var(--lx-black);
+      border: none;
+    }
+    .lp-luxury .header .btn-primary:hover {
+      background: var(--lx-gold-light);
+    }
+    .lp-luxury .mobile-menu-btn {
+      color: var(--lx-gold);
+    }
+
+    /* Animations */
+    @keyframes lxFadeUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes lxFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes lxLineGrow {
+      from { width: 0; }
+      to { width: 80px; }
+    }
+    @keyframes lxShimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .lx-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .lx-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === HERO === */
+    .lx-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .lx-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80') center/cover no-repeat;
+      filter: brightness(0.25);
+    }
+    .lx-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(20,20,20,0.6) 50%, rgba(10,10,10,0.85) 100%);
+    }
+    .lx-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 6rem 2rem 4rem;
+    }
+    .lx-hero-tag {
+      display: inline-block;
+      border: 1px solid var(--lx-gold);
+      color: var(--lx-gold);
+      padding: 0.5rem 1.8rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      animation: lxFadeIn 1s ease 0.3s both;
+    }
+    .lx-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      animation: lxFadeUp 1s ease 0.5s both;
+    }
+    .lx-hero h1 em {
+      font-style: italic;
+      color: var(--lx-gold);
+    }
+    .lx-hero-line {
+      width: 80px;
+      height: 1px;
+      background: var(--lx-gold);
+      margin-bottom: 1.5rem;
+      animation: lxLineGrow 1s ease 0.8s both;
+    }
+    .lx-hero p {
+      font-size: 1.15rem;
+      color: var(--lx-text-muted);
+      max-width: 550px;
+      margin-bottom: 2.5rem;
+      animation: lxFadeUp 1s ease 1s both;
+    }
+    .lx-hero-ctas {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      animation: lxFadeUp 1s ease 1.2s both;
+    }
+    .lx-btn-gold {
+      display: inline-block;
+      background: var(--lx-gold);
+      color: var(--lx-black);
+      padding: 1rem 2.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .lx-btn-gold:hover {
+      background: var(--lx-gold-light);
+      transform: translateY(-2px);
+    }
+    .lx-btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--lx-gold);
+      padding: 1rem 2.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .lx-btn-outline:hover {
+      border-color: var(--lx-gold);
+      background: var(--lx-gold-dim);
+    }
+
+    /* === INTRO STATEMENT === */
+    .lx-intro {
+      padding: 8rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+    .lx-intro-inner {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .lx-intro h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .lx-intro-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--lx-gold);
+      margin: 0 auto 1.5rem;
+    }
+    .lx-intro p {
+      font-size: 1.05rem;
+      color: var(--lx-text-muted);
+      line-height: 1.9;
+    }
+
+    /* === SERVICES GRID === */
+    .lx-services {
+      padding: 8rem 0;
+      background: var(--lx-dark);
+    }
+    .lx-services-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .lx-section-label {
+      display: inline-block;
+      color: var(--lx-gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .lx-services h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .lx-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .lx-service-card {
+      background: var(--lx-charcoal);
+      border: 1px solid rgba(201, 168, 76, 0.08);
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .lx-service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--lx-gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .lx-service-card:hover::before {
+      opacity: 1;
+    }
+    .lx-service-card:hover {
+      border-color: rgba(201, 168, 76, 0.2);
+      transform: translateY(-4px);
+    }
+    .lx-service-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+    .lx-service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .lx-service-card p {
+      color: var(--lx-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* === GALLERY SHOWCASE === */
+    .lx-gallery {
+      padding: 8rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+    .lx-gallery-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .lx-gallery h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .lx-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .lx-gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .lx-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      transition: all 0.6s ease;
+    }
+    .lx-gallery-item:hover img {
+      filter: brightness(0.9);
+      transform: scale(1.05);
+    }
+    .lx-gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(10,10,10,0.9));
+    }
+    .lx-gallery-caption h4 {
+      font-size: 1.2rem;
+      color: var(--lx-cream);
+      margin-bottom: 0.3rem;
+    }
+    .lx-gallery-caption p {
+      font-size: 0.85rem;
+      color: var(--lx-gold);
+    }
+
+    /* === PROCESS === */
+    .lx-process {
+      padding: 8rem 0;
+      background: var(--lx-dark);
+    }
+    .lx-process-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .lx-process h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .lx-process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      position: relative;
+    }
+    .lx-process-steps::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--lx-gold), transparent);
+      opacity: 0.3;
+    }
+    .lx-step {
+      text-align: center;
+    }
+    .lx-step-num {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--lx-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--lx-gold);
+      background: var(--lx-dark);
+      position: relative;
+      z-index: 2;
+    }
+    .lx-step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+    .lx-step p {
+      font-size: 0.9rem;
+      color: var(--lx-text-muted);
+    }
+
+    /* === MATERIALS === */
+    .lx-materials {
+      padding: 8rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+    .lx-materials-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    .lx-materials h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .lx-materials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .lx-material-card {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      border: 1px solid rgba(201, 168, 76, 0.08);
+      transition: all 0.3s ease;
+    }
+    .lx-material-card:hover {
+      border-color: rgba(201, 168, 76, 0.2);
+    }
+    .lx-material-img {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .lx-material-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .lx-material-info h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+    .lx-material-info p {
+      font-size: 0.9rem;
+      color: var(--lx-text-muted);
+    }
+
+    /* === TESTIMONIAL === */
+    .lx-testimonial {
+      padding: 8rem 0;
+      background: var(--lx-dark);
+      text-align: center;
+    }
+    .lx-testimonial-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .lx-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--lx-gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .lx-testimonial blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--lx-cream);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .lx-testimonial cite {
+      display: block;
+      font-style: normal;
+      color: var(--lx-text-muted);
+      font-size: 0.9rem;
+    }
+    .lx-testimonial cite strong {
+      color: var(--lx-gold);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* === CTA BAND === */
+    .lx-cta {
+      padding: 6rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--lx-charcoal) 0%, var(--lx-dark) 100%);
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+    .lx-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .lx-cta p {
+      color: var(--lx-text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* === CROSSLINKS === */
+    .lx-crosslinks {
+      padding: 5rem 0;
+      background: var(--lx-dark);
+    }
+    .lx-crosslinks-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .lx-crosslinks h3 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      color: var(--lx-cream);
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .lx-crosslinks-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .lx-crosslink-item {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      color: var(--lx-text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: all 0.3s ease;
+    }
+    .lx-crosslink-item:hover {
+      border-color: var(--lx-gold);
+      color: var(--lx-gold);
+      background: var(--lx-gold-dim);
+    }
+    .lx-crosslink-item span {
+      margin-right: 0.3rem;
+      color: var(--lx-gold);
+    }
+
+    /* Footer overrides */
+    .lp-luxury .footer {
+      background: var(--lx-black);
+      border-top: 1px solid rgba(201, 168, 76, 0.08);
+    }
+    .lp-luxury .footer-brand p,
+    .lp-luxury .footer-links a,
+    .lp-luxury .footer-bottom p {
+      color: var(--lx-text-muted);
+    }
+    .lp-luxury .footer-links h4 {
+      color: var(--lx-cream);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .lx-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .lx-process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .lx-process-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .lx-hero-content { padding: 8rem 1.5rem 4rem; }
+      .lx-services-grid { grid-template-columns: 1fr; }
+      .lx-gallery-grid { grid-template-columns: 1fr; }
+      .lx-materials-grid { grid-template-columns: 1fr; }
+      .lx-material-card { flex-direction: column; }
+      .lx-material-img { width: 100%; height: 200px; }
+      .lx-process-steps { grid-template-columns: 1fr 1fr; }
+      .lx-hero-ctas { flex-direction: column; }
+      .lx-btn-gold, .lx-btn-outline { text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .lx-process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="lp-luxury">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="lx-hero">
+    <div class="lx-hero-bg"></div>
+    <div class="lx-hero-overlay"></div>
+    <div class="container lx-hero-content">
+      <span class="lx-hero-tag">Bespoke Window Furnishings</span>
+      <h1>Luxury Window<br>Treatments for<br><em>Exceptional</em> Homes</h1>
+      <div class="lx-hero-line"></div>
+      <p>Crafted for Melbourne's most discerning residences. From penthouse suites to architectural masterpieces — window furnishings worthy of the view.</p>
+      <div class="lx-hero-ctas">
+        <a href="../free-quote.html" class="lx-btn-gold">Book Design Consultation</a>
+        <a href="#gallery" class="lx-btn-outline">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Statement -->
+  <section class="lx-intro">
+    <div class="container lx-intro-inner lx-animate">
+      <h2>Where Architecture Meets<br>Textile Artistry</h2>
+      <div class="lx-intro-divider"></div>
+      <p>At iSeekBlinds, we understand that luxury is found in the details. Our premium window treatment service is designed exclusively for homeowners who demand the extraordinary — from hand-selected European fabrics to whisper-quiet motorised systems that respond to a single touch. Every installation is a collaboration between our design team and your vision of home.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="lx-services">
+    <div class="container">
+      <div class="lx-services-header">
+        <span class="lx-section-label">Our Expertise</span>
+        <h2>Premium Services for Premium Spaces</h2>
+      </div>
+      <div class="lx-services-grid">
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">✦</div>
+          <h3>Bespoke Design Consultation</h3>
+          <p>Our senior designers visit your home with a curated collection of premium samples. We assess light patterns, architectural features, and your personal aesthetic to craft a tailored window furnishing scheme that elevates every room.</p>
+        </div>
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">◈</div>
+          <h3>Motorised & Smart Home Integration</h3>
+          <p>Seamless integration with Lutron, Somfy, and Apple HomeKit. Schedule your blinds to rise with the sunrise, close at dusk, or respond to voice commands. Silent motors with concealed hardware for a flawless finish.</p>
+        </div>
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">◇</div>
+          <h3>Floor-to-Ceiling Solutions</h3>
+          <p>Specialising in oversized and panoramic windows up to 6 metres. Our engineering team ensures smooth operation and perfect alignment for the most challenging installations in high-rise penthouses and double-height spaces.</p>
+        </div>
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">❖</div>
+          <h3>Premium European Fabrics</h3>
+          <p>Sourced from the finest mills in Italy, Belgium, and France. Silks, linens, wool blends, and performance textiles that drape beautifully and stand the test of time. Exclusive patterns not available through standard suppliers.</p>
+        </div>
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">⬡</div>
+          <h3>Architectural Shutters</h3>
+          <p>Hand-crafted plantation shutters in premium hardwoods and engineered timber. Custom colour matching, split-tilt systems, and special shapes including arched, circular, and angled configurations for heritage and contemporary homes.</p>
+        </div>
+        <div class="lx-service-card lx-animate">
+          <div class="lx-service-icon">◎</div>
+          <h3>White-Glove Installation</h3>
+          <p>Our installation team works to your schedule, with dust sheets, protective coverings, and meticulous cleanup as standard. Post-install walkthrough, programming assistance, and a 10-year warranty on all premium installations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Showcase -->
+  <section class="lx-gallery" id="gallery">
+    <div class="container">
+      <div class="lx-gallery-header">
+        <span class="lx-section-label">Portfolio</span>
+        <h2>Recent Installations</h2>
+      </div>
+      <div class="lx-gallery-grid">
+        <div class="lx-gallery-item lx-animate">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury penthouse with floor-to-ceiling curtains" loading="lazy">
+          <div class="lx-gallery-caption">
+            <h4>Southbank Penthouse</h4>
+            <p>Motorised Sheer & Blockout Curtains</p>
+          </div>
+        </div>
+        <div class="lx-gallery-item lx-animate">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Designer home with premium blinds" loading="lazy">
+          <div class="lx-gallery-caption">
+            <h4>Toorak Residence</h4>
+            <p>Hardwood Plantation Shutters</p>
+          </div>
+        </div>
+        <div class="lx-gallery-item lx-animate">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern luxury apartment interior" loading="lazy">
+          <div class="lx-gallery-caption">
+            <h4>Brighton Waterfront</h4>
+            <p>Italian Linen Curtains & Roller Blinds</p>
+          </div>
+        </div>
+        <div class="lx-gallery-item lx-animate">
+          <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80" alt="High-end apartment with smart blinds" loading="lazy">
+          <div class="lx-gallery-caption">
+            <h4>Docklands Sky Residence</h4>
+            <p>Smart Home Integrated Blinds</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="lx-process">
+    <div class="container">
+      <div class="lx-process-header">
+        <span class="lx-section-label">The Experience</span>
+        <h2>Your Journey to Perfection</h2>
+      </div>
+      <div class="lx-process-steps">
+        <div class="lx-step lx-animate">
+          <div class="lx-step-num">01</div>
+          <h3>Discovery Call</h3>
+          <p>A brief conversation to understand your home, your style, and your requirements before we meet in person.</p>
+        </div>
+        <div class="lx-step lx-animate">
+          <div class="lx-step-num">02</div>
+          <h3>In-Home Design Session</h3>
+          <p>Our designer visits with curated samples, takes precise measurements, and develops a bespoke scheme on-site.</p>
+        </div>
+        <div class="lx-step lx-animate">
+          <div class="lx-step-num">03</div>
+          <h3>Custom Fabrication</h3>
+          <p>Your window treatments are crafted to exacting standards, with quality checks at every stage of production.</p>
+        </div>
+        <div class="lx-step lx-animate">
+          <div class="lx-step-num">04</div>
+          <h3>White-Glove Installation</h3>
+          <p>Professional fitting, smart system programming, and a thorough walkthrough to ensure absolute satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Materials -->
+  <section class="lx-materials">
+    <div class="container">
+      <div class="lx-materials-header">
+        <span class="lx-section-label">Materials</span>
+        <h2>Curated Fabrics & Finishes</h2>
+      </div>
+      <div class="lx-materials-grid">
+        <div class="lx-material-card lx-animate">
+          <div class="lx-material-img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Silk fabric texture" loading="lazy">
+          </div>
+          <div class="lx-material-info">
+            <h3>European Silk Blends</h3>
+            <p>Hand-woven silk from Italian mills, offering an incomparable lustre and drape. Available in over 200 colourways with custom dyeing options for perfect colour matching.</p>
+          </div>
+        </div>
+        <div class="lx-material-card lx-animate">
+          <div class="lx-material-img">
+            <img src="https://images.unsplash.com/photo-1528459105426-b9548367069b?w=400&q=80" alt="Linen fabric texture" loading="lazy">
+          </div>
+          <div class="lx-material-info">
+            <h3>Belgian Linen</h3>
+            <p>Premium flax linen with a natural texture that softens beautifully over time. Exceptional light diffusion and UV protection, ideal for living areas and bedrooms.</p>
+          </div>
+        </div>
+        <div class="lx-material-card lx-animate">
+          <div class="lx-material-img">
+            <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=400&q=80" alt="Timber shutters detail" loading="lazy">
+          </div>
+          <div class="lx-material-info">
+            <h3>Premium Hardwood Timber</h3>
+            <p>Sustainably sourced basswood and white teak for plantation shutters. Hand-finished with multi-coat lacquer for lasting beauty. 25-year structural warranty.</p>
+          </div>
+        </div>
+        <div class="lx-material-card lx-animate">
+          <div class="lx-material-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Modern fabric textures" loading="lazy">
+          </div>
+          <div class="lx-material-info">
+            <h3>Performance Textiles</h3>
+            <p>Advanced fabrics with integrated UV filtering, thermal insulation, and acoustic dampening. Engineered for Melbourne's climate while maintaining a luxurious hand-feel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="lx-testimonial">
+    <div class="container">
+      <div class="lx-testimonial-inner lx-animate">
+        <div class="lx-quote-mark">"</div>
+        <blockquote>iSeekBlinds transformed our penthouse with the most exquisite curtains we've ever seen. The motorised system is flawless — our guests are always amazed when the sheers glide open to reveal the city skyline. Truly world-class service from consultation to installation.</blockquote>
+        <cite>
+          <strong>Victoria & James Chen</strong>
+          Southbank Penthouse · 78th Floor
+        </cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lx-cta">
+    <div class="container lx-animate">
+      <h2>Ready to Elevate Your Home?</h2>
+      <p>Complimentary in-home design consultations available across Melbourne's premium suburbs.</p>
+      <a href="../free-quote.html" class="lx-btn-gold">Book Your Consultation</a>
+    </div>
+  </section>
+
+  <!-- Cross-links -->
+  <section class="lx-crosslinks">
+    <div class="lx-crosslinks-inner">
+      <h3>Explore More Solutions</h3>
+      <div class="lx-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="lx-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="lx-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="lx-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="lx-crosslink-item"><span>→</span> Arched & Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="lx-crosslink-item"><span>→</span> Bathroom & Kitchen</a>
+        <a href="bedroom-blackout.html" class="lx-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="lx-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="lx-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="lx-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="lx-crosslink-item"><span>→</span> Care & Maintenance</a>
+        <a href="child-safety.html" class="lx-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="lx-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="lx-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="lx-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="lx-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="lx-crosslink-item"><span>→</span> Conservatory & Sunroom</a>
+        <a href="day-night-blinds.html" class="lx-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="lx-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="lx-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="lx-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="lx-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="lx-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="lx-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="lx-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="lx-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="lx-crosslink-item"><span>→</span> Festive & Seasonal Styling</a>
+        <a href="free-samples.html" class="lx-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="lx-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="lx-crosslink-item"><span>→</span> High-Rise Glare Reduction</a>
+        <a href="home-gym-blinds.html" class="lx-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="lx-crosslink-item"><span>→</span> Home Library & Study</a>
+        <a href="home-office.html" class="lx-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="lx-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="large-windows.html" class="lx-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="lx-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="media-room.html" class="lx-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="lx-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="lx-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="lx-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="lx-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="lx-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="lx-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="lx-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="lx-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="lx-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="privacy-blinds.html" class="lx-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="lx-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="lx-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="lx-crosslink-item"><span>→</span> Restaurant & Cafe</a>
+        <a href="retail-shopfront.html" class="lx-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="lx-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="lx-crosslink-item"><span>→</span> School & Childcare</a>
+        <a href="seasonal-sale.html" class="lx-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="lx-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="lx-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="lx-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="lx-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="warehouse-industrial-blinds.html" class="lx-crosslink-item"><span>→</span> Warehouse & Industrial</a>
+        <a href="winter-insulation.html" class="lx-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.lx-animate').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.nav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuBtn.textContent = nav.classList.contains('nav-open') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+</body>
+</html>
