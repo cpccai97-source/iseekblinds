@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackout Blinds for Shift Workers | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Sleep like it's midnight at 7am. Custom blackout blinds for Melbourne shift workers — nurses, FIFO, hospitality. Free assessment.">
+  <link rel="stylesheet" href="../css/style.css?v=20260317">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ns-bg: #0a0a1a;
+      --ns-bg-light: #111130;
+      --ns-cyan: #00f0ff;
+      --ns-magenta: #ff2d7b;
+      --ns-violet: #a855f7;
+      --ns-white: #e8e8f0;
+      --ns-muted: #6b6b8a;
+      --ns-glow-cyan: 0 0 20px rgba(0,240,255,.4), 0 0 60px rgba(0,240,255,.15);
+      --ns-glow-magenta: 0 0 20px rgba(255,45,123,.4), 0 0 60px rgba(255,45,123,.15);
+      --ns-glow-violet: 0 0 20px rgba(168,85,247,.4), 0 0 60px rgba(168,85,247,.15);
+      --ns-font-display: 'Audiowide', cursive;
+      --ns-font-body: 'Chakra Petch', sans-serif;
+      --ns-scanline: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px);
+      --ns-grid: linear-gradient(rgba(0,240,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,.03) 1px, transparent 1px);
+    }
+
+    /* === RESET & BASE === */
+    .ns-page * { margin: 0; padding: 0; box-sizing: border-box; }
+    .ns-page {
+      background: var(--ns-bg);
+      color: var(--ns-white);
+      font-family: var(--ns-font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: var(--ns-scanline), var(--ns-grid);
+      background-size: auto, 60px 60px;
+    }
+
+    /* === HEADER === */
+    .ns-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1rem 2rem;
+      background: rgba(10,10,26,.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(0,240,255,.1);
+      transition: transform .35s ease;
+    }
+    .ns-header.ns-hidden { transform: translateY(-100%); }
+    .ns-logo {
+      font-family: var(--ns-font-display);
+      font-size: 1.3rem; text-decoration: none; letter-spacing: 1px;
+    }
+    .ns-logo-i { color: var(--ns-cyan); text-shadow: var(--ns-glow-cyan); }
+    .ns-logo-seek { color: #fff; }
+    .ns-logo-blinds { color: var(--ns-muted); }
+    .ns-nav { display: flex; gap: 1.5rem; align-items: center; }
+    .ns-nav a {
+      font-family: var(--ns-font-body); font-weight: 600; font-size: .85rem;
+      color: var(--ns-muted); text-decoration: none; letter-spacing: .5px;
+      text-transform: uppercase; transition: color .2s;
+    }
+    .ns-nav a:hover { color: var(--ns-cyan); }
+    .ns-nav-cta {
+      background: var(--ns-magenta) !important; color: #fff !important;
+      padding: .5rem 1.2rem; border-radius: 2px;
+      text-shadow: none; box-shadow: var(--ns-glow-magenta);
+    }
+    .ns-nav-cta:hover { background: #ff4590 !important; }
+    .ns-burger { display: none; background: none; border: none; cursor: pointer; }
+    .ns-burger span { display: block; width: 24px; height: 2px; background: var(--ns-cyan); margin: 5px 0; transition: .3s; }
+
+    /* === HERO === */
+    .ns-hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; padding: 8rem 2rem 4rem;
+      position: relative;
+    }
+    .ns-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(0,240,255,.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 30%, rgba(255,45,123,.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .ns-hero-content { max-width: 900px; position: relative; z-index: 1; }
+    .ns-hero-pre {
+      font-family: var(--ns-font-body); font-weight: 600;
+      color: var(--ns-magenta); font-size: .9rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 1rem; text-shadow: var(--ns-glow-magenta);
+    }
+    .ns-hero h1 {
+      font-family: var(--ns-font-display); font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.15; margin-bottom: 1.5rem; color: #fff;
+    }
+    .ns-hero h1 .ns-line2 { color: var(--ns-cyan); text-shadow: var(--ns-glow-cyan); }
+    .ns-sleep-letters { display: inline-flex; }
+    .ns-sleep-letters span {
+      display: inline-block;
+      animation: ns-neonCycle 3s infinite;
+    }
+    .ns-sleep-letters span:nth-child(1) { animation-delay: 0s; }
+    .ns-sleep-letters span:nth-child(2) { animation-delay: .4s; }
+    .ns-sleep-letters span:nth-child(3) { animation-delay: .8s; }
+    .ns-sleep-letters span:nth-child(4) { animation-delay: 1.2s; }
+    .ns-sleep-letters span:nth-child(5) { animation-delay: 1.6s; }
+    @keyframes ns-neonCycle {
+      0%, 100% { color: var(--ns-cyan); text-shadow: var(--ns-glow-cyan); }
+      33% { color: var(--ns-magenta); text-shadow: var(--ns-glow-magenta); }
+      66% { color: var(--ns-violet); text-shadow: var(--ns-glow-violet); }
+    }
+    .ns-hero-sub {
+      font-size: 1.15rem; color: var(--ns-muted); max-width: 600px;
+      margin-bottom: 2rem; line-height: 1.7;
+    }
+    .ns-hero-clock {
+      font-family: var(--ns-font-display); font-size: 1.1rem;
+      color: var(--ns-violet); margin-bottom: .5rem;
+      text-shadow: var(--ns-glow-violet);
+    }
+    .ns-hero-clock-msg { color: var(--ns-muted); font-size: .85rem; }
+    .ns-btn-primary {
+      display: inline-block; padding: .9rem 2.2rem;
+      background: var(--ns-magenta); color: #fff;
+      font-family: var(--ns-font-body); font-weight: 700;
+      font-size: 1rem; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 1px; border: none; cursor: pointer;
+      box-shadow: var(--ns-glow-magenta);
+      transition: transform .2s, box-shadow .2s;
+      margin-top: 1.5rem;
+    }
+    .ns-btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 30px rgba(255,45,123,.6), 0 0 80px rgba(255,45,123,.2);
+    }
+
+    /* === STATS TICKER === */
+    .ns-stats {
+      overflow: hidden; border-top: 1px solid rgba(0,240,255,.15);
+      border-bottom: 1px solid rgba(0,240,255,.15);
+      padding: 1rem 0; background: rgba(0,240,255,.03);
+    }
+    .ns-stats-track {
+      display: flex; gap: 4rem; animation: ns-scroll 25s linear infinite;
+      white-space: nowrap; width: max-content;
+    }
+    @keyframes ns-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ns-stat-item {
+      font-family: var(--ns-font-body); font-weight: 600;
+      font-size: .95rem; color: var(--ns-white);
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .ns-stat-num {
+      font-family: var(--ns-font-display); color: var(--ns-cyan);
+      font-size: 1.4rem; text-shadow: var(--ns-glow-cyan);
+    }
+
+    /* === BEFORE/AFTER SLIDER === */
+    .ns-compare {
+      padding: 6rem 2rem; position: relative;
+    }
+    .ns-compare h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: .5rem; text-align: left; max-width: 700px;
+    }
+    .ns-compare-sub { color: var(--ns-muted); margin-bottom: 3rem; max-width: 500px; }
+    .ns-slider-wrap {
+      position: relative; width: 100%; max-width: 800px;
+      height: 450px; overflow: hidden; cursor: ew-resize;
+      border: 1px solid rgba(0,240,255,.2);
+      box-shadow: 0 0 40px rgba(0,240,255,.08);
+    }
+    .ns-scene {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+    .ns-scene-before {
+      background: linear-gradient(135deg, #fff8e1 0%, #fff3c4 40%, #ffe082 100%);
+      z-index: 1;
+    }
+    .ns-scene-after {
+      background: linear-gradient(135deg, #070720 0%, #0a0a2e 50%, #0d0d35 100%);
+      z-index: 2; clip-path: inset(0 50% 0 0);
+    }
+    /* Window shape — before */
+    .ns-window-before {
+      position: absolute; top: 15%; left: 20%; width: 35%; height: 55%;
+      background: #fff; border: 3px solid #bbb;
+      box-shadow: 0 0 80px rgba(255,220,50,.5), inset 0 0 40px rgba(255,220,50,.3);
+    }
+    .ns-window-before::after {
+      content: ''; position: absolute; top: 0; left: 50%;
+      width: 3px; height: 100%; background: #bbb;
+    }
+    .ns-light-ray {
+      position: absolute; top: 10%; left: 30%;
+      width: 200px; height: 350px;
+      background: linear-gradient(180deg, rgba(255,230,100,.3), transparent);
+      transform: skewX(-15deg); clip-path: polygon(30% 0, 70% 0, 100% 100%, 0% 100%);
+    }
+    .ns-clock-before {
+      position: absolute; top: 12%; right: 15%;
+      font-family: var(--ns-font-display); font-size: 1.8rem;
+      color: #c62828; font-weight: 700;
+    }
+    .ns-person-before {
+      position: absolute; bottom: 10%; right: 20%;
+      width: 60px; height: 100px;
+    }
+    .ns-person-before .ns-head {
+      width: 30px; height: 30px; background: #555;
+      border-radius: 50%; margin: 0 auto 5px;
+    }
+    .ns-person-before .ns-body {
+      width: 40px; height: 50px; background: #555;
+      border-radius: 8px 8px 0 0; margin: 0 auto;
+    }
+    .ns-person-before .ns-stress {
+      position: absolute; top: -15px; right: -20px;
+      font-size: 1.5rem; animation: ns-shake .3s infinite;
+    }
+    @keyframes ns-shake { 0%,100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+    .ns-before-label {
+      position: absolute; bottom: 5%; left: 5%;
+      font-family: var(--ns-font-display); font-size: .75rem;
+      color: #c62828; background: rgba(255,255,255,.8);
+      padding: .3rem .8rem; text-transform: uppercase;
+    }
+    /* Window shape — after */
+    .ns-window-after {
+      position: absolute; top: 15%; left: 20%; width: 35%; height: 55%;
+      background: #1a1a40; border: 2px solid rgba(0,240,255,.3);
+      box-shadow: 0 0 20px rgba(0,240,255,.1);
+    }
+    .ns-blinds-line {
+      position: absolute; left: 0; right: 0; height: 2px;
+      background: rgba(0,240,255,.15);
+    }
+    .ns-person-after {
+      position: absolute; bottom: 10%; right: 20%;
+      width: 60px; height: 100px;
+    }
+    .ns-person-after .ns-head {
+      width: 30px; height: 30px; background: var(--ns-cyan);
+      border-radius: 50%; margin: 0 auto 5px; opacity: .5;
+    }
+    .ns-person-after .ns-body {
+      width: 40px; height: 50px; background: var(--ns-cyan);
+      border-radius: 8px 8px 0 0; margin: 0 auto; opacity: .3;
+    }
+    .ns-zzz {
+      position: absolute; top: -10px; right: -30px;
+      font-family: var(--ns-font-display); color: var(--ns-violet);
+      font-size: 1rem; text-shadow: var(--ns-glow-violet);
+      animation: ns-float 2.5s ease-in-out infinite;
+    }
+    .ns-zzz:nth-child(2) { top: -25px; right: -45px; font-size: .8rem; animation-delay: .5s; opacity: .7; }
+    .ns-zzz:nth-child(3) { top: -38px; right: -35px; font-size: .6rem; animation-delay: 1s; opacity: .5; }
+    @keyframes ns-float {
+      0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); }
+    }
+    .ns-after-label {
+      position: absolute; bottom: 5%; left: 5%;
+      font-family: var(--ns-font-display); font-size: .75rem;
+      color: var(--ns-cyan); background: rgba(10,10,26,.8);
+      padding: .3rem .8rem; text-transform: uppercase;
+      text-shadow: var(--ns-glow-cyan);
+    }
+    /* Slider handle */
+    .ns-slider-handle {
+      position: absolute; top: 0; bottom: 0; width: 4px;
+      background: var(--ns-cyan); left: 50%; z-index: 10;
+      box-shadow: var(--ns-glow-cyan);
+      transform: translateX(-50%);
+    }
+    .ns-slider-knob {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--ns-bg); border: 2px solid var(--ns-cyan);
+      box-shadow: var(--ns-glow-cyan);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--ns-cyan);
+    }
+
+    /* === PROBLEMS === */
+    .ns-problems { padding: 6rem 2rem; }
+    .ns-problems h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom: 3rem; max-width: 600px;
+    }
+    .ns-problems h2 span { color: var(--ns-magenta); text-shadow: var(--ns-glow-magenta); }
+    .ns-problem-grid {
+      display: grid; gap: 2rem;
+      grid-template-columns: 1.3fr 1fr;
+      max-width: 900px;
+    }
+    .ns-problem-card {
+      padding: 2.5rem 2rem; position: relative;
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.02);
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .ns-problem-card:hover { border-color: var(--ns-magenta); box-shadow: var(--ns-glow-magenta); }
+    .ns-problem-card:nth-child(3) { grid-column: 1 / -1; max-width: 60%; }
+    .ns-problem-icon {
+      width: 48px; height: 48px; margin-bottom: 1.2rem; position: relative;
+    }
+    .ns-icon-light { width: 40px; height: 40px; border-radius: 50%; background: #ffe082; box-shadow: 0 0 20px rgba(255,220,100,.6); }
+    .ns-icon-heat { width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 36px solid var(--ns-magenta); filter: drop-shadow(0 0 8px rgba(255,45,123,.5)); }
+    .ns-icon-noise {
+      width: 36px; height: 30px; border: 3px solid var(--ns-violet);
+      border-radius: 2px 10px 10px 2px; position: relative;
+    }
+    .ns-icon-noise::after {
+      content: ')))'; position: absolute; right: -22px; top: 2px;
+      color: var(--ns-violet); font-size: .7rem; font-weight: 700;
+    }
+    .ns-problem-card h3 {
+      font-family: var(--ns-font-display); font-size: 1.1rem;
+      margin-bottom: .7rem; color: #fff;
+    }
+    .ns-problem-card p { color: var(--ns-muted); font-size: .95rem; line-height: 1.6; }
+
+    /* === FEATURES === */
+    .ns-features { padding: 6rem 2rem; }
+    .ns-features h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom: .5rem;
+    }
+    .ns-features h2 span { color: var(--ns-cyan); text-shadow: var(--ns-glow-cyan); }
+    .ns-features-sub { color: var(--ns-muted); margin-bottom: 3rem; max-width: 550px; }
+    .ns-feature-grid {
+      display: grid; gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 850px;
+    }
+    .ns-feature-card {
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(0,240,255,.1);
+      background: rgba(0,240,255,.02);
+      transition: border-color .3s, box-shadow .3s, transform .3s;
+    }
+    .ns-feature-card:hover {
+      border-color: var(--ns-cyan); box-shadow: var(--ns-glow-cyan);
+      transform: translateY(-3px);
+    }
+    .ns-feature-card:nth-child(2) { transform: translateY(20px); }
+    .ns-feature-card:nth-child(2):hover { transform: translateY(17px); }
+    .ns-feature-card h3 {
+      font-family: var(--ns-font-display); font-size: .95rem;
+      color: var(--ns-cyan); margin-bottom: .6rem;
+    }
+    .ns-feature-card p { color: var(--ns-muted); font-size: .9rem; }
+    .ns-feature-tag {
+      display: inline-block; margin-top: 1rem; padding: .2rem .7rem;
+      font-size: .7rem; text-transform: uppercase; font-weight: 700;
+      letter-spacing: 1px; border: 1px solid var(--ns-violet);
+      color: var(--ns-violet);
+    }
+
+    /* === TESTIMONIALS === */
+    .ns-testimonials { padding: 6rem 2rem; }
+    .ns-testimonials h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom: 3rem;
+    }
+    .ns-testimonials h2 span { color: var(--ns-violet); text-shadow: var(--ns-glow-violet); }
+    .ns-test-grid {
+      display: grid; gap: 2rem;
+      grid-template-columns: 1fr 1.2fr;
+      max-width: 880px;
+    }
+    .ns-test-card {
+      padding: 2rem; position: relative;
+      border-left: 3px solid var(--ns-cyan);
+      background: rgba(255,255,255,.02);
+    }
+    .ns-test-card:nth-child(2) {
+      border-left-color: var(--ns-magenta);
+      transform: translateY(30px);
+    }
+    .ns-test-card:nth-child(3) {
+      border-left-color: var(--ns-violet);
+      grid-column: 1 / -1; max-width: 70%;
+      margin-left: auto;
+    }
+    .ns-test-role {
+      font-family: var(--ns-font-display); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: .8rem;
+    }
+    .ns-test-card:nth-child(1) .ns-test-role { color: var(--ns-cyan); }
+    .ns-test-card:nth-child(2) .ns-test-role { color: var(--ns-magenta); }
+    .ns-test-card:nth-child(3) .ns-test-role { color: var(--ns-violet); }
+    .ns-test-quote { color: var(--ns-white); font-size: 1rem; line-height: 1.7; font-style: italic; margin-bottom: .8rem; }
+    .ns-test-name { color: var(--ns-muted); font-size: .85rem; }
+
+    /* === QUIZ === */
+    .ns-quiz { padding: 6rem 2rem; }
+    .ns-quiz h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.4rem, 4vw, 2rem);
+      margin-bottom: .5rem;
+    }
+    .ns-quiz-sub { color: var(--ns-muted); margin-bottom: 2.5rem; max-width: 500px; }
+    .ns-quiz-options { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .ns-quiz-btn {
+      padding: 1rem 1.8rem; background: transparent;
+      border: 1px solid rgba(0,240,255,.3); color: var(--ns-cyan);
+      font-family: var(--ns-font-body); font-weight: 700;
+      font-size: .9rem; cursor: pointer; text-transform: uppercase;
+      letter-spacing: .5px; transition: all .25s;
+    }
+    .ns-quiz-btn:hover, .ns-quiz-btn.ns-active {
+      background: var(--ns-cyan); color: var(--ns-bg);
+      box-shadow: var(--ns-glow-cyan);
+    }
+    .ns-quiz-result {
+      max-width: 600px; padding: 2rem;
+      border: 1px solid rgba(168,85,247,.2);
+      background: rgba(168,85,247,.04);
+      display: none;
+    }
+    .ns-quiz-result.ns-visible { display: block; animation: ns-fadeUp .4s ease; }
+    .ns-quiz-result h3 {
+      font-family: var(--ns-font-display); font-size: 1rem;
+      color: var(--ns-violet); margin-bottom: .7rem;
+    }
+    .ns-quiz-result p { color: var(--ns-muted); font-size: .95rem; line-height: 1.6; }
+
+    /* === CTA === */
+    .ns-cta {
+      padding: 8rem 2rem; text-align: left;
+      position: relative;
+    }
+    .ns-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,45,123,.08), transparent 60%);
+      pointer-events: none;
+    }
+    .ns-cta h2 {
+      font-family: var(--ns-font-display); font-size: clamp(1.8rem, 5vw, 3rem);
+      max-width: 700px; margin-bottom: 1rem; position: relative; z-index: 1;
+    }
+    .ns-cta h2 span { color: var(--ns-magenta); text-shadow: var(--ns-glow-magenta); }
+    .ns-cta p { color: var(--ns-muted); max-width: 500px; margin-bottom: 2rem; position: relative; z-index: 1; }
+    .ns-magnetic-wrap { display: inline-block; position: relative; z-index: 1; }
+    .ns-btn-magnetic {
+      display: inline-block; padding: 1.2rem 3rem;
+      background: var(--ns-magenta); color: #fff;
+      font-family: var(--ns-font-display); font-size: 1rem;
+      text-decoration: none; text-transform: uppercase;
+      letter-spacing: 2px; border: none; cursor: pointer;
+      box-shadow: var(--ns-glow-magenta);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .ns-btn-magnetic:hover {
+      box-shadow: 0 0 40px rgba(255,45,123,.7), 0 0 100px rgba(255,45,123,.25);
+    }
+
+    /* === FOOTER === */
+    .ns-footer {
+      padding: 3rem 2rem; border-top: 1px solid rgba(0,240,255,.1);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .ns-footer-copy { color: var(--ns-muted); font-size: .8rem; }
+    .ns-footer-nav { display: flex; gap: 1.5rem; }
+    .ns-footer-nav a {
+      color: var(--ns-muted); text-decoration: none; font-size: .8rem;
+      transition: color .2s;
+    }
+    .ns-footer-nav a:hover { color: var(--ns-cyan); }
+
+    /* === REVEAL ANIMATION === */
+    .ns-reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .ns-reveal.ns-visible { opacity: 1; transform: translateY(0); }
+    @keyframes ns-fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* === REDUCED MOTION === */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .ns-stats-track { animation: none; flex-wrap: wrap; }
+    }
+
+    /* === MOBILE === */
+    @media (max-width: 768px) {
+      .ns-nav { display: none; }
+      .ns-nav.ns-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,26,.95); padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid rgba(0,240,255,.1); }
+      .ns-burger { display: block; }
+      .ns-problem-grid { grid-template-columns: 1fr; }
+      .ns-problem-card:nth-child(3) { max-width: 100%; }
+      .ns-feature-grid { grid-template-columns: 1fr; }
+      .ns-feature-card:nth-child(2) { transform: none; }
+      .ns-feature-card:nth-child(2):hover { transform: translateY(-3px); }
+      .ns-test-grid { grid-template-columns: 1fr; }
+      .ns-test-card:nth-child(2) { transform: none; }
+      .ns-test-card:nth-child(3) { max-width: 100%; margin-left: 0; }
+      .ns-slider-wrap { height: 320px; }
+      .ns-quiz-options { flex-direction: column; }
+      .ns-hero { padding: 7rem 1.5rem 3rem; }
+    }
+    @media (max-width: 480px) {
+      .ns-slider-wrap { height: 260px; }
+      .ns-clock-before { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body class="ns-page">
+
+  <!-- HEADER -->
+  <header class="ns-header">
+    <a href="../index.html" class="ns-logo">
+      <span class="ns-logo-i">i</span><span class="ns-logo-seek">Seek</span><span class="ns-logo-blinds">Blinds</span>
+    </a>
+    <button class="ns-burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="ns-nav">
+      <a href="../products.html">Products</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../free-quote.html" class="ns-nav-cta">Free Quote</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="ns-hero">
+    <div class="ns-hero-content">
+      <p class="ns-hero-pre">Melbourne Shift Workers</p>
+      <h1>
+        YOUR SHIFT ENDS.<br>
+        <span class="ns-line2">YOUR
+          <span class="ns-sleep-letters">
+            <span>S</span><span>L</span><span>E</span><span>E</span><span>P</span>
+          </span>
+          SHOULDN'T SUFFER.</span>
+      </h1>
+      <p class="ns-hero-sub">
+        Your 6am commute home shouldn't end with fighting sunlight to fall asleep.
+        Custom-fitted blackout blinds that turn any Melbourne bedroom into a midnight cave — at 10 in the morning.
+      </p>
+      <div class="ns-hero-clock" id="ns-live-clock"></div>
+      <div class="ns-hero-clock-msg">Your next sleep shouldn't depend on sunlight</div>
+      <a href="../free-quote.html" class="ns-btn-primary">Get Your Free Assessment →</a>
+    </div>
+  </section>
+
+  <!-- STATS TICKER -->
+  <div class="ns-stats">
+    <div class="ns-stats-track">
+      <div class="ns-stat-item"><span class="ns-stat-num">68%</span> of shift workers report poor sleep quality</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">3×</span> higher accident risk from fatigue-related impairment</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">+40 min</span> extra sleep per session with proper blackout</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">$4.3B</span> annual cost of fatigue to Australian employers</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ns-stat-item"><span class="ns-stat-num">68%</span> of shift workers report poor sleep quality</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">3×</span> higher accident risk from fatigue-related impairment</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">+40 min</span> extra sleep per session with proper blackout</div>
+      <div class="ns-stat-item"><span class="ns-stat-num">$4.3B</span> annual cost of fatigue to Australian employers</div>
+    </div>
+  </div>
+
+  <!-- BEFORE / AFTER SLIDER -->
+  <section class="ns-compare ns-reveal">
+    <h2>Drag to See the <span style="color:var(--ns-cyan);text-shadow:var(--ns-glow-cyan)">Difference</span></h2>
+    <p class="ns-compare-sub">Same room. Same 7am sunlight outside. One side has iSeekBlinds fitted.</p>
+    <div class="ns-slider-wrap" id="ns-slider">
+      <!-- BEFORE scene (bright room) -->
+      <div class="ns-scene ns-scene-before">
+        <div class="ns-light-ray"></div>
+        <div class="ns-window-before"></div>
+        <div class="ns-clock-before">6:47 AM</div>
+        <div class="ns-person-before">
+          <div class="ns-head"></div>
+          <div class="ns-body"></div>
+          <span class="ns-stress">😩</span>
+        </div>
+        <div class="ns-before-label">Without Blinds</div>
+      </div>
+      <!-- AFTER scene (dark room) -->
+      <div class="ns-scene ns-scene-after" id="ns-after">
+        <div class="ns-window-after">
+          <div class="ns-blinds-line" style="top:15%"></div>
+          <div class="ns-blinds-line" style="top:30%"></div>
+          <div class="ns-blinds-line" style="top:45%"></div>
+          <div class="ns-blinds-line" style="top:60%"></div>
+          <div class="ns-blinds-line" style="top:75%"></div>
+          <div class="ns-blinds-line" style="top:90%"></div>
+        </div>
+        <div class="ns-person-after">
+          <div class="ns-head"></div>
+          <div class="ns-body"></div>
+          <span class="ns-zzz">z</span>
+          <span class="ns-zzz">z</span>
+          <span class="ns-zzz">z</span>
+        </div>
+        <div class="ns-after-label">With iSeekBlinds</div>
+      </div>
+      <!-- Handle -->
+      <div class="ns-slider-handle" id="ns-handle">
+        <div class="ns-slider-knob">⟷</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="ns-problems ns-reveal">
+    <h2>The Three Enemies of <span>Daytime Sleep</span></h2>
+    <div class="ns-problem-grid">
+      <div class="ns-problem-card">
+        <div class="ns-problem-icon"><div class="ns-icon-light"></div></div>
+        <h3>Light Leak</h3>
+        <p>Melbourne's summer sunrise hits before 6am. Standard curtains let in enough light around the edges to suppress melatonin and fracture your sleep cycles. You didn't survive a 12-hour ED shift to be woken by a sliver of light at the curtain rail.</p>
+      </div>
+      <div class="ns-problem-card">
+        <div class="ns-problem-icon"><div class="ns-icon-heat"></div></div>
+        <h3>Heat Buildup</h3>
+        <p>By 10am in a north-facing bedroom, the temperature's already climbing. You're sweating through sheets instead of sleeping through them. Thermal-backed blackout fabric reflects heat before it gets in.</p>
+      </div>
+      <div class="ns-problem-card">
+        <div class="ns-problem-icon"><div class="ns-icon-noise"></div></div>
+        <h3>The World Won't Shut Up</h3>
+        <p>Garbage trucks, leaf blowers, the neighbour's renovation — the daytime world doesn't care about your roster. Our channel-sealed blinds add a buffer that takes the edge off ambient noise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="ns-features ns-reveal">
+    <h2>Engineered for <span>Total Darkness</span></h2>
+    <p class="ns-features-sub">Every iSeekBlinds blackout system is custom-measured, Melbourne-made, and designed for zero light leakage.</p>
+    <div class="ns-feature-grid">
+      <div class="ns-feature-card">
+        <h3>Total Darkness Guarantee</h3>
+        <p>Channel guides seal light at every edge. No gaps at the sill, no glow at the header. Tested to block 99.9% of external light.</p>
+        <span class="ns-feature-tag">Zero Light Leak</span>
+      </div>
+      <div class="ns-feature-card">
+        <h3>Thermal Insulation</h3>
+        <p>Multi-layer fabric with reflective backing keeps heat out in summer and warmth in during winter. Your energy bill will notice.</p>
+        <span class="ns-feature-tag">Year-Round</span>
+      </div>
+      <div class="ns-feature-card">
+        <h3>Easy Install</h3>
+        <p>We measure, we make, we fit. Professional installation across all Melbourne metro — you don't lift a finger after the deposit.</p>
+        <span class="ns-feature-tag">We Handle It</span>
+      </div>
+      <div class="ns-feature-card">
+        <h3>Custom Fit</h3>
+        <p>Every window is different. Heritage sash windows in Fitzroy, floor-to-ceiling in Docklands, oddly shaped in Northcote — we've done them all.</p>
+        <span class="ns-feature-tag">Any Window</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="ns-testimonials ns-reveal">
+    <h2>From People Who <span>Actually Work Nights</span></h2>
+    <div class="ns-test-grid">
+      <div class="ns-test-card">
+        <div class="ns-test-role">🏥 ICU Nurse — Royal Melbourne</div>
+        <p class="ns-test-quote">"I rotate between days and nights. Before the blinds, my day sleeps were broken, shallow, useless. Now I sleep solid 6-hour blocks after a night shift. The room is genuinely pitch black at midday."</p>
+        <div class="ns-test-name">— Sarah K., Brunswick</div>
+      </div>
+      <div class="ns-test-card">
+        <div class="ns-test-role">⛏️ FIFO Worker — Site Electrician</div>
+        <p class="ns-test-quote">"Two weeks on, one week off. When I'm home my body clock's wrecked. These blinds mean I can actually recover during my off-swing instead of lying there staring at light creeping around cheap curtains."</p>
+        <div class="ns-test-name">— Damo T., Werribee</div>
+      </div>
+      <div class="ns-test-card">
+        <div class="ns-test-role">🍳 Head Chef — CBD Restaurant</div>
+        <p class="ns-test-quote">"Finish service at midnight, home by 1am, brain still wired. Summer mornings were killing me — light at 5:30 and I'd be done. iSeekBlinds sorted it. Best money I've spent on my health."</p>
+        <div class="ns-test-name">— James L., South Melbourne</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="ns-quiz ns-reveal">
+    <h2>Which Shift Are You?</h2>
+    <p class="ns-quiz-sub">Pick your pattern. We'll tell you what works best.</p>
+    <div class="ns-quiz-options">
+      <button class="ns-quiz-btn" data-shift="morning">☀️ Morning Sleeper</button>
+      <button class="ns-quiz-btn" data-shift="afternoon">🌤️ Afternoon Sleeper</button>
+      <button class="ns-quiz-btn" data-shift="rotating">🔄 Rotating Roster</button>
+    </div>
+    <div class="ns-quiz-result" id="ns-quiz-morning">
+      <h3>Morning Sleeper — 6am to 2pm</h3>
+      <p>You cop the worst of it: peak sunlight hours while you're trying to sleep. You need our <strong>full channel-seal system</strong> with reflective thermal backing. We'll also fit light-trapping pelmets at the header — that top edge glow is what wakes most morning sleepers. For Melbourne's east-facing bedrooms, we recommend the charcoal-backed fabric that drops room temp by up to 5°C.</p>
+    </div>
+    <div class="ns-quiz-result" id="ns-quiz-afternoon">
+      <h3>Afternoon Sleeper — 2pm to 10pm</h3>
+      <p>Afternoon sun is relentless, especially if you're facing west. Our <strong>dual-layer system</strong> (blockout roller + light-filtering secondary) lets you control the transition when you wake. You'll want the thermal option — afternoon heat through glass is brutal in a Footscray or Sunshine-facing bedroom. We also install smart-home compatible motors so you can schedule the blinds to lift before your alarm.</p>
+    </div>
+    <div class="ns-quiz-result" id="ns-quiz-rotating">
+      <h3>Rotating Roster — Chaos Mode</h3>
+      <p>Your body never knows what time it is. You need <strong>maximum flexibility</strong>: our motorised dual-system with app control. Full blackout when you need it, filtered light when you want to ease back onto day shifts. We configure scene presets — "Night Shift Recovery," "Day Off," "Transition" — so one tap on your phone sets the room. Melbourne's unpredictable weather means you'll use every setting.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ns-cta ns-reveal">
+    <h2>Get Your Free <span>Blackout Assessment</span></h2>
+    <p>We'll visit your Melbourne home, measure every window, check light angles at your actual sleep times, and quote on the spot. No pressure, no call-centre runaround. Just a tradie who understands that your sleep matters.</p>
+    <div class="ns-magnetic-wrap" id="ns-magnetic">
+      <a href="../free-quote.html" class="ns-btn-magnetic">Book Free Assessment →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ns-footer">
+    <div class="ns-footer-copy">© 2026 iSeekBlinds Melbourne</div>
+    <nav class="ns-footer-nav">
+      <a href="../products.html">Products</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../free-quote.html">Free Quote</a>
+    </nav>
+  </footer>
+
+  <script>
+    /* === LIVE CLOCK === */
+    function updateClock() {
+      const el = document.getElementById('ns-live-clock');
+      if (!el) return;
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      el.textContent = `${h}:${m}:${s}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    /* === HEADER HIDE/SHOW ON SCROLL === */
+    (function() {
+      const header = document.querySelector('.ns-header');
+      let lastY = 0;
+      window.addEventListener('scroll', function() {
+        const y = window.scrollY;
+        if (y > lastY && y > 80) header.classList.add('ns-hidden');
+        else header.classList.remove('ns-hidden');
+        lastY = y;
+      }, { passive: true });
+    })();
+
+    /* === BURGER MENU === */
+    document.querySelector('.ns-burger').addEventListener('click', function() {
+      document.querySelector('.ns-nav').classList.toggle('ns-open');
+    });
+
+    /* === SCROLL REVEAL === */
+    (function() {
+      const els = document.querySelectorAll('.ns-reveal');
+      const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('ns-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { obs.observe(el); });
+    })();
+
+    /* === BEFORE/AFTER SLIDER === */
+    (function() {
+      const slider = document.getElementById('ns-slider');
+      const after = document.getElementById('ns-after');
+      const handle = document.getElementById('ns-handle');
+      let dragging = false;
+
+      function setPosition(x) {
+        const rect = slider.getBoundingClientRect();
+        let pct = ((x - rect.left) / rect.width) * 100;
+        pct = Math.max(5, Math.min(95, pct));
+        after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+        handle.style.left = pct + '%';
+      }
+
+      slider.addEventListener('mousedown', function(e) { dragging = true; setPosition(e.clientX); });
+      window.addEventListener('mousemove', function(e) { if (dragging) { e.preventDefault(); setPosition(e.clientX); } });
+      window.addEventListener('mouseup', function() { dragging = false; });
+
+      slider.addEventListener('touchstart', function(e) { dragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchmove', function(e) { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchend', function() { dragging = false; });
+    })();
+
+    /* === QUIZ === */
+    (function() {
+      const btns = document.querySelectorAll('.ns-quiz-btn');
+      const results = document.querySelectorAll('.ns-quiz-result');
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('ns-active'); });
+          btn.classList.add('ns-active');
+          results.forEach(function(r) { r.classList.remove('ns-visible'); });
+          const target = document.getElementById('ns-quiz-' + btn.dataset.shift);
+          if (target) target.classList.add('ns-visible');
+        });
+      });
+    })();
+
+    /* === MAGNETIC BUTTON === */
+    (function() {
+      const wrap = document.getElementById('ns-magnetic');
+      const btn = wrap.querySelector('.ns-btn-magnetic');
+      wrap.addEventListener('mousemove', function(e) {
+        const rect = wrap.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
+      });
+      wrap.addEventListener('mouseleave', function() {
+        btn.style.transform = 'translate(0, 0)';
+      });
+    })();
+  </script>
+</body>
+</html>
