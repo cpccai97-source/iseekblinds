@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Solutions for Home Renovations | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Planning a home renovation? Complete guide to window furnishings for renovations — timeline, builder coordination, package deals, before/after showcases. Free consultation Melbourne.">
+  <meta name="keywords" content="home renovation blinds Melbourne, renovation window furnishings, builder blinds packages, retrofit blinds, renovation curtains, new build window treatments">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260316">
+  <style>
+    /* ============================================
+       HOME RENOVATION — 渐变流体 (Gradient Fluid)
+       Flowing gradient backgrounds, rounded corners,
+       soft transitions, modern pastel-meets-bold
+       ============================================ */
+
+    :root {
+      --reno-purple: #7c3aed;
+      --reno-blue: #3b82f6;
+      --reno-teal: #14b8a6;
+      --reno-coral: #f97316;
+      --reno-pink: #ec4899;
+      --reno-orange: #fb923c;
+      --reno-indigo: #4f46e5;
+      --reno-dark: #0f172a;
+      --reno-dark-mid: #1e293b;
+      --reno-text: #f8fafc;
+      --reno-text-dark: #0f172a;
+      --reno-text-muted: #94a3b8;
+      --reno-text-muted-dark: #64748b;
+      --reno-card-bg: rgba(255,255,255,0.08);
+      --reno-card-border: rgba(255,255,255,0.12);
+      --reno-glass: rgba(255,255,255,0.06);
+      --reno-radius: 24px;
+      --reno-radius-lg: 32px;
+      --reno-radius-xl: 48px;
+    }
+
+    .lp-reno {
+      background: var(--reno-dark);
+      color: var(--reno-text);
+      overflow-x: hidden;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .lp-reno * {
+      box-sizing: border-box;
+    }
+
+    .lp-reno h1,
+    .lp-reno h2,
+    .lp-reno h3,
+    .lp-reno h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .lp-reno .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* === ANIMATED GRADIENT BACKGROUND === */
+    @keyframes reno-gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .reno-gradient-bg {
+      background: linear-gradient(-45deg, #7c3aed, #3b82f6, #14b8a6, #7c3aed);
+      background-size: 400% 400%;
+      animation: reno-gradient-shift 15s ease infinite;
+    }
+
+    .reno-gradient-bg-warm {
+      background: linear-gradient(-45deg, #f97316, #ec4899, #f97316, #fb923c);
+      background-size: 400% 400%;
+      animation: reno-gradient-shift 12s ease infinite;
+    }
+
+    /* === HERO === */
+    .reno-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reno-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&auto=format&fit=crop&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+
+    .reno-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,58,237,0.85) 0%, rgba(59,130,246,0.8) 40%, rgba(20,184,166,0.75) 100%);
+    }
+
+    .reno-hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .reno-hero-orb-1 {
+      width: 600px;
+      height: 600px;
+      background: var(--reno-pink);
+      top: -200px;
+      right: -100px;
+      animation: reno-float 8s ease-in-out infinite;
+    }
+
+    .reno-hero-orb-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--reno-teal);
+      bottom: -100px;
+      left: -50px;
+      animation: reno-float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes reno-float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -30px); }
+    }
+
+    .reno-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+
+    .reno-hero-pill {
+      display: inline-block;
+      padding: 10px 28px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .reno-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .reno-hero h1 em {
+      background: linear-gradient(135deg, #fde68a, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+
+    .reno-hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .reno-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 48px;
+      border-radius: 60px;
+      background: #fff;
+      color: var(--reno-dark);
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .reno-hero-cta:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    .reno-hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: reno-bounce 2s infinite;
+    }
+
+    @keyframes reno-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* === SECTION COMMON === */
+    .reno-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .reno-section-gradient-1 {
+      background: linear-gradient(180deg, var(--reno-dark) 0%, #1a1040 100%);
+    }
+
+    .reno-section-gradient-2 {
+      background: linear-gradient(180deg, #1a1040 0%, var(--reno-dark-mid) 100%);
+    }
+
+    .reno-section-gradient-3 {
+      background: linear-gradient(180deg, var(--reno-dark-mid) 0%, var(--reno-dark) 100%);
+    }
+
+    .reno-section-gradient-warm {
+      background: linear-gradient(180deg, var(--reno-dark) 0%, #2a1520 50%, var(--reno-dark) 100%);
+    }
+
+    .reno-section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .reno-section-subtitle {
+      text-align: center;
+      color: var(--reno-text-muted);
+      max-width: 600px;
+      margin: 0 auto 64px;
+      font-size: 1.05rem;
+    }
+
+    .reno-gradient-text {
+      background: linear-gradient(135deg, var(--reno-purple), var(--reno-blue), var(--reno-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .reno-gradient-text-warm {
+      background: linear-gradient(135deg, var(--reno-coral), var(--reno-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* === GLASSMORPHISM CARDS === */
+    .reno-glass-card {
+      background: var(--reno-card-bg);
+      border: 1px solid var(--reno-card-border);
+      border-radius: var(--reno-radius);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 40px;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .reno-glass-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reno-glass-card:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+    }
+
+    /* === TIMELINE === */
+    .reno-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .reno-timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--reno-purple), var(--reno-blue), var(--reno-teal));
+      border-radius: 2px;
+    }
+
+    .reno-timeline-item {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.6s ease;
+    }
+
+    .reno-timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reno-timeline-dot {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .reno-timeline-dot-1 { background: linear-gradient(135deg, var(--reno-purple), var(--reno-indigo)); }
+    .reno-timeline-dot-2 { background: linear-gradient(135deg, var(--reno-blue), var(--reno-teal)); }
+    .reno-timeline-dot-3 { background: linear-gradient(135deg, var(--reno-teal), #22d3ee); }
+    .reno-timeline-dot-4 { background: linear-gradient(135deg, var(--reno-coral), var(--reno-pink)); }
+    .reno-timeline-dot-5 { background: linear-gradient(135deg, var(--reno-pink), var(--reno-purple)); }
+
+    .reno-timeline-content {
+      background: var(--reno-card-bg);
+      border: 1px solid var(--reno-card-border);
+      border-radius: var(--reno-radius);
+      padding: 32px;
+      flex: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    .reno-timeline-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .reno-timeline-content .reno-timeline-week {
+      font-size: 0.8rem;
+      color: var(--reno-teal);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .reno-timeline-content p {
+      color: var(--reno-text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* === BUILDER VS RETROFIT === */
+    .reno-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .reno-compare-card {
+      border-radius: var(--reno-radius-lg);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    .reno-compare-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reno-compare-builder {
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(59,130,246,0.2));
+      border: 1px solid rgba(124,58,237,0.3);
+    }
+
+    .reno-compare-retrofit {
+      background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(236,72,153,0.2));
+      border: 1px solid rgba(249,115,22,0.3);
+    }
+
+    .reno-compare-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .reno-compare-card p {
+      color: var(--reno-text-muted);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .reno-compare-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reno-compare-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .reno-compare-list li:last-child {
+      border-bottom: none;
+    }
+
+    .reno-compare-list li span {
+      font-size: 1.1rem;
+    }
+
+    .reno-compare-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .reno-badge-purple {
+      background: rgba(124,58,237,0.3);
+      color: #a78bfa;
+    }
+
+    .reno-badge-coral {
+      background: rgba(249,115,22,0.3);
+      color: #fb923c;
+    }
+
+    /* === PACKAGE DEALS === */
+    .reno-packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .reno-package-card {
+      border-radius: var(--reno-radius);
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.5s ease;
+    }
+
+    .reno-package-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reno-package-card-gradient {
+      padding: 3px;
+      border-radius: var(--reno-radius);
+    }
+
+    .reno-package-gradient-1 { background: linear-gradient(135deg, var(--reno-purple), var(--reno-blue)); }
+    .reno-package-gradient-2 { background: linear-gradient(135deg, var(--reno-blue), var(--reno-teal)); }
+    .reno-package-gradient-3 { background: linear-gradient(135deg, var(--reno-coral), var(--reno-pink)); }
+
+    .reno-package-card-inner {
+      background: var(--reno-dark);
+      border-radius: calc(var(--reno-radius) - 3px);
+      padding: 40px 32px;
+      height: 100%;
+    }
+
+    .reno-package-card-inner h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .reno-package-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+
+    .reno-package-price-note {
+      font-size: 0.8rem;
+      color: var(--reno-text-muted);
+      margin-bottom: 28px;
+    }
+
+    .reno-package-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+    }
+
+    .reno-package-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--reno-text-muted);
+    }
+
+    .reno-package-features li span {
+      font-size: 1rem;
+    }
+
+    .reno-package-cta {
+      display: block;
+      text-align: center;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .reno-package-cta-1 {
+      background: linear-gradient(135deg, var(--reno-purple), var(--reno-blue));
+      color: #fff;
+    }
+
+    .reno-package-cta-2 {
+      background: linear-gradient(135deg, var(--reno-blue), var(--reno-teal));
+      color: #fff;
+    }
+
+    .reno-package-cta-3 {
+      background: linear-gradient(135deg, var(--reno-coral), var(--reno-pink));
+      color: #fff;
+    }
+
+    .reno-package-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
+    .reno-popular-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--reno-coral), var(--reno-pink));
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    /* === BEFORE/AFTER === */
+    .reno-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .reno-showcase-card {
+      border-radius: var(--reno-radius);
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+
+    .reno-showcase-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reno-showcase-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .reno-showcase-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .reno-showcase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px;
+      background: linear-gradient(transparent, rgba(15,23,42,0.95));
+    }
+
+    .reno-showcase-overlay h3 {
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .reno-showcase-overlay p {
+      color: var(--reno-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .reno-showcase-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .reno-tag-before {
+      background: rgba(239,68,68,0.3);
+      color: #fca5a5;
+    }
+
+    .reno-tag-after {
+      background: rgba(34,197,94,0.3);
+      color: #86efac;
+    }
+
+    /* === CHECKLIST === */
+    .reno-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .reno-checklist-image {
+      border-radius: var(--reno-radius-lg);
+      overflow: hidden;
+    }
+
+    .reno-checklist-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .reno-checklist-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reno-checklist-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.4s ease;
+    }
+
+    .reno-checklist-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reno-checklist-check {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .reno-check-gradient {
+      background: linear-gradient(135deg, var(--reno-purple), var(--reno-blue));
+    }
+
+    .reno-checklist-item h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .reno-checklist-item p {
+      color: var(--reno-text-muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* === CTA === */
+    .reno-cta {
+      text-align: center;
+      padding: 120px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reno-cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    .reno-cta-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--reno-purple);
+      top: -200px;
+      left: -100px;
+    }
+
+    .reno-cta-orb-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--reno-teal);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    .reno-cta h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .reno-cta p {
+      color: var(--reno-text-muted);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+
+    .reno-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 56px;
+      border-radius: 60px;
+      background: linear-gradient(135deg, var(--reno-purple), var(--reno-blue), var(--reno-teal));
+      background-size: 200% 200%;
+      animation: reno-gradient-shift 4s ease infinite;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(124,58,237,0.3);
+    }
+
+    .reno-cta-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(124,58,237,0.4);
+    }
+
+    /* === CROSS-LINKS === */
+    .reno-crosslinks {
+      background: var(--reno-dark-mid);
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .reno-crosslinks h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .reno-crosslinks-subtitle {
+      text-align: center;
+      color: var(--reno-text-muted);
+      margin-bottom: 48px;
+    }
+
+    .reno-crosslinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 8px;
+    }
+
+    .reno-crosslink-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      color: var(--reno-text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .reno-crosslink-item:hover {
+      color: var(--reno-teal);
+      border-color: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .reno-crosslink-item span {
+      color: var(--reno-teal);
+      font-size: 0.9rem;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 1024px) {
+      .reno-compare {
+        grid-template-columns: 1fr;
+      }
+
+      .reno-packages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .reno-checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .reno-checklist-image {
+        order: -1;
+      }
+
+      .reno-checklist-image img {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .reno-section {
+        padding: 80px 0;
+      }
+
+      .reno-hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .reno-packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reno-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reno-timeline::before {
+        left: 24px;
+      }
+
+      .reno-timeline-dot {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+      }
+
+      .reno-timeline-item {
+        gap: 16px;
+      }
+
+      .reno-crosslinks-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .reno-hero-content {
+        padding: 100px 16px 60px;
+      }
+
+      .reno-section-title {
+        font-size: 1.8rem;
+      }
+
+      .reno-glass-card {
+        padding: 24px;
+      }
+
+      .reno-compare-card {
+        padding: 32px 24px;
+      }
+
+      .reno-crosslinks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* === ANIMATIONS === */
+    .reno-fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reno-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile header override */
+    .lp-reno .header {
+      background: rgba(15,23,42,0.9);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="lp-reno">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="reno-hero">
+    <div class="reno-hero-bg"></div>
+    <div class="reno-hero-orb reno-hero-orb-1"></div>
+    <div class="reno-hero-orb reno-hero-orb-2"></div>
+    <div class="reno-hero-content">
+      <div class="reno-hero-pill">Home Renovation Guide</div>
+      <h1>Window Solutions for <em>Renovations</em></h1>
+      <p class="reno-hero-subtitle">Don't let window furnishings be an afterthought. Plan early, save money, and get a flawless finish that completes your dream renovation.</p>
+      <a href="../free-quote.html" class="reno-hero-cta">Get Renovation Package Quote →</a>
+    </div>
+    <div class="reno-hero-scroll">SCROLL<br>↓</div>
+  </section>
+
+  <!-- Renovation Timeline -->
+  <section class="reno-section reno-section-gradient-1">
+    <div class="container">
+      <h2 class="reno-section-title">The <span class="reno-gradient-text">Renovation Timeline</span></h2>
+      <p class="reno-section-subtitle">When to plan, measure, and install window furnishings during your renovation — so everything lands on time.</p>
+
+      <div class="reno-timeline">
+        <div class="reno-timeline-item">
+          <div class="reno-timeline-dot reno-timeline-dot-1">1</div>
+          <div class="reno-timeline-content">
+            <div class="reno-timeline-week">Week 1–2 • Planning Phase</div>
+            <h3>Design Consultation</h3>
+            <p>Book a free consultation as soon as your renovation plans are finalised. We'll review architectural drawings, suggest window treatment options, and coordinate with your builder on power points for motorised blinds or curtain tracks recessed into bulkheads.</p>
+          </div>
+        </div>
+
+        <div class="reno-timeline-item">
+          <div class="reno-timeline-dot reno-timeline-dot-2">2</div>
+          <div class="reno-timeline-content">
+            <div class="reno-timeline-week">Week 3–4 • Pre-Construction</div>
+            <h3>Electrical & Structural Prep</h3>
+            <p>If you're going motorised, now is when your electrician runs power to window locations. For plantation shutters, we confirm frame depths. For ceiling-mounted curtain tracks, your plasterer needs to know placement before the ceiling goes up.</p>
+          </div>
+        </div>
+
+        <div class="reno-timeline-item">
+          <div class="reno-timeline-dot reno-timeline-dot-3">3</div>
+          <div class="reno-timeline-content">
+            <div class="reno-timeline-week">Week 6–8 • During Build</div>
+            <h3>Fabric & Material Selection</h3>
+            <p>Once your paint colours, flooring, and cabinetry are locked in, we bring samples to your site for colour matching under your actual lighting. This ensures perfect coordination — not guesswork from a showroom visit.</p>
+          </div>
+        </div>
+
+        <div class="reno-timeline-item">
+          <div class="reno-timeline-dot reno-timeline-dot-4">4</div>
+          <div class="reno-timeline-content">
+            <div class="reno-timeline-week">Week 10–12 • Post-Plaster</div>
+            <h3>Final Measure</h3>
+            <p>Once plastering and painting are complete, we do the final measure. Windows must be in their finished state — no renders, architraves, or trim still to come. This is the "measure once, fit perfectly" stage.</p>
+          </div>
+        </div>
+
+        <div class="reno-timeline-item">
+          <div class="reno-timeline-dot reno-timeline-dot-5">5</div>
+          <div class="reno-timeline-content">
+            <div class="reno-timeline-week">Week 14–16 • Completion</div>
+            <h3>Professional Installation</h3>
+            <p>Your blinds, curtains, or shutters arrive and are installed in a single day. We coordinate with your builder to ensure we're the last trade in — after cleaning, after floors, after everything. Move-in ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builder vs Retrofit -->
+  <section class="reno-section reno-section-gradient-2">
+    <div class="container">
+      <h2 class="reno-section-title">Builder Install vs <span class="reno-gradient-text-warm">Retrofit</span></h2>
+      <p class="reno-section-subtitle">Two paths to beautiful windows. Here's how to choose the right one for your project.</p>
+
+      <div class="reno-compare">
+        <div class="reno-compare-card reno-compare-builder">
+          <div class="reno-compare-badge reno-badge-purple">New Build / Major Reno</div>
+          <h3>Builder Coordination</h3>
+          <p>We work directly with your builder from day one. Window furnishings are designed into the build — not bolted on after.</p>
+          <ul class="reno-compare-list">
+            <li><span>✦</span> Recessed curtain tracks in bulkheads</li>
+            <li><span>✦</span> Pre-wired motorisation at every window</li>
+            <li><span>✦</span> Shutter frames built into window reveals</li>
+            <li><span>✦</span> Coordinated with plasterers & electricians</li>
+            <li><span>✦</span> Single defects period covers everything</li>
+            <li><span>✦</span> Builder-direct invoicing available</li>
+          </ul>
+        </div>
+
+        <div class="reno-compare-card reno-compare-retrofit">
+          <div class="reno-compare-badge reno-badge-coral">Existing Home</div>
+          <h3>Retrofit Installation</h3>
+          <p>Already renovated or refreshing specific rooms? We measure around your existing finishes and install with zero disruption.</p>
+          <ul class="reno-compare-list">
+            <li><span>✦</span> No structural changes required</li>
+            <li><span>✦</span> Surface-mounted or face-fixed options</li>
+            <li><span>✦</span> Battery-powered motorisation available</li>
+            <li><span>✦</span> Room-by-room or whole-home packages</li>
+            <li><span>✦</span> Same-day install for most standard blinds</li>
+            <li><span>✦</span> Flexible payment plans available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Deals -->
+  <section class="reno-section reno-section-gradient-3">
+    <div class="container">
+      <h2 class="reno-section-title">Renovation <span class="reno-gradient-text">Packages</span></h2>
+      <p class="reno-section-subtitle">Whole-home packages designed for renovators. Better value than room-by-room pricing.</p>
+
+      <div class="reno-packages-grid">
+        <!-- Essential -->
+        <div class="reno-package-card">
+          <div class="reno-package-card-gradient reno-package-gradient-1">
+            <div class="reno-package-card-inner">
+              <h3>Essential</h3>
+              <div class="reno-package-price reno-gradient-text">$2,990</div>
+              <div class="reno-package-price-note">Up to 8 windows • Installed</div>
+              <ul class="reno-package-features">
+                <li><span>✓</span> Roller blinds or venetians</li>
+                <li><span>✓</span> Choice of 200+ fabrics</li>
+                <li><span>✓</span> Child-safe mechanisms</li>
+                <li><span>✓</span> Free measure & install</li>
+                <li><span>✓</span> 5-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="reno-package-cta reno-package-cta-1">Get Quote →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="reno-package-card" style="position:relative;">
+          <div class="reno-popular-badge">Most Popular</div>
+          <div class="reno-package-card-gradient reno-package-gradient-2">
+            <div class="reno-package-card-inner">
+              <h3>Premium</h3>
+              <div class="reno-package-price reno-gradient-text">$5,990</div>
+              <div class="reno-package-price-note">Up to 12 windows • Installed</div>
+              <ul class="reno-package-features">
+                <li><span>✓</span> Mix of blinds + curtains</li>
+                <li><span>✓</span> Motorised options (3 rooms)</li>
+                <li><span>✓</span> Premium fabric collection</li>
+                <li><span>✓</span> Builder coordination included</li>
+                <li><span>✓</span> 10-year warranty</li>
+              </ul>
+              <a href="../free-quote.html" class="reno-package-cta reno-package-cta-2">Get Quote →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Luxury -->
+        <div class="reno-package-card">
+          <div class="reno-package-card-gradient reno-package-gradient-3">
+            <div class="reno-package-card-inner">
+              <h3>Luxury</h3>
+              <div class="reno-package-price reno-gradient-text-warm">$12,990</div>
+              <div class="reno-package-price-note">Up to 20 windows • Installed</div>
+              <ul class="reno-package-features">
+                <li><span>✓</span> Shutters, curtains & blinds</li>
+                <li><span>✓</span> Full motorisation + smart home</li>
+                <li><span>✓</span> Designer fabric consultation</li>
+                <li><span>✓</span> Dedicated project manager</li>
+                <li><span>✓</span> Lifetime warranty on shutters</li>
+              </ul>
+              <a href="../free-quote.html" class="reno-package-cta reno-package-cta-3">Get Quote →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Showcase -->
+  <section class="reno-section reno-section-gradient-warm">
+    <div class="container">
+      <h2 class="reno-section-title">Renovation <span class="reno-gradient-text-warm">Transformations</span></h2>
+      <p class="reno-section-subtitle">Real Melbourne renovations. See how the right window treatments complete the look.</p>
+
+      <div class="reno-showcase-grid">
+        <div class="reno-showcase-card">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=80" alt="Modern living room renovation">
+          <div class="reno-showcase-overlay">
+            <div class="reno-showcase-tag reno-tag-after">After</div>
+            <h3>Hawthorn Victorian Terrace</h3>
+            <p>Sheer curtains + blockout rollers. Heritage charm meets modern comfort.</p>
+          </div>
+        </div>
+
+        <div class="reno-showcase-card">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&auto=format&fit=crop&q=80" alt="Contemporary kitchen renovation">
+          <div class="reno-showcase-overlay">
+            <div class="reno-showcase-tag reno-tag-after">After</div>
+            <h3>South Yarra Apartment</h3>
+            <p>Motorised roller blinds with Alexa integration. Seamless modern living.</p>
+          </div>
+        </div>
+
+        <div class="reno-showcase-card">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&auto=format&fit=crop&q=80" alt="Bedroom renovation with plantation shutters">
+          <div class="reno-showcase-overlay">
+            <div class="reno-showcase-tag reno-tag-after">After</div>
+            <h3>Brighton Family Home</h3>
+            <p>Plantation shutters throughout. Consistent, timeless, added $15K to value.</p>
+          </div>
+        </div>
+
+        <div class="reno-showcase-card">
+          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&auto=format&fit=crop&q=80" alt="Open plan living renovation">
+          <div class="reno-showcase-overlay">
+            <div class="reno-showcase-tag reno-tag-after">After</div>
+            <h3>Toorak New Build</h3>
+            <p>Full automation package: curtains, blinds & shutters on one app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section class="reno-section reno-section-gradient-1">
+    <div class="container">
+      <h2 class="reno-section-title">Renovation <span class="reno-gradient-text">Checklist</span></h2>
+      <p class="reno-section-subtitle">Don't miss a step. Your complete window furnishing checklist for renovations.</p>
+
+      <div class="reno-checklist">
+        <div class="reno-checklist-image reno-fade-up">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80" alt="Beautiful renovated home interior">
+        </div>
+        <div>
+          <ul class="reno-checklist-items">
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Include window treatments in your renovation budget</h4>
+                <p>Allocate 3–5% of total renovation cost. Better to plan upfront than scramble at the end.</p>
+              </div>
+            </li>
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Book consultation before construction begins</h4>
+                <p>This lets us coordinate with your builder on wiring, frames, and track placement.</p>
+              </div>
+            </li>
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Confirm power points for motorised options</h4>
+                <p>Your electrician needs window locations marked. We provide a spec sheet for your sparky.</p>
+              </div>
+            </li>
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Select fabrics after paint colours are finalised</h4>
+                <p>Matching under artificial showroom light ≠ matching under your actual room light. We bring samples to site.</p>
+              </div>
+            </li>
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Schedule final measure after plastering & painting</h4>
+                <p>Windows must be in their finished state. Even 5mm of render can affect shutter fit.</p>
+              </div>
+            </li>
+            <li class="reno-checklist-item">
+              <div class="reno-checklist-check reno-check-gradient">✓</div>
+              <div>
+                <h4>Install window furnishings last</h4>
+                <p>After floors, after painting, after cleaning. This protects your investment from construction dust and damage.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reno-cta reno-section-gradient-3">
+    <div class="reno-cta-orb reno-cta-orb-1"></div>
+    <div class="reno-cta-orb reno-cta-orb-2"></div>
+    <div class="container" style="position: relative;">
+      <h2>Ready to Plan Your <span class="reno-gradient-text">Renovation?</span></h2>
+      <p>Get a free renovation package quote. We'll visit your site, coordinate with your builder, and deliver a complete window solution on time and on budget.</p>
+      <a href="../free-quote.html" class="reno-cta-btn">Start Your Renovation Quote →</a>
+    </div>
+  </section>
+
+  <!-- Cross-Links -->
+  <section class="reno-crosslinks">
+    <div class="container">
+      <h2>Explore More Solutions</h2>
+      <p class="reno-crosslinks-subtitle">Discover our complete range of window furnishing guides and solutions.</p>
+      <div class="reno-crosslinks-grid">
+        <a href="acoustic-solutions.html" class="reno-crosslink-item"><span>→</span> Acoustic Solutions</a>
+        <a href="allergy-friendly.html" class="reno-crosslink-item"><span>→</span> Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html" class="reno-crosslink-item"><span>→</span> Apartment Solutions</a>
+        <a href="arched-specialty-windows.html" class="reno-crosslink-item"><span>→</span> Arched &amp; Specialty Windows</a>
+        <a href="bathroom-kitchen.html" class="reno-crosslink-item"><span>→</span> Bathroom &amp; Kitchen</a>
+        <a href="bedroom-blackout.html" class="reno-crosslink-item"><span>→</span> Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html" class="reno-crosslink-item"><span>→</span> Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html" class="reno-crosslink-item"><span>→</span> Blinds vs Curtains</a>
+        <a href="bushfire-safe-blinds.html" class="reno-crosslink-item"><span>→</span> Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html" class="reno-crosslink-item"><span>→</span> Care &amp; Maintenance</a>
+        <a href="child-safety.html" class="reno-crosslink-item"><span>→</span> Child Safety</a>
+        <a href="coastal-home-blinds.html" class="reno-crosslink-item"><span>→</span> Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html" class="reno-crosslink-item"><span>→</span> Colour Matching Guide</a>
+        <a href="colour-trends-2026.html" class="reno-crosslink-item"><span>→</span> Colour Trends 2026</a>
+        <a href="commercial-blinds.html" class="reno-crosslink-item"><span>→</span> Commercial Blinds</a>
+        <a href="conservatory-sunroom.html" class="reno-crosslink-item"><span>→</span> Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html" class="reno-crosslink-item"><span>→</span> Day Night Blinds</a>
+        <a href="design-inspiration.html" class="reno-crosslink-item"><span>→</span> Design Inspiration</a>
+        <a href="diy-installation-guide.html" class="reno-crosslink-item"><span>→</span> DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html" class="reno-crosslink-item"><span>→</span> DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html" class="reno-crosslink-item"><span>→</span> Double Glazed Blinds</a>
+        <a href="eco-friendly.html" class="reno-crosslink-item"><span>→</span> Eco-Friendly</a>
+        <a href="elderly-accessible.html" class="reno-crosslink-item"><span>→</span> Elderly Accessible</a>
+        <a href="energy-efficient.html" class="reno-crosslink-item"><span>→</span> Energy Efficient</a>
+        <a href="fabric-encyclopedia.html" class="reno-crosslink-item"><span>→</span> Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html" class="reno-crosslink-item"><span>→</span> Festive &amp; Seasonal Styling</a>
+        <a href="free-samples.html" class="reno-crosslink-item"><span>→</span> Free Samples</a>
+        <a href="heritage-homes.html" class="reno-crosslink-item"><span>→</span> Heritage Homes</a>
+        <a href="high-rise-glare.html" class="reno-crosslink-item"><span>→</span> High-Rise Glare</a>
+        <a href="home-gym-blinds.html" class="reno-crosslink-item"><span>→</span> Home Gym Blinds</a>
+        <a href="home-library-study.html" class="reno-crosslink-item"><span>→</span> Home Library &amp; Study</a>
+        <a href="home-office.html" class="reno-crosslink-item"><span>→</span> Home Office</a>
+        <a href="hospitality-blinds.html" class="reno-crosslink-item"><span>→</span> Hospitality Blinds</a>
+        <a href="large-windows.html" class="reno-crosslink-item"><span>→</span> Large Windows</a>
+        <a href="layered-treatments.html" class="reno-crosslink-item"><span>→</span> Layered Treatments</a>
+        <a href="luxury-penthouse.html" class="reno-crosslink-item"><span>→</span> Luxury Penthouse</a>
+        <a href="media-room.html" class="reno-crosslink-item"><span>→</span> Media Room</a>
+        <a href="medical-clinic.html" class="reno-crosslink-item"><span>→</span> Medical Clinic</a>
+        <a href="melbourne-service-areas.html" class="reno-crosslink-item"><span>→</span> Melbourne Service Areas</a>
+        <a href="minimalist-styling.html" class="reno-crosslink-item"><span>→</span> Minimalist Styling</a>
+        <a href="new-home-packages.html" class="reno-crosslink-item"><span>→</span> New Home Packages</a>
+        <a href="nursery-safe.html" class="reno-crosslink-item"><span>→</span> Nursery Safe</a>
+        <a href="office-partition.html" class="reno-crosslink-item"><span>→</span> Office Partition</a>
+        <a href="open-kitchen.html" class="reno-crosslink-item"><span>→</span> Open Kitchen</a>
+        <a href="outdoor-blinds.html" class="reno-crosslink-item"><span>→</span> Outdoor Blinds</a>
+        <a href="pet-friendly.html" class="reno-crosslink-item"><span>→</span> Pet-Friendly</a>
+        <a href="plantation-shutters-guide.html" class="reno-crosslink-item"><span>→</span> Plantation Shutters Guide</a>
+        <a href="privacy-blinds.html" class="reno-crosslink-item"><span>→</span> Privacy Blinds</a>
+        <a href="property-styling.html" class="reno-crosslink-item"><span>→</span> Property Styling</a>
+        <a href="rental-property.html" class="reno-crosslink-item"><span>→</span> Rental Property</a>
+        <a href="restaurant-cafe.html" class="reno-crosslink-item"><span>→</span> Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html" class="reno-crosslink-item"><span>→</span> Retail Shopfront</a>
+        <a href="scandinavian-style.html" class="reno-crosslink-item"><span>→</span> Scandinavian Style</a>
+        <a href="school-childcare.html" class="reno-crosslink-item"><span>→</span> School &amp; Childcare</a>
+        <a href="seasonal-sale.html" class="reno-crosslink-item"><span>→</span> Seasonal Sale</a>
+        <a href="skylight-blinds.html" class="reno-crosslink-item"><span>→</span> Skylight Blinds</a>
+        <a href="smart-home.html" class="reno-crosslink-item"><span>→</span> Smart Home</a>
+        <a href="summer-uv-protection.html" class="reno-crosslink-item"><span>→</span> Summer UV Protection</a>
+        <a href="testimonials.html" class="reno-crosslink-item"><span>→</span> Testimonials</a>
+        <a href="townhouse-strata.html" class="reno-crosslink-item"><span>→</span> Townhouse &amp; Strata</a>
+        <a href="warehouse-industrial-blinds.html" class="reno-crosslink-item"><span>→</span> Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="reno-crosslink-item"><span>→</span> Wine &amp; Entertainment Room</a>
+        <a href="winter-insulation.html" class="reno-crosslink-item"><span>→</span> Winter Insulation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reno-timeline-item, .reno-compare-card, .reno-package-card, .reno-showcase-card, .reno-checklist-item, .reno-glass-card, .reno-fade-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('nav-open');
+    });
+  </script>
+
+</body>
+</html>

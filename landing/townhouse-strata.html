@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Townhouse & Strata Blinds | Body Corporate Compliant | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Body corporate and strata-compliant blinds for townhouses and multi-dwelling complexes in Melbourne. Uniform exterior appearance, bulk pricing for developers. Free measure & quote.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === GLASSMORPHISM DESIGN === */
+    :root {
+      --ts-bg-start: #e8eaf6;
+      --ts-bg-mid: #c5cae9;
+      --ts-bg-end: #b39ddb;
+      --ts-purple: #7c4dff;
+      --ts-purple-dark: #651fff;
+      --ts-blue: #448aff;
+      --ts-blue-light: #82b1ff;
+      --ts-indigo: #536dfe;
+      --ts-white: #ffffff;
+      --ts-white-90: rgba(255,255,255,0.9);
+      --ts-white-70: rgba(255,255,255,0.7);
+      --ts-white-50: rgba(255,255,255,0.5);
+      --ts-white-20: rgba(255,255,255,0.2);
+      --ts-white-10: rgba(255,255,255,0.1);
+      --ts-dark: #1a1a2e;
+      --ts-dark-soft: #2d2d44;
+      --ts-text: #2c2c40;
+      --ts-text-light: #5c5c7a;
+      --ts-glass-bg: rgba(255,255,255,0.25);
+      --ts-glass-border: rgba(255,255,255,0.4);
+      --ts-glass-shadow: 0 8px 32px rgba(31,38,135,0.15);
+      --ts-radius: 20px;
+    }
+
+    .ts-page {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      color: var(--ts-text);
+    }
+
+    /* Animated background orbs */
+    .ts-bg-orbs {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ts-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: ts-float 20s ease-in-out infinite;
+    }
+
+    .ts-orb-1 {
+      width: 600px; height: 600px;
+      top: -200px; left: -100px;
+      background: rgba(130,177,255,0.3);
+      animation-delay: 0s;
+    }
+
+    .ts-orb-2 {
+      width: 500px; height: 500px;
+      top: 40%; right: -150px;
+      background: rgba(179,157,219,0.3);
+      animation-delay: -7s;
+    }
+
+    .ts-orb-3 {
+      width: 400px; height: 400px;
+      bottom: -100px; left: 30%;
+      background: rgba(124,77,255,0.2);
+      animation-delay: -14s;
+    }
+
+    .ts-orb-4 {
+      width: 350px; height: 350px;
+      top: 20%; left: 50%;
+      background: rgba(240,147,251,0.2);
+      animation-delay: -3s;
+    }
+
+    @keyframes ts-float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(30px, -40px) scale(1.05); }
+      50% { transform: translate(-20px, 20px) scale(0.95); }
+      75% { transform: translate(40px, 30px) scale(1.03); }
+    }
+
+    /* Glass card mixin */
+    .ts-glass {
+      background: var(--ts-glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--ts-glass-border);
+      border-radius: var(--ts-radius);
+      box-shadow: var(--ts-glass-shadow);
+    }
+
+    .ts-glass-dark {
+      background: rgba(26,26,46,0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--ts-radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      color: var(--ts-white);
+    }
+
+    /* Content wrapper */
+    .ts-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========== HERO ========== */
+    .ts-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px 80px;
+      overflow: hidden;
+    }
+
+    .ts-hero-inner {
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ts-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      color: var(--ts-white);
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      animation: ts-fadeInDown 0.8s ease-out;
+    }
+
+    .ts-hero-badge span {
+      font-size: 1.1rem;
+    }
+
+    .ts-hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: var(--ts-white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      animation: ts-fadeInUp 0.8s ease-out 0.2s both;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .ts-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #82b1ff, #c5cae9, #f0f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ts-hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      animation: ts-fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    .ts-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: ts-fadeInUp 0.8s ease-out 0.6s both;
+    }
+
+    .ts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 14px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .ts-btn-primary {
+      background: var(--ts-white);
+      color: var(--ts-purple);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.3);
+    }
+
+    .ts-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,255,255,0.4);
+    }
+
+    .ts-btn-glass {
+      background: rgba(255,255,255,0.15);
+      color: var(--ts-white);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .ts-btn-glass:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Hero floating shapes */
+    .ts-hero-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      pointer-events: none;
+    }
+
+    .ts-shape {
+      position: absolute;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+    }
+
+    .ts-shape-1 {
+      width: 120px; height: 120px;
+      top: 15%; left: 8%;
+      transform: rotate(15deg);
+      animation: ts-spin-slow 30s linear infinite;
+    }
+
+    .ts-shape-2 {
+      width: 80px; height: 80px;
+      top: 25%; right: 12%;
+      border-radius: 50%;
+      animation: ts-bob 6s ease-in-out infinite;
+    }
+
+    .ts-shape-3 {
+      width: 150px; height: 60px;
+      bottom: 20%; left: 15%;
+      animation: ts-bob 8s ease-in-out infinite reverse;
+    }
+
+    .ts-shape-4 {
+      width: 60px; height: 60px;
+      bottom: 30%; right: 8%;
+      transform: rotate(45deg);
+      animation: ts-spin-slow 25s linear infinite reverse;
+    }
+
+    @keyframes ts-spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes ts-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes ts-fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ts-fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll reveal */
+    .ts-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .ts-reveal.ts-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== SECTIONS ========== */
+    .ts-section {
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .ts-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ts-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: rgba(124,77,255,0.12);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ts-purple);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .ts-section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--ts-dark);
+    }
+
+    .ts-section-subtitle {
+      font-size: 1.1rem;
+      color: var(--ts-text-light);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 50px;
+    }
+
+    /* ========== COMPLIANCE SECTION ========== */
+    .ts-compliance {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .ts-compliance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ts-compliance-image {
+      position: relative;
+      border-radius: var(--ts-radius);
+      overflow: hidden;
+    }
+
+    .ts-compliance-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: var(--ts-radius);
+    }
+
+    .ts-compliance-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.1));
+      border-radius: var(--ts-radius);
+    }
+
+    .ts-compliance-content {
+      padding: 20px 0;
+    }
+
+    .ts-compliance-content .ts-section-title {
+      color: var(--ts-white);
+    }
+
+    .ts-compliance-content .ts-section-subtitle {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .ts-check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ts-check-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      color: var(--ts-white);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      transition: all 0.3s ease;
+    }
+
+    .ts-check-list li:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateX(6px);
+    }
+
+    .ts-check-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: rgba(124,77,255,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    /* ========== PRODUCTS SECTION ========== */
+    .ts-products {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .ts-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .ts-product-card {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: var(--ts-radius);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .ts-product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(31,38,135,0.2);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .ts-product-card-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ts-product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .ts-product-card:hover .ts-product-card-img img {
+      transform: scale(1.08);
+    }
+
+    .ts-product-card-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, rgba(255,255,255,0.2));
+    }
+
+    .ts-product-card-body {
+      padding: 28px;
+    }
+
+    .ts-product-card-body h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--ts-dark);
+    }
+
+    .ts-product-card-body p {
+      font-size: 0.925rem;
+      color: var(--ts-text-light);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .ts-product-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(124,77,255,0.1);
+      color: var(--ts-purple);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* ========== BENEFITS SECTION ========== */
+    .ts-benefits {
+      background: rgba(26,26,46,0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .ts-benefits .ts-section-title {
+      color: var(--ts-white);
+    }
+
+    .ts-benefits .ts-section-subtitle {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .ts-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .ts-benefit-card {
+      padding: 36px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--ts-radius);
+      transition: all 0.3s ease;
+    }
+
+    .ts-benefit-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .ts-benefit-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--ts-purple), var(--ts-blue));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(124,77,255,0.3);
+    }
+
+    .ts-benefit-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ts-white);
+      margin-bottom: 12px;
+    }
+
+    .ts-benefit-card p {
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+
+    /* ========== BULK PRICING ========== */
+    .ts-bulk {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .ts-bulk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ts-pricing-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ts-tier {
+      padding: 28px 32px;
+      background: rgba(255,255,255,0.22);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .ts-tier:hover {
+      background: rgba(255,255,255,0.32);
+      transform: scale(1.02);
+    }
+
+    .ts-tier-featured {
+      background: rgba(124,77,255,0.2);
+      border-color: rgba(124,77,255,0.4);
+      position: relative;
+    }
+
+    .ts-tier-featured::before {
+      content: '★ Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      padding: 3px 12px;
+      background: var(--ts-purple);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ts-tier-info h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ts-dark);
+      margin-bottom: 4px;
+    }
+
+    .ts-tier-info p {
+      font-size: 0.85rem;
+      color: var(--ts-text-light);
+    }
+
+    .ts-tier-discount {
+      padding: 8px 18px;
+      background: linear-gradient(135deg, var(--ts-purple), var(--ts-blue));
+      color: white;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .ts-bulk-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--ts-dark);
+      margin-bottom: 16px;
+    }
+
+    .ts-bulk-content p {
+      font-size: 1rem;
+      color: var(--ts-text-light);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .ts-bulk-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ts-bulk-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      font-size: 0.875rem;
+      color: var(--ts-text);
+      font-weight: 500;
+    }
+
+    /* ========== PROCESS SECTION ========== */
+    .ts-process {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .ts-process .ts-section-title {
+      color: var(--ts-white);
+      text-align: center;
+    }
+
+    .ts-process .ts-section-subtitle {
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ts-process .ts-section-label {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+    }
+
+    .ts-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .ts-timeline::before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(124,77,255,0.5), rgba(255,255,255,0.3));
+    }
+
+    .ts-timeline-item {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .ts-timeline-num {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ts-white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .ts-timeline-content {
+      padding: 24px 28px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+
+    .ts-timeline-content:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .ts-timeline-content h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ts-white);
+      margin-bottom: 8px;
+    }
+
+    .ts-timeline-content p {
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .ts-cta {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .ts-cta-card {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 48px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(31,38,135,0.2);
+    }
+
+    .ts-cta-card h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--ts-dark);
+      margin-bottom: 16px;
+    }
+
+    .ts-cta-card p {
+      font-size: 1.1rem;
+      color: var(--ts-text-light);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .ts-cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ts-btn-solid {
+      background: linear-gradient(135deg, var(--ts-purple), var(--ts-indigo));
+      color: white;
+      box-shadow: 0 4px 20px rgba(124,77,255,0.35);
+    }
+
+    .ts-btn-solid:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124,77,255,0.45);
+    }
+
+    .ts-btn-outline {
+      background: transparent;
+      color: var(--ts-purple);
+      border: 2px solid var(--ts-purple);
+    }
+
+    .ts-btn-outline:hover {
+      background: rgba(124,77,255,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ========== STATS BAR ========== */
+    .ts-stats {
+      padding: 60px 20px;
+    }
+
+    .ts-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ts-stat {
+      text-align: center;
+      padding: 32px 20px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .ts-stat:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-4px);
+    }
+
+    .ts-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--ts-white), var(--ts-blue-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .ts-stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* ========== CROSS-LINKS ========== */
+    .ts-explore {
+      padding: 80px 20px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .ts-explore h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ts-white);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .ts-explore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ts-explore-grid a {
+      display: block;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ts-explore-grid a:hover {
+      background: rgba(255,255,255,0.2);
+      color: var(--ts-white);
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .ts-explore-grid a.ts-new-tag {
+      border-color: rgba(124,77,255,0.5);
+      background: rgba(124,77,255,0.15);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .ts-compliance-grid,
+      .ts-bulk-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .ts-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ts-hero {
+        padding: 100px 16px 60px;
+        min-height: auto;
+      }
+
+      .ts-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .ts-section {
+        padding: 60px 16px;
+      }
+
+      .ts-products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ts-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ts-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ts-bulk-features {
+        grid-template-columns: 1fr;
+      }
+
+      .ts-timeline::before {
+        left: 24px;
+      }
+
+      .ts-timeline-num {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+      }
+
+      .ts-explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ts-cta-card {
+        padding: 40px 24px;
+      }
+
+      .ts-shape { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .ts-hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ts-stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .ts-explore-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ts-tier {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body class="ts-page">
+
+  <!-- Background orbs -->
+  <div class="ts-bg-orbs">
+    <div class="ts-orb ts-orb-1"></div>
+    <div class="ts-orb ts-orb-2"></div>
+    <div class="ts-orb ts-orb-3"></div>
+    <div class="ts-orb ts-orb-4"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="../index.html#products" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#solutions" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="commercial-blinds.html">Commercial</a>
+            <a href="new-home-packages.html">New Home</a>
+            <a href="energy-efficient.html">Energy Efficient</a>
+            <a href="smart-home.html">Smart Home</a>
+            <a href="child-safety.html">Child Safety</a>
+            <a href="outdoor-blinds.html">Outdoor</a>
+            <a href="apartment-solutions.html">Apartments</a>
+            <a href="acoustic-solutions.html">Acoustic</a>
+            <a href="large-windows.html">Large Windows</a>
+            <a href="eco-friendly.html">Eco-Friendly</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="../index.html#guides" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="care-maintenance.html">Care & Maintenance</a>
+            <a href="design-inspiration.html">Design Inspiration</a>
+            <a href="layered-treatments.html">Layered Treatments</a>
+            <a href="free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="ts-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="ts-hero">
+      <div class="ts-hero-shapes">
+        <div class="ts-shape ts-shape-1"></div>
+        <div class="ts-shape ts-shape-2"></div>
+        <div class="ts-shape ts-shape-3"></div>
+        <div class="ts-shape ts-shape-4"></div>
+      </div>
+      <div class="ts-hero-inner">
+        <div class="ts-hero-badge">
+          <span>🏘️</span> Strata & Body Corporate Specialists
+        </div>
+        <h1>Smart Blinds for<br><em>Modern Multi-Dwelling Living</em></h1>
+        <p>Beautiful, compliant window furnishings that satisfy body corporate requirements while giving each resident the privacy, comfort, and style they deserve. Trusted by Melbourne developers and owners' corporations.</p>
+        <div class="ts-hero-actions">
+          <a href="../free-quote.html" class="ts-btn ts-btn-primary">Get a Strata-Compliant Quote</a>
+          <a href="#compliance" class="ts-btn ts-btn-glass">Learn About Compliance ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="ts-stats ts-reveal">
+      <div class="ts-stats-grid">
+        <div class="ts-stat">
+          <div class="ts-stat-num">150+</div>
+          <div class="ts-stat-label">Strata Complexes Fitted</div>
+        </div>
+        <div class="ts-stat">
+          <div class="ts-stat-num">3,000+</div>
+          <div class="ts-stat-label">Townhouse Units Completed</div>
+        </div>
+        <div class="ts-stat">
+          <div class="ts-stat-num">100%</div>
+          <div class="ts-stat-label">Body Corp Approval Rate</div>
+        </div>
+        <div class="ts-stat">
+          <div class="ts-stat-num">10yr</div>
+          <div class="ts-stat-label">Warranty on All Products</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMPLIANCE SECTION ========== -->
+    <section id="compliance" class="ts-section ts-compliance">
+      <div class="ts-container">
+        <div class="ts-compliance-grid">
+          <div class="ts-compliance-image ts-reveal">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Modern townhouse complex with uniform window blinds" loading="lazy">
+          </div>
+          <div class="ts-compliance-content ts-reveal">
+            <div class="ts-section-label" style="background: rgba(255,255,255,0.15); color: var(--ts-white);">🏛️ Body Corporate Compliance</div>
+            <h2 class="ts-section-title">Strata-Approved Blinds That Meet Every Requirement</h2>
+            <p class="ts-section-subtitle">Body corporate by-laws often mandate a uniform exterior appearance across all units. Our team works directly with your owners' corporation or building manager to ensure every installation meets the approved specifications — colour, material, and mounting method.</p>
+            <ul class="ts-check-list">
+              <li>
+                <span class="ts-check-icon">✓</span>
+                <div><strong>Uniform Exterior Appearance</strong> — We supply identical street-facing blinds across all units, maintaining the complex's cohesive aesthetic as required by most strata schemes.</div>
+              </li>
+              <li>
+                <span class="ts-check-icon">✓</span>
+                <div><strong>Pre-Approved Materials & Colours</strong> — Our range includes body-corporate-friendly options in white, off-white, and neutral tones that meet standard external appearance guidelines.</div>
+              </li>
+              <li>
+                <span class="ts-check-icon">✓</span>
+                <div><strong>Documented Compliance Reports</strong> — We provide written specifications and product data sheets that can be submitted to your body corporate for pre-approval before installation.</div>
+              </li>
+              <li>
+                <span class="ts-check-icon">✓</span>
+                <div><strong>Non-Invasive Installation</strong> — Our mounting systems require no structural modifications to common property walls, frames, or facades — protecting your bond and strata compliance.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS SECTION ========== -->
+    <section class="ts-section ts-products">
+      <div class="ts-container">
+        <div class="ts-section-label ts-reveal">🪟 Recommended Products</div>
+        <h2 class="ts-section-title ts-reveal" style="color: var(--ts-white);">Popular Choices for Townhouses & Apartments</h2>
+        <p class="ts-section-subtitle ts-reveal" style="color: rgba(255,255,255,0.7);">These products have been approved in over 150 strata complexes across Melbourne. Each offers a uniform exterior appearance with flexible interior customisation.</p>
+
+        <div class="ts-products-grid">
+          <div class="ts-product-card ts-reveal">
+            <div class="ts-product-card-img">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="White roller blinds in modern townhouse" loading="lazy">
+            </div>
+            <div class="ts-product-card-body">
+              <h3>Roller Blinds</h3>
+              <p>The most popular choice for strata compliance. Available in blockout, sunscreen, and translucent fabrics — all with a clean white or neutral backing that presents uniformly from the street. Motorised options available for hard-to-reach windows.</p>
+              <span class="ts-product-tag">Most Popular for Strata</span>
+            </div>
+          </div>
+
+          <div class="ts-product-card ts-reveal">
+            <div class="ts-product-card-img">
+              <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="Honeycomb blinds with cellular insulation" loading="lazy">
+            </div>
+            <div class="ts-product-card-body">
+              <h3>Honeycomb Blinds</h3>
+              <p>Exceptional energy efficiency for compact townhouse living. The cellular design traps air to insulate against heat and cold — reducing energy costs by up to 40%. Neutral backing satisfies body corporate external appearance rules while the interior colour is your choice.</p>
+              <span class="ts-product-tag">Best for Energy Savings</span>
+            </div>
+          </div>
+
+          <div class="ts-product-card ts-reveal">
+            <div class="ts-product-card-img">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="White plantation shutters in townhouse living room" loading="lazy">
+            </div>
+            <div class="ts-product-card-body">
+              <h3>Plantation Shutters</h3>
+              <p>The premium option that adds instant value to any townhouse. Timber or PVC shutters in white or off-white create a timeless, uniform facade while offering superior light and privacy control inside. Water-resistant PVC is ideal for bathrooms and kitchens.</p>
+              <span class="ts-product-tag">Premium Value-Add</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BENEFITS SECTION ========== -->
+    <section class="ts-section ts-benefits">
+      <div class="ts-container">
+        <div class="ts-section-label ts-reveal" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85);">✨ Why Townhouse Owners Choose Us</div>
+        <h2 class="ts-section-title ts-reveal">Designed for Multi-Dwelling Challenges</h2>
+        <p class="ts-section-subtitle ts-reveal">Townhouse living presents unique challenges — shared walls, close neighbours, compact spaces, and body corporate rules. Our solutions address every one of them.</p>
+
+        <div class="ts-benefits-grid">
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">🔇</div>
+            <h3>Noise Reduction Between Units</h3>
+            <p>Honeycomb blinds and heavy-weight curtains create an additional sound barrier at windows — the primary noise entry point in shared-wall dwellings. Our acoustic-rated products can reduce external noise by up to 7dB, making a noticeable difference in daily comfort, especially for bedrooms facing shared driveways or courtyards.</p>
+          </div>
+
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">🔒</div>
+            <h3>Privacy Without Compromise</h3>
+            <p>Close-set townhouses demand effective privacy solutions. Our day/night blinds, sheer-to-blockout combinations, and top-down/bottom-up honeycomb blinds let you control exactly how much the outside world sees in — without sacrificing natural light during the day. Perfect for ground-floor units and properties facing common walkways.</p>
+          </div>
+
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">⚡</div>
+            <h3>Energy Efficiency for Smaller Spaces</h3>
+            <p>Compact townhouses heat up and cool down faster than detached homes. Well-fitted window furnishings act as a thermal barrier — keeping your space cooler in Melbourne's summers and warmer in winter. Our honeycomb blinds can reduce heating costs by up to 40% and cooling costs by up to 30%, making a real difference to your energy bills.</p>
+          </div>
+
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">🎨</div>
+            <h3>Interior Freedom, Exterior Uniformity</h3>
+            <p>Our dual-fabric and backed-fabric systems give you the best of both worlds: choose any colour, texture, or opacity for your interior while maintaining the approved white or neutral exterior that keeps body corporate happy. One window, two personalities — compliant from the street, personalised from the inside.</p>
+          </div>
+
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">📱</div>
+            <h3>Smart Home & Motorisation</h3>
+            <p>Townhouses often have high or hard-to-reach windows, particularly on staircases and mezzanine levels. Our motorised blinds integrate with Google Home, Apple HomeKit, and Alexa — letting you control every window with your voice or phone. Set schedules to open and close automatically, even when you're away.</p>
+          </div>
+
+          <div class="ts-benefit-card ts-reveal">
+            <div class="ts-benefit-icon">👶</div>
+            <h3>Child & Pet Safety</h3>
+            <p>Every product we supply to multi-dwelling properties meets or exceeds Australian child safety standards. Our cordless, spring-loaded, and motorised systems eliminate dangerous dangling cords — a critical consideration for families in townhouse estates. All installations include child safety compliance certificates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BULK PRICING ========== -->
+    <section class="ts-section ts-bulk">
+      <div class="ts-container">
+        <div class="ts-bulk-grid">
+          <div class="ts-bulk-content ts-reveal">
+            <div class="ts-section-label">💰 Volume Pricing</div>
+            <h3>Bulk Pricing for Developers & Owners' Corporations</h3>
+            <p>Whether you're a developer fitting out a new townhouse complex, an owners' corporation standardising window furnishings across all units, or a property manager handling multiple investment properties — we offer significant volume discounts with dedicated project management from measure to installation.</p>
+            <div class="ts-bulk-features">
+              <div class="ts-bulk-feature">📋 Project management</div>
+              <div class="ts-bulk-feature">📐 Bulk measuring</div>
+              <div class="ts-bulk-feature">🎨 Sample boards</div>
+              <div class="ts-bulk-feature">📦 Staged delivery</div>
+              <div class="ts-bulk-feature">🔧 Scheduled installs</div>
+              <div class="ts-bulk-feature">📄 Tax invoicing</div>
+              <div class="ts-bulk-feature">🛡️ 10yr warranty</div>
+              <div class="ts-bulk-feature">🤝 After-sales support</div>
+            </div>
+          </div>
+
+          <div class="ts-pricing-tiers ts-reveal">
+            <div class="ts-tier">
+              <div class="ts-tier-info">
+                <h4>5–10 Units</h4>
+                <p>Small townhouse groups</p>
+              </div>
+              <div class="ts-tier-discount">10% Off</div>
+            </div>
+            <div class="ts-tier ts-tier-featured">
+              <div class="ts-tier-info">
+                <h4>11–30 Units</h4>
+                <p>Medium complexes</p>
+              </div>
+              <div class="ts-tier-discount">18% Off</div>
+            </div>
+            <div class="ts-tier">
+              <div class="ts-tier-info">
+                <h4>31–60 Units</h4>
+                <p>Large developments</p>
+              </div>
+              <div class="ts-tier-discount">22% Off</div>
+            </div>
+            <div class="ts-tier">
+              <div class="ts-tier-info">
+                <h4>60+ Units</h4>
+                <p>Major projects & estates</p>
+              </div>
+              <div class="ts-tier-discount">Custom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESS SECTION ========== -->
+    <section class="ts-section ts-process">
+      <div class="ts-container">
+        <div class="ts-section-label ts-reveal">🔄 Our Process</div>
+        <h2 class="ts-section-title ts-reveal">From First Contact to Fitted Blinds</h2>
+        <p class="ts-section-subtitle ts-reveal">Our streamlined process is designed for multi-unit projects — minimising disruption to residents while ensuring every unit is measured, manufactured, and installed to the same exacting standard.</p>
+
+        <div class="ts-timeline">
+          <div class="ts-timeline-item ts-reveal">
+            <div class="ts-timeline-num">01</div>
+            <div class="ts-timeline-content">
+              <h4>Site Assessment & Consultation</h4>
+              <p>We visit your complex to assess window types, measurements, and any body corporate by-law requirements. We photograph each unit type and note any variations in window sizes or frames across the development. This initial assessment is completely free and obligation-free.</p>
+            </div>
+          </div>
+          <div class="ts-timeline-item ts-reveal">
+            <div class="ts-timeline-num">02</div>
+            <div class="ts-timeline-content">
+              <h4>Sample Selection & Body Corp Submission</h4>
+              <p>We prepare a curated sample board of compliant products — fabrics, colours, and materials that meet your body corporate's external appearance guidelines. We provide a written specification document suitable for committee submission, including product data sheets, colour references, and installation methodology.</p>
+            </div>
+          </div>
+          <div class="ts-timeline-item ts-reveal">
+            <div class="ts-timeline-num">03</div>
+            <div class="ts-timeline-content">
+              <h4>Bulk Quote & Approval</h4>
+              <p>Once products are selected, we prepare a detailed bulk quote with unit-by-unit breakdowns. Volume discounts are applied automatically. The quote includes all measuring, manufacturing, delivery, installation, and disposal of packaging. No hidden costs — the price you see is the price you pay.</p>
+            </div>
+          </div>
+          <div class="ts-timeline-item ts-reveal">
+            <div class="ts-timeline-num">04</div>
+            <div class="ts-timeline-content">
+              <h4>Precision Measuring</h4>
+              <p>Our technicians measure every window in every unit individually. Even in identical floor plans, window openings can vary by several millimetres — enough to cause fitting issues. We schedule measuring in blocks to minimise disruption, coordinating with property managers and tenants for access.</p>
+            </div>
+          </div>
+          <div class="ts-timeline-item ts-reveal">
+            <div class="ts-timeline-num">05</div>
+            <div class="ts-timeline-content">
+              <h4>Installation & Handover</h4>
+              <p>Installation is scheduled across the complex in a logical sequence — typically 3-5 units per day depending on the number of windows. Each unit is left clean and tidy, with all blinds tested and demonstrated to the resident or owner. We provide care instructions and warranty documentation for every unit individually.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="ts-cta">
+      <div class="ts-cta-card ts-reveal">
+        <h2>Ready for Strata-Compliant Blinds?</h2>
+        <p>Whether you're fitting out one townhouse or an entire development, we'll provide a free site assessment, body-corporate-ready documentation, and a competitive bulk quote.</p>
+        <div class="ts-cta-actions">
+          <a href="../free-quote.html" class="ts-btn ts-btn-solid">Get a Strata-Compliant Quote</a>
+          <a href="tel:0400000000" class="ts-btn ts-btn-outline">Call 0400 000 000</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CROSS-LINKS ========== -->
+    <section class="ts-explore">
+      <h2>Explore More Solutions</h2>
+      <div class="ts-explore-grid">
+        <a href="acoustic-solutions.html">Acoustic Solutions</a>
+        <a href="allergy-friendly.html">Allergy-Friendly Blinds</a>
+        <a href="apartment-solutions.html">Apartment Solutions</a>
+        <a href="arched-specialty-windows.html">Arched &amp; Specialty Windows</a>
+        <a href="bathroom-kitchen.html">Bathroom &amp; Kitchen Blinds</a>
+        <a href="bedroom-blackout.html">Bedroom Blackout</a>
+        <a href="bifold-door-blinds.html">Bi-Fold Door Blinds</a>
+        <a href="blinds-vs-curtains.html">Blinds vs Curtains Guide</a>
+        <a href="bushfire-safe-blinds.html">Bushfire Safe Blinds</a>
+        <a href="care-maintenance.html">Care &amp; Maintenance</a>
+        <a href="child-safety.html">Child Safety</a>
+        <a href="coastal-home-blinds.html">Coastal Home Blinds</a>
+        <a href="colour-matching-guide.html">Colour Matching Guide</a>
+        <a href="colour-trends-2026.html">Colour Trends 2026</a>
+        <a href="commercial-blinds.html">Commercial Blinds</a>
+        <a href="conservatory-sunroom.html">Conservatory &amp; Sunroom</a>
+        <a href="day-night-blinds.html">Day Night Blinds</a>
+        <a href="design-inspiration.html">Design Inspiration</a>
+        <a href="diy-installation-guide.html">DIY Installation Guide</a>
+        <a href="diy-measuring-guide.html">DIY Measuring Guide</a>
+        <a href="double-glazed-blinds.html">Double Glazed Blinds</a>
+        <a href="eco-friendly.html">Eco-Friendly Blinds</a>
+        <a href="elderly-accessible.html">Elderly Accessible</a>
+        <a href="energy-efficient.html">Energy Efficient</a>
+        <a href="fabric-encyclopedia.html">Fabric Encyclopedia</a>
+        <a href="festive-seasonal-styling.html">Festive &amp; Seasonal</a>
+        <a href="free-samples.html">Free Samples</a>
+        <a href="heritage-homes.html">Heritage Homes</a>
+        <a href="high-rise-glare.html">High-Rise Glare</a>
+        <a href="home-gym-blinds.html">Home Gym Blinds</a>
+        <a href="home-library-study.html">Home Library &amp; Study</a>
+        <a href="home-office.html">Home Office</a>
+        <a href="hospitality-blinds.html">Hospitality</a>
+        <a href="large-windows.html">Large Windows</a>
+        <a href="layered-treatments.html">Layered Treatments</a>
+        <a href="luxury-penthouse.html">Luxury Penthouse</a>
+        <a href="media-room.html">Media Room</a>
+        <a href="medical-clinic.html">Medical Clinic</a>
+        <a href="melbourne-service-areas.html">Melbourne Service Areas</a>
+        <a href="minimalist-styling.html">Minimalist Styling</a>
+        <a href="new-home-packages.html">New Home Packages</a>
+        <a href="nursery-safe.html">Nursery Safe</a>
+        <a href="office-partition.html">Office Partition</a>
+        <a href="open-kitchen.html">Open Kitchen</a>
+        <a href="outdoor-blinds.html">Outdoor Blinds</a>
+        <a href="pet-friendly.html">Pet-Friendly Blinds</a>
+        <a href="privacy-blinds.html">Privacy Blinds</a>
+        <a href="property-styling.html">Property Styling</a>
+        <a href="rental-property.html">Rental Property</a>
+        <a href="restaurant-cafe.html">Restaurant &amp; Cafe</a>
+        <a href="retail-shopfront.html">Retail Shopfront</a>
+        <a href="scandinavian-style.html">Scandinavian Style</a>
+        <a href="school-childcare.html">School &amp; Childcare</a>
+        <a href="seasonal-sale.html">Seasonal Sale</a>
+        <a href="skylight-blinds.html">Skylight Blinds</a>
+        <a href="smart-home.html">Smart Home</a>
+        <a href="summer-uv-protection.html">Summer UV Protection</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="townhouse-strata.html" class="ts-new-tag">Townhouse &amp; Strata ✨</a>
+        <a href="warehouse-industrial-blinds.html">Warehouse &amp; Industrial</a>
+        <a href="wine-entertainment-room.html" class="ts-new-tag">Wine &amp; Entertainment Room ✨</a>
+        <a href="winter-insulation.html">Winter Insulation</a>
+        <a href="plantation-shutters-guide.html">Plantation Shutters Guide</a>
+        <a href="home-renovation.html">Home Renovation</a>
+      </div>
+    </section>
+
+  </div><!-- /ts-content -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+        <p>Melbourne's trusted window furnishing experts.</p>
+        <div class="footer-contact-info">
+          <p>📞 <a href="tel:0400000000">0400 000 000</a></p>
+          <p>📧 <a href="mailto:info@iseekblinds.com.au">info@iseekblinds.com.au</a></p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Products</h4>
+        <a href="../products/roller-blinds.html">Roller Blinds</a>
+        <a href="../products/curtains.html">Curtains</a>
+        <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+        <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+        <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+        <a href="../products/motorised.html">Motorised Solutions</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="../about.html">About Us</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../free-quote.html">Free Quote</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 iSeekBlinds. All rights reserved. | ABN: 00 000 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu JS -->
+  <script>
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav')?.classList.toggle('nav-open');
+    });
+  </script>
+
+  <!-- IntersectionObserver for scroll animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('ts-visible');
+            }, index * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.ts-reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
