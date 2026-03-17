@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Blinds Integration Guide — Google, Alexa &amp; HomeKit | iSeekBlinds Melbourne</title>
+  <meta name="description" content="Complete guide to connecting motorised blinds to your smart home. Step-by-step setup for Google Home, Amazon Alexa, Apple HomeKit and Matter. Hub comparison, automation recipes, and troubleshooting.">
+  <link rel="canonical" href="https://cpccai97-source.github.io/iseekblinds/blog/smart-home-blinds-integration-guide.html">
+  <meta property="og:title" content="Smart Home Blinds Integration Guide — Google, Alexa &amp; HomeKit | iSeekBlinds Melbourne">
+  <meta property="og:description" content="Complete guide to connecting motorised blinds to your smart home. Step-by-step setup for Google Home, Amazon Alexa, Apple HomeKit and Matter.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Smart Home Blinds Integration Guide — Google, Alexa & HomeKit","description":"Complete guide to connecting motorised blinds to your smart home. Step-by-step setup for Google Home, Amazon Alexa, Apple HomeKit and Matter.","author":{"@type":"Organization","name":"iSeekBlinds"},"publisher":{"@type":"Organization","name":"iSeekBlinds"},"datePublished":"2026-03-18","dateModified":"2026-03-18","mainEntityOfPage":"https://cpccai97-source.github.io/iseekblinds/blog/smart-home-blinds-integration-guide.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cpccai97-source.github.io/iseekblinds/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://cpccai97-source.github.io/iseekblinds/blog/"},{"@type":"ListItem","position":3,"name":"Smart Home Blinds Integration Guide"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do I need a hub for smart blinds?","acceptedAnswer":{"@type":"Answer","text":"Most motorised blinds use Zigbee or Bluetooth to communicate, which means they need a hub (bridge) to connect to your Wi-Fi network and smart home platform. Some newer Wi-Fi motors connect directly to your router without a hub, but they can congest your network if you have many blinds. A hub typically costs $80–$200 and supports 20–30 blinds."}},
+    {"@type":"Question","name":"Which smart home platform works best with motorised blinds?","acceptedAnswer":{"@type":"Answer","text":"Google Home has the broadest compatibility with blind motors and the most natural voice commands. Amazon Alexa is a close second with excellent routine support. Apple HomeKit is more selective — fewer motors are natively compatible, but those that are work very reliably. For most Australian households, Google Home or Alexa is the practical choice."}},
+    {"@type":"Question","name":"Can I control smart blinds when I'm not home?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as your hub and router are powered and connected to the internet. You can open, close, or adjust blinds from anywhere via the manufacturer's app or your smart home app. This is useful for security (making the house look occupied) or letting in light for pets while you're at work."}},
+    {"@type":"Question","name":"Do smart blinds work without internet?","acceptedAnswer":{"@type":"Answer","text":"The motor itself doesn't need internet — local control via the included remote or physical button always works. Hub-based scheduling may continue locally depending on the hub. However, voice assistants (Google, Alexa, Siri) and remote app control require an active internet connection. Zigbee and Matter devices generally have better local control than Wi-Fi-only motors."}},
+    {"@type":"Question","name":"What is Matter and should I wait for it?","acceptedAnswer":{"@type":"Answer","text":"Matter is a universal smart home protocol backed by Google, Apple, Amazon, and Samsung. It promises that any Matter device works with any Matter platform — no more compatibility headaches. As of 2026, some blind motors support Matter (mostly via Thread), but the ecosystem is still maturing. If you're buying now, choose a motor from a brand that has committed to Matter firmware updates, so you get current functionality plus future compatibility."}},
+    {"@type":"Question","name":"How many smart blinds can one hub control?","acceptedAnswer":{"@type":"Answer","text":"Most hubs support 20–30 devices. The MotionBlinds Wi-Fi Bridge handles up to 30 blinds, Somfy TaHoma supports 200+ devices across its ecosystem, and the IKEA DIRIGERA manages around 30. For a typical Melbourne home with 8–15 windows, a single hub is more than enough. Larger homes or commercial spaces may need a second hub or a more capable system like Somfy."}}
+  ]}
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',-apple-system,sans-serif;color:#2D2D2D;line-height:1.6;background:#EDE7DF}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px}
+    a{text-decoration:none;color:inherit}
+    h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .btn{display:inline-block;padding:14px 32px;border-radius:2px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;border:2px solid transparent;transition:all .35s}
+    .btn-primary{background:#C45D3E;color:#fff;border-color:#C45D3E}
+    .btn-primary:hover{background:#a84a30;border-color:#a84a30}
+
+    .header{background:#EDE7DF;border-bottom:1px solid rgba(26,26,26,.08);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{font-size:1.5rem;font-weight:700;font-family:'Outfit',sans-serif}
+    .logo-i{color:#C45D3E}.logo-seek{color:#1a1a1a}.logo-blinds{color:#1a1a1a;font-weight:400}
+    .nav{display:flex;gap:32px;align-items:center}
+    .nav a,.nav-dropdown-toggle{font-family:'Outfit',sans-serif;font-weight:400;font-size:.9rem;color:#2D2D2D;transition:color .3s;background:none;border:none;cursor:pointer}
+    .nav a:hover,.nav-dropdown-toggle:hover{color:#C45D3E}
+    .nav-dropdown{position:relative}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:-16px;background:#fff;border-radius:4px;padding:12px 0;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.08);z-index:200}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block}
+    .nav-dropdown-menu a{display:block;padding:8px 24px;font-size:.85rem}
+    .nav-dropdown-menu a:hover{background:#f5f0eb;color:#C45D3E}
+    .nav-dropdown-mega{min-width:280px;display:none;padding:16px}
+    .nav-dropdown-mega a{padding:6px 12px}
+    .nav-dropdown:hover .nav-dropdown-mega{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .header-right{display:flex;align-items:center;gap:24px}
+    .header-phone{font-size:.85rem;font-weight:500;color:#8B8680;transition:color .3s}
+    .header-phone:hover{color:#C45D3E}
+    .header-cta{padding:10px 24px;font-size:.8rem}
+    .mobile-menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#1a1a1a}
+
+    .blog-hero{padding:120px 0 60px;border-bottom:1px solid rgba(26,26,26,.06)}
+    .blog-hero-inner{max-width:800px}
+    .breadcrumb{font-size:.8rem;color:#8B8680;margin-bottom:32px}
+    .breadcrumb a{color:#8B8680;border-bottom:1px solid transparent;transition:all .3s}
+    .breadcrumb a:hover{color:#C45D3E;border-bottom-color:#C45D3E}
+    .breadcrumb-sep{margin:0 8px;opacity:.5}
+    .blog-category{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:#C45D3E;margin-bottom:16px;display:inline-block}
+    .blog-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;color:#1a1a1a;margin-bottom:24px}
+    .blog-meta{display:flex;gap:24px;align-items:center;font-size:.85rem;color:#8B8680}
+    .blog-meta-dot{width:3px;height:3px;background:#8B8680;border-radius:50%}
+
+    .article-layout{display:grid;grid-template-columns:220px 1fr;gap:64px;padding:80px 0 100px;align-items:start}
+    .article-toc{position:sticky;top:96px}
+    .article-toc h4{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:#C45D3E;margin-bottom:16px}
+    .article-toc a{display:block;padding:6px 0;font-size:.82rem;color:#8B8680;border-left:2px solid transparent;padding-left:16px;margin-left:-2px;transition:all .3s;line-height:1.4}
+    .article-toc a:hover{color:#C45D3E;border-left-color:#C45D3E}
+    .article-content{max-width:720px;font-size:1.05rem;line-height:1.8;color:#3a3a3a}
+    .article-content h2{font-size:1.9rem;color:#1a1a1a;margin:64px 0 20px;line-height:1.2}
+    .article-content h3{font-size:1.35rem;color:#1a1a1a;margin:40px 0 12px}
+    .article-content p{margin-bottom:20px}
+    .article-content ul,.article-content ol{margin:0 0 24px 24px}
+    .article-content li{margin-bottom:8px}
+    .article-content a{color:#C45D3E;border-bottom:1px solid rgba(196,93,62,.3);transition:border-color .3s}
+    .article-content a:hover{border-bottom-color:#C45D3E}
+
+    .tldr-box{background:#fff;border-left:4px solid #C45D3E;padding:28px 32px;margin:0 0 48px;border-radius:0 4px 4px 0}
+    .tldr-box h3{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#C45D3E;margin:0 0 12px}
+    .tldr-box p{margin:0;font-size:.95rem;line-height:1.7;color:#4a4a4a}
+
+    .compat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0 40px}
+    .compat-card{background:#fff;padding:24px;border-radius:3px;text-align:center;border-top:3px solid}
+    .compat-card--easy{border-top-color:#4a8c5c}
+    .compat-card--possible{border-top-color:#D4883E}
+    .compat-card--hard{border-top-color:#c44a4a}
+    .compat-card--new{border-top-color:#4a6e8c}
+    .compat-card h4{font-family:'Outfit',sans-serif;font-weight:600;margin-bottom:8px}
+    .compat-card p{font-size:.82rem;color:#8B8680;margin:0;line-height:1.5}
+    .compat-badge{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+    .compat-badge--easy{background:rgba(74,140,92,.12);color:#4a8c5c}
+    .compat-badge--possible{background:rgba(212,136,62,.12);color:#D4883E}
+    .compat-badge--hard{background:rgba(196,74,74,.12);color:#c44a4a}
+    .compat-badge--new{background:rgba(74,110,140,.12);color:#4a6e8c}
+
+    .step{position:relative;padding:24px 0 24px 64px;border-bottom:1px solid rgba(26,26,26,.06)}
+    .step:last-child{border-bottom:none}
+    .step-number{position:absolute;left:0;top:24px;width:40px;height:40px;background:#C45D3E;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:700}
+    .step h3{font-size:1.15rem;margin-bottom:10px}
+    .step p{margin-bottom:10px}
+
+    .info-box{background:rgba(196,93,62,.06);border-radius:4px;padding:24px 28px;margin:32px 0;font-size:.95rem}
+    .info-box strong{color:#C45D3E}
+    .info-box--tip{background:rgba(74,140,92,.06);border-left:3px solid #4a8c5c}
+    .info-box--tip strong{color:#4a8c5c}
+    .info-box--warn{background:rgba(212,136,62,.06);border-left:3px solid #D4883E}
+    .info-box--warn strong{color:#D4883E}
+
+    .cost-table{width:100%;margin:24px 0 40px;border-collapse:collapse;font-size:.92rem}
+    .cost-table th{font-family:'Outfit',sans-serif;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#8B8680;text-align:left;padding:12px 16px;border-bottom:2px solid #1a1a1a}
+    .cost-table td{padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.06);color:#3a3a3a}
+    .cost-table tr:hover td{background:rgba(196,93,62,.03)}
+
+    .diagram-container{margin:32px 0;background:#fff;padding:32px;border-radius:3px}
+    .diagram-container svg{width:100%;max-width:580px;margin:0 auto;display:block}
+    .diagram-caption{text-align:center;font-size:.82rem;color:#8B8680;margin-top:16px}
+
+    .faq-section{margin:64px 0 48px}
+    .faq-item{border-bottom:1px solid rgba(0,0,0,.08);padding:24px 0}
+    .faq-item:first-child{border-top:1px solid rgba(0,0,0,.08)}
+    .faq-question{font-family:'DM Serif Display',serif;font-size:1.15rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-question::after{content:'+';font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:300;color:#C45D3E;transition:transform .3s}
+    .faq-item.active .faq-question::after{transform:rotate(45deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;font-size:.95rem;color:#5a5a5a;line-height:1.7}
+    .faq-item.active .faq-answer{max-height:400px;padding-top:16px}
+
+    .article-cta{background:#1a1a1a;color:#fff;padding:64px 48px;margin:64px 0 0;border-radius:4px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+    .article-cta h2{color:#fff;font-size:1.8rem;margin:0 0 8px}
+    .article-cta p{color:rgba(255,255,255,.6);font-size:.95rem;margin:0}
+
+    .footer{background:#1a1a1a;color:rgba(255,255,255,.5);padding:60px 0 40px;font-size:.85rem}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer h4{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.3);margin-bottom:20px}
+    .footer a{color:rgba(255,255,255,.5);transition:color .3s;display:block;margin-bottom:10px}
+    .footer a:hover{color:#C45D3E}
+    .footer-logo{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:12px}
+    .footer-logo .logo-i{color:#C45D3E}
+    .footer-desc{line-height:1.6;margin-bottom:20px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.3)}
+
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:900px){
+      .article-layout{grid-template-columns:1fr;gap:0}
+      .article-toc{display:none}
+      .compat-grid{grid-template-columns:1fr 1fr}
+      .article-cta{grid-template-columns:1fr;text-align:center}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .nav{display:none}
+      .mobile-menu-btn{display:block}
+    }
+    @media(max-width:600px){
+      .compat-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .blog-hero{padding:100px 0 40px}
+      .article-cta{padding:40px 28px}
+    }
+    @media print{
+      .header,.footer,.article-toc,.article-cta,.mobile-menu-btn{display:none}
+      body{background:#fff}body::after{display:none}
+      .article-layout{grid-template-columns:1fr}
+      .article-content{max-width:100%}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo"><span class="logo-i">i</span><span class="logo-seek">Seek</span><span class="logo-blinds">Blinds</span></a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Products</a>
+          <div class="nav-dropdown-menu">
+            <a href="../products/roller-blinds.html">Roller Blinds</a>
+            <a href="../products/curtains.html">Curtains</a>
+            <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+            <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+            <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+            <a href="../products/motorised.html">Motorised Solutions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Solutions</a>
+          <div class="nav-dropdown-menu nav-dropdown-mega">
+            <a href="../landing/commercial-blinds.html">Commercial</a>
+            <a href="../landing/new-home-packages.html">New Home</a>
+            <a href="../landing/energy-efficient.html">Energy Efficient</a>
+            <a href="../landing/smart-home.html">Smart Home</a>
+            <a href="../landing/child-safety.html">Child Safety</a>
+            <a href="../landing/outdoor-blinds.html">Outdoor</a>
+            <a href="../landing/apartment-solutions.html">Apartments</a>
+            <a href="../landing/acoustic-solutions.html">Acoustic</a>
+            <a href="../landing/large-windows.html">Large Windows</a>
+            <a href="../landing/eco-friendly.html">Eco-Friendly</a>
+            <a href="../landing/index.html" style="grid-column:1/-1;text-align:center;font-weight:600;border-top:1px solid #eee;margin-top:8px;padding-top:12px;">View All Solutions →</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Guides</a>
+          <div class="nav-dropdown-menu">
+            <a href="../landing/blinds-vs-curtains.html">Blinds vs Curtains</a>
+            <a href="../landing/colour-trends-2026.html">Colour Trends 2026</a>
+            <a href="../landing/care-maintenance.html">Care &amp; Maintenance</a>
+            <a href="../landing/design-inspiration.html">Design Inspiration</a>
+            <a href="../landing/layered-treatments.html">Layered Treatments</a>
+            <a href="../landing/free-samples.html">Free Samples</a>
+          </div>
+        </div>
+        <a href="index.html">Blog</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:0400000000" class="header-phone">0400 000 000</a>
+        <a href="../free-quote.html" class="btn btn-primary header-cta">Free Quote</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="blog-hero">
+    <div class="container">
+      <div class="blog-hero-inner">
+        <nav class="breadcrumb"><a href="../index.html">Home</a><span class="breadcrumb-sep">›</span><a href="index.html">Blog</a><span class="breadcrumb-sep">›</span><span>Smart Home Blinds Integration Guide</span></nav>
+        <span class="blog-category">Smart Home Guide</span>
+        <h1>Smart Home Blinds Integration Guide</h1>
+        <div class="blog-meta">
+          <span>iSeekBlinds Team</span>
+          <span class="blog-meta-dot"></span>
+          <time datetime="2026-03-18">18 March 2026</time>
+          <span class="blog-meta-dot"></span>
+          <span>14 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="article-layout">
+
+      <aside class="article-toc">
+        <h4>Contents</h4>
+        <a href="#tldr">Quick Answer</a>
+        <a href="#how-it-works">How Smart Blinds Connect</a>
+        <a href="#protocols">Protocols Explained</a>
+        <a href="#platforms">Platform Setup Guides</a>
+        <a href="#hubs">Hub Comparison</a>
+        <a href="#automations">Automation Recipes</a>
+        <a href="#matter">The Future: Matter</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#cost">What It All Costs</a>
+        <a href="#faq">FAQ</a>
+      </aside>
+
+      <article class="article-content">
+
+        <div class="tldr-box reveal" id="tldr">
+          <h3>The Short Answer</h3>
+          <p>Most <a href="../products/motorised.html">motorised blinds</a> connect to your smart home through a hub (bridge) that translates Zigbee or Bluetooth signals to Wi-Fi. From there, Google Home, Alexa, and HomeKit can all control them. Setup takes 15–30 minutes per platform. You'll need a hub ($80–$200), a compatible motor, and a stable Wi-Fi network. The new Matter protocol is simplifying everything — but you don't need to wait for it.</p>
+        </div>
+
+        <!-- How It Works -->
+        <h2 id="how-it-works" class="reveal">How Smart Blinds Actually Connect</h2>
+        <p class="reveal">There's a common misconception that smart blinds connect directly to your voice assistant. They don't — there's a chain of communication, and understanding it saves you hours of troubleshooting.</p>
+
+        <div class="diagram-container reveal">
+          <svg viewBox="0 0 580 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Smart blind connectivity chain: Motor to Hub to WiFi to Cloud to Voice Assistants and App">
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C45D3E"/></marker>
+              <marker id="arrowgrey" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8B8680"/></marker>
+            </defs>
+            <!-- Motor -->
+            <rect x="10" y="100" width="85" height="70" rx="4" fill="#f5f0eb" stroke="#1a1a1a" stroke-width="2"/>
+            <text x="52" y="130" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#1a1a1a" font-weight="600">Blind</text>
+            <text x="52" y="145" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#1a1a1a" font-weight="600">Motor</text>
+            <text x="52" y="160" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#8B8680">Zigbee / BLE</text>
+            <!-- Arrow 1 -->
+            <line x1="100" y1="135" x2="135" y2="135" stroke="#C45D3E" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="117" y="128" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#8B8680">wireless</text>
+            <!-- Hub -->
+            <rect x="140" y="100" width="85" height="70" rx="4" fill="rgba(196,93,62,0.1)" stroke="#C45D3E" stroke-width="2"/>
+            <text x="182" y="133" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#C45D3E" font-weight="600">Hub</text>
+            <text x="182" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#8B8680">Bridge</text>
+            <!-- Arrow 2 -->
+            <line x1="230" y1="135" x2="265" y2="135" stroke="#C45D3E" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="247" y="128" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#8B8680">ethernet</text>
+            <!-- WiFi Router -->
+            <rect x="270" y="100" width="85" height="70" rx="4" fill="#f5f0eb" stroke="#1a1a1a" stroke-width="2"/>
+            <text x="312" y="133" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#1a1a1a" font-weight="600">Wi-Fi</text>
+            <text x="312" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#8B8680">Router</text>
+            <!-- Arrow 3 -->
+            <line x1="360" y1="135" x2="395" y2="135" stroke="#C45D3E" stroke-width="2" marker-end="url(#arrowhead)"/>
+            <text x="377" y="128" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#8B8680">internet</text>
+            <!-- Cloud -->
+            <rect x="400" y="100" width="85" height="70" rx="20" fill="#f5f0eb" stroke="#1a1a1a" stroke-width="2"/>
+            <text x="442" y="133" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" fill="#1a1a1a" font-weight="600">Cloud</text>
+            <text x="442" y="148" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#8B8680">API</text>
+            <!-- Arrows to assistants -->
+            <line x1="490" y1="115" x2="510" y2="55" stroke="#C45D3E" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="490" y1="135" x2="510" y2="135" stroke="#C45D3E" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <line x1="490" y1="155" x2="510" y2="215" stroke="#C45D3E" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+            <!-- Voice Assistants -->
+            <rect x="515" y="30" width="55" height="45" rx="4" fill="#f5f0eb" stroke="#8B8680" stroke-width="1"/>
+            <text x="542" y="50" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">Google</text>
+            <text x="542" y="62" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">Home</text>
+            <rect x="515" y="112" width="55" height="45" rx="4" fill="#f5f0eb" stroke="#8B8680" stroke-width="1"/>
+            <text x="542" y="138" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">Alexa</text>
+            <rect x="515" y="195" width="55" height="45" rx="4" fill="#f5f0eb" stroke="#8B8680" stroke-width="1"/>
+            <text x="542" y="215" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">Apple</text>
+            <text x="542" y="227" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">HomeKit</text>
+            <!-- App (below hub) -->
+            <rect x="140" y="205" width="85" height="40" rx="4" fill="#f5f0eb" stroke="#8B8680" stroke-width="1"/>
+            <text x="182" y="229" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#1a1a1a">📱 App</text>
+            <line x1="182" y1="170" x2="182" y2="205" stroke="#8B8680" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowgrey)"/>
+            <text x="195" y="192" font-family="Outfit,sans-serif" font-size="7" fill="#8B8680">local + cloud</text>
+          </svg>
+          <div class="diagram-caption">The signal chain: motor → hub → router → cloud → voice assistant. The app can control locally (via hub) or remotely (via cloud).</div>
+        </div>
+
+        <p class="reveal">Here's the key thing: every link in that chain matters. If your hub loses power, the motor still works via its remote — but voice control and scheduling stop. If your internet drops, local app control often still works (depends on the hub), but "Hey Google" won't respond.</p>
+
+        <p class="reveal">Already have a <a href="../products/motorised.html">motorised blind</a> or thinking about getting one? If you haven't motorised yet, our <a href="how-to-motorise-existing-blinds.html">guide to motorising existing blinds</a> covers the hardware side. This guide picks up from there — getting your motors talking to the rest of your home.</p>
+
+        <!-- Protocols -->
+        <h2 id="protocols" class="reveal">Protocols Explained: Zigbee vs Wi-Fi vs Bluetooth vs Matter</h2>
+        <p class="reveal">The protocol is how your motor talks to the hub (or directly to your network). Each has trade-offs, and picking the wrong one is the most common source of frustration.</p>
+
+        <div class="compat-grid reveal">
+          <div class="compat-card compat-card--easy">
+            <span class="compat-badge compat-badge--easy">Recommended</span>
+            <h4>Zigbee</h4>
+            <p>Low-power mesh network. Motors last 6–12 months on battery. Needs a hub. Very reliable for blinds — handles 30+ devices without congesting your Wi-Fi. Used by MotionBlinds, IKEA, Somfy.</p>
+          </div>
+          <div class="compat-card compat-card--possible">
+            <span class="compat-badge compat-badge--possible">Convenient</span>
+            <h4>Wi-Fi</h4>
+            <p>Connects directly to your router — no hub needed. But each blind is another device on your network. Battery life is shorter (3–4 months). Fine for 1–4 blinds, congests networks with more.</p>
+          </div>
+          <div class="compat-card compat-card--hard">
+            <span class="compat-badge compat-badge--hard">Limited</span>
+            <h4>Bluetooth</h4>
+            <p>Short range, phone-only control. No scheduling when you're away. Some budget motors are Bluetooth-only — they work but aren't truly "smart." Avoid if you want automation.</p>
+          </div>
+          <div class="compat-card compat-card--new">
+            <span class="compat-badge compat-badge--new">Emerging</span>
+            <h4>Matter / Thread</h4>
+            <p>The new universal standard. Works with all platforms natively. Thread mesh network (like Zigbee but open standard). Still early for blinds — few motors support it yet, but it's the future.</p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>💡 Our recommendation:</strong> For a Melbourne home with 5+ windows, go Zigbee. It's the most mature protocol for blind motors, has the best battery life, and a single hub handles your whole house. Wi-Fi is fine if you're only doing 2–3 blinds and don't want to buy a hub.
+        </div>
+
+        <!-- Platform Setup Guides -->
+        <h2 id="platforms" class="reveal">Platform Setup Guides</h2>
+        <p class="reveal">Once your motor and hub are installed and connected to your Wi-Fi, here's how to link them to each voice platform. These steps assume you're using a Zigbee motor with a MotionBlinds-compatible hub — the process is similar for Somfy and other brands.</p>
+
+        <!-- Google Home -->
+        <h3 id="google-home" class="reveal">Google Home Setup</h3>
+        <p class="reveal">Google Home has the widest blind motor compatibility and the most intuitive voice commands. It's our go-to recommendation for most households.</p>
+
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Open Google Home App</h3>
+          <p>On your phone, open the Google Home app. Tap the <strong>+</strong> icon in the top left, then select <strong>Set up device</strong> → <strong>Works with Google</strong>.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Find Your Brand</h3>
+          <p>Search for your motor brand (e.g. "MotionBlinds", "Somfy", "Automate"). Tap it and sign in with the account you created during hub setup.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Authorise &amp; Sync</h3>
+          <p>Grant Google Home permission to control your blinds. It will automatically discover all blinds connected to your hub. This usually takes 10–30 seconds.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3>Assign Rooms</h3>
+          <p>Google will list your blinds with default names (often just "Blind 1"). Rename each one clearly — "Master Bedroom Blind," "Living Room Left" — and assign to the correct room. Good naming makes voice control intuitive.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">5</div>
+          <h3>Test Voice Commands</h3>
+          <p>Try: <em>"Hey Google, close the bedroom blinds"</em> or <em>"Hey Google, set the living room blind to 50%."</em> Google supports percentage positions, open/close, and room-based group commands.</p>
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>💡 Google tip:</strong> Create a "Good Morning" routine that opens all blinds, tells you the weather, and starts your music. Go to Routines → Starter → "Good morning" and add your blinds under Smart Home actions.
+        </div>
+
+        <!-- Alexa -->
+        <h3 id="alexa" class="reveal">Amazon Alexa Setup</h3>
+        <p class="reveal">Alexa's Routines feature is the strongest of any platform — especially powerful for blind automation. Setup is straightforward.</p>
+
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Enable the Skill</h3>
+          <p>In the Alexa app, go to <strong>More</strong> → <strong>Skills &amp; Games</strong>. Search for your motor brand's skill (e.g. "MotionBlinds"). Tap <strong>Enable to Use</strong> and sign in with your hub account.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Discover Devices</h3>
+          <p>After linking, Alexa will scan for devices. You can also say <em>"Alexa, discover devices"</em> or go to <strong>Devices</strong> → <strong>+</strong> → <strong>Add Device</strong>. All hub-connected blinds should appear.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Rename and Group</h3>
+          <p>Tap each blind to rename it and assign it to a room group. Alexa uses room groups for commands like <em>"Alexa, close the blinds in the kitchen."</em></p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3>Create Routines</h3>
+          <p>Alexa Routines are where the real power is. Go to <strong>More</strong> → <strong>Routines</strong> → <strong>+</strong>. Set triggers (time, sunrise/sunset, voice command, sensor) and actions (open/close blinds, set percentage). You can chain multiple blind actions in one routine.</p>
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>💡 Alexa tip:</strong> Use the "Sunrise/Sunset" trigger in Routines — it automatically adjusts for Melbourne's daylight changes throughout the year. No need to manually update times each season.
+        </div>
+
+        <!-- HomeKit -->
+        <h3 id="homekit" class="reveal">Apple HomeKit Setup</h3>
+        <p class="reveal">HomeKit is the most restrictive platform — not all motors support it natively. But if yours does, the integration is rock-solid and privacy-focused (no cloud dependency for local control).</p>
+
+        <div class="step reveal">
+          <div class="step-number">1</div>
+          <h3>Check Compatibility</h3>
+          <p>Your motor or hub must explicitly support HomeKit. MotionBlinds (with Eve MotionBlinds bridge), Somfy TaHoma, and some IKEA motors work. Check for the "Works with Apple HomeKit" badge before buying.</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">2</div>
+          <h3>Scan the HomeKit Code</h3>
+          <p>Open the <strong>Home</strong> app on your iPhone. Tap <strong>+</strong> → <strong>Add Accessory</strong>. Scan the HomeKit code on the hub (usually a sticker on the bottom or in the app's settings screen).</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">3</div>
+          <h3>Assign Rooms &amp; Names</h3>
+          <p>HomeKit will import your blinds. Assign each to a room and give it a clear name. HomeKit uses Siri-friendly naming — "Kitchen Blind" works better than "Blind_Kitchen_01".</p>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-number">4</div>
+          <h3>Create Scenes &amp; Automations</h3>
+          <p>Use Scenes for presets (e.g. "Movie Night" closes all living room blinds to 90%). Use Automations for triggers — time of day, sunrise/sunset, someone arrives home, or when a sensor detects conditions.</p>
+        </div>
+
+        <div class="info-box info-box--warn reveal">
+          <strong>⚠️ HomeKit requirement:</strong> For automations to run when you're not home, you need a home hub — an Apple TV, HomePod, or iPad set as a home hub and always powered on. Without it, automations only trigger when your iPhone is on the local Wi-Fi.
+        </div>
+
+        <!-- Hub Comparison -->
+        <h2 id="hubs" class="reveal">Hub Comparison</h2>
+        <p class="reveal">The hub is the brains of your smart blind setup. Here's how the main options available in Australia compare:</p>
+
+        <table class="cost-table reveal">
+          <thead>
+            <tr>
+              <th>Hub</th>
+              <th>Price (AUD)</th>
+              <th>Protocol</th>
+              <th>Max Devices</th>
+              <th>Platforms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MotionBlinds Wi-Fi Bridge</strong></td>
+              <td>$80 – $120</td>
+              <td>Zigbee → Wi-Fi</td>
+              <td>30 blinds</td>
+              <td>Google, Alexa, HomeKit</td>
+            </tr>
+            <tr>
+              <td><strong>Somfy TaHoma</strong></td>
+              <td>$150 – $200</td>
+              <td>io-homecontrol + Zigbee</td>
+              <td>200+ devices</td>
+              <td>Google, Alexa, HomeKit</td>
+            </tr>
+            <tr>
+              <td><strong>Somfy Connexoon</strong></td>
+              <td>$100 – $130</td>
+              <td>io-homecontrol</td>
+              <td>30 devices</td>
+              <td>Google, Alexa</td>
+            </tr>
+            <tr>
+              <td><strong>IKEA DIRIGERA</strong></td>
+              <td>$79</td>
+              <td>Zigbee + Matter</td>
+              <td>~30 devices</td>
+              <td>Google, Alexa, HomeKit, Matter</td>
+            </tr>
+            <tr>
+              <td><strong>Automate Pulse 2</strong></td>
+              <td>$120 – $160</td>
+              <td>Zigbee → Wi-Fi</td>
+              <td>30 blinds</td>
+              <td>Google, Alexa, HomeKit</td>
+            </tr>
+            <tr>
+              <td><strong>SmartThings Station</strong></td>
+              <td>$80 – $100</td>
+              <td>Zigbee + Matter + Thread</td>
+              <td>200+ devices</td>
+              <td>Google, Alexa, SmartThings</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="reveal"><strong>Our pick for most homes:</strong> The MotionBlinds Wi-Fi Bridge at around $100. It supports all three major platforms, handles 30 blinds, and the setup app is the most straightforward we've used. For larger homes or mixed smart home ecosystems, the Somfy TaHoma or Samsung SmartThings offer more flexibility.</p>
+
+        <!-- Automation Recipes -->
+        <h2 id="automations" class="reveal">Best Automation Recipes</h2>
+        <p class="reveal">This is where smart blinds stop being a novelty and start being genuinely useful. These are the automations we set up most often for our Melbourne customers — based on what actually gets used daily, not what sounds impressive in a brochure.</p>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>🌅 Sunrise Wake-Up</strong><br>
+          <em>Trigger:</em> 15 minutes before sunrise (adjusts automatically year-round)<br>
+          <em>Action:</em> Open bedroom blinds to 40%, then fully open 15 minutes later<br>
+          <em>Why it works:</em> Gradual light exposure syncs your circadian rhythm. In Melbourne, sunrise varies from 5:55am (December) to 7:35am (June) — a fixed 6:30am schedule only works half the year. Sunrise-based automation handles this perfectly.
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>🌡️ Temperature Protection</strong><br>
+          <em>Trigger:</em> Outdoor temperature exceeds 32°C (via weather integration or smart sensor)<br>
+          <em>Action:</em> Close north and west-facing blinds to 80%<br>
+          <em>Why it works:</em> Melbourne's north and west-facing windows cop serious heat in summer. Closing <a href="../products/honeycomb-blinds.html">honeycomb blinds</a> before the heat hits can <a href="honeycomb-blinds-energy-savings.html">reduce cooling costs by up to 40%</a>. Automate it and you never forget.
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>🎬 Movie Scene</strong><br>
+          <em>Trigger:</em> Voice command — "Hey Google, movie time"<br>
+          <em>Action:</em> Close all living room blinds to 95%, dim lights to 10%<br>
+          <em>Why it works:</em> One command replaces walking around closing 3–4 blinds manually. Leave them at 95% (not 100%) to allow a sliver of ambient light — complete darkness makes people fall asleep.
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>🏠 Away Mode</strong><br>
+          <em>Trigger:</em> Everyone leaves the house (location-based, or set manually)<br>
+          <em>Action:</em> Close all blinds. At sunset, open living room blinds to 30% (with lights on timer)<br>
+          <em>Why it works:</em> Security. A house with all blinds shut at 2pm on a Tuesday screams "nobody home." The sunset routine mimics someone being in, making the house look occupied. Simple but effective.
+        </div>
+
+        <div class="info-box info-box--tip reveal">
+          <strong>☀️ Smart Sun Tracking</strong><br>
+          <em>Trigger:</em> Schedule based on sun position (available in advanced automations / Home Assistant)<br>
+          <em>Action:</em> Adjust blinds on each face of the house as the sun moves — east in the morning, north at midday, west in the afternoon<br>
+          <em>Why it works:</em> Maximum natural light with minimum glare and heat. More complex to set up (usually requires Home Assistant or advanced Somfy TaHoma scenes), but transforms how a house feels. We've set this up in a few Southbank apartments — the tenants love it.
+        </div>
+
+        <!-- Matter Protocol -->
+        <h2 id="matter" class="reveal">The Future: Matter Protocol</h2>
+        <p class="reveal">If you've been researching smart home gear recently, you've seen "Matter" everywhere. Here's what it actually means for your blinds — and whether you should care right now.</p>
+
+        <p class="reveal">Matter is a connectivity standard developed by Google, Apple, Amazon, and Samsung (through the Connectivity Standards Alliance). The promise: buy any Matter device and it works with any Matter platform, out of the box. No more checking compatibility charts. No more brand-specific hubs.</p>
+
+        <div class="diagram-container reveal">
+          <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Matter protocol diagram showing universal device compatibility">
+            <defs>
+              <marker id="arrowblue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6e8c"/></marker>
+            </defs>
+            <!-- Title -->
+            <text x="260" y="20" text-anchor="middle" font-family="Outfit,sans-serif" font-size="12" fill="#4a6e8c" font-weight="600">MATTER: One Standard, All Platforms</text>
+            <!-- Before (left side) -->
+            <text x="130" y="50" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#8B8680" font-weight="500">Before Matter</text>
+            <rect x="30" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#c44a4a" stroke-width="1.5"/>
+            <text x="57" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand A</text>
+            <rect x="100" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#D4883E" stroke-width="1.5"/>
+            <text x="127" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand B</text>
+            <rect x="170" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#4a8c5c" stroke-width="1.5"/>
+            <text x="197" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand C</text>
+            <!-- Separate hubs -->
+            <rect x="30" y="110" width="55" height="25" rx="3" fill="rgba(196,74,74,0.08)" stroke="#c44a4a" stroke-width="1"/>
+            <text x="57" y="126" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#c44a4a">Hub A</text>
+            <rect x="100" y="110" width="55" height="25" rx="3" fill="rgba(212,136,62,0.08)" stroke="#D4883E" stroke-width="1"/>
+            <text x="127" y="126" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#D4883E">Hub B</text>
+            <rect x="170" y="110" width="55" height="25" rx="3" fill="rgba(74,140,92,0.08)" stroke="#4a8c5c" stroke-width="1"/>
+            <text x="197" y="126" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#4a8c5c">Hub C</text>
+            <line x1="57" y1="95" x2="57" y2="110" stroke="#c44a4a" stroke-width="1"/>
+            <line x1="127" y1="95" x2="127" y2="110" stroke="#D4883E" stroke-width="1"/>
+            <line x1="197" y1="95" x2="197" y2="110" stroke="#4a8c5c" stroke-width="1"/>
+            <!-- X marks for incompatibility -->
+            <text x="92" y="155" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#c44a4a" font-weight="700">✗</text>
+            <text x="162" y="155" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#c44a4a" font-weight="700">✗</text>
+            <text x="127" y="175" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#c44a4a">Separate ecosystems</text>
+
+            <!-- Divider -->
+            <line x1="260" y1="55" x2="260" y2="200" stroke="#ddd" stroke-width="1" stroke-dasharray="4,3"/>
+
+            <!-- After (right side) -->
+            <text x="390" y="50" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#8B8680" font-weight="500">With Matter</text>
+            <rect x="300" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#4a6e8c" stroke-width="1.5"/>
+            <text x="327" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand A</text>
+            <rect x="365" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#4a6e8c" stroke-width="1.5"/>
+            <text x="392" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand B</text>
+            <rect x="430" y="65" width="55" height="30" rx="3" fill="#f5f0eb" stroke="#4a6e8c" stroke-width="1.5"/>
+            <text x="457" y="84" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Brand C</text>
+            <!-- All connect to one Matter hub -->
+            <line x1="327" y1="95" x2="390" y2="115" stroke="#4a6e8c" stroke-width="1.5"/>
+            <line x1="392" y1="95" x2="390" y2="115" stroke="#4a6e8c" stroke-width="1.5"/>
+            <line x1="457" y1="95" x2="390" y2="115" stroke="#4a6e8c" stroke-width="1.5"/>
+            <rect x="355" y="115" width="70" height="30" rx="3" fill="rgba(74,110,140,0.12)" stroke="#4a6e8c" stroke-width="2"/>
+            <text x="390" y="134" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="#4a6e8c" font-weight="600">Matter</text>
+            <!-- Platforms below -->
+            <line x1="370" y1="145" x2="327" y2="170" stroke="#4a6e8c" stroke-width="1" marker-end="url(#arrowblue)"/>
+            <line x1="390" y1="145" x2="390" y2="170" stroke="#4a6e8c" stroke-width="1" marker-end="url(#arrowblue)"/>
+            <line x1="410" y1="145" x2="453" y2="170" stroke="#4a6e8c" stroke-width="1" marker-end="url(#arrowblue)"/>
+            <text x="327" y="185" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Google</text>
+            <text x="390" y="185" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">Alexa</text>
+            <text x="453" y="185" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#1a1a1a">HomeKit</text>
+            <!-- Check mark -->
+            <text x="390" y="210" text-anchor="middle" font-family="Outfit,sans-serif" font-size="14" fill="#4a8c5c" font-weight="700">✓</text>
+          </svg>
+          <div class="diagram-caption">Matter eliminates brand lock-in: one protocol works across all platforms. Still maturing for blind motors in 2026.</div>
+        </div>
+
+        <p class="reveal"><strong>Should you wait for Matter?</strong> No. Here's why:</p>
+        <ul class="reveal">
+          <li>Current Zigbee and Wi-Fi motors work well right now. You're not missing out on functionality.</li>
+          <li>Several brands (MotionBlinds, IKEA, Somfy) have committed to Matter firmware updates — buy now and get Matter when it's ready.</li>
+          <li>Matter-over-Thread blind motors are trickling in, but the selection is still limited in Australia as of early 2026.</li>
+          <li>The real benefit of Matter (mix-and-match brands without compatibility headaches) matters most when you're building a large system. For 5–10 blinds from one brand, the current hub approach works fine.</li>
+        </ul>
+
+        <div class="info-box reveal">
+          <strong>Practical advice:</strong> Buy from a brand that has announced Matter support. That way you get a working system today and future compatibility tomorrow. MotionBlinds and IKEA are the furthest along in the Australian market.
+        </div>
+
+        <!-- Troubleshooting -->
+        <h2 id="troubleshooting" class="reveal">Troubleshooting Common Issues</h2>
+
+        <div class="info-box reveal">
+          <strong>❌ "Blind not responding" in the app</strong><br>
+          Check the signal chain: Is the hub powered? Is it connected to your router (solid LED, not blinking)? Is the blind within range of the hub? Zigbee range is about 10m through walls. If the hub is in the living room and the blind is two floors up, you may need a Zigbee repeater (any mains-powered Zigbee device acts as one).
+        </div>
+
+        <div class="info-box reveal">
+          <strong>❌ Voice assistant says "device not found"</strong><br>
+          The link between your hub account and Google/Alexa/HomeKit has broken. Go to the smart home app → linked services → unlink your brand → re-link it. This forces a re-sync. Happens occasionally after hub firmware updates.
+        </div>
+
+        <div class="info-box reveal">
+          <strong>❌ Blind moves but doesn't reach the correct position</strong><br>
+          The travel limits need recalibrating. Open the manufacturer's app and re-set the upper and lower limits. This commonly happens after a battery replacement or firmware update that resets the motor's memory.
+        </div>
+
+        <div class="info-box reveal">
+          <strong>❌ Automations aren't triggering</strong><br>
+          For Google Home: check that your phone and Nest/Home speaker are on the same Wi-Fi as the hub. For Alexa: ensure the routine is enabled (not paused). For HomeKit: you need a home hub (Apple TV, HomePod) that's online — without it, automations don't run when you're away.
+        </div>
+
+        <div class="info-box reveal">
+          <strong>❌ Hub won't connect to Wi-Fi</strong><br>
+          Most hubs only support 2.4GHz Wi-Fi, not 5GHz. If your router broadcasts a combined network, temporarily create a separate 2.4GHz SSID for setup. Also check that your router isn't blocking new devices (MAC filtering) or has reached its DHCP limit.
+        </div>
+
+        <div class="info-box reveal">
+          <strong>❌ Significant delay between voice command and blind movement</strong><br>
+          Some lag (1–3 seconds) is normal — the command goes phone → cloud → hub → motor. If it's 5+ seconds, your internet may be slow or the cloud service is experiencing issues. Check your internet speed and try controlling the blind directly from the manufacturer's app (which uses local control). If the app is fast but voice is slow, it's a cloud issue — nothing you can fix on your end.
+        </div>
+
+        <!-- Cost -->
+        <h2 id="cost" class="reveal">What It All Costs</h2>
+        <p class="reveal">Here's the full cost picture for smart blind integration in a Melbourne home. Prices are AUD and include GST. For motor costs specifically, see our <a href="motorised-blinds-cost-guide.html">detailed motorised blinds cost guide</a>.</p>
+
+        <table class="cost-table reveal">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Cost Range (AUD)</th>
+              <th>One-off or Per Blind</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Motorised roller blind (new)</td>
+              <td>$350 – $650</td>
+              <td>Per blind</td>
+              <td>Includes motor, fabric, <a href="../products/roller-blinds.html">roller mechanism</a></td>
+            </tr>
+            <tr>
+              <td>Retrofit motor (battery)</td>
+              <td>$120 – $250</td>
+              <td>Per blind</td>
+              <td>Add to existing blind — <a href="how-to-motorise-existing-blinds.html">DIY guide here</a></td>
+            </tr>
+            <tr>
+              <td>Smart hub / bridge</td>
+              <td>$80 – $200</td>
+              <td>One-off</td>
+              <td>One hub for the whole house</td>
+            </tr>
+            <tr>
+              <td>Google Nest Mini (voice control)</td>
+              <td>$49 – $79</td>
+              <td>Per room (optional)</td>
+              <td>Not required if using phone only</td>
+            </tr>
+            <tr>
+              <td>Amazon Echo Dot (voice control)</td>
+              <td>$49 – $79</td>
+              <td>Per room (optional)</td>
+              <td>Alexa alternative to Google</td>
+            </tr>
+            <tr>
+              <td>Apple HomePod Mini (voice + home hub)</td>
+              <td>$149</td>
+              <td>Per room / one-off</td>
+              <td>Required for HomeKit automations</td>
+            </tr>
+            <tr>
+              <td>Professional smart home setup</td>
+              <td>$150 – $300</td>
+              <td>One-off</td>
+              <td>Hub config, platform linking, automations</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="reveal">Example: Typical Melbourne 3-Bedroom Home</h3>
+        <p class="reveal">10 windows with <a href="../products/roller-blinds.html">roller blinds</a>, Google Home integration:</p>
+        <ul class="reveal">
+          <li>10 × retrofit battery motors: <strong>$1,500 – $2,500</strong></li>
+          <li>1 × MotionBlinds hub: <strong>$100</strong></li>
+          <li>2 × Google Nest Mini (bedroom + living room): <strong>$100 – $160</strong></li>
+          <li>Professional setup (optional): <strong>$150 – $300</strong></li>
+          <li><strong>Total: $1,850 – $3,060</strong></li>
+        </ul>
+        <p class="reveal">If you're buying new <a href="../products/motorised.html">motorised blinds</a> (not retrofitting), add $200–$400 per window for the blind itself, including fabric and installation. A new-build package of 10 motorised roller blinds with full <a href="../landing/smart-home.html">smart home integration</a> typically runs <strong>$4,500 – $8,000</strong> installed.</p>
+
+        <!-- FAQ -->
+        <h2 id="faq" class="reveal">Frequently Asked Questions</h2>
+        <div class="faq-section reveal">
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Do I need a hub for smart blinds?</div>
+            <div class="faq-answer"><p>Most motorised blinds use Zigbee or Bluetooth to communicate, which means they need a hub (bridge) to connect to your Wi-Fi network and smart home platform. Some newer Wi-Fi motors connect directly to your router without a hub, but they can congest your network if you have many blinds. A hub typically costs $80–$200 and supports 20–30 blinds.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Which smart home platform works best with motorised blinds?</div>
+            <div class="faq-answer"><p>Google Home has the broadest compatibility with blind motors and the most natural voice commands. Amazon Alexa is a close second with excellent routine support. Apple HomeKit is more selective — fewer motors are natively compatible, but those that are work very reliably. For most Australian households, Google Home or Alexa is the practical choice.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Can I control smart blinds when I'm not home?</div>
+            <div class="faq-answer"><p>Yes, as long as your hub and router are powered and connected to the internet. You can open, close, or adjust blinds from anywhere via the manufacturer's app or your smart home app. This is useful for security (making the house look occupied) or letting in light for pets while you're at work.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">Do smart blinds work without internet?</div>
+            <div class="faq-answer"><p>The motor itself doesn't need internet — local control via the included remote or physical button always works. Hub-based scheduling may continue locally depending on the hub. However, voice assistants (Google, Alexa, Siri) and remote app control require an active internet connection. Zigbee and Matter devices generally have better local control than Wi-Fi-only motors.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">What is Matter and should I wait for it?</div>
+            <div class="faq-answer"><p>Matter is a universal smart home protocol backed by Google, Apple, Amazon, and Samsung. It promises that any Matter device works with any Matter platform — no more compatibility headaches. As of 2026, some blind motors support Matter (mostly via Thread), but the ecosystem is still maturing. Buy from a brand that has committed to Matter firmware updates and you'll get current functionality plus future compatibility.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">How many smart blinds can one hub control?</div>
+            <div class="faq-answer"><p>Most hubs support 20–30 devices. The MotionBlinds Wi-Fi Bridge handles up to 30 blinds, Somfy TaHoma supports 200+ devices across its ecosystem, and the IKEA DIRIGERA manages around 30. For a typical Melbourne home with 8–15 windows, a single hub is more than enough. Larger homes or commercial spaces may need a second hub.</p></div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="article-cta reveal">
+          <div>
+            <h2>Need Help With Smart Blind Setup?</h2>
+            <p>We supply and install motorised blinds with full smart home integration across Melbourne. Free measure, free quote.</p>
+          </div>
+          <a href="../free-quote.html" class="btn btn-primary">Free Quote</a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><span class="logo-i">i</span>SeekBlinds</div>
+          <p class="footer-desc">Custom blinds, curtains and shutters for Melbourne homes and businesses. Free measure and quote, professional installation.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <a href="../products/roller-blinds.html">Roller Blinds</a>
+          <a href="../products/curtains.html">Curtains</a>
+          <a href="../products/plantation-shutters.html">Plantation Shutters</a>
+          <a href="../products/venetian-blinds.html">Venetian Blinds</a>
+          <a href="../products/honeycomb-blinds.html">Honeycomb Blinds</a>
+          <a href="../products/motorised.html">Motorised</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="index.html">Blog</a>
+          <a href="../gallery.html">Gallery</a>
+          <a href="../faq.html">FAQ</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:0400000000">0400 000 000</a>
+          <a href="../contact.html">Contact Us</a>
+          <a href="../free-quote.html">Free Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 iSeekBlinds. All rights reserved. Melbourne, Australia.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      var reveals=document.querySelectorAll('.reveal');
+      var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+      reveals.forEach(function(el){observer.observe(el);});
+    });
+  </script>
+</body>
+</html>
