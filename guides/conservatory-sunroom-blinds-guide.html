@@ -335,6 +335,10 @@
       .content-grid { grid-template-columns: 1fr; }
       body { font-size: 11pt; }
     }
+
+    @media (max-width: 768px) {
+      .sidebar, .toc-sidebar, .toc { position: static !important; top: auto !important; }
+    }
   </style>
 </head>
 <body>

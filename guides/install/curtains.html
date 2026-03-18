@@ -571,6 +571,10 @@
       .guide-layout { grid-template-columns: 1fr; }
       .diagram-wrap { page-break-inside: avoid; }
     }
+
+    @media (max-width: 768px) {
+      .sidebar, .toc-sidebar, .toc { position: static !important; top: auto !important; }
+    }
   </style>
 </head>
 <body>

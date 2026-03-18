@@ -454,6 +454,10 @@
       .guide-hero { padding: 20px 0; }
       a[href]::after { content: ' (' attr(href) ')'; font-size: 0.8em; color: #666; }
     }
+
+    @media (max-width: 768px) {
+      .sidebar, .toc-sidebar, .toc { position: static !important; top: auto !important; }
+    }
   </style>
 </head>
 <body>

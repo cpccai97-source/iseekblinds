@@ -447,6 +447,10 @@
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; }
       h2, h3 { break-after: avoid; }
     }
+
+    @media (max-width: 768px) {
+      .sidebar, .toc-sidebar, .toc { position: static !important; top: auto !important; }
+    }
   </style>
 </head>
 <body>
